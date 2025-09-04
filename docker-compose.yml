@@ -1,6 +1,6 @@
 services:
   app:
-    container_name: app-quasar
+    container_name: pantanal_ecotrips
     build:
       context: .
       dockerfile: Dockerfile
