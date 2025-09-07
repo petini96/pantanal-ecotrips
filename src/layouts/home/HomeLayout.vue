@@ -18,8 +18,10 @@ import NavLayout from 'src/components/layouts/home/NavLayout.vue';
 import { onMounted, onUnmounted, ref, nextTick } from 'vue';
 import { type ScrollDetails } from 'src/types/Scroll';
 import { useScrollStore } from 'src/stores/scrollStore';
+import { useLayoutConfigStore } from 'src/stores/layout-config-store';
 
 const scrollStore = useScrollStore();
+const layoutConfigStore = useLayoutConfigStore();
 
 const onScroll = (info: ScrollDetails) => {
   scrollStore.setScrollInfo(info);
@@ -28,6 +30,8 @@ const onScroll = (info: ScrollDetails) => {
 const pageRef = ref<HTMLElement | null>(null);
 
 onMounted(async () => {
+  layoutConfigStore.initializeTheme();
+
   const script = document.createElement('script');
   script.type = 'module';
   script.src = 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3.59/dist/web.js';

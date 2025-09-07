@@ -19,7 +19,7 @@
               v-for="theme in themes"
               :key="theme.name"
               :label="theme.label"
-              @click="setTheme(theme.name as ThemeName)"
+              @click="layoutConfigStore.setTheme(theme.name as ThemeName)"
               :class="{ 'active-theme': currentTheme === theme.name }"
                size="sm"
             />
@@ -121,6 +121,8 @@ import { ref, onMounted, computed, watch } from 'vue';
 import { useMeta } from 'quasar';
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
+import { storeToRefs } from 'pinia';
+import { useLayoutConfigStore, type ThemeName } from 'src/stores/layout-config-store';
 
 import image1 from 'src/assets/images/tours/tour_1.jpg'
 import image2 from 'src/assets/images/tours/tour_2.jpeg'
@@ -131,61 +133,21 @@ import image5 from 'src/assets/images/tours/tour_5.jpg'
 const { t, locale } = useI18n();
 const route = useRoute();
 const router = useRouter();
+const layoutConfigStore = useLayoutConfigStore();
+
+// Use storeToRefs to keep reactivity
+const { theme: currentTheme } = storeToRefs(layoutConfigStore);
+
 
 useMeta({
   title: 'Pantanal Ecotrips - Roteiros para Pantanal e Bonito',
 });
 
-// --- LÓGICA DE TEMA ---
-type ThemeName = 'pantanal_verde' | 'bonito_azul';
-const currentTheme = ref<ThemeName>('pantanal_verde');
-
-const themeVariables: Record<ThemeName, Record<string, string>> = {
-  pantanal_verde: {
-    '--primary-color': '#2c5c3a',
-    '--secondary-color': '#008fc3',
-    '--accent-color': '#e67e22',
-    '--page-bg-color': '#f4f2e9',
-    '--card-bg-color': '#ffffff',
-    '--text-primary-color': '#2c3e50',
-    '--text-secondary-color': '#777777',
-    '--border-color': '#e8e8e8',
-    '--footer-bg-color': '#2c3e50',
-    '--scrollbar-thumb-color': '#2c5c3a',
-    '--scrollbar-track-color': '#f4f2e9',
-  },
-  bonito_azul: {
-    '--primary-color': '#008fc3',
-    '--secondary-color': '#2c5c3a',
-    '--accent-color': '#e67e22',
-    '--page-bg-color': '#f0f4f8',
-    '--card-bg-color': '#ffffff',
-    '--text-primary-color': '#2c3e50',
-    '--text-secondary-color': '#777777',
-    '--border-color': '#dde4ea',
-    '--footer-bg-color': '#1d2a35',
-    '--scrollbar-thumb-color': '#008fc3',
-    '--scrollbar-track-color': '#f0f4f8',
-  }
-};
-
-watch(currentTheme, (themeName) => {
-  const variables = themeVariables[themeName];
-  const root = document.documentElement;
-  for (const key in variables) {
-    root.style.setProperty(key, variables[key] ?? '');
-  }
-  localStorage.setItem('pantanal-theme', themeName);
-}, { immediate: true });
-
+// --- LÓGICA DE TEMA (agora vindo da store) ---
 const themes = ref([
   { name: 'pantanal_verde', label: 'Pantanal' },
   { name: 'bonito_azul', label: 'Bonito' },
 ]);
-
-const setTheme = (themeName: ThemeName) => {
-  currentTheme.value = themeName;
-};
 
 // --- LÓGICA DE IDIOMA ---
 const languages = ref([
@@ -195,7 +157,7 @@ const languages = ref([
 ]);
 const currentLanguageLabel = computed(() => (route.params.lang as string || 'pt').toUpperCase());
 const changeLanguage = (langCode: string) => {
-  void router.push({ name: 'home', params: { lang: langCode } });
+  void router.push({ name: route.name || 'home', params: { ...route.params, lang: langCode } });
 };
 const langMap: Record<string, string> = { pt: 'pt-BR', en: 'en-US', es: 'es' };
 watch(() => route.params.lang, (newLang) => {
@@ -203,10 +165,6 @@ watch(() => route.params.lang, (newLang) => {
 }, { immediate: true });
 
 onMounted(() => {
-  const savedTheme = localStorage.getItem('pantanal-theme');
-  if (savedTheme === 'pantanal_verde' || savedTheme === 'bonito_azul') {
-    currentTheme.value = savedTheme;
-  }
   if (!route.params.lang) {
     void router.replace({ name: 'home', params: { lang: 'pt' } });
   }
@@ -217,6 +175,7 @@ interface Tour { id: string; image: string; price: string; }
 const tours = ref<Tour[]>([
   { id: 'safari_pantanal', image: image1, price: '2.850,00' },
   { id: 'flutuacao_prata', image: image2, price: '1.980,00' },
+  { id: 'pantanal_jungle_lodge', image: image3, price: '3.500,00' },
   { id: 'combo_pantanal_bonito', image: image3, price: '4.500,00' },
   { id: 'cavalgada_pantaneira', image: image4, price: '1.550,00' },
   { id: 'outro_exemplo_1', image: image5, price: '1.234,00' },
@@ -229,7 +188,9 @@ const getTourDescription = (id: string) => t(`tour_${id}_desc`, id);
 const getTourDuration = (id: string) => t(`tour_${id}_duration`, id);
 const getTourType = (id: string) => t(`tour_${id}_type`, id);
 const scrollToTours = () => document.getElementById('tours-section')?.scrollIntoView({ behavior: 'smooth' });
-const viewTour = (tourId: string) => console.log(`Abrir detalhes para o roteiro: ${tourId}`);
+const viewTour = (tourId: string) => {
+  void router.push({ name: 'tourDetails', params: { id: tourId, lang: route.params.lang || 'pt' } });
+};
 
 // --- LÓGICA DE SCROLL COM DRAG (CLICAR E ARRASTAR) ---
 const scrollContainer = ref<HTMLElement | null>(null);
