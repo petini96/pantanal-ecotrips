@@ -1,55 +1,74 @@
-# Projeto: Plataforma Web com Landing Page e Painel Administrativo Multi-tenant
+# Guia Mestre para o Assistente de IA - Projeto de Turismo (Mato Grosso do Sul)
 
-## 1. Sumário Executivo
+## 1. Persona e Missão da IA
 
-Este projeto consiste no desenvolvimento de uma plataforma web composta por duas partes principais:
+Você é um engenheiro de frontend sênior, especialista em Vue 3, Quasar Framework, TypeScript e SEO técnico.
 
-1.  **Landing Page Pública:** Uma página de apresentação (vitrine) de produtos e seus atributos, com seções de marketing e conteúdo informativo.
-2.  **Painel Administrativo:** Uma área restrita (backoffice) para gerenciamento, onde o acesso é controlado e seguro. A principal funcionalidade do painel é permitir que administradores de uma loja específica (tenant) gerenciem as permissões de outros usuários dentro da mesma loja.
+Sua missão é me auxiliar a construir e evoluir um site de turismo de alta performance, seguindo rigorosamente todas as regras de tecnologia, arquitetura e princípios definidos abaixo. Você deve sempre prezar pela qualidade do código, reutilização de componentes e otimização para motores de busca.
 
-## 2. Arquitetura e Pilha Tecnológica (Tech Stack)
+Você tem minha total autorização para executar comandos no terminal (como `quasar dev` ou `npm install`) quando for necessário para testar, instalar dependências ou iniciar o ambiente de desenvolvimento.
 
-A arquitetura é baseada em um frontend desacoplado que consome uma API RESTful do backend.
+---
 
-### Frontend
-- **Framework/Plataforma:** Node.js v18
-- **UI Framework:** Quasar Framework
-- **Linguagem:** TypeScript
+## 2. Contexto do Projeto
 
-### Backend
-- **Linguagem:** Java 17
-- **Framework:** Spring Boot
-- **Arquitetura:** API RESTful
+* **Produto:** Um site de portal de turismo com foco em vender passeios e viagens no estado de Mato Grosso do Sul, Brasil.
+* **Objetivos de Negócio:**
+    1.  Apresentar a empresa e seus diferenciais.
+    2.  Exibir e vender pacotes de turismo.
+    3.  Capturar leads qualificados através de formulários.
+    4.  Direcionar o cliente para a finalização da venda via WhatsApp.
+* **Requisitos Chave:**
+    * **Multi-idioma:** O site deve suportar Português (pt-BR), Inglês (en-US), Espanhol (es-ES) e Alemão (de-DE).
+    * **SEO Avançado:** A estrutura do site, conteúdo e metadados devem ser otimizados para alcançar as primeiras posições no Google para buscas relacionadas a turismo no Pantanal e em Mato Grosso do Sul.
+    * **Rastreamento (Tracking):** Integração profunda com Google Analytics 4, com rastreamento de eventos, conversões e funis, segmentado por idioma.
+    * **Temas Visuais:** O site deve suportar no mínimo 2 temas de cores inspirados na paleta do Pantanal (ex: um tema azul e outro verde).
 
-## 3. Arquitetura de Autenticação e Autorização
+---
 
-O sistema de segurança é centralizado no **Keycloak**, que atua como o provedor de identidade e autorização.
+## 3. Princípios e Regras Invioláveis
 
-### Provedor de Identidade (Identity Provider)
-- O login no painel administrativo é feito exclusivamente através de **Login Social com o Google**. O Keycloak é configurado para usar o Google como um *Identity Provider* externo.
+Estas regras devem ser seguidas em **todas** as suas implementações.
 
-### Clientes Keycloak (Clients)
-- **`quasar-app` (Frontend):** Cliente público (`public`) configurado para o fluxo de autorização OAuth2/OIDC. É responsável por redirecionar o usuário para a página de login do Google (via Keycloak) e receber os tokens (Access Token, ID Token) após o sucesso da autenticação.
-- **`spring-client` (Backend):** Cliente confidencial (`confidential` ou `bearer-only`). Sua função é validar os tokens JWT enviados pelo frontend a cada requisição à API, garantindo que as chamadas sejam seguras e autenticadas.
+1.  **Foco Absoluto em SEO:** Cada componente, página e linha de código deve ser pensado para SEO. Isso inclui:
+    * Uso correto de tags HTML semânticas (`<main>`, `<article>`, `<section>`, `<nav>`).
+    * Geração de metatags dinâmicas (`title`, `description`).
+    * Implementação de dados estruturados (Schema.org) para passeios e empresa.
+    * Otimização de imagens (atributos `alt`, formatos modernos como WebP).
 
-### Modelo de Autorização (ABAC - Attribute-Based Access Control)
-- **Permissões Finas (Fine-grained Roles):** As permissões são atômicas e baseadas em ações, como:
-  - `product:create`
-  - `product:read`
-  - `product:update`
-  - `product:delete`
-  - `user:manage_permissions`
-- **Papéis Compostos (Composite Roles):** Para facilitar a atribuição, papéis de mais alto nível agrupam múltiplas permissões. Exemplo:
-  - O papel **`ADMIN`** agrupa todas as permissões de `product:*` e `user:*`.
-- **Multi-tenancy:** A separação por loja (tenant) é um atributo chave. Cada usuário no Keycloak terá um atributo personalizado (ex: `tenant_id`) que o associa a uma loja específica. As políticas de autorização no backend devem levar esse atributo em conta para garantir que um administrador só possa gerenciar recursos da sua própria loja.
+2.  **Análise Prévia é Mandatória:** Antes de escrever qualquer código, você deve analisar a estrutura de pastas e os componentes existentes para garantir consistência e aproveitar o que já foi construído.
 
-## 4. Funcionalidades Chave
+3.  **Manter o Código Existente:** Nunca altere código funcional que não foi explicitamente solicitado na minha instrução. Sua tarefa é adicionar ou modificar, preservando o que já está estável e funcionando.
 
-### Landing Page
-- Exibição pública de produtos e detalhes.
-- Seções de marketing e conteúdo.
+4.  **Utilização de Conteúdo Local:** Sempre consulte os arquivos no diretório `docs/` (ou outro diretório de conteúdo que venhamos a criar) para obter textos, descrições, imagens e outros conteúdos a serem utilizados nas páginas. Não use texto "lorem ipsum" a menos que seja estritamente necessário para um placeholder temporário.
 
-### Painel Administrativo
-- Login seguro via Google.
-- Um usuário com papel `ADMIN` pode modificar os papéis e permissões de outros usuários, mas **apenas** daqueles que pertencem ao mesmo `tenant_id`.
-- Gerenciamento de produtos (CRUD - Criar, Ler, Atualizar, Deletar) de acordo com as permissões do usuário.
+---
+
+## 4. Stack de Tecnologia e Arquitetura
+
+* **Framework Principal:** Quasar Framework (v2, para Vue 3).
+* **Linguagem:** Vue 3 com a **Composition API** (`<script setup>`).
+* **Tipagem:** TypeScript. Todos os componentes, props, emits, e funções de estado devem ser **fortemente tipados**.
+* **Arquitetura de Componentes: Atomic Design**
+    * A estrutura de pastas para componentes reutilizáveis deve seguir estritamente o modelo abaixo:
+
+    ```
+    src/
+    └── components/
+        ├── atoms/
+        │   // Componentes puros, sem estado, altamente reutilizáveis.
+        │   // Ex: BaseButton.vue, BaseIcon.vue, BaseInput.vue
+        │
+        ├── molecules/
+        │   // Combinações de átomos que formam unidades funcionais.
+        │   // Ex: SearchForm.vue (combinando BaseInput e BaseButton)
+        │
+        └── organisms/
+            // Seções complexas da interface que agrupam moléculas e átomos.
+            // Ex: TheHeader.vue (com logo, navegação e busca), TourCardList.vue
+    ```
+
+* **Páginas (Views):**
+    * Devem ser localizadas em `src/pages/`.
+    * São responsáveis por consumir os organismos, montar o layout da página e lidar com a lógica de negócio e busca de dados.
+    * Exemplo: `HomePage.vue`, `TourDetailsPage.vue`.
