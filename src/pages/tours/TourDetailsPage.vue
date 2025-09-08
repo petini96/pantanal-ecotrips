@@ -26,9 +26,10 @@
           <q-timeline-entry
             v-for="day in tour.itinerary"
             :key="day.day"
-            :title="t(day.title)"
+            :title="`Dia ${day.day}: ${t(day.title)}`"
             :subtitle="t(day.subtitle)"
             :icon="day.icon"
+            class="animated-timeline-entry"
           >
             <div class="text-body1">{{ t(day.description) }}</div>
           </q-timeline-entry>
@@ -39,10 +40,7 @@
         <div class="col-12 col-md-6">
           <q-card class="info-card" flat bordered>
             <q-card-section>
-              <div class="text-h6">
-                <q-icon name="mdi-package-variant-closed" />
-                <span>{{ t('tour_details_included_title') }}</span>
-              </div>
+              <q-icon name="check_circle" class="q-mr-sm" /><span>{{ t('tour_details_included_title') }}</span>
               <q-list separator>
                 <q-item v-for="item in tour.included" :key="item">
                   <q-item-section>{{ t(item) }}</q-item-section>
@@ -55,8 +53,7 @@
           <q-card class="info-card" flat bordered>
             <q-card-section>
               <div class="text-h6">
-                <q-icon name="mdi-package-variant" />
-                 <span>{{ t('tour_details_not_included_title') }}</span>
+                <q-icon name="cancel" class="q-mr-sm" /> <span>{{ t('tour_details_not_included_title') }}</span>
               </div>
               <q-list separator>
                 <q-item v-for="item in tour.notIncluded" :key="item">
@@ -71,8 +68,7 @@
       <q-card class="packing-card" flat bordered>
         <q-card-section>
           <div class="text-h6">
-            <q-icon name="mdi-briefcase-outline" />
-            <span>{{ t('tour_details_packing_title') }}</span>
+            <q-icon name="backpack" class="q-mr-sm" /><span>{{ t('tour_details_packing_title') }}</span>
           </div>
           <p>{{ t('tour_details_packing_desc') }}</p>
         </q-card-section>
@@ -249,6 +245,22 @@ watch(() => route.params.lang, (newLang) => {
   }
   .page-content {
     margin-top: -60px;
+  }
+}
+
+.animated-timeline-entry {
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0; // Start invisible
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>

@@ -15,6 +15,26 @@ export default {
   // Seção de Passeios
   tours_section_title: 'Nossos Roteiros Mais Procurados',
 
+  // Seção "Por Que Viajar Conosco?"
+  why_us_title: 'Por Que Viajar Conosco?',
+  why_us_item1_title: 'Roteiros Personalizados',
+  why_us_item1_desc: 'Criamos o itinerário exato para o seu estilo, otimizando seu tempo e investimento, sem que você precise se preocupar com hotéis, transporte ou guias.',
+  why_us_item2_title: 'Mais de 20 Anos de Experiência',
+  why_us_item2_desc: 'Desde 2000 organizando viagens para amantes da natureza, fotógrafos, famílias e pesquisadores no coração do Brasil.',
+  why_us_item3_title: 'Guias Especializados',
+  why_us_item3_desc: 'Nossa equipe é fluente em Inglês, Espanhol e Alemão, garantindo uma comunicação clara e uma imersão cultural completa.',
+  why_us_item4_title: 'Suporte Completo',
+  why_us_item4_desc: 'Oferecemos apoio logístico em Campo Grande, Bonito e Cuiabá, com uma base administrativa para garantir que tudo saia perfeito.',
+
+  // Seção "Sobre Nós"
+  about_us_title: 'Nossa Missão é a Sua Aventura',
+  about_us_content: 'A Pantanal EcoTrips é especializada em Ecoturismo no Pantanal e Bonito, oferecendo roteiros exclusivos e serviços de alta qualidade. O fundador, Ronaldo Mendoza Ribeiro, atua no setor desde 2000, com trajetória sólida como agente, guia bilíngue e organizador de excursões. Nosso objetivo é transformar sua viagem em uma experiência inesquecível, revelando a beleza única deste paraíso natural com um foco em turismo sustentável e responsável.',
+  about_us_cta: 'Entre em Contato',
+
+  // Seção "Credibilidade"
+  credibility_title: 'Confiança e Reconhecimento',
+  credibility_subtitle: 'Somos registrados no Ministério do Turismo (Cadastur) e recomendados por guias internacionais de prestígio.',
+
   // Página de Detalhes do Passeio
   tour_details_about_title: 'Sobre o Passeio',
   tour_details_itinerary_title: 'Roteiro Detalhado',

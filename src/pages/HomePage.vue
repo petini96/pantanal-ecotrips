@@ -15,14 +15,14 @@
       </div>
       <div class="theme-selector">
         <q-btn-group flat class="control-button-group">
-            <q-btn
-              v-for="theme in themes"
-              :key="theme.name"
-              :label="theme.label"
-              @click="layoutConfigStore.setTheme(theme.name as ThemeName)"
-              :class="{ 'active-theme': currentTheme === theme.name }"
-               size="sm"
-            />
+          <q-btn
+            v-for="theme in themes"
+            :key="theme.name"
+            :label="theme.label"
+            @click="layoutConfigStore.setTheme(theme.name as ThemeName)"
+            :class="{ 'active-theme': currentTheme === theme.name }"
+            size="sm"
+          />
         </q-btn-group>
       </div>
     </div>
@@ -49,7 +49,6 @@
       <div class="text-center q-mb-xl">
         <h2 class="section-title">{{ t('tours_section_title') }}</h2>
       </div>
-
       <div class="scroll-wrapper">
         <div
           ref="scrollContainer"
@@ -60,14 +59,9 @@
           @mousemove="mouseMoveHandler"
         >
           <div class="row no-wrap items-stretch q-gutter-lg">
-            <div
-              v-for="tour in tours"
-              :key="tour.id"
-              class="tour-card-wrapper"
-            >
+            <div v-for="tour in tours" :key="tour.id" class="tour-card-wrapper">
               <q-card class="tour-card full-height card-shadow" flat bordered @click="viewTour(tour.id)">
                 <q-img :src="tour.image" :ratio="16/9" />
-
                 <q-card-section class="flex-grow q-pa-md">
                   <h3 class="card-title q-mt-sm q-mb-md">{{ getTourTitle(tour.id) }}</h3>
                   <div class="tour-details q-mb-md">
@@ -78,27 +72,17 @@
                       {{ getTourType(tour.id) }}
                     </q-chip>
                   </div>
-                  <p class="card-description">
-                    {{ getTourDescription(tour.id) }}
-                  </p>
+                  <p class="card-description">{{ getTourDescription(tour.id) }}</p>
                 </q-card-section>
-
                 <q-separator spaced />
-
                 <q-card-section class="price-section q-pa-md">
                   <div class="tour-price">
                     <span class="price-from">{{ t('price_from') }}</span>
                     <span class="price-value">R$ {{ tour.price }}</span>
                   </div>
                 </q-card-section>
-
                 <q-card-actions class="card-actions-bottom">
-                  <q-btn
-                    color="primary"
-                    :label="t('tours_cta_button')"
-                    class="full-width"
-                    unelevated
-                  />
+                  <q-btn color="primary" :label="t('tours_cta_button')" class="full-width" unelevated />
                 </q-card-actions>
               </q-card>
             </div>
@@ -107,12 +91,96 @@
       </div>
     </div>
 
+    <section id="why-us-section" class="q-py-xl content-section">
+      <div class="container">
+        <div class="text-center q-mb-xl">
+          <h2 class="section-title">{{ t('why_us_title') }}</h2>
+        </div>
+        <div class="row q-col-gutter-lg justify-center">
+          <div class="col-12 col-sm-6 col-md-3">
+            <q-card class="feature-card text-center" flat>
+              <q-card-section>
+                <q-icon name="mdi-map-marker-path" size="3.5rem" class="feature-icon" />
+                <h3 class="feature-title">{{ t('why_us_item1_title') }}</h3>
+                <p>{{ t('why_us_item1_desc') }}</p>
+              </q-card-section>
+            </q-card>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <q-card class="feature-card text-center" flat>
+              <q-card-section>
+                <q-icon name="mdi-compass-rose" size="3.5rem" class="feature-icon" />
+                <h3 class="feature-title">{{ t('why_us_item2_title') }}</h3>
+                <p>{{ t('why_us_item2_desc') }}</p>
+              </q-card-section>
+            </q-card>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <q-card class="feature-card text-center" flat>
+              <q-card-section>
+                <q-icon name="mdi-account-group-outline" size="3.5rem" class="feature-icon" />
+                <h3 class="feature-title">{{ t('why_us_item3_title') }}</h3>
+                <p>{{ t('why_us_item3_desc') }}</p>
+              </q-card-section>
+            </q-card>
+          </div>
+          <div class="col-12 col-sm-6 col-md-3">
+            <q-card class="feature-card text-center" flat>
+              <q-card-section>
+                <q-icon name="mdi-lifebuoy" size="3.5rem" class="feature-icon" />
+                <h3 class="feature-title">{{ t('why_us_item4_title') }}</h3>
+                <p>{{ t('why_us_item4_desc') }}</p>
+              </q-card-section>
+            </q-card>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about-us-section" class="q-py-xl content-section about-us-bg">
+      <div class="container text-center text-white">
+        <h2 class="section-title text-white">{{ t('about_us_title') }}</h2>
+        <p class="text-h6 q-mt-md" style="max-width: 800px; margin: auto; opacity: 0.9;">
+          {{ t('about_us_content') }}
+        </p>
+        <q-btn
+          id="about-us-contact-cta"
+          color="secondary"
+          text-color="white"
+          unelevated
+          size="lg"
+          class="q-mt-xl"
+          :label="t('about_us_cta')"
+          href="https://wa.me/5567999022073"
+          target="_blank"
+          icon="mdi-whatsapp"
+        />
+      </div>
+    </section>
+
+    <section id="credibility-section" class="q-py-xl content-section">
+      <div class="container text-center">
+        <h2 class="section-title">{{ t('credibility_title') }}</h2>
+        <p class="text-subtitle1 text-grey-7 q-mb-xl">{{ t('credibility_subtitle') }}</p>
+        <div class="row items-center justify-center q-col-gutter-xl">
+          <div class="credibility-logo">
+            <q-img src="~assets/images/logo_cadastur.png" alt="Logo Cadastur" width="200px" />
+          </div>
+          <div class="credibility-logo">
+            <q-img src="~assets/images/logo_fodors.png" alt="Logo Fodor's Travel" width="180px" />
+          </div>
+          <div class="credibility-logo">
+            <q-img src="~assets/images/logo_petitfute.png" alt="Logo Petit Futé" width="220px" />
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer class="home-footer text-center q-pa-lg">
-       <p class="footer-text q-ma-none">
+      <p class="footer-text q-ma-none">
         © {{ new Date().getFullYear() }} Pantanal Ecotrips. Todos os direitos reservados.
       </p>
     </footer>
-
   </q-page>
 </template>
 
@@ -135,30 +203,29 @@ const route = useRoute();
 const router = useRouter();
 const layoutConfigStore = useLayoutConfigStore();
 
-// Use storeToRefs to keep reactivity
 const { theme: currentTheme } = storeToRefs(layoutConfigStore);
-
 
 useMeta({
   title: 'Pantanal Ecotrips - Roteiros para Pantanal e Bonito',
 });
 
-// --- LÓGICA DE TEMA (agora vindo da store) ---
 const themes = ref([
   { name: 'pantanal_verde', label: 'Pantanal' },
   { name: 'bonito_azul', label: 'Bonito' },
 ]);
 
-// --- LÓGICA DE IDIOMA ---
 const languages = ref([
   { code: 'pt', label: 'Português' },
   { code: 'en', label: 'English' },
   { code: 'es', label: 'Español' },
 ]);
+
 const currentLanguageLabel = computed(() => (route.params.lang as string || 'pt').toUpperCase());
+
 const changeLanguage = (langCode: string) => {
   void router.push({ name: route.name || 'home', params: { ...route.params, lang: langCode } });
 };
+
 const langMap: Record<string, string> = { pt: 'pt-BR', en: 'en-US', es: 'es' };
 watch(() => route.params.lang, (newLang) => {
   locale.value = langMap[newLang as string] || 'pt-BR';
@@ -170,7 +237,6 @@ onMounted(() => {
   }
 });
 
-// --- DADOS DOS PASSEIOS ---
 interface Tour { id: string; image: string; price: string; }
 const tours = ref<Tour[]>([
   { id: 'safari_pantanal', image: image1, price: '2.850,00' },
@@ -182,17 +248,17 @@ const tours = ref<Tour[]>([
   { id: 'outro_exemplo_2', image: image1, price: '5.678,00' },
 ]);
 
-// --- FUNÇÕES DE TRADUÇÃO E NAVEGAÇÃO ---
 const getTourTitle = (id: string) => t(`tour_${id}_title`, id);
 const getTourDescription = (id: string) => t(`tour_${id}_desc`, id);
 const getTourDuration = (id: string) => t(`tour_${id}_duration`, id);
 const getTourType = (id: string) => t(`tour_${id}_type`, id);
+
 const scrollToTours = () => document.getElementById('tours-section')?.scrollIntoView({ behavior: 'smooth' });
+
 const viewTour = (tourId: string) => {
   void router.push({ name: 'tourDetails', params: { id: tourId, lang: route.params.lang || 'pt' } });
 };
 
-// --- LÓGICA DE SCROLL COM DRAG (CLICAR E ARRASTAR) ---
 const scrollContainer = ref<HTMLElement | null>(null);
 const isDown = ref(false);
 const startX = ref(0);
@@ -219,7 +285,7 @@ const mouseMoveHandler = (e: MouseEvent) => {
   if (!isDown.value || !scrollContainer.value) return;
   e.preventDefault();
   const x = e.pageX - scrollContainer.value.offsetLeft;
-  const walk = (x - startX.value) * 2; // Multiplicador para acelerar a rolagem
+  const walk = (x - startX.value) * 2;
   scrollContainer.value.scrollLeft = scrollLeft.value - walk;
 };
 </script>
@@ -286,7 +352,6 @@ const mouseMoveHandler = (e: MouseEvent) => {
   justify-content: center; color: white;
   overflow: hidden;
 }
-/* ANIMAÇÃO DE MOVIMENTO (EFEITO KEN BURNS) */
 @keyframes kenBurnsEffect {
   0% { transform: scale(1.05) translate(0, 0); }
   100% { transform: scale(1.15) translate(-2%, 2%); }
@@ -296,7 +361,7 @@ const mouseMoveHandler = (e: MouseEvent) => {
   background-image: url('src/assets/images/boca_onca_remake.jpg');
   background-size: cover; background-position: center;
   filter: brightness(0.7);
-  animation: kenBurnsEffect 25s ease-in-out infinite alternate; // Duração reduzida para ser mais notável
+  animation: kenBurnsEffect 25s ease-in-out infinite alternate;
 }
 .hero-overlay {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%;
@@ -347,10 +412,10 @@ const mouseMoveHandler = (e: MouseEvent) => {
   @media (min-width: $breakpoint-md-min) {
     overflow-x: auto;
     padding-bottom: 20px;
-    cursor: grab; // Indica que a área é arrastável
+    cursor: grab;
     &.active-scroll {
-      cursor: grabbing; // Muda o cursor durante o arraste
-      scroll-behavior: auto; // Garante que o scroll manual seja suave
+      cursor: grabbing;
+      scroll-behavior: auto;
     }
     .row {
       flex-wrap: nowrap;
@@ -398,11 +463,10 @@ const mouseMoveHandler = (e: MouseEvent) => {
   font-family: 'Montserrat', sans-serif; font-weight: 700;
   font-size: 1.75rem; line-height: 1;
 }
-/* FIX: Adiciona padding ao container do botão */
 .card-actions-bottom {
   margin-top: auto;
   padding: 16px;
-  padding-top: 0; // Remove o padding de cima para ficar alinhado com o q-separator
+  padding-top: 0;
 }
 
 // --- FOOTER ---
@@ -416,5 +480,81 @@ const mouseMoveHandler = (e: MouseEvent) => {
 }
 @media (max-width: 600px) {
   .hero-title { font-size: 2.2rem; }
+}
+
+/* --- ESTILOS PARA AS NOVAS SEÇÕES --- */
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.content-section {
+  background-color: var(--page-bg-color);
+  transition: background-color 0.3s ease;
+}
+
+.section-title.text-white {
+  color: #fff;
+}
+
+/* Estilos para a seção "Por que escolher-nos" */
+.feature-card {
+  background-color: transparent;
+  height: 100%;
+}
+
+.feature-icon {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.feature-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary-color);
+}
+
+.feature-card p {
+  color: var(--text-secondary-color);
+}
+
+/* Estilos para a seção "Sobre Nós" */
+.about-us-bg {
+  position: relative;
+  background-image: url('~assets/images/pantanal_background.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+.about-us-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.about-us-bg .container {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Estilos para a seção "Credibilidade" */
+.credibility-logo {
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.credibility-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
 }
 </style>
