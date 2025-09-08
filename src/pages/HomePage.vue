@@ -5,7 +5,8 @@
       <div class="language-selector">
         <q-btn-dropdown flat :label="currentLanguageLabel" icon="mdi-translate" class="control-button">
           <q-list dense class="selector-list">
-            <q-item v-for="lang in languages" :key="lang.code" clickable v-close-popup @click="changeLanguage(lang.code)">
+            <q-item v-for="lang in languages" :key="lang.code" clickable v-close-popup
+              @click="changeLanguage(lang.code)">
               <q-item-section>
                 <q-item-label>{{ lang.label }}</q-item-label>
               </q-item-section>
@@ -15,14 +16,9 @@
       </div>
       <div class="theme-selector">
         <q-btn-group flat class="control-button-group">
-          <q-btn
-            v-for="theme in themes"
-            :key="theme.name"
-            :label="theme.label"
+          <q-btn v-for="theme in themes" :key="theme.name" :label="theme.label"
             @click="layoutConfigStore.setTheme(theme.name as ThemeName)"
-            :class="{ 'active-theme': currentTheme === theme.name }"
-            size="sm"
-          />
+            :class="{ 'active-theme': currentTheme === theme.name }" size="sm" />
         </q-btn-group>
       </div>
     </div>
@@ -33,15 +29,8 @@
       <div class="hero-content text-center">
         <h1 class="hero-title">{{ t('hero_title') }}</h1>
         <p class="hero-subtitle">{{ t('hero_subtitle') }}</p>
-        <q-btn
-          color="secondary"
-          text-color="white"
-          unelevated
-          :label="t('hero_cta')"
-          size="lg"
-          class="hero-cta"
-          @click="scrollToTours"
-        />
+        <q-btn color="secondary" text-color="white" unelevated :label="t('hero_cta')" size="lg" class="hero-cta"
+          @click="scrollToTours" />
       </div>
     </section>
 
@@ -50,22 +39,17 @@
         <h2 class="section-title">{{ t('tours_section_title') }}</h2>
       </div>
       <div class="scroll-wrapper">
-        <div
-          ref="scrollContainer"
-          class="tours-scroll-container"
-          @mousedown="mouseDownHandler"
-          @mouseleave="mouseLeaveHandler"
-          @mouseup="mouseUpHandler"
-          @mousemove="mouseMoveHandler"
-        >
+        <div ref="scrollContainer" class="tours-scroll-container" @mousedown="mouseDownHandler"
+          @mouseleave="mouseLeaveHandler" @mouseup="mouseUpHandler" @mousemove="mouseMoveHandler">
           <div class="row no-wrap items-stretch q-gutter-lg">
             <div v-for="tour in tours" :key="tour.id" class="tour-card-wrapper">
               <q-card class="tour-card full-height card-shadow" flat bordered @click="viewTour(tour.id)">
-                <q-img :src="tour.image" :ratio="16/9" />
+                <q-img :src="tour.image" :ratio="16 / 9" />
                 <q-card-section class="flex-grow q-pa-md">
                   <h3 class="card-title q-mt-sm q-mb-md">{{ getTourTitle(tour.id) }}</h3>
                   <div class="tour-details q-mb-md">
-                    <q-chip outline :color="currentTheme === 'pantanal_verde' ? 'primary' : 'secondary'" size="sm" icon="mdi-clock-outline">
+                    <q-chip outline :color="currentTheme === 'pantanal_verde' ? 'primary' : 'secondary'" size="sm"
+                      icon="mdi-clock-outline">
                       {{ getTourDuration(tour.id) }}
                     </q-chip>
                     <q-chip outline color="accent" size="sm" icon="mdi-star-outline">
@@ -96,46 +80,55 @@
         <div class="text-center q-mb-xl">
           <h2 class="section-title">{{ t('why_us_title') }}</h2>
         </div>
-        <div class="row q-col-gutter-lg justify-center">
+        <div class="row q-col-gutter-lg justify-center items-stretch">
           <div class="col-12 col-sm-6 col-md-3">
-            <q-card class="feature-card text-center" flat>
-              <q-card-section>
-                <q-icon name="mdi-map-marker-path" size="3.5rem" class="feature-icon" />
-                <h3 class="feature-title">{{ t('why_us_item1_title') }}</h3>
-                <p>{{ t('why_us_item1_desc') }}</p>
-              </q-card-section>
-            </q-card>
+            <q-intersection once transition="slide-up" class="full-height">
+              <q-card class="feature-card text-center full-height" flat>
+                <q-card-section>
+                  <q-icon name="mdi-map-marker-path" size="3.5rem" class="feature-icon" aria-hidden="true" />
+                  <h3 class="feature-title">{{ t('why_us_item1_title') }}</h3>
+                  <p>{{ t('why_us_item1_desc') }}</p>
+                </q-card-section>
+              </q-card>
+            </q-intersection>
           </div>
           <div class="col-12 col-sm-6 col-md-3">
-            <q-card class="feature-card text-center" flat>
-              <q-card-section>
-                <q-icon name="mdi-compass-rose" size="3.5rem" class="feature-icon" />
-                <h3 class="feature-title">{{ t('why_us_item2_title') }}</h3>
-                <p>{{ t('why_us_item2_desc') }}</p>
-              </q-card-section>
-            </q-card>
+            <q-intersection once transition="slide-up" :delay="150" class="full-height">
+              <q-card class="feature-card text-center full-height" flat>
+                <q-card-section>
+                  <q-icon name="mdi-trophy" size="3.5rem" class="feature-icon" aria-hidden="true" />
+                  <h3 class="feature-title">{{ t('why_us_item2_title') }}</h3>
+                  <p>{{ t('why_us_item2_desc') }}</p>
+                </q-card-section>
+              </q-card>
+            </q-intersection>
           </div>
           <div class="col-12 col-sm-6 col-md-3">
-            <q-card class="feature-card text-center" flat>
-              <q-card-section>
-                <q-icon name="mdi-account-group-outline" size="3.5rem" class="feature-icon" />
-                <h3 class="feature-title">{{ t('why_us_item3_title') }}</h3>
-                <p>{{ t('why_us_item3_desc') }}</p>
-              </q-card-section>
-            </q-card>
+            <q-intersection once transition="slide-up" :delay="300" class="full-height">
+              <q-card class="feature-card text-center full-height" flat>
+                <q-card-section>
+                  <q-icon name="mdi-account-group-outline" size="3.5rem" class="feature-icon" aria-hidden="true" />
+                  <h3 class="feature-title">{{ t('why_us_item3_title') }}</h3>
+                  <p>{{ t('why_us_item3_desc') }}</p>
+                </q-card-section>
+              </q-card>
+            </q-intersection>
           </div>
           <div class="col-12 col-sm-6 col-md-3">
-            <q-card class="feature-card text-center" flat>
-              <q-card-section>
-                <q-icon name="mdi-lifebuoy" size="3.5rem" class="feature-icon" />
-                <h3 class="feature-title">{{ t('why_us_item4_title') }}</h3>
-                <p>{{ t('why_us_item4_desc') }}</p>
-              </q-card-section>
-            </q-card>
+            <q-intersection once transition="slide-up" :delay="450" class="full-height">
+              <q-card class="feature-card text-center full-height" flat>
+                <q-card-section>
+                  <q-icon name="mdi-lifebuoy" size="3.5rem" class="feature-icon" aria-hidden="true" />
+                  <h3 class="feature-title">{{ t('why_us_item4_title') }}</h3>
+                  <p>{{ t('why_us_item4_desc') }}</p>
+                </q-card-section>
+              </q-card>
+            </q-intersection>
           </div>
         </div>
       </div>
     </section>
+
 
     <section id="about-us-section" class="q-py-xl content-section about-us-bg">
       <div class="container text-center text-white">
@@ -143,18 +136,8 @@
         <p class="text-h6 q-mt-md" style="max-width: 800px; margin: auto; opacity: 0.9;">
           {{ t('about_us_content') }}
         </p>
-        <q-btn
-          id="about-us-contact-cta"
-          color="secondary"
-          text-color="white"
-          unelevated
-          size="lg"
-          class="q-mt-xl"
-          :label="t('about_us_cta')"
-          href="https://wa.me/5567999022073"
-          target="_blank"
-          icon="mdi-whatsapp"
-        />
+        <q-btn id="about-us-contact-cta" color="secondary" text-color="white" unelevated size="lg" class="q-mt-xl"
+          :label="t('about_us_cta')" href="https://wa.me/5567999022073" target="_blank" icon="mdi-whatsapp" />
       </div>
     </section>
 
@@ -296,35 +279,48 @@ const mouseMoveHandler = (e: MouseEvent) => {
   background-color: var(--page-bg-color);
   transition: background-color 0.3s ease;
 }
-.section-title, .card-title {
+
+.section-title,
+.card-title {
   color: var(--text-primary-color);
 }
-.hero-cta, .q-btn[color="primary"] {
+
+.hero-cta,
+.q-btn[color="primary"] {
   background-color: var(--primary-color) !important;
 }
+
 .q-btn[color="secondary"] {
   background-color: var(--secondary-color) !important;
 }
+
 .price-value {
   color: var(--primary-color);
 }
+
 .home-footer {
   background-color: var(--footer-bg-color);
 }
-.card-description, .price-from {
+
+.card-description,
+.price-from {
   color: var(--text-secondary-color);
 }
+
 .tour-card {
   background-color: var(--card-bg-color);
   border-color: var(--border-color);
 }
+
 .control-button-group .q-btn {
   color: var(--text-primary-color);
+
   &.active-theme {
     background-color: var(--primary-color);
     color: white;
   }
 }
+
 .selector-list {
   background-color: var(--card-bg-color);
   border: 1px solid var(--border-color);
@@ -333,90 +329,153 @@ const mouseMoveHandler = (e: MouseEvent) => {
 
 // --- CONTROLES GLOBAIS ---
 .page-controls {
-  position: absolute; top: 16px; right: 16px; z-index: 1000;
-  display: flex; gap: 8px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+  display: flex;
+  gap: 8px;
 }
+
 .control-button {
-  color: white; background-color: rgba(0,0,0,0.3); border-radius: 8px;
-  &.q-btn--dropdown { padding-right: 8px; }
+  color: white;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+
+  &.q-btn--dropdown {
+    padding-right: 8px;
+  }
 }
+
 .control-button-group {
   background-color: var(--card-bg-color);
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 // --- SEÇÃO HERO ---
 .hero-section {
-  position: relative; height: 85vh; display: flex; align-items: center;
-  justify-content: center; color: white;
+  position: relative;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
   overflow: hidden;
 }
+
 @keyframes kenBurnsEffect {
-  0% { transform: scale(1.05) translate(0, 0); }
-  100% { transform: scale(1.15) translate(-2%, 2%); }
+  0% {
+    transform: scale(1.05) translate(0, 0);
+  }
+
+  100% {
+    transform: scale(1.15) translate(-2%, 2%);
+  }
 }
+
 .hero-background {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-image: url('src/assets/images/boca_onca_remake.jpg');
-  background-size: cover; background-position: center;
+  background-size: cover;
+  background-position: center;
   filter: brightness(0.7);
   animation: kenBurnsEffect 25s ease-in-out infinite alternate;
 }
+
 .hero-overlay {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
 }
+
 .hero-content {
-  position: relative; z-index: 2; padding: 20px;
+  position: relative;
+  z-index: 2;
+  padding: 20px;
 }
+
 .hero-title {
-  font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 3.5rem;
-  text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5); line-height: 1.2; margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 3.5rem;
+  text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
+  margin-bottom: 1rem;
 }
+
 .hero-subtitle {
-  font-family: 'Lato', sans-serif; font-size: 1.25rem; max-width: 550px;
-  margin: 0 auto 2.5rem auto; opacity: 0.9;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.25rem;
+  max-width: 550px;
+  margin: 0 auto 2.5rem auto;
+  opacity: 0.9;
 }
+
 .hero-cta {
-  font-family: 'Montserrat', sans-serif; font-weight: bold; border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  border-radius: 8px;
 }
 
 // --- SEÇÃO DE PASSEIOS ---
 .section-title {
-  font-weight: 800; font-size: 2.5rem;
+  font-weight: 800;
+  font-size: 2.5rem;
 }
+
 .scroll-wrapper {
   position: relative;
   padding: 0 16px;
+
   @media (min-width: $breakpoint-md-min) {
-    &::before, &::after {
-      content: ''; position: absolute; top: 0; bottom: 0;
-      width: 60px; z-index: 2; pointer-events: none;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      z-index: 2;
+      pointer-events: none;
     }
+
     &::before {
       left: 16px;
       background: linear-gradient(to right, var(--page-bg-color), transparent);
     }
+
     &::after {
       right: 16px;
       background: linear-gradient(to left, var(--page-bg-color), transparent);
     }
   }
 }
+
 .tours-scroll-container {
   .row {
     flex-wrap: wrap;
     justify-content: center;
   }
+
   @media (min-width: $breakpoint-md-min) {
     overflow-x: auto;
     padding-bottom: 20px;
     cursor: grab;
+
     &.active-scroll {
       cursor: grabbing;
       scroll-behavior: auto;
     }
+
     .row {
       flex-wrap: nowrap;
       justify-content: flex-start;
@@ -424,9 +483,11 @@ const mouseMoveHandler = (e: MouseEvent) => {
     }
   }
 }
+
 .tour-card-wrapper {
   width: 100%;
   max-width: 340px;
+
   @media (min-width: $breakpoint-md-min) {
     flex: 0 0 320px;
   }
@@ -434,35 +495,67 @@ const mouseMoveHandler = (e: MouseEvent) => {
 
 // --- CARD DE PASSEIO ---
 .tour-card {
-  border-radius: 12px; transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 100%; display: flex; flex-direction: column;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--border-color);
+
   &:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15) !important;
   }
 }
-.flex-grow { flex-grow: 1; }
+
+.flex-grow {
+  flex-grow: 1;
+}
+
 .card-title {
-  font-family: 'Montserrat', sans-serif; font-weight: 700;
-  font-size: 1.25rem; line-height: 1.3;
-  overflow-wrap: break-word; word-break: break-word;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.3;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
-.tour-details { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.tour-details {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .card-description {
-  font-family: 'Lato', sans-serif; font-size: 0.95rem;
-  line-height: 1.5; min-height: 85px;
-  overflow-wrap: break-word; word-break: break-word;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  min-height: 85px;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
-.price-section { padding-top: 0; }
-.tour-price { text-align: left; }
+
+.price-section {
+  padding-top: 0;
+}
+
+.tour-price {
+  text-align: left;
+}
+
 .price-from {
-  font-family: 'Lato', sans-serif; font-size: 0.8rem;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
 }
+
 .price-value {
-  font-family: 'Montserrat', sans-serif; font-weight: 700;
-  font-size: 1.75rem; line-height: 1;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1;
 }
+
 .card-actions-bottom {
   margin-top: auto;
   padding: 16px;
@@ -470,16 +563,29 @@ const mouseMoveHandler = (e: MouseEvent) => {
 }
 
 // --- FOOTER ---
-.home-footer { color: white; }
-.footer-text { color: rgba(255,255,255,0.8); }
+.home-footer {
+  color: white;
+}
+
+.footer-text {
+  color: rgba(255, 255, 255, 0.8);
+}
 
 // --- RESPONSIVIDADE ---
 @media (max-width: 768px) {
-  .hero-title { font-size: 2.8rem; }
-  .section-title { font-size: 2rem; }
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
 }
+
 @media (max-width: 600px) {
-  .hero-title { font-size: 2.2rem; }
+  .hero-title {
+    font-size: 2.2rem;
+  }
 }
 
 /* --- ESTILOS PARA AS NOVAS SEÇÕES --- */
@@ -530,6 +636,7 @@ const mouseMoveHandler = (e: MouseEvent) => {
   background-position: center center;
   background-attachment: fixed;
 }
+
 .about-us-bg::before {
   content: '';
   position: absolute;
@@ -540,6 +647,7 @@ const mouseMoveHandler = (e: MouseEvent) => {
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
+
 .about-us-bg .container {
   position: relative;
   z-index: 2;
