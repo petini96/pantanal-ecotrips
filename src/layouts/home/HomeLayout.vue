@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import NavLayout from 'src/components/layouts/home/NavLayout.vue';
-import { onMounted, onUnmounted, ref, nextTick } from 'vue';
+import { onMounted, ref, nextTick } from 'vue';
 import { type ScrollDetails } from 'src/types/Scroll';
 import { useScrollStore } from 'src/stores/scrollStore';
 import { useLayoutConfigStore } from 'src/stores/layout-config-store';
@@ -32,27 +32,7 @@ const pageRef = ref<HTMLElement | null>(null);
 onMounted(async () => {
   layoutConfigStore.initializeTheme();
 
-  const script = document.createElement('script');
-  script.type = 'module';
-  script.src = 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3.59/dist/web.js';
-  script.onload = () => {
-    window.Typebot.initStandard({
-      typebot: 'my-typebot-dtt67xz',
-      apiHost: 'https://vtypebot.pantanalecotrips.roboticsmind.com.br',
-    });
-  };
-  script.async = true;
-  script.onerror = () => {
-    console.error('Failed to load Typebot script');
-  };
-  document.head.appendChild(script);
-
   await nextTick();
- 
-});
 
-onUnmounted(() => {
-  const script = document.querySelector('script[src="https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3.59/dist/web.js"]');
-  if (script) script.remove();
 });
 </script>
