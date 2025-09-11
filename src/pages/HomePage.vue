@@ -1,29 +1,28 @@
 <template>
   <q-page :class="['home-page', `theme-${currentTheme}`]">
 
-    <div class="page-controls">
-      <div class="language-selector">
-        <q-btn-dropdown flat :label="currentLanguageLabel" icon="mdi-translate" class="control-button">
-          <q-list dense class="selector-list">
-            <q-item v-for="lang in languages" :key="lang.code" clickable v-close-popup
-              @click="changeLanguage(lang.code)">
-              <q-item-section>
-                <q-item-label>{{ lang.label }}</q-item-label>
-              </q-item-section>
-            </q-item>
-          </q-list>
-        </q-btn-dropdown>
-      </div>
-      <div class="theme-selector">
-        <q-btn-group flat class="control-button-group">
-          <q-btn v-for="theme in themes" :key="theme.name" :label="theme.label"
-            @click="layoutConfigStore.setTheme(theme.name as ThemeName)"
-            :class="{ 'active-theme': currentTheme === theme.name }" size="sm" />
-        </q-btn-group>
-      </div>
-    </div>
-
     <section class="hero-section">
+      <div class="page-controls">
+        <div class="language-selector">
+          <q-btn-dropdown flat :label="currentLanguageLabel" icon="mdi-translate" class="control-button">
+            <q-list dense class="selector-list">
+              <q-item v-for="lang in languages" :key="lang.code" clickable v-close-popup
+                @click="changeLanguage(lang.code)">
+                <q-item-section>
+                  <q-item-label>{{ lang.label }}</q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-list>
+          </q-btn-dropdown>
+        </div>
+        <div class="theme-selector">
+          <q-btn-group flat class="control-button-group">
+            <q-btn v-for="theme in themes" :key="theme.name" :label="theme.label"
+              @click="layoutConfigStore.setTheme(theme.name as ThemeName)"
+              :class="{ 'active-theme': currentTheme === theme.name }" size="sm" />
+          </q-btn-group>
+        </div>
+      </div>
       <div class="hero-background"></div>
       <div class="hero-overlay"></div>
       <div class="hero-content text-center">
@@ -81,51 +80,44 @@
           <h2 class="section-title">{{ t('why_us_title') }}</h2>
         </div>
         <div class="row q-col-gutter-lg justify-center items-stretch">
-          <div class="col-12 col-sm-6 col-md-3">
-            <q-intersection once transition="slide-up" class="full-height">
-              <q-card class="feature-card text-center full-height" flat>
-                <q-card-section>
-                  <q-icon name="mdi-map-marker-path" size="3.5rem" class="feature-icon" aria-hidden="true" />
-                  <h3 class="feature-title">{{ t('why_us_item1_title') }}</h3>
-                  <p>{{ t('why_us_item1_desc') }}</p>
-                </q-card-section>
-              </q-card>
-            </q-intersection>
-          </div>
-          <div class="col-12 col-sm-6 col-md-3">
-            <q-intersection once transition="slide-up" :delay="150" class="full-height">
-              <q-card class="feature-card text-center full-height" flat>
-                <q-card-section>
-                  <q-icon name="mdi-trophy" size="3.5rem" class="feature-icon" aria-hidden="true" />
-                  <h3 class="feature-title">{{ t('why_us_item2_title') }}</h3>
-                  <p>{{ t('why_us_item2_desc') }}</p>
-                </q-card-section>
-              </q-card>
-            </q-intersection>
-          </div>
-          <div class="col-12 col-sm-6 col-md-3">
-            <q-intersection once transition="slide-up" :delay="300" class="full-height">
-              <q-card class="feature-card text-center full-height" flat>
-                <q-card-section>
-                  <q-icon name="mdi-account-group-outline" size="3.5rem" class="feature-icon" aria-hidden="true" />
-                  <h3 class="feature-title">{{ t('why_us_item3_title') }}</h3>
-                  <p>{{ t('why_us_item3_desc') }}</p>
-                </q-card-section>
-              </q-card>
-            </q-intersection>
-          </div>
-          <div class="col-12 col-sm-6 col-md-3">
-            <q-intersection once transition="slide-up" :delay="450" class="full-height">
-              <q-card class="feature-card text-center full-height" flat>
-                <q-card-section>
-                  <q-icon name="mdi-lifebuoy" size="3.5rem" class="feature-icon" aria-hidden="true" />
-                  <h3 class="feature-title">{{ t('why_us_item4_title') }}</h3>
-                  <p>{{ t('why_us_item4_desc') }}</p>
-                </q-card-section>
-              </q-card>
-            </q-intersection>
-          </div>
+          <div class="col-12 col-sm-6 col-md-3" v-for="(item, index) in whyUsItems" :key="item.icon">
+             <q-intersection once transition="slide-up" :delay="index * 150" class="full-height">
+               <q-card class="feature-card text-center full-height" flat>
+                 <q-card-section>
+                   <q-icon :name="item.icon" size="3.5rem" class="feature-icon" aria-hidden="true" />
+                   <h3 class="feature-title">{{ t(item.title) }}</h3>
+                   <p>{{ t(item.desc) }}</p>
+                 </q-card-section>
+               </q-card>
+             </q-intersection>
+           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="newsletter-section" class="q-py-xl newsletter-bg">
+      <div class="container text-center text-white">
+        <q-icon name="mdi-email-fast-outline" size="4rem" class="newsletter-icon" />
+        <h2 class="section-title text-white">{{ t('newsletter_title') }}</h2>
+        <p class="text-h6 q-mt-md" style="max-width: 650px; margin: auto; opacity: 0.9;">
+          {{ t('newsletter_subtitle') }}
+        </p>
+        <q-form @submit.prevent="onNewsletterSubmit" class="q-mt-lg newsletter-form">
+          <q-input
+            v-model="newsletterEmail"
+            :placeholder="t('newsletter_placeholder')"
+            type="email"
+            :rules="[val => !!val && /.+@.+\..+/.test(val) || t('newsletter_invalid_email')]"
+            dark
+            standout="bg-white text-black"
+            input-class="text-black"
+            class="newsletter-input"
+          >
+            <template v-slot:append>
+              <q-btn type="submit" color="secondary" :label="t('newsletter_cta')" unelevated class="newsletter-btn" :loading="newsletterSubmitting" />
+            </template>
+          </q-input>
+        </q-form>
       </div>
     </section>
 
@@ -137,6 +129,33 @@
         </p>
         <q-btn id="about-us-contact-cta" color="secondary" text-color="white" unelevated size="lg" class="q-mt-xl"
           :label="t('about_us_cta')" href="https://wa.me/5567999022073" target="_blank" icon="mdi-whatsapp" />
+      </div>
+    </section>
+
+    <section id="faq-section" class="q-py-xl content-section">
+      <div class="container">
+        <div class="text-center q-mb-xl">
+          <h2 class="section-title">{{ t('faq_title') }}</h2>
+        </div>
+        <div class="faq-list-container">
+          <q-list bordered class="rounded-borders">
+            <q-expansion-item
+              v-for="faq in faqItems"
+              :key="faq.question"
+              group="faqGroup"
+              :icon="faq.icon"
+              :label="t(faq.question)"
+              header-class="faq-question"
+              class="faq-item"
+            >
+              <q-card>
+                <q-card-section class="faq-answer">
+                  {{ t(faq.answer) }}
+                </q-card-section>
+              </q-card>
+            </q-expansion-item>
+          </q-list>
+        </div>
       </div>
     </section>
 
@@ -168,7 +187,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, computed, watch } from 'vue';
-import { useMeta } from 'quasar';
+import { useMeta, useQuasar } from 'quasar';
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
 import { storeToRefs } from 'pinia';
@@ -178,6 +197,7 @@ import { type Tour, tours as allTours } from 'src/data/tours-data';
 const { t, locale } = useI18n();
 const route = useRoute();
 const router = useRouter();
+const $q = useQuasar();
 const layoutConfigStore = useLayoutConfigStore();
 
 const { theme: currentTheme } = storeToRefs(layoutConfigStore);
@@ -186,16 +206,15 @@ const { theme: currentTheme } = storeToRefs(layoutConfigStore);
 useMeta(() => {
   const currentLang = (route.params.lang as string || 'pt');
   const baseURL = 'https://www.pantanalecotrips.roboticsmind.com.br';
-  // Lembre-se de colocar uma imagem real em /public/og-image.jpg
   const ogImageURL = `${baseURL}/og-image.jpg`; 
 
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'TravelAgency', // Mais específico que LocalBusiness
+    '@type': 'TravelAgency',
     'name': t('meta_title'),
     'description': t('meta_description'),
     'url': baseURL,
-    'logo': `${baseURL}/pantanal_ecotrips_logo.png`, // Coloque o logo na pasta /public
+    'logo': `${baseURL}/pantanal_ecotrips_logo.png`,
     'image': ogImageURL,
     'telephone': '+5567999022073',
     'address': {
@@ -206,40 +225,32 @@ useMeta(() => {
       'postalCode': '79002-081',
       'addressCountry': 'BR'
     },
-    'sameAs': [ // Adicione aqui suas redes sociais
+    'sameAs': [
       'https://www.facebook.com/suapagina',
       'https://www.instagram.com/seuusuario'
     ]
   };
 
   return {
-    // Título dinâmico baseado no idioma
     title: t('meta_title'),
-    // Tag <link rel="canonical"> dinâmica
     link: {
       canonical: { rel: 'canonical', href: `${baseURL}/${currentLang}` }
     },
-    // Meta tags dinâmicas
     meta: {
       description: { name: 'description', content: t('meta_description') },
       keywords: { name: 'keywords', content: t('meta_keywords') },
-      
-      // Open Graph (para compartilhamento social)
       ogTitle: { property: 'og:title', content: t('meta_title') },
       ogDescription: { property: 'og:description', content: t('meta_description') },
       ogType: { property: 'og:type', content: 'website' },
       ogUrl: { property: 'og:url', content: `${baseURL}/${currentLang}` },
       ogImage: { property: 'og:image', content: ogImageURL },
-      ogLocale: { property: 'og:locale', content: locale.value.replace('-', '_') }, // ex: pt-BR -> pt_BR
+      ogLocale: { property: 'og:locale', content: locale.value.replace('-', '_') },
       ogSiteName: { property: 'og:site_name', content: 'Pantanal Ecotrips' },
-
-      // Twitter Cards
       twitterCard: { name: 'twitter:card', content: 'summary_large_image' },
       twitterTitle: { name: 'twitter:title', content: t('meta_title') },
       twitterDescription: { name: 'twitter:description', content: t('meta_description') },
       twitterImage: { name: 'twitter:image', content: ogImageURL },
     },
-    // Dados Estruturados
     script: {
       structuredData: {
         type: 'application/ld+json',
@@ -248,7 +259,6 @@ useMeta(() => {
     },
   };
 });
-// --- FIM DO CÓDIGO DE SEO ---
 
 const themes = ref([
   { name: 'pantanal_verde', label: 'Pantanal' },
@@ -280,6 +290,41 @@ onMounted(() => {
 
 const tours = ref<Tour[]>(allTours)
 
+// Dados para a seção "Por que nós?"
+const whyUsItems = ref([
+  { icon: 'mdi-map-marker-path', title: 'why_us_item1_title', desc: 'why_us_item1_desc' },
+  { icon: 'mdi-trophy', title: 'why_us_item2_title', desc: 'why_us_item2_desc' },
+  { icon: 'mdi-account-group-outline', title: 'why_us_item3_title', desc: 'why_us_item3_desc' },
+  { icon: 'mdi-lifebuoy', title: 'why_us_item4_title', desc: 'why_us_item4_desc' }
+]);
+
+// Dados para a seção de FAQ
+const faqItems = ref([
+  { icon: 'mdi-calendar-check', question: 'faq_q1', answer: 'faq_a1' },
+  { icon: 'mdi-weather-partly-cloudy', question: 'faq_q2', answer: 'faq_a2' },
+  { icon: 'mdi-airplane', question: 'faq_q3', answer: 'faq_a3' },
+  { icon: 'mdi-credit-card-outline', question: 'faq_q4', answer: 'faq_a4' },
+  { icon: 'mdi-account-multiple-plus', question: 'faq_q5', answer: 'faq_a5' }
+]);
+
+// Lógica para o formulário de Newsletter
+const newsletterEmail = ref('');
+const newsletterSubmitting = ref(false);
+const onNewsletterSubmit = () => {
+  newsletterSubmitting.value = true;
+  // Simula uma chamada de API
+  setTimeout(() => {
+    newsletterSubmitting.value = false;
+    $q.notify({
+      icon: 'mdi-check-circle',
+      color: 'positive',
+      message: t('newsletter_success'),
+      position: 'top'
+    });
+    newsletterEmail.value = ''; // Limpa o campo
+  }, 1500);
+};
+
 const getTourTitle = (id: string) => t(`tour_${id}_title`, id);
 const getTourDescription = (id: string) => t(`tour_${id}_desc`, id);
 const getTourDuration = (id: string) => t(`tour_${id}_duration`, id);
@@ -291,12 +336,11 @@ const viewTour = (tourId: string) => {
   void router.push({ name: 'tourDetails', params: { id: tourId, lang: route.params.lang || 'pt' } });
 };
 
-// Lógica de scroll
+// Lógica de scroll (existente)
 const scrollContainer = ref<HTMLElement | null>(null);
 const isDown = ref(false);
 const startX = ref(0);
 const scrollLeft = ref(0);
-
 const mouseDownHandler = (e: MouseEvent) => {
   if (!scrollContainer.value) return;
   isDown.value = true;
@@ -324,8 +368,7 @@ const mouseMoveHandler = (e: MouseEvent) => {
 </script>
 
 <style scoped lang="scss">
-/* SEU CSS EXISTENTE VAI AQUI (NÃO PRECISA MUDAR NADA) */
-// Aplica cores do tema
+/* SEU CSS EXISTENTE VAI AQUI */
 .home-page {
   background-color: var(--page-bg-color);
   transition: background-color 0.3s ease;
@@ -461,7 +504,7 @@ const mouseMoveHandler = (e: MouseEvent) => {
   position: relative;
   padding: 0 16px;
 
-  @media (min-width: 600px) { // Use a specific breakpoint value
+  @media (min-width: 600px) {
     &::before,
     &::after {
       content: '';
@@ -490,7 +533,7 @@ const mouseMoveHandler = (e: MouseEvent) => {
     justify-content: center;
   }
 
-  @media (min-width: 600px) { // Use a specific breakpoint value
+  @media (min-width: 600px) {
     overflow-x: auto;
     padding-bottom: 20px;
     cursor: grab;
@@ -511,7 +554,7 @@ const mouseMoveHandler = (e: MouseEvent) => {
   width: 100%;
   max-width: 340px;
 
-  @media (min-width: 600px) { // Use a specific breakpoint value
+  @media (min-width: 600px) {
     flex: 0 0 320px;
   }
 }
@@ -652,5 +695,58 @@ const mouseMoveHandler = (e: MouseEvent) => {
 .credibility-logo:hover {
   filter: grayscale(0%);
   opacity: 1;
+}
+
+/* --- NOVOS ESTILOS PARA NEWSLETTER E FAQ --- */
+.newsletter-bg {
+  position: relative;
+  background-color: var(--primary-color);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('~assets/images/wildlife_pattern.svg');
+  background-size: 300px, 300px;
+  background-attachment: scroll;
+}
+.newsletter-icon {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+.newsletter-form {
+  max-width: 500px;
+  margin: auto;
+}
+.newsletter-input .q-field__control {
+  border-radius: 999px !important;
+}
+.newsletter-btn {
+  border-radius: 999px;
+  height: 100%;
+}
+
+.faq-list-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border-color);
+  &:first-child {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  &:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+}
+.faq-question {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary-color);
+}
+.faq-answer {
+  background-color: var(--page-bg-color);
+  color: var(--text-secondary-color);
+  line-height: 1.6;
 }
 </style>

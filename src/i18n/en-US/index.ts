@@ -1,4 +1,25 @@
 export default {
+  // --- NEWSLETTER SECTION ---
+  newsletter_title: 'Travel Tips Straight to Your Email',
+  newsletter_subtitle: 'Receive exclusive itineraries, promotions, and the best tips for your adventure in the Pantanal and Bonito. No spam, we promise!',
+  newsletter_placeholder: 'Your best email',
+  newsletter_cta: 'Subscribe',
+  newsletter_invalid_email: 'Please enter a valid email.',
+  newsletter_success: 'Subscription successful!',
+
+  // --- FAQ SECTION ---
+  faq_title: 'Frequently Asked Questions',
+  faq_q1: 'When is the best time to visit the Pantanal?',
+  faq_a1: 'The best time is during the dry season, from May to September. During this period, wildlife viewing is easier as animals gather around the few remaining water sources.',
+  faq_q2: 'Is it safe to travel to the Pantanal?',
+  faq_a2: 'Yes, it is very safe. Our guides are experienced and trained to ensure your safety in all activities. We follow all safety and ecotourism protocols.',
+  faq_q3: 'How do I get to the Pantanal?',
+  faq_a3: 'The main starting point for the Southern Pantanal is Campo Grande (CGR), and for the Northern Pantanal is Cuiabá (CGB). We offer full transportation support from these airports.',
+  faq_q4: 'What are the payment methods?',
+  faq_a4: 'We accept payments via bank transfer, Pix, and credit cards (with installment options). Contact us for more details on the conditions.',
+  faq_q5: 'Can I customize an itinerary?',
+  faq_a5: 'Absolutely! Customizing itineraries is one of our specialties. We create the ideal trip for your profile, whether it\'s for photography, adventure, comfort, or family travel.',
+
   // --- SEO METADATA ---
   meta_title: 'Pantanal Ecotrips | Travel Packages to Pantanal & Bonito',
   meta_description: 'Ecotourism specialists in the Pantanal and Bonito. We offer travel packages, tours, and unique nature experiences in Mato Grosso do Sul.',

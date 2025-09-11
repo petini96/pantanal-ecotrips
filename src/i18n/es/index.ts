@@ -1,4 +1,25 @@
 export default {
+  // --- SECCIÓN NEWSLETTER ---
+  newsletter_title: 'Consejos de Viaje Directo en tu Email',
+  newsletter_subtitle: 'Recibe itinerarios exclusivos, promociones y los mejores consejos para tu aventura en el Pantanal y Bonito. ¡Sin spam, lo prometemos!',
+  newsletter_placeholder: 'Tu mejor e-mail',
+  newsletter_cta: 'Suscribirse',
+  newsletter_invalid_email: 'Por favor, introduce un e-mail válido.',
+  newsletter_success: '¡Suscripción realizada con éxito!',
+
+  // --- SECCIÓN FAQ ---
+  faq_title: 'Preguntas Frecuentes',
+  faq_q1: '¿Cuál es la mejor época para visitar el Pantanal?',
+  faq_a1: 'La mejor época es durante la estación seca, de mayo a septiembre. En este período, la observación de la vida silvestre es más fácil, ya que los animales se concentran en las pocas fuentes de agua restantes.',
+  faq_q2: '¿Es seguro viajar al Pantanal?',
+  faq_a2: 'Sí, es muy seguro. Nuestros guías son experimentados y están capacitados para garantizar tu seguridad en todas las actividades. Seguimos todos los protocolos de seguridad y ecoturismo.',
+  faq_q3: '¿Cómo llego al Pantanal?',
+  faq_a3: 'El principal punto de partida para el Pantanal Sur es Campo Grande (CGR), y para el Pantanal Norte es Cuiabá (CGB). Ofrecemos todo el soporte de transporte desde estos aeropuertos.',
+  faq_q4: '¿Cuáles son las formas de pago?',
+  faq_a4: 'Aceptamos pagos mediante transferencia bancaria, Pix y tarjetas de crédito (con opción de pago en cuotas). Contáctanos para más detalles sobre las condiciones.',
+  faq_q5: '¿Puedo personalizar un itinerario?',
+  faq_a5: '¡Por supuesto! La personalización de itinerarios es una de nuestras especialidades. Creamos el viaje ideal para tu perfil, ya sea para fotografía, aventura, comodidad o viajes en familia.',
+
   // --- METADATOS SEO ---
   meta_title: 'Pantanal Ecotrips | Paquetes de Viaje a Pantanal y Bonito',
   meta_description: 'Especialistas en ecoturismo en el Pantanal y Bonito. Ofrecemos paquetes de viaje, tours y experiencias únicas con la naturaleza en Mato Grosso do Sul.',

@@ -1,4 +1,25 @@
 export default {
+  // --- SEÇÃO NEWSLETTER ---
+  newsletter_title: 'Dicas de Viagem Direto no Seu Email',
+  newsletter_subtitle: 'Receba roteiros exclusivos, promoções e as melhores dicas para sua aventura no Pantanal e em Bonito. Sem spam, prometemos!',
+  newsletter_placeholder: 'Seu melhor e-mail',
+  newsletter_cta: 'Inscrever',
+  newsletter_invalid_email: 'Por favor, insira um e-mail válido.',
+  newsletter_success: 'Inscrição realizada com sucesso!',
+
+  // --- SEÇÃO FAQ ---
+  faq_title: 'Perguntas Frequentes',
+  faq_q1: 'Qual a melhor época para visitar o Pantanal?',
+  faq_a1: 'A melhor época é durante a estação seca, de maio a setembro. Nesse período, a observação da vida selvagem é mais fácil, pois os animais se concentram nas poucas fontes de água restantes.',
+  faq_q2: 'É seguro viajar para o Pantanal?',
+  faq_a2: 'Sim, é muito seguro. Nossos guias são experientes e treinados para garantir sua segurança em todas as atividades. Seguimos todos os protocolos de segurança e ecoturismo.',
+  faq_q3: 'Como chego ao Pantanal?',
+  faq_a3: 'O principal ponto de partida para o Pantanal Sul é Campo Grande (CGR), e para o Pantanal Norte é Cuiabá (CGB). Oferecemos todo o suporte de transporte a partir desses aeroportos.',
+  faq_q4: 'Quais são as formas de pagamento?',
+  faq_a4: 'Aceitamos pagamentos via transferência bancária, Pix e cartões de crédito (com opção de parcelamento). Entre em contato para mais detalhes sobre as condições.',
+  faq_q5: 'Posso personalizar um roteiro?',
+  faq_a5: 'Com certeza! A personalização de roteiros é uma de nossas especialidades. Montamos a viagem ideal para seu perfil, seja para fotografia, aventura, conforto ou viagens em família.',
+  
   // --- SEO METADADOS ---
   meta_title: 'Pantanal Ecotrips | Pacotes de Viagem para Pantanal e Bonito',
   meta_description: 'Especialistas em ecoturismo no Pantanal e Bonito. Oferecemos pacotes de viagem, passeios e experiências únicas com a natureza em Mato Grosso do Sul.',
