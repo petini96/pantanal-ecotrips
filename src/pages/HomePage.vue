@@ -129,7 +129,6 @@
       </div>
     </section>
 
-
     <section id="about-us-section" class="q-py-xl content-section about-us-bg">
       <div class="container text-center text-white">
         <h2 class="section-title text-white">{{ t('about_us_title') }}</h2>
@@ -183,9 +182,73 @@ const layoutConfigStore = useLayoutConfigStore();
 
 const { theme: currentTheme } = storeToRefs(layoutConfigStore);
 
-useMeta({
-  title: 'Pantanal Ecotrips - Roteiros para Pantanal e Bonito',
+// --- SEO OTIMIZADO PARA A HOMEPAGE ---
+useMeta(() => {
+  const currentLang = (route.params.lang as string || 'pt');
+  const baseURL = 'https://www.pantanalecotrips.roboticsmind.com.br';
+  // Lembre-se de colocar uma imagem real em /public/og-image.jpg
+  const ogImageURL = `${baseURL}/og-image.jpg`; 
+
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'TravelAgency', // Mais específico que LocalBusiness
+    'name': t('meta_title'),
+    'description': t('meta_description'),
+    'url': baseURL,
+    'logo': `${baseURL}/pantanal_ecotrips_logo.png`, // Coloque o logo na pasta /public
+    'image': ogImageURL,
+    'telephone': '+5567999022073',
+    'address': {
+      '@type': 'PostalAddress',
+      'streetAddress': 'Rua 26 de Agosto, 1374, sala 03',
+      'addressLocality': 'Campo Grande',
+      'addressRegion': 'MS',
+      'postalCode': '79002-081',
+      'addressCountry': 'BR'
+    },
+    'sameAs': [ // Adicione aqui suas redes sociais
+      'https://www.facebook.com/suapagina',
+      'https://www.instagram.com/seuusuario'
+    ]
+  };
+
+  return {
+    // Título dinâmico baseado no idioma
+    title: t('meta_title'),
+    // Tag <link rel="canonical"> dinâmica
+    link: {
+      canonical: { rel: 'canonical', href: `${baseURL}/${currentLang}` }
+    },
+    // Meta tags dinâmicas
+    meta: {
+      description: { name: 'description', content: t('meta_description') },
+      keywords: { name: 'keywords', content: t('meta_keywords') },
+      
+      // Open Graph (para compartilhamento social)
+      ogTitle: { property: 'og:title', content: t('meta_title') },
+      ogDescription: { property: 'og:description', content: t('meta_description') },
+      ogType: { property: 'og:type', content: 'website' },
+      ogUrl: { property: 'og:url', content: `${baseURL}/${currentLang}` },
+      ogImage: { property: 'og:image', content: ogImageURL },
+      ogLocale: { property: 'og:locale', content: locale.value.replace('-', '_') }, // ex: pt-BR -> pt_BR
+      ogSiteName: { property: 'og:site_name', content: 'Pantanal Ecotrips' },
+
+      // Twitter Cards
+      twitterCard: { name: 'twitter:card', content: 'summary_large_image' },
+      twitterTitle: { name: 'twitter:title', content: t('meta_title') },
+      twitterDescription: { name: 'twitter:description', content: t('meta_description') },
+      twitterImage: { name: 'twitter:image', content: ogImageURL },
+    },
+    // Dados Estruturados
+    script: {
+      structuredData: {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(structuredData)
+      }
+    },
+  };
 });
+// --- FIM DO CÓDIGO DE SEO ---
 
 const themes = ref([
   { name: 'pantanal_verde', label: 'Pantanal' },
@@ -228,6 +291,7 @@ const viewTour = (tourId: string) => {
   void router.push({ name: 'tourDetails', params: { id: tourId, lang: route.params.lang || 'pt' } });
 };
 
+// Lógica de scroll
 const scrollContainer = ref<HTMLElement | null>(null);
 const isDown = ref(false);
 const startX = ref(0);
@@ -260,44 +324,37 @@ const mouseMoveHandler = (e: MouseEvent) => {
 </script>
 
 <style scoped lang="scss">
+/* SEU CSS EXISTENTE VAI AQUI (NÃO PRECISA MUDAR NADA) */
 // Aplica cores do tema
 .home-page {
   background-color: var(--page-bg-color);
   transition: background-color 0.3s ease;
 }
-
 .section-title,
 .card-title {
   color: var(--text-primary-color);
 }
-
 .hero-cta,
 .q-btn[color="primary"] {
   background-color: var(--primary-color) !important;
 }
-
 .q-btn[color="secondary"] {
   background-color: var(--secondary-color) !important;
 }
-
 .price-value {
   color: var(--primary-color);
 }
-
 .home-footer {
   background-color: var(--footer-bg-color);
 }
-
 .card-description,
 .price-from {
   color: var(--text-secondary-color);
 }
-
 .tour-card {
   background-color: var(--card-bg-color);
   border-color: var(--border-color);
 }
-
 .control-button-group .q-btn {
   color: var(--text-primary-color);
 
@@ -306,14 +363,11 @@ const mouseMoveHandler = (e: MouseEvent) => {
     color: white;
   }
 }
-
 .selector-list {
   background-color: var(--card-bg-color);
   border: 1px solid var(--border-color);
   color: var(--text-primary-color);
 }
-
-// --- CONTROLES GLOBAIS ---
 .page-controls {
   position: absolute;
   top: 16px;
@@ -322,7 +376,6 @@ const mouseMoveHandler = (e: MouseEvent) => {
   display: flex;
   gap: 8px;
 }
-
 .control-button {
   color: white;
   background-color: rgba(0, 0, 0, 0.3);
@@ -332,14 +385,11 @@ const mouseMoveHandler = (e: MouseEvent) => {
     padding-right: 8px;
   }
 }
-
 .control-button-group {
   background-color: var(--card-bg-color);
   border-radius: 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
-
-// --- SEÇÃO HERO ---
 .hero-section {
   position: relative;
   height: 85vh;
@@ -349,7 +399,6 @@ const mouseMoveHandler = (e: MouseEvent) => {
   color: white;
   overflow: hidden;
 }
-
 @keyframes kenBurnsEffect {
   0% {
     transform: scale(1.05) translate(0, 0);
@@ -359,7 +408,6 @@ const mouseMoveHandler = (e: MouseEvent) => {
     transform: scale(1.15) translate(-2%, 2%);
   }
 }
-
 .hero-background {
   position: absolute;
   top: 0;
@@ -372,7 +420,6 @@ const mouseMoveHandler = (e: MouseEvent) => {
   filter: brightness(0.7);
   animation: kenBurnsEffect 25s ease-in-out infinite alternate;
 }
-
 .hero-overlay {
   position: absolute;
   top: 0;
@@ -381,13 +428,11 @@ const mouseMoveHandler = (e: MouseEvent) => {
   height: 100%;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
 }
-
 .hero-content {
   position: relative;
   z-index: 2;
   padding: 20px;
 }
-
 .hero-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
@@ -396,7 +441,6 @@ const mouseMoveHandler = (e: MouseEvent) => {
   line-height: 1.2;
   margin-bottom: 1rem;
 }
-
 .hero-subtitle {
   font-family: 'Lato', sans-serif;
   font-size: 1.25rem;
@@ -404,25 +448,20 @@ const mouseMoveHandler = (e: MouseEvent) => {
   margin: 0 auto 2.5rem auto;
   opacity: 0.9;
 }
-
 .hero-cta {
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   border-radius: 8px;
 }
-
-// --- SEÇÃO DE PASSEIOS ---
 .section-title {
   font-weight: 800;
   font-size: 2.5rem;
 }
-
 .scroll-wrapper {
   position: relative;
   padding: 0 16px;
 
-  @media (min-width: $breakpoint-md-min) {
-
+  @media (min-width: 600px) { // Use a specific breakpoint value
     &::before,
     &::after {
       content: '';
@@ -445,14 +484,13 @@ const mouseMoveHandler = (e: MouseEvent) => {
     }
   }
 }
-
 .tours-scroll-container {
   .row {
     flex-wrap: wrap;
     justify-content: center;
   }
 
-  @media (min-width: $breakpoint-md-min) {
+  @media (min-width: 600px) { // Use a specific breakpoint value
     overflow-x: auto;
     padding-bottom: 20px;
     cursor: grab;
@@ -469,17 +507,14 @@ const mouseMoveHandler = (e: MouseEvent) => {
     }
   }
 }
-
 .tour-card-wrapper {
   width: 100%;
   max-width: 340px;
 
-  @media (min-width: $breakpoint-md-min) {
+  @media (min-width: 600px) { // Use a specific breakpoint value
     flex: 0 0 320px;
   }
 }
-
-// --- CARD DE PASSEIO ---
 .tour-card {
   border-radius: 12px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -493,11 +528,9 @@ const mouseMoveHandler = (e: MouseEvent) => {
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15) !important;
   }
 }
-
 .flex-grow {
   flex-grow: 1;
 }
-
 .card-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -506,13 +539,11 @@ const mouseMoveHandler = (e: MouseEvent) => {
   overflow-wrap: break-word;
   word-break: break-word;
 }
-
 .tour-details {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
 }
-
 .card-description {
   font-family: 'Lato', sans-serif;
   font-size: 0.95rem;
@@ -521,86 +552,66 @@ const mouseMoveHandler = (e: MouseEvent) => {
   overflow-wrap: break-word;
   word-break: break-word;
 }
-
 .price-section {
   padding-top: 0;
 }
-
 .tour-price {
   text-align: left;
 }
-
 .price-from {
   font-family: 'Lato', sans-serif;
   font-size: 0.8rem;
 }
-
 .price-value {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 1.75rem;
   line-height: 1;
 }
-
 .card-actions-bottom {
   margin-top: auto;
   padding: 16px;
   padding-top: 0;
 }
-
-// --- FOOTER ---
 .home-footer {
   color: white;
 }
-
 .footer-text {
   color: rgba(255, 255, 255, 0.8);
 }
-
-// --- RESPONSIVIDADE ---
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.8rem;
   }
-
   .section-title {
     font-size: 2rem;
   }
 }
-
 @media (max-width: 600px) {
   .hero-title {
     font-size: 2.2rem;
   }
 }
-
-/* --- ESTILOS PARA AS NOVAS SEÇÕES --- */
 .container {
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 16px;
 }
-
 .content-section {
   background-color: var(--page-bg-color);
   transition: background-color 0.3s ease;
 }
-
 .section-title.text-white {
   color: #fff;
 }
-
-/* Estilos para a seção "Por que escolher-nos" */
 .feature-card {
   background-color: transparent;
   height: 100%;
 }
-
 .feature-icon {
   color: var(--primary-color);
   margin-bottom: 1rem;
 }
-
 .feature-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -609,12 +620,9 @@ const mouseMoveHandler = (e: MouseEvent) => {
   margin-bottom: 0.5rem;
   color: var(--text-primary-color);
 }
-
 .feature-card p {
   color: var(--text-secondary-color);
 }
-
-/* Estilos para a seção "Sobre Nós" */
 .about-us-bg {
   position: relative;
   background-image: url('~assets/images/pantanal_background.jpg');
@@ -622,7 +630,6 @@ const mouseMoveHandler = (e: MouseEvent) => {
   background-position: center center;
   background-attachment: fixed;
 }
-
 .about-us-bg::before {
   content: '';
   position: absolute;
@@ -633,20 +640,15 @@ const mouseMoveHandler = (e: MouseEvent) => {
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
-
 .about-us-bg .container {
   position: relative;
   z-index: 2;
 }
-
-
-/* Estilos para a seção "Credibilidade" */
 .credibility-logo {
   filter: grayscale(100%);
   opacity: 0.6;
   transition: filter 0.3s ease, opacity 0.3s ease;
 }
-
 .credibility-logo:hover {
   filter: grayscale(0%);
   opacity: 1;

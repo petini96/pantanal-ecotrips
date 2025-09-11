@@ -1,5 +1,10 @@
 export default {
-  // UI Geral
+  // --- SEO METADADOS ---
+  meta_title: 'Pantanal Ecotrips | Pacotes de Viagem para Pantanal e Bonito',
+  meta_description: 'Especialistas em ecoturismo no Pantanal e Bonito. Oferecemos pacotes de viagem, passeios e experiências únicas com a natureza em Mato Grosso do Sul.',
+  meta_keywords: 'pantanal, bonito, ecoturismo, pacotes de viagem, pantanal ecotrips, turismo pantanal, passeios em bonito, viagem pantanal, campo grande ms, mato grosso do sul',
+
+  // --- UI GERAL ---
   theme_tooltip: 'Mudar Tema',
   price_from: 'A partir de',
   tours_cta_button: 'Ver Detalhes do Roteiro',
@@ -7,15 +12,15 @@ export default {
   tour_not_found: 'Passeio não encontrado',
   whatsapp_message: 'Olá, gostaria de mais informações sobre o passeio {tour}.',
 
-  // Seção Hero
+  // --- SEÇÃO HERO ---
   hero_title: 'Explore o Coração do Brasil',
   hero_subtitle: 'Aventuras autênticas no Pantanal e nas águas cristalinas de Bonito.',
   hero_cta: 'Descubra Nossos Roteiros',
 
-  // Seção de Passeios
+  // --- SEÇÃO DE PASSEIOS ---
   tours_section_title: 'Nossos Roteiros Mais Procurados',
 
-  // Seção "Por Que Viajar Conosco?"
+  // --- SEÇÃO "POR QUE VIAJAR CONOSCO?" ---
   why_us_title: 'Por Que Viajar Conosco?',
   why_us_item1_title: 'Roteiros Personalizados',
   why_us_item1_desc: 'Criamos o itinerário exato para o seu estilo, otimizando seu tempo e investimento, sem que você precise se preocupar com hotéis, transporte ou guias.',
@@ -26,16 +31,16 @@ export default {
   why_us_item4_title: 'Suporte Completo',
   why_us_item4_desc: 'Oferecemos apoio logístico em Campo Grande, Bonito e Cuiabá, com uma base administrativa para garantir que tudo saia perfeito.',
 
-  // Seção "Sobre Nós"
+  // --- SEÇÃO "SOBRE NÓS" ---
   about_us_title: 'Nossa Missão é a Sua Aventura',
   about_us_content: 'A Pantanal EcoTrips é especializada em Ecoturismo no Pantanal e Bonito, oferecendo roteiros exclusivos e serviços de alta qualidade. O fundador, Ronaldo Mendoza Ribeiro, atua no setor desde 2000, com trajetória sólida como agente, guia bilíngue e organizador de excursões. Nosso objetivo é transformar sua viagem em uma experiência inesquecível, revelando a beleza única deste paraíso natural com um foco em turismo sustentável e responsável.',
   about_us_cta: 'Entre em Contato',
 
-  // Seção "Credibilidade"
+  // --- SEÇÃO "CREDIBILIDADE" ---
   credibility_title: 'Confiança e Reconhecimento',
   credibility_subtitle: 'Somos registrados no Ministério do Turismo (Cadastur) e recomendados por guias internacionais de prestígio.',
 
-  // Página de Detalhes do Passeio
+  // --- PÁGINA DE DETALHES DO PASSEIO ---
   tour_details_about_title: 'Sobre o Passeio',
   tour_details_itinerary_title: 'Roteiro Detalhado',
   tour_details_included_title: 'Serviços Inclusos',
@@ -44,7 +49,7 @@ export default {
   tour_details_packing_desc: 'Roupas leves e de secagem rápida; calças e mangas compridas para a noite e proteção contra sol/insetos; um agasalho para noites mais frias; capa de chuva (sazonal); roupa de banho; sapatos de caminhada/sandálias confortáveis que possam molhar e sujar. Repelente de insetos forte, protetor solar com FPS alto, chapéu, óculos de sol, binóculos (essencial para observação da vida selvagem), lanterna, câmera com lente de zoom, bolsa impermeável para eletrônicos.',
   tour_details_cta_button: 'Reserve Este Passeio Agora!',
 
-  // Passeios
+  // --- PASSEIOS ---
   tour_safari_pantanal_title: 'Essência do Pantanal',
   tour_safari_pantanal_desc: 'Uma imersão completa na vida selvagem, com safáris para avistar onças, jacarés e a rica avifauna local.',
   tour_safari_pantanal_duration: '5 dias',
@@ -70,7 +75,7 @@ export default {
   tour_pantanal_jungle_lodge_duration: '5 dias',
   tour_pantanal_jungle_lodge_type: 'Ecoturismo',
 
-  // Roteiro Pantanal Jungle Lodge
+  // --- ROTEIRO PANTANAL JUNGLE LODGE ---
   tour_pjl_day1_title: 'Chegada & Passeio Noturno de Barco',
   tour_pjl_day1_subtitle: 'Boas-vindas ao Pantanal!',
   tour_pjl_day1_desc: 'Chegue em Campo Grande, transfira-se para o lodge e termine o dia com um passeio noturno de barco no Rio Miranda para avistar jacarés e outros animais noturnos.',
@@ -87,7 +92,7 @@ export default {
   tour_pjl_day5_subtitle: 'Última chance para aventura',
   tour_pjl_day5_desc: 'Desfrute de uma última atividade, como pesca de piranhas, antes de retornar a Campo Grande para sua partida.',
 
-  // Pantanal Jungle Lodge Inclusos/Não Inclusos
+  // --- PANTANAL JUNGLE LODGE INCLUSOS/NÃO INCLUSOS ---
   tour_pjl_included_1: 'Todos os transportes (transfers do aeroporto, safáris, barcos)',
   tour_pjl_included_2: '4 noites de acomodação (3 no lodge, 1 acampamento)',
   tour_pjl_included_3: 'Todas as refeições conforme especificado no roteiro',
