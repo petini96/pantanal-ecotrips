@@ -96,6 +96,16 @@ export default {
   tour_pantanal_jungle_lodge_duration: '5 days',
   tour_pantanal_jungle_lodge_type: 'Ecotourism',
 
+  tour_outro_exemplo_1_title: 'Other exemple',
+  tour_outro_exemplo_1_desc: 'Another example for this tour here guys. Great place to visit with your family.',
+  tour_outro_exemplo_1_duration: '5 days',
+  tour_outro_exemplo_1_type: 'Tour',
+
+  tour_outro_exemplo_2_title: 'Other exemple 2',
+  tour_outro_exemplo_2_desc: 'Another example 2 for this tour here guys. Great place to visit with your family.',
+  tour_outro_exemplo_2_duration: '5 days',
+  tour_outro_exemplo_2_type: 'Tour',
+
   // --- PANTANAL JUNGLE LODGE ITINERARY ---
   tour_pjl_day1_title: 'Arrival & Night Boat Tour',
   tour_pjl_day1_subtitle: 'Welcome to the Pantanal!',

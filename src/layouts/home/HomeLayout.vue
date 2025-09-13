@@ -6,9 +6,9 @@
         <q-page ref="pageRef">
           <router-view />
           <q-scroll-observer @scroll="onScroll" />
-          <DonutComponent />
         </q-page>
       </q-page-container>
+      <FooterLayout /> 
     </q-layout>
   </div>
 </template>
@@ -19,6 +19,7 @@ import { onMounted, ref, nextTick } from 'vue';
 import { type ScrollDetails } from 'src/types/Scroll';
 import { useScrollStore } from 'src/stores/scrollStore';
 import { useLayoutConfigStore } from 'src/stores/layout-config-store';
+import FooterLayout from 'src/components/layouts/home/FooterLayout.vue';
 
 const scrollStore = useScrollStore();
 const layoutConfigStore = useLayoutConfigStore();

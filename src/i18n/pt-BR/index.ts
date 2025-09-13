@@ -19,7 +19,7 @@ export default {
   faq_a4: 'Aceitamos pagamentos via transferência bancária, Pix e cartões de crédito (com opção de parcelamento). Entre em contato para mais detalhes sobre as condições.',
   faq_q5: 'Posso personalizar um roteiro?',
   faq_a5: 'Com certeza! A personalização de roteiros é uma de nossas especialidades. Montamos a viagem ideal para seu perfil, seja para fotografia, aventura, conforto ou viagens em família.',
-  
+
   // --- SEO METADADOS ---
   meta_title: 'Pantanal Ecotrips | Pacotes de Viagem para Pantanal e Bonito',
   meta_description: 'Especialistas em ecoturismo no Pantanal e Bonito. Oferecemos pacotes de viagem, passeios e experiências únicas com a natureza em Mato Grosso do Sul.',
@@ -95,6 +95,16 @@ export default {
   tour_pantanal_jungle_lodge_desc: 'Uma experiência imersiva de 5 dias no Pantanal Sul, com foco na vida selvagem e natureza. Inclui safáris, passeios de barco e uma noite de acampamento selvagem.',
   tour_pantanal_jungle_lodge_duration: '5 dias',
   tour_pantanal_jungle_lodge_type: 'Ecoturismo',
+
+  tour_outro_exemplo_1_title: 'Outro exemplo',
+  tour_outro_exemplo_1_desc: 'Exemplo de passeio bom para visitar com a sua família. Muito recomendado.',
+  tour_outro_exemplo_1_duration: '5 days',
+  tour_outro_exemplo_1_type: 'Turismo',
+
+  tour_outro_exemplo_2_title: 'Outro exemplo 2',
+  tour_outro_exemplo_2_desc: 'Exemplo 2 de passeio bom para visitar com a sua família. Muito recomendado.',
+  tour_outro_exemplo_2_duration: '5 days',
+  tour_outro_exemplo_2_type: 'Turismo',
 
   // --- ROTEIRO PANTANAL JUNGLE LODGE ---
   tour_pjl_day1_title: 'Chegada & Passeio Noturno de Barco',
