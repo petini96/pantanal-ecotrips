@@ -1,41 +1,26 @@
 <template>
-  <q-page v-if="loading" class="flex flex-center">
+  <q-page v-if="loading && !tour" class="flex flex-center">
     <q-spinner-dots color="primary" size="4em" />
   </q-page>
-
   <q-page v-else-if="tour" :class="['tour-details-page', `theme-${currentTheme}`]">
-    <SimpleBannerDetails
-      :hero_title="t(`tour_${tourId}_title`)"
-      :hero_subtitle="t(`tour_${tourId}_type`)"
-      :hero_image="tour?.image"
-    />
-
+    <SimpleBannerDetails :hero_title="tour.title" :hero_subtitle="tour.type" :hero_image="tour.image" />
     <div class="page-content q-pa-md q-gutter-y-xl">
-      <AboutTourSection
-        :tour_details_about_title="t('tour_details_about_title')"
-        :tour_desc="t(`tour_${tourId}_desc`)"
-      />
-
-      <TourItinerarySection
-        v-if="tour.itinerary"
-        :tour_details_itinerary_title="t('tour_details_itinerary_title')"
-        :itinerary="tour.itinerary"
-      />
-
+      <AboutTourSection :tour_details_about_title="t('tour_details_about_title')" :tour_desc="tour.description" />
+      <TourItinerarySection v-if="tour.itinerary && tour.itinerary.length > 0" :tour_details_itinerary_title="t('tour_details_itinerary_title')" :itinerary="tour.itinerary" />
       <div class="info-grid row q-col-gutter-md">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6" v-if="tour.included && tour.included.length > 0">
           <q-card class="info-card" flat bordered>
             <q-card-section>
               <q-icon name="check_circle" class="q-mr-sm" /><span>{{ t('tour_details_included_title') }}</span>
               <q-list separator>
                 <q-item v-for="item in tour.included" :key="item">
-                  <q-item-section>{{ t(item) }}</q-item-section>
+                  <q-item-section>{{ item }}</q-item-section>
                 </q-item>
               </q-list>
             </q-card-section>
           </q-card>
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6" v-if="tour.notIncluded && tour.notIncluded.length > 0">
           <q-card class="info-card" flat bordered>
             <q-card-section>
               <div class="text-h6">
@@ -43,14 +28,13 @@
               </div>
               <q-list separator>
                 <q-item v-for="item in tour.notIncluded" :key="item">
-                  <q-item-section>{{ t(item) }}</q-item-section>
+                  <q-item-section>{{ item }}</q-item-section>
                 </q-item>
               </q-list>
             </q-card-section>
           </q-card>
         </div>
       </div>
-
       <q-card class="packing-card" flat bordered>
         <q-card-section>
           <div class="text-h6">
@@ -59,20 +43,11 @@
           <p>{{ t('tour_details_packing_desc') }}</p>
         </q-card-section>
       </q-card>
-
       <div class="text-center q-mt-xl">
-        <q-btn
-          color="secondary"
-          size="lg"
-          :label="t('tour_details_cta_button')"
-          icon="mdi-whatsapp"
-          :href="`https://wa.me/5567999022073?text=${encodedWhatsAppMessage}`"
-          target="_blank"
-        />
+        <q-btn color="secondary" size="lg" :label="t('tour_details_cta_button')" icon="mdi-whatsapp" :href="`https://wa.me/5567999022073?text=${encodedWhatsAppMessage}`" target="_blank" />
       </div>
     </div>
   </q-page>
-
   <q-page v-else class="flex flex-center">
     <div class="text-center">
       <q-icon name="mdi-alert-circle-outline" size="4rem" color="warning" />
@@ -98,33 +73,56 @@ const route = useRoute();
 const { t, locale } = useI18n();
 
 const layoutConfigStore = useLayoutConfigStore();
-const tourStore = useTourStore();
-
 const { theme: currentTheme } = storeToRefs(layoutConfigStore);
+
+const tourStore = useTourStore();
 const { getTourById, loading } = storeToRefs(tourStore);
 
 const tourId = computed(() => route.params.id as string);
-
 const tour = computed(() => getTourById.value(tourId.value));
 
-const tourTitle = computed(() => (tour.value ? t(`tour_${tourId.value}_title`) : 'Tour'));
-const encodedWhatsAppMessage = computed(() => encodeURIComponent(t('whatsapp_message', { tour: tourTitle.value })));
+const langMap: Record<string, string> = { pt: 'pt-BR', en: 'en-US', es: 'es' };
 
 onMounted(async () => {
-  await tourStore.fetchTours();
+  const lang = langMap[route.params.lang as string] || 'pt-BR';
+  locale.value = lang;
+  await tourStore.fetchTours(lang);
 });
 
-useMeta(() => ({
-  title: `${tourTitle.value} | Pantanal Ecotrips`,
-  meta: {
-    description: { name: 'description', content: t(`tour_${tourId.value}_desc`) },
-  },
-}));
+watch(() => route.params.lang, async (newLang) => {
+  tourStore.clearTours();
+  const lang = langMap[newLang as string] || 'pt-BR';
+  locale.value = lang;
+  await tourStore.fetchTours(lang);
+});
 
-const langMap: Record<string, string> = { pt: 'pt-BR', en: 'en-US', es: 'es' };
-watch(() => route.params.lang, (newLang) => {
-  locale.value = langMap[newLang as string] || 'pt-BR';
-}, { immediate: true });
+const encodedWhatsAppMessage = computed(() => {
+  const title = tour.value?.title ?? 'este passeio';
+  return encodeURIComponent(t('whatsapp_message', { tour: title }));
+});
+
+useMeta(() => {
+  if (!tour.value) {
+    return { title: 'Passeio não encontrado' };
+  }
+  const baseUrl = 'https://www.pantanalecotrips.roboticsmind.com.br';
+  const tourUrlId = tour.value.id;
+  const currentLang = (route.params.lang as string || 'pt');
+  
+  return {
+    title: `${tour.value.title} | Pantanal Ecotrips`,
+    meta: {
+      description: { name: 'description', content: tour.value.description },
+    },
+    link: {
+      canonical: { rel: 'canonical', href: `${baseUrl}/${currentLang}/tours/${tourUrlId}` },
+      ptBr: { rel: 'alternate', hreflang: 'pt-br', href: `${baseUrl}/pt/tours/${tourUrlId}` },
+      enUs: { rel: 'alternate', hreflang: 'en-us', href: `${baseUrl}/en/tours/${tourUrlId}` },
+      es: { rel: 'alternate', hreflang: 'es', href: `${baseUrl}/es/tours/${tourUrlId}` },
+      xDefault: { rel: 'alternate', hreflang: 'x-default', href: `${baseUrl}/pt/tours/${tourUrlId}` },
+    },
+  };
+});
 </script>
 
 <style scoped lang="scss">
