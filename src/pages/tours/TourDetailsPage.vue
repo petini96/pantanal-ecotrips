@@ -1,7 +1,9 @@
 <template>
-  <q-page v-if="tour" :class="['tour-details-page', `theme-${currentTheme}`]">
+  <q-page v-if="loading" class="flex flex-center">
+    <q-spinner-dots color="primary" size="4em" />
+  </q-page>
 
-    <!-- Banner de detalhe -->
+  <q-page v-else-if="tour" :class="['tour-details-page', `theme-${currentTheme}`]">
     <SimpleBannerDetails
       :hero_title="t(`tour_${tourId}_title`)"
       :hero_subtitle="t(`tour_${tourId}_type`)"
@@ -9,30 +11,16 @@
     />
 
     <div class="page-content q-pa-md q-gutter-y-xl">
-      <q-card class="intro-card" flat bordered>
-        <q-card-section>
-          <div class="text-h5 q-mb-md">{{ t('tour_details_about_title') }}</div>
-          <p class="text-body1">
-            {{ t(`tour_${tourId}_desc`) }}
-          </p>
-        </q-card-section>
-      </q-card>
+      <AboutTourSection
+        :tour_details_about_title="t('tour_details_about_title')"
+        :tour_desc="t(`tour_${tourId}_desc`)"
+      />
 
-      <div v-if="tour.itinerary" class="itinerary-section">
-        <div class="text-h4 text-center q-mb-lg">{{ t('tour_details_itinerary_title') }}</div>
-        <q-timeline color="primary">
-          <q-timeline-entry
-            v-for="day in tour.itinerary"
-            :key="day.day"
-            :title="`Dia ${day.day}: ${t(day.title)}`"
-            :subtitle="t(day.subtitle)"
-            :icon="day.icon"
-            class="animated-timeline-entry"
-          >
-            <div class="text-body1">{{ t(day.description) }}</div>
-          </q-timeline-entry>
-        </q-timeline>
-      </div>
+      <TourItinerarySection
+        v-if="tour.itinerary"
+        :tour_details_itinerary_title="t('tour_details_itinerary_title')"
+        :itinerary="tour.itinerary"
+      />
 
       <div class="info-grid row q-col-gutter-md">
         <div class="col-12 col-md-6">
@@ -84,6 +72,7 @@
       </div>
     </div>
   </q-page>
+
   <q-page v-else class="flex flex-center">
     <div class="text-center">
       <q-icon name="mdi-alert-circle-outline" size="4rem" color="warning" />
@@ -94,54 +83,37 @@
 </template>
 
 <script setup lang="ts">
-import { computed, watch } from 'vue';
+import { computed, onMounted, watch } from 'vue';
 import { useMeta } from 'quasar';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { storeToRefs } from 'pinia';
 import { useLayoutConfigStore } from 'src/stores/layout-config-store';
-
-import image1 from 'src/assets/images/tours/tour_1.jpg';
-import image3 from 'src/assets/images/tours/tour_3.jpg';
+import { useTourStore } from 'src/stores/useTourStore';
 import SimpleBannerDetails from 'src/components/banner/SimpleBannerDetails.vue';
+import AboutTourSection from 'src/components/tour/AboutTourSection.vue';
+import TourItinerarySection from 'src/components/tour/TourItinerarySection.vue';
 
 const route = useRoute();
 const { t, locale } = useI18n();
+
 const layoutConfigStore = useLayoutConfigStore();
+const tourStore = useTourStore();
 
 const { theme: currentTheme } = storeToRefs(layoutConfigStore);
+const { getTourById, loading } = storeToRefs(tourStore);
 
 const tourId = computed(() => route.params.id as string);
 
-// This data would ideally come from a CMS or a dedicated data store
-const toursData: Record<string, any> = {
-  pantanal_jungle_lodge: {
-    image: image1,
-    itinerary: [
-      { day: 1, title: 'tour_pjl_day1_title', subtitle: 'tour_pjl_day1_subtitle', icon: 'mdi-airplane-landing', description: 'tour_pjl_day1_desc' },
-      { day: 2, title: 'tour_pjl_day2_title', subtitle: 'tour_pjl_day2_subtitle', icon: 'mdi-canoe', description: 'tour_pjl_day2_desc' },
-      { day: 3, title: 'tour_pjl_day3_title', subtitle: 'tour_pjl_day3_subtitle', icon: 'mdi-jeep-wrangler', description: 'tour_pjl_day3_desc' },
-      { day: 4, title: 'tour_pjl_day4_title', subtitle: 'tour_pjl_day4_subtitle', icon: 'mdi-horse-human-reach', description: 'tour_pjl_day4_desc' },
-      { day: 5, title: 'tour_pjl_day5_title', subtitle: 'tour_pjl_day5_subtitle', icon: 'mdi-airplane-takeoff', description: 'tour_pjl_day5_desc' },
-    ],
-    included: ['tour_pjl_included_1', 'tour_pjl_included_2', 'tour_pjl_included_3', 'tour_pjl_included_4', 'tour_pjl_included_5'],
-    notIncluded: ['tour_pjl_not_included_1', 'tour_pjl_not_included_2', 'tour_pjl_not_included_3', 'tour_pjl_not_included_4'],
-  },
-  // Placeholder for other tours
-  safari_pantanal: { image: image3, itinerary: null, included: [], notIncluded: [] },
-  flutuacao_prata: { image: image3, itinerary: null, included: [], notIncluded: [] },
-  combo_pantanal_bonito: { image: image3, itinerary: null, included: [], notIncluded: [] },
-  cavalgada_pantaneira: { image: image3, itinerary: null, included: [], notIncluded: [] },
-  outro_exemplo_1: { image: image3, itinerary: null, included: [], notIncluded: [] },
-  outro_exemplo_2: { image: image3, itinerary: null, included: [], notIncluded: [] },
-};
+const tour = computed(() => getTourById.value(tourId.value));
 
-const tour = computed(() => toursData[tourId.value] || null);
-
-const tourTitle = computed(() => tour.value ? t(`tour_${tourId.value}_title`) : 'Tour');
+const tourTitle = computed(() => (tour.value ? t(`tour_${tourId.value}_title`) : 'Tour'));
 const encodedWhatsAppMessage = computed(() => encodeURIComponent(t('whatsapp_message', { tour: tourTitle.value })));
 
-// Dynamic meta tags
+onMounted(async () => {
+  await tourStore.fetchTours();
+});
+
 useMeta(() => ({
   title: `${tourTitle.value} | Pantanal Ecotrips`,
   meta: {
@@ -149,12 +121,10 @@ useMeta(() => ({
   },
 }));
 
-// Watch for language changes in the route and update i18n locale
 const langMap: Record<string, string> = { pt: 'pt-BR', en: 'en-US', es: 'es' };
 watch(() => route.params.lang, (newLang) => {
   locale.value = langMap[newLang as string] || 'pt-BR';
 }, { immediate: true });
-
 </script>
 
 <style scoped lang="scss">
@@ -178,15 +148,7 @@ watch(() => route.params.lang, (newLang) => {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.itinerary-section .text-h4 {
-  font-weight: 700;
-  color: var(--primary-color);
-}
 
-.q-timeline__title {
-  font-size: 1.25rem;
-  font-weight: 700;
-}
 
 .info-card .text-h6 {
   display: flex;
