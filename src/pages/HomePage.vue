@@ -137,7 +137,6 @@ onMounted(() => {
   color: var(--text-primary-color);
 }
 
-
 .container {
   max-width: 1140px;
   margin: 0 auto;
