@@ -24,7 +24,8 @@
 
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
-import { type ThemeName, useLayoutConfigStore } from 'src/stores/layout-config-store';
+import { useLayoutConfigStore } from 'src/stores/layout-config-store';
+import type { ThemeName } from 'src/utils/theme-utils';
 import { computed, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 

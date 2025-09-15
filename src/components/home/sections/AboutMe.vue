@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { ref, watch, onMounted } from 'vue';
 import { useScrollStore } from 'src/stores/scrollStore';
 
 const isAboutMeVisible = ref(false);
@@ -35,24 +35,26 @@ const scrollStore = useScrollStore();
 
 const hasAppeared = ref(false);
 
-watch(
-  () => scrollStore.scrollInfo,
-  () => {
-    if (hasAppeared.value) return;
+onMounted(() => {
+  watch(
+    () => scrollStore.scrollInfo,
+    () => {
+      if (hasAppeared.value) return;
 
-    const aboutMeSection = document.querySelector('#about-me') as HTMLElement;
-    if (!aboutMeSection) return;
+      const aboutMeSection = document.querySelector('#about-me') as HTMLElement;
+      if (!aboutMeSection) return;
 
-    const rect = aboutMeSection.getBoundingClientRect();
-    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+      const rect = aboutMeSection.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
 
-    if (isVisible) {
-      isAboutMeVisible.value = true;
-      hasAppeared.value = true;
-    }
-  },
-  { deep: true }
-);
+      if (isVisible) {
+        isAboutMeVisible.value = true;
+        hasAppeared.value = true;
+      }
+    },
+    { deep: true }
+  );
+});
 </script>
 
 <style>

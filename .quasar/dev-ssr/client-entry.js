@@ -46,6 +46,8 @@ import quasarUserOptions from './quasar-user-options.js'
 
 
 
+import { addPreFetchHooks } from './client-prefetch.js'
+
 
 
 console.info('[Quasar] Running SSR.')
@@ -120,6 +122,8 @@ async function start ({
     // wait until router has resolved all async before hooks
     // and async components...
     router.isReady().then(() => {
+      
+      addPreFetchHooks({ router, store, publicPath })
       
       app.mount('#q-app')
     })
