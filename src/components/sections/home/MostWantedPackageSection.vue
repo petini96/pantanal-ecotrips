@@ -16,9 +16,11 @@
           <div v-for="pkg in validPackages" :key="pkg.id" class="tour-card-wrapper">
             <q-card class="package-card-themed" :class="cardThemeClass" flat bordered @click="viewPackage(pkg.id)">
 
-              <q-img :src="pkg.image" :ratio="16 / 9" class="card-image">
-                <div class="package-tag">{{ pkg.title }}</div>
-              </q-img>
+              <HeroBanner
+                :image-src="pkg.image"
+                :subtitle="t('package_tour')"
+                :title="pkg.title"
+              />
 
               <q-card-section class="card-content-section">
                 <div class="core-info-pill">
@@ -71,6 +73,7 @@ import { useRoute, useRouter } from 'vue-router';
 import { useLayoutConfigStore } from 'src/stores/layout-config-store';
 import { useMostWantedPackageStore } from 'src/stores/useMostWantedPackageStore';
 import { type MostWantedPackage } from 'src/model/MostWantedPackage';
+import HeroBanner from 'src/components/banner/HeroBanner.vue';
 
 const router = useRouter();
 const route = useRoute();

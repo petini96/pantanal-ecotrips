@@ -12,7 +12,7 @@ import { cavesEn, cavesEs, cavesPt } from "src/data/categories/caves";
 import { divingAndFloatingEn, divingAndFloatingEs, divingAndFloatingPt } from "src/data/categories/divingAndFloating";
 import { uid } from "quasar";
 
-import imageTour1 from "src/assets/images/packages/noite-feliz.png";
+import imageTour1 from "src/assets/images/packages/gruta.png";
 
 const uuid: string = uid();
 

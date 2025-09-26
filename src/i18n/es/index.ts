@@ -54,5 +54,6 @@ export default {
   days: 'Días',
   nights: 'Noches',
   categories: 'Categorías',
-  people: 'personas'
+  people: 'personas',
+  package_tour: 'Paquete turístico'
 };

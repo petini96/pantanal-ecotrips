@@ -14,7 +14,7 @@ import { uid } from "quasar";
 
 const uuid: string = uid();
 
-import imageTour1 from "src/assets/images/packages/reveillon2024.png";
+import imageTour1 from "src/assets/images/packages/gruta-lagoa-azul.png";
 
 export const reveillon2024Pt = {
   id: uuid,
