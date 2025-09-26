@@ -2,17 +2,21 @@ import { defineStore } from "pinia";
 import { ref, computed } from "vue";
 import { type MostWantedPackage } from "src/model/MostWantedPackage";
 import { reveillon2024En, reveillon2024Es, reveillon2024Pt } from "src/data/most-wanted-package/reveillon2024/PackageData";
+import { noiteFelizEn, noiteFelizEs, noiteFelizPt } from "src/data/most-wanted-package/noite-feliz/PackageData";
  
 const mostWantedPackagePt: Record<string, Omit<MostWantedPackage, "id">> = {
-   reveillon2024: reveillon2024Pt
+   reveillon2024: reveillon2024Pt,
+   noiteFeliz: noiteFelizPt
 };
 
 const mostWantedPackageEn: Record<string, Omit<MostWantedPackage, "id">> = {
-  reveillon2024: reveillon2024En
+  reveillon2024: reveillon2024En,
+  noiteFelizEn: noiteFelizEn
 };
 
 const mostWantedPackageEs: Record<string, Omit<MostWantedPackage, "id">> = {
-  reveillon2024: reveillon2024Es
+  reveillon2024: reveillon2024Es,
+  noiteFeliz: noiteFelizEs
 };
 
 export const useMostWantedPackageStore = defineStore("mostWantedPackage", () => {

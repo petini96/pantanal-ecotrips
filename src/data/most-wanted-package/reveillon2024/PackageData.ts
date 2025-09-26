@@ -10,8 +10,15 @@ import { ecotourismEn, ecotourismEs, ecotourismPt } from "src/data/categories/ec
 import { adventureEn, adventureEs, adventurePt } from "src/data/categories/adventure";
 import { cavesEn, cavesEs, cavesPt } from "src/data/categories/caves";
 import { divingAndFloatingEn, divingAndFloatingEs, divingAndFloatingPt } from "src/data/categories/divingAndFloating";
+import { uid } from "quasar";
+
+const uuid: string = uid();
+
+import imageTour1 from "src/assets/images/packages/reveillon2024.png";
 
 export const reveillon2024Pt = {
+  id: uuid,
+  image: imageTour1,
   title: "Reveillon 2024",
   subtitle:
     "Pacote inesquecível para pessoas que desejam virar a noite em um local mágico, cheio de atrações e passeios.",
@@ -79,6 +86,8 @@ export const reveillon2024Pt = {
 // ENGLISH VERISON 
 
 export const reveillon2024En = {
+  id: uuid,
+  image: imageTour1,
   title: "New Year's Eve 2024",
   subtitle:
     "An unforgettable package for those who wish to celebrate the new year in a magical place, full of attractions and tours.",
@@ -146,6 +155,8 @@ export const reveillon2024En = {
 // SPANISH VERISON 
 
 export const reveillon2024Es = {
+  id: uuid,
+  image: imageTour1,
   title: "Nochevieja 2024",
   subtitle:
     "Un paquete inolvidable para personas que desean recibir el año nuevo en un lugar mágico, lleno de atracciones y excursiones.",

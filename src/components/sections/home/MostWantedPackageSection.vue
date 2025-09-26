@@ -15,8 +15,8 @@
 
           <div v-for="pkg in validPackages" :key="pkg.id" class="tour-card-wrapper">
             <q-card class="package-card-themed" :class="cardThemeClass" flat bordered @click="viewPackage(pkg.id)">
-              
-              <q-img :src="getPackageImage(pkg)" :ratio="16 / 9" class="card-image">
+
+              <q-img :src="pkg.image" :ratio="16 / 9" class="card-image">
                 <div class="package-tag">{{ pkg.title }}</div>
               </q-img>
 
@@ -24,21 +24,21 @@
                 <div class="core-info-pill">
                   <div class="info-item">
                     <q-icon name="mdi-calendar-clock" />
-                    <span>{{ pkg.qtdDay }} {{t('days')}} / {{ pkg.qtdNight }} {{t('nights')}} </span>
+                    <span>{{ pkg.qtdDay }} {{ t('days') }} / {{ pkg.qtdNight }} {{ t('nights') }} </span>
                   </div>
                   <q-separator vertical spaced="sm" />
                   <div v-if="pkg.minNumberPeople" class="info-item">
                     <q-icon name="mdi-account-group" />
-                    <span>Mín. {{ pkg.minNumberPeople }} {{t("people")}}</span>
+                    <span>Mín. {{ pkg.minNumberPeople }} {{ t("people") }}</span>
                   </div>
                 </div>
 
                 <h3 class="card-title">{{ pkg.title }}</h3>
                 <p class="card-description">{{ pkg.subtitle }}</p>
-                
+
                 <div class="icon-section-wrapper">
                   <div v-if="pkg.packageCategory && pkg.packageCategory.length">
-                    <h4 class="icon-list-title"> {{t("categories")}} </h4>
+                    <h4 class="icon-list-title"> {{ t("categories") }} </h4>
                     <div class="icon-list">
                       <div v-for="category in pkg.packageCategory" :key="category.name" class="icon-list-item">
                         <q-icon :name="category.icon" />
@@ -48,14 +48,10 @@
                   </div>
                 </div>
               </q-card-section>
-              
+
               <q-card-actions class="card-actions q-my-md">
-                <q-btn 
-                  :label="t('tours_cta_button')" 
-                  class="full-width cta-button" 
-                  unelevated 
-                  icon-right="mdi-arrow-right"
-                />
+                <q-btn :label="t('tours_cta_button')" class="full-width cta-button" unelevated
+                  icon-right="mdi-arrow-right" />
               </q-card-actions>
             </q-card>
           </div>
@@ -112,14 +108,6 @@ const viewPackage = (packageId: string) => {
   void router.push({ name: 'packageDetails', params: { id: packageId, lang: route.params.lang || 'pt' } });
 };
 
-const getPackageImage = (pkg: MostWantedPackage): string => {
-  for (const item of pkg.itinerary) {
-    if (item.tours && item.tours.length > 0) {
-      return item.tours[0]?.mainImage || '';
-    }
-  }
-  return '';
-};
 
 const scrollContainer = ref<HTMLElement | null>(null);
 const isDown = ref(false);
@@ -158,19 +146,43 @@ const mouseMoveHandler = (e: MouseEvent) => {
   font-size: 2.5rem;
 }
 
-.scroll-wrapper { position: relative; padding: 0 16px; }
+.scroll-wrapper {
+  position: relative;
+  padding: 0 16px;
+}
+
 .tours-scroll-container {
   @media (min-width: 600px) {
-    overflow-x: auto; padding-bottom: 20px; cursor: grab;
-    &.active-scroll { cursor: grabbing; }
-    .row { flex-wrap: nowrap; justify-content: flex-start; padding: 0 32px; }
+    overflow-x: auto;
+    padding-bottom: 20px;
+    cursor: grab;
+
+    &.active-scroll {
+      cursor: grabbing;
+    }
+
+    .row {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      padding: 0 32px;
+    }
   }
-  @media (max-width: 599px) { .row { justify-content: center; } }
+
+  @media (max-width: 599px) {
+    .row {
+      justify-content: center;
+    }
+  }
 }
 
 .tour-card-wrapper {
-  width: 100%; max-width: 380px; padding-bottom: 10px;
-  @media (min-width: 600px) { flex: 0 0 360px; }
+  width: 100%;
+  max-width: 380px;
+  padding-bottom: 10px;
+
+  @media (min-width: 600px) {
+    flex: 0 0 360px;
+  }
 }
 
 // === DESIGN COM TEMA DINÂMICO ===
@@ -214,58 +226,93 @@ const mouseMoveHandler = (e: MouseEvent) => {
 
 .card-image {
   border-radius: 20px 20px 0 0;
+
   .package-tag {
-    position: absolute; top: 16px; left: 16px;
-    background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px);
-    color: white; padding: 6px 14px; border-radius: 20px;
-    font-size: 0.8rem; font-weight: 700;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
   }
 }
 
 .card-content-section {
-  padding: 24px; display: flex; flex-direction: column; flex-grow: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .core-info-pill {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 8px 16px; background-color: var(--card-subtle-bg);
-  border-radius: 30px; margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--card-subtle-bg);
+  border-radius: 30px;
+  margin-bottom: 20px;
   color: var(--card-text-secondary);
-  font-size: 0.85rem; font-weight: 500;
+  font-size: 0.85rem;
+  font-weight: 500;
+
   .info-item {
-    display: flex; align-items: center; gap: 8px;
-    .q-icon { color: var(--card-primary-color); font-size: 1.2rem; }
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    .q-icon {
+      color: var(--card-primary-color);
+      font-size: 1.2rem;
+    }
   }
 }
 
 .card-title {
-  font-family: 'Montserrat', sans-serif; font-weight: 700;
-  font-size: 1.6rem; line-height: 1.3;
-  margin: 0 0 8px 0; color: var(--card-text-primary);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  line-height: 1.3;
+  margin: 0 0 8px 0;
+  color: var(--card-text-primary);
 }
 
 .card-description {
-  font-family: 'Lato', sans-serif; font-size: 1rem;
-  line-height: 1.6; color: var(--card-text-secondary);
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--card-text-secondary);
   margin-bottom: 24px;
 }
 
 .icon-section-wrapper {
-  margin-top: auto; padding-top: 16px;
+  margin-top: auto;
+  padding-top: 16px;
   border-top: 1px solid var(--card-border-color);
 }
 
 .icon-list-title {
-  font-size: 0.8rem; font-weight: 600; text-transform: uppercase;
-  color: var(--card-text-secondary); opacity: 0.7;
-  letter-spacing: 0.5px; margin: 0 0 12px 0;
-  &:not(:first-child) { margin-top: 16px; }
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--card-text-secondary);
+  opacity: 0.7;
+  letter-spacing: 0.5px;
+  margin: 0 0 12px 0;
+
+  &:not(:first-child) {
+    margin-top: 16px;
+  }
 }
 
 // === ALTERAÇÃO AQUI ===
-.icon-list { 
-  display: flex; 
-  flex-wrap: wrap; 
+.icon-list {
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px 10px; // Reduz o espaçamento entre os badges
 }
 
@@ -277,25 +324,30 @@ const mouseMoveHandler = (e: MouseEvent) => {
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--card-text-secondary);
-  
+
   // Estilos do badge
   background-color: var(--card-subtle-bg);
   padding: 6px 12px;
   border-radius: 20px; // Deixa o badge em formato de pílula
 
-  .q-icon { 
-    color: var(--card-primary-color); 
-    font-size: 1.2rem; 
+  .q-icon {
+    color: var(--card-primary-color);
+    font-size: 1.2rem;
   }
 }
 
 .card-actions {
-  padding: 24px; padding-top: 0;
+  padding: 24px;
+  padding-top: 0;
+
   .cta-button {
     background: var(--card-primary-color) !important;
     color: var(--card-bg-color) !important; // Cor do texto inverte para contraste
-    border-radius: 14px; font-weight: 600; padding: 14px;
-    font-size: 1rem; text-transform: none;
+    border-radius: 14px;
+    font-weight: 600;
+    padding: 14px;
+    font-size: 1rem;
+    text-transform: none;
   }
 }
 </style>
