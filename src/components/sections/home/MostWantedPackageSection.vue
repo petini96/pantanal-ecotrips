@@ -11,7 +11,8 @@
     <div v-else class="scroll-wrapper">
       <div ref="scrollContainer" class="tours-scroll-container" @mousedown="mouseDownHandler"
         @mouseleave="mouseLeaveHandler" @mouseup="mouseUpHandler" @mousemove="mouseMoveHandler">
-        <div class="row no-wrap items-stretch q-gutter-lg">
+        
+        <div class="row items-stretch q-gutter-lg" :class="{ 'no-wrap': $q.screen.gt.xs }">
 
           <div v-for="pkg in validPackages" :key="pkg.id" class="tour-card-wrapper">
             <q-card class="package-card" flat bordered @click="viewPackage(pkg.id)">
@@ -69,8 +70,8 @@ import { onMounted, ref, watch, computed } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
-// ALTERAÇÃO: Removida a importação da store de layout, pois não é mais necessária para o tema do card
-// import { useLayoutConfigStore } from 'src/stores/layout-config-store';
+// ALTERAÇÃO: Importado o useQuasar para acessar informações da tela
+import { useQuasar } from 'quasar';
 import { useMostWantedPackageStore } from 'src/stores/useMostWantedPackageStore';
 import { type MostWantedPackage } from 'src/model/MostWantedPackage';
 import HeroBanner from 'src/components/banner/HeroBanner.vue';
@@ -78,11 +79,8 @@ import HeroBanner from 'src/components/banner/HeroBanner.vue';
 const router = useRouter();
 const route = useRoute();
 const { t, locale } = useI18n();
-
-// ALTERAÇÃO: Removido todo o bloco de código relacionado ao tema dinâmico
-// const layoutConfigStore = useLayoutConfigStore();
-// const { theme: currentTheme } = storeToRefs(layoutConfigStore);
-// const cardThemeClass = computed(() => `theme-${currentTheme.value}`);
+// ALTERAÇÃO: Instanciado o Quasar
+const $q = useQuasar();
 
 const packageStore = useMostWantedPackageStore();
 const { allMostWantedPackage: packages, loading } = storeToRefs(packageStore);
@@ -117,24 +115,24 @@ const startX = ref(0);
 const scrollLeft = ref(0);
 
 const mouseDownHandler = (e: MouseEvent) => {
-  if (!scrollContainer.value) return;
+  if (!$q.screen.gt.xs || !scrollContainer.value) return; // Só ativa o drag em telas maiores
   isDown.value = true;
   scrollContainer.value.classList.add('active-scroll');
   startX.value = e.pageX - scrollContainer.value.offsetLeft;
   scrollLeft.value = scrollContainer.value.scrollLeft;
 };
 const mouseLeaveHandler = () => {
-  if (!scrollContainer.value) return;
+  if (!$q.screen.gt.xs || !scrollContainer.value) return;
   isDown.value = false;
   scrollContainer.value.classList.remove('active-scroll');
 };
 const mouseUpHandler = () => {
-  if (!scrollContainer.value) return;
+  if (!$q.screen.gt.xs || !scrollContainer.value) return;
   isDown.value = false;
   scrollContainer.value.classList.remove('active-scroll');
 };
 const mouseMoveHandler = (e: MouseEvent) => {
-  if (!isDown.value || !scrollContainer.value) return;
+  if (!isDown.value || !$q.screen.gt.xs || !scrollContainer.value) return;
   e.preventDefault();
   const x = e.pageX - scrollContainer.value.offsetLeft;
   const walk = (x - startX.value) * 2;
@@ -145,16 +143,30 @@ const mouseMoveHandler = (e: MouseEvent) => {
 <style scoped lang="scss">
 .section-title {
   font-weight: 800;
-  font-size: 2.5rem;
+  /* Tamanho base para mobile */
+  font-size: 2rem; 
+
+  /* Aumenta o título em telas maiores */
+  @media (min-width: $breakpoint-sm-min) {
+    font-size: 2.5rem;
+  }
 }
 
 .scroll-wrapper {
   position: relative;
+  /* Padding lateral para não colar nas bordas em mobile */
   padding: 0 16px;
 }
 
 .tours-scroll-container {
-  @media (min-width: 600px) {
+  /* Estilos base para mobile: o conteúdo flui normalmente */
+  .row {
+    /* Em mobile, os itens quebram linha e são centralizados */
+    justify-content: center;
+  }
+
+  /* Estilos para telas maiores (tablet e desktop) */
+  @media (min-width: $breakpoint-sm-min) {
     overflow-x: auto;
     padding-bottom: 20px;
     cursor: grab;
@@ -162,44 +174,42 @@ const mouseMoveHandler = (e: MouseEvent) => {
     &.active-scroll {
       cursor: grabbing;
     }
-
+    
     .row {
-      flex-wrap: nowrap;
-      justify-content: flex-start;
+      /* Em telas grandes, o 'no-wrap' da classe dinâmica entra em ação */
+      /* O padding interno evita que os cards colados nas bordas do container de scroll */
       padding: 0 32px;
-    }
-  }
-
-  @media (max-width: 599px) {
-    .row {
-      justify-content: center;
+      /* O justify-content é resetado para o início */
+      justify-content: flex-start;
     }
   }
 }
 
 .tour-card-wrapper {
+  /* Em mobile, o card ocupa 100% da largura, com um máximo */
   width: 100%;
   max-width: 380px;
   padding-bottom: 10px;
 
-  @media (min-width: 600px) {
+  /* Em telas maiores, o card tem uma largura fixa para o scroll horizontal */
+  @media (min-width: $breakpoint-sm-min) {
+    width: 360px;
+    /* flex-basis: 360px com flex-grow: 0 e flex-shrink: 0 */
     flex: 0 0 360px;
   }
 }
 
-/* === ALTERAÇÃO: TEMA FIXO (CLARO) === */
+/* === ESTILOS DO CARD (TEMA FIXO) - NENHUMA ALTERAÇÃO NECESSÁRIA AQUI === */
 .package-card {
-  /* Definição das cores do tema claro e suave */
   --card-bg-color: #ffffff;
   --card-border-color: #eef2f1;
-  --card-primary-color: #4DB6AC; /* Verde mais suave, como na imagem de referência */
-  --card-text-primary: #1a2e29;  /* Texto principal escuro para legibilidade */
-  --card-text-secondary: #6c7a77; /* Texto secundário um pouco mais claro */
-  --card-subtle-bg: #f5f8f7;      /* Fundo sutil para pílulas e badges */
-  --card-shadow: 0 4px_15px rgba(77, 182, 172, 0.1); /* Sombra suave com a cor primária */
-  --card-hover-shadow: 0 8px 30px rgba(77, 182, 172, 0.18); /* Sombra mais forte no hover */
+  --card-primary-color: #4DB6AC; 
+  --card-text-primary: #1a2e29;
+  --card-text-secondary: #6c7a77;
+  --card-subtle-bg: #f5f8f7;
+  --card-shadow: 0 4px 15px rgba(77, 182, 172, 0.1);
+  --card-hover-shadow: 0 8px 30px rgba(77, 182, 172, 0.18);
 
-  /* Estilos do card usando as variáveis */
   background-color: var(--card-bg-color);
   border: 1px solid var(--card-border-color);
   border-radius: 20px;
@@ -308,7 +318,7 @@ const mouseMoveHandler = (e: MouseEvent) => {
 
   .cta-button {
     background: var(--card-primary-color) !important;
-    color: #ffffff !important; /* Cor do texto fixa em branco para melhor contraste */
+    color: #ffffff !important;
     border-radius: 14px;
     font-weight: 600;
     padding: 14px;
