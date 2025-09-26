@@ -14,7 +14,7 @@
         <div class="row no-wrap items-stretch q-gutter-lg">
 
           <div v-for="pkg in validPackages" :key="pkg.id" class="tour-card-wrapper">
-            <q-card class="package-card-themed" :class="cardThemeClass" flat bordered @click="viewPackage(pkg.id)">
+            <q-card class="package-card" flat bordered @click="viewPackage(pkg.id)">
 
               <HeroBanner
                 :image-src="pkg.image"
@@ -65,12 +65,12 @@
 </template>
 
 <script setup lang="ts">
-
 import { onMounted, ref, watch, computed } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
-import { useLayoutConfigStore } from 'src/stores/layout-config-store';
+// ALTERAÇÃO: Removida a importação da store de layout, pois não é mais necessária para o tema do card
+// import { useLayoutConfigStore } from 'src/stores/layout-config-store';
 import { useMostWantedPackageStore } from 'src/stores/useMostWantedPackageStore';
 import { type MostWantedPackage } from 'src/model/MostWantedPackage';
 import HeroBanner from 'src/components/banner/HeroBanner.vue';
@@ -79,11 +79,10 @@ const router = useRouter();
 const route = useRoute();
 const { t, locale } = useI18n();
 
-const layoutConfigStore = useLayoutConfigStore();
-const { theme: currentTheme } = storeToRefs(layoutConfigStore);
-
-// Propriedade computada que gera a classe do tema dinamicamente
-const cardThemeClass = computed(() => `theme-${currentTheme.value}`);
+// ALTERAÇÃO: Removido todo o bloco de código relacionado ao tema dinâmico
+// const layoutConfigStore = useLayoutConfigStore();
+// const { theme: currentTheme } = storeToRefs(layoutConfigStore);
+// const cardThemeClass = computed(() => `theme-${currentTheme.value}`);
 
 const packageStore = useMostWantedPackageStore();
 const { allMostWantedPackage: packages, loading } = storeToRefs(packageStore);
@@ -111,7 +110,7 @@ const viewPackage = (packageId: string) => {
   void router.push({ name: 'packageDetails', params: { id: packageId, lang: route.params.lang || 'pt' } });
 };
 
-
+// Lógica de scroll permanece a mesma
 const scrollContainer = ref<HTMLElement | null>(null);
 const isDown = ref(false);
 const startX = ref(0);
@@ -188,30 +187,19 @@ const mouseMoveHandler = (e: MouseEvent) => {
   }
 }
 
-// === DESIGN COM TEMA DINÂMICO ===
-.package-card-themed {
-  // --- Tema Padrão (Branco/Claro) ---
+/* === ALTERAÇÃO: TEMA FIXO (CLARO) === */
+.package-card {
+  /* Definição das cores do tema claro e suave */
   --card-bg-color: #ffffff;
   --card-border-color: #eef2f1;
-  --card-primary-color: #319782;
-  --card-text-primary: #1a2e29;
-  --card-text-secondary: #5c6c68;
-  --card-subtle-bg: #f5f8f7;
-  --card-shadow: 0 4px 15px rgba(49, 151, 130, 0.08);
-  --card-hover-shadow: 0 8px 30px rgba(49, 151, 130, 0.15);
+  --card-primary-color: #4DB6AC; /* Verde mais suave, como na imagem de referência */
+  --card-text-primary: #1a2e29;  /* Texto principal escuro para legibilidade */
+  --card-text-secondary: #6c7a77; /* Texto secundário um pouco mais claro */
+  --card-subtle-bg: #f5f8f7;      /* Fundo sutil para pílulas e badges */
+  --card-shadow: 0 4px_15px rgba(77, 182, 172, 0.1); /* Sombra suave com a cor primária */
+  --card-hover-shadow: 0 8px 30px rgba(77, 182, 172, 0.18); /* Sombra mais forte no hover */
 
-  // --- Sobrescrita para o tema 'pantanal_verde' ---
-  &.theme-pantanal_verde {
-    --card-bg-color: #1a2e29;
-    --card-border-color: #2a413a;
-    --card-primary-color: #4db6ac; // Verde mais claro para contraste
-    --card-text-primary: #f5f5f5;
-    --card-text-secondary: #a0b5af;
-    --card-subtle-bg: #223a33;
-    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    --card-hover-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
-  }
-
+  /* Estilos do card usando as variáveis */
   background-color: var(--card-bg-color);
   border: 1px solid var(--card-border-color);
   border-radius: 20px;
@@ -224,23 +212,6 @@ const mouseMoveHandler = (e: MouseEvent) => {
   &:hover {
     transform: translateY(-8px);
     box-shadow: var(--card-hover-shadow);
-  }
-}
-
-.card-image {
-  border-radius: 20px 20px 0 0;
-
-  .package-tag {
-    position: absolute;
-    top: 16px;
-    left: 16px;
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-    color: white;
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
   }
 }
 
@@ -306,20 +277,14 @@ const mouseMoveHandler = (e: MouseEvent) => {
   opacity: 0.7;
   letter-spacing: 0.5px;
   margin: 0 0 12px 0;
-
-  &:not(:first-child) {
-    margin-top: 16px;
-  }
 }
 
-// === ALTERAÇÃO AQUI ===
 .icon-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 10px; // Reduz o espaçamento entre os badges
+  gap: 8px 10px;
 }
 
-// === ALTERAÇÃO AQUI ===
 .icon-list-item {
   display: flex;
   align-items: center;
@@ -327,11 +292,9 @@ const mouseMoveHandler = (e: MouseEvent) => {
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--card-text-secondary);
-
-  // Estilos do badge
   background-color: var(--card-subtle-bg);
   padding: 6px 12px;
-  border-radius: 20px; // Deixa o badge em formato de pílula
+  border-radius: 20px;
 
   .q-icon {
     color: var(--card-primary-color);
@@ -345,7 +308,7 @@ const mouseMoveHandler = (e: MouseEvent) => {
 
   .cta-button {
     background: var(--card-primary-color) !important;
-    color: var(--card-bg-color) !important; // Cor do texto inverte para contraste
+    color: #ffffff !important; /* Cor do texto fixa em branco para melhor contraste */
     border-radius: 14px;
     font-weight: 600;
     padding: 14px;
