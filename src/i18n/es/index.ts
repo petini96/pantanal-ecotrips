@@ -50,4 +50,9 @@ export default {
   tour_details_packing_title: 'Qué Llevar',
   tour_details_packing_desc: 'Ropa ligera y de secado rápido; pantalones y mangas largas para la noche y protección contra el sol/insectos; una chaqueta para las noches más frías; chubasquero (según la temporada); traje de baño; zapatos de senderismo/sandalias cómodas que puedan mojarse y ensuciarse. Repelente de insectos fuerte, protector solar de alto FPS, sombrero, gafas de sol, binoculares (esenciales para observar la vida silvestre), linterna, cámara con lente de zoom, bolsa impermeable para aparatos electrónicos.',
   tour_details_cta_button: '¡Reserva Este Tour Ahora!',
+  most_wanted_packages_title: 'Paquetes más populares',
+  days: 'Días',
+  nights: 'Noches',
+  categories: 'Categorías',
+  people: 'personas'
 };

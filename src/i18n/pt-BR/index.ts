@@ -50,4 +50,9 @@ export default {
   tour_details_packing_title: 'O Que Levar',
   tour_details_packing_desc: 'Roupas leves e de secagem rápida; calças e mangas compridas para a noite e proteção contra sol/insetos; um agasalho para noites mais frias; capa de chuva (sazonal); roupa de banho; sapatos de caminhada/sandálias confortáveis que possam molhar e sujar. Repelente de insetos forte, protetor solar com FPS alto, chapéu, óculos de sol, binóculos (essencial para observação da vida selvagem), lanterna, câmera com lente de zoom, bolsa impermeável para eletrônicos.',
   tour_details_cta_button: 'Reserve Este Passeio Agora!',
+  most_wanted_packages_title: 'Pacotes mais procurados',
+  days: 'Dias',
+  nights: 'Noites',
+  categories: 'Categorias',
+  people: 'pessoas'
 };

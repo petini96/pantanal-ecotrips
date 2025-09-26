@@ -50,4 +50,9 @@ export default {
   tour_details_packing_title: 'What to Bring',
   tour_details_packing_desc: 'Lightweight, quick-drying clothes; long pants and sleeves for the evening and protection from sun/insects; a jacket for cooler nights; rain jacket (seasonal); swimwear; comfortable hiking shoes/sandals that can get wet and dirty. Strong insect repellent, high-SPF sunscreen, hat, sunglasses, binoculars (essential for wildlife viewing), flashlight, camera with zoom lens, waterproof bag for electronics.',
   tour_details_cta_button: 'Book This Tour Now!',
+  most_wanted_packages_title: 'Most popular packages',
+  days: 'Days',
+  nights: 'Nights',
+  categories: 'Categories',
+  people: 'people'
 };

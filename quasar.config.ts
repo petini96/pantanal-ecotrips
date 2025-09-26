@@ -2,6 +2,7 @@
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file
 
 import { defineConfig } from '#q-app/wrappers';
+import { themeVariables } from 'src/utils/theme-utils';
 
 export default defineConfig((ctx) => {
   return {
@@ -133,7 +134,6 @@ export default defineConfig((ctx) => {
       middlewares: [
         'render' // keep this as last one
       ],
-
       // extendPackageJson (json) {},
       // extendSSRWebserverConf (esbuildConf) {},
 
