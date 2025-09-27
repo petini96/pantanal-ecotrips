@@ -3,25 +3,33 @@ import { ref, computed } from 'vue';
 import { type TourPackage } from 'src/model/TourPackage';
 
 // --- Importe todos os seus pacotes aqui ---
-import { aventuraBonitoEn, aventuraBonitoEs, aventuraBonitoPt } from 'src/data/packages/AventuraBonito/PackageData';
 import { reveillonBonitoEn, reveillonBonitoEs, reveillonBonitoPt } from 'src/data/packages/ReveillonBonito/PackageData';
+import { noiteFelizEn, noiteFelizEs, noiteFelizPt } from 'src/data/packages/NoiteFeliz/PackageData';
+import { familiaFelizEn, familiaFelizEs, familiaFelizPt } from 'src/data/packages/FamiliaFeliz/PackageData';
+import { bonitoAmizadeEn, bonitoAmizadeEs, bonitoAmizadePt } from 'src/data/packages/BonitoAmizade/PackageData'; // <-- ADICIONADO
 
+// --- Monte os dicionários de pacotes por idioma ---
 
 const packagesPt: Record<string, TourPackage> = {
-  aventuraBonito: aventuraBonitoPt,
-  reveillonBonito: reveillonBonitoPt, // <-- ADICIONADO
+  reveillonBonito: reveillonBonitoPt,
+  noiteFeliz: noiteFelizPt,
+  familiaFeliz: familiaFelizPt,
+  bonitoAmizade: bonitoAmizadePt, // <-- ADICIONADO
 };
 
 const packagesEn: Record<string, TourPackage> = {
-  aventuraBonito: aventuraBonitoEn,
-  reveillonBonito: reveillonBonitoEn, // <-- ADICIONADO
+  reveillonBonito: reveillonBonitoEn,
+  noiteFeliz: noiteFelizEn,
+  familiaFeliz: familiaFelizEn,
+  bonitoAmizade: bonitoAmizadeEn, // <-- ADICIONADO
 };
 
 const packagesEs: Record<string, TourPackage> = {
-  aventuraBonito: aventuraBonitoEs,
-  reveillonBonito: reveillonBonitoEs, // <-- ADICIONADO
+  reveillonBonito: reveillonBonitoEs,
+  noiteFeliz: noiteFelizEs,
+  familiaFeliz: familiaFelizEs,
+  bonitoAmizade: bonitoAmizadeEs, // <-- ADICIONADO
 };
-
 
 export const useTourPackageStore = defineStore('tourPackage', () => {
   const packages = ref<Record<string, TourPackage>>({});
