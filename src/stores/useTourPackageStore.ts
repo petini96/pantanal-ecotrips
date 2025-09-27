@@ -6,29 +6,28 @@ import { type TourPackage } from 'src/model/TourPackage';
 import { reveillonBonitoEn, reveillonBonitoEs, reveillonBonitoPt } from 'src/data/packages/ReveillonBonito/PackageData';
 import { noiteFelizEn, noiteFelizEs, noiteFelizPt } from 'src/data/packages/NoiteFeliz/PackageData';
 import { familiaFelizEn, familiaFelizEs, familiaFelizPt } from 'src/data/packages/FamiliaFeliz/PackageData';
-import { bonitoAmizadeEn, bonitoAmizadeEs, bonitoAmizadePt } from 'src/data/packages/BonitoAmizade/PackageData'; // <-- ADICIONADO
+import { bonitoAmizadeEn, bonitoAmizadeEs, bonitoAmizadePt } from 'src/data/packages/BonitoAmizade/PackageData';
 
 // --- Monte os dicionários de pacotes por idioma ---
-
 const packagesPt: Record<string, TourPackage> = {
   reveillonBonito: reveillonBonitoPt,
   noiteFeliz: noiteFelizPt,
   familiaFeliz: familiaFelizPt,
-  bonitoAmizade: bonitoAmizadePt, // <-- ADICIONADO
+  bonitoAmizade: bonitoAmizadePt,
 };
 
 const packagesEn: Record<string, TourPackage> = {
   reveillonBonito: reveillonBonitoEn,
   noiteFeliz: noiteFelizEn,
   familiaFeliz: familiaFelizEn,
-  bonitoAmizade: bonitoAmizadeEn, // <-- ADICIONADO
+  bonitoAmizade: bonitoAmizadeEn,
 };
 
 const packagesEs: Record<string, TourPackage> = {
   reveillonBonito: reveillonBonitoEs,
   noiteFeliz: noiteFelizEs,
   familiaFeliz: familiaFelizEs,
-  bonitoAmizade: bonitoAmizadeEs, // <-- ADICIONADO
+  bonitoAmizade: bonitoAmizadeEs,
 };
 
 export const useTourPackageStore = defineStore('tourPackage', () => {
@@ -41,6 +40,7 @@ export const useTourPackageStore = defineStore('tourPackage', () => {
   }
 
   async function fetchPackages(lang = 'pt-BR') {
+    // Evita recarregar se os dados já estiverem no store
     if (Object.keys(packages.value).length > 0) return;
 
     loading.value = true;
@@ -66,19 +66,27 @@ export const useTourPackageStore = defineStore('tourPackage', () => {
     }
   }
 
-  const getPackageById = computed(() => (id: string): TourPackage | null => {
-    return packages.value[id] || null;
+  // =======================================================
+  // == CORREÇÃO APLICADA AQUI
+  // =======================================================
+
+  // NOVO: Getter para buscar pelo slug.
+  const getPackageBySlug = computed(() => {
+    return (slug: string): TourPackage | null => {
+      // Procura no array de pacotes pelo slug correspondente.
+      return Object.values(packages.value).find(pkg => pkg.slug === slug) || null;
+    };
   });
 
   const allPackages = computed((): TourPackage[] => Object.values(packages.value));
 
-  return { 
-    loading, 
-    error, 
+  return {
+    loading,
+    error,
     packages,
-    getPackageById, 
-    allPackages, 
-    fetchPackages, 
-    clearPackages 
+    getPackageBySlug, // <-- Exportando o getter correto
+    allPackages,
+    fetchPackages,
+    clearPackages
   };
 });

@@ -3,6 +3,7 @@ import { type TranslatableTag } from './Tags';
 
 export interface TourPackage {
   id: string;
+  slug: string;
   image: string;
   title: string;
   subtitle: string;

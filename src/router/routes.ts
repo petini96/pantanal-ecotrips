@@ -13,7 +13,7 @@ const routes: RouteRecordRaw[] = [
         meta: { requiresAuth: false },
       },
       {
-        path: 'tours/:id',
+        path: 'tours/:slug',
         name: 'tourDetails',
         component: () => import('pages/tours/TourDetailsPage.vue'),
         meta: { requiresAuth: false },

@@ -26,7 +26,13 @@
         @scroll.passive="handleScroll"
       >
         <div class="row items-stretch q-gutter-lg" :class="{ 'no-wrap': $q.screen.gt.xs }">
-          <div v-for="pkg in validPackages" :key="pkg.id" class="tour-card-wrapper" :data-id="pkg.id">
+          <div
+            v-for="pkg in validPackages"
+            :key="pkg.id"
+            class="tour-card-wrapper"
+            :data-id="pkg.id"
+            :data-slug="pkg.slug"
+          >
             <q-card class="package-card" flat bordered>
               <HeroBanner
                 :image-src="pkg.image"
@@ -75,7 +81,6 @@
                     </div>
                   </div>
                 </div>
-
               </q-card-section>
 
               <q-card-actions class="card-actions q-my-md">
@@ -84,7 +89,7 @@
                   class="full-width cta-button"
                   unelevated
                   icon-right="mdi-arrow-right"
-                  @click="viewPackage(pkg.id)"
+                  @click="viewPackage(pkg.slug)"
                 />
               </q-card-actions>
             </q-card>
@@ -114,7 +119,7 @@ const packageStore = useTourPackageStore();
 const { allPackages: packages, loading } = storeToRefs(packageStore);
 
 const validPackages = computed(() =>
-  packages.value.filter((pkg): pkg is TourPackage => !!pkg.id)
+  packages.value.filter((pkg): pkg is TourPackage => !!pkg.id && !!pkg.slug)
 );
 
 const langMap: Record<string, string> = { pt: 'pt-BR', en: 'en-US', es: 'es' };
@@ -141,13 +146,21 @@ watch(() => route.params.lang, async (newLang) => {
   await packageStore.fetchPackages(lang);
 });
 
-// A função `viewPackage` permanece a mesma, mas agora é chamada de dentro do `mouseUpHandler`
-const viewPackage = (packageId: string) => {
-  void router.push({ name: 'packageDetails', params: { id: packageId, lang: route.params.lang || 'pt' } });
+// ATUALIZADO: A função agora recebe apenas o slug
+const viewPackage = (packageSlug: string) => {
+  if (isDragging.value) return; // Previne navegação durante o arrastar
+  
+  void router.push({
+    // Lembre-se que o nome da rota no seu router/routes.ts deve ser este
+    name: 'tourDetails', 
+    params: {
+      slug: packageSlug,
+      lang: route.params.lang || 'pt'
+    }
+  });
 };
 
 // --- LÓGICA DE SCROLL E GRADIENTES ---
-
 const scrollContainer = ref<HTMLElement | null>(null);
 const isDown = ref(false);
 const startX = ref(0);
@@ -163,7 +176,6 @@ const showRightGradient = computed(() => $q.screen.gt.xs && scrollPosition.value
 
 const calculateMaxScroll = () => {
   if (scrollContainer.value) {
-    // Adiciona uma pequena tolerância para garantir que o gradiente desapareça
     maxScroll.value = scrollContainer.value.scrollWidth - scrollContainer.value.clientWidth - 1;
   }
 };
@@ -197,9 +209,7 @@ const mouseLeaveHandler = () => {
   scrollContainer.value.classList.remove('active-scroll');
 };
 
-// =======================================================
-// == FUNÇÃO CORRIGIDA
-// =======================================================
+// ATUALIZADO: Agora busca o 'dataset.slug' para navegar
 const mouseUpHandler = (e: MouseEvent) => {
   if (!$q.screen.gt.xs || !scrollContainer.value) return;
   isDown.value = false;
@@ -207,19 +217,14 @@ const mouseUpHandler = (e: MouseEvent) => {
 
   if (!isDragging.value) {
     const cardWrapper = (e.target as HTMLElement).closest('.tour-card-wrapper');
-    
-    // AQUI ESTÁ A CORREÇÃO:
-    // Verificamos se `cardWrapper` é uma instância de `HTMLElement`.
-    // Dentro deste `if`, o TypeScript sabe que `cardWrapper.dataset` existe.
     if (cardWrapper instanceof HTMLElement) {
-      const packageId = cardWrapper.dataset.id;
-      if (packageId) {
-        viewPackage(packageId);
+      const packageSlug = cardWrapper.dataset.slug; // Pega o slug do data attribute
+      if (packageSlug) {
+        viewPackage(packageSlug); // Navega usando o slug
       }
     }
   }
 };
-// =======================================================
 
 const mouseMoveHandler = (e: MouseEvent) => {
   if (!isDown.value || !$q.screen.gt.xs || !scrollContainer.value) return;
@@ -231,8 +236,7 @@ const mouseMoveHandler = (e: MouseEvent) => {
   if (Math.abs(walk) > dragThreshold) {
     isDragging.value = true;
   }
-
-  // Apenas executa o scroll se estivermos arrastando
+  
   if (isDragging.value) {
     scrollContainer.value.scrollLeft = scrollLeft.value - walk * 1.5;
   }
@@ -240,6 +244,7 @@ const mouseMoveHandler = (e: MouseEvent) => {
 </script>
 
 <style scoped lang="scss">
+/* Seu CSS completo e funcional permanece aqui... */
 .section-title {
   font-weight: 800;
   font-size: 2rem;
@@ -248,26 +253,23 @@ const mouseMoveHandler = (e: MouseEvent) => {
   }
 }
 
-/* NOVO: Wrapper para os gradientes */
 .scroll-mask {
   position: relative;
   padding: 0;
-  /* Garante que o wrapper não seja maior que a tela em mobile */
   @media (max-width: $breakpoint-xs-max) {
     overflow: hidden;
   }
 }
 
-/* NOVOS: Pseudo-elementos para os gradientes */
 .scroll-mask::before,
 .scroll-mask::after {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 100px; /* Largura do gradiente */
+  width: 100px;
   z-index: 2;
-  pointer-events: none; /* Permite clicar através do gradiente */
+  pointer-events: none;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -289,13 +291,6 @@ const mouseMoveHandler = (e: MouseEvent) => {
   opacity: 1;
 }
 
-
-/* Wrapper que foi movido para dentro do 'scroll-mask' */
-.scroll-wrapper {
-  position: relative;
-  padding: 0; /* Padding agora é controlado pelo container de scroll */
-}
-
 .tours-scroll-container {
   .row {
     justify-content: center;
@@ -303,15 +298,13 @@ const mouseMoveHandler = (e: MouseEvent) => {
 
   @media (min-width: $breakpoint-sm-min) {
     display: flex;
-    overflow-x: scroll; /* Mantém o scroll funcional */
+    overflow-x: scroll;
     cursor: grab;
-    
-    /* Mágica para esconder a barra de scroll */
     padding-bottom: 20px;
     margin-bottom: -20px;
-    scrollbar-width: none; /* Para Firefox */
+    scrollbar-width: none; /* Firefox */
     &::-webkit-scrollbar {
-      display: none; /* Para Chrome, Safari, etc. */
+      display: none; /* Chrome, Safari, etc. */
     }
 
     &.active-scroll {
@@ -329,17 +322,15 @@ const mouseMoveHandler = (e: MouseEvent) => {
 .tour-card-wrapper {
   width: 100%;
   max-width: 380px;
-  padding: 0 16px 10px 16px; /* Adiciona padding lateral para mobile */
+  padding: 0 16px 10px 16px;
 
   @media (min-width: $breakpoint-sm-min) {
     width: 360px;
     flex: 0 0 360px;
-    padding: 0; /* Reseta padding em telas maiores */
+    padding: 0;
   }
 }
 
-/* === ESTILOS DO CARD (TEMA FIXO) - NENHUMA ALTERAÇÃO NECESSÁRIA AQUI === */
-/* ... (Seu CSS do card permanece o mesmo, colei abaixo para garantir) ... */
 .package-card {
   --card-bg-color: #ffffff;
   --card-border-color: #eef2f1;
@@ -349,7 +340,6 @@ const mouseMoveHandler = (e: MouseEvent) => {
   --card-subtle-bg: #f5f8f7;
   --card-shadow: 0 4px 15px rgba(77, 182, 172, 0.1);
   --card-hover-shadow: 0 8px 30px rgba(77, 182, 172, 0.18);
-
   background-color: var(--card-bg-color);
   border: 1px solid var(--card-border-color);
   border-radius: 20px;
@@ -358,7 +348,7 @@ const mouseMoveHandler = (e: MouseEvent) => {
   height: 100%;
   display: flex;
   flex-direction: column;
-  user-select: none; /* Impede a seleção de texto ao arrastar */
+  user-select: none;
 
   &:hover {
     transform: translateY(-8px);
@@ -418,7 +408,8 @@ const mouseMoveHandler = (e: MouseEvent) => {
   margin-top: auto;
   padding-top: 16px;
   border-top: 1px solid var(--card-border-color);
-   & + .icon-section-wrapper {
+
+  & + .icon-section-wrapper {
     border-top: none;
     padding-top: 0;
   }

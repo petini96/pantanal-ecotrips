@@ -25,6 +25,7 @@ const uuid = uid();
 // PT-BR
 export const noiteFelizPt: TourPackage = {
   id: uuid,
+  slug: 'noite-feliz-em-bonito',
   image: image,
   title: "01 Noite Feliz em Bonito",
   subtitle:
@@ -62,6 +63,7 @@ export const noiteFelizPt: TourPackage = {
 // EN-US
 export const noiteFelizEn: TourPackage = {
   id: uuid,
+  slug: 'noite-feliz-em-bonito',
   image: image,
   title: "01 Happy Night in Bonito",
   subtitle:
@@ -94,6 +96,7 @@ export const noiteFelizEn: TourPackage = {
 // ES
 export const noiteFelizEs: TourPackage = {
   id: uuid,
+  slug: 'noite-feliz-em-bonito',
   image: image,
   title: "01 Noche Feliz en Bonito",
   subtitle:

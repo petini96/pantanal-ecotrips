@@ -31,6 +31,7 @@ const uuid = uid();
 // PT-BR
 export const bonitoAmizadePt: TourPackage = {
   id: uuid,
+  slug: 'tour-bonito-amizade',
   image: image,
   title: "Tour Bonito Amizade",
   subtitle:
@@ -69,6 +70,7 @@ export const bonitoAmizadePt: TourPackage = {
 // EN-US
 export const bonitoAmizadeEn: TourPackage = {
   id: uuid,
+  slug: 'tour-bonito-amizade',
   image: image,
   title: "Bonito Friendship Tour",
   subtitle:
@@ -107,6 +109,7 @@ export const bonitoAmizadeEn: TourPackage = {
 // ES
 export const bonitoAmizadeEs: TourPackage = {
   id: uuid,
+  slug: 'tour-bonito-amizade',
   image: image,
   title: "Tour Bonito Amistad",
   subtitle:

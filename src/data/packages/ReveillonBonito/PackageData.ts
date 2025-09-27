@@ -31,6 +31,7 @@ const uuid = uid();
 // PT-BR
 export const reveillonBonitoPt: TourPackage = {
   id: uuid,
+  slug: 'reveillon-em-bonito-2024',
   image: image,
   title: "Réveillon em Bonito 2024",
   subtitle:
@@ -69,6 +70,7 @@ export const reveillonBonitoPt: TourPackage = {
 // EN-US
 export const reveillonBonitoEn: TourPackage = {
   id: uuid,
+  slug: 'reveillon-em-bonito-2024',
   image: image,
   title: "New Year's Eve in Bonito 2024",
   subtitle:
@@ -107,6 +109,7 @@ export const reveillonBonitoEn: TourPackage = {
 // ES
 export const reveillonBonitoEs: TourPackage = {
   id: uuid,
+  slug: 'reveillon-em-bonito-2024',
   image: image,
   title: "Nochevieja en Bonito 2024",
   subtitle:

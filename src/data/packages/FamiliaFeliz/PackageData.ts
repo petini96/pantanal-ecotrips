@@ -25,6 +25,7 @@ const uuid = uid();
 // PT-BR
 export const familiaFelizPt: TourPackage = {
   id: uuid,
+  slug: 'tour-familia-feliz',
   image: image,
   title: "Tour Família Feliz",
   subtitle:
@@ -63,6 +64,7 @@ export const familiaFelizPt: TourPackage = {
 // EN-US
 export const familiaFelizEn: TourPackage = {
   id: uuid,
+  slug: 'tour-familia-feliz',
   image: image,
   title: "Happy Family Tour",
   subtitle:
@@ -101,6 +103,7 @@ export const familiaFelizEn: TourPackage = {
 // ES
 export const familiaFelizEs: TourPackage = {
   id: uuid,
+  slug: 'tour-familia-feliz',
   image: image,
   title: "Tour Familia Feliz",
   subtitle:
