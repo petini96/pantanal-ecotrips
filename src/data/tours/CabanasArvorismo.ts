@@ -1,9 +1,9 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
-import { adventureEn, adventureEs, adventurePt } from 'src/data/categories/Adventure'; // <-- LINHA CORRIGIDA
 import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families';
 import { groupsEn, groupsEs, groupsPt } from 'src/data/audiences/Groups';
 import image from 'src/assets/images/tours/cabanas-arvorismo.png';
+import { adventurePt, adventureEn, adventureEs } from '../categories/Adventure';
 
 export const cabanasArvorismoPt: Tour = {
   id: 'TOUR-CA-01',
