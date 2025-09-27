@@ -1,16 +1,5 @@
-import { type PackageCategory } from "src/model/PackageCategory";
+import { type TranslatableTag } from 'src/model/Tags';
 
-export const adventurePt = {
-    name: "Aventura",
-    icon: "mdi-hiking"
-} as PackageCategory;
-
-export const adventureEn = {
-    name: "Adventure",
-    icon: "mdi-hiking"
-} as PackageCategory;
-
-export const adventureEs = {
-    name: "Aventura",
-    icon: "mdi-hiking"
-} as PackageCategory;
+export const adventurePt: TranslatableTag = { id: 'adventure', name: 'Aventura', icon: 'mdi-compass-rose' };
+export const adventureEn: TranslatableTag = { id: 'adventure', name: 'Adventure', icon: 'mdi-compass-rose' };
+export const adventureEs: TranslatableTag = { id: 'adventure', name: 'Aventura', icon: 'mdi-compass-rose' };

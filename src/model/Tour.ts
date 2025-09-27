@@ -1,17 +1,17 @@
-import { type Duration } from "./Duration";
-import { type TourCategory } from "./TourCategory";
+import { type DifficultyLevel, type EnvironmentType } from './Enums';
+import { type TranslatableTag } from './Tags';
 
 export interface Tour {
-  id?: string
-  name: string
-  description?: string
-  rules?: string[]
-  duration: Duration
-  distance?: string
-  keywords: string[]
-  included?: string[]
-  notIncluded?: string[]
-  minAgeYears?: number
-  mainImage: string
-  category?: TourCategory
+  id: string;
+  name: string;
+  description: string;
+  mainImage: string;
+  durationInHours: number;
+  distanceFromCity?: string;
+  difficulty: DifficultyLevel;
+  environments: EnvironmentType[];
+  includedItems: string[];
+  keywords: string[];
+  categories: TranslatableTag[];
+  recommendedFor: TranslatableTag[];
 }

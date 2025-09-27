@@ -1,16 +1,5 @@
-import { type PackageCategory } from "src/model/PackageCategory";
+import { type TranslatableTag } from 'src/model/Tags';
 
-export const ecotourismPt = {
-    name: "Ecoturismo",
-    icon: "mdi-sprout"
-} as PackageCategory;
-
-export const ecotourismEn = {
-    name: "Ecotourism",
-    icon: "mdi-sprout"
-} as PackageCategory;
-
-export const ecotourismEs = {
-    name: "Ecoturismo",
-    icon: "mdi-sprout"
-} as PackageCategory;
+export const ecotourismPt: TranslatableTag = { id: 'ecotourism', name: 'Ecoturismo', icon: 'mdi-leaf' };
+export const ecotourismEn: TranslatableTag = { id: 'ecotourism', name: 'Ecotourism', icon: 'mdi-leaf' };
+export const ecotourismEs: TranslatableTag = { id: 'ecotourism', name: 'Ecoturismo', icon: 'mdi-leaf' };

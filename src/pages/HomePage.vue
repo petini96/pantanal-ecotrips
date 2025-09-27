@@ -10,7 +10,7 @@
     />
 
     <!-- Listagem de todos os tours -->
-    <MostWantedPackageSection />
+    <TourPackageSection />
 
     <!-- Porque nos escolher -->
     <WhyUsSection />
@@ -39,7 +39,7 @@ import { storeToRefs } from 'pinia';
 import { useLayoutConfigStore } from 'src/stores/layout-config-store';
 import SimpleBanner from 'src/components/banner/SimpleBanner.vue';
 import SimpleBannerBackground from 'src/assets/images/boca_onca_remake.jpg'
-import MostWantedPackageSection from 'src/components/sections/home/MostWantedPackageSection.vue';
+import TourPackageSection from 'src/components/sections/home/TourPackageSection.vue';
 import WhyUsSection from 'src/components/sections/home/WhyUsSection.vue';
 import NewsLetterSection from 'src/components/sections/home/NewsLetterSection.vue';
 import AboutUsSection from 'src/components/sections/home/AboutUsSection.vue';

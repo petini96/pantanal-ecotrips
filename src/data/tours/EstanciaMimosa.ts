@@ -1,92 +1,52 @@
-import { type Duration } from "src/model/Duration";
-import { type Tour } from "src/model/Tour";
+import { type Tour } from 'src/model/Tour';
+import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
+import { ecotourismEn, ecotourismEs, ecotourismPt } from 'src/data/categories/Ecotourism';
+import { aquaticEn, aquaticEs, aquaticPt } from 'src/data/categories/Aquatic';
+import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families';
+import { couplesEn, couplesEs, couplesPt } from 'src/data/audiences/Couples';
+import image from 'src/assets/images/tours/estancia-mimosa.png';
 
-import imageTour1 from "src/assets/images/tours/tour_1.jpg";
+export const estanciaMimosaPt: Tour = {
+  id: 'TOUR-EM-01',
+  name: 'Estância Mimosa',
+  description: 'Trilha na mata ciliar do rio Mimoso com paradas para banho em cachoeiras, piscinas naturais, plataforma para salto e um passeio de barco a remo.',
+  mainImage: image,
+  durationInHours: 4,
+  distanceFromCity: '22,6km',
+  difficulty: DifficultyLevel.MODERATE,
+  environments: [EnvironmentType.WATERFALL, EnvironmentType.FOREST, EnvironmentType.RIVER],
+  includedItems: ['Acompanhamento de guia', 'Colete salva-vidas'],
+  keywords: ['cachoeira', 'trilha', 'banho de rio', 'barco'],
+  categories: [aquaticPt, ecotourismPt],
+  recommendedFor: [familiesPt, couplesPt],
+};
 
-export const estanciaMimosaPt = {
-  name: "ESTÂNCIA MIMOSA",
-  description: `
-        A caminhada de 2.800m na mata ciliar do rio Mimoso em meio a árvores centenárias e animais silvestres, com vista privilegiada do cerrado e morraria da região. Com paradas para banho em cachoeiras com piscinas naturais, plataforma para salto e um passeio de 500m no barco a remo.
-    `,
-  rules: ["Uso obrigatório de tênis"],
-  duration: {
-    hours: 23,
-    minutes: 59,
-  } as Duration,
-  distance: "22,6 km",
-  keywords: [
-    "árvores centenárias",
-    "animais silvestres",
-    "cerrado",
-    "morraria",
-    "cachoeiras",
-    "piscinas naturais",
-    "passeio barco a remo",
-  ],
-  minAgeYears: 3,
-  mainImage: imageTour1,
-  category: {
-    name: 'Cachoeiras',
-    icon: 'mdi-waterfall'
-  }
-} as Tour;
+export const estanciaMimosaEn: Tour = {
+  id: 'TOUR-EM-01',
+  name: 'Estância Mimosa',
+  description: 'Trail in the riparian forest of the Mimoso River with stops for swimming in waterfalls, natural pools, a diving platform, and a rowboat ride.',
+  mainImage: image,
+  durationInHours: 4,
+  distanceFromCity: '22.6km',
+  difficulty: DifficultyLevel.MODERATE,
+  environments: [EnvironmentType.WATERFALL, EnvironmentType.FOREST, EnvironmentType.RIVER],
+  includedItems: ['Guide accompaniment', 'Life vest'],
+  keywords: ['waterfall', 'trail', 'river swimming', 'boat'],
+  categories: [aquaticEn, ecotourismEn],
+  recommendedFor: [familiesEn, couplesEn],
+};
 
-// ENGLISH
-
-export const estanciaMimosaEn = {
-  name: "ESTÂNCIA MIMOSA",
-  description: `
-        A 2,800m walk through the riparian forest of the Mimoso River, amidst centenary trees and wild animals, with a privileged view of the region's cerrado (Brazilian savanna) and hills. With stops for swimming in waterfalls with natural pools, a jumping platform, and a 500m rowboat ride.
-    `,
-  rules: ["Mandatory use of sneakers"],
-  duration: {
-    hours: 23,
-    minutes: 59,
-  } as Duration,
-  distance: "22.6 km",
-  keywords: [
-    "centenary trees",
-    "wild animals",
-    "cerrado",
-    "hills",
-    "waterfalls",
-    "natural pools",
-    "rowboat ride",
-  ],
-  minAgeYears: 3,
-  mainImage: imageTour1,
-  category: {
-    name: 'Waterfalls',
-    icon: 'mdi-waterfall'
-  }
-} as Tour;
-
-// SPANISH
-
-export const estanciaMimosaEs = {
-  name: "ESTÂNCIA MIMOSA",
-  description: `
-        Una caminata de 2.800m por el bosque de ribera del río Mimoso, entre árboles centenarios y animales silvestres, con una vista privilegiada del cerrado y las colinas de la región. Con paradas para bañarse en cascadas con piscinas naturales, una plataforma para saltar y un paseo de 500m en bote de remos.
-    `,
-  rules: ["Uso obligatorio de zapatillas"],
-  duration: {
-    hours: 23,
-    minutes: 59,
-  } as Duration,
-  distance: "22,6 km",
-  keywords: [
-    "árboles centenarios",
-    "animales silvestres",
-    "cerrado",
-    "colinas",
-    "cascadas",
-    "piscinas naturales",
-    "paseo en bote de remos",
-  ],
-  minAgeYears: 3,
-  mainImage: imageTour1,
-  category: {
-    name: 'Cascadas',
-    icon: 'mdi-waterfall'
-  }
-} as Tour;
+export const estanciaMimosaEs: Tour = {
+  id: 'TOUR-EM-01',
+  name: 'Estancia Mimosa',
+  description: 'Sendero en el bosque de ribera del río Mimoso con paradas para bañarse en cascadas, piscinas naturales, una plataforma de salto y un paseo en bote de remos.',
+  mainImage: image,
+  durationInHours: 4,
+  distanceFromCity: '22,6km',
+  difficulty: DifficultyLevel.MODERATE,
+  environments: [EnvironmentType.WATERFALL, EnvironmentType.FOREST, EnvironmentType.RIVER],
+  includedItems: ['Acompañamiento de guía', 'Chaleco salvavidas'],
+  keywords: ['cascada', 'sendero', 'baño en el río', 'bote'],
+  categories: [aquaticEs, ecotourismEs],
+  recommendedFor: [familiesEs, couplesEs],
+};

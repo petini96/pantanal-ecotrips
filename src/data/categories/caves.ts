@@ -1,16 +1,5 @@
-import { type PackageCategory } from "src/model/PackageCategory";
+import { type TranslatableTag } from 'src/model/Tags';
 
-export const cavesPt = {
-    name: "Grutas",
-    icon: "mdi-image-filter-hdr"
-} as PackageCategory;
-
-export const cavesEn = {
-    name: "Caves",
-    icon: "mdi-image-filter-hdr"
-} as PackageCategory;
-
-export const cavesEs = {
-    name: "Cuevas",
-    icon: "mdi-image-filter-hdr"
-} as PackageCategory;
+export const cavesPt: TranslatableTag = { id: 'caves', name: 'Grutas', icon: 'mdi-image-filter-hdr' };
+export const cavesEn: TranslatableTag = { id: 'caves', name: 'Caves', icon: 'mdi-image-filter-hdr' };
+export const cavesEs: TranslatableTag = { id: 'caves', name: 'Grutas', icon: 'mdi-image-filter-hdr' };

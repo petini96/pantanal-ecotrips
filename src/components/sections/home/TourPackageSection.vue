@@ -9,43 +9,56 @@
     </div>
 
     <div v-else class="scroll-wrapper">
-      <div ref="scrollContainer" class="tours-scroll-container" @mousedown="mouseDownHandler"
-        @mouseleave="mouseLeaveHandler" @mouseup="mouseUpHandler" @mousemove="mouseMoveHandler">
-        
+      <div
+        ref="scrollContainer"
+        class="tours-scroll-container"
+        @mousedown="mouseDownHandler"
+        @mouseleave="mouseLeaveHandler"
+        @mouseup="mouseUpHandler"
+        @mousemove="mouseMoveHandler"
+      >
         <div class="row items-stretch q-gutter-lg" :class="{ 'no-wrap': $q.screen.gt.xs }">
-
           <div v-for="pkg in validPackages" :key="pkg.id" class="tour-card-wrapper">
             <q-card class="package-card" flat bordered @click="viewPackage(pkg.id)">
-
-              <HeroBanner
-                :image-src="pkg.image"
-                :subtitle="t('package_tour')"
-                :title="pkg.title"
-              />
+              <HeroBanner :image-src="pkg.image" :subtitle="t('package_tour')" :title="pkg.title" />
 
               <q-card-section class="card-content-section">
                 <div class="core-info-pill">
                   <div class="info-item">
                     <q-icon name="mdi-calendar-clock" />
-                    <span>{{ pkg.qtdDay }} {{ t('days') }} / {{ pkg.qtdNight }} {{ t('nights') }} </span>
+                    <span>{{ pkg.durationInDays }} {{ t('days') }} / {{ pkg.durationInNights }} {{ t('nights') }}</span>
                   </div>
-                  <q-separator vertical spaced="sm" />
-                  <div v-if="pkg.minNumberPeople" class="info-item">
-                    <q-icon name="mdi-account-group" />
-                    <span>Mín. {{ pkg.minNumberPeople }} {{ t("people") }}</span>
-                  </div>
+                  <template v-if="pkg.minPeople">
+                    <q-separator vertical spaced="sm" />
+                    <div class="info-item">
+                      <q-icon name="mdi-account-group" />
+                      <span>Mín. {{ pkg.minPeople }} {{ t("people") }}</span>
+                    </div>
+                  </template>
                 </div>
 
                 <h3 class="card-title">{{ pkg.title }}</h3>
                 <p class="card-description">{{ pkg.subtitle }}</p>
 
                 <div class="icon-section-wrapper">
-                  <div v-if="pkg.packageCategory && pkg.packageCategory.length">
-                    <h4 class="icon-list-title"> {{ t("categories") }} </h4>
+                  <div v-if="pkg.packageCategories && pkg.packageCategories.length">
+                    <h4 class="icon-list-title">{{ t("categories") }}</h4>
                     <div class="icon-list">
-                      <div v-for="category in pkg.packageCategory" :key="category.name" class="icon-list-item">
+                      <div v-for="category in pkg.packageCategories" :key="category.id" class="icon-list-item">
                         <q-icon :name="category.icon" />
                         <span>{{ category.name }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="icon-section-wrapper q-mt-md">
+                  <div v-if="pkg.packageRecommendedFor && pkg.packageRecommendedFor.length">
+                    <h4 class="icon-list-title">{{ t("recommended_for") }}</h4>
+                    <div class="icon-list">
+                      <div v-for="audience in pkg.packageRecommendedFor" :key="audience.id" class="icon-list-item">
+                        <q-icon :name="audience.icon" />
+                        <span>{{ audience.name }}</span>
                       </div>
                     </div>
                   </div>
@@ -53,12 +66,10 @@
               </q-card-section>
 
               <q-card-actions class="card-actions q-my-md">
-                <q-btn :label="t('tours_cta_button')" class="full-width cta-button" unelevated
-                  icon-right="mdi-arrow-right" />
+                <q-btn :label="t('tours_cta_button')" class="full-width cta-button" unelevated icon-right="mdi-arrow-right" />
               </q-card-actions>
             </q-card>
           </div>
-
         </div>
       </div>
     </div>
@@ -70,23 +81,21 @@ import { onMounted, ref, watch, computed } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
-// ALTERAÇÃO: Importado o useQuasar para acessar informações da tela
 import { useQuasar } from 'quasar';
-import { useMostWantedPackageStore } from 'src/stores/useMostWantedPackageStore';
-import { type MostWantedPackage } from 'src/model/MostWantedPackage';
+import { useTourPackageStore } from 'src/stores/useTourPackageStore';
+import { type TourPackage } from 'src/model/TourPackage';
 import HeroBanner from 'src/components/banner/HeroBanner.vue';
 
 const router = useRouter();
 const route = useRoute();
 const { t, locale } = useI18n();
-// ALTERAÇÃO: Instanciado o Quasar
 const $q = useQuasar();
 
-const packageStore = useMostWantedPackageStore();
-const { allMostWantedPackage: packages, loading } = storeToRefs(packageStore);
+const packageStore = useTourPackageStore();
+const { allPackages: packages, loading } = storeToRefs(packageStore);
 
 const validPackages = computed(() =>
-  packages.value.filter((pkg): pkg is MostWantedPackage & { id: string } => !!pkg.id)
+  packages.value.filter((pkg): pkg is TourPackage => !!pkg.id)
 );
 
 const langMap: Record<string, string> = { pt: 'pt-BR', en: 'en-US', es: 'es' };
@@ -94,28 +103,27 @@ const langMap: Record<string, string> = { pt: 'pt-BR', en: 'en-US', es: 'es' };
 onMounted(async () => {
   const lang = langMap[route.params.lang as string] || 'pt-BR';
   locale.value = lang;
-  await packageStore.fetchMostWantedPackage(lang);
+  await packageStore.fetchPackages(lang);
 });
 
 watch(() => route.params.lang, async (newLang) => {
-  packageStore.clearMostWantedPackage();
+  packageStore.clearPackages();
   const lang = langMap[newLang as string] || 'pt-BR';
   locale.value = lang;
-  await packageStore.fetchMostWantedPackage(lang);
+  await packageStore.fetchPackages(lang);
 });
 
 const viewPackage = (packageId: string) => {
   void router.push({ name: 'packageDetails', params: { id: packageId, lang: route.params.lang || 'pt' } });
 };
 
-// Lógica de scroll permanece a mesma
 const scrollContainer = ref<HTMLElement | null>(null);
 const isDown = ref(false);
 const startX = ref(0);
 const scrollLeft = ref(0);
 
 const mouseDownHandler = (e: MouseEvent) => {
-  if (!$q.screen.gt.xs || !scrollContainer.value) return; // Só ativa o drag em telas maiores
+  if (!$q.screen.gt.xs || !scrollContainer.value) return;
   isDown.value = true;
   scrollContainer.value.classList.add('active-scroll');
   startX.value = e.pageX - scrollContainer.value.offsetLeft;
@@ -143,63 +151,41 @@ const mouseMoveHandler = (e: MouseEvent) => {
 <style scoped lang="scss">
 .section-title {
   font-weight: 800;
-  /* Tamanho base para mobile */
   font-size: 2rem; 
-
-  /* Aumenta o título em telas maiores */
   @media (min-width: $breakpoint-sm-min) {
     font-size: 2.5rem;
   }
 }
-
 .scroll-wrapper {
   position: relative;
-  /* Padding lateral para não colar nas bordas em mobile */
   padding: 0 16px;
 }
-
 .tours-scroll-container {
-  /* Estilos base para mobile: o conteúdo flui normalmente */
   .row {
-    /* Em mobile, os itens quebram linha e são centralizados */
     justify-content: center;
   }
-
-  /* Estilos para telas maiores (tablet e desktop) */
   @media (min-width: $breakpoint-sm-min) {
     overflow-x: auto;
     padding-bottom: 20px;
     cursor: grab;
-
     &.active-scroll {
       cursor: grabbing;
     }
-    
     .row {
-      /* Em telas grandes, o 'no-wrap' da classe dinâmica entra em ação */
-      /* O padding interno evita que os cards colados nas bordas do container de scroll */
       padding: 0 32px;
-      /* O justify-content é resetado para o início */
       justify-content: flex-start;
     }
   }
 }
-
 .tour-card-wrapper {
-  /* Em mobile, o card ocupa 100% da largura, com um máximo */
   width: 100%;
   max-width: 380px;
   padding-bottom: 10px;
-
-  /* Em telas maiores, o card tem uma largura fixa para o scroll horizontal */
   @media (min-width: $breakpoint-sm-min) {
     width: 360px;
-    /* flex-basis: 360px com flex-grow: 0 e flex-shrink: 0 */
     flex: 0 0 360px;
   }
 }
-
-/* === ESTILOS DO CARD (TEMA FIXO) - NENHUMA ALTERAÇÃO NECESSÁRIA AQUI === */
 .package-card {
   --card-bg-color: #ffffff;
   --card-border-color: #eef2f1;
@@ -209,7 +195,6 @@ const mouseMoveHandler = (e: MouseEvent) => {
   --card-subtle-bg: #f5f8f7;
   --card-shadow: 0 4px 15px rgba(77, 182, 172, 0.1);
   --card-hover-shadow: 0 8px 30px rgba(77, 182, 172, 0.18);
-
   background-color: var(--card-bg-color);
   border: 1px solid var(--card-border-color);
   border-radius: 20px;
@@ -218,20 +203,17 @@ const mouseMoveHandler = (e: MouseEvent) => {
   height: 100%;
   display: flex;
   flex-direction: column;
-
   &:hover {
     transform: translateY(-8px);
     box-shadow: var(--card-hover-shadow);
   }
 }
-
 .card-content-section {
   padding: 24px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
-
 .core-info-pill {
   display: inline-flex;
   align-items: center;
@@ -243,19 +225,16 @@ const mouseMoveHandler = (e: MouseEvent) => {
   color: var(--card-text-secondary);
   font-size: 0.85rem;
   font-weight: 500;
-
   .info-item {
     display: flex;
     align-items: center;
     gap: 8px;
-
     .q-icon {
       color: var(--card-primary-color);
       font-size: 1.2rem;
     }
   }
 }
-
 .card-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -264,7 +243,6 @@ const mouseMoveHandler = (e: MouseEvent) => {
   margin: 0 0 8px 0;
   color: var(--card-text-primary);
 }
-
 .card-description {
   font-family: 'Lato', sans-serif;
   font-size: 1rem;
@@ -272,13 +250,15 @@ const mouseMoveHandler = (e: MouseEvent) => {
   color: var(--card-text-secondary);
   margin-bottom: 24px;
 }
-
 .icon-section-wrapper {
   margin-top: auto;
   padding-top: 16px;
   border-top: 1px solid var(--card-border-color);
+  & + .icon-section-wrapper {
+    border-top: none;
+    padding-top: 0;
+  }
 }
-
 .icon-list-title {
   font-size: 0.8rem;
   font-weight: 600;
@@ -288,13 +268,11 @@ const mouseMoveHandler = (e: MouseEvent) => {
   letter-spacing: 0.5px;
   margin: 0 0 12px 0;
 }
-
 .icon-list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 10px;
 }
-
 .icon-list-item {
   display: flex;
   align-items: center;
@@ -305,17 +283,14 @@ const mouseMoveHandler = (e: MouseEvent) => {
   background-color: var(--card-subtle-bg);
   padding: 6px 12px;
   border-radius: 20px;
-
   .q-icon {
     color: var(--card-primary-color);
     font-size: 1.2rem;
   }
 }
-
 .card-actions {
   padding: 24px;
   padding-top: 0;
-
   .cta-button {
     background: var(--card-primary-color) !important;
     color: #ffffff !important;
