@@ -8,7 +8,14 @@
       <q-spinner-dots color="primary" size="3rem" />
     </div>
 
-    <div v-else class="scroll-wrapper">
+    <div
+      v-else
+      class="scroll-mask"
+      :class="{
+        'show-left-gradient': showLeftGradient,
+        'show-right-gradient': showRightGradient
+      }"
+    >
       <div
         ref="scrollContainer"
         class="tours-scroll-container"
@@ -16,11 +23,16 @@
         @mouseleave="mouseLeaveHandler"
         @mouseup="mouseUpHandler"
         @mousemove="mouseMoveHandler"
+        @scroll.passive="handleScroll"
       >
         <div class="row items-stretch q-gutter-lg" :class="{ 'no-wrap': $q.screen.gt.xs }">
-          <div v-for="pkg in validPackages" :key="pkg.id" class="tour-card-wrapper">
-            <q-card class="package-card" flat bordered @click="viewPackage(pkg.id)">
-              <HeroBanner :image-src="pkg.image" :subtitle="t('package_tour')" :title="pkg.title" />
+          <div v-for="pkg in validPackages" :key="pkg.id" class="tour-card-wrapper" :data-id="pkg.id">
+            <q-card class="package-card" flat bordered>
+              <HeroBanner
+                :image-src="pkg.image"
+                :subtitle="t('package_tour')"
+                :title="pkg.title"
+              />
 
               <q-card-section class="card-content-section">
                 <div class="core-info-pill">
@@ -63,10 +75,17 @@
                     </div>
                   </div>
                 </div>
+
               </q-card-section>
 
               <q-card-actions class="card-actions q-my-md">
-                <q-btn :label="t('tours_cta_button')" class="full-width cta-button" unelevated icon-right="mdi-arrow-right" />
+                <q-btn
+                  :label="t('tours_cta_button')"
+                  class="full-width cta-button"
+                  unelevated
+                  icon-right="mdi-arrow-right"
+                  @click="viewPackage(pkg.id)"
+                />
               </q-card-actions>
             </q-card>
           </div>
@@ -77,7 +96,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch, computed } from 'vue';
+import { onMounted, onBeforeUnmount, ref, watch, computed } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
@@ -104,6 +123,15 @@ onMounted(async () => {
   const lang = langMap[route.params.lang as string] || 'pt-BR';
   locale.value = lang;
   await packageStore.fetchPackages(lang);
+  if (scrollContainer.value) {
+    resizeObserver.observe(scrollContainer.value);
+  }
+});
+
+onBeforeUnmount(() => {
+  if (scrollContainer.value) {
+    resizeObserver.unobserve(scrollContainer.value);
+  }
 });
 
 watch(() => route.params.lang, async (newLang) => {
@@ -113,88 +141,215 @@ watch(() => route.params.lang, async (newLang) => {
   await packageStore.fetchPackages(lang);
 });
 
+// A função `viewPackage` permanece a mesma, mas agora é chamada de dentro do `mouseUpHandler`
 const viewPackage = (packageId: string) => {
   void router.push({ name: 'packageDetails', params: { id: packageId, lang: route.params.lang || 'pt' } });
 };
+
+// --- LÓGICA DE SCROLL E GRADIENTES ---
 
 const scrollContainer = ref<HTMLElement | null>(null);
 const isDown = ref(false);
 const startX = ref(0);
 const scrollLeft = ref(0);
+const isDragging = ref(false);
+const dragThreshold = 10;
+
+const scrollPosition = ref(0);
+const maxScroll = ref(0);
+
+const showLeftGradient = computed(() => $q.screen.gt.xs && scrollPosition.value > 0);
+const showRightGradient = computed(() => $q.screen.gt.xs && scrollPosition.value < maxScroll.value);
+
+const calculateMaxScroll = () => {
+  if (scrollContainer.value) {
+    // Adiciona uma pequena tolerância para garantir que o gradiente desapareça
+    maxScroll.value = scrollContainer.value.scrollWidth - scrollContainer.value.clientWidth - 1;
+  }
+};
+
+const resizeObserver = new ResizeObserver(() => {
+  calculateMaxScroll();
+  handleScroll();
+});
+
+const handleScroll = () => {
+  if (scrollContainer.value) {
+    scrollPosition.value = scrollContainer.value.scrollLeft;
+    if (scrollContainer.value.scrollWidth - scrollContainer.value.clientWidth - 1 !== maxScroll.value) {
+      calculateMaxScroll();
+    }
+  }
+};
 
 const mouseDownHandler = (e: MouseEvent) => {
   if (!$q.screen.gt.xs || !scrollContainer.value) return;
   isDown.value = true;
+  isDragging.value = false;
   scrollContainer.value.classList.add('active-scroll');
   startX.value = e.pageX - scrollContainer.value.offsetLeft;
   scrollLeft.value = scrollContainer.value.scrollLeft;
 };
+
 const mouseLeaveHandler = () => {
   if (!$q.screen.gt.xs || !scrollContainer.value) return;
   isDown.value = false;
   scrollContainer.value.classList.remove('active-scroll');
 };
-const mouseUpHandler = () => {
+
+// =======================================================
+// == FUNÇÃO CORRIGIDA
+// =======================================================
+const mouseUpHandler = (e: MouseEvent) => {
   if (!$q.screen.gt.xs || !scrollContainer.value) return;
   isDown.value = false;
   scrollContainer.value.classList.remove('active-scroll');
+
+  if (!isDragging.value) {
+    const cardWrapper = (e.target as HTMLElement).closest('.tour-card-wrapper');
+    
+    // AQUI ESTÁ A CORREÇÃO:
+    // Verificamos se `cardWrapper` é uma instância de `HTMLElement`.
+    // Dentro deste `if`, o TypeScript sabe que `cardWrapper.dataset` existe.
+    if (cardWrapper instanceof HTMLElement) {
+      const packageId = cardWrapper.dataset.id;
+      if (packageId) {
+        viewPackage(packageId);
+      }
+    }
+  }
 };
+// =======================================================
+
 const mouseMoveHandler = (e: MouseEvent) => {
   if (!isDown.value || !$q.screen.gt.xs || !scrollContainer.value) return;
   e.preventDefault();
+
   const x = e.pageX - scrollContainer.value.offsetLeft;
-  const walk = (x - startX.value) * 2;
-  scrollContainer.value.scrollLeft = scrollLeft.value - walk;
+  const walk = x - startX.value;
+
+  if (Math.abs(walk) > dragThreshold) {
+    isDragging.value = true;
+  }
+
+  // Apenas executa o scroll se estivermos arrastando
+  if (isDragging.value) {
+    scrollContainer.value.scrollLeft = scrollLeft.value - walk * 1.5;
+  }
 };
 </script>
 
 <style scoped lang="scss">
 .section-title {
   font-weight: 800;
-  font-size: 2rem; 
+  font-size: 2rem;
   @media (min-width: $breakpoint-sm-min) {
     font-size: 2.5rem;
   }
 }
+
+/* NOVO: Wrapper para os gradientes */
+.scroll-mask {
+  position: relative;
+  padding: 0;
+  /* Garante que o wrapper não seja maior que a tela em mobile */
+  @media (max-width: $breakpoint-xs-max) {
+    overflow: hidden;
+  }
+}
+
+/* NOVOS: Pseudo-elementos para os gradientes */
+.scroll-mask::before,
+.scroll-mask::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100px; /* Largura do gradiente */
+  z-index: 2;
+  pointer-events: none; /* Permite clicar através do gradiente */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.scroll-mask::before {
+  left: 0;
+  background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
+}
+
+.scroll-mask::after {
+  right: 0;
+  background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
+}
+
+.scroll-mask.show-left-gradient::before {
+  opacity: 1;
+}
+.scroll-mask.show-right-gradient::after {
+  opacity: 1;
+}
+
+
+/* Wrapper que foi movido para dentro do 'scroll-mask' */
 .scroll-wrapper {
   position: relative;
-  padding: 0 16px;
+  padding: 0; /* Padding agora é controlado pelo container de scroll */
 }
+
 .tours-scroll-container {
   .row {
     justify-content: center;
   }
+
   @media (min-width: $breakpoint-sm-min) {
-    overflow-x: auto;
-    padding-bottom: 20px;
+    display: flex;
+    overflow-x: scroll; /* Mantém o scroll funcional */
     cursor: grab;
+    
+    /* Mágica para esconder a barra de scroll */
+    padding-bottom: 20px;
+    margin-bottom: -20px;
+    scrollbar-width: none; /* Para Firefox */
+    &::-webkit-scrollbar {
+      display: none; /* Para Chrome, Safari, etc. */
+    }
+
     &.active-scroll {
       cursor: grabbing;
+      scroll-behavior: auto;
     }
+
     .row {
       padding: 0 32px;
       justify-content: flex-start;
     }
   }
 }
+
 .tour-card-wrapper {
   width: 100%;
   max-width: 380px;
-  padding-bottom: 10px;
+  padding: 0 16px 10px 16px; /* Adiciona padding lateral para mobile */
+
   @media (min-width: $breakpoint-sm-min) {
     width: 360px;
     flex: 0 0 360px;
+    padding: 0; /* Reseta padding em telas maiores */
   }
 }
+
+/* === ESTILOS DO CARD (TEMA FIXO) - NENHUMA ALTERAÇÃO NECESSÁRIA AQUI === */
+/* ... (Seu CSS do card permanece o mesmo, colei abaixo para garantir) ... */
 .package-card {
   --card-bg-color: #ffffff;
   --card-border-color: #eef2f1;
-  --card-primary-color: #4DB6AC; 
+  --card-primary-color: #4DB6AC;
   --card-text-primary: #1a2e29;
   --card-text-secondary: #6c7a77;
   --card-subtle-bg: #f5f8f7;
   --card-shadow: 0 4px 15px rgba(77, 182, 172, 0.1);
   --card-hover-shadow: 0 8px 30px rgba(77, 182, 172, 0.18);
+
   background-color: var(--card-bg-color);
   border: 1px solid var(--card-border-color);
   border-radius: 20px;
@@ -203,17 +358,21 @@ const mouseMoveHandler = (e: MouseEvent) => {
   height: 100%;
   display: flex;
   flex-direction: column;
+  user-select: none; /* Impede a seleção de texto ao arrastar */
+
   &:hover {
     transform: translateY(-8px);
     box-shadow: var(--card-hover-shadow);
   }
 }
+
 .card-content-section {
   padding: 24px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
+
 .core-info-pill {
   display: inline-flex;
   align-items: center;
@@ -225,16 +384,19 @@ const mouseMoveHandler = (e: MouseEvent) => {
   color: var(--card-text-secondary);
   font-size: 0.85rem;
   font-weight: 500;
+
   .info-item {
     display: flex;
     align-items: center;
     gap: 8px;
+
     .q-icon {
       color: var(--card-primary-color);
       font-size: 1.2rem;
     }
   }
 }
+
 .card-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
@@ -243,6 +405,7 @@ const mouseMoveHandler = (e: MouseEvent) => {
   margin: 0 0 8px 0;
   color: var(--card-text-primary);
 }
+
 .card-description {
   font-family: 'Lato', sans-serif;
   font-size: 1rem;
@@ -250,15 +413,17 @@ const mouseMoveHandler = (e: MouseEvent) => {
   color: var(--card-text-secondary);
   margin-bottom: 24px;
 }
+
 .icon-section-wrapper {
   margin-top: auto;
   padding-top: 16px;
   border-top: 1px solid var(--card-border-color);
-  & + .icon-section-wrapper {
+   & + .icon-section-wrapper {
     border-top: none;
     padding-top: 0;
   }
 }
+
 .icon-list-title {
   font-size: 0.8rem;
   font-weight: 600;
@@ -268,11 +433,13 @@ const mouseMoveHandler = (e: MouseEvent) => {
   letter-spacing: 0.5px;
   margin: 0 0 12px 0;
 }
+
 .icon-list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 10px;
 }
+
 .icon-list-item {
   display: flex;
   align-items: center;
@@ -283,14 +450,17 @@ const mouseMoveHandler = (e: MouseEvent) => {
   background-color: var(--card-subtle-bg);
   padding: 6px 12px;
   border-radius: 20px;
+
   .q-icon {
     color: var(--card-primary-color);
     font-size: 1.2rem;
   }
 }
+
 .card-actions {
   padding: 24px;
   padding-top: 0;
+
   .cta-button {
     background: var(--card-primary-color) !important;
     color: #ffffff !important;
