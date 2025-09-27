@@ -11,7 +11,7 @@
         "test": "echo \"See package.json => scripts for available tests.\" && exit 0",
         "serve": "quasar serve",
         "dev": "quasar dev",
-        "build": "npm run generate:sitemap && quasar build",
+        "build": "quasar build",
         "postinstall": "quasar prepare",
         "build:pwa": "npm run generate:sitemap && quasar build -m pwa",
         "dev:vite": "vite",
