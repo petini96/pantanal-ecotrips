@@ -11,7 +11,7 @@ import {
   ecotourismPt,
   ecotourismEn,
   ecotourismEs,
-} from "src/data/categories/Ecotourism";
+} from "src/data/categories/Ecotourismm";
 import {
   adventurePt,
   adventureEn,

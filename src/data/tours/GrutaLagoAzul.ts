@@ -1,7 +1,7 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { cavesEn, cavesEs, cavesPt } from 'src/data/categories/Cavess';
-import { ecotourismEn, ecotourismEs, ecotourismPt } from 'src/data/categories/Ecotourism';
+import { ecotourismEn, ecotourismEs, ecotourismPt } from 'src/data/categories/Ecotourismm';
 import { couplesEn, couplesEs, couplesPt } from 'src/data/audiences/Couples';
 import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families';
 import image from 'src/assets/images/packages/gruta-lagoa-azul.png';

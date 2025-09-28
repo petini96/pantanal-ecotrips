@@ -1,6 +1,6 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
-import { ecotourismEn, ecotourismEs, ecotourismPt } from 'src/data/categories/Ecotourism';
+import { ecotourismEn, ecotourismEs, ecotourismPt } from 'src/data/categories/Ecotourismm';
 import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families';
 import { couplesEn, couplesEs, couplesPt } from 'src/data/audiences/Couples';
 import { seniorsEn, seniorsEs, seniorsPt } from 'src/data/audiences/Seniors';
