@@ -5,7 +5,7 @@ import {
   noiteFelizEnItinerary,
   noiteFelizEsItinerary,
 } from "./ItineraryData";
-import { aquaticPt, aquaticEn, aquaticEs } from "../../categories/Aquatic";
+import { aquaticPt, aquaticEn, aquaticEs } from "../../categories/Aquaticc";
 import { cavesPt, cavesEn, cavesEs } from "../../categories/Cavess";
 import {
   ecotourismPt,

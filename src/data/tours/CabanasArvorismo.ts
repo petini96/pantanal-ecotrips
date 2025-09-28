@@ -3,7 +3,7 @@ import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families';
 import { groupsEn, groupsEs, groupsPt } from 'src/data/audiences/Groups';
 import image from 'src/assets/images/tours/cabanas-arvorismo.png';
-import { adventurePt, adventureEn, adventureEs } from '../categories/Adventure';
+import { adventurePt, adventureEn, adventureEs } from '../categories/Adventuree';
 
 export const cabanasArvorismoPt: Tour = {
   id: 'TOUR-CA-01',

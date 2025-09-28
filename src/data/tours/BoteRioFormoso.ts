@@ -1,7 +1,7 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
-import { aquaticEn, aquaticEs, aquaticPt } from 'src/data/categories/Aquatic';
-import { adventureEn, adventureEs, adventurePt } from 'src/data/categories/Adventure';
+import { aquaticEn, aquaticEs, aquaticPt } from 'src/data/categories/Aquaticc';
+import { adventureEn, adventureEs, adventurePt } from 'src/data/categories/Adventuree';
 import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families';
 import { groupsEn, groupsEs, groupsPt } from 'src/data/audiences/Groups';
 import image from 'src/assets/images/tours/bote-rio-formoso.png';

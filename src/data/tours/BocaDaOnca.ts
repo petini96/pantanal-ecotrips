@@ -1,8 +1,8 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { ecotourismEn, ecotourismEs, ecotourismPt } from 'src/data/categories/Ecotourismm';
-import { aquaticEn, aquaticEs, aquaticPt } from 'src/data/categories/Aquatic';
-import { adventureEn, adventureEs, adventurePt } from 'src/data/categories/Adventure';
+import { aquaticEn, aquaticEs, aquaticPt } from 'src/data/categories/Aquaticc';
+import { adventureEn, adventureEs, adventurePt } from 'src/data/categories/Adventuree';
 import { groupsEn, groupsEs, groupsPt } from 'src/data/audiences/Groups';
 import { couplesEn, couplesEs, couplesPt } from 'src/data/audiences/Couples';
 import image from 'src/assets/images/tours/boca-da-onca.png';

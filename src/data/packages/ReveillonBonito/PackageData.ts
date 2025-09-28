@@ -5,7 +5,7 @@ import {
   reveillonBonitoEnItinerary,
   reveillonBonitoEsItinerary,
 } from "./ItineraryData";
-import { aquaticPt, aquaticEn, aquaticEs } from "src/data/categories/Aquatic";
+import { aquaticPt, aquaticEn, aquaticEs } from "src/data/categories/Aquaticc";
 import { cavesPt, cavesEn, cavesEs } from "src/data/categories/Cavess";
 import {
   ecotourismPt,
@@ -16,7 +16,7 @@ import {
   adventurePt,
   adventureEn,
   adventureEs,
-} from "src/data/categories/Adventure"; // <-- Verifique se este import está assim
+} from "src/data/categories/Adventuree"; // <-- Verifique se este import está assim
 import {
   familiesPt,
   familiesEn,

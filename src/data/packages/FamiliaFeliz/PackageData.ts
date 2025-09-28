@@ -5,7 +5,7 @@ import {
   familiaFelizEnItinerary,
   familiaFelizEsItinerary,
 } from "./ItineraryData";
-import { aquaticPt, aquaticEn, aquaticEs } from "src/data/categories/Aquatic";
+import { aquaticPt, aquaticEn, aquaticEs } from "src/data/categories/Aquaticc";
 import { cavesPt, cavesEn, cavesEs } from "src/data/categories/Cavess";
 import {
   ecotourismPt,
