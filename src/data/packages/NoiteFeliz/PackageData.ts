@@ -1,24 +1,24 @@
 import { uid } from "quasar";
-import { type TourPackage } from "src/model/TourPackage";
+import { type TourPackage } from "../../../model/TourPackage";
 import {
   noiteFelizPtItinerary,
   noiteFelizEnItinerary,
   noiteFelizEsItinerary,
 } from "./ItineraryData";
-import { aquaticPt, aquaticEn, aquaticEs } from "src/data/categories/Aquatic";
-import { cavesPt, cavesEn, cavesEs } from "src/data/categories/Caves";
+import { aquaticPt, aquaticEn, aquaticEs } from "../../categories/Aquatic";
+import { cavesPt, cavesEn, cavesEs } from "../../categories/Caves";
 import {
   ecotourismPt,
   ecotourismEn,
   ecotourismEs,
-} from "src/data/categories/Ecotourism";
+} from "../../categories/Ecotourism";
 import {
   familiesPt,
   familiesEn,
   familiesEs,
-} from "src/data/audiences/Families";
-import { couplesPt, couplesEn, couplesEs } from "src/data/audiences/Couples";
-import image from "src/assets/images/packages/noite-feliz.png";
+} from "../../../data/audiences/Families";
+import { couplesPt, couplesEn, couplesEs } from "../../../data/audiences/Couples";
+import image from "../../../assets/images/packages/noite-feliz.png";
 
 const uuid = uid();
 
