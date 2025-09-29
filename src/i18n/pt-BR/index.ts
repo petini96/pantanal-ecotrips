@@ -55,5 +55,10 @@ export default {
   nights: 'Noites',
   categories: 'Categorias',
   people: 'pessoas',
-  package_tour: 'Pacote de passeio'
+  package_tour: 'Pacote de passeio',
+  recommended_for: 'Recomendado para',
+  cities: 'Cidades',
+  region: 'Regiões',
+  clear_filters: 'Apagar filtros',
+  search_placeholder: 'Busque por passeios'
 };

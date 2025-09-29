@@ -55,5 +55,11 @@ export default {
   nights: 'Nights',
   categories: 'Categories',
   people: 'people',
-  package_tour: 'tour package'
+  package_tour: 'tour package',
+  recommended_for: 'Recommended for',
+  cities: 'Cities',
+  region: 'Region',
+  clear_filters: 'Clear filters',
+  search_placeholder: 'Search for tours'
+
 };
