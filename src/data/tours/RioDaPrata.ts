@@ -6,6 +6,7 @@ import { couplesEn, couplesEs, couplesPt } from 'src/data/audiences/Couples';
 import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families';
 import { seniorsEn, seniorsEs, seniorsPt } from 'src/data/audiences/Seniors';
 import image from 'src/assets/images/packages/gruta-lagoa-azul.png';
+import { jardim } from '../regions/Cities';
 
 export const rioDaPrataPt: Tour = {
   id: 'TOUR-RDP-01',
@@ -20,6 +21,7 @@ export const rioDaPrataPt: Tour = {
   keywords: ['flutuação', 'rio', 'peixes', 'nascente'],
   categories: [aquaticPt, ecotourismPt],
   recommendedFor: [familiesPt, couplesPt, seniorsPt],
+  city: jardim
 };
 
 export const rioDaPrataEn: Tour = {
@@ -35,6 +37,7 @@ export const rioDaPrataEn: Tour = {
   keywords: ['snorkeling', 'river', 'fish', 'spring'],
   categories: [aquaticEn, ecotourismEn],
   recommendedFor: [familiesEn, couplesEn, seniorsEn],
+  city: jardim
 };
 
 export const rioDaPrataEs: Tour = {
@@ -50,4 +53,5 @@ export const rioDaPrataEs: Tour = {
   keywords: ['flotación', 'río', 'peces', 'naciente'],
   categories: [aquaticEs, ecotourismEs],
   recommendedFor: [familiesEs, couplesEs, seniorsEs],
+  city: jardim
 };

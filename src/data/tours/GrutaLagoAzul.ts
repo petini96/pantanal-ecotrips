@@ -5,6 +5,7 @@ import { ecotourismEn, ecotourismEs, ecotourismPt } from 'src/data/categories/Ec
 import { couplesEn, couplesEs, couplesPt } from 'src/data/audiences/Couples';
 import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families';
 import image from 'src/assets/images/packages/gruta-lagoa-azul.png';
+import { bonito } from '../regions/Cities';
 
 export const grutaLagoAzulPt: Tour = {
   id: 'TOUR-GLA-01',
@@ -19,6 +20,7 @@ export const grutaLagoAzulPt: Tour = {
   keywords: ['gruta', 'lago', 'caverna', 'contemplação'],
   categories: [cavesPt, ecotourismPt],
   recommendedFor: [familiesPt, couplesPt],
+  city: bonito
 };
 
 export const grutaLagoAzulEn: Tour = {
@@ -34,6 +36,7 @@ export const grutaLagoAzulEn: Tour = {
   keywords: ['cave', 'lake', 'grotto', 'contemplation'],
   categories: [cavesEn, ecotourismEn],
   recommendedFor: [familiesEn, couplesEn],
+  city: bonito
 };
 
 export const grutaLagoAzulEs: Tour = {
@@ -49,4 +52,5 @@ export const grutaLagoAzulEs: Tour = {
   keywords: ['gruta', 'lago', 'cueva', 'contemplación'],
   categories: [cavesEs, ecotourismEs],
   recommendedFor: [familiesEs, couplesEs],
+  city: bonito
 };

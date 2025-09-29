@@ -4,6 +4,7 @@ import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families'
 import { groupsEn, groupsEs, groupsPt } from 'src/data/audiences/Groups';
 import image from 'src/assets/images/tours/cabanas-arvorismo.png';
 import { adventurePt, adventureEn, adventureEs } from '../categories/Adventuree';
+import { bonito } from '../regions/Cities';
 
 export const cabanasArvorismoPt: Tour = {
   id: 'TOUR-CA-01',
@@ -18,6 +19,7 @@ export const cabanasArvorismoPt: Tour = {
   keywords: ['arvorismo', 'tirolesa', 'aventura', 'rio formoso'],
   categories: [adventurePt],
   recommendedFor: [familiesPt, groupsPt],
+  city: bonito
 };
 
 export const cabanasArvorismoEn: Tour = {
@@ -33,6 +35,7 @@ export const cabanasArvorismoEn: Tour = {
   keywords: ['treetop', 'zip line', 'adventure', 'formoso river'],
   categories: [adventureEn],
   recommendedFor: [familiesEn, groupsEn],
+  city: bonito
 };
 
 export const cabanasArvorismoEs: Tour = {
@@ -48,4 +51,5 @@ export const cabanasArvorismoEs: Tour = {
   keywords: ['arborismo', 'tirolina', 'aventura', 'río formoso'],
   categories: [adventureEs],
   recommendedFor: [familiesEs, groupsEs],
+  city: bonito
 };

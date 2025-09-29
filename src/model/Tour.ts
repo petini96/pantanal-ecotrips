@@ -1,3 +1,4 @@
+import { type City } from './City';
 import { type DifficultyLevel, type EnvironmentType } from './Enums';
 import { type TranslatableTag } from './Tags';
 
@@ -14,4 +15,5 @@ export interface Tour {
   keywords: string[];
   categories: TranslatableTag[];
   recommendedFor: TranslatableTag[];
+  city: City;
 }

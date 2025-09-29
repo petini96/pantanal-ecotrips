@@ -19,6 +19,7 @@ import {
 } from "../../../data/audiences/Families";
 import { couplesPt, couplesEn, couplesEs } from "../../../data/audiences/Couples";
 import image from "../../../assets/images/packages/noite-feliz.png";
+import { bonitoSerraBodoquenaEn, bonitoSerraBodoquenaEs, bonitoSerraBodoquenaPt } from "src/data/regions/Regions";
 
 const uuid = uid();
 
@@ -58,6 +59,7 @@ export const noiteFelizPt: TourPackage = {
     "Passeio sujeito a alteração dependendo das condições climáticas e disponibilidade.",
   packageCategories: [ecotourismPt, aquaticPt, cavesPt],
   packageRecommendedFor: [familiesPt, couplesPt],
+  region: bonitoSerraBodoquenaPt
 };
 
 // EN-US
@@ -91,6 +93,7 @@ export const noiteFelizEn: TourPackage = {
     "Tour subject to change depending on weather conditions and availability.",
   packageCategories: [ecotourismEn, aquaticEn, cavesEn],
   packageRecommendedFor: [familiesEn, couplesEn],
+  region: bonitoSerraBodoquenaEn
 };
 
 // ES
@@ -129,4 +132,5 @@ export const noiteFelizEs: TourPackage = {
     "Excursión sujeta a cambios según las condiciones climáticas y la disponibilidad.",
   packageCategories: [ecotourismEs, aquaticEs, cavesEs],
   packageRecommendedFor: [familiesEs, couplesEs],
+  region: bonitoSerraBodoquenaEs
 };

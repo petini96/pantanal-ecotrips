@@ -6,6 +6,7 @@ import { adventureEn, adventureEs, adventurePt } from 'src/data/categories/Adven
 import { groupsEn, groupsEs, groupsPt } from 'src/data/audiences/Groups';
 import { couplesEn, couplesEs, couplesPt } from 'src/data/audiences/Couples';
 import image from 'src/assets/images/tours/boca-da-onca.png';
+import { bonito } from '../regions/Cities';
 
 // PT-BR
 export const bocaDaOncaPt: Tour = {
@@ -21,6 +22,7 @@ export const bocaDaOncaPt: Tour = {
   keywords: ['boca da onça', 'cachoeira', 'trilha', 'canyon'],
   categories: [adventurePt, ecotourismPt, aquaticPt],
   recommendedFor: [groupsPt, couplesPt],
+  city: bonito
 };
 
 // EN-US
@@ -37,6 +39,7 @@ export const bocaDaOncaEn: Tour = {
   keywords: ['boca da onça', 'waterfall', 'trail', 'canyon'],
   categories: [adventureEn, ecotourismEn, aquaticEn],
   recommendedFor: [groupsEn, couplesEn],
+  city: bonito
 };
 
 // ES
@@ -53,4 +56,5 @@ export const bocaDaOncaEs: Tour = {
   keywords: ['boca da onça', 'cascada', 'sendero', 'cañón'],
   categories: [adventureEs, ecotourismEs, aquaticEs],
   recommendedFor: [groupsEs, couplesEs],
+  city: bonito
 };

@@ -5,6 +5,7 @@ import { adventureEn, adventureEs, adventurePt } from 'src/data/categories/Adven
 import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families';
 import { groupsEn, groupsEs, groupsPt } from 'src/data/audiences/Groups';
 import image from 'src/assets/images/tours/bote-rio-formoso.png';
+import { bonito } from '../regions/Cities';
 
 // PT-BR
 export const boteRioFormosoPt: Tour = {
@@ -20,6 +21,7 @@ export const boteRioFormosoPt: Tour = {
   keywords: ['bote', 'rio formoso', 'corredeira', 'cachoeira'],
   categories: [aquaticPt, adventurePt],
   recommendedFor: [familiesPt, groupsPt],
+  city: bonito
 };
 
 // EN-US
@@ -36,6 +38,7 @@ export const boteRioFormosoEn: Tour = {
   keywords: ['rafting', 'formoso river', 'rapids', 'waterfall'],
   categories: [aquaticEn, adventureEn],
   recommendedFor: [familiesEn, groupsEn],
+  city: bonito
 };
 
 // ES
@@ -52,4 +55,5 @@ export const boteRioFormosoEs: Tour = {
   keywords: ['bote', 'río formoso', 'rápidos', 'cascada'],
   categories: [aquaticEs, adventureEs],
   recommendedFor: [familiesEs, groupsEs],
+  city: bonito
 };

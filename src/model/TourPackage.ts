@@ -1,4 +1,5 @@
 import { type ItineraryItem } from './ItineraryItem';
+import { type Region } from './Region';
 import { type TranslatableTag } from './Tags';
 
 export interface TourPackage {
@@ -17,4 +18,5 @@ export interface TourPackage {
   observation?: string;
   packageCategories: TranslatableTag[];
   packageRecommendedFor: TranslatableTag[];
+  region: Region;
 }

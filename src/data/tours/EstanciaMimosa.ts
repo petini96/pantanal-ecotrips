@@ -5,6 +5,7 @@ import { aquaticEn, aquaticEs, aquaticPt } from 'src/data/categories/Aquaticc';
 import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families';
 import { couplesEn, couplesEs, couplesPt } from 'src/data/audiences/Couples';
 import image from 'src/assets/images/tours/estancia-mimosa.png';
+import { bonito } from '../regions/Cities';
 
 export const estanciaMimosaPt: Tour = {
   id: 'TOUR-EM-01',
@@ -19,6 +20,7 @@ export const estanciaMimosaPt: Tour = {
   keywords: ['cachoeira', 'trilha', 'banho de rio', 'barco'],
   categories: [aquaticPt, ecotourismPt],
   recommendedFor: [familiesPt, couplesPt],
+  city: bonito
 };
 
 export const estanciaMimosaEn: Tour = {
@@ -34,6 +36,7 @@ export const estanciaMimosaEn: Tour = {
   keywords: ['waterfall', 'trail', 'river swimming', 'boat'],
   categories: [aquaticEn, ecotourismEn],
   recommendedFor: [familiesEn, couplesEn],
+  city: bonito
 };
 
 export const estanciaMimosaEs: Tour = {
@@ -49,4 +52,5 @@ export const estanciaMimosaEs: Tour = {
   keywords: ['cascada', 'sendero', 'baño en el río', 'bote'],
   categories: [aquaticEs, ecotourismEs],
   recommendedFor: [familiesEs, couplesEs],
+  city: bonito
 };

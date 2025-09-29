@@ -5,6 +5,7 @@ import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families'
 import { couplesEn, couplesEs, couplesPt } from 'src/data/audiences/Couples';
 import { seniorsEn, seniorsEs, seniorsPt } from 'src/data/audiences/Seniors';
 import image from 'src/assets/images/tours/buraco-das-araras.png';
+import { bonito } from '../regions/Cities';
 
 // PT-BR
 export const buracoDasArarasPt: Tour = {
@@ -20,6 +21,7 @@ export const buracoDasArarasPt: Tour = {
   keywords: ['araras', 'dolina', 'contemplação', 'pássaros', 'observação'],
   categories: [ecotourismPt],
   recommendedFor: [familiesPt, couplesPt, seniorsPt],
+  city: bonito
 };
 
 // EN-US
@@ -36,6 +38,7 @@ export const buracoDasArarasEn: Tour = {
   keywords: ['macaws', 'doline', 'contemplation', 'birds', 'observation'],
   categories: [ecotourismEn],
   recommendedFor: [familiesEn, couplesEn, seniorsEn],
+  city: bonito
 };
 
 // ES
@@ -52,4 +55,5 @@ export const buracoDasArarasEs: Tour = {
   keywords: ['guacamayos', 'dolina', 'contemplación', 'pájaros', 'observación'],
   categories: [ecotourismEs],
   recommendedFor: [familiesEs, couplesEs, seniorsEs],
+  city: bonito
 };

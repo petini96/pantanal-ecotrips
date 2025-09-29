@@ -19,6 +19,7 @@ import {
 } from "src/data/audiences/Families";
 import { couplesPt, couplesEn, couplesEs } from "src/data/audiences/Couples";
 import image from "src/assets/images/packages/familia-feliz.png";
+import { bonitoSerraBodoquenaEn, bonitoSerraBodoquenaEs, bonitoSerraBodoquenaPt } from "src/data/regions/Regions";
 
 const uuid = uid();
 
@@ -59,6 +60,7 @@ export const familiaFelizPt: TourPackage = {
     "Passeio sujeito a alteração dependendo das condições climáticas e disponibilidade.",
   packageCategories: [ecotourismPt, aquaticPt, cavesPt],
   packageRecommendedFor: [familiesPt, couplesPt],
+  region: bonitoSerraBodoquenaPt
 };
 
 // EN-US
@@ -98,6 +100,7 @@ export const familiaFelizEn: TourPackage = {
     "Tour subject to change depending on weather conditions and availability.",
   packageCategories: [ecotourismEn, aquaticEn, cavesEn],
   packageRecommendedFor: [familiesEn, couplesEn],
+  region: bonitoSerraBodoquenaEn
 };
 
 // ES
@@ -137,4 +140,5 @@ export const familiaFelizEs: TourPackage = {
     "Excursión sujeta a cambios según las condiciones climáticas y la disponibilidad.",
   packageCategories: [ecotourismEs, aquaticEs, cavesEs],
   packageRecommendedFor: [familiesEs, couplesEs],
+  region: bonitoSerraBodoquenaEs
 };

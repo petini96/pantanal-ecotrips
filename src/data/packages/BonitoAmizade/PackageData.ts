@@ -25,6 +25,7 @@ import {
 import { couplesPt, couplesEn, couplesEs } from "src/data/audiences/Couples";
 import { groupsPt, groupsEn, groupsEs } from "src/data/audiences/Groups";
 import image from "src/assets/images/packages/bonito-amizade.png";
+import { bonitoSerraBodoquenaEn, bonitoSerraBodoquenaPt } from "src/data/regions/Regions";
 
 const uuid = uid();
 
@@ -65,6 +66,7 @@ export const bonitoAmizadePt: TourPackage = {
     "Passeio sujeito a alteração dependendo das condições climáticas e disponibilidade.",
   packageCategories: [ecotourismPt, aquaticPt, cavesPt, adventurePt],
   packageRecommendedFor: [groupsPt, familiesPt, couplesPt],
+  region: bonitoSerraBodoquenaPt,
 };
 
 // EN-US
@@ -104,6 +106,7 @@ export const bonitoAmizadeEn: TourPackage = {
     "Tour subject to change depending on weather conditions and availability.",
   packageCategories: [ecotourismEn, aquaticEn, cavesEn, adventureEn],
   packageRecommendedFor: [groupsEn, familiesEn, couplesEn],
+  region: bonitoSerraBodoquenaEn,
 };
 
 // ES
@@ -143,4 +146,5 @@ export const bonitoAmizadeEs: TourPackage = {
     "Excursión sujeta a cambios según las condiciones climáticas y la disponibilidad.",
   packageCategories: [ecotourismEs, aquaticEs, cavesEs, adventureEs],
   packageRecommendedFor: [groupsEs, familiesEs, couplesEs],
+  region: bonitoSerraBodoquenaPt,
 };

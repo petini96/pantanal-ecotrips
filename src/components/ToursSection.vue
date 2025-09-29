@@ -24,34 +24,34 @@
     <div class="row items-stretch q-gutter-lg justify-center">
 
       <div
-        v-for="tour in tours"
+        v-for="tour in loadedTours"
         :key="tour.id"
         class="col-12 col-sm-6 col-md-4 col-lg-3"
       >
         <q-card class="tour-card full-height" flat bordered>
-          <q-img :src="tour.image" :ratio="4/3" class="tour-image">
-            <div class="absolute-bottom-left custom-badge">
-              <q-icon :name="tour.locationIcon" size="18px" class="q-mr-xs" />
-              <span>{{ getTourLocation(tour.location) }}</span>
-            </div>
-          </q-img>
+          <q-img :src="tour.mainImage" :ratio="4/3" class="tour-image" />
 
           <q-card-section>
-            <div class="text-h6 card-title q-mb-sm">{{ getTourTitle(tour.id) }}</div>
+            <div class="text-h6 card-title q-mb-sm">{{ tour.name }}</div>
 
-            <div class="row q-gutter-sm text-caption highlights q-mb-md">
+            <div class="column q-gutter-xs text-caption highlights q-mb-md">
               <div class="highlight-item">
-                <q-icon name="mdi-clock-outline" />
-                <span>{{ getTourDuration(tour.id) }}</span>
+                <q-icon name="mdi-earth" size="18px" />
+                <span><strong>Região:</strong> {{ getRegionFromTour(tour)?.name || 'N/A' }}</span>
               </div>
+
               <div class="highlight-item">
-                <q-icon name="mdi-map-marker-outline" />
-                <span>{{ getTourType(tour.id) }}</span>
+                <q-icon name="mdi-map-marker-outline" size="18px" />
+                <span><strong>Cidade:</strong> {{ tour.city.name }}</span>
+              </div>
+
+              <div class="highlight-item">
+                <q-icon name="mdi-clock-outline" size="18px" />
+                <span><strong>Duração:</strong> {{ tour.durationInHours }} horas</span>
               </div>
             </div>
-
             <p class="text-body2 card-description">
-              {{ getTourDescription(tour.id) }}
+              {{ tour.description }}
             </p>
           </q-card-section>
 
@@ -76,10 +76,36 @@
 import { ref, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-// --- Tradução ---
+// 1. IMPORTAR OS MODELOS E DADOS REAIS
+import type { Tour } from 'src/model/Tour';
+import type { Region } from 'src/model/Region';
+import { bonitoSerraBodoquenaPt, pantanalPt } from 'src/data/regions/Regions';
+import { bocaDaOncaPt } from 'src/data/tours/BocaDaOnca';
+// Simulação de outros passeios para o exemplo funcionar
+import { estanciaMimosaPt } from 'src/data/tours/EstanciaMimosa';
+import { rioDaPrataPt } from 'src/data/tours/RioDaPrata';
+import { buracoDasArarasPt } from 'src/data/tours/BuracoDasAraras';
+
 const { t } = useI18n();
 
-// --- Lógica de Tema (COM TIPAGEM CORRETA) ---
+// 2. LÓGICA PARA ENCONTRAR A REGIÃO A PARTIR DA CIDADE (A PARTE CENTRAL DA SOLUÇÃO)
+const allRegions: Region[] = [bonitoSerraBodoquenaPt, pantanalPt];
+
+const getRegionFromTour = (tour: Tour): Region | null => {
+  const cityId = tour.city.id;
+  if (!cityId) return null;
+  return allRegions.find(region => region.cities.some(city => city.id === cityId)) || null;
+};
+
+// 3. CARREGAR DADOS REAIS DOS PASSEIOS (ao invés de dados mocados)
+const loadedTours = ref<Tour[]>([
+  bocaDaOncaPt,
+  estanciaMimosaPt,
+  rioDaPrataPt,
+  buracoDasArarasPt
+]);
+
+// --- Lógica de Tema (sem alterações) ---
 type ThemeName = 'pantanal_verde' | 'bonito_azul';
 
 interface Theme {
@@ -88,7 +114,7 @@ interface Theme {
   icon: string;
 }
 
-const currentTheme = ref<ThemeName>('pantanal_verde');
+const currentTheme = ref<ThemeName>('bonito_azul'); // Mudei para azul para combinar com os passeios de Bonito
 
 const themes = ref<Theme[]>([
   { name: 'pantanal_verde', label: 'Tema Pantanal', icon: 'mdi-leaf' },
@@ -107,55 +133,9 @@ const setTheme = (themeName: ThemeName) => {
   localStorage.setItem('tour-theme', themeName);
 };
 
-
-// --- Dados dos Passeios (COM TIPAGEM CORRETA) ---
-type TourLocation = 'bonito' | 'pantanal';
-
-interface Tour {
-  id: string;
-  image: string;
-  location: TourLocation;
-  locationIcon: string;
-}
-
-const tours = ref<Tour[]>([
-  {
-    id: 'flutuacao_prata',
-    image: 'https://www.pantanalecotrips.com.br/upload/passeios/imagem_20200821160351.jpg',
-    location: 'bonito',
-    locationIcon: 'mdi-fish'
-  },
-  {
-    id: 'safari_pantanal',
-    image: 'https://www.pantanalecotrips.com.br/upload/passeios/imagem_20200821162358.jpg',
-    location: 'pantanal',
-    locationIcon: 'mdi-paw'
-  },
-  {
-    id: 'gruta_lago_azul',
-    image: 'https://www.pantanalecotrips.com.br/upload/passeios/imagem_20200821153303.jpg',
-    location: 'bonito',
-    locationIcon: 'mdi-fish'
-  },
-  {
-    id: 'cavalgada_pantaneira',
-    image: 'https://www.pantanalecotrips.com.br/upload/passeios/imagem_20200821162125.jpg',
-    location: 'pantanal',
-    locationIcon: 'mdi-paw'
-  },
-]);
-
-// Funções para obter textos traduzidos
-const getTourTitle = (id: string) => t(`tour_${id}_title`);
-const getTourDescription = (id: string) => t(`tour_${id}_desc`);
-const getTourDuration = (id: string) => t(`tour_${id}_duration`);
-const getTourType = (id: string) => t(`tour_${id}_type`);
-const getTourLocation = (location: TourLocation) => t(`location_${location}`);
-
 // --- Ações ---
 const viewTour = (tourId: string) => {
   console.log(`Redirecionando para a página do passeio: ${tourId}`);
-  // Lógica de navegação: router.push(`/passeios/${tourId}`);
 };
 </script>
 
@@ -245,23 +225,6 @@ const viewTour = (tourId: string) => {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
 }
 
-.tour-image .q-img__content > div {
-  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 60%);
-}
-
-.custom-badge {
-  padding: 4px 12px;
-  background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
-  color: white;
-  border-radius: 0 8px 0 0;
-  font-weight: 500;
-  font-size: 0.8rem;
-  margin: 0;
-  display: flex;
-  align-items: center;
-}
-
 .card-title {
   font-weight: 700;
   line-height: 1.3;
@@ -282,7 +245,11 @@ const viewTour = (tourId: string) => {
 .highlight-item {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+}
+
+.highlight-item strong {
+  font-weight: 500;
 }
 
 .q-card__section {

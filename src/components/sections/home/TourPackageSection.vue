@@ -25,6 +25,7 @@
             :title="pkg.title"
           />
           <q-card-section class="card-content-section">
+            
             <div class="core-info-pill">
               <div class="info-item">
                 <q-icon name="mdi-calendar-clock" />
@@ -34,7 +35,7 @@
                 </span>
               </div>
               <template v-if="pkg.minPeople">
-                <q-separator vertical spaced="sm" />
+                <q-separator spaced="xs" style="width: 100%;" />
                 <div class="info-item">
                   <q-icon name="mdi-account-group" />
                   <span>Mín. {{ pkg.minPeople }} {{ t('people') }}</span>
@@ -42,7 +43,14 @@
               </template>
             </div>
             <h3 class="card-title">{{ pkg.title }}</h3>
+
+            <div class="region-subheader">
+              <q-icon :name="pkg.region.icon || 'mdi-earth'" />
+              <span>{{ pkg.region.name }}</span>
+            </div>
+            
             <p class="card-description">{{ pkg.subtitle }}</p>
+            
             <div class="icon-section-wrapper">
               <div v-if="pkg.packageCategories?.length">
                 <h4 class="icon-list-title">{{ t('categories') }}</h4>
@@ -114,7 +122,6 @@ const validPackages = computed(() =>
 
 const langMap: Record<string, string> = { pt: 'pt-BR', en: 'en-US', es: 'es' };
 
-// Função que será chamada pelo evento emitido pelo componente filho
 const viewPackage = (packageSlug: string) => {
   void router.push({
     name: 'tourDetails',
@@ -133,12 +140,11 @@ watch(
     locale.value = lang;
     await packageStore.fetchPackages(lang);
   },
-  { immediate: true } // Adicionado para buscar os dados na primeira carga
+  { immediate: true }
 );
 </script>
 
 <style scoped lang="scss">
-/* O CSS do componente pai permanece exatamente o mesmo */
 .section-title {
   font-weight: 800;
   font-size: 2rem;
@@ -179,14 +185,18 @@ watch(
   flex-grow: 1;
 }
 
+/* ========================================================== */
+/* ESTILO DA PÍLULA AJUSTADO PARA O LAYOUT VERTICAL */
+/* ========================================================== */
 .core-info-pill {
-  display: inline-flex;
-  align-items: center;
+  display: inline-flex; /* Para que a pílula não ocupe a largura toda */
+  flex-direction: column; /* Itens empilhados verticalmente */
+  align-items: flex-start; /* Alinhamento à esquerda */
   gap: 8px;
-  padding: 8px 16px;
+  padding: 12px 16px; /* Ajuste no padding vertical */
   background-color: var(--card-subtle-bg);
-  border-radius: 30px;
-  margin-bottom: 20px;
+  border-radius: 20px; /* Borda mais arredondada */
+  margin-bottom: 16px; /* Reduz a margem para diminuir o espaço em branco */
   color: var(--card-text-secondary);
   font-size: 0.85rem;
   font-weight: 500;
@@ -202,6 +212,8 @@ watch(
     }
   }
 }
+/* ========================================================== */
+
 
 .card-title {
   font-family: 'Montserrat', sans-serif;
@@ -210,6 +222,21 @@ watch(
   line-height: 1.3;
   margin: 0 0 8px 0;
   color: var(--card-text-primary);
+}
+
+.region-subheader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--card-primary-color);
+
+  .q-icon {
+    font-size: 1.3rem;
+    opacity: 0.8;
+  }
 }
 
 .card-description {
