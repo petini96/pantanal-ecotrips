@@ -1,95 +1,98 @@
 <template>
   <div>
-    <div class="search-filter-container q-pa-md">
-      <div class="row items-center q-gutter-md">
-        <q-input
-          v-model="filters.searchText"
-          outlined
-          rounded
-          :placeholder="t('search_placeholder')"
-          class="col"
-          dense
-        >
-          <template v-slot:prepend>
-            <q-icon name="mdi-magnify" />
-          </template>
-        </q-input>
 
-        <q-btn
-          flat
-          round
-          dense
-          :icon="showAdvanced ? 'mdi-chevron-up' : 'mdi-tune-variant'"
-          @click="showAdvanced = !showAdvanced"
-          class="q-ml-sm"
-        >
-          <q-tooltip>{{ t(showAdvanced ? 'hide_filters' : 'advanced_filters') }}</q-tooltip>
-        </q-btn>
-      </div>
-
-      <q-slide-transition>
-        <div v-show="showAdvanced" class="advanced-filters q-mt-md">
-          <div class="row q-col-gutter-md">
-            <div class="col-12 col-md-6">
-              <q-select
-                v-model="filters.region"
-                :options="regionOptions"
-                :option-label="(region) => region.name"
-                :label="t('region')"
-                outlined
-                dense
-                clearable
-                @update:model-value="filters.cities = []"
-              />
-            </div>
-            <div class="col-12 col-md-6">
-              <q-select
-                v-model="filters.cities"
-                :options="cityOptions"
-                :option-label="(city) => city.name"
-                :label="t('cities')"
-                multiple
-                use-chips
-                outlined
-                dense
-              />
-            </div>
-            <div class="col-12 col-md-6">
-              <q-select
-                v-model="filters.categories"
-                :options="categoryOptions"
-                :option-label="(cat) => cat.name"
-                :label="t('categories')"
-                multiple
-                use-chips
-                outlined
-                dense
-              />
-            </div>
-            <div class="col-12 col-md-6">
-              <q-select
-                v-model="filters.recommendedFor"
-                :options="audienceOptions"
-                :option-label="(aud) => aud.name"
-                :label="t('recommended_for')"
-                multiple
-                use-chips
-                outlined
-                dense
-              />
-            </div>
-          </div>
-          <div class="text-right q-mt-md">
-            <q-btn :label="t('clear_filters')" flat color="primary" @click="clearFilters" />
-          </div>
-        </div>
-      </q-slide-transition>
-    </div>
-
-    <div id="packages-section" class="tours-section-container q-py-xl">
-      <div class="text-center q-mb-xl">
+    <div id="packages-section" class="tours-section-container q-my-xl">
+      <div class="text-center ">
         <h2 class="section-title">{{ t('most_wanted_packages_title') }}</h2>
       </div>
+
+      <div class="search-filter-container q-pa-md">
+        <div class="row items-center q-gutter-md">
+          <q-input
+            v-model="filters.searchText"
+            filled
+            rounded
+            :placeholder="t('search_placeholder')"
+            class="col"
+            dense
+          >
+            <template v-slot:prepend>
+              <q-icon name="mdi-magnify" />
+            </template>
+          </q-input>
+
+          <q-btn
+            flat
+            round
+            dense
+            color="primary"
+            :icon="showAdvanced ? 'mdi-chevron-up' : 'mdi-tune-variant'"
+            @click="showAdvanced = !showAdvanced"
+            class="q-ml-sm"
+          >
+            <q-tooltip>{{ t(showAdvanced ? 'hide_filters' : 'advanced_filters') }}</q-tooltip>
+          </q-btn>
+        </div>
+
+        <q-slide-transition>
+          <div v-show="showAdvanced" class="advanced-filters q-mt-md">
+            <div class="row q-col-gutter-md">
+              <div class="col-12 col-md-6">
+                <q-select
+                  v-model="filters.region"
+                  :options="regionOptions"
+                  :option-label="(region) => region.name"
+                  :label="t('region')"
+                  filled
+                  dense
+                  clearable
+                  @update:model-value="filters.cities = []"
+                />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-select
+                  v-model="filters.cities"
+                  :options="cityOptions"
+                  :option-label="(city) => city.name"
+                  :label="t('cities')"
+                  multiple
+                  use-chips
+                  filled
+                  dense
+                />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-select
+                  v-model="filters.categories"
+                  :options="categoryOptions"
+                  :option-label="(cat) => cat.name"
+                  :label="t('categories')"
+                  multiple
+                  use-chips
+                  filled
+                  dense
+                />
+              </div>
+              <div class="col-12 col-md-6">
+                <q-select
+                  v-model="filters.recommendedFor"
+                  :options="audienceOptions"
+                  :option-label="(aud) => aud.name"
+                  :label="t('recommended_for')"
+                  multiple
+                  use-chips
+                  filled
+                  dense
+                />
+              </div>
+            </div>
+            <div class="text-right q-mt-md">
+              <q-btn :label="t('clear_filters')" flat color="primary" @click="clearFilters" />
+            </div>
+          </div>
+        </q-slide-transition>
+      </div>
+
 
       <div v-if="loading" class="text-center">
         <q-spinner-dots color="primary" size="3rem" />
@@ -187,6 +190,7 @@
 </template>
 
 <script setup lang="ts">
+// SEU SCRIPT CONTINUA EXATAMENTE O MESMO, NENHUMA ALTERAÇÃO NECESSÁRIA
 import { ref, reactive, watch, computed } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useI18n } from 'vue-i18n';
@@ -208,7 +212,6 @@ import { adventurePt } from 'src/data/categories/Adventuree';
 import { aquaticPt } from 'src/data/categories/Aquaticc';
 import { cavesPt } from 'src/data/categories/Cavess';
 import { ecotourismPt } from 'src/data/categories/Ecotourismm';
-
 
 // --- LÓGICA GERAL ---
 const router = useRouter();
@@ -301,20 +304,34 @@ watch(
 </script>
 
 <style scoped lang="scss">
+/* ========================================================== */
+/* ESTILOS AJUSTADOS PARA O NOVO LAYOUT                 */
+/* ========================================================== */
+
+/* REMOVIDO: .hero-with-filter-wrapper não é mais necessário */
+
+/* O painel de filtro agora é um bloco normal na página */
 .search-filter-container {
-  background-color: var(--card-subtle-bg, #f5f8f7);
-  border-radius: 20px;
+  background-color: #ffffff;
+  border-radius: 28px;
   border: 1px solid var(--card-border-color, #eef2f1);
   max-width: 900px;
-  margin: 0 auto 48px auto;
-  box-shadow: var(--card-shadow, 0 4px 15px rgba(77, 182, 172, 0.1));
+  margin: 0 auto 48px auto; /* Centraliza e adiciona espaço ABAIXO */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  transition: all 0.3s ease-in-out;
 }
+
 .advanced-filters {
   border-top: 1px solid var(--card-border-color, #eef2f1);
   padding-top: 16px;
 }
 
-/* O resto do seu CSS original */
+/* Reduz o espaçamento vertical da seção de pacotes */
+.tours-section-container {
+  padding: 0px 16px;
+}
+
+/* O resto do seu CSS continua aqui */
 .section-title {
   font-weight: 800;
   font-size: 2rem;

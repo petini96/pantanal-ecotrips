@@ -32,7 +32,6 @@ const backgroundStyle = computed(() => {
 });
 
 </script>
-
 <style scoped lang="scss">
 .hero-cta,
 .q-btn[color="primary"] {
@@ -45,7 +44,8 @@ const backgroundStyle = computed(() => {
 
 .hero-section {
     position: relative;
-    height: 85vh;
+    height: 100vh;
+    /* Alterado de 85vh para 100vh */
     display: flex;
     align-items: center;
     justify-content: center;

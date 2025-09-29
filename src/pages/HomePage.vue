@@ -10,7 +10,7 @@
     />
 
     <!-- Listagem de todos os tours -->
-    <TourPackageSection />
+    <TourPackageSection class="q-mt-xl" />
 
     <!-- Porque nos escolher -->
     <WhyUsSection />
