@@ -1,44 +1,212 @@
 <template>
-    <section id="about-us-section" class="q-py-xl content-section about-us-bg">
-        <div class="container text-center text-white">
-            <h2 class="section-title text-white">{{ t('about_us_title') }}</h2>
-            <p class="text-h6 q-mt-md" style="max-width: 800px; margin: auto; opacity: 0.9;">
-                {{ t('about_us_content') }}
-            </p>
-            <q-btn id="about-us-contact-cta" color="secondary" text-color="white" unelevated size="lg" class="q-mt-xl"
-                :label="t('about_us_cta')" href="https://wa.me/5567999022073" target="_blank" icon="mdi-whatsapp" />
+  <section
+    id="about-us-section"
+    class="content-section about-us-bg"
+    v-intersection.once="onIntersection"
+  >
+    <div class="container text-center text-white q-px-md" :class="{ 'is-visible': isVisible }">
+      <h2
+        class="section-title text-white animated-item"
+        style="--animation-delay: 0.2s;"
+      >
+        {{ t('about_us_title') }}
+      </h2>
+
+      <div class="row q-mt-xl justify-center q-col-gutter-lg">
+        <div class="col-12 col-sm-6 col-md-4 animated-item" style="--animation-delay: 0.4s;">
+          <q-card class="feature-card text-center" flat>
+            <q-card-section>
+              <q-icon name="mdi-nature-people" size="3.5rem" class="feature-icon" aria-hidden="true" />
+              <h3 class="feature-title">Especialistas em Ecoturismo</h3>
+              <p class="feature-description">A Pantanal EcoTrips é especializada em Ecoturismo no Pantanal e Bonito, oferecendo roteiros exclusivos e serviços de alta qualidade.</p>
+            </q-card-section>
+          </q-card>
         </div>
-    </section>
+
+        <div class="col-12 col-sm-6 col-md-4 animated-item" style="--animation-delay: 0.6s;">
+          <q-card class="feature-card text-center" flat>
+            <q-card-section>
+              <q-icon name="mdi-medal-outline" size="3.5rem" class="feature-icon" aria-hidden="true" />
+              <h3 class="feature-title">Experiência Comprovada</h3>
+              <p class="feature-description">O fundador, Ronaldo Mendoza Ribeiro, atua no setor desde 2000, com trajetória sólida como agente, guia bilíngue e organizador de excursões.</p>
+            </q-card-section>
+          </q-card>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 animated-item" style="--animation-delay: 0.8s;">
+          <q-card class="feature-card text-center" flat>
+            <q-card-section>
+              <q-icon name="mdi-leaf" size="3.5rem" class="feature-icon" aria-hidden="true" />
+              <h3 class="feature-title">Turismo Sustentável</h3>
+              <p class="feature-description">Nosso objetivo é transformar sua viagem em uma experiência inesquecível, revelando a beleza única deste paraíso natural com um foco em turismo sustentável e responsável.</p>
+            </q-card-section>
+          </q-card>
+        </div>
+      </div>
+
+      <q-btn
+        id="about-us-contact-cta"
+        color="secondary"
+        text-color="white"
+        unelevated
+        size="lg"
+        class="q-mt-xl animated-item about-us-btn"
+        :label="t('about_us_cta')"
+        href="https://wa.me/5567999022073"
+        target="_blank"
+        icon="mdi-whatsapp"
+        style="--animation-delay: 1.0s;"
+        aria-label="Entre em contato pelo WhatsApp"
+      />
+    </div>
+  </section>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
+
+const isVisible = ref(false);
+
+const onIntersection = (entry: IntersectionObserverEntry) => {
+  if (entry.isIntersecting) {
+    isVisible.value = true;
+  }
+};
 </script>
 
 <style lang="scss" scoped>
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated-item {
+  opacity: 0;
+}
+
+.container.is-visible .animated-item {
+  animation: fadeInUp 0.8s ease-out forwards;
+  animation-delay: var(--animation-delay, 0s);
+}
+
+.content-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
 .about-us-bg {
-    position: relative;
-    background-image: url('~assets/images/pantanal_background.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
+  background-image: url('../../../assets/images/packages/joungle-lodge-package.png');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 .about-us-bg::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
 }
 
 .about-us-bg .container {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.section-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  /* AJUSTE: Sombra para destacar o título */
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.feature-card {
+  /* AJUSTE: Opacidade de fundo levemente aumentada */
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+  /* AJUSTE: Efeito de vidro fosco para borrar o fundo */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); // Suporte para Safari
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.feature-icon {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  /* AJUSTE: Sombra no ícone para dar profundidade */
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
+}
+
+.feature-title {
+  font-weight: 600;
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+  /* AJUSTE: Sombra para destacar o título do card */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.feature-description {
+  color: rgba(255, 255, 255, 0.95); /* AJUSTE: Levemente mais opaco para melhor leitura */
+  font-size: 1rem;
+  line-height: 1.6;
+  flex-grow: 1;
+  /* AJUSTE: Sombra para destacar a descrição */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.about-us-btn {
+  transition: all 0.3s ease;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 172, 193, 0.4);
+  }
+}
+
+@media (max-width: $breakpoint-sm-max) {
+  .section-title {
+    font-size: 2.2rem;
+  }
+  .feature-title {
+    font-size: 1.2rem;
+  }
 }
 </style>
