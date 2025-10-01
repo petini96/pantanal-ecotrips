@@ -23,7 +23,6 @@ import {
   bonitoAmizadeEs,
   bonitoAmizadePt,
 } from "src/data/packages/BonitoAmizade/PackageData";
-// +++ IMPORTAR OS NOVOS PACOTES DO JUNGLE LODGE +++
 import {
   jungleLodgeOtterPt,
   jungleLodgeOtterEn,
@@ -38,6 +37,21 @@ import {
   jungleLodgeEagleEn,
   jungleLodgeEagleEs,
 } from "src/data/packages/JungleLodge/PackageData";
+// +++ IMPORTAR OS NOVOS PACOTES DA FAZENDA SAN FRANCISCO +++
+import {
+  fazendaCoatiPt,
+  fazendaCoatiEn,
+  fazendaCoatiEs,
+  fazendaArarinhaPt,
+  fazendaArarinhaEn,
+  fazendaArarinhaEs,
+  fazendaAntaPt,
+  fazendaAntaEn,
+  fazendaAntaEs,
+  fazendaAguiaPt,
+  fazendaAguiaEn,
+  fazendaAguiaEs,
+} from "src/data/packages/FazendaSanFrancisco/PackageData";
 
 // --- Monte os dicionários de pacotes por idioma ---
 const packagesPt: Record<string, TourPackage> = {
@@ -45,11 +59,15 @@ const packagesPt: Record<string, TourPackage> = {
   noiteFeliz: noiteFelizPt,
   familiaFeliz: familiaFelizPt,
   bonitoAmizade: bonitoAmizadePt,
-  // +++ ADICIONAR OS NOVOS PACOTES AQUI +++
   jungleLodgeOtter: jungleLodgeOtterPt,
   jungleLodgeCaiman: jungleLodgeCaimanPt,
   jungleLodgeAnaconda: jungleLodgeAnacondaPt,
   jungleLodgeEagle: jungleLodgeEaglePt,
+  // +++ ADICIONAR OS NOVOS PACOTES AQUI +++
+  fazendaCoati: fazendaCoatiPt,
+  fazendaArarinha: fazendaArarinhaPt,
+  fazendaAnta: fazendaAntaPt,
+  fazendaAguia: fazendaAguiaPt,
 };
 
 const packagesEn: Record<string, TourPackage> = {
@@ -57,11 +75,15 @@ const packagesEn: Record<string, TourPackage> = {
   noiteFeliz: noiteFelizEn,
   familiaFeliz: familiaFelizEn,
   bonitoAmizade: bonitoAmizadeEn,
-  // +++ ADICIONAR OS NOVOS PACOTES AQUI +++
   jungleLodgeOtter: jungleLodgeOtterEn,
   jungleLodgeCaiman: jungleLodgeCaimanEn,
   jungleLodgeAnaconda: jungleLodgeAnacondaEn,
   jungleLodgeEagle: jungleLodgeEagleEn,
+  // +++ ADICIONAR OS NOVOS PACOTES AQUI +++
+  fazendaCoati: fazendaCoatiEn,
+  fazendaArarinha: fazendaArarinhaEn,
+  fazendaAnta: fazendaAntaEn,
+  fazendaAguia: fazendaAguiaEn,
 };
 
 const packagesEs: Record<string, TourPackage> = {
@@ -69,11 +91,15 @@ const packagesEs: Record<string, TourPackage> = {
   noiteFeliz: noiteFelizEs,
   familiaFeliz: familiaFelizEs,
   bonitoAmizade: bonitoAmizadeEs,
-  // +++ ADICIONAR OS NOVOS PACOTES AQUI +++
   jungleLodgeOtter: jungleLodgeOtterEs,
   jungleLodgeCaiman: jungleLodgeCaimanEs,
   jungleLodgeAnaconda: jungleLodgeAnacondaEs,
   jungleLodgeEagle: jungleLodgeEagleEs,
+  // +++ ADICIONAR OS NOVOS PACOTES AQUI +++
+  fazendaCoati: fazendaCoatiEs,
+  fazendaArarinha: fazendaArarinhaEs,
+  fazendaAnta: fazendaAntaEs,
+  fazendaAguia: fazendaAguiaEs,
 };
 
 export const useTourPackageStore = defineStore("tourPackage", () => {
