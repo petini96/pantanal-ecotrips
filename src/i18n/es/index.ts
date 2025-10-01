@@ -60,5 +60,12 @@ export default {
   cities: 'Ciudas',
   region: 'Regiones',
   clear_filters: 'eliminar filtros',
-  search_placeholder: 'Search for tours'
+  search_placeholder: 'Search for tours',
+  dinner: 'cena',
+  tours_for_the_day: "Excursiones de un día",
+  difficulty_easy: 'Dificultad fácil',
+  breakfast: 'Desayuno',
+  lunch: 'Almuerzo',
+  important_observations: 'Observaciones importantes'
+  
 };

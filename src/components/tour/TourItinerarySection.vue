@@ -99,6 +99,7 @@ const getDifficultyInfo = (level: DifficultyLevel) => {
   const difficultyMap = {
     [DifficultyLevel.EASY]: { label: t('difficulty_easy'), icon: 'mdi-emoticon-happy-outline', color: 'green-5' },
     [DifficultyLevel.MODERATE]: { label: t('difficulty_moderate'), icon: 'mdi-emoticon-neutral-outline', color: 'orange-5' },
+    [DifficultyLevel.MEDIUM]: { label: t('difficulty_moderate'), icon: 'mdi-emoticon-neutral-outline', color: 'orange-5' },
     [DifficultyLevel.HARD]: { label: t('difficulty_hard'), icon: 'mdi-emoticon-dead-outline', color: 'red-5' },
   };
   return difficultyMap[level];

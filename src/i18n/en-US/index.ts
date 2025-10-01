@@ -60,6 +60,12 @@ export default {
   cities: 'Cities',
   region: 'Region',
   clear_filters: 'Clear filters',
-  search_placeholder: 'Search for tours'
+  search_placeholder: 'Search for tours',
+  dinner: 'dinner',
+  tours_for_the_day: "Tours for the day",
+  difficulty_easy: 'Difficulty easy',
+  breakfast: 'Breakfast',
+  lunch: 'Lunch',
+  important_observations: 'Important observations'
 
 };

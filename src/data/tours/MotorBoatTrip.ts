@@ -1,0 +1,57 @@
+import { type Tour } from 'src/model/Tour';
+import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
+import { ecotourismPt, ecotourismEn, ecotourismEs } from 'src/data/categories/Ecotourismm';
+import { familiesPt, familiesEn, familiesEs } from 'src/data/audiences/Families';
+import image from 'src/assets/images/tours/pantanal-motor-boat.png'; // Substitua pelo caminho da imagem real
+import { miranda } from '../regions/Cities';
+
+// PT-BR
+export const motorBoatTripPt: Tour = {
+  id: 'TOUR-MBT-01',
+  name: 'Passeio de Barco a Motor com Holofote',
+  description: 'Navegação noturna pelos rios do Pantanal, usando um holofote para avistar animais de hábitos noturnos como jacarés, capivaras e corujas.',
+  mainImage: image,
+  durationInHours: 2,
+  distanceFromCity: 'N/A',
+  difficulty: DifficultyLevel.EASY,
+  environments: [EnvironmentType.RIVER],
+  includedItems: ['Barco', 'Colete salva-vidas', 'Guia especializado'],
+  keywords: ['focagem', 'noturna', 'jacaré', 'barco'],
+  categories: [ecotourismPt],
+  recommendedFor: [familiesPt],
+  city: miranda
+};
+
+// EN-US
+export const motorBoatTripEn: Tour = {
+  id: 'TOUR-MBT-01',
+  name: 'Motor Boat Trip with Spotlight',
+  description: 'Night navigation through the Pantanal rivers, using a spotlight to spot nocturnal animals like caimans, capybaras, and owls.',
+  mainImage: image,
+  durationInHours: 2,
+  distanceFromCity: 'N/A',
+  difficulty: DifficultyLevel.EASY,
+  environments: [EnvironmentType.RIVER],
+  includedItems: ['Boat', 'Life jacket', 'Specialized guide'],
+  keywords: ['spotlighting', 'night', 'caiman', 'boat'],
+  categories: [ecotourismEn],
+  recommendedFor: [familiesEn],
+  city: miranda
+};
+
+// ES
+export const motorBoatTripEs: Tour = {
+  id: 'TOUR-MBT-01',
+  name: 'Paseo en Bote a Motor con Foco de Luz',
+  description: 'Navegación nocturna por los ríos del Pantanal, usando un foco de luz para avistar animales de hábitos nocturnos como caimanes, capibaras y búhos.',
+  mainImage: image,
+  durationInHours: 2,
+  distanceFromCity: 'N/A',
+  difficulty: DifficultyLevel.EASY,
+  environments: [EnvironmentType.RIVER],
+  includedItems: ['Bote', 'Chaleco salvavidas', 'Guía especializado'],
+  keywords: ['enfoque', 'noche', 'caimán', 'bote'],
+  categories: [ecotourismEs],
+  recommendedFor: [familiesEs],
+  city: miranda
+};

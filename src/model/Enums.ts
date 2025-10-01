@@ -1,6 +1,7 @@
 export enum DifficultyLevel {
   EASY = 'easy',
   MODERATE = 'moderate',
+  MEDIUM = 'medium',
   HARD = 'hard',
 }
 
@@ -11,4 +12,5 @@ export enum EnvironmentType {
   WATERFALL = 'waterfall',
   MOUNTAIN = 'mountain',
   BEACH = 'beach',
+  FIELDS = 'fields'
 }

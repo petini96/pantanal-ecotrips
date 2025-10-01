@@ -4,11 +4,9 @@
   </q-page>
 
   <q-page v-else-if="pkg" :class="['tour-details-page', `theme-${currentTheme}`]">
-    <SimpleBannerDetails
-      :hero_title="pkg.title"
+    <SimpleBannerDetails :hero_title="pkg.title"
       :hero_subtitle="`${pkg.durationInDays} ${t('days')} / ${pkg.durationInNights} ${t('nights')}`"
-      :hero_image="pkg.image"
-    />
+      :hero_image="pkg.image" />
 
     <div class="page-content q-pa-md q-gutter-y-xl">
 
@@ -30,16 +28,10 @@
         </q-card-section>
       </q-card>
 
-      <AboutTourSection
-        :tour_details_about_title="t('tour_details_about_title')"
-        :tour_desc="pkg.subtitle"
-      />
+      <AboutTourSection :tour_details_about_title="t('tour_details_about_title')" :tour_desc="pkg.subtitle" />
 
-      <TourItinerarySection
-        v-if="pkg.itinerary && pkg.itinerary.length > 0"
-        :tour_details_itinerary_title="t('tour_details_itinerary_title')"
-        :itinerary="pkg.itinerary"
-      />
+      <TourItinerarySection v-if="pkg.itinerary && pkg.itinerary.length > 0"
+        :tour_details_itinerary_title="t('tour_details_itinerary_title')" :itinerary="pkg.itinerary" />
 
       <q-card class="info-card" flat bordered>
         <q-card-section class="row q-col-gutter-md">
@@ -68,10 +60,15 @@
         <div class="col-12 col-md-6" v-if="pkg.included && pkg.included.length > 0">
           <q-card class="info-card included-card" flat bordered>
             <q-card-section>
-              <div class="text-h6"><q-icon name="mdi-check-circle-outline" /><span>{{ t('tour_details_included_title') }}</span></div>
+              <div class="text-h6"><q-icon name="mdi-check-circle-outline" /><span>{{ t('tour_details_included_title')
+              }}</span></div>
               <q-list separator class="q-mt-sm">
                 <q-item v-for="(item, index) in pkg.included" :key="`inc-${index}`">
-                  <q-item-section>{{ item }}</q-item-section>
+                  <q-item-section>
+                    <span>
+                      <strong>{{ `${index + 1})` }}</strong> {{ ` ${item}` }}
+                    </span>
+                  </q-item-section>
                 </q-item>
               </q-list>
             </q-card-section>
@@ -80,37 +77,51 @@
         <div class="col-12 col-md-6" v-if="pkg.notIncluded && pkg.notIncluded.length > 0">
           <q-card class="info-card not-included-card" flat bordered>
             <q-card-section>
-              <div class="text-h6"><q-icon name="mdi-close-circle-outline" /><span>{{ t('tour_details_not_included_title') }}</span></div>
+              <div class="text-h6"><q-icon name="mdi-close-circle-outline" /><span>{{
+                t('tour_details_not_included_title')
+                  }}</span></div>
               <q-list separator class="q-mt-sm">
                 <q-item v-for="(item, index) in pkg.notIncluded" :key="`not-inc-${index}`">
-                  <q-item-section>{{ item }}</q-item-section>
+                  <q-item-section>
+                    <span>
+                      <strong>{{ `${index + 1})` }}</strong> {{ ` ${item}` }}
+                    </span>
+                  </q-item-section>
                 </q-item>
               </q-list>
             </q-card-section>
           </q-card>
         </div>
       </div>
-      
+
       <q-card class="packing-card" flat bordered v-if="pkg.shouldIBring && pkg.shouldIBring.length > 0">
         <q-card-section>
-          <div class="text-h6"><q-icon name="mdi-bag-suitcase-outline" /><span>{{ t('tour_details_packing_title') }}</span></div>
+          <div class="text-h6"><q-icon name="mdi-bag-suitcase-outline" /><span>{{ t('tour_details_packing_title')
+          }}</span>
+          </div>
           <q-list separator class="q-mt-sm">
             <q-item v-for="(item, index) in pkg.shouldIBring" :key="`bring-${index}`">
-              <q-item-section>{{ item }}</q-item-section>
+              <q-item-section>
+                    <span>
+                      <strong>{{ `${index + 1})` }}</strong> {{ ` ${item}` }}
+                    </span>
+                  </q-item-section>
             </q-item>
           </q-list>
         </q-card-section>
       </q-card>
 
       <q-card class="info-card observation-card" flat bordered v-if="pkg.observation">
-          <q-card-section>
-            <div class="text-h6"><q-icon name="mdi-information-outline" /><span>{{ t('important_observations') }}</span></div>
-            <p class="q-mt-sm">{{ pkg.observation }}</p>
-          </q-card-section>
+        <q-card-section>
+          <div class="text-h6"><q-icon name="mdi-information-outline" /><span>{{ t('important_observations') }}</span>
+          </div>
+          <p class="q-mt-sm">{{ pkg.observation }}</p>
+        </q-card-section>
       </q-card>
 
       <div class="text-center q-mt-xl">
-        <q-btn color="secondary" size="lg" :label="t('tour_details_cta_button')" icon="mdi-whatsapp" :href="`https://wa.me/5567999022073?text=${encodedWhatsAppMessage}`" target="_blank" />
+        <q-btn color="secondary" size="lg" :label="t('tour_details_cta_button')" icon="mdi-whatsapp"
+          :href="`https://wa.me/5567999022073?text=${encodedWhatsAppMessage}`" target="_blank" />
       </div>
     </div>
   </q-page>
@@ -178,7 +189,7 @@ useMeta(() => {
   }
   const baseUrl = 'https://www.pantanalecotrips.com.br';
   const currentLang = (route.params.lang as string || 'pt');
-  
+
   return {
     title: `${pkg.value.title} | Pantanal Ecotrips`,
     meta: {
@@ -196,20 +207,26 @@ useMeta(() => {
 .tour-details-page {
   background-color: #f8f9fa;
 }
+
 .page-content {
   max-width: 960px;
   margin: -100px auto 60px auto;
   position: relative;
   z-index: 3;
+
   @media (max-width: $breakpoint-sm-max) {
     margin-top: -60px;
   }
 }
-.intro-card, .info-card, .packing-card {
+
+.intro-card,
+.info-card,
+.packing-card {
   border-radius: 16px;
   border: 1px solid #eef2f1;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
+
 .core-info-pill-details {
   display: flex;
   align-items: center;
@@ -224,13 +241,16 @@ useMeta(() => {
     display: flex;
     align-items: center;
     gap: 8px;
+
     .q-icon {
       color: var(--q-primary);
       font-size: 1.5rem;
     }
   }
 }
-.info-card .text-h6, .packing-card .text-h6 {
+
+.info-card .text-h6,
+.packing-card .text-h6 {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -238,23 +258,38 @@ useMeta(() => {
   font-size: 1.25rem;
   color: #2c3e50;
   margin-bottom: 8px;
+
   .q-icon {
     color: var(--q-primary);
   }
 }
-.included-card .text-h6 .q-icon { color: #2ecc71; }
-.not-included-card .text-h6 .q-icon { color: #e74c3c; }
-.observation-card .text-h6 .q-icon { color: #3498db; }
+
+.included-card .text-h6 .q-icon {
+  color: #2ecc71;
+}
+
+.not-included-card .text-h6 .q-icon {
+  color: #e74c3c;
+}
+
+.observation-card .text-h6 .q-icon {
+  color: #3498db;
+}
 
 .icon-list-title {
   margin-bottom: 16px;
-  .q-icon { margin-right: 8px; }
+
+  .q-icon {
+    margin-right: 8px;
+  }
 }
+
 .icon-list {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
+
 .icon-list-item {
   display: flex;
   align-items: center;
@@ -265,12 +300,14 @@ useMeta(() => {
   background-color: #f5f8f7;
   padding: 8px 16px;
   border-radius: 20px;
+
   .q-icon {
     color: var(--q-primary);
     font-size: 1.3rem;
   }
 }
-.q-list--separator > .q-item {
+
+.q-list--separator>.q-item {
   border-top: 1px solid #f0f0f0;
 }
 </style>

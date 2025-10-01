@@ -60,5 +60,11 @@ export default {
   cities: 'Cidades',
   region: 'Regiões',
   clear_filters: 'Apagar filtros',
-  search_placeholder: 'Busque por passeios'
+  search_placeholder: 'Busque por passeios',
+  dinner: 'Jantar',
+  tours_for_the_day: "Passeios do dia",
+  difficulty_easy: 'Dificuldade fácil',
+  breakfast: 'Café da manhã',
+  lunch: 'Almoço',
+  important_observations: 'Informações importantes'
 };
