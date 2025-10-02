@@ -1,69 +1,77 @@
 <template>
-  <section
-    id="about-us-section"
-    class="content-section about-us-bg"
-    v-intersection.once="onIntersection"
-  >
-    <div class="container text-center text-white q-px-md" :class="{ 'is-visible': isVisible }">
-      <h2
-        class="section-title text-white animated-item"
-        style="--animation-delay: 0.2s;"
-      >
-        {{ t('about_us_title') }}
-      </h2>
+  <q-parallax class="about-us-parallax-section" :height="viewportHeight">
+    <template v-slot:media>
+      <img src="../../../assets/images/packages/joungle-lodge-package.png" alt="Pousada no Pantanal">
+      <div class="parallax-overlay"></div>
+    </template>
 
-      <div class="row q-mt-xl justify-center q-col-gutter-lg">
-        <div class="col-12 col-sm-6 col-md-4 animated-item" style="--animation-delay: 0.4s;">
-          <q-card class="feature-card text-center" flat>
-            <q-card-section>
-              <q-icon name="mdi-nature-people" size="3.5rem" class="feature-icon" aria-hidden="true" />
-              <h3 class="feature-title">Especialistas em Ecoturismo</h3>
-              <p class="feature-description">A Pantanal EcoTrips é especializada em Ecoturismo no Pantanal e Bonito, oferecendo roteiros exclusivos e serviços de alta qualidade.</p>
-            </q-card-section>
-          </q-card>
-        </div>
+    <template v-slot:content>
+      <div class="parallax-content-container">
+        <div
+          id="about-us-content"
+          class="container text-center text-white q-px-md"
+          :class="{ 'is-visible': isVisible }"
+          v-intersection.once="onIntersection"
+        >
+          <h2
+            class="section-title text-white animated-item"
+            style="--animation-delay: 0.2s;"
+          >
+            {{ t('about_us_title') }}
+          </h2>
 
-        <div class="col-12 col-sm-6 col-md-4 animated-item" style="--animation-delay: 0.6s;">
-          <q-card class="feature-card text-center" flat>
-            <q-card-section>
-              <q-icon name="mdi-medal-outline" size="3.5rem" class="feature-icon" aria-hidden="true" />
-              <h3 class="feature-title">Experiência Comprovada</h3>
-              <p class="feature-description">O fundador, Ronaldo Mendoza Ribeiro, atua no setor desde 2000, com trajetória sólida como agente, guia bilíngue e organizador de excursões.</p>
-            </q-card-section>
-          </q-card>
-        </div>
+          <div class="row q-mt-xl justify-center q-col-gutter-lg">
+            <div class="col-12 col-sm-6 col-md-4 animated-item" style="--animation-delay: 0.4s;">
+              <q-card class="feature-card text-center" flat>
+                <q-card-section>
+                  <q-icon name="mdi-nature-people" size="3.5rem" class="feature-icon" aria-hidden="true" />
+                  <h3 class="feature-title">Especialistas em Ecoturismo</h3>
+                  <p class="feature-description">A Pantanal EcoTrips é especializada em Ecoturismo no Pantanal e Bonito, oferecendo roteiros exclusivos e serviços de alta qualidade.</p>
+                </q-card-section>
+              </q-card>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 animated-item" style="--animation-delay: 0.6s;">
+              <q-card class="feature-card text-center" flat>
+                <q-card-section>
+                  <q-icon name="mdi-medal-outline" size="3.5rem" class="feature-icon" aria-hidden="true" />
+                  <h3 class="feature-title">Experiência Comprovada</h3>
+                  <p class="feature-description">O fundador, Ronaldo Mendoza Ribeiro, atua no setor desde 2000, com trajetória sólida como agente, guia bilíngue e organizador de excursões.</p>
+                </q-card-section>
+              </q-card>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 animated-item" style="--animation-delay: 0.8s;">
+              <q-card class="feature-card text-center" flat>
+                <q-card-section>
+                  <q-icon name="mdi-leaf" size="3.5rem" class="feature-icon" aria-hidden="true" />
+                  <h3 class="feature-title">Turismo Sustentável</h3>
+                  <p class="feature-description">Nosso objetivo é transformar sua viagem em uma experiência inesquecível, revelando a beleza única deste paraíso natural com um foco em turismo sustentável e responsável.</p>
+                </q-card-section>
+              </q-card>
+            </div>
+          </div>
 
-        <div class="col-12 col-sm-6 col-md-4 animated-item" style="--animation-delay: 0.8s;">
-          <q-card class="feature-card text-center" flat>
-            <q-card-section>
-              <q-icon name="mdi-leaf" size="3.5rem" class="feature-icon" aria-hidden="true" />
-              <h3 class="feature-title">Turismo Sustentável</h3>
-              <p class="feature-description">Nosso objetivo é transformar sua viagem em uma experiência inesquecível, revelando a beleza única deste paraíso natural com um foco em turismo sustentável e responsável.</p>
-            </q-card-section>
-          </q-card>
+          <q-btn
+            id="about-us-contact-cta"
+            color="secondary"
+            text-color="white"
+            unelevated
+            size="lg"
+            class="q-mt-xl q-mb-lg animated-item about-us-btn"
+            :label="t('about_us_cta')"
+            href="https://wa.me/5567999022073"
+            target="_blank"
+            icon="mdi-whatsapp"
+            style="--animation-delay: 1.0s;"
+            aria-label="Entre em contato pelo WhatsApp"
+          />
         </div>
       </div>
-
-      <q-btn
-        id="about-us-contact-cta"
-        color="secondary"
-        text-color="white"
-        unelevated
-        size="lg"
-        class="q-mt-xl animated-item about-us-btn"
-        :label="t('about_us_cta')"
-        href="https://wa.me/5567999022073"
-        target="_blank"
-        icon="mdi-whatsapp"
-        style="--animation-delay: 1.0s;"
-        aria-label="Entre em contato pelo WhatsApp"
-      />
-    </div>
-  </section>
+    </template>
+  </q-parallax>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
@@ -75,6 +83,19 @@ const onIntersection = (entry: IntersectionObserverEntry) => {
     isVisible.value = true;
   }
 };
+
+const viewportHeight = ref(window.innerHeight);
+const updateHeight = () => {
+  viewportHeight.value = window.innerHeight;
+};
+
+onMounted(() => {
+  window.addEventListener('resize', updateHeight);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateHeight);
+});
 </script>
 
 <style lang="scss" scoped>
@@ -98,24 +119,11 @@ const onIntersection = (entry: IntersectionObserverEntry) => {
   animation-delay: var(--animation-delay, 0s);
 }
 
-.content-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  overflow: hidden;
+.about-us-parallax-section {
+  width: 100%;
 }
 
-.about-us-bg {
-  background-image: url('../../../assets/images/packages/joungle-lodge-package.png');
-  background-size: cover;
-  background-position: center center;
-  background-attachment: fixed;
-}
-
-.about-us-bg::before {
-  content: '';
+.parallax-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -125,11 +133,17 @@ const onIntersection = (entry: IntersectionObserverEntry) => {
   z-index: 1;
 }
 
-.about-us-bg .container {
-  position: relative;
+.parallax-content-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 2;
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding: 48px 0;
 }
 
 .section-title {
@@ -138,12 +152,10 @@ const onIntersection = (entry: IntersectionObserverEntry) => {
   line-height: 1.2;
   color: #ffffff;
   margin-bottom: 2rem;
-  /* AJUSTE: Sombra para destacar o título */
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .feature-card {
-  /* AJUSTE: Opacidade de fundo levemente aumentada */
   background-color: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
@@ -154,10 +166,8 @@ const onIntersection = (entry: IntersectionObserverEntry) => {
   justify-content: flex-start;
   align-items: center;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-
-  /* AJUSTE: Efeito de vidro fosco para borrar o fundo */
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); // Suporte para Safari
+  -webkit-backdrop-filter: blur(10px);
 
   &:hover {
     background-color: rgba(255, 255, 255, 0.25);
@@ -169,7 +179,6 @@ const onIntersection = (entry: IntersectionObserverEntry) => {
 .feature-icon {
   color: var(--secondary-color);
   margin-bottom: 1rem;
-  /* AJUSTE: Sombra no ícone para dar profundidade */
   filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.4));
 }
 
@@ -180,16 +189,14 @@ const onIntersection = (entry: IntersectionObserverEntry) => {
   margin-top: 0;
   margin-bottom: 0.75rem;
   line-height: 1.3;
-  /* AJUSTE: Sombra para destacar o título do card */
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .feature-description {
-  color: rgba(255, 255, 255, 0.95); /* AJUSTE: Levemente mais opaco para melhor leitura */
+  color: rgba(255, 255, 255, 0.95);
   font-size: 1rem;
   line-height: 1.6;
   flex-grow: 1;
-  /* AJUSTE: Sombra para destacar a descrição */
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
