@@ -37,29 +37,31 @@
             <div class="text-subtitle2 q-mb-sm text-primary text-weight-bold">{{ t('tours_for_the_day') }}</div>
             <div class="row q-col-gutter-sm">
               <div v-for="tour in item.tours" :key="tour.id" class="col-12">
-                <q-card class="tour-item-card" flat bordered>
-                  <q-item>
-                    <q-item-section avatar>
-                      <q-avatar rounded size="64px">
-                        <img :src="tour.mainImage">
-                      </q-avatar>
-                    </q-item-section>
-                    <q-item-section>
-                      <q-item-label class="text-weight-bold">{{ tour.name }}</q-item-label>
-                      <q-item-label caption lines="2">{{ tour.description }}</q-item-label>
-                      <q-item-label class="q-mt-sm">
-                        <div class="tour-details-chips">
-                          <q-chip dense outline :icon="getDifficultyInfo(tour.difficulty).icon" :color="getDifficultyInfo(tour.difficulty).color">
-                            {{ getDifficultyInfo(tour.difficulty).label }}
-                          </q-chip>
-                          <q-chip dense outline icon="mdi-clock-outline" color="grey-7">
-                            {{ tour.durationInHours }}h
-                          </q-chip>
-                        </div>
-                      </q-item-label>
-                    </q-item-section>
-                  </q-item>
-                </q-card>
+                <router-link :to="`/${locale}/passeio/${tour.slug}`" class="tour-card-link">
+                  <q-card class="tour-item-card" flat bordered>
+                    <q-item>
+                      <q-item-section avatar>
+                        <q-avatar rounded size="64px">
+                          <img :src="tour.mainImage">
+                        </q-avatar>
+                      </q-item-section>
+                      <q-item-section>
+                        <q-item-label class="text-weight-bold">{{ tour.name }}</q-item-label>
+                        <q-item-label caption lines="2">{{ tour.description }}</q-item-label>
+                        <q-item-label class="q-mt-sm">
+                          <div class="tour-details-chips">
+                            <q-chip dense outline :icon="getDifficultyInfo(tour.difficulty).icon" :color="getDifficultyInfo(tour.difficulty).color">
+                              {{ getDifficultyInfo(tour.difficulty).label }}
+                            </q-chip>
+                            <q-chip dense outline icon="mdi-clock-outline" color="grey-7">
+                              {{ tour.durationInHours }}h
+                            </q-chip>
+                          </div>
+                        </q-item-label>
+                      </q-item-section>
+                    </q-item>
+                  </q-card>
+                </router-link>
               </div>
             </div>
           </div>
@@ -71,19 +73,16 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
-// A correção principal é importar o tipo correto do seu modelo de dados
 import { type ItineraryItem } from 'src/model/ItineraryItem';
 import { DifficultyLevel } from 'src/model/Enums';
 
-const { t } = useI18n();
+const { t, locale } = useI18n(); // AJUSTE: Importando 'locale' para usar no link
 
-// A prop `itinerary` agora espera o tipo correto de dados
 defineProps<{
   tour_details_itinerary_title: string;
   itinerary: ItineraryItem[] | null;
 }>();
 
-// Funções auxiliares para exibir detalhes extras
 type Meal = 'breakfast' | 'lunch' | 'dinner';
 
 const getMealInfo = (meal: Meal) => {
@@ -107,6 +106,13 @@ const getDifficultyInfo = (level: DifficultyLevel) => {
 </script>
 
 <style scoped lang="scss">
+/* AJUSTE: Estilo para garantir que o link não tenha decoração de texto */
+.tour-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Garante que o link ocupe todo o espaço do card */
+}
+
 .itinerary-section {
   .section-title {
     font-weight: 700;

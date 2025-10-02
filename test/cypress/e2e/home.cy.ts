@@ -51,7 +51,7 @@ describe('Testes da Página Inicial', () => {
       cy.contains('English').click();
   
       // 3. Verifica se a URL mudou (isso acontece rápido).
-      cy.url().should('include', '/en');
+      cy.url().should('include', '/en-US');
   
       // 4. Agora, verifica se o texto do título é DIFERENTE do original.
       // O .should() com callback vai re-tentar até que a tradução atualize o DOM.

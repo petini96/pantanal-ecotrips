@@ -8,6 +8,7 @@ import { miranda } from '../regions/Cities';
 // PT-BR
 export const jaguarSafariPt: Tour = {
   id: 'TOUR-FSF-JS-01',
+  slug: 'safari-fluvial',
   name: 'Safári de Onça-Pintada',
   description: 'Uma expedição especial focada em percorrer as áreas com maior probabilidade de avistamento da onça-pintada, o maior felino das Américas.',
   mainImage: image,
@@ -25,6 +26,7 @@ export const jaguarSafariPt: Tour = {
 // EN-US
 export const jaguarSafariEn: Tour = {
   id: 'TOUR-FSF-JS-01',
+  slug: 'safari-fluvial',
   name: 'Jaguar Safari',
   description: 'A special expedition focused on exploring the areas with the highest probability of spotting the jaguar, the largest feline in the Americas.',
   mainImage: image,
@@ -42,8 +44,9 @@ export const jaguarSafariEn: Tour = {
 // ES
 export const jaguarSafariEs: Tour = {
   id: 'TOUR-FSF-JS-01',
+  slug: 'safari-fluvial',
   name: 'Safari de Jaguar',
-  description: 'Una expedición especial enfocada en recorrer las áreas con la mayor probabilidad de avistar al jaguar, el felino más grande de las Américas.',
+  description: 'Una expedición especial enfocada en-US recorrer las áreas con la mayor probabilidad de avistar al jaguar, el felino más grande de las Américas.',
   mainImage: image,
   durationInHours: 4,
   distanceFromCity: 'N/A',

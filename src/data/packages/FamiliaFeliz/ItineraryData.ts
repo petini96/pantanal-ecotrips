@@ -102,8 +102,8 @@ export const familiaFelizEsItinerary: ItineraryItem[] = [
     day: 1,
     title: "1er Día: Campo Grande - Bonito",
     descriptionItems: [
-      "Recepción en el aeropuerto y traslado compartido a Bonito.",
-      "Check-in en el hotel y noche libre.",
+      "Recepción en-US el aeropuerto y traslado compartido a Bonito.",
+      "Check-in en-US el hotel y noche libre.",
     ],
     tours: [],
   },
@@ -111,7 +111,7 @@ export const familiaFelizEsItinerary: ItineraryItem[] = [
     day: 2,
     title: "2º Día: Flotación y Guacamayos",
     descriptionItems: [
-      "Día de flotación en el acuario natural del Río da Prata y contemplación de los Guacamayos Rojos en el Buraco das Araras.",
+      "Día de flotación en-US el acuario natural del Río da Prata y contemplación de los Guacamayos Rojos en-US el Buraco das Araras.",
     ],
     tours: [rioDaPrataEs, buracoDasArarasEs],
     mealsIncluded: ["lunch"],
@@ -120,7 +120,7 @@ export const familiaFelizEsItinerary: ItineraryItem[] = [
     day: 3,
     title: "3er Día: Gruta y Cascadas",
     descriptionItems: [
-      "Visita a la Gruta del Lago Azul por la mañana y un baño en las cascadas de la Estancia Mimosa por la tarde.",
+      "Visita a la Gruta del Lago Azul por la mañana y un baño en-US las cascadas de la Estancia Mimosa por la tarde.",
     ],
     tours: [grutaLagoAzulEs, estanciaMimosaEs],
     mealsIncluded: ["lunch"],
@@ -129,7 +129,7 @@ export const familiaFelizEsItinerary: ItineraryItem[] = [
     day: 4,
     title: "4º Día: Bonito - Campo Grande",
     descriptionItems: [
-      "Traslado de regreso a Campo Grande en furgoneta compartida.",
+      "Traslado de regreso a Campo Grande en-US furgoneta compartida.",
     ],
     tours: [],
   },

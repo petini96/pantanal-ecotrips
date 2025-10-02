@@ -8,6 +8,7 @@ import { bonito } from '../regions/Cities';
 
 export const cabanasArvorismoPt: Tour = {
   id: 'TOUR-CA-01',
+  slug: 'cabanas-arvorismo',
   name: 'Cabanas Arvorismo',
   description: 'Percurso de 300m com 20 estações e 2 tirolesas, com altura de 4m a 15m. A última é uma tirolesa aquática no rio Formoso.',
   mainImage: image,
@@ -24,6 +25,7 @@ export const cabanasArvorismoPt: Tour = {
 
 export const cabanasArvorismoEn: Tour = {
   id: 'TOUR-CA-01',
+  slug: 'cabanas-arvorismo',
   name: 'Cabanas Treetop Circuit',
   description: 'A 300m course with 20 stations and 2 zip lines, at heights from 4m to 15m. The final one is an aquatic zip line over the Formoso River.',
   mainImage: image,
@@ -40,8 +42,9 @@ export const cabanasArvorismoEn: Tour = {
 
 export const cabanasArvorismoEs: Tour = {
   id: 'TOUR-CA-01',
+  slug: 'cabanas-arvorismo',
   name: 'Cabanas Arborismo',
-  description: 'Recorrido de 300m con 20 estaciones y 2 tirolinas, con alturas de 4m a 15m. La última es una tirolina acuática en el río Formoso.',
+  description: 'Recorrido de 300m con 20 estaciones y 2 tirolinas, con alturas de 4m a 15m. La última es una tirolina acuática en-US el río Formoso.',
   mainImage: image,
   durationInHours: 3,
   distanceFromCity: '6,1km',

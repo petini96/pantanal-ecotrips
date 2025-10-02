@@ -8,6 +8,7 @@ import { miranda } from '../regions/Cities';
 // PT-BR
 export const jeepSafariPt: Tour = {
   id: 'TOUR-JS-01',
+  slug: 'jeep-safari',
   name: 'Safári de Jeep na Nhecolândia',
   description: 'Exploração em veículo 4x4 aberto pelas vastas planícies e campos da região da Nhecolândia, buscando avistar a rica fauna do Pantanal como cervos, tamanduás e tuiuiús.',
   mainImage: image,
@@ -25,6 +26,7 @@ export const jeepSafariPt: Tour = {
 // EN-US
 export const jeepSafariEn: Tour = {
   id: 'TOUR-JS-01',
+  slug: 'jeep-safari',
   name: 'Jeep Safari in Nhecolândia',
   description: 'Exploration in an open 4x4 vehicle through the vast plains and fields of the Nhecolândia region, seeking to spot the rich Pantanal fauna like deer, anteaters, and jabirus.',
   mainImage: image,
@@ -42,8 +44,9 @@ export const jeepSafariEn: Tour = {
 // ES
 export const jeepSafariEs: Tour = {
   id: 'TOUR-JS-01',
-  name: 'Safari en Jeep en Nhecolândia',
-  description: 'Exploración en un vehículo 4x4 abierto por las vastas llanuras y campos de la región de Nhecolândia, buscando avistar la rica fauna del Pantanal como ciervos, osos hormigueros y jabirús.',
+  slug: 'jeep-safari',
+  name: 'Safari en-US Jeep en-US Nhecolândia',
+  description: 'Exploración en-US un vehículo 4x4 abierto por las vastas llanuras y campos de la región de Nhecolândia, buscando avistar la rica fauna del Pantanal como ciervos, osos hormigueros y jabirús.',
   mainImage: image,
   durationInHours: 4,
   distanceFromCity: 'N/A',

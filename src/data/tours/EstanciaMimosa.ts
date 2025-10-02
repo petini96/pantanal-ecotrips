@@ -9,6 +9,7 @@ import { bonito } from '../regions/Cities';
 
 export const estanciaMimosaPt: Tour = {
   id: 'TOUR-EM-01',
+  slug: 'estancia-mimosa',
   name: 'Estância Mimosa',
   description: 'Trilha na mata ciliar do rio Mimoso com paradas para banho em cachoeiras, piscinas naturais, plataforma para salto e um passeio de barco a remo.',
   mainImage: image,
@@ -25,6 +26,7 @@ export const estanciaMimosaPt: Tour = {
 
 export const estanciaMimosaEn: Tour = {
   id: 'TOUR-EM-01',
+  slug: 'estancia-mimosa',
   name: 'Estância Mimosa',
   description: 'Trail in the riparian forest of the Mimoso River with stops for swimming in waterfalls, natural pools, a diving platform, and a rowboat ride.',
   mainImage: image,
@@ -41,15 +43,16 @@ export const estanciaMimosaEn: Tour = {
 
 export const estanciaMimosaEs: Tour = {
   id: 'TOUR-EM-01',
+  slug: 'estancia-mimosa',
   name: 'Estancia Mimosa',
-  description: 'Sendero en el bosque de ribera del río Mimoso con paradas para bañarse en cascadas, piscinas naturales, una plataforma de salto y un paseo en bote de remos.',
+  description: 'Sendero en-US el bosque de ribera del río Mimoso con paradas para bañarse en-US cascadas, piscinas naturales, una plataforma de salto y un paseo en-US bote de remos.',
   mainImage: image,
   durationInHours: 4,
   distanceFromCity: '22,6km',
   difficulty: DifficultyLevel.MODERATE,
   environments: [EnvironmentType.WATERFALL, EnvironmentType.FOREST, EnvironmentType.RIVER],
   includedItems: ['Acompañamiento de guía', 'Chaleco salvavidas'],
-  keywords: ['cascada', 'sendero', 'baño en el río', 'bote'],
+  keywords: ['cascada', 'sendero', 'baño en-US el río', 'bote'],
   categories: [aquaticEs, ecotourismEs],
   recommendedFor: [familiesEs, couplesEs],
   city: bonito

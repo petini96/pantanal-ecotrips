@@ -10,6 +10,7 @@ import { jardim } from '../regions/Cities';
 
 export const rioDaPrataPt: Tour = {
   id: 'TOUR-RDP-01',
+  slug: 'flutuacao-rio-prata',
   name: 'Flutuação no Rio da Prata',
   description: 'Uma flutuação tranquila por um imenso aquário de águas cristalinas, observando peixes e a vegetação subaquática. O passeio começa com uma trilha na mata ciliar.',
   mainImage: image,
@@ -26,6 +27,7 @@ export const rioDaPrataPt: Tour = {
 
 export const rioDaPrataEn: Tour = {
   id: 'TOUR-RDP-01',
+  slug: 'flutuacao-rio-prata',
   name: 'Snorkeling at Rio da Prata',
   description: 'A gentle snorkeling tour through a huge crystal-clear aquarium, observing fish and underwater vegetation. The tour begins with a trail in the riparian forest.',
   mainImage: image,
@@ -42,8 +44,9 @@ export const rioDaPrataEn: Tour = {
 
 export const rioDaPrataEs: Tour = {
   id: 'TOUR-RDP-01',
-  name: 'Flotación en el Río da Prata',
-  description: 'Una tranquila flotación por un inmenso acuario de aguas cristalinas, observando peces y la vegetación subacuática. El recorrido comienza con un sendero en el bosque de ribera.',
+  slug: 'flutuacao-rio-prata',
+  name: 'Flotación en-US el Río da Prata',
+  description: 'Una tranquila flotación por un inmenso acuario de aguas cristalinas, observando peces y la vegetación subacuática. El recorrido comienza con un sendero en-US el bosque de ribera.',
   mainImage: image,
   durationInHours: 4,
   distanceFromCity: '50km',

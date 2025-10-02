@@ -7,6 +7,7 @@ import { miranda } from '../regions/Cities';
 // PT-BR
 export const jungleCampingPt: Tour = {
   id: 'TOUR-JC-01',
+  slug: 'acampamento-na-selva',
   name: 'Acampamento na Selva (uma noite)',
   description: 'Uma experiência única de pernoite na selva do Pantanal em redes com mosquiteiros. Uma imersão total nos sons e na atmosfera noturna da natureza.',
   mainImage: image,
@@ -24,6 +25,7 @@ export const jungleCampingPt: Tour = {
 // EN-US
 export const jungleCampingEn: Tour = {
   id: 'TOUR-JC-01',
+  slug: 'acampamento-na-selva',
   name: 'Camping in the Jungle (one night out)',
   description: 'A unique experience of spending the night in the Pantanal jungle in hammocks with mosquito nets. A total immersion in the sounds and nocturnal atmosphere of nature.',
   mainImage: image,
@@ -41,14 +43,15 @@ export const jungleCampingEn: Tour = {
 // ES
 export const jungleCampingEs: Tour = {
   id: 'TOUR-JC-01',
-  name: 'Campamento en la Selva (una noche fuera)',
-  description: 'Una experiencia única de pasar la noche en la selva del Pantanal en hamacas con mosquiteros. Una inmersión total en los sonidos y la atmósfera nocturna de la naturaleza.',
+  slug: 'acampamento-na-selva',
+  name: 'Campamento en-US la Selva (una noche fuera)',
+  description: 'Una experiencia única de pasar la noche en-US la selva del Pantanal en-US hamacas con mosquiteros. Una inmersión total en-US los sonidos y la atmósfera nocturna de la naturaleza.',
   mainImage: image,
   durationInHours: 12,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.HARD,
   environments: [EnvironmentType.FOREST],
-  includedItems: ['Hamaca con mosquitero', 'Cena y desayuno en el lugar', 'Guía'],
+  includedItems: ['Hamaca con mosquitero', 'Cena y desayuno en-US el lugar', 'Guía'],
   keywords: ['acampar', 'selva', 'hamaca', 'aventura'],
   categories: [adventureEs],
   recommendedFor: [],

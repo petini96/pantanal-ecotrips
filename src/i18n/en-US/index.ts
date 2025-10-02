@@ -64,6 +64,7 @@ export default {
   dinner: 'dinner',
   tours_for_the_day: "Tours for the day",
   difficulty_easy: 'Difficulty easy',
+  difficulty_moderate: 'Difficulty moderate',
   breakfast: 'Breakfast',
   lunch: 'Lunch',
   important_observations: 'Important observations'

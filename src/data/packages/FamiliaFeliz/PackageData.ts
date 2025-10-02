@@ -121,7 +121,7 @@ export const familiaFelizEs: TourPackage = {
     "Transporte privado para los tours",
     "Entradas para los tours mencionados",
     "Comidas incluidas según itinerario",
-    "Asistencia en el aeropuerto",
+    "Asistencia en-US el aeropuerto",
   ],
   notIncluded: [
     "Bebidas",

@@ -41,12 +41,12 @@ const themes = ref([
 ]);
 
 const languages = ref([
-    { code: 'pt', label: 'Português' },
-    { code: 'en', label: 'English' },
+    { code: 'pt-BR', label: 'Português' },
+    { code: 'en-US', label: 'English' },
     { code: 'es', label: 'Español' },
 ]);
 
-const currentLanguageLabel = computed(() => (route.params.lang as string || 'pt').toUpperCase());
+const currentLanguageLabel = computed(() => (route.params.lang as string || 'pt-BR').toUpperCase());
 
 const changeLanguage = (langCode: string) => {
     void router.push({ name: route.name || 'home', params: { ...route.params, lang: langCode } });

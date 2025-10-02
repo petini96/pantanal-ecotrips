@@ -101,7 +101,7 @@ export const noiteFelizEs: TourPackage = {
   id: uuid,
   slug: 'noite-feliz-em-bonito',
   image: image,
-  title: "01 Noche Feliz en Bonito",
+  title: "01 Noche Feliz en-US Bonito",
   subtitle:
     "Este itinerario es ideal para quienes tienen poco tiempo, pero quieren conocer las maravillas de Bonito MS.",
   durationInDays: 3,
@@ -114,7 +114,7 @@ export const noiteFelizEs: TourPackage = {
     "Transporte privado para los tours",
     "Entradas para los tours mencionados",
     "Almuerzo el día de la flotación",
-    "Asistencia en el aeropuerto",
+    "Asistencia en-US el aeropuerto",
   ],
   notIncluded: [
     "Bebidas",

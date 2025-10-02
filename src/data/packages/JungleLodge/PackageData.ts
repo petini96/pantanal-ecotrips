@@ -96,9 +96,9 @@ const commonObservationEn =
 // --- COMMON DATA (ES) ---
 const commonIncludedEs = [
   "Alojamiento (según seleccionado)",
-  "Pensión completa en el Pantanal (desayuno, almuerzo, cena)",
+  "Pensión completa en-US el Pantanal (desayuno, almuerzo, cena)",
   "Guía bilingüe",
-  "Todas las actividades mencionadas en el itinerario",
+  "Todas las actividades mencionadas en-US el itinerario",
   "Transporte compartido Campo Grande/Pantanal/Campo Grande",
   "Asistencia del equipo de Pantanal Eco Trips",
 ];
@@ -283,7 +283,7 @@ export const jungleLodgeAnacondaEs: TourPackage = {
   image,
   title: "Jungle Lodge - Paquete Anaconda",
   subtitle:
-    "4 días de inmersión completa en la diversidad de actividades pantaneras.",
+    "4 días de inmersión completa en-US la diversidad de actividades pantaneras.",
   durationInDays: 4,
   durationInNights: 3,
   minPeople: 1,
@@ -343,7 +343,7 @@ export const jungleLodgeEagleEs: TourPackage = {
   image,
   title: "Jungle Lodge - Paquete Águila",
   subtitle:
-    "La experiencia definitiva de 5 días, incluyendo una noche de campamento en la selva.",
+    "La experiencia definitiva de 5 días, incluyendo una noche de campamento en-US la selva.",
   durationInDays: 5,
   durationInNights: 4,
   minPeople: 1,

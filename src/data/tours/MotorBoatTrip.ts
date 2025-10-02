@@ -8,6 +8,7 @@ import { miranda } from '../regions/Cities';
 // PT-BR
 export const motorBoatTripPt: Tour = {
   id: 'TOUR-MBT-01',
+  slug: 'passeio-de-barco-motor',
   name: 'Passeio de Barco a Motor com Holofote',
   description: 'Navegação noturna pelos rios do Pantanal, usando um holofote para avistar animais de hábitos noturnos como jacarés, capivaras e corujas.',
   mainImage: image,
@@ -25,6 +26,7 @@ export const motorBoatTripPt: Tour = {
 // EN-US
 export const motorBoatTripEn: Tour = {
   id: 'TOUR-MBT-01',
+  slug: 'passeio-de-barco-motor',
   name: 'Motor Boat Trip with Spotlight',
   description: 'Night navigation through the Pantanal rivers, using a spotlight to spot nocturnal animals like caimans, capybaras, and owls.',
   mainImage: image,
@@ -42,7 +44,8 @@ export const motorBoatTripEn: Tour = {
 // ES
 export const motorBoatTripEs: Tour = {
   id: 'TOUR-MBT-01',
-  name: 'Paseo en Bote a Motor con Foco de Luz',
+  slug: 'passeio-de-barco-motor',
+  name: 'Paseo en-US Bote a Motor con Foco de Luz',
   description: 'Navegación nocturna por los ríos del Pantanal, usando un foco de luz para avistar animales de hábitos nocturnos como caimanes, capibaras y búhos.',
   mainImage: image,
   durationInHours: 2,

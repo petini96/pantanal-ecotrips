@@ -7,6 +7,7 @@ import { miranda } from '../regions/Cities';
 // PT-BR
 export const birdwatchingPt: Tour = {
   id: 'TOUR-FSF-BW-01',
+  slug: 'observacao-das-aves',
   name: 'Observação de Aves',
   description: 'Caminhada ao amanhecer, o melhor horário para observar a grande diversidade de aves do Pantanal, como tuiuiús, araras-azuis e tucanos. Essencial para amantes da ornitologia.',
   mainImage: image,
@@ -24,6 +25,7 @@ export const birdwatchingPt: Tour = {
 // EN-US
 export const birdwatchingEn: Tour = {
   id: 'TOUR-FSF-BW-01',
+  slug: 'observacao-das-aves',
   name: 'Birdwatching',
   description: 'A walk at dawn, the best time to observe the great diversity of birds in the Pantanal, such as jabirus, hyacinth macaws, and toucans. Essential for ornithology lovers.',
   mainImage: image,
@@ -41,6 +43,7 @@ export const birdwatchingEn: Tour = {
 // ES
 export const birdwatchingEs: Tour = {
   id: 'TOUR-FSF-BW-01',
+  slug: 'observacao-das-aves',
   name: 'Observación de Aves',
   description: 'Caminata al amanecer, el mejor momento para observar la gran diversidad de aves del Pantanal, como jabirús, guacamayos jacintos y tucanes. Esencial para los amantes de la ornitología.',
   mainImage: image,
@@ -48,7 +51,7 @@ export const birdwatchingEs: Tour = {
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.FOREST, EnvironmentType.FIELDS],
-  includedItems: ['Guía especializado en aves'],
+  includedItems: ['Guía especializado en-US aves'],
   keywords: ['aves', 'birdwatching', 'pájaros', 'guacamayos'],
   categories: [ecotourismEs],
   recommendedFor: [],

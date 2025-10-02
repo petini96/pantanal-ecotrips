@@ -55,7 +55,7 @@ const { theme: currentTheme } = storeToRefs(layoutConfigStore);
 
 // --- SEO OTIMIZADO PARA A HOMEPAGE ---
 useMeta(() => {
-  const currentLang = (route.params.lang as string || 'pt');
+  const currentLang = (route.params.lang as string || 'pt-BR');
   const baseURL = 'https://www.pantanalecotrips.roboticsmind.com.br';
   const ogImageURL = `${baseURL}/og-image.jpg`;
 
@@ -113,12 +113,12 @@ useMeta(() => {
 
 const langMap: Record<string, string> = { pt: 'pt-BR', en: 'en-US', es: 'es' };
 watch(() => route.params.lang, (newLang) => {
-  locale.value = langMap[newLang as string] || 'pt-BR';
+  locale.value = langMap[newLang as string] || 'pt';
 }, { immediate: true });
 
 onMounted(() => {
   if (!route.params.lang) {
-    void router.replace({ name: 'home', params: { lang: 'pt' } });
+    void router.replace({ name: 'home', params: { lang: 'pt-BR' } });
   }
 });
 

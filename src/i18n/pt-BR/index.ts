@@ -64,6 +64,7 @@ export default {
   dinner: 'Jantar',
   tours_for_the_day: "Passeios do dia",
   difficulty_easy: 'Dificuldade fácil',
+  difficulty_moderate: 'Dificuldade moderada',
   breakfast: 'Café da manhã',
   lunch: 'Almoço',
   important_observations: 'Informações importantes'

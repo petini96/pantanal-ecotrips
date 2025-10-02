@@ -89,12 +89,12 @@ const commonObservationEn =
 
 // --- COMMON DATA (ES) ---
 const commonIncludedEs = [
-  "Alojamiento en apartamento",
+  "Alojamiento en-US apartamento",
   "Pensión completa (desayuno, almuerzo, cena)",
-  "Tours descritos en el itinerario",
+  "Tours descritos en-US el itinerario",
   "Acompañamiento de guía",
   "Transporte compartido Campo Grande/Hacienda/Campo Grande",
-  "Asistencia en el aeropuerto",
+  "Asistencia en-US el aeropuerto",
 ];
 const commonNotIncludedEs = [
   "Bebidas",
@@ -158,7 +158,7 @@ export const fazendaCoatiEs: TourPackage = {
   image,
   title: "Fazenda San Francisco - Tour Coatí",
   subtitle:
-    "Una inmersión rápida e intensa de 2 días en la vida salvaje del Pantanal.",
+    "Una inmersión rápida e intensa de 2 días en-US la vida salvaje del Pantanal.",
   durationInDays: 2,
   durationInNights: 1,
   minPeople: 1,
@@ -217,7 +217,7 @@ export const fazendaArarinhaEs: TourPackage = {
   image,
   title: "Fazenda San Francisco - Tour Guacamayo",
   subtitle:
-    "3 días enfocados en la observación de la rica avifauna y fauna pantanera.",
+    "3 días enfocados en-US la observación de la rica avifauna y fauna pantanera.",
   durationInDays: 3,
   durationInNights: 2,
   minPeople: 1,
@@ -277,7 +277,7 @@ export const fazendaAntaEs: TourPackage = {
   image,
   title: "Fazenda San Francisco - Tour Tapir",
   subtitle:
-    "Un viaje de 4 días con una expedición especial en busca del jaguar.",
+    "Un viaje de 4 días con una expedición especial en-US busca del jaguar.",
   durationInDays: 4,
   durationInNights: 3,
   minPeople: 1,

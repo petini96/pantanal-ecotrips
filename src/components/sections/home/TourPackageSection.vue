@@ -287,7 +287,7 @@ const langMap: Record<string, string> = { pt: 'pt-BR', en: 'en-US', es: 'es' };
 const viewPackage = (packageSlug: string) => {
   void router.push({
     name: 'tourDetails',
-    params: { slug: packageSlug, lang: route.params.lang || 'pt' },
+    params: { slug: packageSlug, lang: route.params.lang || 'pt-BR' },
   });
 };
 

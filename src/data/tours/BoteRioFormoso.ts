@@ -10,6 +10,7 @@ import { bonito } from '../regions/Cities';
 // PT-BR
 export const boteRioFormosoPt: Tour = {
   id: 'TOUR-BRF-01',
+  slug: 'rio-formoso',
   name: 'Bote no Rio Formoso',
   description: 'Descida de 6km em botes infláveis por um dos principais rios da região, passando por três cachoeiras, duas corredeiras e com uma parada para banho.',
   mainImage: image,
@@ -27,6 +28,7 @@ export const boteRioFormosoPt: Tour = {
 // EN-US
 export const boteRioFormosoEn: Tour = {
   id: 'TOUR-BRF-01',
+  slug: 'rio-formoso',
   name: 'Rafting on the Formoso River',
   description: 'A 6km downstream trip in inflatable rafts on one of the main rivers of the region, passing by three waterfalls, two rapids, and a stop for swimming.',
   mainImage: image,
@@ -44,8 +46,9 @@ export const boteRioFormosoEn: Tour = {
 // ES
 export const boteRioFormosoEs: Tour = {
   id: 'TOUR-BRF-01',
-  name: 'Bote en el Río Formoso',
-  description: 'Descenso de 6km en botes inflables por uno de los principales ríos de la región, pasando por tres cascadas, dos rápidos y con una parada para bañarse.',
+  slug: 'rio-formoso',
+  name: 'Bote en-US el Río Formoso',
+  description: 'Descenso de 6km en-US botes inflables por uno de los principales ríos de la región, pasando por tres cascadas, dos rápidos y con una parada para bañarse.',
   mainImage: image,
   durationInHours: 4,
   distanceFromCity: '12km',
