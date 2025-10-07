@@ -12,6 +12,8 @@
     <!-- Listagem de todos os tours -->
     <TourPackageSection class="q-mt-xl" />
 
+    <MosaicGallery :images="pantanalImages" />
+
     <!-- Porque nos escolher -->
     <WhyUsSection />
 
@@ -31,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, watch } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 import { useMeta } from 'quasar';
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
@@ -45,6 +47,7 @@ import NewsLetterSection from 'src/components/sections/home/NewsLetterSection.vu
 import AboutUsSection from 'src/components/sections/home/AboutUsSection.vue';
 import FacSection from 'src/components/sections/home/FacSection.vue';
 import CredibilitySection from 'src/components/sections/home/CredibilitySection.vue';
+import MosaicGallery from 'src/components/galerry/MosaicGallery.vue';
 
 const { t, locale } = useI18n();
 const route = useRoute();
@@ -52,6 +55,16 @@ const router = useRouter();
 const layoutConfigStore = useLayoutConfigStore();
 
 const { theme: currentTheme } = storeToRefs(layoutConfigStore);
+
+const pantanalImages = ref([
+  { src: 'https://pantanalecotrips.com.br/sites/default/files/obrasrealizadas/264498_106084456262802_1087015055_n.jpg', alt: 'Montanhas', caption: 'Vista panorâmica das montanhas' },
+  { src: 'https://pantanalecotrips.com.br/sites/default/files/obrasrealizadas/boca_da_ona_17.jpg', alt: 'Cidade à noite', caption: 'Luzes da cidade ao anoitecer' },
+  { src: 'https://pantanalecotrips.com.br/sites/default/files/obrasrealizadas/mirante_serra_da_bodoquena__viewpoint__rico.jpg', alt: 'Ponte estaiada', caption: 'Arquitetura moderna' },
+  { src: 'https://pantanalecotrips.com.br/sites/default/files/obrasrealizadas/flutaao_rio_da_prata_07.jpg', alt: 'Gato', caption: 'Felino observador' },
+  { src: 'https://pantanalecotrips.com.br/sites/default/files/obrasrealizadas/flutaao_rio_da_prata_48_0.jpg', alt: 'Gato', caption: 'Felino observador' },
+  { src: 'https://pantanalecotrips.com.br/sites/default/files/obrasrealizadas/pantanal-jungle-lodge%20%2829%29.jpg', alt: 'Gato', caption: 'Felino observador' },
+  { src: 'https://pantanalecotrips.com.br/sites/default/files/obrasrealizadas/pantanal-jungle-lodge%20%2849%29.jpg', alt: 'Gato', caption: 'Felino observador' },
+]);
 
 // --- SEO OTIMIZADO PARA A HOMEPAGE ---
 useMeta(() => {
