@@ -13,8 +13,7 @@ import LogoImage from '../../../public/pantanal_ecotrips_logo.png'
   display: flex;
   height: 100px;
   width: 100px;
-  border-radius: 50%;
-  box-shadow: 0 0 2px #fff;
+  box-shadow: 0 0 2px ;
   cursor: pointer;
   overflow: hidden;
   transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
@@ -22,11 +21,10 @@ import LogoImage from '../../../public/pantanal_ecotrips_logo.png'
 
 .logo-container:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 5px #fff;
+  box-shadow: 0 0 5px ;
 }
 
 .logo-image {
-  border-radius: 50%;
 }
 
 /* Para tablets e telas menores */
