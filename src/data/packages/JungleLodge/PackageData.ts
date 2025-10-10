@@ -33,7 +33,7 @@ import {
 import { couplesPt, couplesEn, couplesEs } from "../../../data/audiences/Couples";
 import { groupsPt, groupsEn, groupsEs } from "../../../data/audiences/Groups";
 import { pantanalPt, pantanalEn, pantanalEs } from "src/data/regions/Regions";
-import image from "../../../assets/images/packages/joungle-lodge-package.png"; // Substitua pelo caminho da imagem real
+import { PACKAGE_BUCKET_NAME } from "src/utils/environmentUtils";
 
 // --- COMMON DATA (PT-BR) ---
 const commonIncludedPt = [
@@ -127,7 +127,7 @@ const uuidOtter = uid();
 export const jungleLodgeOtterPt: TourPackage = {
   id: uuidOtter,
   slug: "jungle-lodge-otter",
-  image,
+  image: `${PACKAGE_BUCKET_NAME}/joungle-lodge-package.png`,
   title: "Jungle Lodge - Pacote Lontra",
   subtitle: "Uma escapada rápida de 2 dias para sentir a essência do Pantanal.",
   durationInDays: 2,
@@ -145,7 +145,7 @@ export const jungleLodgeOtterPt: TourPackage = {
 export const jungleLodgeOtterEn: TourPackage = {
   id: uuidOtter,
   slug: "jungle-lodge-otter",
-  image,
+  image: `${PACKAGE_BUCKET_NAME}/joungle-lodge-package.png`,
   title: "Jungle Lodge - Otter Package",
   subtitle: "A quick 2-day getaway to feel the essence of the Pantanal.",
   durationInDays: 2,
@@ -163,7 +163,7 @@ export const jungleLodgeOtterEn: TourPackage = {
 export const jungleLodgeOtterEs: TourPackage = {
   id: uuidOtter,
   slug: "jungle-lodge-otter",
-  image,
+  image: `${PACKAGE_BUCKET_NAME}/joungle-lodge-package.png`,
   title: "Jungle Lodge - Paquete Nutria",
   subtitle:
     "Una escapada rápida de 2 días para sentir la esencia del Pantanal.",
@@ -185,7 +185,7 @@ const uuidCaiman = uid();
 export const jungleLodgeCaimanPt: TourPackage = {
   id: uuidCaiman,
   slug: "jungle-lodge-caiman",
-  image,
+  image: `${PACKAGE_BUCKET_NAME}/joungle-lodge-package.png`,
   title: "Jungle Lodge - Pacote Jacaré",
   subtitle: "3 dias explorando a terra e as águas do Pantanal.",
   durationInDays: 3,
@@ -203,7 +203,7 @@ export const jungleLodgeCaimanPt: TourPackage = {
 export const jungleLodgeCaimanEn: TourPackage = {
   id: uuidCaiman,
   slug: "jungle-lodge-caiman",
-  image,
+  image: `${PACKAGE_BUCKET_NAME}/joungle-lodge-package.png`,
   title: "Jungle Lodge - Caiman Package",
   subtitle: "3 days exploring the land and waters of the Pantanal.",
   durationInDays: 3,
@@ -221,7 +221,7 @@ export const jungleLodgeCaimanEn: TourPackage = {
 export const jungleLodgeCaimanEs: TourPackage = {
   id: uuidCaiman,
   slug: "jungle-lodge-caiman",
-  image,
+  image: `${PACKAGE_BUCKET_NAME}/joungle-lodge-package.png`,
   title: "Jungle Lodge - Paquete Caimán",
   subtitle: "3 días explorando la tierra y las aguas del Pantanal.",
   durationInDays: 3,
@@ -242,7 +242,7 @@ const uuidAnaconda = uid();
 export const jungleLodgeAnacondaPt: TourPackage = {
   id: uuidAnaconda,
   slug: "jungle-lodge-anaconda",
-  image,
+  image: `${PACKAGE_BUCKET_NAME}/joungle-lodge-package.png`,
   title: "Jungle Lodge - Pacote Sucuri",
   subtitle:
     "4 dias de imersão completa na diversidade de atividades pantaneiras.",
@@ -261,7 +261,7 @@ export const jungleLodgeAnacondaPt: TourPackage = {
 export const jungleLodgeAnacondaEn: TourPackage = {
   id: uuidAnaconda,
   slug: "jungle-lodge-anaconda",
-  image,
+  image: `${PACKAGE_BUCKET_NAME}/joungle-lodge-package.png`,
   title: "Jungle Lodge - Anaconda Package",
   subtitle:
     "4 days of complete immersion in the diversity of Pantanal activities.",
@@ -280,7 +280,7 @@ export const jungleLodgeAnacondaEn: TourPackage = {
 export const jungleLodgeAnacondaEs: TourPackage = {
   id: uuidAnaconda,
   slug: "jungle-lodge-anaconda",
-  image,
+  image: `${PACKAGE_BUCKET_NAME}/joungle-lodge-package.png`,
   title: "Jungle Lodge - Paquete Anaconda",
   subtitle:
     "4 días de inmersión completa en-US la diversidad de actividades pantaneras.",
@@ -302,7 +302,7 @@ const uuidEagle = uid();
 export const jungleLodgeEaglePt: TourPackage = {
   id: uuidEagle,
   slug: "jungle-lodge-eagle",
-  image,
+  image: `${PACKAGE_BUCKET_NAME}/joungle-lodge-package.png`,
   title: "Jungle Lodge - Pacote Águia",
   subtitle:
     "A experiência definitiva de 5 dias, incluindo uma noite de acampamento na selva.",
@@ -321,7 +321,7 @@ export const jungleLodgeEaglePt: TourPackage = {
 export const jungleLodgeEagleEn: TourPackage = {
   id: uuidEagle,
   slug: "jungle-lodge-eagle",
-  image,
+  image: `${PACKAGE_BUCKET_NAME}/joungle-lodge-package.png`,
   title: "Jungle Lodge - Eagle Package",
   subtitle:
     "The definitive 5-day experience, including a night of camping in the jungle.",
@@ -340,7 +340,7 @@ export const jungleLodgeEagleEn: TourPackage = {
 export const jungleLodgeEagleEs: TourPackage = {
   id: uuidEagle,
   slug: "jungle-lodge-eagle",
-  image,
+  image: `${PACKAGE_BUCKET_NAME}/joungle-lodge-package.png`,
   title: "Jungle Lodge - Paquete Águila",
   subtitle:
     "La experiencia definitiva de 5 días, incluyendo una noche de campamento en-US la selva.",

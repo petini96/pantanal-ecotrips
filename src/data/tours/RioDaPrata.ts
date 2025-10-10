@@ -5,15 +5,15 @@ import { ecotourismEn, ecotourismEs, ecotourismPt } from 'src/data/categories/Ec
 import { couplesEn, couplesEs, couplesPt } from 'src/data/audiences/Couples';
 import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families';
 import { seniorsEn, seniorsEs, seniorsPt } from 'src/data/audiences/Seniors';
-import image from 'src/assets/images/packages/gruta-lagoa-azul.png';
 import { jardim } from '../regions/Cities';
+import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
 export const rioDaPrataPt: Tour = {
   id: 'TOUR-RDP-01',
   slug: 'flutuacao-rio-prata',
   name: 'Flutuação no Rio da Prata',
   description: 'Uma flutuação tranquila por um imenso aquário de águas cristalinas, observando peixes e a vegetação subaquática. O passeio começa com uma trilha na mata ciliar.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/gruta-lagoa-azul.png`,
   durationInHours: 4,
   distanceFromCity: '50km',
   difficulty: DifficultyLevel.EASY,
@@ -30,7 +30,7 @@ export const rioDaPrataEn: Tour = {
   slug: 'flutuacao-rio-prata',
   name: 'Snorkeling at Rio da Prata',
   description: 'A gentle snorkeling tour through a huge crystal-clear aquarium, observing fish and underwater vegetation. The tour begins with a trail in the riparian forest.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/gruta-lagoa-azul.png`,
   durationInHours: 4,
   distanceFromCity: '50km',
   difficulty: DifficultyLevel.EASY,
@@ -47,7 +47,7 @@ export const rioDaPrataEs: Tour = {
   slug: 'flutuacao-rio-prata',
   name: 'Flotación en-US el Río da Prata',
   description: 'Una tranquila flotación por un inmenso acuario de aguas cristalinas, observando peces y la vegetación subacuática. El recorrido comienza con un sendero en-US el bosque de ribera.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/gruta-lagoa-azul.png`,
   durationInHours: 4,
   distanceFromCity: '50km',
   difficulty: DifficultyLevel.EASY,

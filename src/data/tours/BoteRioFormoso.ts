@@ -4,8 +4,8 @@ import { aquaticEn, aquaticEs, aquaticPt } from 'src/data/categories/Aquaticc';
 import { adventureEn, adventureEs, adventurePt } from 'src/data/categories/Adventuree';
 import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families';
 import { groupsEn, groupsEs, groupsPt } from 'src/data/audiences/Groups';
-import image from 'src/assets/images/tours/bote-rio-formoso.png';
 import { bonito } from '../regions/Cities';
+import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
 // PT-BR
 export const boteRioFormosoPt: Tour = {
@@ -13,7 +13,7 @@ export const boteRioFormosoPt: Tour = {
   slug: 'rio-formoso',
   name: 'Bote no Rio Formoso',
   description: 'Descida de 6km em botes infláveis por um dos principais rios da região, passando por três cachoeiras, duas corredeiras e com uma parada para banho.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/bote-rio-formoso.png`,
   durationInHours: 4,
   distanceFromCity: '12km',
   difficulty: DifficultyLevel.EASY,
@@ -31,7 +31,7 @@ export const boteRioFormosoEn: Tour = {
   slug: 'rio-formoso',
   name: 'Rafting on the Formoso River',
   description: 'A 6km downstream trip in inflatable rafts on one of the main rivers of the region, passing by three waterfalls, two rapids, and a stop for swimming.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/bote-rio-formoso.png`,
   durationInHours: 4,
   distanceFromCity: '12km',
   difficulty: DifficultyLevel.EASY,
@@ -49,7 +49,7 @@ export const boteRioFormosoEs: Tour = {
   slug: 'rio-formoso',
   name: 'Bote en-US el Río Formoso',
   description: 'Descenso de 6km en-US botes inflables por uno de los principales ríos de la región, pasando por tres cascadas, dos rápidos y con una parada para bañarse.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/bote-rio-formoso.png`,
   durationInHours: 4,
   distanceFromCity: '12km',
   difficulty: DifficultyLevel.EASY,

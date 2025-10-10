@@ -24,8 +24,8 @@ import {
 } from "src/data/audiences/Families";
 import { couplesPt, couplesEn, couplesEs } from "src/data/audiences/Couples";
 import { groupsPt, groupsEn, groupsEs } from "src/data/audiences/Groups";
-import image from "src/assets/images/packages/reveillon-bonito.png";
 import { bonitoSerraBodoquenaEn, bonitoSerraBodoquenaEs, bonitoSerraBodoquenaPt } from "src/data/regions/Regions";
+import { PACKAGE_BUCKET_NAME } from "src/utils/environmentUtils";
 
 const uuid = uid();
 
@@ -33,7 +33,7 @@ const uuid = uid();
 export const reveillonBonitoPt: TourPackage = {
   id: uuid,
   slug: 'reveillon-em-bonito-2024',
-  image: image,
+  image: `${PACKAGE_BUCKET_NAME}/reveillon-bonito.png`,
   title: "Réveillon em Bonito 2024",
   subtitle:
     "Pacote de 5 dias e 4 noites para celebrar a virada do ano em meio à natureza.",
@@ -73,7 +73,7 @@ export const reveillonBonitoPt: TourPackage = {
 export const reveillonBonitoEn: TourPackage = {
   id: uuid,
   slug: 'reveillon-em-bonito-2024',
-  image: image,
+  image: `${PACKAGE_BUCKET_NAME}/reveillon-bonito.png`,
   title: "New Year's Eve in Bonito 2024",
   subtitle:
     "A 5-day, 4-night package to celebrate the new year surrounded by nature.",
@@ -113,7 +113,7 @@ export const reveillonBonitoEn: TourPackage = {
 export const reveillonBonitoEs: TourPackage = {
   id: uuid,
   slug: 'reveillon-em-bonito-2024',
-  image: image,
+  image: `${PACKAGE_BUCKET_NAME}/reveillon-bonito.png`,
   title: "Nochevieja en-US Bonito 2024",
   subtitle:
     "Paquete de 5 días y 4 noches para celebrar el año nuevo en-US plena naturaleza.",

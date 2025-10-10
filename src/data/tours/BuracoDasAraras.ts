@@ -4,8 +4,8 @@ import { ecotourismEn, ecotourismEs, ecotourismPt } from 'src/data/categories/Ec
 import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families';
 import { couplesEn, couplesEs, couplesPt } from 'src/data/audiences/Couples';
 import { seniorsEn, seniorsEs, seniorsPt } from 'src/data/audiences/Seniors';
-import image from 'src/assets/images/tours/buraco-das-araras.png';
 import { bonito } from '../regions/Cities';
+import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
 // PT-BR
 export const buracoDasArarasPt: Tour = {
@@ -13,7 +13,7 @@ export const buracoDasArarasPt: Tour = {
   slug: 'buraco-das-araras',
   name: 'Buraco das Araras',
   description: 'Uma enorme cratera em arenito (dolina) com 120m de profundidade, onde Araras Vermelhas e outros pássaros criaram seu habitat. Um passeio de contemplação e observação da fauna.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/buraco-das-araras.png`,
   durationInHours: 1,
   distanceFromCity: '58km',
   difficulty: DifficultyLevel.EASY,
@@ -31,7 +31,7 @@ export const buracoDasArarasEn: Tour = {
   slug: 'buraco-das-araras',
   name: 'Macaw\'s Hole (Buraco das Araras)',
   description: 'A huge sandstone crater (a doline) 120m deep, where Red Macaws and other birds have made their habitat. A tour for contemplation and wildlife observation.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/buraco-das-araras.png`,
   durationInHours: 1,
   distanceFromCity: '58km',
   difficulty: DifficultyLevel.EASY,
@@ -49,7 +49,7 @@ export const buracoDasArarasEs: Tour = {
   slug: 'buraco-das-araras',
   name: 'Buraco das Araras',
   description: 'Un enorme cráter de arenisca (una dolina) de 120m de profundidad, donde guacamayos rojos y otras aves han creado su hábitat. Un recorrido de contemplación y observación de la fauna.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/buraco-das-araras.png`,
   durationInHours: 1,
   distanceFromCity: '58km',
   difficulty: DifficultyLevel.EASY,

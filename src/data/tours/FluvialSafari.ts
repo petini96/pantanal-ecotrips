@@ -2,8 +2,8 @@ import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { ecotourismPt, ecotourismEn, ecotourismEs } from 'src/data/categories/Ecotourismm';
 import { familiesPt, familiesEn, familiesEs } from 'src/data/audiences/Families';
-import image from 'src/assets/images/tours/pantanal-fluvial-safari.jpg'; // Substitua pelo caminho da imagem real
 import { miranda } from '../regions/Cities';
+import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
 // PT-BR
 export const fluvialSafariPt: Tour = {
@@ -11,7 +11,7 @@ export const fluvialSafariPt: Tour = {
   slug: 'safari-fluvial',
   name: 'Safári Fluvial',
   description: 'Um passeio de barco durante o dia para explorar as margens do Rio Miranda, ideal para observar aves, jacarés e com sorte, lontras e ariranhas.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/pantanal-fluvial-safari.jpg`,
   durationInHours: 3,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
@@ -29,7 +29,7 @@ export const fluvialSafariEn: Tour = {
   slug: 'safari-fluvial',
   name: 'Fluvial Safari',
   description: 'A daytime boat trip to explore the banks of the Miranda River, ideal for observing birds, caimans, and hopefully, otters and giant otters.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/pantanal-fluvial-safari.jpg`,
   durationInHours: 3,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
@@ -47,7 +47,7 @@ export const fluvialSafariEs: Tour = {
   slug: 'safari-fluvial',
   name: 'Safari Fluvial',
   description: 'Un paseo en-US bote durante el día para explorar las orillas del Río Miranda, ideal para observar aves, caimanes y con suerte, nutrias y nutrias gigantes.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/pantanal-fluvial-safari.jpg`,
   durationInHours: 3,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,

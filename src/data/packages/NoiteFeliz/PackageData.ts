@@ -18,8 +18,8 @@ import {
   familiesEs,
 } from "../../../data/audiences/Families";
 import { couplesPt, couplesEn, couplesEs } from "../../../data/audiences/Couples";
-import image from "../../../assets/images/packages/noite-feliz.png";
 import { bonitoSerraBodoquenaEn, bonitoSerraBodoquenaEs, bonitoSerraBodoquenaPt } from "src/data/regions/Regions";
+import { PACKAGE_BUCKET_NAME } from "src/utils/environmentUtils";
 
 const uuid = uid();
 
@@ -27,7 +27,7 @@ const uuid = uid();
 export const noiteFelizPt: TourPackage = {
   id: uuid,
   slug: 'noite-feliz-em-bonito',
-  image: image,
+  image: `${PACKAGE_BUCKET_NAME}/noite-feliz.png`,
   title: "01 Noite Feliz em Bonito",
   subtitle:
     "Este roteiro é ideal para quem tem pouco tempo, mas quer conhecer as maravilhas de Bonito MS.",
@@ -66,7 +66,7 @@ export const noiteFelizPt: TourPackage = {
 export const noiteFelizEn: TourPackage = {
   id: uuid,
   slug: 'noite-feliz-em-bonito',
-  image: image,
+  image: `${PACKAGE_BUCKET_NAME}/noite-feliz.png`,
   title: "01 Happy Night in Bonito",
   subtitle:
     "This itinerary is ideal for those who have little time but want to experience the wonders of Bonito MS.",
@@ -100,7 +100,7 @@ export const noiteFelizEn: TourPackage = {
 export const noiteFelizEs: TourPackage = {
   id: uuid,
   slug: 'noite-feliz-em-bonito',
-  image: image,
+  image: `${PACKAGE_BUCKET_NAME}/noite-feliz.png`,
   title: "01 Noche Feliz en-US Bonito",
   subtitle:
     "Este itinerario es ideal para quienes tienen poco tiempo, pero quieren conocer las maravillas de Bonito MS.",

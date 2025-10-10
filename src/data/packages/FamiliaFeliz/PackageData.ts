@@ -18,8 +18,8 @@ import {
   familiesEs,
 } from "src/data/audiences/Families";
 import { couplesPt, couplesEn, couplesEs } from "src/data/audiences/Couples";
-import image from "src/assets/images/packages/familia-feliz.png";
 import { bonitoSerraBodoquenaEn, bonitoSerraBodoquenaEs, bonitoSerraBodoquenaPt } from "src/data/regions/Regions";
+import { PACKAGE_BUCKET_NAME } from "src/utils/environmentUtils";
 
 const uuid = uid();
 
@@ -27,7 +27,7 @@ const uuid = uid();
 export const familiaFelizPt: TourPackage = {
   id: uuid,
   slug: 'tour-familia-feliz',
-  image: image,
+  image: `${PACKAGE_BUCKET_NAME}/familia-feliz.png`,
   title: "Tour Família Feliz",
   subtitle:
     "Um roteiro completo de 4 dias, ideal para famílias, combinando os melhores passeios de Bonito.",
@@ -67,7 +67,7 @@ export const familiaFelizPt: TourPackage = {
 export const familiaFelizEn: TourPackage = {
   id: uuid,
   slug: 'tour-familia-feliz',
-  image: image,
+  image: `${PACKAGE_BUCKET_NAME}/familia-feliz.png`,
   title: "Happy Family Tour",
   subtitle:
     "A complete 4-day itinerary, ideal for families, combining the best tours in Bonito.",
@@ -107,7 +107,7 @@ export const familiaFelizEn: TourPackage = {
 export const familiaFelizEs: TourPackage = {
   id: uuid,
   slug: 'tour-familia-feliz',
-  image: image,
+  image: `${PACKAGE_BUCKET_NAME}/familia-feliz.png`,
   title: "Tour Familia Feliz",
   subtitle:
     "Un itinerario completo de 4 días, ideal para familias, que combina los mejores tours de Bonito.",

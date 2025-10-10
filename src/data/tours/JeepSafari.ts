@@ -2,8 +2,8 @@ import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { ecotourismPt, ecotourismEn, ecotourismEs } from 'src/data/categories/Ecotourismm';
 import { adventurePt, adventureEn, adventureEs } from 'src/data/categories/Adventuree';
-import image from 'src/assets/images/tours/pantanal-jeep-safari.png'; // Substitua pelo caminho da imagem real
 import { miranda } from '../regions/Cities';
+import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
 // PT-BR
 export const jeepSafariPt: Tour = {
@@ -11,7 +11,7 @@ export const jeepSafariPt: Tour = {
   slug: 'jeep-safari',
   name: 'Safári de Jeep na Nhecolândia',
   description: 'Exploração em veículo 4x4 aberto pelas vastas planícies e campos da região da Nhecolândia, buscando avistar a rica fauna do Pantanal como cervos, tamanduás e tuiuiús.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/pantanal-jeep-safari.png`,
   durationInHours: 4,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
@@ -29,7 +29,7 @@ export const jeepSafariEn: Tour = {
   slug: 'jeep-safari',
   name: 'Jeep Safari in Nhecolândia',
   description: 'Exploration in an open 4x4 vehicle through the vast plains and fields of the Nhecolândia region, seeking to spot the rich Pantanal fauna like deer, anteaters, and jabirus.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/pantanal-jeep-safari.png`,
   durationInHours: 4,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
@@ -47,7 +47,7 @@ export const jeepSafariEs: Tour = {
   slug: 'jeep-safari',
   name: 'Safari en-US Jeep en-US Nhecolândia',
   description: 'Exploración en-US un vehículo 4x4 abierto por las vastas llanuras y campos de la región de Nhecolândia, buscando avistar la rica fauna del Pantanal como ciervos, osos hormigueros y jabirús.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/pantanal-jeep-safari.png`,
   durationInHours: 4,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,

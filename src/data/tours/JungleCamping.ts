@@ -1,8 +1,8 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { adventurePt, adventureEn, adventureEs } from 'src/data/categories/Adventuree';
-import image from '../../assets/images/tours/pantanal-jungle-camping.jpg'; // Substitua pelo caminho da imagem real
 import { miranda } from '../regions/Cities';
+import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
 // PT-BR
 export const jungleCampingPt: Tour = {
@@ -10,7 +10,7 @@ export const jungleCampingPt: Tour = {
   slug: 'acampamento-na-selva',
   name: 'Acampamento na Selva (uma noite)',
   description: 'Uma experiência única de pernoite na selva do Pantanal em redes com mosquiteiros. Uma imersão total nos sons e na atmosfera noturna da natureza.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/pantanal-jungle-camping.jpg`,
   durationInHours: 12,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.HARD,
@@ -28,7 +28,7 @@ export const jungleCampingEn: Tour = {
   slug: 'acampamento-na-selva',
   name: 'Camping in the Jungle (one night out)',
   description: 'A unique experience of spending the night in the Pantanal jungle in hammocks with mosquito nets. A total immersion in the sounds and nocturnal atmosphere of nature.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/pantanal-jungle-camping.jpg`,
   durationInHours: 12,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.HARD,
@@ -46,7 +46,7 @@ export const jungleCampingEs: Tour = {
   slug: 'acampamento-na-selva',
   name: 'Campamento en-US la Selva (una noche fuera)',
   description: 'Una experiencia única de pasar la noche en-US la selva del Pantanal en-US hamacas con mosquiteros. Una inmersión total en-US los sonidos y la atmósfera nocturna de la naturaleza.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/pantanal-jungle-camping.jpg`,
   durationInHours: 12,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.HARD,

@@ -2,8 +2,8 @@ import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { ecotourismPt, ecotourismEn, ecotourismEs } from 'src/data/categories/Ecotourismm';
 import { familiesPt, familiesEn, familiesEs } from 'src/data/audiences/Families';
-import image from 'src/assets/images/tours/fsf-focagem.jpg'; // Substitua pelo caminho da imagem real
 import { miranda } from '../regions/Cities';
+import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
 // PT-BR
 export const nocturnalSpotlightingPt: Tour = {
@@ -11,7 +11,7 @@ export const nocturnalSpotlightingPt: Tour = {
   slug: 'focagem-notura',
   name: 'Focagem Noturna de Animais Silvestres',
   description: 'Safári em veículo aberto após o jantar para observar animais de hábitos noturnos. Com o auxílio de uma potente lanterna, é possível avistar jacarés, corujas, capivaras e até onças.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/fsf-focagem.jpg`,
   durationInHours: 2,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
@@ -29,7 +29,7 @@ export const nocturnalSpotlightingEn: Tour = {
   slug: 'focagem-notura',
   name: 'Nocturnal Wildlife Spotlighting',
   description: 'An open vehicle safari after dinner to observe nocturnal animals. With the help of a powerful spotlight, it is possible to see caimans, owls, capybaras, and even jaguars.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/fsf-focagem.jpg`,
   durationInHours: 2,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
@@ -47,7 +47,7 @@ export const nocturnalSpotlightingEs: Tour = {
   slug: 'focagem-notura',
   name: 'Enfoque Nocturno de Animales Silvestres',
   description: 'Un safari en-US vehículo abierto después de la cena para observar animales de hábitos nocturnos. Con la ayuda de una potente linterna, es posible avistar caimanes, búhos, capibaras e incluso jaguares.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/fsf-focagem.jpg`,
   durationInHours: 2,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,

@@ -1,8 +1,8 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { ecotourismPt, ecotourismEn, ecotourismEs } from 'src/data/categories/Ecotourismm';
-import image from 'src/assets/images/tours/fsf-birding.jpg'; // Substitua pelo caminho da imagem real
 import { miranda } from '../regions/Cities';
+import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
 // PT-BR
 export const birdwatchingPt: Tour = {
@@ -10,7 +10,7 @@ export const birdwatchingPt: Tour = {
   slug: 'observacao-das-aves',
   name: 'Observação de Aves',
   description: 'Caminhada ao amanhecer, o melhor horário para observar a grande diversidade de aves do Pantanal, como tuiuiús, araras-azuis e tucanos. Essencial para amantes da ornitologia.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/fsf-birding.jpg`,
   durationInHours: 2.5,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
@@ -28,7 +28,7 @@ export const birdwatchingEn: Tour = {
   slug: 'observacao-das-aves',
   name: 'Birdwatching',
   description: 'A walk at dawn, the best time to observe the great diversity of birds in the Pantanal, such as jabirus, hyacinth macaws, and toucans. Essential for ornithology lovers.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/fsf-birding.jpg`,
   durationInHours: 2.5,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
@@ -46,7 +46,7 @@ export const birdwatchingEs: Tour = {
   slug: 'observacao-das-aves',
   name: 'Observación de Aves',
   description: 'Caminata al amanecer, el mejor momento para observar la gran diversidad de aves del Pantanal, como jabirús, guacamayos jacintos y tucanes. Esencial para los amantes de la ornitología.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/fsf-birding.jpg`,
   durationInHours: 2.5,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,

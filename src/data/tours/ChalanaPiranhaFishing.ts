@@ -3,8 +3,8 @@ import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { aquaticPt, aquaticEn, aquaticEs } from 'src/data/categories/Aquaticc';
 import { ecotourismPt, ecotourismEn, ecotourismEs } from 'src/data/categories/Ecotourismm';
 import { familiesPt, familiesEn, familiesEs } from 'src/data/audiences/Families';
-import image from 'src/assets/images/tours/fsf-chalana.jpeg'; // Substitua pelo caminho da imagem real
 import { miranda } from '../regions/Cities';
+import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
 // PT-BR
 export const chalanaPiranhaFishingPt: Tour = {
@@ -12,7 +12,7 @@ export const chalanaPiranhaFishingPt: Tour = {
   slug: 'pescaria-piranha',
   name: 'Passeio de Chalana com Pescaria de Piranhas',
   description: 'Navegação em barco típico "chalana" pelo Rio Miranda, com uma parada para a tradicional e divertida pescaria de piranhas. Ideal para observação de aves aquáticas.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/fsf-chalana.jpeg`,
   durationInHours: 2.5,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
@@ -30,7 +30,7 @@ export const chalanaPiranhaFishingEn: Tour = {
   slug: 'pescaria-piranha',
   name: 'Chalana Boat Trip with Piranha Fishing',
   description: 'Navigation on a typical "chalana" boat along the Miranda River, with a stop for the traditional and fun piranha fishing. Ideal for watching aquatic birds.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/fsf-chalana.jpeg`,
   durationInHours: 2.5,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
@@ -48,7 +48,7 @@ export const chalanaPiranhaFishingEs: Tour = {
   slug: 'pescaria-piranha',
   name: 'Paseo en-US Chalana con Pesca de Pirañas',
   description: 'Navegación en-US barco típico "chalana" por el Río Miranda, con una parada para la tradicional y divertida pesca de pirañas. Ideal para la observación de aves acuáticas.',
-  mainImage: image,
+  mainImage: `${TOURS_BUCKET_NAME}/fsf-chalana.jpeg`,
   durationInHours: 2.5,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
