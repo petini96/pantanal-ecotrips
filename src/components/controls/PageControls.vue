@@ -25,9 +25,11 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
 import { useLayoutConfigStore } from 'src/stores/layout-config-store';
-import type { ThemeName } from 'src/utils/theme-utils';
 import { computed, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
+
+// Definimos o tipo aqui para não depender de arquivos externos
+type ThemeName = 'pantanal_verde' | 'bonito_azul';
 
 const route = useRoute();
 const router = useRouter();
@@ -41,12 +43,12 @@ const themes = ref([
 ]);
 
 const languages = ref([
-    { code: 'pt-BR', label: 'Português' },
-    { code: 'en-US', label: 'English' },
+    { code: 'pt', label: 'Português' },
+    { code: 'en', label: 'English' },
     { code: 'es', label: 'Español' },
 ]);
 
-const currentLanguageLabel = computed(() => (route.params.lang as string || 'pt-BR').toUpperCase());
+const currentLanguageLabel = computed(() => (route.params.lang as string || 'pt').toUpperCase());
 
 const changeLanguage = (langCode: string) => {
     void router.push({ name: route.name || 'home', params: { ...route.params, lang: langCode } });
@@ -66,15 +68,17 @@ const changeLanguage = (langCode: string) => {
 
 .control-button-group .q-btn {
     color: var(--text-primary-color);
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
     &.active-theme {
         background-color: var(--primary-color);
-        color: white;
+        color: var(--text-secondary-color);
     }
 }
 
 .control-button {
-    color: white;
+    color: white; // Ajuste conforme necessário ou use variável
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 8px;
 
@@ -87,5 +91,11 @@ const changeLanguage = (langCode: string) => {
     background-color: var(--card-bg-color);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.selector-list {
+    background-color: var(--card-bg-color);
+    color: var(--text-primary-color);
 }
 </style>

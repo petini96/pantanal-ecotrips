@@ -41,6 +41,7 @@ const isDragging = ref(false);
 const dragThreshold = 10; // Distância mínima para considerar um arrasto
 
 // --- Lógica dos Gradientes ---
+// $q.screen é seguro no SSR, ele usa um valor padrão no servidor.
 const showLeftGradient = computed(
   () => $q.screen.gt.xs && scrollPosition.value > 10 // Adiciona um pequeno buffer
 );
@@ -116,14 +117,26 @@ const handleScroll = () => {
   }
 };
 
-const resizeObserver = new ResizeObserver(() => {
-  calculateMaxScroll();
-  handleScroll(); // Atualiza a posição ao redimensionar
-});
+// ==========================================================
+// A CORREÇÃO ESTÁ AQUI
+// ==========================================================
+
+// 1. Declaramos a variável do observer como nula.
+//    Não inicializamos ela aqui, pois isso quebraria o SSR.
+let resizeObserver: ResizeObserver | null = null;
 
 onMounted(() => {
   if (scrollContainer.value) {
+    
+    // 2. Criamos a instância do ResizeObserver DENTRO do onMounted.
+    //    Este código só roda no navegador.
+    resizeObserver = new ResizeObserver(() => {
+      calculateMaxScroll();
+      handleScroll(); // Atualiza a posição ao redimensionar
+    });
+
     resizeObserver.observe(scrollContainer.value);
+    
     // Calcula os valores iniciais
     calculateMaxScroll();
     handleScroll();
@@ -131,7 +144,8 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  if (scrollContainer.value) {
+  // 3. Verificamos se o observador existe antes de desconectar
+  if (scrollContainer.value && resizeObserver) {
     resizeObserver.unobserve(scrollContainer.value);
   }
 });

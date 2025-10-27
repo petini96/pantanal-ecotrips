@@ -1,108 +1,15 @@
-import { defineStore } from "pinia";
-import { ref, computed } from "vue";
-import { type TourPackage } from "src/model/TourPackage";
+import { defineStore } from 'pinia';
+import { ref, computed } from 'vue';
+import { type TourPackage } from 'src/model/TourPackage';
 
-// --- Importe todos os seus pacotes aqui ---
-import {
-  reveillonBonitoEn,
-  reveillonBonitoEs,
-  reveillonBonitoPt,
-} from "src/data/packages/ReveillonBonito/PackageData";
-import {
-  noiteFelizEn,
-  noiteFelizEs,
-  noiteFelizPt,
-} from "src/data/packages/NoiteFeliz/PackageData";
-import {
-  familiaFelizEn,
-  familiaFelizEs,
-  familiaFelizPt,
-} from "src/data/packages/FamiliaFeliz/PackageData";
-import {
-  bonitoAmizadeEn,
-  bonitoAmizadeEs,
-  bonitoAmizadePt,
-} from "src/data/packages/BonitoAmizade/PackageData";
-import {
-  jungleLodgeOtterPt,
-  jungleLodgeOtterEn,
-  jungleLodgeOtterEs,
-  jungleLodgeCaimanPt,
-  jungleLodgeCaimanEn,
-  jungleLodgeCaimanEs,
-  jungleLodgeAnacondaPt,
-  jungleLodgeAnacondaEn,
-  jungleLodgeAnacondaEs,
-  jungleLodgeEaglePt,
-  jungleLodgeEagleEn,
-  jungleLodgeEagleEs,
-} from "src/data/packages/JungleLodge/PackageData";
-// +++ IMPORTAR OS NOVOS PACOTES DA FAZENDA SAN FRANCISCO +++
-import {
-  fazendaCoatiPt,
-  fazendaCoatiEn,
-  fazendaCoatiEs,
-  fazendaArarinhaPt,
-  fazendaArarinhaEn,
-  fazendaArarinhaEs,
-  fazendaAntaPt,
-  fazendaAntaEn,
-  fazendaAntaEs,
-  fazendaAguiaPt,
-  fazendaAguiaEn,
-  fazendaAguiaEs,
-} from "src/data/packages/FazendaSanFrancisco/PackageData";
+// Interface para definir a forma esperada dos módulos importados dinamicamente
+interface PackageLanguageModule {
+  packagesPt?: Record<string, TourPackage>;
+  packagesEn?: Record<string, TourPackage>;
+  packagesEs?: Record<string, TourPackage>;
+}
 
-// --- Monte os dicionários de pacotes por idioma ---
-const packagesPt: Record<string, TourPackage> = {
-  reveillonBonito: reveillonBonitoPt,
-  noiteFeliz: noiteFelizPt,
-  familiaFeliz: familiaFelizPt,
-  bonitoAmizade: bonitoAmizadePt,
-  jungleLodgeOtter: jungleLodgeOtterPt,
-  jungleLodgeCaiman: jungleLodgeCaimanPt,
-  jungleLodgeAnaconda: jungleLodgeAnacondaPt,
-  jungleLodgeEagle: jungleLodgeEaglePt,
-  // +++ ADICIONAR OS NOVOS PACOTES AQUI +++
-  fazendaCoati: fazendaCoatiPt,
-  fazendaArarinha: fazendaArarinhaPt,
-  fazendaAnta: fazendaAntaPt,
-  fazendaAguia: fazendaAguiaPt,
-};
-
-const packagesEn: Record<string, TourPackage> = {
-  reveillonBonito: reveillonBonitoEn,
-  noiteFeliz: noiteFelizEn,
-  familiaFeliz: familiaFelizEn,
-  bonitoAmizade: bonitoAmizadeEn,
-  jungleLodgeOtter: jungleLodgeOtterEn,
-  jungleLodgeCaiman: jungleLodgeCaimanEn,
-  jungleLodgeAnaconda: jungleLodgeAnacondaEn,
-  jungleLodgeEagle: jungleLodgeEagleEn,
-  // +++ ADICIONAR OS NOVOS PACOTES AQUI +++
-  fazendaCoati: fazendaCoatiEn,
-  fazendaArarinha: fazendaArarinhaEn,
-  fazendaAnta: fazendaAntaEn,
-  fazendaAguia: fazendaAguiaEn,
-};
-
-const packagesEs: Record<string, TourPackage> = {
-  reveillonBonito: reveillonBonitoEs,
-  noiteFeliz: noiteFelizEs,
-  familiaFeliz: familiaFelizEs,
-  bonitoAmizade: bonitoAmizadeEs,
-  jungleLodgeOtter: jungleLodgeOtterEs,
-  jungleLodgeCaiman: jungleLodgeCaimanEs,
-  jungleLodgeAnaconda: jungleLodgeAnacondaEs,
-  jungleLodgeEagle: jungleLodgeEagleEs,
-  // +++ ADICIONAR OS NOVOS PACOTES AQUI +++
-  fazendaCoati: fazendaCoatiEs,
-  fazendaArarinha: fazendaArarinhaEs,
-  fazendaAnta: fazendaAntaEs,
-  fazendaAguia: fazendaAguiaEs,
-};
-
-export const useTourPackageStore = defineStore("tourPackage", () => {
+export const useTourPackageStore = defineStore('tourPackage', () => {
   const packages = ref<Record<string, TourPackage>>({});
   const loading = ref(false);
   const error = ref<string | null>(null);
@@ -111,27 +18,54 @@ export const useTourPackageStore = defineStore("tourPackage", () => {
     packages.value = {};
   }
 
-  async function fetchPackages(lang = "pt-BR") {
+  async function fetchPackages(lang = 'pt-BR') {
     if (Object.keys(packages.value).length > 0) return;
 
     loading.value = true;
     error.value = null;
+
     try {
-      await new Promise((resolve) => setTimeout(resolve, 300));
+      await new Promise((resolve) => setTimeout(resolve, 300)); // Simula delay
+
+      let module: PackageLanguageModule | null = null;
 
       switch (lang) {
-        case "en-US":
-          packages.value = packagesEn;
+        case 'en-US': {
+          // Tenta importar o módulo EN
+          module = await import('src/data/packages/en');
+          if (module?.packagesEn) {
+            packages.value = module.packagesEn;
+          } else {
+            throw new Error(`Objeto 'packagesEn' não encontrado no módulo '/src/data/packages/en.ts'. Verifique a exportação.`);
+          }
           break;
-        case "es":
-          packages.value = packagesEs;
+        }
+        case 'es': {
+          // Tenta importar o módulo ES
+          module = await import('src/data/packages/es');
+          if (module?.packagesEs) {
+            packages.value = module.packagesEs;
+          } else {
+            throw new Error(`Objeto 'packagesEs' não encontrado no módulo '/src/data/packages/es.ts'. Verifique a exportação.`);
+          }
           break;
-        default:
-          packages.value = packagesPt;
+        }
+        default: { // pt-BR
+          // Tenta importar o módulo PT
+          module = await import('src/data/packages/pt');
+          if (module?.packagesPt) {
+            packages.value = module.packagesPt;
+          } else {
+            throw new Error(`Objeto 'packagesPt' não encontrado no módulo '/src/data/packages/pt.ts'. Verifique a exportação.`);
+          }
+          break;
+        }
       }
-    } catch (e) {
-      error.value = "Falha ao carregar os pacotes.";
+    } catch (e: unknown) { // Captura explicitamente o erro
+      const errorMessage = e instanceof Error ? e.message : String(e);
+      error.value = `Falha ao carregar os pacotes (${lang}): ${errorMessage}`;
       console.error(e);
+      // Você pode querer mostrar uma notificação de erro para o usuário aqui
     } finally {
       loading.value = false;
     }
@@ -139,15 +73,11 @@ export const useTourPackageStore = defineStore("tourPackage", () => {
 
   const getPackageBySlug = computed(() => {
     return (slug: string): TourPackage | null => {
-      return (
-        Object.values(packages.value).find((pkg) => pkg.slug === slug) || null
-      );
+      return Object.values(packages.value).find((pkg) => pkg?.slug === slug) || null;
     };
   });
 
-  const allPackages = computed((): TourPackage[] =>
-    Object.values(packages.value),
-  );
+  const allPackages = computed((): TourPackage[] => Object.values(packages.value));
 
   return {
     loading,

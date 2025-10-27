@@ -2,7 +2,7 @@
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file
 
 import { defineConfig } from '#q-app/wrappers';
-import { themeVariables } from 'src/utils/theme-utils';
+import { visualizer } from 'rollup-plugin-visualizer'
 
 export default defineConfig((ctx) => {
   return {
@@ -14,7 +14,8 @@ export default defineConfig((ctx) => {
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
     boot: [
       'i18n',
-      'google-analytics'
+      'google-analytics',
+      'theme'
     ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#css
@@ -42,7 +43,7 @@ export default defineConfig((ctx) => {
         browser: [ 'es2022', 'firefox115', 'chrome115', 'safari14' ],
         node: 'node20'
       },
-
+      
       typescript: {
         strict: true,
         vueShim: true
@@ -69,6 +70,10 @@ export default defineConfig((ctx) => {
       // viteVuePluginOptions: {},
       
       vitePlugins: [
+        // visualizer({
+        //   open: true,
+        //   filename: 'dist/stats.html'
+        // }),
         ['vite-plugin-checker', {
           vueTsc: true,
           eslint: {

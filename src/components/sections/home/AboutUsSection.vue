@@ -84,18 +84,23 @@ const onIntersection = (entry: IntersectionObserverEntry) => {
   }
 };
 
-const viewportHeight = ref(window.innerHeight);
+const viewportHeight = ref(0);
+
 const updateHeight = () => {
-  viewportHeight.value = window.innerHeight;
+  if (typeof window !== 'undefined') {
+    viewportHeight.value = window.innerHeight;
+  }
 };
 
 onMounted(() => {
+  updateHeight(); 
   window.addEventListener('resize', updateHeight);
 });
 
 onUnmounted(() => {
   window.removeEventListener('resize', updateHeight);
 });
+
 </script>
 
 <style lang="scss" scoped>

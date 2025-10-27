@@ -12,7 +12,7 @@
  **/
 
 
-import { createApp } from 'vue'
+import { createSSRApp } from 'vue'
 
 
 
@@ -49,8 +49,6 @@ import quasarUserOptions from './quasar-user-options.js'
 import { addPreFetchHooks } from './client-prefetch.js'
 
 
-
-console.info('[Quasar] Running SPA.')
 
 
 const publicPath = `/`
@@ -118,19 +116,22 @@ async function start ({
   app.use(router)
 
   
-
     
-    addPreFetchHooks({ router, store })
-    
-
-    
+    // wait until router has resolved all async before hooks
+    // and async components...
+    router.isReady().then(() => {
+      
+      addPreFetchHooks({ router, store, publicPath })
+      
       app.mount('#q-app')
+    })
     
+
   
 
 }
 
-createQuasarApp(createApp, quasarUserOptions)
+createQuasarApp(createSSRApp, quasarUserOptions)
 
   .then(app => {
     // eventually remove this when Cordova/Capacitor/Electron support becomes old
@@ -154,7 +155,9 @@ createQuasarApp(createApp, quasarUserOptions)
       
       import('boot/i18n'),
       
-      import('boot/google-analytics')
+      import('boot/google-analytics'),
+      
+      import('boot/theme')
       
     ]).then(bootFiles => {
       const boot = mapFn(bootFiles).filter(entry => typeof entry === 'function')

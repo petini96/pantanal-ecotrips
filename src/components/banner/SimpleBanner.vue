@@ -5,8 +5,17 @@
         <div class="hero-content text-center">
             <h1 class="hero-title">{{ hero_title }}</h1>
             <p class="hero-subtitle">{{ hero_subtitle }}</p>
-            <q-btn color="secondary" text-color="white" unelevated :label="hero_cta" size="lg" class="hero-cta"
-                @click="scrollToTours" />
+            <!-- 
+              REMOVIDO: color="secondary"
+              ADICIONADO: class="hero-cta-button"
+            -->
+            <q-btn 
+              unelevated 
+              :label="hero_cta" 
+              size="lg" 
+              class="hero-cta hero-cta-button"
+              @click="scrollToTours" 
+            />
         </div>
     </section>
 </template>
@@ -33,19 +42,19 @@ const backgroundStyle = computed(() => {
 
 </script>
 <style scoped lang="scss">
-.hero-cta,
-.q-btn[color="primary"] {
-    background-color: var(--primary-color) !important;
+/* REMOVIDO: .q-btn[color="secondary"]
+  ADICIONADO: .hero-cta-button
+*/
+.hero-cta-button {
+    background-color: var(--secondary-color) !important;
+    color: var(--text-secondary-color) !important; // Adicionado para garantir o contraste
 }
 
-.q-btn[color="secondary"] {
-    background-color: var(--secondary-color) !important;
-}
+/* Removida a regra .q-btn[color="primary"] que não estava sendo usada */
 
 .hero-section {
     position: relative;
     height: 100vh;
-    /* Alterado de 85vh para 100vh */
     display: flex;
     align-items: center;
     justify-content: center;

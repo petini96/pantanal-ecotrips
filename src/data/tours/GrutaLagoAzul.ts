@@ -12,7 +12,7 @@ export const grutaLagoAzulPt: Tour = {
   slug: 'gruda-do-lago-azul',
   name: 'Gruta do Lago Azul',
   description: 'Uma das mais belas cavernas do mundo. Após uma trilha, desce-se por uma escadaria até um lago de águas intensamente azuis, com mais de 80 metros de profundidade.',
-  mainImage: `${TOURS_BUCKET_NAME}/gruta-lagoa-azul.png`,
+  mainImage: `${TOURS_BUCKET_NAME}/rio-da-prata/IMG_0793.png`,
   durationInHours: 2,
   distanceFromCity: '21km',
   difficulty: DifficultyLevel.EASY,

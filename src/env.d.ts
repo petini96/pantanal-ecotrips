@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 declare namespace NodeJS {
   interface ProcessEnv {
     NODE_ENV: string;

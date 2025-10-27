@@ -38,19 +38,21 @@
           :rules="[val => !!val && /.+@.+\..+/.test(val) || t('newsletter_invalid_email')]"
           outlined
           rounded
-          color="primary"
           class="newsletter-input"
           aria-label="Email para newsletter"
         >
           <template v-slot:append>
+            <!-- 
+              REMOVIDO: color="secondary"
+              ADICIONADO: class="newsletter-cta-button"
+            -->
             <q-btn
               type="submit"
-              color="secondary"
               :label="t('newsletter_cta')"
               icon-right="mdi-send"
               rounded
               unelevated
-              class="newsletter-btn"
+              class="newsletter-btn newsletter-cta-button"
               :loading="newsletterSubmitting"
               aria-label="Inscrever na newsletter"
             />
@@ -122,6 +124,13 @@ const onNewsletterSubmit = async () => {
 </script>
 
 <style scoped lang="scss">
+/* ADICIONADO: Regra de estilo para o botão
+*/
+.newsletter-cta-button {
+  background-color: var(--secondary-color) !important;
+  color: var(--text-secondary-color) !important;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -143,8 +152,7 @@ const onNewsletterSubmit = async () => {
 }
 
 .theme-light {
-  /* AJUSTE: Nova cor de fundo */
-  background-color: #f0fbf8; // Tom de verde-água bem claro
+  background-color: #f0fbf8; 
   background-image: url('~assets/images/wildlife_pattern.svg');
   background-size: 300px;
   background-repeat: repeat;
@@ -155,9 +163,6 @@ const onNewsletterSubmit = async () => {
   }
 }
 
-/*
-  AJUSTE: A seção agora ocupa a tela toda (100vh) e centraliza o conteúdo.
-*/
 .newsletter-bg {
   position: relative;
   overflow: hidden;
@@ -205,7 +210,7 @@ const onNewsletterSubmit = async () => {
 
 .newsletter-input {
   background-color: #ffffff;
-  border-radius: 28px; // Para garantir que o fundo branco arredonde junto
+  border-radius: 28px; 
   :deep(.q-field__control) {
     border-color: rgba(0, 0, 0, 0.2);
   }

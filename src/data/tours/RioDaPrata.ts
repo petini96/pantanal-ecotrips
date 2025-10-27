@@ -7,6 +7,17 @@ import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families'
 import { seniorsEn, seniorsEs, seniorsPt } from 'src/data/audiences/Seniors';
 import { jardim } from '../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
+import { type MediaItem } from 'src/components/galerry/MediaGallery.vue';
+
+const videos = [
+  {
+    type: 'video',
+    src: encodeURI(`${TOURS_BUCKET_NAME}/videos/rio-da-prata/drone alto pessoas.mp4`),
+    title: 'Drone pessoas',
+    caption: 'Caption example',
+    thumbnailUrl: ''
+  } as MediaItem
+] as MediaItem[]
 
 export const rioDaPrataPt: Tour = {
   id: 'TOUR-RDP-01',
@@ -22,7 +33,8 @@ export const rioDaPrataPt: Tour = {
   keywords: ['flutuação', 'rio', 'peixes', 'nascente'],
   categories: [aquaticPt, ecotourismPt],
   recommendedFor: [familiesPt, couplesPt, seniorsPt],
-  city: jardim
+  city: jardim,
+  videos: videos
 };
 
 export const rioDaPrataEn: Tour = {
