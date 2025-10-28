@@ -1,0 +1,34 @@
+# Arquivo: .dockerignore
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Diretórios de dependências
+node_modules
+.pnpm-store
+
+# Diretório de build
+dist
+dist-ssr
+/dist
+/dist-ssr
+/dist-pwa
+/dist-capacitor
+/dist-cordova
+/dist-electron
+
+# Outros
+.quasar
+.vscode
+.idea
+*.suo
+*.user
+*.userosscache
+*.sln
+.DS_Store
