@@ -6,7 +6,7 @@ import { defineSsrMiddleware } from '#q-app/wrappers';
 // since it captures everything and tries to
 // render the page with Vue
 
-export default defineSsrMiddleware(({ app, resolve, render, serve }) => {
+export default defineSsrMiddleware(({ app, render, serve }) => {
   // we capture any other Express route and hand it
   // over to Vue and Vue Router to render our page
   

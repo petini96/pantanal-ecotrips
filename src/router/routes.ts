@@ -3,7 +3,7 @@ import type { RouteRecordRaw } from "vue-router";
 const routes: RouteRecordRaw[] = [
   {
     // AJUSTE: A expressão regular agora aceita os idiomas completos
-    path: "/:lang(pt-BR|en-US|es)?",
+    path: "/:lang(pt|en|es)?",
     component: () => import("layouts/home/HomeLayout.vue"),
     children: [
       {

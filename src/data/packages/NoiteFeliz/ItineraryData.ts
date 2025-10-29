@@ -81,8 +81,8 @@ export const noiteFelizEsItinerary: ItineraryItem[] = [
     day: 1,
     title: "1er Día: Campo Grande - Bonito",
     descriptionItems: [
-      "Recepción en-US el aeropuerto de Campo Grande y traslado compartido a Bonito.",
-      "Check-in en-US el hotel y noche libre.",
+      "Recepción en el aeropuerto de Campo Grande y traslado compartido a Bonito.",
+      "Check-in en el hotel y noche libre.",
     ],
     tours: [],
   },
@@ -90,7 +90,7 @@ export const noiteFelizEsItinerary: ItineraryItem[] = [
     day: 2,
     title: "2º Día: Flotación y Guacamayos",
     descriptionItems: [
-      "Día de inmersión en-US la naturaleza con flotación en-US el Río da Prata y contemplación en-US el Buraco das Araras.",
+      "Día de inmersión en la naturaleza con flotación en el Río da Prata y contemplación en el Buraco das Araras.",
     ],
     tours: [rioDaPrataEs, buracoDasArarasEs],
     mealsIncluded: ["lunch"],

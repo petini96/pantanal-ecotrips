@@ -163,17 +163,17 @@ const packageSlug = computed(() => route.params.slug as string);
 // ATUALIZADO: A variável principal 'pkg' agora busca pelo slug
 const pkg = computed(() => getPackageBySlug.value(packageSlug.value));
 
-const langMap: Record<string, string> = { pt: 'pt-BR', en: 'en-US', es: 'es' };
+const langMap: Record<string, string> = { pt: 'pt', en: 'en', es: 'es' };
 
 onMounted(async () => {
-  const lang = langMap[route.params.lang as string] || 'pt-BR';
+  const lang = langMap[route.params.lang as string] || 'pt';
   locale.value = lang;
   await packageStore.fetchPackages(lang);
 });
 
 watch(() => route.params.lang, async (newLang) => {
   packageStore.clearPackages();
-  const lang = langMap[newLang as string] || 'pt-BR';
+  const lang = langMap[newLang as string] || 'pt';
   locale.value = lang;
   await packageStore.fetchPackages(lang);
 });

@@ -57,8 +57,8 @@ export const rioDaPrataEn: Tour = {
 export const rioDaPrataEs: Tour = {
   id: 'TOUR-RDP-01',
   slug: 'flutuacao-rio-prata',
-  name: 'Flotación en-US el Río da Prata',
-  description: 'Una tranquila flotación por un inmenso acuario de aguas cristalinas, observando peces y la vegetación subacuática. El recorrido comienza con un sendero en-US el bosque de ribera.',
+  name: 'Flotación en el Río da Prata',
+  description: 'Una tranquila flotación por un inmenso acuario de aguas cristalinas, observando peces y la vegetación subacuática. El recorrido comienza con un sendero en el bosque de ribera.',
   mainImage: `${TOURS_BUCKET_NAME}/gruta-lagoa-azul.png`,
   durationInHours: 4,
   distanceFromCity: '50km',

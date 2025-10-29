@@ -46,7 +46,7 @@ export const piranhaFishingEs: Tour = {
   id: 'TOUR-PF-01',
   slug: 'pesca-piranha-2',
   name: 'Pesca de Pirañas',
-  description: 'Una divertida y tradicional pesca de pirañas en-US las aguas del Pantanal, usando cañas de bambú. ¡Lo que pesques puede ser preparado para la cena!',
+  description: 'Una divertida y tradicional pesca de pirañas en las aguas del Pantanal, usando cañas de bambú. ¡Lo que pesques puede ser preparado para la cena!',
   mainImage: `${TOURS_BUCKET_NAME}/pantanal-piranha-fishing.jpg`,
   durationInHours: 2,
   distanceFromCity: 'N/A',

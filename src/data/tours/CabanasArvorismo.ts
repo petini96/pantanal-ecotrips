@@ -44,7 +44,7 @@ export const cabanasArvorismoEs: Tour = {
   id: 'TOUR-CA-01',
   slug: 'cabanas-arvorismo',
   name: 'Cabanas Arborismo',
-  description: 'Recorrido de 300m con 20 estaciones y 2 tirolinas, con alturas de 4m a 15m. La última es una tirolina acuática en-US el río Formoso.',
+  description: 'Recorrido de 300m con 20 estaciones y 2 tirolinas, con alturas de 4m a 15m. La última es una tirolina acuática en el río Formoso.',
   mainImage: `${TOURS_BUCKET_NAME}/cabanas-arvorismo.png`,
   durationInHours: 3,
   distanceFromCity: '6,1km',

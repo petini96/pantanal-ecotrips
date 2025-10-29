@@ -18,7 +18,7 @@ export const useTourPackageStore = defineStore('tourPackage', () => {
     packages.value = {};
   }
 
-  async function fetchPackages(lang = 'pt-BR') {
+  async function fetchPackages(lang = 'pt') {
     if (Object.keys(packages.value).length > 0) return;
 
     loading.value = true;
@@ -30,7 +30,7 @@ export const useTourPackageStore = defineStore('tourPackage', () => {
       let module: PackageLanguageModule | null = null;
 
       switch (lang) {
-        case 'en-US': {
+        case 'en': {
           // Tenta importar o módulo EN
           module = await import('src/data/packages/en');
           if (module?.packagesEn) {
@@ -50,7 +50,7 @@ export const useTourPackageStore = defineStore('tourPackage', () => {
           }
           break;
         }
-        default: { // pt-BR
+        default: { // pt
           // Tenta importar o módulo PT
           module = await import('src/data/packages/pt');
           if (module?.packagesPt) {

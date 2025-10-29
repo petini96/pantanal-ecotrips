@@ -45,7 +45,7 @@ export const canoeingEs: Tour = {
   id: 'TOUR-CN-01',
   slug: 'canoagem',
   name: 'Canotaje',
-  description: 'Paseo en-US canoas canadienses para dos personas, remando silenciosamente por las aguas y acercándose a la vida silvestre sin perturbaciones.',
+  description: 'Paseo en canoas canadienses para dos personas, remando silenciosamente por las aguas y acercándose a la vida silvestre sin perturbaciones.',
   mainImage: `${TOURS_BUCKET_NAME}/pantanal-canoeing.jpg`,
   durationInHours: 2,
   distanceFromCity: 'N/A',

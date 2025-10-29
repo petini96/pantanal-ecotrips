@@ -45,8 +45,8 @@ export const jeepSafariEn: Tour = {
 export const jeepSafariEs: Tour = {
   id: 'TOUR-JS-01',
   slug: 'jeep-safari',
-  name: 'Safari en-US Jeep en-US Nhecolândia',
-  description: 'Exploración en-US un vehículo 4x4 abierto por las vastas llanuras y campos de la región de Nhecolândia, buscando avistar la rica fauna del Pantanal como ciervos, osos hormigueros y jabirús.',
+  name: 'Safari en Jeep en Nhecolândia',
+  description: 'Exploración en un vehículo 4x4 abierto por las vastas llanuras y campos de la región de Nhecolândia, buscando avistar la rica fauna del Pantanal como ciervos, osos hormigueros y jabirús.',
   mainImage: `${TOURS_BUCKET_NAME}/pantanal-jeep-safari.png`,
   durationInHours: 4,
   distanceFromCity: 'N/A',

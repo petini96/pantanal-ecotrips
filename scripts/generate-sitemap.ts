@@ -26,7 +26,7 @@ const __dirname = path.dirname(__filename);
 
 // --- CONFIGURAÇÕES ---
 const BASE_URL = 'https://www.pantanalecotrips.roboticsmind.com.br';
-const LANGUAGES = ['pt-BR', 'en-US', 'es'];
+const LANGUAGES = ['pt', 'en', 'es'];
 // O caminho de saída agora é construído a partir do __dirname corrigido
 const OUTPUT_FILE = path.resolve(__dirname, '../public/sitemap.xml');
 // --------------------
@@ -64,7 +64,7 @@ async function generateSitemap() {
     urlEntry.ele('loc').txt(`${BASE_URL}/${lang}`);
     urlEntry.ele('lastmod').txt(new Date().toISOString().split('T')[0] || new Date().toISOString());
     urlEntry.ele('changefreq').txt('weekly');
-    urlEntry.ele('priority').txt(lang === 'pt-BR' ? '1.0' : '0.8');
+    urlEntry.ele('priority').txt(lang === 'pt' ? '1.0' : '0.8');
     createAlternateLinks(homeUrls).forEach(link => urlEntry.ele(link));
   });
 
@@ -81,7 +81,7 @@ async function generateSitemap() {
       urlEntry.ele('loc').txt(`${BASE_URL}/${lang}/tours/${tour.id}`);
       urlEntry.ele('lastmod').txt(new Date().toISOString().split('T')[0] || new Date().toISOString());
       urlEntry.ele('changefreq').txt('monthly');
-      urlEntry.ele('priority').txt(lang === 'pt-BR' ? '0.9' : '0.7');
+      urlEntry.ele('priority').txt(lang === 'pt' ? '0.9' : '0.7');
       createAlternateLinks(tourUrls).forEach(link => urlEntry.ele(link));
     });
   });

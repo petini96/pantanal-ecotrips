@@ -46,8 +46,8 @@ export const chalanaPiranhaFishingEn: Tour = {
 export const chalanaPiranhaFishingEs: Tour = {
   id: 'TOUR-FSF-CPF-01',
   slug: 'pescaria-piranha',
-  name: 'Paseo en-US Chalana con Pesca de Pirañas',
-  description: 'Navegación en-US barco típico "chalana" por el Río Miranda, con una parada para la tradicional y divertida pesca de pirañas. Ideal para la observación de aves acuáticas.',
+  name: 'Paseo en Chalana con Pesca de Pirañas',
+  description: 'Navegación en barco típico "chalana" por el Río Miranda, con una parada para la tradicional y divertida pesca de pirañas. Ideal para la observación de aves acuáticas.',
   mainImage: `${TOURS_BUCKET_NAME}/fsf-chalana.jpeg`,
   durationInHours: 2.5,
   distanceFromCity: 'N/A',

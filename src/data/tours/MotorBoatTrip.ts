@@ -45,7 +45,7 @@ export const motorBoatTripEn: Tour = {
 export const motorBoatTripEs: Tour = {
   id: 'TOUR-MBT-01',
   slug: 'passeio-de-barco-motor',
-  name: 'Paseo en-US Bote a Motor con Foco de Luz',
+  name: 'Paseo en Bote a Motor con Foco de Luz',
   description: 'Navegación nocturna por los ríos del Pantanal, usando un foco de luz para avistar animales de hábitos nocturnos como caimanes, capibaras y búhos.',
   mainImage: `${TOURS_BUCKET_NAME}/pantanal-motor-boat.png`,
   durationInHours: 2,

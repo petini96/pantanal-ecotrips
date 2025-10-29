@@ -114,9 +114,9 @@ export const reveillonBonitoEs: TourPackage = {
   id: uuid,
   slug: 'reveillon-em-bonito-2024',
   image: `${PACKAGE_BUCKET_NAME}/reveillon-bonito.png`,
-  title: "Nochevieja en-US Bonito 2024",
+  title: "Nochevieja en Bonito 2024",
   subtitle:
-    "Paquete de 5 días y 4 noches para celebrar el año nuevo en-US plena naturaleza.",
+    "Paquete de 5 días y 4 noches para celebrar el año nuevo en plena naturaleza.",
   durationInDays: 5,
   durationInNights: 4,
   minPeople: 4,
@@ -127,7 +127,7 @@ export const reveillonBonitoEs: TourPackage = {
     "Transporte privado para todos los tours",
     "Entradas para los tours mencionados",
     "Almuerzo el día de la flotación",
-    "Asistencia en-US el aeropuerto",
+    "Asistencia en el aeropuerto",
   ],
   notIncluded: [
     "Billetes de avión",

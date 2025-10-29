@@ -74,7 +74,7 @@ export const fazendaCoatiEsItinerary: ItineraryItem[] = [
     day: 1,
     title: "1er Día: Llegada y Primeras Exploraciones",
     descriptionItems: [
-      "Check-in, paseo en-US chalana con pesca, cena y enfoque nocturno.",
+      "Check-in, paseo en chalana con pesca, cena y enfoque nocturno.",
     ],
     tours: [chalanaPiranhaFishingEs, nocturnalSpotlightingEs],
     mealsIncluded: ["dinner"],
@@ -148,14 +148,14 @@ export const fazendaArarinhaEsItinerary: ItineraryItem[] = [
     day: 1,
     title: "1er Día: Llegada al Pantanal",
     descriptionItems: [
-      "Check-in, paseo en-US chalana con pesca, cena y enfoque nocturno.",
+      "Check-in, paseo en chalana con pesca, cena y enfoque nocturno.",
     ],
     tours: [chalanaPiranhaFishingEs, nocturnalSpotlightingEs],
     mealsIncluded: ["dinner"],
   },
   {
     day: 2,
-    title: "2º Día: Inmersión en-US la Fauna",
+    title: "2º Día: Inmersión en la Fauna",
     descriptionItems: [
       "Observación de aves al amanecer y safari fotográfico por la tarde.",
     ],
@@ -165,7 +165,7 @@ export const fazendaArarinhaEsItinerary: ItineraryItem[] = [
   {
     day: 3,
     title: "3er Día: Despedida",
-    descriptionItems: ["Mañana libre en-US la hacienda, almuerzo y regreso."],
+    descriptionItems: ["Mañana libre en la hacienda, almuerzo y regreso."],
     tours: [],
     mealsIncluded: ["breakfast", "lunch"],
   },
@@ -240,7 +240,7 @@ export const fazendaAntaEsItinerary: ItineraryItem[] = [
   {
     day: 1,
     title: "1er Día: Llegada al Pantanal",
-    descriptionItems: ["Check-in, paseo en-US chalana, cena y enfoque nocturno."],
+    descriptionItems: ["Check-in, paseo en chalana, cena y enfoque nocturno."],
     tours: [chalanaPiranhaFishingEs, nocturnalSpotlightingEs],
     mealsIncluded: ["dinner"],
   },
@@ -362,7 +362,7 @@ export const fazendaAguiaEsItinerary: ItineraryItem[] = [
   {
     day: 1,
     title: "1er Día: Llegada al Pantanal",
-    descriptionItems: ["Check-in, paseo en-US chalana, cena y enfoque nocturno."],
+    descriptionItems: ["Check-in, paseo en chalana, cena y enfoque nocturno."],
     tours: [chalanaPiranhaFishingEs, nocturnalSpotlightingEs],
     mealsIncluded: ["dinner"],
   },
@@ -395,7 +395,7 @@ export const fazendaAguiaEsItinerary: ItineraryItem[] = [
     day: 5,
     title: "5º Día: Despedida",
     descriptionItems: [
-      "Última mañana en-US la hacienda, almuerzo y regreso a Campo Grande.",
+      "Última mañana en la hacienda, almuerzo y regreso a Campo Grande.",
     ],
     tours: [],
     mealsIncluded: ["breakfast", "lunch"],

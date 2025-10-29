@@ -51,7 +51,7 @@ export const birdwatchingEs: Tour = {
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.FOREST, EnvironmentType.FIELDS],
-  includedItems: ['Guía especializado en-US aves'],
+  includedItems: ['Guía especializado en aves'],
   keywords: ['aves', 'birdwatching', 'pájaros', 'guacamayos'],
   categories: [ecotourismEs],
   recommendedFor: [],

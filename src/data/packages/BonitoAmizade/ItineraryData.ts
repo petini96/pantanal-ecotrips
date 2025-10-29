@@ -123,7 +123,7 @@ export const bonitoAmizadeEsItinerary: ItineraryItem[] = [
     day: 1,
     title: "1er Día: Campo Grande - Bonito",
     descriptionItems: [
-      "Recepción en-US el aeropuerto y traslado compartido a Bonito.",
+      "Recepción en el aeropuerto y traslado compartido a Bonito.",
       "Check-in y noche libre.",
     ],
     tours: [],
@@ -132,7 +132,7 @@ export const bonitoAmizadeEsItinerary: ItineraryItem[] = [
     day: 2,
     title: "2º Día: Gruta y Bote",
     descriptionItems: [
-      "Visita a la Gruta del Lago Azul y aventura en-US bote inflable por el Río Formoso.",
+      "Visita a la Gruta del Lago Azul y aventura en bote inflable por el Río Formoso.",
     ],
     tours: [grutaLagoAzulEs, boteRioFormosoEs],
   },
@@ -140,7 +140,7 @@ export const bonitoAmizadeEsItinerary: ItineraryItem[] = [
     day: 3,
     title: "3er Día: Flotación y Guacamayos",
     descriptionItems: [
-      "Día de flotación en-US el Río da Prata y contemplación en-US el Buraco das Araras.",
+      "Día de flotación en el Río da Prata y contemplación en el Buraco das Araras.",
     ],
     tours: [rioDaPrataEs, buracoDasArarasEs],
     mealsIncluded: ["lunch"],
@@ -158,7 +158,7 @@ export const bonitoAmizadeEsItinerary: ItineraryItem[] = [
     day: 5,
     title: "5º Día: Bonito - Campo Grande",
     descriptionItems: [
-      "Traslado de regreso a Campo Grande en-US furgoneta compartida.",
+      "Traslado de regreso a Campo Grande en furgoneta compartida.",
     ],
     tours: [],
   },

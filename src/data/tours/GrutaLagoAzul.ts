@@ -27,7 +27,7 @@ export const grutaLagoAzulPt: Tour = {
 export const grutaLagoAzulEn: Tour = {
   id: 'TOUR-GLA-01',
   slug: 'gruda-do-lago-azul',
-  name: 'Blue Lake Cave',
+  name: 'Gruta do Lago Azul',
   description: 'One of the most beautiful caves in the world. After a short trail, you descend a staircase to a lake of intensely blue waters, over 80 meters deep.',
   mainImage: `${TOURS_BUCKET_NAME}/gruta-lagoa-azul.png`,
   durationInHours: 2,

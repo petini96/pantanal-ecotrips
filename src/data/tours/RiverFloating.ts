@@ -45,8 +45,8 @@ export const riverFloatingEn: Tour = {
 export const riverFloatingEs: Tour = {
   id: 'TOUR-RF-01',
   slug: 'flutuacao-rio',
-  name: 'Flotación en-US el Río',
-  description: 'Un relajante descenso en-US bote o con flotador por las tranquilas aguas del río, permitiendo una perspectiva única de la vegetación y los sonidos de la naturaleza.',
+  name: 'Flotación en el Río',
+  description: 'Un relajante descenso en bote o con flotador por las tranquilas aguas del río, permitiendo una perspectiva única de la vegetación y los sonidos de la naturaleza.',
   mainImage: `${TOURS_BUCKET_NAME}/pantanal-river-floating.webp`,
   durationInHours: 1.5,
   distanceFromCity: 'N/A',

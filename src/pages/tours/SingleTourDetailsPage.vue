@@ -131,7 +131,7 @@ const tourSlug = computed(() => route.params.slug as string);
 const tour = computed(() => getTourBySlug.value(tourSlug.value));
 
 const fetchData = async (langParam?: string | string[]) => {
-  const lang = (langParam as string) || 'pt-BR';
+  const lang = (langParam as string) || 'pt';
   if (locale.value !== lang) {
     locale.value = lang;
   }

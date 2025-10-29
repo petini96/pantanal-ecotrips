@@ -47,8 +47,8 @@ export const boteRioFormosoEn: Tour = {
 export const boteRioFormosoEs: Tour = {
   id: 'TOUR-BRF-01',
   slug: 'rio-formoso',
-  name: 'Bote en-US el Río Formoso',
-  description: 'Descenso de 6km en-US botes inflables por uno de los principales ríos de la región, pasando por tres cascadas, dos rápidos y con una parada para bañarse.',
+  name: 'Bote en el Río Formoso',
+  description: 'Descenso de 6km en botes inflables por uno de los principales ríos de la región, pasando por tres cascadas, dos rápidos y con una parada para bañarse.',
   mainImage: `${TOURS_BUCKET_NAME}/bote-rio-formoso.png`,
   durationInHours: 4,
   distanceFromCity: '12km',

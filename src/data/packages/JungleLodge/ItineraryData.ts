@@ -55,9 +55,9 @@ export const jungleLodgeOtterEnItinerary: ItineraryItem[] = [
 export const jungleLodgeOtterEsItinerary: ItineraryItem[] = [
   {
     day: 1,
-    title: "1er Día: Llegada y Actividades en-US el Río",
+    title: "1er Día: Llegada y Actividades en el Río",
     descriptionItems: [
-      "Traslado, check-in, actividades de pesca y safari fluvial, y paseo nocturno en-US bote.",
+      "Traslado, check-in, actividades de pesca y safari fluvial, y paseo nocturno en bote.",
     ],
     tours: [piranhaFishingEs, motorBoatTripEs, fluvialSafariEs],
     mealsIncluded: ["dinner"],
@@ -66,7 +66,7 @@ export const jungleLodgeOtterEsItinerary: ItineraryItem[] = [
     day: 2,
     title: "2º Día: Flotación y Regreso",
     descriptionItems: [
-      "Flotación en-US el río por la mañana, almuerzo y traslado de regreso.",
+      "Flotación en el río por la mañana, almuerzo y traslado de regreso.",
     ],
     tours: [riverFloatingEs],
     mealsIncluded: ["breakfast", "lunch"],
@@ -136,7 +136,7 @@ export const jungleLodgeCaimanEsItinerary: ItineraryItem[] = [
     day: 2,
     title: "2º Día: Safari, Caminata y Foco de Luz",
     descriptionItems: [
-      "Safari en-US Jeep, caminata ecológica, pesca de pirañas y paseo nocturno.",
+      "Safari en Jeep, caminata ecológica, pesca de pirañas y paseo nocturno.",
     ],
     tours: [jeepSafariEs, ecologicalWalkEs, piranhaFishingEs, motorBoatTripEs],
     mealsIncluded: ["breakfast", "lunch", "dinner"],
@@ -144,7 +144,7 @@ export const jungleLodgeCaimanEsItinerary: ItineraryItem[] = [
   {
     day: 3,
     title: "3er Día: Flotación y Regreso",
-    descriptionItems: ["Flotación en-US el río y traslado de regreso."],
+    descriptionItems: ["Flotación en el río y traslado de regreso."],
     tours: [riverFloatingEs],
     mealsIncluded: ["breakfast", "lunch"],
   },
@@ -217,14 +217,14 @@ export const jungleLodgeAnacondaEsItinerary: ItineraryItem[] = [
   {
     day: 1,
     title: "1er Día: Llegada y Paseo Nocturno",
-    descriptionItems: ["Traslado al lodge y paseo en-US bote con foco de luz."],
+    descriptionItems: ["Traslado al lodge y paseo en bote con foco de luz."],
     tours: [motorBoatTripEs],
     mealsIncluded: ["dinner"],
   },
   {
     day: 2,
     title: "2º Día: Safari y Pesca",
-    descriptionItems: ["Safari en-US Jeep en-US Nhecolândia y pesca de pirañas."],
+    descriptionItems: ["Safari en Jeep en Nhecolândia y pesca de pirañas."],
     tours: [jeepSafariEs, piranhaFishingEs],
     mealsIncluded: ["breakfast", "lunch", "dinner"],
   },
@@ -339,7 +339,7 @@ export const jungleLodgeEagleEsItinerary: ItineraryItem[] = [
   {
     day: 1,
     title: "1er Día: Llegada y Foco Nocturno",
-    descriptionItems: ["Traslado al lodge y paseo en-US bote con foco de luz."],
+    descriptionItems: ["Traslado al lodge y paseo en bote con foco de luz."],
     tours: [motorBoatTripEs],
     mealsIncluded: ["dinner"],
   },
@@ -347,7 +347,7 @@ export const jungleLodgeEagleEsItinerary: ItineraryItem[] = [
     day: 2,
     title: "2º Día: Safari y Pesca",
     descriptionItems: [
-      "Safari en-US Jeep por la mañana y pesca de pirañas por la tarde.",
+      "Safari en Jeep por la mañana y pesca de pirañas por la tarde.",
     ],
     tours: [jeepSafariEs, piranhaFishingEs],
     mealsIncluded: ["breakfast", "lunch", "dinner"],
@@ -355,15 +355,15 @@ export const jungleLodgeEagleEsItinerary: ItineraryItem[] = [
   {
     day: 3,
     title: "3er Día: Cabalgata y Canotaje",
-    descriptionItems: ["Cabalgata pantanera y un paseo en-US canoa por el río."],
+    descriptionItems: ["Cabalgata pantanera y un paseo en canoa por el río."],
     tours: [horsebackRidingEs, canoeingEs],
     mealsIncluded: ["breakfast", "lunch", "dinner"],
   },
   {
     day: 4,
-    title: "4º Día: Caminata y Noche en-US la Selva",
+    title: "4º Día: Caminata y Noche en la Selva",
     descriptionItems: [
-      "Caminata ecológica, flotación y la aventura de acampar en-US la selva.",
+      "Caminata ecológica, flotación y la aventura de acampar en la selva.",
     ],
     tours: [ecologicalWalkEs, riverFloatingEs, jungleCampingEs],
     mealsIncluded: ["breakfast", "lunch", "dinner"],

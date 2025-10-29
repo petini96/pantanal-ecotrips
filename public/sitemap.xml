@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/en-US</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/en</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es" />
     </url>
     <url>
@@ -24,225 +24,225 @@
         <lastmod>2025-10-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es" />
     </url>
 
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/tours/tour-familia-feliz</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/tours/tour-familia-feliz</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/tours/tour-familia-feliz" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/tours/tour-familia-feliz" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/tours/tour-familia-feliz" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/tours/tour-familia-feliz" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/tours/tour-familia-feliz" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/tours/tour-bonito-amizade</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/tours/tour-bonito-amizade</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/tours/tour-bonito-amizade" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/tours/tour-bonito-amizade" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/tours/tour-bonito-amizade" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/tours/tour-bonito-amizade" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/tours/tour-bonito-amizade" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/tours/reveillon-em-bonito-2024</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/tours/reveillon-em-bonito-2024</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/tours/reveillon-em-bonito-2024" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/tours/reveillon-em-bonito-2024" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/tours/reveillon-em-bonito-2024" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/tours/reveillon-em-bonito-2024" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/tours/reveillon-em-bonito-2024" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/tours/noite-feliz-em-bonito</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/tours/noite-feliz-em-bonito</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/tours/noite-feliz-em-bonito" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/tours/noite-feliz-em-bonito" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/tours/noite-feliz-em-bonito" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/tours/noite-feliz-em-bonito" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/tours/noite-feliz-em-bonito" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/observacao-das-aves</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/observacao-das-aves</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/observacao-das-aves" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/observacao-das-aves" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/observacao-das-aves" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/observacao-das-aves" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/observacao-das-aves" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/boca-da-onca</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/boca-da-onca</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/boca-da-onca" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/boca-da-onca" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/boca-da-onca" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/boca-da-onca" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/boca-da-onca" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/rio-formoso</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/rio-formoso</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/rio-formoso" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/rio-formoso" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/rio-formoso" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/rio-formoso" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/rio-formoso" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/buraco-das-araras</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/buraco-das-araras</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/buraco-das-araras" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/buraco-das-araras" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/buraco-das-araras" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/buraco-das-araras" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/buraco-das-araras" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/cabanas-arvorismo</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/cabanas-arvorismo</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/cabanas-arvorismo" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/cabanas-arvorismo" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/cabanas-arvorismo" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/cabanas-arvorismo" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/cabanas-arvorismo" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/canoagem</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/canoagem</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/canoagem" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/canoagem" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/canoagem" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/canoagem" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/canoagem" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/pescaria-piranha</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/pescaria-piranha</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/pescaria-piranha" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/pescaria-piranha" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/pescaria-piranha" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/pescaria-piranha" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/pescaria-piranha" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/safari-fotografico</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/safari-fotografico</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/safari-fotografico" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/safari-fotografico" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/safari-fotografico" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/safari-fotografico" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/safari-fotografico" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/caminhada-ecologica</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/caminhada-ecologica</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/caminhada-ecologica" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/caminhada-ecologica" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/caminhada-ecologica" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/caminhada-ecologica" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/caminhada-ecologica" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/estancia-mimosa</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/estancia-mimosa</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/estancia-mimosa" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/estancia-mimosa" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/estancia-mimosa" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/estancia-mimosa" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/estancia-mimosa" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/safari-fluvial</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/safari-fluvial</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/safari-fluvial" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/safari-fluvial" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/safari-fluvial" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/safari-fluvial" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/safari-fluvial" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/gruta-do-lago-azul</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/gruta-do-lago-azul</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/gruta-do-lago-azul" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/gruta-do-lago-azul" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/gruta-do-lago-azul" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/gruta-do-lago-azul" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/gruta-do-lago-azul" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/cavalgada</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/cavalgada</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/cavalgada" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/cavalgada" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/cavalgada" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/cavalgada" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/cavalgada" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/jeep-safari</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/jeep-safari</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/jeep-safari" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/jeep-safari" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/jeep-safari" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/jeep-safari" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/jeep-safari" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/acampamento-na-selva</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/acampamento-na-selva</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/acampamento-na-selva" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/acampamento-na-selva" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/acampamento-na-selva" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/acampamento-na-selva" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/acampamento-na-selva" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/passeio-de-barco-motor</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/passeio-de-barco-motor</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/passeio-de-barco-motor" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/passeio-de-barco-motor" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/passeio-de-barco-motor" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/passeio-de-barco-motor" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/passeio-de-barco-motor" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/focagem-noturna</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/focagem-noturna</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/focagem-noturna" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/focagem-noturna" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/focagem-noturna" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/focagem-noturna" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/focagem-noturna" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/pesca-piranha-2</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/pesca-piranha-2</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/pesca-piranha-2" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/pesca-piranha-2" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/pesca-piranha-2" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/pesca-piranha-2" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/pesca-piranha-2" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/flutuacao-rio-prata</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/flutuacao-rio-prata</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/flutuacao-rio-prata" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/flutuacao-rio-prata" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/flutuacao-rio-prata" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/flutuacao-rio-prata" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/flutuacao-rio-prata" />
     </url>
     <url>
-        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/flutuacao-rio</loc>
+        <loc>https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/flutuacao-rio</loc>
         <lastmod>2025-10-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.pantanalecotrips.roboticsmind.com.br/pt-BR/passeio/flutuacao-rio" />
-        <xhtml:link rel="alternate" hreflang="en-US" href="https://www.pantanalecotrips.roboticsmind.com.br/en-US/passeio/flutuacao-rio" />
+        <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.roboticsmind.com.br/pt/passeio/flutuacao-rio" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.roboticsmind.com.br/en/passeio/flutuacao-rio" />
         <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.roboticsmind.com.br/es/passeio/flutuacao-rio" />
     </url>
     </urlset>

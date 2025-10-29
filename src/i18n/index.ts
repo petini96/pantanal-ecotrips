@@ -1,9 +1,10 @@
-import enUS from './en-US/index';
-import ptBR from './pt-BR/index';
-import es from './es/index';
+import en from "./en";
+import es from "./es";
+import pt from "./pt";
+
 
 export default {
-  'en-US': enUS,
-  'pt-BR': ptBR,
+  'en': en,
+  'pt': pt,
   'es': es,
 };

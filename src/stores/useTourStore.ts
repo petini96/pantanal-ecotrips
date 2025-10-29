@@ -114,7 +114,7 @@ export const useTourStore = defineStore("singleTour", () => {
     tours.value = {};
   }
 
-  async function fetchTours(lang = "pt-BR") {
+  async function fetchTours(lang = "pt") {
     // A lógica original está correta, mas vamos garantir que ela recarregue
     // os dados se o idioma mudar e os tours atuais estiverem vazios.
     if (Object.keys(tours.value).length > 0 && !loading.value) {
@@ -127,7 +127,7 @@ export const useTourStore = defineStore("singleTour", () => {
     try {
       await new Promise((resolve) => setTimeout(resolve, 300));
       switch (lang) {
-        case "en-US":
+        case "en":
           tours.value = toursEn;
           break;
         case "es":

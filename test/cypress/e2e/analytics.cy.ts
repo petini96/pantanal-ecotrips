@@ -14,8 +14,8 @@ describe('Google Analytics Health Check', () => {
       //    O corpo da requisição é uma string de parâmetros de URL.
       const requestBody = interception.request.body;
 
-      // Verificamos o nome do evento (en-US=event name)
-      expect(requestBody).to.include('en-US=page_view');
+      // Verificamos o nome do evento (en=event name)
+      expect(requestBody).to.include('en=page_view');
 
       // Verificamos o caminho da página (dp=document path)
       // O valor deve ser a URL codificada, ex: '/minha-pagina' vira '%2Fminha-pagina'

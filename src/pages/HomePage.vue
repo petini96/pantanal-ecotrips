@@ -109,7 +109,7 @@ defineOptions({
     const packageStore = useTourPackageStore(store);
     packageStore.clearPackages();
     const langParam = currentRoute.params.lang as string;
-    const lang = langMap[langParam] || 'pt-BR';
+    const lang = langMap[langParam] || 'pt';
     await packageStore.fetchPackages(lang);
   },
 });

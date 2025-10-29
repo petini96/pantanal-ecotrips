@@ -46,7 +46,7 @@ export const jaguarSafariEs: Tour = {
   id: 'TOUR-FSF-JS-01',
   slug: 'safari-fluvial',
   name: 'Safari de Jaguar',
-  description: 'Una expedición especial enfocada en-US recorrer las áreas con la mayor probabilidad de avistar al jaguar, el felino más grande de las Américas.',
+  description: 'Una expedición especial enfocada en recorrer las áreas con la mayor probabilidad de avistar al jaguar, el felino más grande de las Américas.',
   mainImage: `${TOURS_BUCKET_NAME}/fsf-jaguar-safari.webp`,
   durationInHours: 4,
   distanceFromCity: 'N/A',
