@@ -54,7 +54,7 @@ import { langMap } from 'src/utils/langMap';
 
 // MUDANÇA: Apenas o SimpleBanner (acima da dobra) é importado estaticamente.
 import SimpleBanner from 'src/components/banner/SimpleBanner.vue';
-import SimpleBannerBackground from 'src/assets/images/boca_onca_remake.jpg';
+import SimpleBannerBackground from 'src/assets/images/boca_onca_remake.webp';
 
 // MUDANÇA: Criamos refs booleanos para controlar o carregamento de cada seção.
 const loadTourPackage = ref(false);

@@ -1,7 +1,7 @@
 <template>
   <q-parallax class="about-us-parallax-section" :height="viewportHeight">
     <template v-slot:media>
-      <img src="../../../assets/images/packages/joungle-lodge-package.png" alt="Pousada no Pantanal">
+      <img src="../../../assets/images/packages/joungle-lodge-package.webp" alt="Pousada no Pantanal">
       <div class="parallax-overlay"></div>
     </template>
 
