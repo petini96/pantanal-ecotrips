@@ -1,5 +1,6 @@
 <template>
   <q-page :class="['home-page', `theme-${currentTheme}`]">
+    <!-- BANNER PRINCIPAL -->
     <SimpleBanner
       :hero_title="t('hero_title')"
       :hero_subtitle="t('hero_subtitle')"
@@ -7,34 +8,46 @@
       :hero_background="SimpleBannerBackground"
     />
 
+    <!-- SEÇÃO DE PACOTES DE PASSEIO -->
     <div v-intersection.once="() => (loadTourPackage = true)" class="section-wrapper">
       <TourPackageSection v-if="loadTourPackage" class="q-mt-xl" />
     </div>
 
+    <div v-intersection.once="() => (loadCtaAllTours = true)" class="section-wrapper-cta">
+      <CtaAllToursSection v-if="loadCtaAllTours" />
+    </div>
+
+    <!-- SEÇÃO GALERIA DE MÍDIA -->
     <div v-intersection.once="() => (loadMediaGallery = true)" class="section-wrapper">
       <MediaGallery v-if="loadMediaGallery" :items="galleryItems" />
     </div>
 
+    <!-- SEÇÃO POR QUE NÓS -->
     <div v-intersection.once="() => (loadWhyUs = true)" class="section-wrapper">
       <WhyUsSection v-if="loadWhyUs" />
     </div>
 
+    <!-- SEÇÃO GALERIA MOSAICO -->
     <div v-intersection.once="() => (loadMosaicGallery = true)" class="section-wrapper">
       <MosaicGallery v-if="loadMosaicGallery" :images="pantanalImages" />
     </div>
 
+    <!-- SEÇÃO NEWSLETTER -->
     <div v-intersection.once="() => (loadNewsLetter = true)" class="section-wrapper">
       <NewsLetterSection v-if="loadNewsLetter" />
     </div>
 
+    <!-- SEÇÃO SOBRE NÓS -->
     <div v-intersection.once="() => (loadAboutUs = true)" class="section-wrapper">
       <AboutUsSection v-if="loadAboutUs" />
     </div>
 
+    <!-- SEÇÃO FAC -->
     <div v-intersection.once="() => (loadFac = true)" class="section-wrapper">
       <FacSection v-if="loadFac" />
     </div>
 
+    <!-- SEÇÃO CREDIBILIDADE -->
     <div v-intersection.once="() => (loadCredibility = true)" class="section-wrapper">
       <CredibilitySection v-if="loadCredibility" />
     </div>
@@ -42,7 +55,7 @@
 </template>
 
 <script setup lang="ts">
-// MUDANÇA: `defineAsyncComponent` é importado
+// `defineAsyncComponent` é importado para o lazy-loading
 import { onMounted, ref, watch, defineAsyncComponent } from 'vue';
 import { useMeta } from 'quasar';
 import { useI18n } from 'vue-i18n';
@@ -52,11 +65,11 @@ import { useLayoutConfigStore } from 'src/stores/layout-config-store';
 import { useTourPackageStore } from 'src/stores/useTourPackageStore';
 import { langMap } from 'src/utils/langMap';
 
-// MUDANÇA: Apenas o SimpleBanner (acima da dobra) é importado estaticamente.
+// Apenas o SimpleBanner (acima da dobra) é importado estaticamente.
 import SimpleBanner from 'src/components/banner/SimpleBanner.vue';
 import SimpleBannerBackground from 'src/assets/images/boca_onca_remake.webp';
 
-// MUDANÇA: Criamos refs booleanos para controlar o carregamento de cada seção.
+// Refs booleanos para controlar o carregamento de cada seção.
 const loadTourPackage = ref(false);
 const loadMediaGallery = ref(false);
 const loadWhyUs = ref(false);
@@ -65,10 +78,10 @@ const loadNewsLetter = ref(false);
 const loadAboutUs = ref(false);
 const loadFac = ref(false);
 const loadCredibility = ref(false);
+// Ref para o lazy-load do novo componente CTA
+const loadCtaAllTours = ref(false); 
 
-// MUDANÇA: Todos os outros componentes são definidos como assíncronos.
-// Seus códigos serão divididos em arquivos JS separados (chunks) e baixados
-// apenas quando o `v-if` correspondente se tornar verdadeiro.
+// Todos os outros componentes são definidos como assíncronos (lazy-loaded).
 const TourPackageSection = defineAsyncComponent(
   () => import('src/components/sections/home/TourPackageSection.vue')
 );
@@ -90,20 +103,25 @@ const CredibilitySection = defineAsyncComponent(
 const MosaicGallery = defineAsyncComponent(
   () => import('src/components/galerry/MosaicGallery.vue')
 );
-// Tipamos o defineAsyncComponent para MediaGallery para que a prop `items` funcione corretamente
 import type { MediaItem } from 'src/components/galerry/MediaGallery.vue';
 const MediaGallery = defineAsyncComponent(
   () => import('src/components/galerry/MediaGallery.vue')
 );
 
-// --- O RESTO DO SEU SCRIPT PERMANECE IGUAL ---
-const { t, locale } = useI18n();
+// Definição do novo componente CTA assíncrono
+const CtaAllToursSection = defineAsyncComponent(
+  () => import('src/components/sections/home/CtaAllToursSection.vue')
+);
+
+// --- Lógica de i18n, Rota e Store ---
+const { t, locale } = useI18n(); 
 const route = useRoute();
 const router = useRouter();
 const layoutConfigStore = useLayoutConfigStore();
 
 const { theme: currentTheme } = storeToRefs(layoutConfigStore);
 
+// --- preFetch (SSR) ---
 defineOptions({
   preFetch: async ({ store, currentRoute }) => {
     const packageStore = useTourPackageStore(store);
@@ -114,10 +132,11 @@ defineOptions({
   },
 });
 
+// --- Dados das Galerias (Mock) ---
 const bucketBaseUrl = 'https://minio-s3.roboticsmind.com.br/general-bucket/mimosa';
 const videoData = [
   { fileName: 'Cópia de homem sinzinho.mp4', title: 'Homem Sinhozinho' },
-  { fileName: 'Cópia de sinhozinho mulher drone.mp4', title: 'Sinhozinho Mulher (Drone)' },
+  { fileName: 'Cópia de sinzinho mulher drone.mp4', title: 'Sinhozinho Mulher (Drone)' },
   { fileName: 'Cópia de trilha drone 3.mp4', title: 'Trilha de Drone' },
   { fileName: 'GH010573.MP4', title: 'Paisagem Aérea GH010573' },
   { fileName: 'Cópia de drone cachoeira do sol pessoas 2.mp4', title: 'Cachoeira do Sol com Pessoas' },
@@ -137,7 +156,7 @@ const pantanalImages = ref([
   { src: 'https://pantanalecotrips.com.br/sites/default/files/obrasrealizadas/flutaao_rio_da_prata_07.jpg', alt: 'Gato', caption: 'Felino observador' },
 ]);
 
-// --- SEO OTIMIZADO PARA A HOMEPAGE ---
+// --- SEO (Meta Tags) ---
 useMeta(() => {
   const currentLang = (route.params.lang as string) || 'pt';
   const baseURL = 'https://www.pantanalecotrips.roboticsmind.com.br';
@@ -195,6 +214,7 @@ useMeta(() => {
   };
 });
 
+// --- Hooks de Rota ---
 watch(
   () => route.params.lang,
   (newLang) => {
@@ -225,13 +245,19 @@ onMounted(() => {
   transition: background-color 0.3s ease;
 }
 
-/*
-  MUDANÇA: Estilo para o wrapper.
-  Isso reserva uma altura mínima para cada seção antes de ela carregar,
-  evitando que o layout da página "pule" (melhora o CLS - Cumulative Layout Shift).
-  Ajuste o valor conforme necessário.
+/* Estilo para o wrapper que evita "pulos" de layout (CLS)
+  ao carregar componentes lazy-loaded.
 */
 .section-wrapper {
-  min-height: 50vh;
+  min-height: 50vh; /* Altura padrão para seções */
+}
+
+/* Wrapper para a nova seção CTA de 100vh.
+  Isso garante que o placeholder (antes do lazy-load)
+  já tenha a altura correta, evitando CLS.
+*/
+.section-wrapper-cta {
+  min-height: 100vh; /* Altura específica para o CTA de tela cheia */
 }
 </style>
+

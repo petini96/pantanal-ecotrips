@@ -8,7 +8,7 @@ import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 // PT-BR
 export const piranhaFishingPt: Tour = {
   id: 'TOUR-PF-01',
-  slug: 'pesca-piranha-2',
+  slug: 'pesca-piranha',
   name: 'Pesca de Piranhas',
   description: 'Uma divertida e tradicional pescaria de piranhas nas águas do Pantanal, usando varas de bambu. O que você pescar pode ser preparado para o jantar!',
   mainImage: `${TOURS_BUCKET_NAME}/pantanal-piranha-fishing.jpg`,
@@ -26,7 +26,7 @@ export const piranhaFishingPt: Tour = {
 // EN-US
 export const piranhaFishingEn: Tour = {
   id: 'TOUR-PF-01',
-  slug: 'pesca-piranha-2',
+  slug: 'pesca-piranha',
   name: 'Piranha Fishing',
   description: 'A fun and traditional piranha fishing activity in the waters of the Pantanal using bamboo rods. What you catch can be prepared for dinner!',
   mainImage: `${TOURS_BUCKET_NAME}/pantanal-piranha-fishing.jpg`,
@@ -44,7 +44,7 @@ export const piranhaFishingEn: Tour = {
 // ES
 export const piranhaFishingEs: Tour = {
   id: 'TOUR-PF-01',
-  slug: 'pesca-piranha-2',
+  slug: 'pesca-piranha',
   name: 'Pesca de Pirañas',
   description: 'Una divertida y tradicional pesca de pirañas en las aguas del Pantanal, usando cañas de bambú. ¡Lo que pesques puede ser preparado para la cena!',
   mainImage: `${TOURS_BUCKET_NAME}/pantanal-piranha-fishing.jpg`,

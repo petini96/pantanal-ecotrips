@@ -24,6 +24,12 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/tours/SingleTourDetailsPage.vue'),
         meta: { requiresAuth: false },
       },
+      {
+        path: 'passeios',
+        name: 'allTours',
+        component: () => import('pages/tours/AllToursPage.vue'),
+        meta: { requiresAuth: false },
+      },
     ],
   },
   {

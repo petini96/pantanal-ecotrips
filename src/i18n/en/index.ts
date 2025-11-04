@@ -67,6 +67,15 @@ export default {
   difficulty_moderate: 'Difficulty moderate',
   breakfast: 'Breakfast',
   lunch: 'Lunch',
-  important_observations: 'Important observations'
+  important_observations: 'Important observations',
+  all_tours_title: 'Our Tours',
+  all_tours_description: 'Explore all the amazing tours we offer in Bonito and the Pantanal. Find your next adventure.',
+  error_loading_tours: 'An error occurred while loading the tours.',
+  all_tours_cta_title: "Didn't find what you were looking for?",
+  all_tours_cta_subtitle: "Explore our full catalog or create a unique itinerary just for you.",
+  all_tours_cta_button: "See All Tours",
+  all_tours_cta_title_secondary: "Create Your Own Itinerary!",
+  all_tours_cta_subtitle_secondary: "Turn your dreams into reality with a 100% personalized itinerary.",
+  all_tours_cta_button_secondary: "Create Custom Itinerary"
 
 };

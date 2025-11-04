@@ -67,6 +67,15 @@ export default {
   difficulty_moderate: 'Dificultad moderate',
   breakfast: 'Desayuno',
   lunch: 'Almuerzo',
-  important_observations: 'Observaciones importantes'
-  
+  important_observations: 'Observaciones importantes',
+  all_tours_title: 'Nuestros Paseos',
+  all_tours_description: 'Explora todos los increíbles paseos que ofrecemos en Bonito y el Pantanal. Encuentra tu próxima aventura.',
+  error_loading_tours: 'Ocurrió un error al cargar los paseos.',
+  all_tours_cta_title: "¿No encontraste lo que buscabas?",
+  all_tours_cta_subtitle: "Explora nuestro catálogo completo o crea un itinerario único para ti.",
+  all_tours_cta_button: "Ver Todos los Tours",
+  all_tours_cta_title_secondary: "¡Crea Tu Propio Itinerario!",
+  all_tours_cta_subtitle_secondary: "Convierte tus sueños en realidad con un itinerario 100% personalizado.",
+  all_tours_cta_button_secondary: "Crear Itinerario Personalizado"
+
 };
