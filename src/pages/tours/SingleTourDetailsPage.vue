@@ -4,7 +4,6 @@
   </q-page>
 
   <q-page v-else-if="tour" class="tour-details-page-v2 row">
-    
     <div class="col-12 col-md-6 image-column" :style="{ backgroundImage: `url(${tour.mainImage})` }">
       <div class="image-overlay"></div>
     </div>
@@ -21,12 +20,13 @@
             <div class="info-box">
               <q-icon name="mdi-clock-outline" size="md" />
               <div>
-                <div class="text-subtitle2">Duração</div>
+                <div class="text-subtitle2">{{ t(`duration`) }}</div>
                 <div class="text-body1 text-weight-medium">{{ tour.durationInHours }} horas</div>
               </div>
             </div>
             <div class="info-box">
-              <q-icon :name="getDifficultyInfo(tour.difficulty).icon" size="md" :color="getDifficultyInfo(tour.difficulty).color" />
+              <q-icon :name="getDifficultyInfo(tour.difficulty).icon" size="md"
+                :color="getDifficultyInfo(tour.difficulty).color" />
               <div>
                 <div class="text-subtitle2">Dificuldade</div>
                 <div class="text-body1 text-weight-medium">{{ getDifficultyInfo(tour.difficulty).label }}</div>
@@ -35,7 +35,7 @@
             <div class="info-box" v-if="tour.distanceFromCity">
               <q-icon name="mdi-map-marker-distance" size="md" />
               <div>
-                <div class="text-subtitle2">Distância da Cidade</div>
+                <div class="text-subtitle2">{{ t(`distance_from_city`) }}</div>
                 <div class="text-body1 text-weight-medium">{{ tour.distanceFromCity }}</div>
               </div>
             </div>
@@ -49,7 +49,7 @@
         </q-card>
 
         <section class="q-mb-xl" v-if="tour.includedItems && tour.includedItems.length > 0">
-          <h2 class="section-heading"><q-icon name="mdi-check-all" />O que está Incluso</h2>
+          <h2 class="section-heading"><q-icon name="mdi-check-all" />{{ t(`what_is_included`) }}</h2>
           <q-list separator class="q-mt-md included-list">
             <q-item v-for="(item, index) in tour.includedItems" :key="index">
               <q-item-section avatar>
@@ -59,20 +59,24 @@
             </q-item>
           </q-list>
         </section>
-        
+
         <section>
           <div v-if="tour.environments && tour.environments.length > 0" class="q-mb-lg">
-            <h2 class="section-heading"><q-icon name="mdi-pine-tree" />Ambientes</h2>
+            <h2 class="section-heading"><q-icon name="mdi-pine-tree" />{{ t(`environment`) }}</h2>
             <div class="tag-list q-mt-sm">
-              <q-chip v-for="env in tour.environments" :key="env" color="green-1" text-color="green-10" icon="mdi-checkbox-marked-circle-outline">
-                {{ t(`environment_${env}`) }}
+
+              <q-chip v-for="env in tour.environments" :key="env" color="green-1" text-color="green-10"
+                :icon="environmentIcons[env] || defaultIcon">
+                {{ t(`${env}`) }}
               </q-chip>
+
             </div>
           </div>
           <div v-if="tour.categories && tour.categories.length > 0" class="q-mb-lg">
-            <h2 class="section-heading"><q-icon name="mdi-shape-outline" />Categorias</h2>
+            <h2 class="section-heading"><q-icon name="mdi-shape-outline" /> {{ t(`categories`) }} </h2>
             <div class="tag-list q-mt-sm">
-              <q-chip v-for="category in tour.categories" :key="category.id" :icon="category.icon" color="primary" text-color="white">
+              <q-chip v-for="category in tour.categories" :key="category.id" :icon="category.icon" color="primary"
+                text-color="white">
                 {{ category.name }}
               </q-chip>
             </div>
@@ -80,7 +84,8 @@
           <div v-if="tour.recommendedFor && tour.recommendedFor.length > 0" class="q-mb-lg">
             <h2 class="section-heading"><q-icon name="mdi-heart-outline" />Recomendado Para</h2>
             <div class="tag-list q-mt-sm">
-              <q-chip v-for="audience in tour.recommendedFor" :key="audience.id" :icon="audience.icon" color="secondary" text-color="white">
+              <q-chip v-for="audience in tour.recommendedFor" :key="audience.id" :icon="audience.icon" color="secondary"
+                text-color="white">
                 {{ audience.name }}
               </q-chip>
             </div>
@@ -90,15 +95,8 @@
       </div>
 
       <div class="cta-footer q-pa-md">
-        <q-btn
-          class="full-width"
-          size="lg"
-          color="secondary"
-          label="Consultar Disponibilidade"
-          icon="mdi-whatsapp"
-          :href="`https://wa.me/5567999022073?text=${encodedWhatsAppMessage}`"
-          target="_blank"
-        />
+        <q-btn class="full-width" size="lg" color="secondary" label="Consultar Disponibilidade" icon="mdi-whatsapp"
+          :href="`https://wa.me/5567999022073?text=${encodedWhatsAppMessage}`" target="_blank" />
       </div>
     </div>
   </q-page>
@@ -120,7 +118,7 @@ import { useI18n } from 'vue-i18n';
 import { storeToRefs } from 'pinia';
 import { useTourStore } from 'src/stores/useTourStore';
 import { DifficultyLevel } from 'src/model/Enums';
-
+import {environmentIcons, defaultIcon} from 'src/model/Enums'
 const route = useRoute();
 const { t, locale } = useI18n();
 
@@ -184,10 +182,13 @@ useMeta(() => {
   background-size: cover;
   background-position: center;
   position: relative;
-  
+
   .image-overlay {
     position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
   }
 }
@@ -234,9 +235,17 @@ useMeta(() => {
   border-radius: 8px;
   border: 1px solid #eef2f7;
 
-  .q-icon { color: var(--q-primary); }
-  .text-subtitle2 { color: #596e83; }
-  .text-body1 { color: #1a2c4e; }
+  .q-icon {
+    color: var(--q-primary);
+  }
+
+  .text-subtitle2 {
+    color: #596e83;
+  }
+
+  .text-body1 {
+    color: #1a2c4e;
+  }
 }
 
 .description-card {
