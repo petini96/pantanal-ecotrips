@@ -6,12 +6,14 @@ import { adventurePt, adventureEn, adventureEs } from '../categories/Adventuree'
 import { bonito } from '../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
+const img = `${TOURS_BUCKET_NAME}/cabanas-arvorismo/img1.jpg`
+
 export const cabanasArvorismoPt: Tour = {
   id: 'TOUR-CA-01',
   slug: 'cabanas-arvorismo',
   name: 'Cabanas Arvorismo',
   description: 'Percurso de 300m com 20 estações e 2 tirolesas, com altura de 4m a 15m. A última é uma tirolesa aquática no rio Formoso.',
-  mainImage: `${TOURS_BUCKET_NAME}/cabanas-arvorismo.png`,
+  mainImage: img,
   durationInHours: 3,
   distanceFromCity: '6,1km',
   difficulty: DifficultyLevel.MODERATE,
@@ -28,7 +30,7 @@ export const cabanasArvorismoEn: Tour = {
   slug: 'cabanas-arvorismo',
   name: 'Cabanas Treetop Circuit',
   description: 'A 300m course with 20 stations and 2 zip lines, at heights from 4m to 15m. The final one is an aquatic zip line over the Formoso River.',
-  mainImage: `${TOURS_BUCKET_NAME}/cabanas-arvorismo.png`,
+  mainImage: img,
   durationInHours: 3,
   distanceFromCity: '6.1km',
   difficulty: DifficultyLevel.MODERATE,
@@ -45,7 +47,7 @@ export const cabanasArvorismoEs: Tour = {
   slug: 'cabanas-arvorismo',
   name: 'Cabanas Arborismo',
   description: 'Recorrido de 300m con 20 estaciones y 2 tirolinas, con alturas de 4m a 15m. La última es una tirolina acuática en el río Formoso.',
-  mainImage: `${TOURS_BUCKET_NAME}/cabanas-arvorismo.png`,
+  mainImage: img,
   durationInHours: 3,
   distanceFromCity: '6,1km',
   difficulty: DifficultyLevel.MODERATE,

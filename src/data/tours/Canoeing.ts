@@ -4,13 +4,15 @@ import { aquaticPt, aquaticEn, aquaticEs } from 'src/data/categories/Aquaticc';
 import { miranda } from '../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
+const img = `${TOURS_BUCKET_NAME}/canoagem-miranda/img1.jpg`
+
 // PT-BR
 export const canoeingPt: Tour = {
   id: 'TOUR-CN-01',
   slug: 'canoagem',
   name: 'Canoagem',
   description: 'Passeio em canoas canadenses para duas pessoas, remando silenciosamente pelas águas e aproximando-se da vida selvagem sem perturbações.',
-  mainImage: `${TOURS_BUCKET_NAME}/pantanal-canoeing.jpg`,
+  mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.MEDIUM,
@@ -28,7 +30,7 @@ export const canoeingEn: Tour = {
   slug: 'canoagem',
   name: 'Canoeing',
   description: 'A trip in two-person Canadian canoes, paddling silently through the waters and getting close to wildlife without disturbance.',
-  mainImage: `${TOURS_BUCKET_NAME}/pantanal-canoeing.jpg`,
+  mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.MEDIUM,
@@ -46,7 +48,7 @@ export const canoeingEs: Tour = {
   slug: 'canoagem',
   name: 'Canotaje',
   description: 'Paseo en canoas canadienses para dos personas, remando silenciosamente por las aguas y acercándose a la vida silvestre sin perturbaciones.',
-  mainImage: `${TOURS_BUCKET_NAME}/pantanal-canoeing.jpg`,
+  mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.MEDIUM,

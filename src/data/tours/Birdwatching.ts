@@ -4,13 +4,15 @@ import { ecotourismPt, ecotourismEn, ecotourismEs } from 'src/data/categories/Ec
 import { miranda } from '../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
+const img = `${TOURS_BUCKET_NAME}/observacao-das-aves/img1.webp`
+
 // PT-BR
 export const birdwatchingPt: Tour = {
   id: 'TOUR-FSF-BW-01',
   slug: 'observacao-das-aves',
   name: 'Observação de Aves',
   description: 'Caminhada ao amanhecer, o melhor horário para observar a grande diversidade de aves do Pantanal, como tuiuiús, araras-azuis e tucanos. Essencial para amantes da ornitologia.',
-  mainImage: `${TOURS_BUCKET_NAME}/fsf-birding.jpg`,
+  mainImage: img,
   durationInHours: 2.5,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
@@ -28,7 +30,7 @@ export const birdwatchingEn: Tour = {
   slug: 'observacao-das-aves',
   name: 'Birdwatching',
   description: 'A walk at dawn, the best time to observe the great diversity of birds in the Pantanal, such as jabirus, hyacinth macaws, and toucans. Essential for ornithology lovers.',
-  mainImage: `${TOURS_BUCKET_NAME}/fsf-birding.jpg`,
+  mainImage: img,
   durationInHours: 2.5,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
@@ -46,7 +48,7 @@ export const birdwatchingEs: Tour = {
   slug: 'observacao-das-aves',
   name: 'Observación de Aves',
   description: 'Caminata al amanecer, el mejor momento para observar la gran diversidad de aves del Pantanal, como jabirús, guacamayos jacintos y tucanes. Esencial para los amantes de la ornitología.',
-  mainImage: `${TOURS_BUCKET_NAME}/fsf-birding.jpg`,
+  mainImage: img,
   durationInHours: 2.5,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
