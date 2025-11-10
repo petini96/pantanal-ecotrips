@@ -5,18 +5,12 @@
     bordered
     @click="goToDetails"
   >
-    <!-- 
-      SEÇÃO DA IMAGEM
-      - Relação 4/3 (menos 'gorda')
-      - Chip de categoria sobreposto
-    -->
     <q-img
       :src="tour.mainImage"
       :ratio="4 / 3"
       fit="cover"
       class="tour-card__image"
     >
-      <!-- Chip da Categoria (Sobreposto) -->
       <q-chip
         v-if="firstCategory"
         dense
@@ -39,60 +33,59 @@
       </template>
     </q-img>
 
-    <!-- SEÇÃO TÍTULO -->
     <q-card-section class="q-pb-sm">
       <div class="text-h6 text-weight-bold ellipsis-2-lines" :title="tour.name">
         {{ tour.name }}
       </div>
     </q-card-section>
 
-    <!-- SEÇÃO DESCRIÇÃO (Resumida) -->
     <q-card-section class="q-pt-none q-pb-sm">
       <div class="text-body2 text-grey-8 ellipsis-3-lines">
         {{ tour.description }}
       </div>
     </q-card-section>
 
-    <!-- 
-      SEÇÃO DE INFORMAÇÕES (Local, Duração, Dificuldade)
-      Organizadas com ícones e cores
-    -->
     <q-card-section class="q-pt-none">
-      <!-- Localização + Distância -->
       <div class="text-caption text-grey-7 row items-center no-wrap q-mb-xs">
         <q-icon name="o_location_on" size="sm" class="q-mr-xs flex-shrink-0" />
-        <span class="ellipsis">{{ tour.city.name }} ({{ tour.distanceFromCity }})</span>
+        <span class="ellipsis"
+          >{{ tour.city.name }} ({{ tour.distanceFromCity }})</span
+        >
       </div>
-      <!-- Duração -->
       <div class="text-caption text-grey-7 row items-center no-wrap q-mb-xs">
         <q-icon name="o_schedule" size="sm" class="q-mr-xs flex-shrink-0" />
         <span>Duração: {{ tour.durationInHours }}h</span>
       </div>
-      <!-- Dificuldade (com cor) -->
       <div class="text-caption row items-center no-wrap">
-        <q-icon :name="difficultyInfo.icon" size="sm" :color="difficultyInfo.color" class="q-mr-xs flex-shrink-0" />
+        <q-icon
+          :name="difficultyInfo.icon"
+          size="sm"
+          :color="difficultyInfo.color"
+          class="q-mr-xs flex-shrink-0"
+        />
         <span :class="`text-weight-medium text-${difficultyInfo.color}`">
           {{ difficultyInfo.label }}
         </span>
       </div>
     </q-card-section>
-    
-    <!-- q-space empurra as ações para o rodapé, alinhando os botões -->
-    <q-space /> 
-    
+
+    <q-space />
+
     <q-separator />
 
-    <!-- AÇÕES (Botão) -->
     <q-card-actions align="right" class="q-pa-sm">
-       <q-btn
-         flat
-         color="primary"
-         label="Ver detalhes"
-         icon-right="o_arrow_forward"
-         no-caps
-       />
+      <q-btn
+        flat
+        color="primary"
+        label="Ver detalhes"
+        icon-right="o_arrow_forward"
+        no-caps
+        
+        :href="detailUrl"
+        target="_blank"
+        rel="noopener noreferrer"
+      />
     </q-card-actions>
-
   </q-card>
 </template>
 
@@ -102,6 +95,7 @@ import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel } from 'src/model/Enums'; // Caminho baseado no seu arquivo
 import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
+// import { Platform } from 'quasar'; // <-- REMOVIDO. Não é mais necessário.
 
 const props = defineProps<{
   tour: Tour;
@@ -111,11 +105,30 @@ const router = useRouter();
 const { locale, t } = useI18n(); // Usado para o helper de dificuldade
 
 // --- NAVEGAÇÃO ---
-function goToDetails() {
-  void router.push({
+
+// 1. URL COMPUTADA (SSR-Safe)
+// Isso roda no servidor e no cliente sem problemas
+const detailUrl = computed(() => {
+  const routeData = router.resolve({
     name: 'singleTourDetails',
     params: { lang: locale.value, slug: props.tour.slug },
   });
+  return routeData.href;
+});
+
+// 2. FUNÇÃO DE CLIQUE (Client-Side)
+function goToDetails() {
+  
+  // *** ESTA É A CORREÇÃO FINAL ***
+  // 'process.env.CLIENT' é a forma idiomática do Quasar SSR
+  // para checar se o código está no navegador.
+  // Não dá erro no TypeScript.
+  if (process.env.CLIENT) {
+    // window.open só roda no cliente.
+    window.open(detailUrl.value, '_blank');
+  }
+  
+  // Se estiver no SSR (servidor), o 'if' é falso e nada acontece.
 }
 
 // --- HELPERS DE DIFICULDADE (com i18n e cores) ---
@@ -128,7 +141,7 @@ const difficultyLabels = {
 
 const difficultyInfo = computed(() => {
   const label = difficultyLabels[props.tour.difficulty] || props.tour.difficulty;
-  
+
   switch (props.tour.difficulty) {
     case DifficultyLevel.EASY:
       return { label, color: 'green-6', icon: 'o_bar_chart' };
@@ -148,7 +161,6 @@ const firstCategory = computed(() => {
   // Pega o 'name' do primeiro item do array de categorias
   return props.tour.categories?.[0]?.name || null;
 });
-
 </script>
 
 <style lang="scss" scoped>
@@ -156,9 +168,9 @@ const firstCategory = computed(() => {
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
-  
+
   // Garante que o card ocupe todo o espaço vertical no grid
-  height: 100%; 
+  height: 100%;
 
   &:hover {
     transform: translateY(-5px);
@@ -175,7 +187,7 @@ const firstCategory = computed(() => {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
   }
-  
+
   // Garante que a descrição tenha altura de 3 linhas
   .ellipsis-3-lines {
     min-height: 4.5em; // (line-height * 3)
@@ -186,11 +198,10 @@ const firstCategory = computed(() => {
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
   }
-  
+
   // Garante que ícones não encolham ou quebrem o layout
   .flex-shrink-0 {
     flex-shrink: 0;
   }
 }
 </style>
-

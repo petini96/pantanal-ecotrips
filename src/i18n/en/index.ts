@@ -87,5 +87,6 @@ export default {
   waterfall: "Waterfall",
   mountain: "Mountain",
   beach: "Beach",
-  fields: "Fields"
+  fields: "Fields",
+  difficulty_medium: "Medium"
 };

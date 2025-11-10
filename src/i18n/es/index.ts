@@ -87,5 +87,6 @@ export default {
   waterfall: "Cascada",
   mountain: "Montaña",
   beach: "Playa",
-  fields: "Campos"
+  fields: "Campos",
+  difficulty_medium: "Medio"
 };

@@ -87,5 +87,6 @@ export default {
   waterfall: "Cachoeira",
   mountain: "Montanha",
   beach: "Praia",
-  fields: "Cmpos"
+  fields: "Cmpos",
+  difficulty_medium: "Média"
 };

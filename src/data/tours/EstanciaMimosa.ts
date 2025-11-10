@@ -7,12 +7,14 @@ import { couplesEn, couplesEs, couplesPt } from 'src/data/audiences/Couples';
 import { bonito } from '../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
+const img = `${TOURS_BUCKET_NAME}/estancia-mimosa/img1.webp`
+
 export const estanciaMimosaPt: Tour = {
   id: 'TOUR-EM-01',
   slug: 'estancia-mimosa',
   name: 'Estância Mimosa',
   description: 'Trilha na mata ciliar do rio Mimoso com paradas para banho em cachoeiras, piscinas naturais, plataforma para salto e um passeio de barco a remo.',
-  mainImage: `${TOURS_BUCKET_NAME}/estania-mimosa.png`,
+  mainImage: img,
   durationInHours: 4,
   distanceFromCity: '22,6km',
   difficulty: DifficultyLevel.MODERATE,
@@ -29,7 +31,7 @@ export const estanciaMimosaEn: Tour = {
   slug: 'estancia-mimosa',
   name: 'Estância Mimosa',
   description: 'Trail in the riparian forest of the Mimoso River with stops for swimming in waterfalls, natural pools, a diving platform, and a rowboat ride.',
-  mainImage: `${TOURS_BUCKET_NAME}/estania-mimosa.png`,
+  mainImage: img,
   durationInHours: 4,
   distanceFromCity: '22.6km',
   difficulty: DifficultyLevel.MODERATE,
@@ -46,7 +48,7 @@ export const estanciaMimosaEs: Tour = {
   slug: 'estancia-mimosa',
   name: 'Estancia Mimosa',
   description: 'Sendero en el bosque de ribera del río Mimoso con paradas para bañarse en cascadas, piscinas naturales, una plataforma de salto y un paseo en bote de remos.',
-  mainImage: `${TOURS_BUCKET_NAME}/estania-mimosa.png`,
+  mainImage: img,
   durationInHours: 4,
   distanceFromCity: '22,6km',
   difficulty: DifficultyLevel.MODERATE,
