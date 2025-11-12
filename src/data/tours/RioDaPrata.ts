@@ -19,12 +19,14 @@ const videos = [
   } as MediaItem
 ] as MediaItem[]
 
+const img = `${TOURS_BUCKET_NAME}/flutuacao-rio-prata/img1.webp`
+
 export const rioDaPrataPt: Tour = {
   id: 'TOUR-RDP-01',
   slug: 'flutuacao-rio-prata',
   name: 'Flutuação no Rio da Prata',
   description: 'Uma flutuação tranquila por um imenso aquário de águas cristalinas, observando peixes e a vegetação subaquática. O passeio começa com uma trilha na mata ciliar.',
-  mainImage: `${TOURS_BUCKET_NAME}/gruta-lagoa-azul.png`,
+  mainImage: img,
   durationInHours: 4,
   distanceFromCity: '50km',
   difficulty: DifficultyLevel.EASY,
@@ -42,7 +44,7 @@ export const rioDaPrataEn: Tour = {
   slug: 'flutuacao-rio-prata',
   name: 'Snorkeling at Rio da Prata',
   description: 'A gentle snorkeling tour through a huge crystal-clear aquarium, observing fish and underwater vegetation. The tour begins with a trail in the riparian forest.',
-  mainImage: `${TOURS_BUCKET_NAME}/gruta-lagoa-azul.png`,
+  mainImage: img,
   durationInHours: 4,
   distanceFromCity: '50km',
   difficulty: DifficultyLevel.EASY,
@@ -59,7 +61,7 @@ export const rioDaPrataEs: Tour = {
   slug: 'flutuacao-rio-prata',
   name: 'Flotación en el Río da Prata',
   description: 'Una tranquila flotación por un inmenso acuario de aguas cristalinas, observando peces y la vegetación subacuática. El recorrido comienza con un sendero en el bosque de ribera.',
-  mainImage: `${TOURS_BUCKET_NAME}/gruta-lagoa-azul.png`,
+  mainImage: img,
   durationInHours: 4,
   distanceFromCity: '50km',
   difficulty: DifficultyLevel.EASY,

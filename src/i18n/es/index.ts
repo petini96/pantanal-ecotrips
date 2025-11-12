@@ -88,5 +88,6 @@ export default {
   mountain: "Montaña",
   beach: "Playa",
   fields: "Campos",
-  difficulty_medium: "Medio"
+  difficulty_medium: "Medio",
+  difficulty_hard: "Dura"
 };

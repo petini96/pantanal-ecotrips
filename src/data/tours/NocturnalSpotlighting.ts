@@ -5,13 +5,14 @@ import { familiesPt, familiesEn, familiesEs } from 'src/data/audiences/Families'
 import { miranda } from '../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
+const img = `${TOURS_BUCKET_NAME}/focagem-notura-animais/img1.webp`
 // PT-BR
 export const nocturnalSpotlightingPt: Tour = {
   id: 'TOUR-FSF-NS-01',
-  slug: 'focagem-notura',
+  slug: 'focagem-notura-animais',
   name: 'Focagem Noturna de Animais Silvestres',
   description: 'Safári em veículo aberto após o jantar para observar animais de hábitos noturnos. Com o auxílio de uma potente lanterna, é possível avistar jacarés, corujas, capivaras e até onças.',
-  mainImage: `${TOURS_BUCKET_NAME}/fsf-focagem.jpg`,
+  mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
@@ -26,10 +27,10 @@ export const nocturnalSpotlightingPt: Tour = {
 // EN-US
 export const nocturnalSpotlightingEn: Tour = {
   id: 'TOUR-FSF-NS-01',
-  slug: 'focagem-notura',
+  slug: 'focagem-notura-animais',
   name: 'Nocturnal Wildlife Spotlighting',
   description: 'An open vehicle safari after dinner to observe nocturnal animals. With the help of a powerful spotlight, it is possible to see caimans, owls, capybaras, and even jaguars.',
-  mainImage: `${TOURS_BUCKET_NAME}/fsf-focagem.jpg`,
+  mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
@@ -44,10 +45,10 @@ export const nocturnalSpotlightingEn: Tour = {
 // ES
 export const nocturnalSpotlightingEs: Tour = {
   id: 'TOUR-FSF-NS-01',
-  slug: 'focagem-notura',
+  slug: 'focagem-notura-animais',
   name: 'Enfoque Nocturno de Animales Silvestres',
   description: 'Un safari en vehículo abierto después de la cena para observar animales de hábitos nocturnos. Con la ayuda de una potente linterna, es posible avistar caimanes, búhos, capibaras e incluso jaguares.',
-  mainImage: `${TOURS_BUCKET_NAME}/fsf-focagem.jpg`,
+  mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,

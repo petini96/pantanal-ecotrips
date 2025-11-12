@@ -5,13 +5,15 @@ import { familiesPt, familiesEn, familiesEs } from 'src/data/audiences/Families'
 import { miranda } from '../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
+const img = `${TOURS_BUCKET_NAME}/passeio-de-barco-motor/img1.webp`
+
 // PT-BR
 export const motorBoatTripPt: Tour = {
   id: 'TOUR-MBT-01',
   slug: 'passeio-de-barco-motor',
   name: 'Passeio de Barco a Motor com Holofote',
   description: 'Navegação noturna pelos rios do Pantanal, usando um holofote para avistar animais de hábitos noturnos como jacarés, capivaras e corujas.',
-  mainImage: `${TOURS_BUCKET_NAME}/pantanal-motor-boat.png`,
+  mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
@@ -29,7 +31,7 @@ export const motorBoatTripEn: Tour = {
   slug: 'passeio-de-barco-motor',
   name: 'Motor Boat Trip with Spotlight',
   description: 'Night navigation through the Pantanal rivers, using a spotlight to spot nocturnal animals like caimans, capybaras, and owls.',
-  mainImage: `${TOURS_BUCKET_NAME}/pantanal-motor-boat.png`,
+  mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
@@ -47,7 +49,7 @@ export const motorBoatTripEs: Tour = {
   slug: 'passeio-de-barco-motor',
   name: 'Paseo en Bote a Motor con Foco de Luz',
   description: 'Navegación nocturna por los ríos del Pantanal, usando un foco de luz para avistar animales de hábitos nocturnos como caimanes, capibaras y búhos.',
-  mainImage: `${TOURS_BUCKET_NAME}/pantanal-motor-boat.png`,
+  mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
