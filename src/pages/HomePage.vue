@@ -156,11 +156,12 @@ const pantanalImages = ref([
   { src: 'https://pantanalecotrips.com.br/sites/default/files/obrasrealizadas/flutaao_rio_da_prata_07.jpg', alt: 'Gato', caption: 'Felino observador' },
 ]);
 
+
 // --- SEO (Meta Tags) ---
 useMeta(() => {
   const currentLang = (route.params.lang as string) || 'pt';
   const baseURL = 'https://www.pantanalecotrips.roboticsmind.com.br';
-  const ogImageURL = `${baseURL}/og-image.jpg`;
+  const ogImageURL = `${baseURL}/pantanal_ecotrips_logo.png`;
 
   const structuredData = {
     '@context': 'https://schema.org',
@@ -180,8 +181,8 @@ useMeta(() => {
       addressCountry: 'BR',
     },
     sameAs: [
-      'https://www.facebook.com/suapagina',
-      'https://www.instagram.com/seuusuario',
+      'https://www.facebook.com/pantanalecotrips',
+      'https://www.instagram.com/pantanalecotrips2'
     ],
   };
 
@@ -189,10 +190,13 @@ useMeta(() => {
     title: t('meta_title'),
     link: {
       canonical: { rel: 'canonical', href: `${baseURL}/${currentLang}` },
+      pt: { rel: 'alternate', hreflang: 'pt', href: `${baseURL}/pt` },
+      en: { rel: 'alternate', hreflang: 'en', href: `${baseURL}/en` },
+      es: { rel: 'alternate', hreflang: 'es', href: `${baseURL}/es` },
+      xd: { rel: 'alternate', hreflang: 'x-default', href: `${baseURL}/pt` },
     },
     meta: {
       description: { name: 'description', content: t('meta_description') },
-      keywords: { name: 'keywords', content: t('meta_keywords') },
       ogTitle: { property: 'og:title', content: t('meta_title') },
       ogDescription: { property: 'og:description', content: t('meta_description') },
       ogType: { property: 'og:type', content: 'website' },

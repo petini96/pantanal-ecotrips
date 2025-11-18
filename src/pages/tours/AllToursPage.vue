@@ -146,18 +146,64 @@ watch(
   { immediate: true } // Executa imediatamente ao carregar
 );
 
-// --- SEO (Meta Tags) ---
 useMeta(() => {
   const pageTitle = t('all_tours_title');
   const pageDescription = t('all_tours_description');
+  
+  const currentLang = (route.params.lang as string) || 'pt';
+  const baseURL = 'https://www.pantanalecotrips.roboticsmind.com.br';
+  const ogImageURL = `${baseURL}/pantanal_ecotrips_logo`;
+  const pageUrl = `${baseURL}/${currentLang}/passeios`;
+  
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: pageTitle,
+    description: pageDescription,
+    url: pageUrl,
+    numberOfItems: allTours.value.length,
+    itemListElement: allTours.value.map((tour, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Product',
+        name: tour.name,
+        description: tour.description,
+        image: tour.mainImage,
+        url: `${baseURL}/${currentLang}/passeio/${tour.slug}`,
+        sku: tour.id,
+      },
+    })),
+  };
 
   return {
     title: `${pageTitle} | Pantanal Ecotrips`,
+    link: {
+      canonical: { rel: 'canonical', href: pageUrl },
+      pt: { rel: 'alternate', hreflang: 'pt', href: `${baseURL}/pt/passeios` },
+      en: { rel: 'alternate', hreflang: 'en', href: `${baseURL}/en/passeios` },
+      es: { rel: 'alternate', hreflang: 'es', href: `${baseURL}/es/passeios` },
+      xd: { rel: 'alternate', hreflang: 'x-default', href: `${baseURL}/pt/passeios` },
+    },
     meta: {
       description: { name: 'description', content: pageDescription },
       ogTitle: { property: 'og:title', content: pageTitle },
       ogDescription: { property: 'og:description', content: pageDescription },
-      // ...outras meta tags de SEO que você desejar
+      ogType: { property: 'og:type', content: 'website' },
+      ogUrl: { property: 'og:url', content: pageUrl },
+      ogImage: { property: 'og:image', content: ogImageURL },
+      ogLocale: { property: 'og:locale', content: locale.value.replace('-', '_') },
+      ogSiteName: { property: 'og:site_name', content: 'Pantanal Ecotrips' },
+      twitterCard: { name: 'twitter:card', content: 'summary_large_image' },
+      twitterTitle: { name: 'twitter:title', content: pageTitle },
+      twitterDescription: { name: 'twitter:description', content: pageDescription },
+      twitterImage: { name: 'twitter:image', content: ogImageURL },
+    },
+    script: {
+      structuredData: {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(structuredData),
+      },
     },
   };
 });

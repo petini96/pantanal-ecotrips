@@ -163,10 +163,70 @@ useMeta(() => {
   if (!tour.value) {
     return { title: t('tour_not_found') };
   }
+
+  const pageTitle = `${tour.value.name} | Pantanal Ecotrips`;
+  const pageDescription = tour.value.description;
+  
+  const currentLang = (route.params.lang as string) || 'pt';
+  const baseURL = 'https://www.pantanalecotrips.roboticsmind.com.br';
+  const pageUrl = `${baseURL}/${currentLang}/passeio/${tour.value.slug}`;
+  const ogImageURL = tour.value.mainImage;
+
+  // Schema de Rich Result (Produto/Passeio)
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: tour.value.name,
+    description: tour.value.description,
+    image: tour.value.mainImage,
+    sku: tour.value.id,
+    brand: {
+      '@type': 'Organization',
+      name: 'Pantanal Ecotrips',
+    },
+    offers: {
+      '@type': 'Offer',
+      url: pageUrl,
+      availability: 'https://schema.org/InStock',
+      // preços, adicione-os aqui:
+      // priceCurrency: 'BRL',
+      // price: '150.00',
+    },
+    // aggregateRating: {
+    //   '@type': 'AggregateRating',
+    //   ratingValue: '4.8',
+    //   reviewCount: '120'
+    // }
+  };
+
   return {
-    title: `${tour.value.name} | Pantanal Ecotrips`,
+    title: pageTitle,
+    link: {
+      canonical: { rel: 'canonical', href: pageUrl },
+      pt: { rel: 'alternate', hreflang: 'pt', href: `${baseURL}/pt/passeio/${tour.value.slug}` },
+      en: { rel: 'alternate', hreflang: 'en', href: `${baseURL}/en/passeio/${tour.value.slug}` },
+      es: { rel: 'alternate', hreflang: 'es', href: `${baseURL}/es/passeio/${tour.value.slug}` },
+      xd: { rel: 'alternate', hreflang: 'x-default', href: `${baseURL}/pt/passeio/${tour.value.slug}` },
+    },
     meta: {
-      description: { name: 'description', content: tour.value.description },
+      description: { name: 'description', content: pageDescription },
+      ogTitle: { property: 'og:title', content: pageTitle },
+      ogDescription: { property: 'og:description', content: pageDescription },
+      ogType: { property: 'og:type', content: 'website' },
+      ogUrl: { property: 'og:url', content: pageUrl },
+      ogImage: { property: 'og:image', content: ogImageURL },
+      ogLocale: { property: 'og:locale', content: locale.value.replace('-', '_') },
+      ogSiteName: { property: 'og:site_name', content: 'Pantanal Ecotrips' },
+      twitterCard: { name: 'twitter:card', content: 'summary_large_image' },
+      twitterTitle: { name: 'twitter:title', content: pageTitle },
+      twitterDescription: { name: 'twitter:description', content: pageDescription },
+      twitterImage: { name: 'twitter:image', content: ogImageURL },
+    },
+    script: {
+      structuredData: {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(structuredData),
+      },
     },
   };
 });

@@ -187,7 +187,7 @@ useMeta(() => {
   if (!pkg.value) {
     return { title: t('tour_not_found') };
   }
-  const baseUrl = 'https://www.pantanalecotrips.com.br';
+  const baseUrl = 'https://www.pantanalecotrips.roboticsmind.com.br';
   const currentLang = (route.params.lang as string || 'pt');
 
   return {
