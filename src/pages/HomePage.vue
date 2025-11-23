@@ -126,19 +126,36 @@ defineOptions({
 
 // --- Dados das Galerias (Mock) ---
 const bucketBaseUrl = 'https://minio-s3.roboticsmind.com.br/general-bucket/mimosa';
+const thumbnailBaseImg = 'https://minio-s3.roboticsmind.com.br/general-bucket/thumbnail';
+
 const videoData = [
-  { fileName: 'Cópia de homem sinzinho.mp4', title: 'Homem Sinhozinho' },
-  { fileName: 'Cópia de sinzinho mulher drone.mp4', title: 'Sinhozinho Mulher (Drone)' },
-  { fileName: 'Cópia de trilha drone 3.mp4', title: 'Trilha de Drone' },
-  { fileName: 'GH010573.MP4', title: 'Paisagem Aérea GH010573' },
-  { fileName: 'Cópia de drone cachoeira do sol pessoas 2.mp4', title: 'Cachoeira do Sol com Pessoas' },
-  { fileName: 'Cópia de drone flutuação pessoas.mp4', title: 'Flutuação com Pessoas (Drone)' },
+  { fileName: 'Cópia de agua do sol drone.mp4', title: 'Video 1', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_1.webp` },
+  { fileName: 'Cópia de Agua doce drone homem.mp4', title: 'Video 2', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_2.webp` },
+  { fileName: 'Cópia de cacheoira do sol drone.mp4', title: 'Video 3', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_3.webp` },
+  { fileName: 'Cópia de DJI_0074.mp4', title: 'Video 4', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_4.webp` },
+  { fileName: 'Cópia de drone alto pessoas.mp4', title: 'Video 5', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_5.webp` },
+  { fileName: 'Cópia de drone cachoeira do sol pessoas.mp4', title: 'Video 6', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_6.webp` },
+  { fileName: 'Cópia de Drone homem sinhozinho.mp4', title: 'Video 7', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_7.webp` },
+  { fileName: 'Cópia de Drone mulher sinhozinho.mp4', title: 'Video 8', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_8.webp` },
+  { fileName: 'Cópia de drone pessoas nascente.mp4', title: 'Video 9', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_9.webp` },
+  { fileName: 'Cópia de drone sinhozinho cima.mp4', title: 'Video 10', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_10.webp` },
+  { fileName: 'Cópia de drone vulcão.mp4', title: 'Video 11', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_11.webp` },
+  { fileName: 'Cópia de homem cachoeira agua doce.mp4', title: 'Video 12', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_12.webp` },
+  { fileName: 'Cópia de homem cachoeira do sol drone.mp4', title: 'Video 13', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_13.webp` },
+  { fileName: 'Cópia de casal drone.mp4', title: 'Video 14', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_14.webp` },
+  { fileName: 'Cópia de homem pulando cachoeira do sol.mp4', title: 'Video 15', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_15.webp` },
+  { fileName: 'GH010573.MP4', title: 'Video 16', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_16.webp` },
+  { fileName: 'IMG_3767.MOV', title: 'Video 17', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_18.webp` },
+  { fileName: 'Cópia de trilha drone 3.mp4', title: 'Video 18', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_19.webp` },
+  { fileName: 'Cópia de drone cachoeira do sol pessoas 2.mp4', title: 'Video 19', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_20.webp` },
+  { fileName: 'Cópia de drone flutuação pessoas.mp4', title: 'Video 20', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_1.webp` },
 ];
 
 const galleryItems: MediaItem[] = videoData.map((video) => ({
   type: 'video',
   src: `${bucketBaseUrl}/${encodeURIComponent(video.fileName)}`,
   title: video.title,
+  thumbnailUrl: video.thumbnailUrl
 }));
 
 const pantanalImages = ref([

@@ -2,21 +2,20 @@
   <div class="media-gallery-container q-pa-md">
     <div class="gallery-content-wrapper">
       <div v-if="paginatedItems.length">
-        <div class="row q-col-gutter-lg justify-center">
+        <div class="row q-col-gutter-md justify-center">
           <div
             v-for="(item, index) in paginatedItems"
             :key="item.src"
-            class="col-12 col-sm-6 col-md-4 col-lg-3"
+            class="col-6 col-sm-4 col-md-3 col-lg-2"
           >
             <div
-              class="media-card column cursor-pointer rounded-borders shadow-4 overflow-hidden"
+              class="media-card column cursor-pointer rounded-borders shadow-2 overflow-hidden"
               tabindex="0"
               @click="openViewer(getGlobalIndex(index))"
               @keyup.enter="openViewer(getGlobalIndex(index))"
             >
               <div class="media-card-content">
                 <template v-if="item.type === 'video'">
-                  <!-- Thumbnail estático ou placeholder para vídeos -->
                   <div class="video-thumbnail-wrapper">
                     <q-img
                       v-if="item.thumbnailUrl"
@@ -30,10 +29,10 @@
                       </template>
                     </q-img>
                     <div v-else class="video-placeholder bg-grey-9">
-                      <q-icon name="videocam" color="grey-5" size="64px" />
+                      <q-icon name="videocam" color="grey-5" size="40px" />
                     </div>
                     <div class="absolute-center media-video-overlay">
-                      <q-icon name="play_circle_outline" color="white" size="56px" />
+                      <q-icon name="play_circle_outline" color="white" size="40px" />
                     </div>
                   </div>
                 </template>
@@ -54,13 +53,13 @@
                     <q-icon 
                       :name="item.type === 'image' ? 'zoom_in' : 'play_circle_outline'" 
                       color="white" 
-                      size="48px" 
+                      size="32px" 
                     />
                   </div>
                 </q-img>
 
                 <div class="absolute-bottom-left full-width media-item-overlay">
-                  <div class="media-item-title q-pa-sm">{{ item.title }}</div>
+                  <div class="media-item-title q-pa-xs text-caption">{{ item.title }}</div>
                 </div>
               </div>
             </div>
@@ -80,16 +79,15 @@
         :max="totalPages"
         :max-pages="6"
         direction-links
-        boundary-links
-        icon-first="skip_previous"
-        icon-last="skip_next"
-        icon-prev="fast_rewind"
-        icon-next="fast_forward"
+        boundary-numbers
+        icon-prev="chevron_left"
+        icon-next="chevron_right"
         color="grey-8"
-        active-design="unelevated"
         active-color="primary"
-        gutter="sm"
-        class="styled-pagination"
+        flat
+        round
+        size="16px"
+        class="modern-pagination"
       />
     </div>
 
@@ -168,30 +166,26 @@
 <script setup lang="ts">
 import { ref, computed, watch, onBeforeUnmount, type ComponentPublicInstance } from 'vue';
 
-// Interface
 export interface MediaItem {
   type: 'image' | 'youtube' | 'video';
   src: string;
   title: string;
   caption?: string;
-  thumbnailUrl?: string; // URL de thumbnail pré-gerada (recomendado)
+  thumbnailUrl?: string;
 }
 
-// Props
 const props = withDefaults(defineProps<{
   items: MediaItem[];
   itemsPerPage?: number;
 }>(), {
-  itemsPerPage: 6,
+  itemsPerPage: 4,
 });
 
-// Estado
 const isViewerOpen = ref(false);
 const currentSlideIndex = ref(0);
 const currentPage = ref(1);
 const videoRefs = ref<Map<number, HTMLVideoElement>>(new Map());
 
-// Paginação
 const totalPages = computed(() => Math.ceil(props.items.length / props.itemsPerPage));
 const paginatedItems = computed(() => {
   const start = (currentPage.value - 1) * props.itemsPerPage;
@@ -199,7 +193,6 @@ const paginatedItems = computed(() => {
   return props.items.slice(start, end);
 });
 
-// Funções
 const getGlobalIndex = (paginatedIndex: number): number => {
   return (currentPage.value - 1) * props.itemsPerPage + paginatedIndex;
 };
@@ -221,18 +214,15 @@ const getThumbnail = (item: MediaItem): string => {
   if (item.type === 'image') {
     return item.src;
   }
-  // Para vídeos, usa thumbnailUrl se disponível
   return item.thumbnailUrl || '';
 };
 
-// Gerenciamento de refs de vídeo
 const setVideoRef = (el: Element | ComponentPublicInstance | null, index: number) => {
   if (el && el instanceof HTMLVideoElement) {
     videoRefs.value.set(index, el);
   }
 };
 
-// Pausa todos os vídeos
 const pauseAllVideos = () => {
   videoRefs.value.forEach(video => {
     if (!video.paused) {
@@ -241,7 +231,6 @@ const pauseAllVideos = () => {
   });
 };
 
-// Pausa o vídeo atual
 const pauseCurrentMedia = () => {
   const currentVideo = videoRefs.value.get(currentSlideIndex.value);
   if (currentVideo && !currentVideo.paused) {
@@ -249,17 +238,14 @@ const pauseCurrentMedia = () => {
   }
 };
 
-// Gerencia transição entre slides
 const onSlideTransition = () => {
   pauseAllVideos();
 };
 
-// Observer para resetar página ao mudar items
 watch(() => props.items, () => {
   currentPage.value = 1;
 }, { deep: false });
 
-// Limpa refs ao desmontar
 onBeforeUnmount(() => {
   pauseAllVideos();
   videoRefs.value.clear();
@@ -294,8 +280,8 @@ onBeforeUnmount(() => {
 
   &:hover,
   &:focus {
-    transform: scale(1.03);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   }
 }
 
@@ -337,14 +323,15 @@ onBeforeUnmount(() => {
   transition: background-color 0.3s ease, opacity 0.3s ease;
 
   .q-icon {
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
+    opacity: 0.8;
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.4);
     .q-icon {
       opacity: 1;
+      transform: scale(1.1);
     }
   }
 }
@@ -362,7 +349,7 @@ onBeforeUnmount(() => {
 }
 
 .media-item-title {
-  font-size: 1rem;
+  font-size: 0.8rem; /* Fonte reduzida para cards menores */
   font-weight: 500;
   color: white;
   width: 100%;
@@ -403,17 +390,21 @@ onBeforeUnmount(() => {
   width: 700px;
 }
 
-// Estilo da Paginação
-:deep(.styled-pagination .q-pagination__content) {
-  background-color: var(--card-bg-color, #fff);
-  padding: 8px;
-  border-radius: 50px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border: 1px solid var(--border-color, #e0e0e0);
-}
+/* --- ESTILOS DA PAGINAÇÃO MODERNA --- */
+:deep(.modern-pagination) {
+  gap: 4px;
 
-:deep(.styled-pagination .q-btn) {
-  border-radius: 50%;
+  .q-btn {
+    font-weight: 500;
+    margin: 0 2px;
+    
+    /* Hover suave nos números */
+    &:not(.bg-primary) {
+        &:hover {
+            background-color: rgba(0,0,0,0.05);
+        }
+    }
+  }
 }
 
 // AJUSTES RESPONSIVOS
@@ -423,8 +414,8 @@ onBeforeUnmount(() => {
   }
   
   .row {
-    --q-gutter-x: 0.75rem;
-    --q-gutter-y: 0.75rem;
+    --q-gutter-x: 0.5rem;
+    --q-gutter-y: 0.5rem;
   }
 }
 
@@ -440,7 +431,7 @@ onBeforeUnmount(() => {
   }
   
   .media-item-title {
-    font-size: 0.875rem;
+    font-size: 0.75rem;
   }
 }
 </style>
