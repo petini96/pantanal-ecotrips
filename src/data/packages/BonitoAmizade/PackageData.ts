@@ -25,15 +25,16 @@ import {
 import { couplesPt, couplesEn, couplesEs } from "src/data/audiences/Couples";
 import { groupsPt, groupsEn, groupsEs } from "src/data/audiences/Groups";
 import { bonitoSerraBodoquenaEn, bonitoSerraBodoquenaPt } from "src/data/regions/Regions";
-import { PACKAGE_BUCKET_NAME } from "src/utils/environmentUtils";
+import { TOURS_BUCKET_NAME } from "src/utils/environmentUtils";
 
 const uuid = uid();
 
+const img = `${TOURS_BUCKET_NAME}/rio-formoso/img1.webp`
 // PT-BR
 export const bonitoAmizadePt: TourPackage = {
   id: uuid,
   slug: 'tour-bonito-amizade',
-  image: `${PACKAGE_BUCKET_NAME}/bonito-amizade.png`,
+  image: img,
   title: "Tour Bonito Amizade",
   subtitle:
     "Um roteiro de 5 dias cheio de aventura e natureza, perfeito para grupos de amigos.",
@@ -73,7 +74,7 @@ export const bonitoAmizadePt: TourPackage = {
 export const bonitoAmizadeEn: TourPackage = {
   id: uuid,
   slug: 'tour-bonito-amizade',
-  image: `${PACKAGE_BUCKET_NAME}/bonito-amizade.png`,
+  image: img,
   title: "Bonito Friendship Tour",
   subtitle:
     "A 5-day itinerary full of adventure and nature, perfect for groups of friends.",
@@ -113,7 +114,7 @@ export const bonitoAmizadeEn: TourPackage = {
 export const bonitoAmizadeEs: TourPackage = {
   id: uuid,
   slug: 'tour-bonito-amizade',
-  image: `${PACKAGE_BUCKET_NAME}/bonito-amizade.png`,
+  image: img,
   title: "Tour Bonito Amistad",
   subtitle:
     "Un itinerario de 5 días lleno de aventura y naturaleza, perfecto para grupos de amigos.",

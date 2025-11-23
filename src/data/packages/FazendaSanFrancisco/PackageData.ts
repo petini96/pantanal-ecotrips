@@ -113,12 +113,14 @@ const commonShouldIBringEs = [
 const commonObservationEs =
   "Los vuelos de llegada deben ser antes de las 09:30. Los vuelos de salida deben ser después de las 21:00. El orden de los tours es definido por la hacienda para optimizar la logística y aprovechar las mejores condiciones climáticas.";
 
+const img = `${PACKAGE_BUCKET_NAME}/fazenda-san-francisco-coati/img1.webp`
+
 // --- FAZENDA COATI PACKAGE (2D/1N) ---
 const uuidCoati = uid();
 export const fazendaCoatiPt: TourPackage = {
   id: uuidCoati,
   slug: "fazenda-san-francisco-coati",
-  image: `${PACKAGE_BUCKET_NAME}/fazenda-san-francisco.jpg`,
+  image: img,
   title: "Fazenda San Francisco - Tour Coati",
   subtitle:
     "Uma imersão rápida e intensa de 2 dias na vida selvagem do Pantanal.",
@@ -137,7 +139,7 @@ export const fazendaCoatiPt: TourPackage = {
 export const fazendaCoatiEn: TourPackage = {
   id: uuidCoati,
   slug: "fazenda-san-francisco-coati",
-  image: `${PACKAGE_BUCKET_NAME}/fazenda-san-francisco.jpg`,
+  image: img,
   title: "Fazenda San Francisco - Coati Tour",
   subtitle: "A quick and intense 2-day immersion into the Pantanal wildlife.",
   durationInDays: 2,
@@ -155,7 +157,7 @@ export const fazendaCoatiEn: TourPackage = {
 export const fazendaCoatiEs: TourPackage = {
   id: uuidCoati,
   slug: "fazenda-san-francisco-coati",
-  image: `${PACKAGE_BUCKET_NAME}/fazenda-san-francisco.jpg`,
+  image: img,
   title: "Fazenda San Francisco - Tour Coatí",
   subtitle:
     "Una inmersión rápida e intensa de 2 días en la vida salvaje del Pantanal.",
@@ -177,7 +179,7 @@ const uuidArarinha = uid();
 export const fazendaArarinhaPt: TourPackage = {
   id: uuidArarinha,
   slug: "fazenda-san-francisco-ararinha",
-  image: `${PACKAGE_BUCKET_NAME}/fazenda-san-francisco.jpg`,
+  image: img,
   title: "Fazenda San Francisco - Tour Ararinha",
   subtitle: "3 dias focados na observação da rica avifauna e fauna pantaneira.",
   durationInDays: 3,
@@ -195,7 +197,7 @@ export const fazendaArarinhaPt: TourPackage = {
 export const fazendaArarinhaEn: TourPackage = {
   id: uuidArarinha,
   slug: "fazenda-san-francisco-ararinha",
-  image: `${PACKAGE_BUCKET_NAME}/fazenda-san-francisco.jpg`,
+  image: img,
   title: "Fazenda San Francisco - Macaw Tour",
   subtitle:
     "3 days focused on observing the rich birdlife and fauna of the Pantanal.",
@@ -214,7 +216,7 @@ export const fazendaArarinhaEn: TourPackage = {
 export const fazendaArarinhaEs: TourPackage = {
   id: uuidArarinha,
   slug: "fazenda-san-francisco-ararinha",
-  image: `${PACKAGE_BUCKET_NAME}/fazenda-san-francisco.jpg`,
+  image: img,
   title: "Fazenda San Francisco - Tour Guacamayo",
   subtitle:
     "3 días enfocados en la observación de la rica avifauna y fauna pantanera.",
@@ -236,7 +238,7 @@ const uuidAnta = uid();
 export const fazendaAntaPt: TourPackage = {
   id: uuidAnta,
   slug: "fazenda-san-francisco-anta",
-  image: `${PACKAGE_BUCKET_NAME}/fazenda-san-francisco.jpg`,
+  image: img,
   title: "Fazenda San Francisco - Tour Anta",
   subtitle:
     "Uma jornada de 4 dias com uma expedição especial em busca da onça-pintada.",
@@ -255,7 +257,7 @@ export const fazendaAntaPt: TourPackage = {
 export const fazendaAntaEn: TourPackage = {
   id: uuidAnta,
   slug: "fazenda-san-francisco-anta",
-  image: `${PACKAGE_BUCKET_NAME}/fazenda-san-francisco.jpg`,
+  image: img,
   title: "Fazenda San Francisco - Tapir Tour",
   subtitle:
     "A 4-day journey with a special expedition in search of the jaguar.",
@@ -274,7 +276,7 @@ export const fazendaAntaEn: TourPackage = {
 export const fazendaAntaEs: TourPackage = {
   id: uuidAnta,
   slug: "fazenda-san-francisco-anta",
-  image: `${PACKAGE_BUCKET_NAME}/fazenda-san-francisco.jpg`,
+  image: img,
   title: "Fazenda San Francisco - Tour Tapir",
   subtitle:
     "Un viaje de 4 días con una expedición especial en busca del jaguar.",
@@ -296,7 +298,7 @@ const uuidAguia = uid();
 export const fazendaAguiaPt: TourPackage = {
   id: uuidAguia,
   slug: "fazenda-san-francisco-aguia",
-  image: `${PACKAGE_BUCKET_NAME}/fazenda-san-francisco.jpg`,
+  image: img,
   title: "Fazenda San Francisco - Tour Águia",
   subtitle:
     "A experiência mais completa de 5 dias para vivenciar tudo que a fazenda oferece.",
@@ -315,7 +317,7 @@ export const fazendaAguiaPt: TourPackage = {
 export const fazendaAguiaEn: TourPackage = {
   id: uuidAguia,
   slug: "fazenda-san-francisco-aguia",
-  image: `${PACKAGE_BUCKET_NAME}/fazenda-san-francisco.jpg`,
+  image: img,
   title: "Fazenda San Francisco - Eagle Tour",
   subtitle:
     "The most complete 5-day experience to enjoy everything the farm has to offer.",
@@ -334,7 +336,7 @@ export const fazendaAguiaEn: TourPackage = {
 export const fazendaAguiaEs: TourPackage = {
   id: uuidAguia,
   slug: "fazenda-san-francisco-aguia",
-  image: `${PACKAGE_BUCKET_NAME}/fazenda-san-francisco.jpg`,
+  image: img,
   title: "Fazenda San Francisco - Tour Águila",
   subtitle:
     "La experiencia más completa de 5 días para vivir todo lo que la hacienda ofrece.",
