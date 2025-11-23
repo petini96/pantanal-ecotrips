@@ -1,5 +1,5 @@
 <template>
-  <section
+  <div
     id="faq-section"
     class="q-py-xl content-section"
     v-intersection.once="onIntersection"
@@ -29,7 +29,7 @@
         </q-list>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup lang="ts">

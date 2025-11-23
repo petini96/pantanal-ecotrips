@@ -1,6 +1,5 @@
 <template>
-  <section
-    id="credibility-section"
+  <div
     class="content-section"
     v-intersection.once="onIntersection"
   >
@@ -24,7 +23,7 @@
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -65,7 +64,7 @@ const onIntersection = (entry: IntersectionObserverEntry) => {
 }
 
 /* AJUSTE: A seção agora ocupa 100vh e centraliza o conteúdo */
-#credibility-section {
+.content-section {
   min-height: 100vh;
   display: flex;
   align-items: center;

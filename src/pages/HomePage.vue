@@ -1,6 +1,6 @@
 <template>
   <q-page :class="['home-page', `theme-${currentTheme}`]">
-    <!-- BANNER PRINCIPAL -->
+    
     <SimpleBanner
       :hero_title="t('hero_title')"
       :hero_subtitle="t('hero_subtitle')"
@@ -8,49 +8,41 @@
       :hero_background="SimpleBannerBackground"
     />
 
-    <!-- SEÇÃO DE PACOTES DE PASSEIO -->
-    <div v-intersection.once="() => (loadTourPackage = true)" class="section-wrapper">
+    <section id="packages-section" v-intersection.once="() => (loadTourPackage = true)" class="section-wrapper">
       <TourPackageSection v-if="loadTourPackage" class="q-mt-xl" />
-    </div>
+    </section>
 
-    <div v-intersection.once="() => (loadCtaAllTours = true)" class="section-wrapper-cta">
+    <section id="all-tours-cta-section" v-intersection.once="() => (loadCtaAllTours = true)" class="section-wrapper-cta">
       <CtaAllToursSection v-if="loadCtaAllTours" />
-    </div>
+    </section>
 
-    <!-- SEÇÃO GALERIA DE MÍDIA -->
-    <div v-intersection.once="() => (loadMediaGallery = true)" class="section-wrapper">
-      <MediaGallery v-if="loadMediaGallery" :items="galleryItems" />
-    </div>
-
-    <!-- SEÇÃO POR QUE NÓS -->
-    <div v-intersection.once="() => (loadWhyUs = true)" class="section-wrapper">
-      <WhyUsSection v-if="loadWhyUs" />
-    </div>
-
-    <!-- SEÇÃO GALERIA MOSAICO -->
-    <div v-intersection.once="() => (loadMosaicGallery = true)" class="section-wrapper">
+    <section id="mosaic-gallery-section" v-intersection.once="() => (loadMosaicGallery = true)" class="section-wrapper">
       <MosaicGallery v-if="loadMosaicGallery" :images="pantanalImages" />
-    </div>
+    </section>
 
-    <!-- SEÇÃO NEWSLETTER -->
-    <div v-intersection.once="() => (loadNewsLetter = true)" class="section-wrapper">
+    <section id="media-gallery-section" v-intersection.once="() => (loadMediaGallery = true)" class="section-wrapper">
+      <MediaGallery v-if="loadMediaGallery" :items="galleryItems" />
+    </section>
+
+    <section id="why-us-section" v-intersection.once="() => (loadWhyUs = true)" class="section-wrapper">
+      <WhyUsSection v-if="loadWhyUs" />
+    </section>
+
+    <section id="newsletter-section" v-intersection.once="() => (loadNewsLetter = true)" class="section-wrapper">
       <NewsLetterSection v-if="loadNewsLetter" />
-    </div>
-
-    <!-- SEÇÃO SOBRE NÓS -->
-    <div v-intersection.once="() => (loadAboutUs = true)" class="section-wrapper">
+    </section>
+    
+    <section id="about-us-section" v-intersection.once="() => (loadAboutUs = true)" class="section-wrapper">
       <AboutUsSection v-if="loadAboutUs" />
-    </div>
-
-    <!-- SEÇÃO FAC -->
-    <div v-intersection.once="() => (loadFac = true)" class="section-wrapper">
+    </section>
+    
+    <section id="faq-section" v-intersection.once="() => (loadFac = true)" class="section-wrapper">
       <FacSection v-if="loadFac" />
-    </div>
-
-    <!-- SEÇÃO CREDIBILIDADE -->
-    <div v-intersection.once="() => (loadCredibility = true)" class="section-wrapper">
+    </section>
+    
+    <section id="credibility-section" v-intersection.once="() => (loadCredibility = true)" class="section-wrapper">
       <CredibilitySection v-if="loadCredibility" />
-    </div>
+    </section>
   </q-page>
 </template>
 

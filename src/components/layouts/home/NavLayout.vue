@@ -1,38 +1,190 @@
 <template>
-  <nav class="main-nav">
-    <LogoLink />
+  <nav class="main-nav" aria-label="Navegação Principal">
+    
+    <div class="nav-section start">
+      <LogoLink />
+    </div>
 
-    <q-btn flat round dense
-      :href="'https://www.tripadvisor.com.br/Attraction_Review-g303349-d33955815-Reviews-Pantanal_Ecotrips-Bonito_State_of_Mato_Grosso_do_Sul.html'"
-      target="_blank" rel="noopener noreferrer" aria-label="Veja nossas avaliações no TripAdvisor">
-      <q-avatar size="32px">
-        <img src="/white-tripadvisor-logo.png" alt="TripAdvisor">
-      </q-avatar>
-    </q-btn>
-    <PageControls />
+    <div class="nav-section center gt-sm">
+      <template v-for="link in navLinks" :key="link.label">
+        <q-btn
+          flat
+          rounded
+          no-caps
+          class="nav-link-btn"
+          :href="getLinkUrl(link)" 
+          :target="link.external ? '_blank' : '_self'"
+          @click="handleNavClick($event, link)"
+          :aria-label="link.ariaLabel || link.label"
+        >
+          {{ link.label }}
+        </q-btn>
+      </template>
+
+      <q-btn flat dense round
+        href="https://www.tripadvisor.com.br/Attraction_Review-g303349-d33955815-Reviews-Pantanal_Ecotrips-Bonito_State_of_Mato_Grosso_do_Sul.html"
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="q-ml-md"
+      >
+        <img src="/tripadvisor-logo.svg" alt="TripAdvisor" style="height: 32px; width: auto;">
+      </q-btn>
+    </div>
+
+    <div class="nav-section end">
+      <PageControls />
+      
+      <q-btn flat round dense icon="menu" color="white" class="lt-md q-ml-sm" aria-label="Abrir Menu">
+        <q-menu fit anchor="bottom right" self="top right" class="mobile-menu-dropdown">
+          <q-list style="min-width: 200px">
+            <q-item 
+              v-for="link in navLinks" 
+              :key="link.label" 
+              clickable 
+              v-close-popup
+              :href="getLinkUrl(link)"
+              :target="link.external ? '_blank' : '_self'"
+              @click="handleNavClick($event, link)"
+            >
+              <q-item-section>{{ link.label }}</q-item-section>
+              <q-item-section avatar v-if="link.external">
+                <q-icon name="open_in_new" size="xs" />
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-menu>
+      </q-btn>
+    </div>
   </nav>
 </template>
 
 <script setup lang="ts">
+import { scroll } from 'quasar';
 import PageControls from 'src/components/controls/PageControls.vue';
 import LogoLink from 'src/components/logo/LogoLink.vue';
+import { useRouter, useRoute } from 'vue-router';
+import { computed } from 'vue';
+
+const { getScrollTarget, setVerticalScrollPosition } = scroll;
+const router = useRouter();
+const route = useRoute();
+
+interface NavLink {
+  label: string;
+  url?: string;
+  routeName?: string;
+  external?: boolean;
+  ariaLabel?: string;
+}
+
+const navLinks: NavLink[] = [
+  { label: 'Passeios', routeName: 'allTours' },
+  { label: 'Pacotes', url: '#packages-section' },
+  { label: 'Galeria', url: '#mosaic-gallery-section' },
+  { label: 'Dúvidas', url: '#faq-section' },
+  { label: 'Contato', url: '#contato' }
+];
+
+const currentLang = computed(() => (route.params.lang as string) || 'pt');
+
+const getLinkUrl = (link: NavLink): string => {
+  if (link.external && link.url) return link.url;
+  
+  if (link.routeName) {
+    try {
+      const resolved = router.resolve({ 
+        name: link.routeName, 
+        params: { lang: currentLang.value } 
+      });
+      return resolved.href;
+    } catch (e) {
+      console.error(e)
+      return '#';
+    }
+  }
+  
+  return link.url || '#';
+};
+
+const handleNavClick = async (ev: Event, link: NavLink) => {
+  
+  if (link.external) return;
+
+  ev.preventDefault();
+  
+  if (link.routeName) {
+
+    if (route.name === link.routeName) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      
+      await router.push({ 
+        name: link.routeName, 
+        params: { lang: currentLang.value } 
+      });
+    }
+    return;
+  }
+
+  if (link.url?.startsWith('#')) {
+    if (route.name !== 'home') {
+        await router.push({ name: 'home', params: { lang: currentLang.value } });
+        setTimeout(() => scrollToId(link.url!), 300);
+    } else {
+        scrollToId(link.url);
+    }
+  }
+};
+
+const scrollToId = (id: string) => {
+  const targetId = id.substring(1);
+  const el = document.getElementById(targetId);
+  
+  if (el) {
+    const target = getScrollTarget(el);
+    const offset = el.offsetTop - 100; 
+    const duration = 500;
+    setVerticalScrollPosition(target, offset, duration);
+  }
+};
 </script>
 
 <style scoped lang="scss">
 .main-nav {
-  /* Layout Flexbox para o nav */
   display: flex;
   justify-content: space-between;
-  /* Empurra os itens para as extremidades */
   align-items: center;
-  /* Alinha verticalmente no centro */
-  padding: 16px 30px;
-  /* Espaçamento interno (topo/baixo e lados) */
+  padding: 10px 20px;
   width: 100%;
   position: absolute;
-  /* Mantém a nav sobre a imagem de fundo */
   top: 0;
   left: 0;
   z-index: 2000;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+}
+
+.nav-section {
+  display: flex;
+  align-items: center;
+  &.start { flex: 0 0 auto; }
+  &.center { flex: 1; justify-content: center; gap: 16px; }
+  &.end { flex: 0 0 auto; justify-content: flex-end; }
+}
+
+.nav-link-btn {
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  transition: opacity 0.3s;
+  
+  &:hover {
+    opacity: 0.8;
+    background: rgba(255,255,255,0.1);
+  }
+}
+
+@media (max-width: 599px) {
+  .main-nav { padding: 10px 15px; }
 }
 </style>

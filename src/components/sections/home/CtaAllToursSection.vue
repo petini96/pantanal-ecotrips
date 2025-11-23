@@ -1,5 +1,5 @@
 <template>
-  <section class="all-tours-cta-section text-white">
+  <div class="all-tours-cta-section text-white">
     <div class="cta-overlay"></div>
     <div class="container text-center relative-position">
       
@@ -42,7 +42,7 @@
       </div>
       
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup lang="ts">

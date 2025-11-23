@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="packages-section" class="tours-section-container q-my-xl">
+    <div class="tours-section-container q-my-xl">
       <div class="text-center">
         <h2 class="section-title">{{ t('most_wanted_packages_title') }}</h2>
       </div>

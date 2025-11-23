@@ -1,6 +1,5 @@
 <template>
-  <section
-    id="newsletter-section"
+  <div
     class="q-py-xl newsletter-bg theme-light"
     v-intersection.once="onIntersection"
   >
@@ -65,7 +64,7 @@
         </div>
       </q-form>
     </div>
-  </section>
+  </div>
 </template>
 
 <script setup lang="ts">
