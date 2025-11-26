@@ -38,7 +38,6 @@
         active-text-color="white"
         size="16px"
         class="custom-pagination"
-        @update:model-value="scrollToTop"
       />
     </div>
 
@@ -106,30 +105,21 @@ const props = defineProps<{
 
 // --- LÓGICA DE PAGINAÇÃO ---
 const page = ref(1);
-const itemsPerPage = 7; // Mantém 8 itens fixos para o layout mosaico funcionar
+const itemsPerPage = 7; 
 
-// Calcula o total de páginas (ex: 1105 / 8 = 139 páginas)
 const totalPages = computed(() => Math.ceil(props.images.length / itemsPerPage));
 
-// Cria a fatia do array para exibir apenas a página atual
 const paginatedImages = computed(() => {
   const start = (page.value - 1) * itemsPerPage;
   const end = start + itemsPerPage;
   return props.images.slice(start, end);
 });
 
-// Se a lista de imagens mudar externamente, volta para a página 1
 watch(() => props.images, () => {
   page.value = 1;
 });
 
-// Rola suavemente para o topo ao mudar de página
-const scrollToTop = () => {
-  const container = document.querySelector('.mosaic-gallery-container');
-  if (container) {
-    container.scrollIntoView({ behavior: 'smooth' });
-  }
-};
+// A função scrollToTop foi removida para evitar o salto na tela
 // ---------------------------
 
 // --- LÓGICA DO LIGHTBOX ---
@@ -153,20 +143,21 @@ const openFullscreen = (index: number) => {
   display: grid;
   gap: 8px;
   grid-template-columns: repeat(4, 1fr);
+  /* Altura fixa para manter o container estável */
+  grid-auto-rows: 200px; 
   grid-auto-flow: dense;
 }
 
 .mosaic-item {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 100%; 
 }
 
 .mosaic-item:hover .q-icon {
   opacity: 1;
 }
 
-/* LÓGICA DE POSICIONAMENTO DO MOSAICO (Para 8 itens) */
+/* LÓGICA DE POSICIONAMENTO DO MOSAICO */
 .mosaic-item:nth-child(1),
 .mosaic-item:nth-child(8) {
   grid-column: span 2;
@@ -178,31 +169,25 @@ const openFullscreen = (index: number) => {
   grid-row: span 2;
 }
 
-/* --- ESTILOS DA PAGINAÇÃO (CORRIGIDO PARA CÍRCULO PERFEITO) --- */
+/* --- ESTILOS DA PAGINAÇÃO --- */
 :deep(.custom-pagination) {
   align-items: center;
-  gap: 6px; /* Espaço entre as bolinhas */
+  gap: 6px; 
 
   .q-btn {
-    /* --- CORREÇÃO DO CÍRCULO --- */
-    /* Define largura e altura fixas e iguais */
     width: 34px !important;       
     height: 34px !important;      
-    min-width: 34px !important;   /* Sobrescreve o padrão retangular do Quasar */
-    padding: 0 !important;        /* Remove espaçamento interno lateral */
+    min-width: 34px !important;   
+    padding: 0 !important;        
     border-radius: 50% !important; 
-    /* --------------------------- */
 
     font-weight: 500;
     font-size: 15px;
 
-    /* Remove o círculo cinza de foco para ficar limpo */
     &--flat {
       .q-focus-helper {
         display: none !important; 
       }
-      
-      /* Efeito hover suave apenas no texto/fundo */
       &:hover {
         color: #000;
         background-color: rgba(0,0,0,0.05);
@@ -210,9 +195,8 @@ const openFullscreen = (index: number) => {
     }
   }
 
-  /* ESTILO DO BOTÃO ATIVO (BOLINHA VERDE) */
   .q-btn--standard {
-    background-color: #2E5B3E !important; /* Verde Musgo Escuro */
+    background-color: #2E5B3E !important;
     color: white !important;
     box-shadow: 0 2px 4px rgba(0,0,0,0.25);
     
@@ -226,12 +210,14 @@ const openFullscreen = (index: number) => {
 @media (max-width: 1023px) {
   .mosaic-grid {
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 180px; 
   }
 }
 
 @media (max-width: 767px) {
   .mosaic-grid {
     grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 150px; 
   }
   .mosaic-item:nth-child(n) {
     grid-column: span 1;
