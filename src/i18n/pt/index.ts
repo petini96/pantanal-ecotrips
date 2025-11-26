@@ -89,5 +89,9 @@ export default {
   beach: "Praia",
   fields: "Cmpos",
   difficulty_medium: "Média",
-  difficulty_hard: "Difícil"
+  difficulty_hard: "Difícil",
+  most_wanted_packages_subtitle: "Descubra os roteiros mais vendidos e garanta seu lugar nos destinos inesquecíveis de ",
+  select_region_first: "Selecione a região primeiro",
+  no_packages_found_title: "Nenhum pacote encontrado",
+ no_packages_found_subtitle: "Não encontramos resultados para sua busca. Tente palavras-chave diferentes ou verifique a grafia."
 };

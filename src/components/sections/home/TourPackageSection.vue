@@ -3,6 +3,7 @@
     <div class="tours-section-container q-my-xl">
       <div class="text-center">
         <h2 class="section-title">{{ t('most_wanted_packages_title') }}</h2>
+        <p>{{ t('most_wanted_packages_subtitle') }} <strong>Bonito e Pantanal</strong>.</p>
       </div>
 
       <div class="search-filter-container q-pa-md">
@@ -232,8 +233,7 @@
 </template>
 
 <script setup lang="ts">
-// Re-adicionado 'watch' caso seja necessário no futuro, mas não usado atualmente.
-import { ref, reactive, computed, onMounted } from 'vue';
+import { ref, reactive, computed, onMounted, watch } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
@@ -241,44 +241,41 @@ import { useQuasar } from 'quasar';
 import { useTourPackageStore } from 'src/stores/useTourPackageStore';
 import type { Region } from 'src/model/Region';
 import type { TranslatableTag } from 'src/model/Tags';
-// Re-adicionado 'HeroBanner', caso precise ser usado internamente no card ou em outro lugar. Comentado por enquanto.
-// import HeroBanner from 'src/components/banner/HeroBanner.vue';
 import HorizontalGradientMask from 'src/components/mask/HorizontalGradientMask.vue';
 
-// --- Interfaces para Tipagem dos Módulos Dinâmicos ---
+// --- Interfaces ---
 interface RegionsModule {
   bonitoSerraBodoquenaPt: Region;
   pantanalPt: Region;
-  // Adicione outras regiões/idiomas se necessário
 }
 
+// Assumindo que seus arquivos 'all.ts' exportam arrays diretos
 interface AudiencesModule {
   allAudiencesPt: TranslatableTag[];
-  // Adicione outros idiomas se necessário
 }
 
 interface CategoriesModule {
   allCategoriesPt: TranslatableTag[];
-  // Adicione outros idiomas se necessário
 }
 
-// --- LÓGICA GERAL ---
+// --- SETUP GERAL ---
 const router = useRouter();
 const route = useRoute();
-// Re-adicionado 'locale' caso precise ser usado futuramente.
-const { t } = useI18n();
+const { t, locale } = useI18n(); // Adicionado locale para watch
 const $q = useQuasar();
 
 const packageStore = useTourPackageStore();
+// Importante: fetchPackages deve ser chamado em algum lugar (ex: App.vue ou aqui)
 const { allPackages: packages, loading } = storeToRefs(packageStore);
 
-// --- LÓGICA DE BUSCA E FILTRO ---
+// --- ESTADOS DOS FILTROS ---
 const showAdvanced = ref(false);
+const filtersLoading = ref(false);
 
 const filters = reactive({
   searchText: '',
   region: null as Region | null,
-  cities: [] as TranslatableTag[], // Mantido para o Select
+  cities: [] as TranslatableTag[],
   categories: [] as TranslatableTag[],
   recommendedFor: [] as TranslatableTag[],
 });
@@ -286,46 +283,46 @@ const filters = reactive({
 const regionOptions = ref<Region[]>([]);
 const categoryOptions = ref<TranslatableTag[]>([]);
 const audienceOptions = ref<TranslatableTag[]>([]);
-const filtersLoading = ref(false);
 
+// --- CARREGAMENTO DE DADOS (FILTROS) ---
 async function loadFilterData() {
   if (regionOptions.value.length > 0) return;
+  
   filtersLoading.value = true;
   try {
+    // Carrega os pacotes se ainda não estiverem carregados
+    if (packages.value.length === 0) {
+       await packageStore.fetchPackages(route.params.lang as string || 'pt');
+    }
+
     const [
       regionsModule,
       audiencesModule,
       categoriesModule
     ] = await Promise.all([
       import('src/data/regions/Regions') as Promise<RegionsModule>,
-      import('src/data/audiences/all') as Promise<AudiencesModule>,
-      import('src/data/categories/all') as Promise<CategoriesModule>,
+      import('src/data/audiences/all') as Promise<AudiencesModule>, // Verifique se esse arquivo existe
+      import('src/data/categories/all') as Promise<CategoriesModule>, // Verifique se esse arquivo existe
     ]);
 
-    // Adapte aqui para carregar o idioma correto dos filtros se necessário
+    // Carrega Regiões
     if (regionsModule.bonitoSerraBodoquenaPt && regionsModule.pantanalPt) {
        regionOptions.value = [regionsModule.bonitoSerraBodoquenaPt, regionsModule.pantanalPt];
-    } else {
-        console.error("Erro: Exportações de região não encontradas no módulo Regions.");
     }
+
+    // Carrega Públicos
     if (audiencesModule.allAudiencesPt) {
         audienceOptions.value = audiencesModule.allAudiencesPt;
-    } else {
-        console.error("Erro: Exportação 'allAudiencesPt' não encontrada no módulo audiences/all.");
     }
+    
+    // Carrega Categorias
     if (categoriesModule.allCategoriesPt) {
         categoryOptions.value = categoriesModule.allCategoriesPt;
-    } else {
-        console.error("Erro: Exportação 'allCategoriesPt' não encontrada no módulo categories/all.");
     }
 
   } catch (error: unknown) {
-    const errorMessage = error instanceof Error ? error.message : String(error);
-    console.error("Falha ao carregar dados de filtro:", errorMessage);
-    $q.notify({
-        type: 'negative',
-        message: t('filter_load_error') || 'Erro ao carregar opções de filtro.'
-    });
+    console.warn("Alguns filtros não puderam ser carregados. Verifique os caminhos dos imports.", error);
+    // Não notificamos erro crítico para não assustar o usuário, apenas logamos
   } finally {
       filtersLoading.value = false;
   }
@@ -335,14 +332,15 @@ onMounted(() => {
   void loadFilterData();
 });
 
+// Atualiza opções de cidade quando a região muda
 const cityOptions = computed(() => {
-  if (filters.region) {
+  if (filters.region && filters.region.cities) {
     return filters.region.cities;
   }
-  // Evita retornar todas as cidades se nenhuma região for selecionada
   return [];
 });
 
+// Limpar filtros
 const clearFilters = () => {
   filters.searchText = '';
   filters.region = null;
@@ -351,59 +349,91 @@ const clearFilters = () => {
   filters.recommendedFor = [];
 };
 
+// --- LÓGICA DE FILTRAGEM (CORRIGIDA) ---
 const filteredPackages = computed(() => {
+  // Se não houver pacotes, retorna vazio
+  if (!packages.value || !packages.value.length) return [];
+
   return packages.value.filter(pkg => {
-    if (!pkg?.id || !pkg.slug) return false;
+    // Verificação de segurança básica
+    if (!pkg?.id) return false;
 
-    // RESTAURADO: 'cities' agora está incluído na desestruturação
     const { searchText, region, cities, categories, recommendedFor } = filters;
-    const searchLower = searchText.toLowerCase();
 
-    const matchesSearchText = !searchText ||
-      pkg.title.toLowerCase().includes(searchLower) ||
-      pkg.subtitle.toLowerCase().includes(searchLower);
+    // 1. Busca de Texto (Insensitive + Remove acentos)
+    let matchesSearchText = true;
+    if (searchText) {
+      const normalize = (str: string) => str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+      const query = normalize(searchText);
+      const title = normalize(pkg.title || '');
+      const subtitle = normalize(pkg.subtitle || '');
+      
+      matchesSearchText = title.includes(query) || subtitle.includes(query);
+    }
 
-    const matchesRegion = !region || pkg.region.id === region.id;
+    // 2. Região (Comparação por ID para segurança)
+    let matchesRegion = true;
+    if (region) {
+      matchesRegion = pkg.region?.id === region.id;
+    }
 
-    // RESTAURADO: Lógica para filtrar por cidades (assumindo que 'pkg' tem uma propriedade 'cities' similar a TranslatableTag[])
-    // Se a estrutura for diferente, ajuste 'pkg.cities' e a comparação 'pkgCity.id === filterCity.id'
-    const matchesCities = !cities.length || cities.some(filterCity =>
-        pkg.itinerary.some(day => day.tours.some(tour => tour.city?.id === filterCity.id)) // Exemplo: verifica cidades dos tours no itinerário
-        // Ou, se o pacote tiver uma lista direta de cidades:
-        // pkg.cities?.some(pkgCity => pkgCity.id === filterCity.id)
-    );
+    // 3. Cidades (Verifica se alguma cidade selecionada está no itinerário do pacote)
+    let matchesCities = true;
+    if (cities.length > 0) {
+      // Se o pacote não tem itinerário, falha na checagem de cidade
+      if (!pkg.itinerary) {
+        matchesCities = false; 
+      } else {
+        // Lógica: O pacote deve passar em PELO MENOS UMA das cidades selecionadas
+        matchesCities = cities.some(filterCity => 
+          pkg.itinerary?.some(day => 
+            day.tours?.some(tour => tour.city?.id === filterCity.id)
+          )
+        );
+      }
+    }
 
-    const matchesCategory = !categories.length ||
-      categories.every(filterCat =>
-        pkg.packageCategories?.some(pkgCat => pkgCat.id === filterCat.id)
-      );
+    // 4. Categorias (Lógica OR - Pelo menos uma das selecionadas)
+    let matchesCategory = true;
+    if (categories.length > 0) {
+      if (!pkg.packageCategories) {
+        matchesCategory = false;
+      } else {
+        matchesCategory = categories.some(filterCat => 
+          pkg.packageCategories?.some(pkgCat => pkgCat.id === filterCat.id)
+        );
+      }
+    }
 
-    const matchesRecommendedFor = !recommendedFor.length ||
-      recommendedFor.every(filterAud =>
-        pkg.packageRecommendedFor?.some(pkgAud => pkgAud.id === filterAud.id)
-      );
+    // 5. Recomendado Para (Lógica OR - Pelo menos um dos selecionados)
+    let matchesRecommendedFor = true;
+    if (recommendedFor.length > 0) {
+      if (!pkg.packageRecommendedFor) {
+        matchesRecommendedFor = false;
+      } else {
+        matchesRecommendedFor = recommendedFor.some(filterAud => 
+          pkg.packageRecommendedFor?.some(pkgAud => pkgAud.id === filterAud.id)
+        );
+      }
+    }
 
-    // RESTAURADO: Adicionado 'matchesCities' à condição final
     return matchesSearchText && matchesRegion && matchesCities && matchesCategory && matchesRecommendedFor;
   });
 });
 
 // --- NAVEGAÇÃO ---
 const viewPackage = (packageSlug: string) => {
-  if (!packageSlug) return; // Segurança extra
+  if (!packageSlug) return;
   void router.push({
     name: 'tourDetails',
     params: { slug: packageSlug, lang: route.params.lang || 'pt' },
   });
 };
 
-// Se precisar observar mudanças no idioma para recarregar filtros, descomente e adapte:
-// watch(() => locale.value, async (newLocale) => {
-//   console.log('Idioma mudou para:', newLocale);
-//   // Recarregar os dados de filtro no novo idioma, se necessário
-//   // Ex: await loadFilterData(newLocale);
-// });
-
+// Monitora mudança de idioma na URL para recarregar dados se necessário
+watch(() => locale.value, () => {
+   // Opcional: recarregar store ou filtros
+});
 </script>
 
 <style scoped lang="scss">

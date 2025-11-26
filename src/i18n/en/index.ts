@@ -89,5 +89,9 @@ export default {
   beach: "Beach",
   fields: "Fields",
   difficulty_medium: "Medium",
-  difficulty_hard: "Hard"
+  difficulty_hard: "Hard",
+  most_wanted_packages_subtitle: "Discover the best-selling itineraries and secure your place in unforgettable destinations of ",
+  select_region_first: "Select the region first",
+  no_packages_found_title: "No packages found",
+  no_packages_found_subtitle: "We couldn't find any results for your search. Try different keywords or check your spelling."
 };

@@ -89,5 +89,10 @@ export default {
   beach: "Playa",
   fields: "Campos",
   difficulty_medium: "Medio",
-  difficulty_hard: "Dura"
+  difficulty_hard: "Dura",
+  most_wanted_packages_subtitle: "Descubre los itinerarios más vendidos y asegura tu lugar en destinos inolvidables de ",
+  select_region_first: "Seleccione la región primero",
+  no_packages_found_title: "No se encontraron paquetes",
+  no_packages_found_subtitle: "No encontramos resultados para tu búsqueda. Intenta con otras palabras clave o verifica la ortografía."
+  
 };
