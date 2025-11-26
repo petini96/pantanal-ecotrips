@@ -178,7 +178,7 @@ const props = withDefaults(defineProps<{
   items: MediaItem[];
   itemsPerPage?: number;
 }>(), {
-  itemsPerPage: 4,
+  itemsPerPage: 5,
 });
 
 const isViewerOpen = ref(false);
@@ -255,7 +255,6 @@ onBeforeUnmount(() => {
 <style scoped lang="scss">
 .media-gallery-container {
   width: 100%;
-  min-height: 100vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
