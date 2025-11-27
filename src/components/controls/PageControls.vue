@@ -162,13 +162,11 @@ const changeLanguage = (langCode: string) => {
 .active-light {
   background-color: #7CB61E !important; /* Orange-8 approx (cor de sol/dia) */
   color: white !important;
-  box-shadow: 0 2px 4px rgba(245, 124, 0, 0.4);
 }
 
 /* Quando NOITE está ativo: Azul índigo profundo e texto branco */
 .active-dark {
   background-color: #283593 !important; /* Indigo-9 approx (cor de noite) */
   color: white !important;
-  box-shadow: 0 2px 4px rgba(40, 53, 147, 0.4);
 }
 </style>

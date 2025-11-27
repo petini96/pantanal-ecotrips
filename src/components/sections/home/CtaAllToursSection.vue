@@ -3,7 +3,7 @@
     <div class="cta-overlay"></div>
     <div class="container text-center relative-position">
       
-      <h2 class="text-h3 text-weight-bold q-mb-md">
+      <h2 class="hero-title">
         {{ t('all_tours_cta_title') }}
       </h2>
 
@@ -120,5 +120,15 @@ const { t, locale } = useI18n();
 
 .theme-dark .cta-overlay {
   background: linear-gradient(0deg, rgba(10, 10, 10, 0.75) 0%, rgba(10, 10, 10, 0.6) 100%);
+}
+
+.hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: #FFFFFF !important; 
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
 }
 </style>

@@ -28,7 +28,7 @@
       <q-pagination
         v-model="page"
         :max="totalPages"
-        :max-pages="6"
+        :max-pages="maxPagesDisplay"
         boundary-numbers
         direction-links
         flat
@@ -88,29 +88,55 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue';
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue';
 
-// Definição da interface das imagens
 interface GalleryImage {
   src: string;
   alt: string;
   caption?: string;
 }
 
-// Recebe a lista completa de imagens via Props
 const props = defineProps<{
   images: GalleryImage[];
 }>();
 
-// --- LÓGICA DE PAGINAÇÃO ---
+// --- LÓGICA DE ITENS E PAGINAÇÃO RESPONSIVA ---
 const page = ref(1);
-const itemsPerPage = 7; 
+const itemsPerPage = ref(9); // Padrão Desktop
+const maxPagesDisplay = ref(6); // Padrão Desktop
 
-const totalPages = computed(() => Math.ceil(props.images.length / itemsPerPage));
+const updateLayout = () => {
+  const width = window.innerWidth;
+
+  if (width < 768) {
+    // Mobile
+    itemsPerPage.value = 6;
+    maxPagesDisplay.value = 3; 
+  } else if (width < 1024) {
+    // Tablet / Laptop Pequeno
+    itemsPerPage.value = 10;
+    maxPagesDisplay.value = 5;
+  } else {
+    // Desktop Grande
+    itemsPerPage.value = 9;
+    maxPagesDisplay.value = 6;
+  }
+};
+
+onMounted(() => {
+  updateLayout();
+  window.addEventListener('resize', updateLayout);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', updateLayout);
+});
+
+const totalPages = computed(() => Math.ceil(props.images.length / itemsPerPage.value));
 
 const paginatedImages = computed(() => {
-  const start = (page.value - 1) * itemsPerPage;
-  const end = start + itemsPerPage;
+  const start = (page.value - 1) * itemsPerPage.value;
+  const end = start + itemsPerPage.value;
   return props.images.slice(start, end);
 });
 
@@ -118,8 +144,10 @@ watch(() => props.images, () => {
   page.value = 1;
 });
 
-// A função scrollToTop foi removida para evitar o salto na tela
-// ---------------------------
+// Garante que a página não fique inválida ao redimensionar
+watch(totalPages, (newTotal) => {
+  if (page.value > newTotal) page.value = newTotal || 1;
+});
 
 // --- LÓGICA DO LIGHTBOX ---
 const fullscreenDialog = ref(false);
@@ -132,19 +160,27 @@ const openFullscreen = (index: number) => {
 </script>
 
 <style scoped lang="scss">
+/* --- CONTAINER PRINCIPAL --- */
 .mosaic-gallery-container {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 80%; /* Efeito "col-10" no Desktop */
+  min-height: 100vh;
   margin: 0 auto;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* --- GRID DO MOSAICO --- */
+/* --- GRID BASE (DESKTOP: > 1024px) --- */
+/* Exibe 10 itens em 5 colunas */
 .mosaic-grid {
   display: grid;
   gap: 8px;
-  grid-template-columns: repeat(4, 1fr);
-  /* Altura fixa para manter o container estável */
-  grid-auto-rows: 200px; 
+  grid-template-columns: repeat(5, 1fr); 
+  grid-auto-rows: 220px; 
   grid-auto-flow: dense;
+  width: 100%;
 }
 
 .mosaic-item {
@@ -156,22 +192,18 @@ const openFullscreen = (index: number) => {
   opacity: 1;
 }
 
-/* LÓGICA DE POSICIONAMENTO DO MOSAICO */
+/* POSICIONAMENTO DESKTOP (10 Itens) */
 .mosaic-item:nth-child(1),
-.mosaic-item:nth-child(8) {
+.mosaic-item:nth-child(6) {
   grid-column: span 2;
-  grid-row: span 2;
-}
-
-.mosaic-item:nth-child(4),
-.mosaic-item:nth-child(5) {
   grid-row: span 2;
 }
 
 /* --- ESTILOS DA PAGINAÇÃO --- */
 :deep(.custom-pagination) {
   align-items: center;
-  gap: 6px; 
+  gap: 4px;
+  flex-wrap: nowrap; /* Impede quebra de linha no mobile */
 
   .q-btn {
     width: 34px !important;       
@@ -179,14 +211,11 @@ const openFullscreen = (index: number) => {
     min-width: 34px !important;   
     padding: 0 !important;        
     border-radius: 50% !important; 
-
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14px;
 
     &--flat {
-      .q-focus-helper {
-        display: none !important; 
-      }
+      .q-focus-helper { display: none !important; }
       &:hover {
         color: #000;
         background-color: rgba(0,0,0,0.05);
@@ -198,29 +227,60 @@ const openFullscreen = (index: number) => {
     background-color: #2E5B3E !important;
     color: white !important;
     box-shadow: 0 2px 4px rgba(0,0,0,0.25);
-    
-    .q-focus-helper {
-        display: none !important;
-    }
+    .q-focus-helper { display: none !important; }
   }
 }
 
-/* RESPONSIVIDADE */
+/* --- RESPONSIVIDADE TABLET (768px - 1023px) --- */
 @media (max-width: 1023px) {
+  .mosaic-gallery-container {
+    max-width: 95vw; /* Aproveita mais a tela */
+  }
+
+  /* Exibe 8 itens em 4 colunas */
   .mosaic-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 180px; 
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px; 
+  }
+
+  /* Reseta Desktop */
+  .mosaic-item:nth-child(n) { grid-column: auto; grid-row: auto; }
+
+  /* Posicionamento Tablet (8 Itens) */
+  .mosaic-item:nth-child(1),
+  .mosaic-item:nth-child(5) {
+    grid-column: span 2;
+    grid-row: span 2;
   }
 }
 
+/* --- RESPONSIVIDADE MOBILE (< 768px) --- */
 @media (max-width: 767px) {
+  .mosaic-gallery-container {
+    max-width: 90%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  /* Exibe 6 itens em 2 colunas */
   .mosaic-grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 150px; 
+    grid-auto-rows: 160px; 
   }
-  .mosaic-item:nth-child(n) {
-    grid-column: span 1;
-    grid-row: span 1;
+
+  /* Reseta Tablet/Desktop */
+  .mosaic-item:nth-child(n) { grid-column: auto; grid-row: auto; }
+
+  /* Posicionamento Mobile (6 Itens) */
+  /* Item 1 Grande no topo */
+  .mosaic-item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+  
+  /* Item 6 Largo no final (opcional, para fechar grid) */
+  .mosaic-item:nth-child(6) {
+    grid-column: span 2;
   }
 }
 </style>
