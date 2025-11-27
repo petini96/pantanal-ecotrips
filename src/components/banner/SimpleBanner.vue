@@ -2,18 +2,16 @@
     <section class="hero-section">
         <div class="hero-background" :style="backgroundStyle"></div>
         <div class="hero-overlay"></div>
+        
         <div class="hero-content text-center">
             <h1 class="hero-title">{{ hero_title }}</h1>
             <p class="hero-subtitle">{{ hero_subtitle }}</p>
-            <!-- 
-              REMOVIDO: color="secondary"
-              ADICIONADO: class="hero-cta-button"
-            -->
+            
             <q-btn 
               unelevated 
               :label="hero_cta" 
               size="lg" 
-              class="hero-cta hero-cta-button"
+              class="hero-cta-button"
               @click="scrollToTours" 
             />
         </div>
@@ -23,119 +21,109 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-export interface SimpleBannerProps {
+const props = defineProps<{
     hero_title: string;
     hero_subtitle: string;
     hero_cta: string;
-    hero_background: string;
-};
+    hero_background: string; 
+}>();
 
-const props = withDefaults(defineProps<SimpleBannerProps>(), {});
+const scrollToTours = () => document.getElementById('packages-section')?.scrollIntoView({ behavior: 'smooth' });
 
-const scrollToTours = () => document.getElementById('tours-section')?.scrollIntoView({ behavior: 'smooth' });
-
-const backgroundStyle = computed(() => {
-    return {
-        backgroundImage: `url(${props.hero_background})`
-    };
-});
-
+const backgroundStyle = computed(() => ({
+    backgroundImage: `url(${props.hero_background})`
+}));
 </script>
+
 <style scoped lang="scss">
-/* REMOVIDO: .q-btn[color="secondary"]
-  ADICIONADO: .hero-cta-button
-*/
-.hero-cta-button {
-    background-color: var(--secondary-color) !important;
-    color: var(--text-secondary-color) !important; // Adicionado para garantir o contraste
-}
-
-/* Removida a regra .q-btn[color="primary"] que não estava sendo usada */
-
 .hero-section {
     position: relative;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
     overflow: hidden;
 }
 
 .hero-background {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     background-size: cover;
     background-position: center;
+    transition: background-image 0.5s ease-in-out;
     filter: brightness(0.7);
-    animation: kenBurnsEffect 25s ease-in-out infinite alternate;
 }
 
-
-@keyframes kenBurnsEffect {
-    0% {
-        transform: scale(1.05) translate(0, 0);
-    }
-
-    100% {
-        transform: scale(1.15) translate(-2%, 2%);
-    }
-}
-
+/* Gradiente para garantir leitura nas bordas */
 .hero-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.4), transparent 50%, rgba(0,0,0,0.6));
+    z-index: 1;
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
     padding: 20px;
+    max-width: 900px;
 }
 
+/* FORÇANDO BRANCO E SOMBRA */
 .hero-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
     font-size: 3.5rem;
-    text-shadow: 1px 1px 15px rgba(0, 0, 0, 0.5);
-    line-height: 1.2;
-    margin-bottom: 1rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: #FFFFFF !important; 
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
 }
 
 .hero-subtitle {
     font-family: 'Lato', sans-serif;
-    font-size: 1.25rem;
-    max-width: 550px;
+    font-size: 1.4rem;
     margin: 0 auto 2.5rem auto;
-    opacity: 0.9;
+    color: #FFFFFF !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+    opacity: 0.95;
 }
 
-.hero-cta {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    border-radius: 8px;
+/* Botão visível em qualquer fundo */
+.hero-cta-button {
+    background-color: var(--secondary-color) !important;
+    color: #FFFFFF !important;
+    font-weight: 700;
+    border-radius: 50px;
+    padding: 12px 36px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    transition: transform 0.2s;
+
+    &:hover {
+        transform: translateY(-3px);
+        filter: brightness(1.1);
+    }
 }
 
+/* Ajuste específico para Dark Mode no botão */
+:global(body.body--dark) .hero-cta-button {
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 0 15px rgba(2, 123, 227, 0.6);
+}
+
+/* AJUSTES RESPONSIVOS */
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.8rem;
+    .hero-title { 
+        font-size: 2.5rem; 
     }
 
-    .section-title {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 600px) {
-    .hero-title {
-        font-size: 2.2rem;
+    /* Reduz o tamanho do botão APENAS no mobile */
+    .hero-cta-button {
+        font-size: 0.95rem !important; /* Reduz a fonte */
+        padding: 10px 24px !important; /* Reduz o padding gordo do desktop */
+        min-height: auto !important;   /* Remove a altura forçada do size="lg" */
+        width: auto;                   /* Garante que não estique 100% se não quiser */
+        max-width: 80%;                /* Segurança para telas muito pequenas */
     }
 }
 </style>

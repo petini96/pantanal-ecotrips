@@ -36,11 +36,11 @@
         no-caps
         size="sm"
         class="theme-btn"
-        :class="{ 'active-pantanal': currentTheme === 'pantanal_verde' }"
-        @click="layoutConfigStore.setTheme('pantanal_verde')"
+        :class="{ 'active-light': currentTheme === 'light' }"
+        @click="layoutConfigStore.setTheme('light')"
       >
         <div class="row items-center no-wrap q-gutter-x-xs">
-          <q-icon name="forest" size="14px" /> <span>Pantanal</span>
+          <q-icon name="light_mode" size="16px" /> <span>Dia</span>
         </div>
       </q-btn>
 
@@ -50,11 +50,11 @@
         no-caps
         size="sm"
         class="theme-btn"
-        :class="{ 'active-bonito': currentTheme === 'bonito_azul' }"
-        @click="layoutConfigStore.setTheme('bonito_azul')"
+        :class="{ 'active-dark': currentTheme === 'dark' }"
+        @click="layoutConfigStore.setTheme('dark')"
       >
         <div class="row items-center no-wrap q-gutter-x-xs">
-          <q-icon name="water_drop" size="14px" /> <span>Bonito</span>
+          <q-icon name="dark_mode" size="16px" /> <span>Noite</span>
         </div>
       </q-btn>
     </div>
@@ -67,7 +67,7 @@ import { storeToRefs } from 'pinia';
 import { useLayoutConfigStore } from 'src/stores/layout-config-store';
 import { computed, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
- 
+
 const route = useRoute();
 const router = useRouter();
 const layoutConfigStore = useLayoutConfigStore();
@@ -79,7 +79,6 @@ const languages = ref([
   { code: 'es', label: 'Español' },
 ]);
 
-// Lógica para mostrar apenas o código (PT, EN) no botão
 const currentLanguageLabel = computed(() => (route.params.lang as string || 'pt').toUpperCase());
 
 const changeLanguage = (langCode: string) => {
@@ -96,7 +95,7 @@ const changeLanguage = (langCode: string) => {
 
 /* --- Estilo do Seletor de Idioma --- */
 .control-wrapper {
-  background: rgba(0, 0, 0, 0.3); /* Fundo escuro translúcido */
+  background: rgba(0, 0, 0, 0.3);
   border-radius: 20px;
   padding: 2px 8px;
   backdrop-filter: blur(4px);
@@ -116,40 +115,60 @@ const changeLanguage = (langCode: string) => {
 /* --- Estilo do Seletor de Tema (Pill Shape) --- */
 .theme-pill {
   display: flex;
-  background: rgba(255, 255, 255, 0.9); /* Fundo branco quase sólido para contraste */
-  border-radius: 20px; /* Borda bem arredondada */
+  border-radius: 20px;
   padding: 3px;
   gap: 2px;
+  transition: all 0.3s ease;
+
+  /* Estilo Padrão (assumindo que está sobre uma imagem, fundo claro translúcido) */
+  background: rgba(255, 255, 255, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.5);
+
+  /* Adaptação para quando o site global está em Dark Mode */
+  /* O uso de :global() é necessário porque estamos em style scoped */
+  :global(body.body--dark) & {
+    background: rgba(30, 30, 30, 0.8); /* Fundo escuro translúcido */
+    border-color: rgba(255, 255, 255, 0.1);
+  }
 }
 
 .theme-btn {
-  border-radius: 16px; /* Acompanha o pai */
+  border-radius: 16px;
   padding: 4px 12px;
-  color: #555; /* Cor padrão inativa (cinza escuro) */
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   font-weight: 600;
   letter-spacing: 0.5px;
 
-  /* Efeito Hover suave */
-  &:hover:not(.active-pantanal):not(.active-bonito) {
+  /* Cor do texto inativo no modo claro global */
+  color: #666;
+
+  /* Cor do texto inativo no modo escuro global */
+  :global(body.body--dark) & {
+    color: #ccc;
+  }
+
+  /* Efeito Hover suave nos inativos */
+  &:hover:not(.active-light):not(.active-dark) {
     background-color: rgba(0,0,0,0.05);
+    :global(body.body--dark) & {
+        background-color: rgba(255,255,255,0.1);
+    }
   }
 }
 
 /* --- Cores Ativas --- */
 
-/* Quando Pantanal está ativo: Verde Escuro e Texto Branco */
-.active-pantanal {
-  background-color: #2E7D32 !important; /* Green-9 approx */
+/* Quando DIA está ativo: tom alaranjado/âmbar e texto branco */
+.active-light {
+  background-color: #7CB61E !important; /* Orange-8 approx (cor de sol/dia) */
   color: white !important;
-  box-shadow: 0 2px 4px rgba(46, 125, 50, 0.4);
+  box-shadow: 0 2px 4px rgba(245, 124, 0, 0.4);
 }
 
-/* Quando Bonito está ativo: Azul Vibrante e Texto Branco */
-.active-bonito {
-  background-color: #027BE3 !important; /* Blue-7 approx */
+/* Quando NOITE está ativo: Azul índigo profundo e texto branco */
+.active-dark {
+  background-color: #283593 !important; /* Indigo-9 approx (cor de noite) */
   color: white !important;
-  box-shadow: 0 2px 4px rgba(2, 123, 227, 0.4);
+  box-shadow: 0 2px 4px rgba(40, 53, 147, 0.4);
 }
 </style>

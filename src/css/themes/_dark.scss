@@ -1,0 +1,24 @@
+body.body--dark {
+  /* --- CORES PRINCIPAIS (Bonito / Noite) --- */
+  --primary-color: #027BE3;      /* Azul Água Cristalina (Vibrante) */
+  --secondary-color: #00E5FF;    /* Ciano Neon (Bioluminescência) */
+  --accent-color: #FFD600;       /* Amarelo Lua (Contraste) */
+
+  /* --- FUNDOS --- */
+  --page-bg-color: #050A14;      /* Azul Noturno Profundo (Quase preto) */
+  --card-bg-color: #0F1C2E;      /* Azul Petróleo Escuro */
+  --section-alt-bg: #0A1420;     /* Variação sutil do fundo */
+
+  /* --- TEXTOS --- */
+  --text-primary-color: #E1F5FE; /* Branco Gelo */
+  --text-secondary-color: #81D4FA; /* Azul claro suave */
+  --text-highlight: #4FC3F7;
+
+  /* --- ELEMENTOS --- */
+  --border-color: #1E3A5F;
+  --footer-bg-color: #02060D;    /* Preto azulado */
+  --glass-bg: rgba(15, 28, 46, 0.85); /* Efeito vidro escuro */
+
+  --scrollbar-thumb-color: #027BE3;
+  --scrollbar-track-color: #050A14;
+}

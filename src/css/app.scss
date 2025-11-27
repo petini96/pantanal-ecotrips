@@ -1,35 +1,54 @@
-// src/css/app.scss
-@import 'themes/pantanal_verde';
-@import 'themes/bonito_azul';
-// --- IMPORTA AS FONTES PROFISSIONAIS DO GOOGLE FONTS ---
+/* src/css/app.scss */
 
-// --- ESTILOS GLOBAIS ---
+/* 2. Seus Temas (Definem as variáveis --primary-color, --page-bg-color, etc.) */
+@import 'themes/light';
+@import 'themes/dark';
+
+/* 3. Fontes (Exemplo real de importação) */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;700;800&display=swap');
+
+/* --- CONFIGURAÇÃO GLOBAL DO TEMA --- */
+:root {
+  /* * AQUI ACONTECE A MÁGICA:
+   * Redefinimos as variáveis internas do Quasar para apontar para as SUAS variáveis de tema.
+   * Assim, <q-btn color="primary"> vai mudar de cor automaticamente quando o tema mudar.
+   */
+  --q-primary: var(--primary-color);
+  --q-secondary: var(--secondary-color);
+  --q-accent: var(--accent-color);
+  
+  /* Scrollbar Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+}
+
+/* --- ESTILOS DE CORPO E TRANSIÇÕES --- */
 body {
-  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Lato', -apple-system, sans-serif;
   line-height: 1.6;
+  
+  /* Aplica as cores do tema globalmente */
+  background-color: var(--page-bg-color);
+  color: var(--text-primary-color);
+  
+  /* Transição suave ao trocar de tema (Pantanal <-> Bonito) */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+  margin-top: 0;
+  
+  /* Títulos herdam a cor primária de texto automaticamente, 
+     mas você pode forçar caso necessário */
+  color: var(--text-primary-color);
 }
 
-.card-shadow {
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
-}
-
-// --- BARRA DE ROLAGEM TEMÁTICA ---
-// Usa as variáveis CSS que serão definidas no componente Vue
-:root {
-  scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
-}
-
+/* --- SCROLLBAR (Webkit / Chrome / Edge) --- */
 ::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -38,31 +57,39 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--scrollbar-thumb-color);
-  border-radius: 10px;
-  border: 3px solid var(--scrollbar-track-color);
+  border-radius: 5px;
+  border: 2px solid var(--scrollbar-track-color); /* Cria um espaço "respiro" */
+}
+
+/* --- CLASSES UTILITÁRIAS --- */
+
+.section-title {
+  font-weight: 800;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text-primary-color);
+  transition: color 0.3s ease;
+  
+  @media (min-width: $breakpoint-sm-min) {
+    font-size: 2.5rem;
+  }
+}
+
+/* Útil para forçar texto branco em fundos escuros específicos (ex: banners de imagem) */
+.text-on-dark {
+  color: #ffffff !important;
+}
+
+.card-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  /* Se quiser adaptar a sombra para o modo dark, você pode criar uma variável --shadow-color */
 }
 
 .flex-grow {
   flex-grow: 1;
 }
 
-.section-title {
-  color: var(--text-primary-color);
-}
-
-.q-btn[color="primary"] {
-  background-color: var(--primary-color) !important;
-}
-
-.q-btn[color="secondary"] {
-  background-color: var(--secondary-color) !important;
-}
-
-.section-title,
-.card-title {
-  color: var(--text-primary-color);
-}
-
-.section-title.text-white {
-  color: #fff;
+.q-my-xxl {
+    margin-top: 80px;
+    margin-bottom: 80px;
 }

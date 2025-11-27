@@ -30,7 +30,7 @@ import { storeToRefs } from 'pinia';
 import { preFetch } from 'quasar/wrappers';
 
 // Definimos o tipo aqui para não depender de arquivos externos
-type ThemeName = 'pantanal_verde' | 'bonito_azul';
+type ThemeName = 'light' | 'dark';
 
 const scrollStore = useScrollStore();
 const layoutConfigStore = useLayoutConfigStore();
@@ -50,11 +50,11 @@ preFetch(({ store, ssrContext }) => {
   // Valida e define o tema na store
   if (
     themeFromCookie &&
-    ['pantanal_verde', 'bonito_azul'].includes(themeFromCookie)
+    ['light', 'dark'].includes(themeFromCookie)
   ) {
     piniaLayoutStore.setSsrTheme(themeFromCookie as ThemeName);
   }
-  // Se não houver cookie, a store usará o valor padrão ('pantanal_verde'),
+  // Se não houver cookie, a store usará o valor padrão ('light'),
   // e o servidor renderizará a página com a classe correta.
 });
 

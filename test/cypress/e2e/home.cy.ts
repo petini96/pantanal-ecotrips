@@ -63,9 +63,8 @@ describe('Testes da Página Inicial', () => {
 
   // Teste 5: Verifica a troca de tema.
   it('deve aplicar a classe de tema correta ao selecionar um novo tema', () => {
-    cy.get('.home-page').should('not.have.class', 'theme-bonito_azul');
+    cy.get('.home-page').should('not.have.class', 'theme-light');
     cy.get('.theme-selector .q-btn').contains('Bonito').click();
-    cy.get('.home-page').should('have.class', 'theme-bonito_azul');
+    cy.get('.home-page').should('have.class', 'theme-light');
   });
 });
-

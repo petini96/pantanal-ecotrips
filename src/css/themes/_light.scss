@@ -1,0 +1,25 @@
+:root, 
+body.body--light {
+  /* --- CORES PRINCIPAIS (Pantanal / Dia) --- */
+  --primary-color: #2E7D32;      /* Verde Floresta Intenso */
+  --secondary-color: #7CB61E;    /* Amarelo Sol / Ipê Amarelo */
+  --accent-color: #E65100;       /* Laranja Pôr do Sol */
+  
+  /* --- FUNDOS --- */
+  --page-bg-color: #F1F8E9;      /* Verde muito pálido (quase branco) */
+  --card-bg-color: #FFFFFF;      /* Branco puro */
+  --section-alt-bg: #E8F5E9;     /* Verde suave para seções alternadas */
+  
+  /* --- TEXTOS --- */
+  --text-primary-color: #1B5E20; /* Verde muito escuro (quase preto) para leitura */
+  --text-secondary-color: #558B2F; /* Verde oliva para subtítulos */
+  --text-highlight: #2E7D32;
+  
+  /* --- ELEMENTOS --- */
+  --border-color: #C8E6C9;
+  --footer-bg-color: #1B5E20;    /* Verde escuro para o rodapé */
+  --glass-bg: rgba(255, 255, 255, 0.85); /* Efeito vidro claro */
+  
+  --scrollbar-thumb-color: #2E7D32;
+  --scrollbar-track-color: #F1F8E9;
+}

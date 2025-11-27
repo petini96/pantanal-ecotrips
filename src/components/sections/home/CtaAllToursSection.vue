@@ -1,5 +1,5 @@
 <template>
-  <div class="all-tours-cta-section text-white">
+  <div class="all-tours-cta-section text-white q-my-xxl">
     <div class="cta-overlay"></div>
     <div class="container text-center relative-position">
       

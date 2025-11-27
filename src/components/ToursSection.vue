@@ -106,7 +106,7 @@ const loadedTours = ref<Tour[]>([
 ]);
 
 // --- Lógica de Tema (sem alterações) ---
-type ThemeName = 'pantanal_verde' | 'bonito_azul';
+type ThemeName = 'light' | 'dark';
 
 interface Theme {
   name: ThemeName;
@@ -114,11 +114,11 @@ interface Theme {
   icon: string;
 }
 
-const currentTheme = ref<ThemeName>('bonito_azul'); // Mudei para azul para combinar com os passeios de Bonito
+const currentTheme = ref<ThemeName>('dark'); // Mudei para azul para combinar com os passeios de Bonito
 
 const themes = ref<Theme[]>([
-  { name: 'pantanal_verde', label: 'Tema Pantanal', icon: 'mdi-leaf' },
-  { name: 'bonito_azul', label: 'Tema Bonito', icon: 'mdi-water' },
+  { name: 'light', label: 'Tema Pantanal', icon: 'mdi-leaf' },
+  { name: 'dark', label: 'Tema Bonito', icon: 'mdi-water' },
 ]);
 
 onMounted(() => {
@@ -141,28 +141,6 @@ const viewTour = (tourId: string) => {
 
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
-
-.theme-pantanal_verde {
-  --primary-color: #6eab34;
-  --accent-color: #008fc3;
-  --bg-color: #f8f7f2;
-  --text-color-dark: #333;
-  --text-color-light: #f5f5f5;
-  --card-bg-color: #ffffff;
-  --card-border-color: #e0e0e0;
-  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
-}
-
-.theme-bonito_azul {
-  --primary-color: #008fc3;
-  --accent-color: #6eab34;
-  --bg-color: #f0f4f8;
-  --text-color-dark: #2c3e50;
-  --text-color-light: #ffffff;
-  --card-bg-color: #ffffff;
-  --card-border-color: #dbe2e8;
-  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
 
 .tours-section-container {
   font-family: 'Montserrat', sans-serif;

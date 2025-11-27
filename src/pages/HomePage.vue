@@ -5,14 +5,14 @@
       :hero_title="t('hero_title')"
       :hero_subtitle="t('hero_subtitle')"
       :hero_cta="t('hero_cta')"
-      :hero_background="SimpleBannerBackground"
+      :hero_background="currentBannerBg"
     />
 
     <section id="packages-section" v-intersection.once="() => (loadTourPackage = true)" class="section-wrapper">
       <TourPackageSection v-if="loadTourPackage" class="q-mt-xl" />
     </section>
 
-    <section id="all-tours-cta-section" v-intersection.once="() => (loadCtaAllTours = true)" class="section-wrapper-cta">
+    <section id="all-tours-cta-section" v-intersection.once="() => (loadCtaAllTours = true)" class="section-wrapper">
       <CtaAllToursSection v-if="loadCtaAllTours" />
     </section>
 
@@ -20,12 +20,12 @@
       <MosaicGallery v-if="loadMosaicGallery" :images="pantanalImages" />
     </section>
 
-    <section id="media-gallery-section" v-intersection.once="() => (loadMediaGallery = true)" class="section-wrapper">
-      <MediaGallery v-if="loadMediaGallery" :items="galleryItems" />
-    </section>
-
     <section id="why-us-section" v-intersection.once="() => (loadWhyUs = true)" class="section-wrapper">
       <WhyUsSection v-if="loadWhyUs" />
+    </section>
+    
+    <section id="media-gallery-section" v-intersection.once="() => (loadMediaGallery = true)" class="section-wrapper">
+      <MediaGallery v-if="loadMediaGallery" :items="galleryItems" />
     </section>
 
     <section id="newsletter-section" v-intersection.once="() => (loadNewsLetter = true)" class="section-wrapper">
@@ -48,7 +48,7 @@
 
 <script setup lang="ts">
 // `defineAsyncComponent` é importado para o lazy-loading
-import { onMounted, ref, watch, defineAsyncComponent } from 'vue';
+import { onMounted, ref, watch, defineAsyncComponent, computed } from 'vue';
 import { useMeta } from 'quasar';
 import { useI18n } from 'vue-i18n';
 import { useRoute, useRouter } from 'vue-router';
@@ -59,7 +59,8 @@ import { langMap } from 'src/utils/langMap';
 
 // Apenas o SimpleBanner (acima da dobra) é importado estaticamente.
 import SimpleBanner from 'src/components/banner/SimpleBanner.vue';
-import SimpleBannerBackground from 'src/assets/images/boca_onca_remake.webp';
+import SimpleBannerBackgroundLight from 'src/assets/images/boca_onca_remake.webp';
+import SimpleBannerBackgroundDark from 'src/assets/images/boca_onca_remake_dark.webp';
 
 // Refs booleanos para controlar o carregamento de cada seção.
 const loadTourPackage = ref(false);
@@ -72,6 +73,10 @@ const loadFac = ref(false);
 const loadCredibility = ref(false);
 // Ref para o lazy-load do novo componente CTA
 const loadCtaAllTours = ref(false); 
+
+const currentBannerBg = computed(() => {
+  return currentTheme.value === 'dark' ? SimpleBannerBackgroundDark : SimpleBannerBackgroundLight;
+});
 
 // Todos os outros componentes são definidos como assíncronos (lazy-loaded).
 const TourPackageSection = defineAsyncComponent(
@@ -97,6 +102,7 @@ const MosaicGallery = defineAsyncComponent(
 );
 import type { MediaItem } from 'src/components/galerry/MediaGallery.vue';
 import { GALLERY_BUCKET_NAME } from 'src/utils/environmentUtils';
+ 
 const MediaGallery = defineAsyncComponent(
   () => import('src/components/galerry/MediaGallery.vue')
 );
