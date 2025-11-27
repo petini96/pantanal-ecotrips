@@ -76,7 +76,7 @@ export default {
   all_tours_cta_button: "See All Tours",
   all_tours_cta_title_secondary: "Create Your Own Itinerary!",
   all_tours_cta_subtitle_secondary: "Turn your dreams into reality with a 100% personalized itinerary.",
-  all_tours_cta_button_secondary: "Create Custom Itinerary",
+  all_tours_cta_button_secondary: "Create Itinerary",
   what_is_included: "What's included?",
   duration: "Duration",
   distance_from_city: "Distance from city",

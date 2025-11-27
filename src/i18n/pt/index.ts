@@ -76,7 +76,7 @@ export default {
   all_tours_cta_button: "Ver Todos os Passeios",
   all_tours_cta_title_secondary: "Crie Seu Próprio Itinerário!",
   all_tours_cta_subtitle_secondary: "Transforme seus sonhos em realidade com um roteiro 100% personalizado.",
-  all_tours_cta_button_secondary: "Criar Itinerário Personalizado",
+  all_tours_cta_button_secondary: "Criar Itinerário",
   what_is_included: "O que está incluso?",
   duration: "Duração",
   distance_from_city: "Distância da cidade",
