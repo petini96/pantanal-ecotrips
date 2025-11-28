@@ -82,7 +82,7 @@ const faqItems = ref([
   AJUSTE: A seção agora ocupa 100vh e centraliza o conteúdo.
 */
 .content-section {
-  background-color: #f7f9fc;
+  background-color: var(--bg-primary-color);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -93,7 +93,7 @@ const faqItems = ref([
   font-size: 2.8rem;
   font-weight: 700;
   line-height: 1.2;
-  color: #2c3e50;
+  color: var(--text-primary-color, #1a2e29);
 }
 
 .faq-list-container {
@@ -105,7 +105,7 @@ const faqItems = ref([
 .faq-list {
   border-radius: 8px;
   overflow: hidden;
-  background-color: #ffffff;
+  background-color: var(--page-bg-color);
   box-shadow: 0 4px 15px rgba(44, 62, 80, 0.05);
 }
 
@@ -134,7 +134,7 @@ const faqItems = ref([
 }
 
 .faq-answer {
-  background-color: #ffffff;
+  background-color: var(--bg-primary-color);
   color: var(--text-secondary-color);
   line-height: 1.7;
   padding: 0 1.25rem 1.25rem 3.5rem;

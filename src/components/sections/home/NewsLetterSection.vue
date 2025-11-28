@@ -13,7 +13,7 @@
       />
 
       <h2
-        class="text-h3 text-weight-bold text-primary q-my-none animated-item"
+        class="text-h3 text-weight-bold q-my-none animated-item"
         style="--animation-delay: 0.4s; line-height: 1.2;"
       >
         {{ t('newsletter_title') }}
@@ -124,7 +124,7 @@ const onNewsletterSubmit = async () => {
 
 <style scoped lang="scss">
 .bg-theme{
-  background-color: var(--bg-div-primary);
+  background-color: var(--bg-primary);
 }
 @keyframes fadeInUp {
   from {
