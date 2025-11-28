@@ -93,6 +93,15 @@ export default {
   most_wanted_packages_subtitle: "Descubre los itinerarios más vendidos y asegura tu lugar en destinos inolvidables de ",
   select_region_first: "Seleccione la región primero",
   no_packages_found_title: "No se encontraron paquetes",
-  no_packages_found_subtitle: "No encontramos resultados para tu búsqueda. Intenta con otras palabras clave o verifica la ortografía."
+  no_packages_found_subtitle: "No encontramos resultados para tu búsqueda. Intenta con otras palabras clave o verifica la ortografía.",
+  photo: "Foto",
+  videos: "Videos",
+  our_gallery_title: "Nuestra Galería",
+  our_gallery_subtitle: "Explora la belleza del Pantanal a través de nuestras fotos y videos exclusivos.",
+  tours: "Tours",
+  packages: "Visitas",
+  gallery: "Galería",
+  questions: "Preguntas",
+  contact: "Contacto"
   
 };

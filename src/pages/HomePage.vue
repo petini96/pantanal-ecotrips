@@ -1,12 +1,8 @@
 <template>
   <q-page :class="['home-page', `theme-${currentTheme}`]">
-    
-    <SimpleBanner
-      :hero_title="t('hero_title')"
-      :hero_subtitle="t('hero_subtitle')"
-      :hero_cta="t('hero_cta')"
-      :hero_background="currentBannerBg"
-    />
+
+    <SimpleBanner :hero_title="t('hero_title')" :hero_subtitle="t('hero_subtitle')" :hero_cta="t('hero_cta')"
+      :hero_background="currentBannerBg" />
 
     <section id="packages-section" v-intersection.once="() => (loadTourPackage = true)" class="section-wrapper">
       <TourPackageSection v-if="loadTourPackage" class="q-mt-xl" />
@@ -16,30 +12,65 @@
       <CtaAllToursSection v-if="loadCtaAllTours" />
     </section>
 
-    <section id="mosaic-gallery-section" v-intersection.once="() => (loadMosaicGallery = true)" class="section-wrapper">
+    <section id="gallery-section" v-intersection.once="() => (loadGallery = true)" class="section-wrapper">
+      <div v-if="loadGallery" class="container q-py-xl text-center">
+
+
+        <h2 class="text-h3 q-mb-md text-weight-bold" :class="currentTheme === 'dark' ? 'text-white' : 'text-primary'">
+          {{ t("our_gallery_title") }}
+        </h2>
+        <p class="text-subtitle1 q-mb-lg opacity-80" :class="currentTheme === 'dark' ? 'text-white' : 'text-primary'">
+          {{ t("our_gallery_subtitle") }}
+        </p>
+
+        <div class="flex justify-center q-gutter-md">
+          <q-btn rounded :color="activeGallery === 'photos' ? 'primary' : 'grey-4'"
+            :text-color="activeGallery === 'photos' ? 'white' : 'grey-8'" :label="t('photo')" icon="photo_camera"
+            size="lg" unelevated @click="activeGallery = 'photos'" class="transition-btn" />
+          <q-btn rounded :color="activeGallery === 'videos' ? 'primary' : 'grey-4'"
+            :text-color="activeGallery === 'videos' ? 'white' : 'grey-8'" label="Vídeos" icon="play_circle" size="lg"
+            unelevated @click="activeGallery = 'videos'" class="transition-btn" />
+        </div>
+      </div>
+
+      <transition name="fade-gallery" mode="out-in">
+        <div v-if="activeGallery === 'photos'" key="photos">
+          <div class="q-my-lg">
+            <MosaicGallery :images="pantanalImages" />
+          </div>
+        </div>
+        <div v-else key="videos">
+          <div class="q-my-lg">
+            <MediaGallery :items="galleryItems" />
+          </div>
+        </div>
+      </transition>
+
+    </section>
+    <!-- <section id="mosaic-gallery-section" v-intersection.once="() => (loadMosaicGallery = true)" class="section-wrapper">
       <MosaicGallery v-if="loadMosaicGallery" :images="pantanalImages" />
     </section>
 
-    <section id="why-us-section" v-intersection.once="() => (loadWhyUs = true)" class="section-wrapper">
-      <WhyUsSection v-if="loadWhyUs" />
-    </section>
-    
     <section id="media-gallery-section" v-intersection.once="() => (loadMediaGallery = true)" class="section-wrapper">
       <MediaGallery v-if="loadMediaGallery" :items="galleryItems" />
+    </section> -->
+
+    <section id="why-us-section" v-intersection.once="() => (loadWhyUs = true)" class="section-wrapper">
+      <WhyUsSection v-if="loadWhyUs" />
     </section>
 
     <section id="newsletter-section" v-intersection.once="() => (loadNewsLetter = true)" class="section-wrapper">
       <NewsLetterSection v-if="loadNewsLetter" />
     </section>
-    
+
     <section id="about-us-section" v-intersection.once="() => (loadAboutUs = true)" class="section-wrapper">
       <AboutUsSection v-if="loadAboutUs" />
     </section>
-    
+
     <section id="faq-section" v-intersection.once="() => (loadFac = true)" class="section-wrapper">
       <FacSection v-if="loadFac" />
     </section>
-    
+
     <section id="credibility-section" v-intersection.once="() => (loadCredibility = true)" class="section-wrapper">
       <CredibilitySection v-if="loadCredibility" />
     </section>
@@ -64,15 +95,18 @@ import SimpleBannerBackgroundDark from 'src/assets/images/boca_onca_remake_dark.
 
 // Refs booleanos para controlar o carregamento de cada seção.
 const loadTourPackage = ref(false);
-const loadMediaGallery = ref(false);
+// const loadMediaGallery = ref(false);
 const loadWhyUs = ref(false);
-const loadMosaicGallery = ref(false);
+// const loadMosaicGallery = ref(false);
 const loadNewsLetter = ref(false);
 const loadAboutUs = ref(false);
 const loadFac = ref(false);
 const loadCredibility = ref(false);
 // Ref para o lazy-load do novo componente CTA
-const loadCtaAllTours = ref(false); 
+const loadCtaAllTours = ref(false);
+
+const loadGallery = ref(false); // Carrega a seção inteira
+const activeGallery = ref<'photos' | 'videos'>('photos'); // Alterna o conteúdo
 
 const currentBannerBg = computed(() => {
   return currentTheme.value === 'dark' ? SimpleBannerBackgroundDark : SimpleBannerBackgroundLight;
@@ -102,7 +136,7 @@ const MosaicGallery = defineAsyncComponent(
 );
 import type { MediaItem } from 'src/components/galerry/MediaGallery.vue';
 import { GALLERY_BUCKET_NAME } from 'src/utils/environmentUtils';
- 
+
 const MediaGallery = defineAsyncComponent(
   () => import('src/components/galerry/MediaGallery.vue')
 );
@@ -113,7 +147,7 @@ const CtaAllToursSection = defineAsyncComponent(
 );
 
 // --- Lógica de i18n, Rota e Store ---
-const { t, locale } = useI18n(); 
+const { t, locale } = useI18n();
 const route = useRoute();
 const router = useRouter();
 const layoutConfigStore = useLayoutConfigStore();
@@ -1355,11 +1389,13 @@ onMounted(() => {
   background-color: var(--page-bg-color);
   transition: background-color 0.3s ease;
 }
+
 .container {
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 16px;
 }
+
 .content-section {
   background-color: var(--page-bg-color);
   transition: background-color 0.3s ease;
@@ -1369,7 +1405,8 @@ onMounted(() => {
   ao carregar componentes lazy-loaded.
 */
 .section-wrapper {
-  min-height: 50vh; /* Altura padrão para seções */
+  min-height: 50vh;
+  /* Altura padrão para seções */
 }
 
 /* Wrapper para a nova seção CTA de 100vh.
@@ -1377,7 +1414,7 @@ onMounted(() => {
   já tenha a altura correta, evitando CLS.
 */
 .section-wrapper-cta {
-  min-height: 100vh; /* Altura específica para o CTA de tela cheia */
+  min-height: 100vh;
+  /* Altura específica para o CTA de tela cheia */
 }
 </style>
-

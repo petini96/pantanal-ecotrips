@@ -253,20 +253,26 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped lang="scss">
+/* --- CORREÇÃO DE CENTRALIZAÇÃO --- */
 .media-gallery-container {
   width: 100%;
-  margin: 0 auto;
+  /* Define altura mínima da tela inteira para ter espaço vertical */
+  min-height: 50vh; 
   display: flex;
   flex-direction: column;
+  /* Centraliza verticalmente o conteúdo */
   justify-content: center;
+  /* REMOVIDO: align-items: center (isso que estava quebrando a largura) */
 }
 
 .gallery-content-wrapper {
   width: 100%;
   max-width: 1400px;
-  margin: 0 auto;
+  /* Centraliza horizontalmente o bloco */
+  margin: 0 auto; 
   padding: 16px;
 }
+/* --------------------------------- */
 
 .media-card {
   position: relative;
@@ -348,7 +354,7 @@ onBeforeUnmount(() => {
 }
 
 .media-item-title {
-  font-size: 0.8rem; /* Fonte reduzida para cards menores */
+  font-size: 0.8rem;
   font-weight: 500;
   color: white;
   width: 100%;
@@ -397,7 +403,6 @@ onBeforeUnmount(() => {
     font-weight: 500;
     margin: 0 2px;
     
-    /* Hover suave nos números */
     &:not(.bg-primary) {
         &:hover {
             background-color: rgba(0,0,0,0.05);

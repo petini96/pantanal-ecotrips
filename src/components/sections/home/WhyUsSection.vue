@@ -126,7 +126,7 @@ const onIntersection = (entry: IntersectionObserverEntry) => {
   margin-bottom: 1rem;
   
   /* Light */
-  color: white;
+  color: var(--text-primary-color, #1a2e29);
 
   /* Dark */
   :global(body.body--dark) & {

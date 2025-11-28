@@ -1,5 +1,5 @@
 <template>
-  <div class="mosaic-gallery-container q-pa-md">
+  <div class="mosaic-gallery-container q-pa-md q-mb-xxl">
     <div v-if="paginatedImages.length" class="mosaic-grid">
       <q-img
         v-for="(image, index) in paginatedImages"

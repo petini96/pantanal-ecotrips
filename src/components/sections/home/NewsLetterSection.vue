@@ -1,26 +1,27 @@
 <template>
   <div
-    class="q-py-xl newsletter-bg theme-light"
+    class="q-py-xl newsletter-bg bg-theme"
     v-intersection.once="onIntersection"
   >
     <div class="container text-center q-px-md" :class="{ 'is-visible': isVisible }">
       <q-icon
         name="mdi-email-fast-outline"
         size="4rem"
-        class="newsletter-icon animated-item"
+        color="secondary"
+        class="q-mb-md animated-item"
         style="--animation-delay: 0.2s;"
       />
 
       <h2
-        class="section-title animated-item"
-        style="--animation-delay: 0.4s;"
+        class="text-h3 text-weight-bold text-primary q-my-none animated-item"
+        style="--animation-delay: 0.4s; line-height: 1.2;"
       >
         {{ t('newsletter_title') }}
       </h2>
 
       <p
-        class="text-h6 q-mt-md animated-item"
-        style="max-width: 650px; margin: auto; opacity: 0.8; --animation-delay: 0.6s;"
+        class="text-h6 q-mt-md text-grey-8 animated-item"
+        style="max-width: 650px; margin-left: auto; margin-right: auto; --animation-delay: 0.6s;"
       >
         {{ t('newsletter_subtitle') }}
       </p>
@@ -37,28 +38,27 @@
           :rules="[val => !!val && /.+@.+\..+/.test(val) || t('newsletter_invalid_email')]"
           outlined
           rounded
+          bg-color="white"
           class="newsletter-input"
           aria-label="Email para newsletter"
         >
           <template v-slot:append>
-            <!-- 
-              REMOVIDO: color="secondary"
-              ADICIONADO: class="newsletter-cta-button"
-            -->
             <q-btn
               type="submit"
               :label="t('newsletter_cta')"
               icon-right="mdi-send"
               rounded
               unelevated
-              class="newsletter-btn newsletter-cta-button"
+              color="secondary"
+              text-color="white"
+              class="newsletter-btn"
               :loading="newsletterSubmitting"
               aria-label="Inscrever na newsletter"
             />
           </template>
         </q-input>
 
-        <div class="q-mt-md text-positive success-message" v-if="submissionSuccess">
+        <div class="q-mt-md text-positive text-weight-medium success-message" v-if="submissionSuccess">
           <q-icon name="mdi-check-circle" />
           {{ t('newsletter_success') }}
         </div>
@@ -123,13 +123,9 @@ const onNewsletterSubmit = async () => {
 </script>
 
 <style scoped lang="scss">
-/* ADICIONADO: Regra de estilo para o botão
-*/
-.newsletter-cta-button {
-  background-color: var(--secondary-color) !important;
-  color: var(--text-secondary-color) !important;
+.bg-theme{
+  background-color: var(--bg-div-primary);
 }
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -150,17 +146,6 @@ const onNewsletterSubmit = async () => {
   animation-delay: var(--animation-delay, 0s);
 }
 
-.theme-light {
-  background-color: #f0fbf8; 
-  background-image: url('~assets/images/wildlife_pattern.svg');
-  background-size: 300px;
-  background-repeat: repeat;
-  background-position: center;
-
-  .section-title, p {
-    color: #2c3e50;
-  }
-}
 
 .newsletter-bg {
   position: relative;
@@ -191,40 +176,31 @@ const onNewsletterSubmit = async () => {
   }
 }
 
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
-.newsletter-icon {
-  color: var(--secondary-color);
-  margin-bottom: 1rem;
-}
-
 .newsletter-form {
   max-width: 500px;
   margin: 1.5rem auto 0;
 }
 
 .newsletter-input {
-  background-color: #ffffff;
+  /* O bg-color="white" no template cuida da cor, aqui ajustamos a borda */
   border-radius: 28px; 
   :deep(.q-field__control) {
-    border-color: rgba(0, 0, 0, 0.2);
+    border-color: rgba(0, 0, 0, 0.1);
   }
 }
 
 .newsletter-btn {
   transition: all 0.3s ease;
+  
+  /* Sombra dinâmica baseada na cor do botão */
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 172, 193, 0.4);
+    /* Usa a cor secundária com transparência para a sombra */
+    box-shadow: 0 4px 10px change-color($secondary, $alpha: 0.4);
   }
 }
 
 .success-message {
-  font-weight: 500;
   opacity: 0;
   animation: fadeIn 0.5s forwards;
 }

@@ -63,7 +63,10 @@ import { scroll } from 'quasar';
 import PageControls from 'src/components/controls/PageControls.vue';
 import LogoLink from 'src/components/logo/LogoLink.vue';
 import { useRouter, useRoute } from 'vue-router';
-import { computed } from 'vue';
+import { computed } from 'vue'; // Garanta que computed está importado
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n(); 
 
 const { getScrollTarget, setVerticalScrollPosition } = scroll;
 const router = useRouter();
@@ -77,17 +80,20 @@ interface NavLink {
   ariaLabel?: string;
 }
 
-const navLinks: NavLink[] = [
-  { label: 'Passeios', routeName: 'allTours' },
-  { label: 'Pacotes', url: '#packages-section' },
-  { label: 'Galeria', url: '#mosaic-gallery-section' },
-  { label: 'Dúvidas', url: '#faq-section' },
-  { label: 'Contato', url: '#contato' }
-];
+// CORREÇÃO AQUI: Transforme navLinks em computed
+const navLinks = computed<NavLink[]>(() => [
+  { label: t("tours"), routeName: 'allTours' },
+  { label: t("packages"), url: '#packages-section' },
+  { label: t("gallery"), url: '#mosaic-gallery-section' },
+  { label: t("questions"), url: '#faq-section' },
+  { label: t("contact"), url: '#contato' }
+]);
 
 const currentLang = computed(() => (route.params.lang as string) || 'pt');
 
+// O resto do código permanece igual...
 const getLinkUrl = (link: NavLink): string => {
+  // ... lógica existente
   if (link.external && link.url) return link.url;
   
   if (link.routeName) {
@@ -107,7 +113,7 @@ const getLinkUrl = (link: NavLink): string => {
 };
 
 const handleNavClick = async (ev: Event, link: NavLink) => {
-  
+  // ... lógica existente
   if (link.external) return;
 
   ev.preventDefault();

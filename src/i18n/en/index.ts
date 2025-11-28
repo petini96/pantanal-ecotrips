@@ -93,5 +93,14 @@ export default {
   most_wanted_packages_subtitle: "Discover the best-selling itineraries and secure your place in unforgettable destinations of ",
   select_region_first: "Select the region first",
   no_packages_found_title: "No packages found",
-  no_packages_found_subtitle: "We couldn't find any results for your search. Try different keywords or check your spelling."
+  no_packages_found_subtitle: "We couldn't find any results for your search. Try different keywords or check your spelling.",
+  photo: "Photo",
+  videos: "Medias",
+  our_gallery_title: "Our Gallery",
+  our_gallery_subtitle: "Explore the beauty of the Pantanal through our exclusive photos and videos.",
+  tours: "Tours",
+  packages: "Packages",
+  gallery: "Gallery",
+  questions: "Questions",
+  contact: "Contact us"
 };
