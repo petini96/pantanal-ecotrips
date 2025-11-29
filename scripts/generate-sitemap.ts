@@ -25,7 +25,7 @@ const __dirname = path.dirname(__filename);
 // ------------------------------------
 
 // --- CONFIGURAÇÕES ---
-const BASE_URL = 'https://www.pantanalecotrips.roboticsmind.com.br';
+const BASE_URL = 'https://www.pantanalecotrips.com.br';
 const LANGUAGES = ['pt', 'en', 'es'];
 // O caminho de saída agora é construído a partir do __dirname corrigido
 const OUTPUT_FILE = path.resolve(__dirname, '../public/sitemap.xml');

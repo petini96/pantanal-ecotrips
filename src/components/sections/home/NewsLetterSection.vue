@@ -7,7 +7,7 @@
       <q-icon
         name="mdi-email-fast-outline"
         size="4rem"
-        color="secondary"
+        :color="iconColor"
         class="q-mb-md animated-item"
         style="--animation-delay: 0.2s;"
       />
@@ -38,7 +38,7 @@
           :rules="[val => !!val && /.+@.+\..+/.test(val) || t('newsletter_invalid_email')]"
           outlined
           rounded
-          bg-color="white"
+          :bg-color="inputTextBgColor"
           class="newsletter-input"
           aria-label="Email para newsletter"
         >
@@ -68,9 +68,14 @@
 </template>
 
 <script setup lang="ts">
+import { storeToRefs } from 'pinia';
 import { useQuasar } from 'quasar';
-import { ref } from 'vue';
+import { useLayoutConfigStore } from 'src/stores/layout-config-store';
+import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+
+const layoutConfigStore = useLayoutConfigStore();
+const { theme: currentTheme } = storeToRefs(layoutConfigStore);
 
 const { t } = useI18n();
 const $q = useQuasar();
@@ -79,6 +84,18 @@ const isVisible = ref(false);
 const newsletterEmail = ref('');
 const newsletterSubmitting = ref(false);
 const submissionSuccess = ref(false);
+ 
+const iconColor = computed(() => {
+  return currentTheme.value === 'dark' ? "white" : "#1B5E20";
+});
+
+const inputTextBgColor = computed(() => {
+  return currentTheme.value === 'dark' ? "#214183" : "white";
+});
+
+// const inputBgColor = computed(() => {
+//   return currentTheme.value === 'dark' ? "white" : "#1B5E20";
+// });
 
 const onIntersection = (entry: IntersectionObserverEntry) => {
   if (entry.isIntersecting) {

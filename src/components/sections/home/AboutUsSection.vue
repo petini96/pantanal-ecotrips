@@ -1,7 +1,7 @@
 <template>
   <q-parallax class="about-us-parallax-section" :height="viewportHeight">
     <template v-slot:media>
-      <img src="../../../assets/images/packages/joungle-lodge-package.webp" alt="Pousada no Pantanal">
+      <img :src="backgroundImage" alt="Pousada no Pantanal">
       <div class="parallax-overlay"></div>
     </template>
 
@@ -25,8 +25,8 @@
               <q-card class="feature-card text-center" flat>
                 <q-card-section>
                   <q-icon name="mdi-nature-people" size="3.5rem" class="feature-icon" aria-hidden="true" />
-                  <h3 class="feature-title">Especialistas em Ecoturismo</h3>
-                  <p class="feature-description">A Pantanal EcoTrips é especializada em Ecoturismo no Pantanal e Bonito, oferecendo roteiros exclusivos e serviços de alta qualidade.</p>
+                  <h3 class="feature-title">{{ t('our_mission_title') }}</h3>
+                  <p class="feature-description">{{ t('our_mission_subtitle') }}</p>
                 </q-card-section>
               </q-card>
             </div>
@@ -71,12 +71,25 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from 'vue';
+import { storeToRefs } from 'pinia';
+import { useLayoutConfigStore } from 'src/stores/layout-config-store';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
+import imgDay from 'src/assets/images/packages/joungle-lodge-package.webp';
+import imgNight from 'src/assets/images/packages/joungle-lodge-package-dark.webp';
 
 const { t } = useI18n();
 
 const isVisible = ref(false);
+
+const layoutConfigStore = useLayoutConfigStore();
+const { theme: currentTheme } = storeToRefs(layoutConfigStore);
+
+// Use as variáveis importadas aqui
+const backgroundImage = computed(() => {
+  // Ajustei a lógica: Se o tema é dark, usa a imagem dark (imgNight)
+  return currentTheme.value === 'dark' ? imgNight : imgDay;
+});
 
 const onIntersection = (entry: IntersectionObserverEntry) => {
   if (entry.isIntersecting) {

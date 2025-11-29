@@ -96,7 +96,7 @@
 
       <div class="cta-footer q-pa-md">
         <q-btn class="full-width" size="lg" color="secondary" label="Consultar Disponibilidade" icon="mdi-whatsapp"
-          :href="`https://wa.me/5567999022073?text=${encodedWhatsAppMessage}`" target="_blank" />
+          :href="`https://wa.me/556791452985?text=${encodedWhatsAppMessage}`" target="_blank" />
       </div>
     </div>
   </q-page>
@@ -168,7 +168,7 @@ useMeta(() => {
   const pageDescription = tour.value.description;
   
   const currentLang = (route.params.lang as string) || 'pt';
-  const baseURL = 'https://www.pantanalecotrips.roboticsmind.com.br';
+  const baseURL = 'https://www.pantanalecotrips.com.br';
   const pageUrl = `${baseURL}/${currentLang}/passeio/${tour.value.slug}`;
   const ogImageURL = tour.value.mainImage;
 

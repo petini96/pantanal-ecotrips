@@ -121,7 +121,7 @@
 
       <div class="text-center q-mt-xl">
         <q-btn color="secondary" size="lg" :label="t('tour_details_cta_button')" icon="mdi-whatsapp"
-          :href="`https://wa.me/5567999022073?text=${encodedWhatsAppMessage}`" target="_blank" />
+          :href="`https://wa.me/556791452985?text=${encodedWhatsAppMessage}`" target="_blank" />
       </div>
     </div>
   </q-page>
@@ -187,7 +187,7 @@ useMeta(() => {
   if (!pkg.value) {
     return { title: t('tour_not_found') };
   }
-  const baseUrl = 'https://www.pantanalecotrips.roboticsmind.com.br';
+  const baseUrl = 'https://www.pantanalecotrips.com.br';
   const currentLang = (route.params.lang as string || 'pt');
 
   return {

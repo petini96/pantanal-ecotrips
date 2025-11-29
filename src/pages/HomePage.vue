@@ -1310,7 +1310,7 @@ const pantanalImages = ref([
 // --- SEO (Meta Tags) ---
 useMeta(() => {
   const currentLang = (route.params.lang as string) || 'pt';
-  const baseURL = 'https://www.pantanalecotrips.roboticsmind.com.br';
+  const baseURL = 'https://www.pantanalecotrips.com.br';
   const ogImageURL = `${baseURL}/pantanal_ecotrips_logo.png`;
 
   const structuredData = {
