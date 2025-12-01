@@ -9,7 +9,7 @@ const img = `${TOURS_BUCKET_NAME}/acampamento-na-selva/img1.webp`
 // PT-BR
 export const jungleCampingPt: Tour = {
   id: 'TOUR-JC-01',
-  slug: 'acampamento-na-selva',
+  slug: 'acampamento-na-selva-em-miranda',
   name: 'Acampamento na Selva (uma noite)',
   description: 'Uma experiência única de pernoite na selva do Pantanal em redes com mosquiteiros. Uma imersão total nos sons e na atmosfera noturna da natureza.',
   mainImage: img,
@@ -27,7 +27,7 @@ export const jungleCampingPt: Tour = {
 // EN-US
 export const jungleCampingEn: Tour = {
   id: 'TOUR-JC-01',
-  slug: 'acampamento-na-selva',
+  slug: 'acampamento-na-selva-em-miranda',
   name: 'Camping in the Jungle (one night out)',
   description: 'A unique experience of spending the night in the Pantanal jungle in hammocks with mosquito nets. A total immersion in the sounds and nocturnal atmosphere of nature.',
   mainImage: img,
@@ -45,7 +45,7 @@ export const jungleCampingEn: Tour = {
 // ES
 export const jungleCampingEs: Tour = {
   id: 'TOUR-JC-01',
-  slug: 'acampamento-na-selva',
+  slug: 'acampamento-na-selva-em-miranda',
   name: 'Campamento en la Selva (una noche fuera)',
   description: 'Una experiencia única de pasar la noche en la selva del Pantanal en hamacas con mosquiteros. Una inmersión total en los sonidos y la atmósfera nocturna de la naturaleza.',
   mainImage: img,

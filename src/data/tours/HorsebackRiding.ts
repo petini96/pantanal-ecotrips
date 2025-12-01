@@ -9,16 +9,16 @@ const img = `${TOURS_BUCKET_NAME}/cavalgada/img1.webp`
 // PT-BR
 export const horsebackRidingPt: Tour = {
   id: 'TOUR-HR-01',
-  slug: 'cavalgada',
+  slug: 'cavalgada-em-miranda',
   name: 'Cavalgada',
-  description: 'Uma cavalgada tradicional em cavalos pantaneiros, mansos e adaptados à região. É a melhor forma de explorar áreas alagadas e sentir-se como um peão local.',
+  description: 'Uma cavalgada-em-miranda tradicional em cavalos pantaneiros, mansos e adaptados à região. É a melhor forma de explorar áreas alagadas e sentir-se como um peão local.',
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.MEDIUM,
   environments: [EnvironmentType.FIELDS, EnvironmentType.FOREST],
   includedItems: ['Cavalo e sela', 'Capacete', 'Guia'],
-  keywords: ['cavalo', 'cavalgada', 'pantaneiro'],
+  keywords: ['cavalo', 'cavalgada-em-miranda', 'pantaneiro'],
   categories: [ecotourismPt],
   recommendedFor: [],
   city: miranda
@@ -27,7 +27,7 @@ export const horsebackRidingPt: Tour = {
 // EN-US
 export const horsebackRidingEn: Tour = {
   id: 'TOUR-HR-01',
-  slug: 'cavalgada',
+  slug: 'cavalgada-em-miranda',
   name: 'Horseback Riding',
   description: 'A traditional ride on Pantanal horses, which are tame and adapted to the region. It is the best way to explore flooded areas and feel like a local cowboy.',
   mainImage: img,
@@ -45,7 +45,7 @@ export const horsebackRidingEn: Tour = {
 // ES
 export const horsebackRidingEs: Tour = {
   id: 'TOUR-HR-01',
-  slug: 'cavalgada',
+  slug: 'cavalgada-em-miranda',
   name: 'Cabalgata',
   description: 'Una cabalgata tradicional en caballos pantaneros, mansos y adaptados a la región. Es la mejor manera de explorar áreas inundadas y sentirse como un peón local.',
   mainImage: img,

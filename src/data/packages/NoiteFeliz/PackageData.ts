@@ -21,7 +21,7 @@ import { couplesPt, couplesEn, couplesEs } from "../../../data/audiences/Couples
 import { bonitoSerraBodoquenaEn, bonitoSerraBodoquenaEs, bonitoSerraBodoquenaPt } from "src/data/regions/Regions";
 import { TOURS_BUCKET_NAME } from "src/utils/environmentUtils";
 
-const img = `${TOURS_BUCKET_NAME}/buraco-das-araras/img3.webp`
+const img = `${TOURS_BUCKET_NAME}/buraco-das-araras-em-bonito/img3.webp`
 
 const uuid = uid();
 

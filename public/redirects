@@ -1,0 +1,139 @@
+map $request_uri $new_uri {
+    # --- HOME E INSTITUCIONAL ---
+    # Redireciona páginas numéricas ou lixo para a raiz em PT
+    /02                                                 /pt/;
+    /bonito-01                                          /pt/;
+    /bonito-02                                          /pt/;
+    /bonito-03                                          /pt/;
+    /bonito-04                                          /pt/;
+    
+    # Âncoras agora na Home em PT
+    /contact                                            /pt/#contato;
+    /contato                                            /pt/#contato;
+    /quem-somos                                         /pt/#quem-somos;
+    /depoimentos                                        /pt/#depoimentos;
+    /comente-aqui-sua-experiencia-conosco               /pt/#depoimentos;
+    
+    # Redirecionar blogs/notícias antigos para Home PT
+    /noticias                                           /pt/;
+    /blog                                               /pt/;
+
+    # --- LISTAGENS GERAIS (Vai para /pt/passeios) --- 
+    /hoteis-em-bonito                                   /pt/passeios;
+    /roteiros/hotéis-e-pousadas-em-bonito               /pt/passeios;
+    /destinos/outros-roteiros                           /pt/passeios;
+    /outros-roteiros                                    /pt/passeios;
+    /categoria-produtos/produtos                        /pt/passeios;
+    /categoria-produtos/servicos                        /pt/passeios;
+    
+    # Regex para categorias antigas -> Listagem de passeios
+    ~^/categoria-roteiro/.* /pt/passeios;
+    
+    # --- TOURS GERAIS (Redirecionando para listagem /pt/tours) ---
+    # Você definiu que essas vão para a listagem geral de tours
+    /pousada-xaraes                                     /pt/tours;
+    /roteiros/pousada-xaraes                            /pt/tours;
+    
+    /pousada-aguapé                                     /pt/tours;
+    /roteiros/pousada-aguapé                            /pt/tours;
+    
+    /pousada-piuval                                     /pt/tours;
+    /roteiros/pousada-piuval                            /pt/tours;
+    /roteiros/pousada-pluval                            /pt/tours;
+
+    /pantanal-park-hotel                                /pt/tours;
+    /roteiros/pantanal-park-hotel                       /pt/tours;
+    
+    /hotel-baiazinha                                    /pt/tours;
+    /roteiros/hotel-baiazinha                           /pt/tours;
+    
+    /refúgio-da-ilha                                    /pt/tours;
+    /roteiros/refúgio-da-ilha                           /pt/tours;
+
+    /araras-eco-lodge-presentation                      /pt/tours;
+    /roteiros/araras-eco-lodge-presentation             /pt/tours;
+
+    /jaguar-ecological-reserve                          /pt/tours;
+    /barra-mansa                                        /pt/tours;
+    /roteiros/barra-mansa-pantanal                      /pt/tours;
+    
+    /pantanal-ecotrips                                  /pt/tours;
+    /pantanal-ecotrips-seeing-macaws                    /pt/tours;
+    /pantanal-ecotrips-walking-jungle                   /pt/tours;
+    /pantanal-discovery                                 /pt/tours;
+    /pantanal-from-campo-grande                         /pt/tours;
+    /roteiros/cruzeiro-pantaneiro                       /pt/tours;
+    /roteiros/pacote-de-pesca                           /pt/tours;
+    /destinos/conheça-bonito                            /pt/tours;
+    /destinos/viagem-ao-pantanal-conheça                /pt/tours;
+
+    # --- TOURS ESPECÍFICOS (Com Slug Definido) ---
+    # Redirecionam para /pt/tours/:slug
+    
+    /fazenda-san-francisco                              /pt/tours/fazenda-san-francisco-coati;
+    /roteiros/fazenda-san-francisco                     /pt/tours/fazenda-san-francisco-coati;
+    
+    /pantanal-jungle-lodge                              /pt/tours/jungle-lodge-lontra;
+    /roteiros/jungle-lodge-pantanal                     /pt/tours/jungle-lodge-lontra;
+    /roteiros/jungle-lodge-southern-pantanal            /pt/tours/jungle-lodge-lontra;
+    /roteiros/pantanal-jungle-lodge                     /pt/tours/jungle-lodge-lontra;
+
+    /refúgio-ecológico-caiman                           /pt/tours/jungle-lodge-caiman;
+    /roteiros/o-refúgio-ecológico-caiman                /pt/tours/jungle-lodge-caiman;
+    
+    /pantanal-birding                                   /pt/tours/observacao-das-aves-em-miranda;
+    /roteiros/pantanal-birding                          /pt/tours/observacao-das-aves-em-miranda;
+
+    /roteiros/pacote-de-reveillon-2024                  /pt/tours/reveillon-em-bonito-2024;
+    /roteiros/pacote-de-reveillon-em-hotel-resort       /pt/tours/reveillon-em-bonito-2024;
+    /reveillon-em-bonito                                /pt/tours/reveillon-em-bonito-2024;
+
+    /roteiros/tour-bonito-amizade                       /pt/tours/bonito-amizade;
+    /roteiros/tour-bonito-01-noite-feliz                /pt/tours/noite-feliz-em-bonito;
+    /roteiros/tour-familia-feliz                        /pt/tours/tour-familia-feliz;
+    
+    /rio-sucuri                                         /pt/tours/jungle-lodge-anaconda;
+
+    # --- PASSEIOS ESPECÍFICOS (Redirecionam para /pt/passeio/:slug) ---
+    
+    /aquário-natura-reserva-ecológica-baía-bonita       /pt/passeios;
+    /barra-do-sucuri                                    /pt/passeios;
+    
+    /boca-da-onça                                       /pt/passeio/boca-da-onca-em-bonito;
+    /rapel-boca-da-onça                                 /pt/passeio/boca-da-onca-em-bonito;
+    
+    /buraco-das-araras                                  /pt/passeio/buraco-das-araras-em-bonito;
+    
+    /cachoeira-serra-da-bodoquena                       /pt/;
+    
+    /gruta-lago-azul                                    /pt/passeio/gruta-do-lago-azul-em-bonito;
+    
+    /lagoa-misteriosa                                   /pt/passeios;
+    
+    /rio-da-prata                                       /pt/passeio/flutuacao-rio-prata-em-jardim;
+    
+    /rapel-abismo-anhumas                               /pt/;
+    
+    # CORRIGIDO: Adicionado ponto e vírgula no final desta linha
+    /estância-mimosa                                    /pt/passeio/estancia-mimosa-em-bonito;
+    
+    /serra-do-amolar                                    /pt/;
+    /roteiros/serra-do-amolar                           /pt/;
+    /roteiros/passeios-bonito-ms                        /pt/;
+    
+    /pantanal-ecotrips-jeep-safari                      /pt/passeio/jeep-safari-nhecolandia-em-miranda;
+    /pantanal-ecotrips-jeep-safari-0                    /pt/passeio/jeep-safari-nhecolandia-em-miranda;
+
+    # --- REDIRECIONAMENTOS DE "LIXO" (Para a Home PT) ---
+    /carla-guttner-argentina                            /pt/;
+    /gloria-bastos-25082016-portugal                    /pt/;
+    /marting-renwart                                    /pt/;
+    /thiago-comanducci-de-castro---belo-horizonte       /pt/;
+    /tony-bordin-05072016-campinas-sp                   /pt/;
+    /video-01                                           /pt/;
+    /videos                                             /pt/;
+    
+    # Regex para galerias antigas -> Home PT
+    ~^/categoria-galeria-de-fotos/.* /pt/;
+    ~^/categoria-videos/.* /pt/;
+}

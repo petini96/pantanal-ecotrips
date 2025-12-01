@@ -23,7 +23,7 @@ const img = `${TOURS_BUCKET_NAME}/flutuacao-rio-prata/img1.webp`
 
 export const rioDaPrataPt: Tour = {
   id: 'TOUR-RDP-01',
-  slug: 'flutuacao-rio-prata',
+  slug: 'flutuacao-rio-prata-em-jardim',
   name: 'Flutuação no Rio da Prata',
   description: 'Uma flutuação tranquila por um imenso aquário de águas cristalinas, observando peixes e a vegetação subaquática. O passeio começa com uma trilha na mata ciliar.',
   mainImage: img,
@@ -41,7 +41,7 @@ export const rioDaPrataPt: Tour = {
 
 export const rioDaPrataEn: Tour = {
   id: 'TOUR-RDP-01',
-  slug: 'flutuacao-rio-prata',
+  slug: 'flutuacao-rio-prata-em-jardim',
   name: 'Snorkeling at Rio da Prata',
   description: 'A gentle snorkeling tour through a huge crystal-clear aquarium, observing fish and underwater vegetation. The tour begins with a trail in the riparian forest.',
   mainImage: img,
@@ -58,7 +58,7 @@ export const rioDaPrataEn: Tour = {
 
 export const rioDaPrataEs: Tour = {
   id: 'TOUR-RDP-01',
-  slug: 'flutuacao-rio-prata',
+  slug: 'flutuacao-rio-prata-em-jardim',
   name: 'Flotación en el Río da Prata',
   description: 'Una tranquila flotación por un inmenso acuario de aguas cristalinas, observando peces y la vegetación subacuática. El recorrido comienza con un sendero en el bosque de ribera.',
   mainImage: img,

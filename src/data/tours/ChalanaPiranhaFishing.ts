@@ -10,7 +10,7 @@ const img = `${TOURS_BUCKET_NAME}/pescaria-piranha/img1.webp`
 // PT-BR
 export const chalanaPiranhaFishingPt: Tour = {
   id: 'TOUR-FSF-CPF-01',
-  slug: 'pescaria-piranha',
+  slug: 'pescaria-piranha-em-miranda',
   name: 'Passeio de Chalana com Pescaria de Piranhas',
   description: 'Navegação em barco típico "chalana" pelo Rio Miranda, com uma parada para a tradicional e divertida pescaria de piranhas. Ideal para observação de aves aquáticas.',
   mainImage: img,
@@ -28,7 +28,7 @@ export const chalanaPiranhaFishingPt: Tour = {
 // EN-US
 export const chalanaPiranhaFishingEn: Tour = {
   id: 'TOUR-FSF-CPF-01',
-  slug: 'pescaria-piranha',
+  slug: 'pescaria-piranha-em-miranda',
   name: 'Chalana Boat Trip with Piranha Fishing',
   description: 'Navigation on a typical "chalana" boat along the Miranda River, with a stop for the traditional and fun piranha fishing. Ideal for watching aquatic birds.',
   mainImage: img,
@@ -46,7 +46,7 @@ export const chalanaPiranhaFishingEn: Tour = {
 // ES
 export const chalanaPiranhaFishingEs: Tour = {
   id: 'TOUR-FSF-CPF-01',
-  slug: 'pescaria-piranha',
+  slug: 'pescaria-piranha-em-miranda',
   name: 'Paseo en Chalana con Pesca de Pirañas',
   description: 'Navegación en barco típico "chalana" por el Río Miranda, con una parada para la tradicional y divertida pesca de pirañas. Ideal para la observación de aves acuáticas.',
   mainImage: img,

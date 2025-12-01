@@ -6,10 +6,11 @@ import { miranda } from '../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
 const img = `${TOURS_BUCKET_NAME}/safari-fluvial/img1.webp`
+
 // PT-BR
 export const fluvialSafariPt: Tour = {
   id: 'TOUR-FS-01',
-  slug: 'safari-fluvial',
+  slug: 'safari-fluvial-em-miranda',
   name: 'Safári Fluvial',
   description: 'Um passeio de barco durante o dia para explorar as margens do Rio Miranda, ideal para observar aves, jacarés e com sorte, lontras e ariranhas.',
   mainImage: img,
@@ -27,7 +28,7 @@ export const fluvialSafariPt: Tour = {
 // EN-US
 export const fluvialSafariEn: Tour = {
   id: 'TOUR-FS-01',
-  slug: 'safari-fluvial',
+  slug: 'safari-fluvial-em-miranda',
   name: 'Fluvial Safari',
   description: 'A daytime boat trip to explore the banks of the Miranda River, ideal for observing birds, caimans, and hopefully, otters and giant otters.',
   mainImage: img,
@@ -45,7 +46,7 @@ export const fluvialSafariEn: Tour = {
 // ES
 export const fluvialSafariEs: Tour = {
   id: 'TOUR-FS-01',
-  slug: 'safari-fluvial',
+  slug: 'safari-fluvial-em-miranda',
   name: 'Safari Fluvial',
   description: 'Un paseo en bote durante el día para explorar las orillas del Río Miranda, ideal para observar aves, caimanes y con suerte, nutrias y nutrias gigantes.',
   mainImage: img,

@@ -10,7 +10,7 @@ const img = `${TOURS_BUCKET_NAME}/safari-fotografico/img1.webp`
 // PT-BR
 export const ecologicalSafariPt: Tour = {
   id: 'TOUR-FSF-ES-01',
-  slug: 'safari-fotografico',
+  slug: 'safari-fotografico-em-miranda',
   name: 'Safári Fotográfico',
   description: 'Passeio diurno em carro aberto pelas áreas da fazenda, como campos, cerrados e matas, para observação da fauna e flora local. Uma ótima oportunidade para fotos.',
   mainImage: img,
@@ -28,7 +28,7 @@ export const ecologicalSafariPt: Tour = {
 // EN-US
 export const ecologicalSafariEn: Tour = {
   id: 'TOUR-FSF-ES-01',
-  slug: 'safari-fotografico',
+  slug: 'safari-fotografico-em-miranda',
   name: 'Photographic Safari',
   description: 'Daytime tour in an open car through the farm\'s areas, such as fields, savannas, and forests, to observe the local fauna and flora. A great opportunity for photos.',
   mainImage: img,
@@ -46,7 +46,7 @@ export const ecologicalSafariEn: Tour = {
 // ES
 export const ecologicalSafariEs: Tour = {
   id: 'TOUR-FSF-ES-01',
-  slug: 'safari-fotografico',
+  slug: 'safari-fotografico-em-miranda',
   name: 'Safari Fotográfico',
   description: 'Paseo diurno en coche abierto por las áreas de la hacienda, como campos, cerrados y bosques, para la observación de la fauna y flora local. Una gran oportunidad para fotos.',
   mainImage: img,

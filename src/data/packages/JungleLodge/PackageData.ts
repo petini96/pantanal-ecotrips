@@ -128,7 +128,7 @@ const img = `${PACKAGE_BUCKET_NAME}/jungle-lodge-otter/img1.webp`
 const uuidOtter = uid();
 export const jungleLodgeOtterPt: TourPackage = {
   id: uuidOtter,
-  slug: "jungle-lodge-otter",
+  slug: "jungle-lodge-lontra",
   image: img,
   title: "Jungle Lodge - Pacote Lontra",
   subtitle: "Uma escapada rápida de 2 dias para sentir a essência do Pantanal.",
@@ -146,7 +146,7 @@ export const jungleLodgeOtterPt: TourPackage = {
 };
 export const jungleLodgeOtterEn: TourPackage = {
   id: uuidOtter,
-  slug: "jungle-lodge-otter",
+  slug: "jungle-lodge-lontra",
   image: img,
   title: "Jungle Lodge - Otter Package",
   subtitle: "A quick 2-day getaway to feel the essence of the Pantanal.",
@@ -164,7 +164,7 @@ export const jungleLodgeOtterEn: TourPackage = {
 };
 export const jungleLodgeOtterEs: TourPackage = {
   id: uuidOtter,
-  slug: "jungle-lodge-otter",
+  slug: "jungle-lodge-lontra",
   image: img,
   title: "Jungle Lodge - Paquete Nutria",
   subtitle:

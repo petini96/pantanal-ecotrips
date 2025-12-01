@@ -9,7 +9,7 @@ const img = `${TOURS_BUCKET_NAME}/caminhada-ecologica/img1.webp`
 // PT-BR
 export const ecologicalWalkPt: Tour = {
   id: 'TOUR-EW-01',
-  slug: 'caminhada-ecologica',
+  slug: 'caminhada-ecologica-em-miranda',
   name: 'Caminhada Ecológica (Selva e Campos)',
   description: 'Uma trilha interpretativa a pé por diferentes ambientes do Pantanal, como capões de mata e campos abertos, aprendendo sobre a flora e pequenos animais.',
   mainImage: img,
@@ -27,7 +27,7 @@ export const ecologicalWalkPt: Tour = {
 // EN-US
 export const ecologicalWalkEn: Tour = {
   id: 'TOUR-EW-01',
-  slug: 'caminhada-ecologica',
+  slug: 'caminhada-ecologica-em-miranda',
   name: 'Ecological Walk (Jungle and Fields)',
   description: 'An interpretive walking trail through different Pantanal environments, such as forest patches and open fields, learning about the flora and small animals.',
   mainImage: img,
@@ -45,7 +45,7 @@ export const ecologicalWalkEn: Tour = {
 // ES
 export const ecologicalWalkEs: Tour = {
   id: 'TOUR-EW-01',
-  slug: 'caminhada-ecologica',
+  slug: 'caminhada-ecologica-em-miranda',
   name: 'Caminata Ecológica (Selva y Campos)',
   description: 'Un sendero interpretativo a pie por diferentes entornos del Pantanal, como zonas boscosas y campos abiertos, aprendiendo sobre la flora y pequeños animales.',
   mainImage: img,

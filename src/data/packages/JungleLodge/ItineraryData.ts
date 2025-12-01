@@ -171,7 +171,7 @@ export const jungleLodgeAnacondaPtItinerary: ItineraryItem[] = [
   {
     day: 3,
     title: "3º Dia: Caminhada e Atividades no Rio",
-    descriptionItems: ["Caminhada ecológica, canoagem e flutuação."],
+    descriptionItems: ["Caminhada ecológica, canoagem-em-miranda e flutuação."],
     tours: [ecologicalWalkPt, canoeingPt, riverFloatingPt],
     mealsIncluded: ["breakfast", "lunch", "dinner"],
   },

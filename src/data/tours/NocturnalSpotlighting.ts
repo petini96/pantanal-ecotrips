@@ -9,7 +9,7 @@ const img = `${TOURS_BUCKET_NAME}/focagem-notura-animais/img1.webp`
 // PT-BR
 export const nocturnalSpotlightingPt: Tour = {
   id: 'TOUR-FSF-NS-01',
-  slug: 'focagem-notura-animais',
+  slug: 'focagem-notura-animais-em-miranda',
   name: 'Focagem Noturna de Animais Silvestres',
   description: 'Safári em veículo aberto após o jantar para observar animais de hábitos noturnos. Com o auxílio de uma potente lanterna, é possível avistar jacarés, corujas, capivaras e até onças.',
   mainImage: img,
@@ -27,7 +27,7 @@ export const nocturnalSpotlightingPt: Tour = {
 // EN-US
 export const nocturnalSpotlightingEn: Tour = {
   id: 'TOUR-FSF-NS-01',
-  slug: 'focagem-notura-animais',
+  slug: 'focagem-notura-animais-em-miranda',
   name: 'Nocturnal Wildlife Spotlighting',
   description: 'An open vehicle safari after dinner to observe nocturnal animals. With the help of a powerful spotlight, it is possible to see caimans, owls, capybaras, and even jaguars.',
   mainImage: img,
@@ -45,7 +45,7 @@ export const nocturnalSpotlightingEn: Tour = {
 // ES
 export const nocturnalSpotlightingEs: Tour = {
   id: 'TOUR-FSF-NS-01',
-  slug: 'focagem-notura-animais',
+  slug: 'focagem-notura-animais-em-miranda',
   name: 'Enfoque Nocturno de Animales Silvestres',
   description: 'Un safari en vehículo abierto después de la cena para observar animales de hábitos nocturnos. Con la ayuda de una potente linterna, es posible avistar caimanes, búhos, capibaras e incluso jaguares.',
   mainImage: img,

@@ -13,7 +13,7 @@ const img = `${TOURS_BUCKET_NAME}/boca-onca/img3.webp`
 // PT-BR
 export const bocaDaOncaPt: Tour = {
   id: 'TOUR-BDO-01',
-  slug: 'boca-da-onca',
+  slug: 'boca-da-onca-em-bonito',
   name: 'Boca da Onça Ecotour',
   description: 'Caminhada por trilha de 4km passando por 11 cachoeiras, incluindo a Cachoeira Boca da Onça, a mais alta do MS com 156m. Vários pontos de banho e vista para o Canyon do Rio Salobra.',
   mainImage: img,
@@ -31,7 +31,7 @@ export const bocaDaOncaPt: Tour = {
 // EN-US
 export const bocaDaOncaEn: Tour = {
   id: 'TOUR-BDO-01',
-  slug: 'boca-da-onca',
+  slug: 'boca-da-onca-em-bonito',
   name: 'Boca da Onça Ecotour',
   description: 'A 4km trail walk passing by 11 waterfalls, including Boca da Onça Waterfall, the highest in the state at 156m. Various swimming spots and a view of the Salobra River Canyon.',
   mainImage: img,
@@ -49,7 +49,7 @@ export const bocaDaOncaEn: Tour = {
 // ES
 export const bocaDaOncaEs: Tour = {
   id: 'TOUR-BDO-01',
-  slug: 'boca-da-onca',
+  slug: 'boca-da-onca-em-bonito',
   name: 'Boca da Onça Ecotour',
   description: 'Caminata por un sendero de 4km que pasa por 11 cascadas, incluida la Cascada Boca da Onça, la más alta del estado con 156m. Varios puntos para bañarse y vistas al Cañón del Río Salobra.',
   mainImage: img,

@@ -11,7 +11,7 @@ const img = `${TOURS_BUCKET_NAME}/estancia-mimosa/img1.webp`
 
 export const estanciaMimosaPt: Tour = {
   id: 'TOUR-EM-01',
-  slug: 'estancia-mimosa',
+  slug: 'estancia-mimosa-em-bonito',
   name: 'Estância Mimosa',
   description: 'Trilha na mata ciliar do rio Mimoso com paradas para banho em cachoeiras, piscinas naturais, plataforma para salto e um passeio de barco a remo.',
   mainImage: img,
@@ -28,7 +28,7 @@ export const estanciaMimosaPt: Tour = {
 
 export const estanciaMimosaEn: Tour = {
   id: 'TOUR-EM-01',
-  slug: 'estancia-mimosa',
+  slug: 'estancia-mimosa-em-bonito',
   name: 'Estância Mimosa',
   description: 'Trail in the riparian forest of the Mimoso River with stops for swimming in waterfalls, natural pools, a diving platform, and a rowboat ride.',
   mainImage: img,
@@ -45,7 +45,7 @@ export const estanciaMimosaEn: Tour = {
 
 export const estanciaMimosaEs: Tour = {
   id: 'TOUR-EM-01',
-  slug: 'estancia-mimosa',
+  slug: 'estancia-mimosa-em-bonito',
   name: 'Estancia Mimosa',
   description: 'Sendero en el bosque de ribera del río Mimoso con paradas para bañarse en cascadas, piscinas naturales, una plataforma de salto y un paseo en bote de remos.',
   mainImage: img,

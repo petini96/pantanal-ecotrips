@@ -9,7 +9,7 @@ const img = `${TOURS_BUCKET_NAME}/canoagem-miranda/img1.jpg`
 // PT-BR
 export const canoeingPt: Tour = {
   id: 'TOUR-CN-01',
-  slug: 'canoagem',
+  slug: 'canoagem-em-miranda',
   name: 'Canoagem',
   description: 'Passeio em canoas canadenses para duas pessoas, remando silenciosamente pelas águas e aproximando-se da vida selvagem sem perturbações.',
   mainImage: img,
@@ -27,7 +27,7 @@ export const canoeingPt: Tour = {
 // EN-US
 export const canoeingEn: Tour = {
   id: 'TOUR-CN-01',
-  slug: 'canoagem',
+  slug: 'canoagem-em-miranda',
   name: 'Canoeing',
   description: 'A trip in two-person Canadian canoes, paddling silently through the waters and getting close to wildlife without disturbance.',
   mainImage: img,
@@ -45,7 +45,7 @@ export const canoeingEn: Tour = {
 // ES
 export const canoeingEs: Tour = {
   id: 'TOUR-CN-01',
-  slug: 'canoagem',
+  slug: 'canoagem-em-miranda',
   name: 'Canotaje',
   description: 'Paseo en canoas canadienses para dos personas, remando silenciosamente por las aguas y acercándose a la vida silvestre sin perturbaciones.',
   mainImage: img,
