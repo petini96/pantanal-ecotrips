@@ -8,11 +8,11 @@ map $request_uri $new_uri {
     /bonito-04                                          /pt/;
     
     # Âncoras agora na Home em PT
-    /contact                                            /pt/#contato;
-    /contato                                            /pt/#contato;
-    /quem-somos                                         /pt/#quem-somos;
-    /depoimentos                                        /pt/#depoimentos;
-    /comente-aqui-sua-experiencia-conosco               /pt/#depoimentos;
+    /contact                                            /pt/#contact-section;
+    /contato                                            /pt/#contact-section;
+    /quem-somos                                         /pt/#credibility-section;
+    /depoimentos                                        /pt/#testimonials-section;
+    /comente-aqui-sua-experiencia-conosco               /pt/#testimonials-section;
     
     # Redirecionar blogs/notícias antigos para Home PT
     /noticias                                           /pt/;

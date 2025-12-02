@@ -74,6 +74,14 @@
     <section id="credibility-section" v-intersection.once="() => (loadCredibility = true)" class="section-wrapper">
       <CredibilitySection v-if="loadCredibility" />
     </section>
+    
+    <section id="testimonials-section" v-intersection.once="() => (loadTestimonials = true)" class="section-wrapper">
+      <TestimonialsSection v-if="loadTestimonials" />
+    </section>
+
+    <section id="contact-section" v-intersection.once="() => (loadContact = true)" class="section-wrapper">
+      <ContactSection v-if="loadContact" />
+    </section>
   </q-page>
 </template>
 
@@ -102,6 +110,8 @@ const loadNewsLetter = ref(false);
 const loadAboutUs = ref(false);
 const loadFac = ref(false);
 const loadCredibility = ref(false);
+const loadContact = ref(false);
+const loadTestimonials = ref(false);
 // Ref para o lazy-load do novo componente CTA
 const loadCtaAllTours = ref(false);
 
@@ -144,6 +154,14 @@ const MediaGallery = defineAsyncComponent(
 // Definição do novo componente CTA assíncrono
 const CtaAllToursSection = defineAsyncComponent(
   () => import('src/components/sections/home/CtaAllToursSection.vue')
+);
+
+const TestimonialsSection = defineAsyncComponent(
+  () => import('src/components/sections/home/TestimonialsSection.vue')
+);
+
+const ContactSection = defineAsyncComponent(
+  () => import('src/components/sections/home/ContactSection.vue')
 );
 
 // --- Lógica de i18n, Rota e Store ---
