@@ -6,6 +6,7 @@ import {
   createWebHistory,
 } from 'vue-router';
 import routes from './routes';
+import { useAuthStore } from 'src/stores/auth-store';
 
 export default defineRouter(function (/* { store, ssrContext } */) {
   const createHistory = process.env.SERVER
@@ -17,6 +18,26 @@ export default defineRouter(function (/* { store, ssrContext } */) {
     routes,
     history: createHistory(process.env.VUE_ROUTER_BASE),
   });
+
+  Router.beforeEach((to, from, next) => {
+  const authStore = useAuthStore();
+  
+  // Verifica se a rota precisa de auth
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (!authStore.isAuthenticated) {
+      next({ name: 'login' });
+    } else {
+      next();
+    }
+  } else {
+    // Se o usuário já está logado e tenta ir pro login, manda pro dashboard
+    if (to.name === 'login' && authStore.isAuthenticated) {
+      next({ name: 'dashboard' });
+    } else {
+      next();
+    }
+  }
+});
 
   return Router;
 });

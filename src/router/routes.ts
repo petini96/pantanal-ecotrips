@@ -33,6 +33,35 @@ const routes: RouteRecordRaw[] = [
     ],
   },
   {
+    path: '/auth',
+    component: () => import('layouts/AuthLayout.vue'),
+    children: [
+      // ADICIONE ESTA LINHA: Redireciona /auth -> /auth/login
+      { path: '', redirect: { name: 'login' } }, 
+      
+      { 
+        path: 'login', 
+        name: 'login', 
+        component: () => import('pages/auth/LoginPage.vue') 
+      }
+    ]
+  },
+
+  // --- NOVA ÁREA: ADMIN DASHBOARD (Protegida + NO-SEO) ---
+  {
+    path: '/admin',
+    component: () => import('layouts/AdminLayout.vue'),
+    meta: { requiresAuth: true }, // Meta tag para o Guard
+    children: [
+      { 
+        path: '', 
+        name: 'dashboard', 
+        component: () => import('pages/admin/DashboardPage.vue') 
+      },
+      // Outras rotas administrativas aqui...
+    ]
+  },
+  {
     path: "/:catchAll(.*)*",
     component: () => import("pages/ErrorNotFound.vue"),
   },

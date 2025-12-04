@@ -15,9 +15,9 @@ import iconSet from 'quasar/icon-set/material-icons.js'
 
 
 
-import {Meta,Notify,Cookies} from 'quasar'
+import {Meta,Loading,Notify,Cookies} from 'quasar'
 
 
 
-export default { config: {},iconSet,plugins: {Meta,Notify,Cookies} }
+export default { config: {},iconSet,plugins: {Meta,Loading,Notify,Cookies} }
 

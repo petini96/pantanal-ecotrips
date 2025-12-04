@@ -86,6 +86,8 @@ const { components, directives, ...qUserOptions } = quasarUserOptions
 let bootFunctions = null
 let bootPromise = Promise.allSettled([
   
+  import('boot/axios'),
+  
   import('boot/i18n'),
   
   import('boot/google-analytics'),

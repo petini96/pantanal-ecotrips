@@ -157,6 +157,8 @@ createQuasarApp(createSSRApp, quasarUserOptions)
 
     return Promise[ method ]([
       
+      import('boot/axios'),
+      
       import('boot/i18n'),
       
       import('boot/google-analytics'),
