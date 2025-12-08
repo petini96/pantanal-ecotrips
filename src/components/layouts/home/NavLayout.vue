@@ -7,7 +7,33 @@
 
     <div class="nav-section center gt-sm">
       <template v-for="link in navLinks" :key="link.label">
+        
+        <q-btn-dropdown
+          v-if="link.children"
+          flat
+          rounded
+          no-caps
+          class="nav-link-btn"
+          :label="link.label"
+          content-class="bg-white text-primary" 
+        >
+          <q-list>
+            <q-item 
+              v-for="child in link.children" 
+              :key="child.label" 
+              clickable 
+              v-close-popup 
+              @click="handleNavClick($event, child)"
+            >
+              <q-item-section>
+                <q-item-label>{{ child.label }}</q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
+
         <q-btn
+          v-else
           flat
           rounded
           no-caps
@@ -19,6 +45,7 @@
         >
           {{ link.label }}
         </q-btn>
+
       </template>
 
       <q-btn flat dense round
@@ -37,20 +64,43 @@
       <q-btn flat round dense icon="menu" color="white" class="lt-md q-ml-sm" aria-label="Abrir Menu">
         <q-menu fit anchor="bottom right" self="top right" class="mobile-menu-dropdown">
           <q-list style="min-width: 200px">
-            <q-item 
-              v-for="link in navLinks" 
-              :key="link.label" 
-              clickable 
-              v-close-popup
-              :href="getLinkUrl(link)"
-              :target="link.external ? '_blank' : '_self'"
-              @click="handleNavClick($event, link)"
-            >
-              <q-item-section>{{ link.label }}</q-item-section>
-              <q-item-section avatar v-if="link.external">
-                <q-icon name="open_in_new" size="xs" />
-              </q-item-section>
-            </q-item>
+            
+            <template v-for="link in navLinks" :key="link.label">
+              
+              <q-expansion-item
+                v-if="link.children"
+                expand-separator
+                :label="link.label"
+                group="nav-group"
+              >
+                <q-item 
+                  v-for="child in link.children"
+                  :key="child.label"
+                  clickable 
+                  v-close-popup
+                  @click="handleNavClick($event, child)"
+                  class="q-pl-lg"
+                >
+                   <q-item-section>{{ child.label }}</q-item-section>
+                </q-item>
+              </q-expansion-item>
+
+              <q-item 
+                v-else
+                clickable 
+                v-close-popup
+                :href="getLinkUrl(link)"
+                :target="link.external ? '_blank' : '_self'"
+                @click="handleNavClick($event, link)"
+              >
+                <q-item-section>{{ link.label }}</q-item-section>
+                <q-item-section avatar v-if="link.external">
+                  <q-icon name="open_in_new" size="xs" />
+                </q-item-section>
+              </q-item>
+
+            </template>
+
           </q-list>
         </q-menu>
       </q-btn>
@@ -63,7 +113,7 @@ import { scroll } from 'quasar';
 import PageControls from 'src/components/controls/PageControls.vue';
 import LogoLink from 'src/components/logo/LogoLink.vue';
 import { useRouter, useRoute } from 'vue-router';
-import { computed } from 'vue'; // Garanta que computed está importado
+import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n(); 
@@ -78,11 +128,23 @@ interface NavLink {
   routeName?: string;
   external?: boolean;
   ariaLabel?: string;
+  children?: NavLink[]; // Adicionado suporte para filhos
 }
 
-// CORREÇÃO AQUI: Transforme navLinks em computed
 const navLinks = computed<NavLink[]>(() => [
-  { label: t("tours"), routeName: 'allTours' },
+  { 
+    label: t('destinations'), 
+    children: [
+      { 
+        label: 'Bonito',
+        routeName: 'bonito-home', 
+      },
+      { 
+        label: 'Pantanal',
+        routeName: 'pantanal-home', 
+      }
+    ]
+  },
   { label: t("packages"), url: '#packages-section' },
   { label: t("gallery"), url: '#mosaic-gallery-section' },
   { label: t("questions"), url: '#faq-section' },
@@ -91,9 +153,7 @@ const navLinks = computed<NavLink[]>(() => [
 
 const currentLang = computed(() => (route.params.lang as string) || 'pt');
 
-// O resto do código permanece igual...
 const getLinkUrl = (link: NavLink): string => {
-  // ... lógica existente
   if (link.external && link.url) return link.url;
   
   if (link.routeName) {
@@ -113,17 +173,16 @@ const getLinkUrl = (link: NavLink): string => {
 };
 
 const handleNavClick = async (ev: Event, link: NavLink) => {
-  // ... lógica existente
+  if (link.children) return; // Se for pai de dropdown, não faz nada aqui
+
   if (link.external) return;
 
   ev.preventDefault();
   
   if (link.routeName) {
-
     if (route.name === link.routeName) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      
       await router.push({ 
         name: link.routeName, 
         params: { lang: currentLang.value } 

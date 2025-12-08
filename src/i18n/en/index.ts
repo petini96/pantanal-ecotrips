@@ -94,7 +94,7 @@ export default {
   select_region_first: "Select the region first",
   no_packages_found_title: "No packages found",
   no_packages_found_subtitle: "We couldn't find any results for your search. Try different keywords or check your spelling.",
-  photo: "Photo",
+  photo: "Photos",
   videos: "Medias",
   our_gallery_title: "Our Gallery",
   our_gallery_subtitle: "Explore the beauty of the Pantanal through our exclusive photos and videos.",
@@ -104,5 +104,6 @@ export default {
   questions: "Questions",
   contact: "Contact us",
   our_mission_title: "Ecotourism Experts",
-  our_mission_subtitle: "Pantanal EcoTrips specializes in ecotourism in the Pantanal and Bonito regions, offering exclusive itineraries and high-quality services."
+  our_mission_subtitle: "Pantanal EcoTrips specializes in ecotourism in the Pantanal and Bonito regions, offering exclusive itineraries and high-quality services.",
+  destinations: "Destinations"
 };

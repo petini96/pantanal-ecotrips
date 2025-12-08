@@ -94,7 +94,7 @@ export default {
   select_region_first: "Seleccione la región primero",
   no_packages_found_title: "No se encontraron paquetes",
   no_packages_found_subtitle: "No encontramos resultados para tu búsqueda. Intenta con otras palabras clave o verifica la ortografía.",
-  photo: "Foto",
+  photo: "Fotos",
   videos: "Videos",
   our_gallery_title: "Nuestra Galería",
   our_gallery_subtitle: "Explora la belleza del Pantanal a través de nuestras fotos y videos exclusivos.",
@@ -104,6 +104,6 @@ export default {
   questions: "Preguntas",
   contact: "Contacto",
   our_mission_title: "Expertos en ecoturismo",
-  our_mission_subtitle: "Pantanal EcoTrips se especializa en ecoturismo en las regiones de Pantanal y Bonito, ofreciendo itinerarios exclusivos y servicios de alta calidad."
-  
+  our_mission_subtitle: "Pantanal EcoTrips se especializa en ecoturismo en las regiones de Pantanal y Bonito, ofreciendo itinerarios exclusivos y servicios de alta calidad.",
+  destinations: "Destinos"
 };
