@@ -63,6 +63,7 @@
             icon="mdi-whatsapp"
             style="--animation-delay: 1.0s;"
             aria-label="Entre em contato pelo WhatsApp"
+            @click="trackWhatsappClick"
           />
         </div>
       </div>
@@ -77,8 +78,10 @@ import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 import imgDay from 'src/assets/images/packages/joungle-lodge-package.webp';
 import imgNight from 'src/assets/images/packages/joungle-lodge-package-dark.webp';
+import { useAnalytics } from 'src/components/composables/useAnalytics';
 
-const { t } = useI18n();
+const { t } = useI18n(); // Internacionalização preservada
+const { trackEvent } = useAnalytics(); // Hook de rastreamento
 
 const isVisible = ref(false);
 
@@ -94,7 +97,21 @@ const backgroundImage = computed(() => {
 const onIntersection = (entry: IntersectionObserverEntry) => {
   if (entry.isIntersecting) {
     isVisible.value = true;
+
+    // RASTREAMENTO 1: Visualização da Seção
+    trackEvent('view_section', {
+      section_name: 'About Us (Parallax)',
+      section_content: 'Missão, Experiência, Sustentabilidade'
+    });
   }
+};
+
+// RASTREAMENTO 2: Clique no WhatsApp
+const trackWhatsappClick = () => {
+  trackEvent('click_whatsapp', {
+    local_clique: 'secao_sobre_nos_parallax',
+    tipo_botao: 'cta_institucional'
+  });
 };
 
 const viewportHeight = ref(0);
@@ -117,6 +134,7 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss" scoped>
+/* Estilos originais mantidos integralmente */
 @keyframes fadeInUp {
   from {
     opacity: 0;

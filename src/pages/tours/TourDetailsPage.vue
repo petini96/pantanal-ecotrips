@@ -121,7 +121,9 @@
 
       <div class="text-center q-mt-xl">
         <q-btn color="secondary" size="lg" :label="t('tour_details_cta_button')" icon="mdi-whatsapp"
-          :href="`https://wa.me/556791452985?text=${encodedWhatsAppMessage}`" target="_blank" />
+          :href="`https://wa.me/556791452985?text=${encodedWhatsAppMessage}`" target="_blank" 
+          @click="trackPackageBookingClick"
+        />
       </div>
     </div>
   </q-page>
@@ -146,29 +148,32 @@ import { useTourPackageStore } from 'src/stores/useTourPackageStore';
 import SimpleBannerDetails from 'src/components/banner/SimpleBannerDetails.vue';
 import AboutTourSection from 'src/components/tour/AboutTourSection.vue';
 import TourItinerarySection from 'src/components/tour/TourItinerarySection.vue';
+import { useAnalytics } from 'src/components/composables/useAnalytics';
 
 const route = useRoute();
 const { t, locale } = useI18n();
+const { trackEvent } = useAnalytics();
 
 const layoutConfigStore = useLayoutConfigStore();
 const { theme: currentTheme } = storeToRefs(layoutConfigStore);
 
 const packageStore = useTourPackageStore();
-// ATUALIZADO: Usando o getter correto 'getPackageBySlug'
 const { getPackageBySlug, loading } = storeToRefs(packageStore);
 
-// ATUALIZADO: Lendo o parâmetro 'slug' da rota, em vez de 'id'
 const packageSlug = computed(() => route.params.slug as string);
 
-// ATUALIZADO: A variável principal 'pkg' agora busca pelo slug
 const pkg = computed(() => getPackageBySlug.value(packageSlug.value));
 
 const langMap: Record<string, string> = { pt: 'pt', en: 'en', es: 'es' };
 
-onMounted(async () => {
+const fetchData = async () => {
   const lang = langMap[route.params.lang as string] || 'pt';
   locale.value = lang;
   await packageStore.fetchPackages(lang);
+};
+
+onMounted(async () => {
+  await fetchData();
 });
 
 watch(() => route.params.lang, async (newLang) => {
@@ -177,6 +182,32 @@ watch(() => route.params.lang, async (newLang) => {
   locale.value = lang;
   await packageStore.fetchPackages(lang);
 });
+
+watch(pkg, (newPkg) => {
+  if (newPkg) {
+    trackEvent('view_item', {
+      currency: 'BRL',
+      value: 0, 
+      items: [{
+        item_id: newPkg.slug,
+        item_name: newPkg.title,
+        item_category: 'Pacote',
+        quantity: 1
+      }]
+    });
+  }
+}, { immediate: true });
+
+const trackPackageBookingClick = () => {
+  if (!pkg.value) return;
+
+  trackEvent('click_whatsapp', {
+    local_clique: 'pagina_detalhe_pacote',
+    package_name: pkg.value.title,
+    package_duration: `${pkg.value.durationInDays}D/${pkg.value.durationInNights}N`,
+    min_people: pkg.value.minPeople || 1
+  });
+};
 
 const encodedWhatsAppMessage = computed(() => {
   const title = pkg.value?.title ?? 'este pacote';
@@ -196,7 +227,6 @@ useMeta(() => {
       description: { name: 'description', content: pkg.value.subtitle },
     },
     link: {
-      // ATUALIZADO: Usando o slug na URL canônica para SEO
       canonical: { rel: 'canonical', href: `${baseUrl}/${currentLang}/tours/${pkg.value.slug}` },
     },
   };
@@ -204,6 +234,7 @@ useMeta(() => {
 </script>
 
 <style scoped lang="scss">
+/* Seus estilos originais permanecem inalterados */
 .tour-details-page {
   background-color: #f8f9fa;
 }
