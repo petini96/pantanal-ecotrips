@@ -235,7 +235,7 @@ import HorizontalGradientMask from 'src/components/mask/HorizontalGradientMask.v
 // --- Interfaces ---
 interface RegionsModule {
   bonitoSerraBodoquenaPt: Region;
-  pantanalPt: Region;
+  pantanalSulPt: Region;
 }
 interface AudiencesModule { allAudiencesPt: TranslatableTag[]; }
 interface CategoriesModule { allCategoriesPt: TranslatableTag[]; }
@@ -279,8 +279,8 @@ async function loadFilterData() {
       import('src/data/categories/all') as Promise<CategoriesModule>,
     ]);
 
-    if (regionsModule.bonitoSerraBodoquenaPt && regionsModule.pantanalPt) {
-       regionOptions.value = [regionsModule.bonitoSerraBodoquenaPt, regionsModule.pantanalPt];
+    if (regionsModule.bonitoSerraBodoquenaPt && regionsModule.pantanalSulPt) {
+       regionOptions.value = [regionsModule.bonitoSerraBodoquenaPt, regionsModule.pantanalSulPt];
     }
     if (audiencesModule.allAudiencesPt) audienceOptions.value = audiencesModule.allAudiencesPt;
     if (categoriesModule.allCategoriesPt) categoryOptions.value = categoriesModule.allCategoriesPt;

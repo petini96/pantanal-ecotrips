@@ -79,7 +79,7 @@ import { useI18n } from 'vue-i18n';
 // 1. IMPORTAR OS MODELOS E DADOS REAIS
 import type { Tour } from 'src/model/Tour';
 import type { Region } from 'src/model/Region';
-import { bonitoSerraBodoquenaPt, pantanalPt } from 'src/data/regions/Regions';
+import { bonitoSerraBodoquenaPt, pantanalSulPt } from 'src/data/regions/Regions';
 import { bocaDaOncaPt } from 'src/data/tours/BocaDaOnca';
 // Simulação de outros passeios para o exemplo funcionar
 import { estanciaMimosaPt } from 'src/data/tours/EstanciaMimosa';
@@ -89,7 +89,7 @@ import { buracoDasArarasPt } from 'src/data/tours/BuracoDasAraras';
 const { t } = useI18n();
 
 // 2. LÓGICA PARA ENCONTRAR A REGIÃO A PARTIR DA CIDADE (A PARTE CENTRAL DA SOLUÇÃO)
-const allRegions: Region[] = [bonitoSerraBodoquenaPt, pantanalPt];
+const allRegions: Region[] = [bonitoSerraBodoquenaPt, pantanalSulPt];
 
 const getRegionFromTour = (tour: Tour): Region | null => {
   const cityId = tour.city.id;

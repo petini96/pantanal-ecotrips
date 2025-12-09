@@ -32,7 +32,7 @@ import {
 } from "src/data/audiences/Families";
 import { couplesPt, couplesEn, couplesEs } from "src/data/audiences/Couples";
 import { groupsPt, groupsEn, groupsEs } from "src/data/audiences/Groups";
-import { pantanalPt, pantanalEn, pantanalEs } from "src/data/regions/Regions";
+import { pantanalSulPt, pantanalSulEn, pantanalSulEs } from "src/data/regions/Regions";
 import { PACKAGE_BUCKET_NAME } from "src/utils/environmentUtils";
 
 // --- COMMON DATA (PT-BR) ---
@@ -134,7 +134,7 @@ export const fazendaCoatiPt: TourPackage = {
   observation: commonObservationPt,
   packageCategories: [ecotourismPt, aquaticPt],
   packageRecommendedFor: [couplesPt, familiesPt],
-  region: pantanalPt,
+  region: pantanalSulPt,
 };
 export const fazendaCoatiEn: TourPackage = {
   id: uuidCoati,
@@ -152,7 +152,7 @@ export const fazendaCoatiEn: TourPackage = {
   observation: commonObservationEn,
   packageCategories: [ecotourismEn, aquaticEn],
   packageRecommendedFor: [couplesEn, familiesEn],
-  region: pantanalEn,
+  region: pantanalSulEn,
 };
 export const fazendaCoatiEs: TourPackage = {
   id: uuidCoati,
@@ -171,7 +171,7 @@ export const fazendaCoatiEs: TourPackage = {
   observation: commonObservationEs,
   packageCategories: [ecotourismEs, aquaticEs],
   packageRecommendedFor: [couplesEs, familiesEs],
-  region: pantanalEs,
+  region: pantanalSulEs,
 };
 
 // --- FAZENDA ARARINHA PACKAGE (3D/2N) ---
@@ -192,7 +192,7 @@ export const fazendaArarinhaPt: TourPackage = {
   observation: commonObservationPt,
   packageCategories: [ecotourismPt, aquaticPt],
   packageRecommendedFor: [couplesPt, familiesPt, groupsPt],
-  region: pantanalPt,
+  region: pantanalSulPt,
 };
 export const fazendaArarinhaEn: TourPackage = {
   id: uuidArarinha,
@@ -211,7 +211,7 @@ export const fazendaArarinhaEn: TourPackage = {
   observation: commonObservationEn,
   packageCategories: [ecotourismEn, aquaticEn],
   packageRecommendedFor: [couplesEn, familiesEn, groupsEn],
-  region: pantanalEn,
+  region: pantanalSulEn,
 };
 export const fazendaArarinhaEs: TourPackage = {
   id: uuidArarinha,
@@ -230,7 +230,7 @@ export const fazendaArarinhaEs: TourPackage = {
   observation: commonObservationEs,
   packageCategories: [ecotourismEs, aquaticEs],
   packageRecommendedFor: [couplesEs, familiesEs, groupsEs],
-  region: pantanalEs,
+  region: pantanalSulEs,
 };
 
 // --- FAZENDA ANTA PACKAGE (4D/3N) ---
@@ -252,7 +252,7 @@ export const fazendaAntaPt: TourPackage = {
   observation: commonObservationPt,
   packageCategories: [ecotourismPt, adventurePt],
   packageRecommendedFor: [couplesPt, groupsPt],
-  region: pantanalPt,
+  region: pantanalSulPt,
 };
 export const fazendaAntaEn: TourPackage = {
   id: uuidAnta,
@@ -271,7 +271,7 @@ export const fazendaAntaEn: TourPackage = {
   observation: commonObservationEn,
   packageCategories: [ecotourismEn, adventureEn],
   packageRecommendedFor: [couplesEn, groupsEn],
-  region: pantanalEn,
+  region: pantanalSulEn,
 };
 export const fazendaAntaEs: TourPackage = {
   id: uuidAnta,
@@ -290,7 +290,7 @@ export const fazendaAntaEs: TourPackage = {
   observation: commonObservationEs,
   packageCategories: [ecotourismEs, adventureEs],
   packageRecommendedFor: [couplesEs, groupsEs],
-  region: pantanalEs,
+  region: pantanalSulEs,
 };
 
 // --- FAZENDA ÁGUIA PACKAGE (5D/4N) ---
@@ -312,7 +312,7 @@ export const fazendaAguiaPt: TourPackage = {
   observation: commonObservationPt,
   packageCategories: [ecotourismPt, adventurePt, aquaticPt],
   packageRecommendedFor: [couplesPt, familiesPt, groupsPt],
-  region: pantanalPt,
+  region: pantanalSulPt,
 };
 export const fazendaAguiaEn: TourPackage = {
   id: uuidAguia,
@@ -331,7 +331,7 @@ export const fazendaAguiaEn: TourPackage = {
   observation: commonObservationEn,
   packageCategories: [ecotourismEn, adventureEn, aquaticEn],
   packageRecommendedFor: [couplesEn, familiesEn, groupsEn],
-  region: pantanalEn,
+  region: pantanalSulEn,
 };
 export const fazendaAguiaEs: TourPackage = {
   id: uuidAguia,
@@ -350,5 +350,5 @@ export const fazendaAguiaEs: TourPackage = {
   observation: commonObservationEs,
   packageCategories: [ecotourismEs, adventureEs, aquaticEs],
   packageRecommendedFor: [couplesEs, familiesEs, groupsEs],
-  region: pantanalEs,
+  region: pantanalSulEs,
 };

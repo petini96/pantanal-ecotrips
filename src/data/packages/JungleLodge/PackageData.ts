@@ -32,7 +32,7 @@ import {
 } from "../../../data/audiences/Families";
 import { couplesPt, couplesEn, couplesEs } from "../../../data/audiences/Couples";
 import { groupsPt, groupsEn, groupsEs } from "../../../data/audiences/Groups";
-import { pantanalPt, pantanalEn, pantanalEs } from "src/data/regions/Regions";
+import { pantanalSulPt, pantanalSulEn, pantanalSulEs } from "src/data/regions/Regions";
 import { PACKAGE_BUCKET_NAME } from "src/utils/environmentUtils";
 
 // --- COMMON DATA (PT-BR) ---
@@ -142,7 +142,7 @@ export const jungleLodgeOtterPt: TourPackage = {
   observation: commonObservationPt,
   packageCategories: [ecotourismPt, aquaticPt],
   packageRecommendedFor: [couplesPt, familiesPt, groupsPt],
-  region: pantanalPt,
+  region: pantanalSulPt,
 };
 export const jungleLodgeOtterEn: TourPackage = {
   id: uuidOtter,
@@ -160,7 +160,7 @@ export const jungleLodgeOtterEn: TourPackage = {
   observation: commonObservationEn,
   packageCategories: [ecotourismEn, aquaticEn],
   packageRecommendedFor: [couplesEn, familiesEn, groupsEn],
-  region: pantanalEn,
+  region: pantanalSulEn,
 };
 export const jungleLodgeOtterEs: TourPackage = {
   id: uuidOtter,
@@ -179,7 +179,7 @@ export const jungleLodgeOtterEs: TourPackage = {
   observation: commonObservationEs,
   packageCategories: [ecotourismEs, aquaticEs],
   packageRecommendedFor: [couplesEs, familiesEs, groupsEs],
-  region: pantanalEs,
+  region: pantanalSulEs,
 };
 
 // --- SPECTACLED CAIMAN PACKAGE (3D/2N) ---
@@ -200,7 +200,7 @@ export const jungleLodgeCaimanPt: TourPackage = {
   observation: commonObservationPt,
   packageCategories: [ecotourismPt, aquaticPt, adventurePt],
   packageRecommendedFor: [couplesPt, familiesPt, groupsPt],
-  region: pantanalPt,
+  region: pantanalSulPt,
 };
 export const jungleLodgeCaimanEn: TourPackage = {
   id: uuidCaiman,
@@ -218,7 +218,7 @@ export const jungleLodgeCaimanEn: TourPackage = {
   observation: commonObservationEn,
   packageCategories: [ecotourismEn, aquaticEn, adventureEn],
   packageRecommendedFor: [couplesEn, familiesEn, groupsEn],
-  region: pantanalEn,
+  region: pantanalSulEn,
 };
 export const jungleLodgeCaimanEs: TourPackage = {
   id: uuidCaiman,
@@ -236,7 +236,7 @@ export const jungleLodgeCaimanEs: TourPackage = {
   observation: commonObservationEs,
   packageCategories: [ecotourismEs, aquaticEs, adventureEs],
   packageRecommendedFor: [couplesEs, familiesEs, groupsEs],
-  region: pantanalEs,
+  region: pantanalSulEs,
 };
 
 // --- ANACONDA PACKAGE (4D/3N) ---
@@ -258,7 +258,7 @@ export const jungleLodgeAnacondaPt: TourPackage = {
   observation: commonObservationPt,
   packageCategories: [ecotourismPt, aquaticPt, adventurePt],
   packageRecommendedFor: [couplesPt, familiesPt, groupsPt],
-  region: pantanalPt,
+  region: pantanalSulPt,
 };
 export const jungleLodgeAnacondaEn: TourPackage = {
   id: uuidAnaconda,
@@ -277,7 +277,7 @@ export const jungleLodgeAnacondaEn: TourPackage = {
   observation: commonObservationEn,
   packageCategories: [ecotourismEn, aquaticEn, adventureEn],
   packageRecommendedFor: [couplesEn, familiesEn, groupsEn],
-  region: pantanalEn,
+  region: pantanalSulEn,
 };
 export const jungleLodgeAnacondaEs: TourPackage = {
   id: uuidAnaconda,
@@ -296,7 +296,7 @@ export const jungleLodgeAnacondaEs: TourPackage = {
   observation: commonObservationEs,
   packageCategories: [ecotourismEs, aquaticEs, adventureEs],
   packageRecommendedFor: [couplesEs, familiesEs, groupsEs],
-  region: pantanalEs,
+  region: pantanalSulEs,
 };
 
 // --- EAGLE PACKAGE (5D/4N) ---
@@ -318,7 +318,7 @@ export const jungleLodgeEaglePt: TourPackage = {
   observation: commonObservationPt,
   packageCategories: [ecotourismPt, aquaticPt, adventurePt],
   packageRecommendedFor: [groupsPt, couplesPt],
-  region: pantanalPt,
+  region: pantanalSulPt,
 };
 export const jungleLodgeEagleEn: TourPackage = {
   id: uuidEagle,
@@ -337,7 +337,7 @@ export const jungleLodgeEagleEn: TourPackage = {
   observation: commonObservationEn,
   packageCategories: [ecotourismEn, aquaticEn, adventureEn],
   packageRecommendedFor: [groupsEn, couplesEn],
-  region: pantanalEn,
+  region: pantanalSulEn,
 };
 export const jungleLodgeEagleEs: TourPackage = {
   id: uuidEagle,
@@ -356,5 +356,5 @@ export const jungleLodgeEagleEs: TourPackage = {
   observation: commonObservationEs,
   packageCategories: [ecotourismEs, aquaticEs, adventureEs],
   packageRecommendedFor: [groupsEs, couplesEs],
-  region: pantanalEs,
+  region: pantanalSulEs,
 };

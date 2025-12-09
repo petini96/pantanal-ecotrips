@@ -15,9 +15,9 @@
         <div class="col-xs-12 col-sm-4 credibility-logo">
           <q-img src="~assets/images/logo_cadastur.png" alt="Logo Cadastur" width="200px" />
         </div>
-        <div class="col-xs-12 col-sm-4 credibility-logo">
+        <!-- <div class="col-xs-12 col-sm-4 credibility-logo">
           <q-img src="~assets/images/logo_fodors.png" alt="Logo Fodor's Travel" width="180px" />
-        </div>
+        </div> -->
         <div class="col-xs-12 col-sm-4 credibility-logo">
           <q-img src="~assets/images/logo_petitfute.png" alt="Logo Petit Futé" width="220px" />
         </div>

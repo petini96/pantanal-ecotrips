@@ -105,5 +105,8 @@ export default {
   contact: "Contact us",
   our_mission_title: "Ecotourism Experts",
   our_mission_subtitle: "Pantanal EcoTrips specializes in ecotourism in the Pantanal and Bonito regions, offering exclusive itineraries and high-quality services.",
-  destinations: "Destinations"
+  destinations: "Destinations",
+  north_pantanal: "North Pantanal",
+  south_pantanal: "South Pantanal",
+  amazon: "Amazon"
 };

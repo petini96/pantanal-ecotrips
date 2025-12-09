@@ -105,5 +105,8 @@ export default {
   contact: "Contato",
   our_mission_title: "Especialistas em Ecoturismo",
   our_mission_subtitle: "A Pantanal EcoTrips é especializada em Ecoturismo no Pantanal e Bonito, oferecendo roteiros exclusivos e serviços de alta qualidade.",
-  destinations: "Destinos"
+  destinations: "Destinos",
+  north_pantanal: "Pantanal Norte",
+  south_pantanal: "Pantanal Sul",
+  amazon: "Amazonas"
 };

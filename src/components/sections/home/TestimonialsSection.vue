@@ -101,7 +101,7 @@
             text-color="secondary"
             class="shadow-2"
             label="Ver avaliações no Google"
-            icon="img:https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+            icon="mdi-google"
             href="https://www.google.com/search?q=pantanal+eco+trips+reviews" 
             target="_blank"
             rel="noopener noreferrer"

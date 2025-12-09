@@ -97,7 +97,7 @@
 
 <script setup lang="ts">
 import { ref, reactive, computed } from 'vue';
-import { bonitoSerraBodoquenaPt, pantanalPt } from 'src/data/regions/Regions';
+import { bonitoSerraBodoquenaPt, pantanalSulPt } from 'src/data/regions/Regions';
 import { couplesPt } from 'src/data/audiences/Couples';
 import { familiesPt } from 'src/data/audiences/Families';
 import { groupsPt } from 'src/data/audiences/Groups';
@@ -124,7 +124,7 @@ const filters = reactive({
 
 // --- Carregamento das Opções para os Selects ---
 
-const regionOptions = ref([bonitoSerraBodoquenaPt, pantanalPt]);
+const regionOptions = ref([bonitoSerraBodoquenaPt, pantanalSulPt]);
 
 const cityOptions = computed(() => {
   if (filters.region) {

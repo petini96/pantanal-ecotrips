@@ -128,7 +128,8 @@ interface NavLink {
   routeName?: string;
   external?: boolean;
   ariaLabel?: string;
-  children?: NavLink[]; // Adicionado suporte para filhos
+  children?: NavLink[];
+  params?: Record<string, string>;
 }
 
 const navLinks = computed<NavLink[]>(() => [
@@ -137,11 +138,23 @@ const navLinks = computed<NavLink[]>(() => [
     children: [
       { 
         label: 'Bonito',
-        routeName: 'bonito-home', 
+        routeName: 'destinations', 
+        params: { slug: 'bonito' }
       },
       { 
-        label: 'Pantanal',
-        routeName: 'pantanal-home', 
+        label: t('north_pantanal'),
+        routeName: 'destinations', 
+        params: { slug: 'pantanal-norte' }
+      },
+      { 
+        label: t('south_pantanal'),
+        routeName: 'destinations', 
+        params: { slug: 'pantanal-sul' }
+      },
+      { 
+        label: t('amazon'),
+        routeName: 'destinations', 
+        params: { slug: 'amazonia' }
       }
     ]
   },
@@ -160,7 +173,10 @@ const getLinkUrl = (link: NavLink): string => {
     try {
       const resolved = router.resolve({ 
         name: link.routeName, 
-        params: { lang: currentLang.value } 
+        params: { 
+          lang: currentLang.value,
+          ...link.params
+        } 
       });
       return resolved.href;
     } catch (e) {
@@ -173,24 +189,30 @@ const getLinkUrl = (link: NavLink): string => {
 };
 
 const handleNavClick = async (ev: Event, link: NavLink) => {
-  if (link.children) return; // Se for pai de dropdown, não faz nada aqui
+  if (link.children) return; 
 
   if (link.external) return;
 
   ev.preventDefault();
   
   if (link.routeName) {
-    if (route.name === link.routeName) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+    const isSameRoute = route.name === link.routeName;
+    
+    if (isSameRoute && (!link.params || JSON.stringify(route.params) === JSON.stringify({ ...route.params, ...link.params }))) {
+       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       await router.push({ 
         name: link.routeName, 
-        params: { lang: currentLang.value } 
+        params: { 
+          lang: currentLang.value,
+          ...link.params
+        } 
       });
     }
     return;
   }
 
+  // ... restante da lógica de âncora (#) continua igual
   if (link.url?.startsWith('#')) {
     if (route.name !== 'home') {
         await router.push({ name: 'home', params: { lang: currentLang.value } });

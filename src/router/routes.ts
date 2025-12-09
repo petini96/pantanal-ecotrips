@@ -30,6 +30,12 @@ const routes: RouteRecordRaw[] = [
         component: () => import('pages/tours/AllToursPage.vue'),
         meta: { requiresAuth: false },
       },
+      {
+        path: 'destinations/:slug',
+        name: 'destinations',
+        component: () => import('pages/destinations/DestinationsPage.vue'),
+        meta: { requiresAuth: false },
+      }
     ],
   },
   {

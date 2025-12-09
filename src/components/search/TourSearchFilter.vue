@@ -132,8 +132,8 @@ onMounted(async () => {
       import('src/data/categories/all'),
     ]);
 
-    if (regionsMod.bonitoSerraBodoquenaPt && regionsMod.pantanalPt) {
-        regionOptions.value = [regionsMod.bonitoSerraBodoquenaPt, regionsMod.pantanalPt];
+    if (regionsMod.bonitoSerraBodoquenaPt && regionsMod.pantanalSulPt) {
+        regionOptions.value = [regionsMod.bonitoSerraBodoquenaPt, regionsMod.pantanalSulPt];
     }
     if (audiencesMod.allAudiencesPt) audienceOptions.value = audiencesMod.allAudiencesPt;
     if (categoriesMod.allCategoriesPt) categoryOptions.value = categoriesMod.allCategoriesPt;
