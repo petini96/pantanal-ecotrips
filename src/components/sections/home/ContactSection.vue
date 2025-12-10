@@ -175,13 +175,11 @@ import { useLayoutConfigStore } from 'src/stores/layout-config-store';
 import { computed, ref, reactive } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-// Configurações e Stores
 const layoutConfigStore = useLayoutConfigStore();
 const { theme: currentTheme } = storeToRefs(layoutConfigStore);
 const { t } = useI18n();
 const $q = useQuasar();
 
-// Estado Local
 const isVisible = ref(false);
 const tab = ref('form');
 const loading = ref(false);
@@ -192,22 +190,18 @@ const form = reactive({
   message: ''
 });
 
-// Cores Computadas (Theme Aware)
 const bgClass = computed(() => currentTheme.value === 'dark' ? 'bg-dark text-white' : 'bg-grey-1 text-dark');
 const cardClass = computed(() => currentTheme.value === 'dark' ? 'bg-dark-page border-dark' : 'bg-white border-light shadow-1');
 
-// Intersection Observer
 const onIntersection = (entry: IntersectionObserverEntry) => {
   if (entry.isIntersecting) {
     isVisible.value = true;
   }
 };
 
-// Envio do Formulário
 const onSubmit = async () => {
   loading.value = true;
   try {
-    // Simulação de envio API
     await new Promise(resolve => setTimeout(resolve, 2000));
 
     $q.notify({
@@ -216,8 +210,7 @@ const onSubmit = async () => {
       message: t('msg_sent_success', 'Mensagem enviada com sucesso! Responderemos em breve.'),
       position: 'top'
     });
-
-    // Limpar form
+    
     form.name = '';
     form.email = '';
     form.phone = '';
@@ -234,7 +227,6 @@ const onSubmit = async () => {
   }
 };
 
-// --- SEO STRATEGY (Schema.org) ---
 const metaData = {
   script: {
     ldJson: {

@@ -253,26 +253,20 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped lang="scss">
-/* --- CORREÇÃO DE CENTRALIZAÇÃO --- */
 .media-gallery-container {
   width: 100%;
-  /* Define altura mínima da tela inteira para ter espaço vertical */
   min-height: 50vh; 
   display: flex;
   flex-direction: column;
-  /* Centraliza verticalmente o conteúdo */
   justify-content: center;
-  /* REMOVIDO: align-items: center (isso que estava quebrando a largura) */
 }
 
 .gallery-content-wrapper {
   width: 100%;
   max-width: 1400px;
-  /* Centraliza horizontalmente o bloco */
   margin: 0 auto; 
   padding: 16px;
 }
-/* --------------------------------- */
 
 .media-card {
   position: relative;
@@ -372,7 +366,6 @@ onBeforeUnmount(() => {
   }
 }
 
-// Estilos do Dialog
 .bg-deep-dark {
   background-color: #121212;
 }
@@ -395,7 +388,6 @@ onBeforeUnmount(() => {
   width: 700px;
 }
 
-/* --- ESTILOS DA PAGINAÇÃO MODERNA --- */
 :deep(.modern-pagination) {
   gap: 4px;
 
@@ -411,7 +403,6 @@ onBeforeUnmount(() => {
   }
 }
 
-// AJUSTES RESPONSIVOS
 @media (max-width: 1023px) {
   .gallery-content-wrapper {
     padding: 8px;

@@ -1,29 +1,20 @@
 import { type ItineraryItem } from "src/model/ItineraryItem";
-import {
-  grutaLagoAzulPt,
-  grutaLagoAzulEn,
-  grutaLagoAzulEs,
-} from "src/data/tours/GrutaLagoAzul";
-import {
-  boteRioFormosoPt,
-  boteRioFormosoEn,
-  boteRioFormosoEs,
-} from "src/data/tours/BoteRioFormoso";
-import {
-  rioDaPrataPt,
-  rioDaPrataEn,
-  rioDaPrataEs,
-} from "src/data/tours/RioDaPrata";
-import {
-  buracoDasArarasPt,
-  buracoDasArarasEn,
-  buracoDasArarasEs,
-} from "src/data/tours/BuracoDasAraras";
-import {
-  bocaDaOncaPt,
-  bocaDaOncaEn,
-  bocaDaOncaEs,
-} from "src/data/tours/BocaDaOnca";
+
+import { bocaDaOncaEn } from "src/data/tours/boca-onca/BocaDaOncaEn";
+import { bocaDaOncaEs } from "src/data/tours/boca-onca/BocaDaOncaEs";
+import { bocaDaOncaPt } from "src/data/tours/boca-onca/BocaDaOncaPt";
+import { boteRioFormosoEn } from "src/data/tours/bote-rio-formoso/BoteRioFormosoEn";
+import { boteRioFormosoEs } from "src/data/tours/bote-rio-formoso/BoteRioFormosoEs";
+import { boteRioFormosoPt } from "src/data/tours/bote-rio-formoso/BoteRioFormosoPt";
+import { buracoDasArarasEn } from "src/data/tours/buraco-das-araras/BuracoDasArarasEn";
+import { buracoDasArarasEs } from "src/data/tours/buraco-das-araras/BuracoDasArarasEs";
+import { buracoDasArarasPt } from "src/data/tours/buraco-das-araras/BuracoDasArarasPt";
+import { grutaLagoAzulEn } from "src/data/tours/gruta-lago-azul/GrutaLagoAzulEn";
+import { grutaLagoAzulEs } from "src/data/tours/gruta-lago-azul/GrutaLagoAzulEs";
+import { grutaLagoAzulPt } from "src/data/tours/gruta-lago-azul/GrutaLagoAzulPt";
+import { rioDaPrataEn } from "src/data/tours/rio-da-prata/RioDaPrataEn";
+import { rioDaPrataEs } from "src/data/tours/rio-da-prata/RioDaPrataEs";
+import { rioDaPrataPt } from "src/data/tours/rio-da-prata/RioDaPrataPt";
 
 export const bonitoAmizadePtItinerary: ItineraryItem[] = [
   {

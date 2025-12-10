@@ -1,8 +1,16 @@
+import { cabanasArvorismoEn } from 'src/data/tours/cabanas-arvorismo/CabanasArvorismoEn';
+import { cabanasArvorismoEs } from 'src/data/tours/cabanas-arvorismo/CabanasArvorismoEs';
+import { cabanasArvorismoPt } from 'src/data/tours/cabanas-arvorismo/CabanasArvorismoPt';
+import { estanciaMimosaEn } from 'src/data/tours/estancia-mimosa/EstanciaMimosaEn';
+import { estanciaMimosaEs } from 'src/data/tours/estancia-mimosa/EstanciaMimosaEs';
+import { estanciaMimosaPt } from 'src/data/tours/estancia-mimosa/EstanciaMimosaPt';
+import { grutaLagoAzulEn } from 'src/data/tours/gruta-lago-azul/GrutaLagoAzulEn';
+import { grutaLagoAzulEs } from 'src/data/tours/gruta-lago-azul/GrutaLagoAzulEs';
+import { grutaLagoAzulPt } from 'src/data/tours/gruta-lago-azul/GrutaLagoAzulPt';
+import { rioDaPrataEn } from 'src/data/tours/rio-da-prata/RioDaPrataEn';
+import { rioDaPrataEs } from 'src/data/tours/rio-da-prata/RioDaPrataEs';
+import { rioDaPrataPt } from 'src/data/tours/rio-da-prata/RioDaPrataPt';
 import { type ItineraryItem } from 'src/model/ItineraryItem';
-import { grutaLagoAzulPt, grutaLagoAzulEn, grutaLagoAzulEs } from 'src/data/tours/GrutaLagoAzul';
-import { estanciaMimosaPt, estanciaMimosaEn, estanciaMimosaEs } from 'src/data/tours/EstanciaMimosa';
-import { cabanasArvorismoPt, cabanasArvorismoEn, cabanasArvorismoEs } from 'src/data/tours/CabanasArvorismo';
-import { rioDaPrataPt, rioDaPrataEn, rioDaPrataEs } from 'src/data/tours/RioDaPrata';
 
 // PT-BR
 export const reveillonBonitoPtItinerary: ItineraryItem[] = [

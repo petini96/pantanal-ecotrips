@@ -48,15 +48,13 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
 
-// Necessário para as traduções (t) e para o link do botão (locale)
 const { t, locale } = useI18n();
 </script>
 
 <style scoped lang="scss">
-/* Use as variáveis de cor do seu tema. */
 :root {
-  --primary-color: #266D4D; /* Verde escuro dos botões */
-  --bg-color-2: #f8fcf7;    /* Cor de fundo clara */
+  --primary-color: #266D4D;
+  --bg-color-2: #f8fcf7;
   --border-color: #e0e0e0;
 }
 
@@ -70,7 +68,6 @@ const { t, locale } = useI18n();
   justify-content: center;
   padding: 80px 16px;
   
-  /* Background Image */
   background-image: url('https://images.squarespace-cdn.com/content/v1/628cdf23e74da0654141fc99/2a204630-8124-4741-9766-5496ec3f7dae/%40Alexandre.Socci_Bonito2024-1220.jpg&quot');
   background-size: cover;
   background-position: center;
@@ -106,9 +103,6 @@ const { t, locale } = useI18n();
   margin-bottom: 24px;
 }
 
-/* --- ESTILOS VINDOS DO HERO SECTION --- */
-
-/* Título Hero */
 .hero-title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
@@ -119,7 +113,6 @@ const { t, locale } = useI18n();
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
 }
 
-/* Botão Estilo Hero */
 .hero-cta-button {
     background-color: var(--secondary-color) !important;
     color: #FFFFFF !important;
@@ -149,14 +142,10 @@ const { t, locale } = useI18n();
         filter: brightness(1.1);
     }
 }
-
-/* Ajuste específico para Dark Mode */
 :global(body.body--dark) .hero-cta-button {
     box-shadow: 0 0 15px rgba(2, 123, 227, 0.6);
 }
 
-/* Ajuste específico para o botão secundário (branco) não ficar com sombra estranha no dark mode se necessário, 
-   ou manter a consistência */
 :global(body.body--dark) .hero-cta-button.secondary-btn {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
@@ -168,48 +157,39 @@ const { t, locale } = useI18n();
         font-size: 2.5rem; 
     }
 
-    /* Reduz o tamanho do botão APENAS no mobile, igual ao Hero */
     .hero-cta-button {
-        font-size: 0.95rem !important; /* Reduz a fonte */
-        padding: 10px 24px !important; /* Reduz o padding gordo do desktop */
-        min-height: auto !important;   /* Remove a altura forçada do size="lg" */
-        width: auto;                   /* Garante que não estique 100% se não quiser */
-        max-width: 90%;                /* Segurança para telas muito pequenas */
+        font-size: 0.95rem !important;
+        padding: 10px 24px !important;
+        min-height: auto !important;
+        width: auto;
+        max-width: 90%;
     }
     
     .hero-cta-button-white {
-        font-size: 0.45rem !important; /* Reduz a fonte */
-        padding: 10px 24px !important; /* Reduz o padding gordo do desktop */
-        min-height: auto !important;   /* Remove a altura forçada do size="lg" */
-        width: auto;                   /* Garante que não estique 100% se não quiser */
-        max-width: 90%;                /* Segurança para telas muito pequenas */
+        font-size: 0.45rem !important;
+        padding: 10px 24px !important;
+        min-height: auto !important;
+        width: auto;
+        max-width: 90%;
     }
 
-    /* ==================================================================
-       ADICIONE ESTE BLOCO AQUI PARA CORRIGIR O BOTÃO SECUNDÁRIO ESTOURADO
-    ================================================================== */
     .hero-cta-button.secondary-btn {
-        /* Permite que o botão cresça verticalmente para acomodar o texto */
         height: auto !important;
-        padding: 16px 24px !important; /* Mais respiro vertical */
+        padding: 16px 24px !important;
         
-        /* Força o conteúdo interno (texto e ícone) a se organizar */
         :deep(.q-btn__content) {
-            white-space: normal !important; /* Permite quebra de linha no texto */
-            flex-direction: column; /* Coloca o ícone embaixo do texto */
-            gap: 8px; /* Espacinho entre o texto e o ícone */
-            line-height: 1.2; /* Melhora o espaçamento entre as linhas de texto */
+            white-space: normal !important;
+            flex-direction: column;
+            gap: 8px;
+            line-height: 1.2;
         }
 
-        /* Ajusta o ícone quando está em coluna */
         :deep(.q-icon) {
-             margin-left: 0 !important; /* Remove a margem padrão lateral do icon-right */
+             margin-left: 0 !important;
         }
     }
-    /* ================================================================== */
 }
 
-/* Ajustes para o tema escuro geral */
 .theme-dark .all-tours-cta-section {
   border-color: #333;
 }

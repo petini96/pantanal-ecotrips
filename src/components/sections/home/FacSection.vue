@@ -38,7 +38,6 @@ import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
 
-// Lógica de animação
 const isVisible = ref(false);
 const onIntersection = (entry: IntersectionObserverEntry) => {
   if (entry.isIntersecting) {
@@ -57,7 +56,6 @@ const faqItems = ref([
 </script>
 
 <style lang="scss" scoped>
-/* Animações de entrada (sem alterações) */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -78,9 +76,6 @@ const faqItems = ref([
   animation-delay: var(--animation-delay, 0s);
 }
 
-/*
-  AJUSTE: A seção agora ocupa 100vh e centraliza o conteúdo.
-*/
 .content-section {
   background-color: var(--bg-primary-color);
   min-height: 100vh;
@@ -99,7 +94,7 @@ const faqItems = ref([
 .faq-list-container {
   max-width: 800px;
   margin: 0 auto;
-  width: 100%; // Garante que o container ocupe a largura disponível
+  width: 100%;
 }
 
 .faq-list {

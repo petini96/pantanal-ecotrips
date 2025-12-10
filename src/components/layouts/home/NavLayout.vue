@@ -211,8 +211,7 @@ const handleNavClick = async (ev: Event, link: NavLink) => {
     }
     return;
   }
-
-  // ... restante da lógica de âncora (#) continua igual
+  
   if (link.url?.startsWith('#')) {
     if (route.name !== 'home') {
         await router.push({ name: 'home', params: { lang: currentLang.value } });

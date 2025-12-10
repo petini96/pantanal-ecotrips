@@ -32,7 +32,6 @@ import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
 
-// Lógica de animação
 const isVisible = ref(false);
 const onIntersection = (entry: IntersectionObserverEntry) => {
   if (entry.isIntersecting) {
@@ -42,7 +41,6 @@ const onIntersection = (entry: IntersectionObserverEntry) => {
 </script>
 
 <style scoped lang="scss">
-/* AJUSTE: Animações de entrada */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -63,13 +61,12 @@ const onIntersection = (entry: IntersectionObserverEntry) => {
   animation-delay: var(--animation-delay, 0s);
 }
 
-/* AJUSTE: A seção agora ocupa 100vh e centraliza o conteúdo */
 .content-section {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff; // Fundo branco para um visual clean
+  background-color: #ffffff;
 }
 
 .section-title {
@@ -88,10 +85,9 @@ const onIntersection = (entry: IntersectionObserverEntry) => {
 .credibility-logo:hover {
   filter: grayscale(0%);
   opacity: 1;
-  transform: scale(1.05); // Leve zoom no hover
+  transform: scale(1.05);
 }
 
-// Media query para telas menores, ajustando o título
 @media (max-width: $breakpoint-sm-max) {
   .section-title {
     font-size: 2.2rem;

@@ -123,7 +123,6 @@ import { useLayoutConfigStore } from 'src/stores/layout-config-store';
 import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-// Configurações e Stores
 const layoutConfigStore = useLayoutConfigStore();
 const { theme: currentTheme } = storeToRefs(layoutConfigStore);
 const { t } = useI18n();
@@ -131,7 +130,6 @@ const { t } = useI18n();
 const isVisible = ref(false);
 const scrollContainer = ref<HTMLElement | null>(null);
 
-// Dados (Mantidos os originais)
 const reviews = [
   {
     author: 'Gloria Bastos',
@@ -177,18 +175,15 @@ const reviews = [
   }
 ];
 
-// Estilos Computados
 const bgClass = computed(() => currentTheme.value === 'dark' ? 'bg-dark' : 'bg-grey-1');
 const cardClass = computed(() => currentTheme.value === 'dark' ? 'bg-dark-page border-dark' : 'bg-white shadow-1');
 const textClass = computed(() => currentTheme.value === 'dark' ? 'text-grey-4' : 'text-grey-8');
 
-// Lógica de Scroll
 const scroll = (direction: 'left' | 'right') => {
   if (!scrollContainer.value) return;
   
-  // Calcula a largura de um card para rolar exatamente 1 item
   const cardWidth = scrollContainer.value.firstElementChild?.clientWidth || 300;
-  const gap = 24; // q-col-gutter-lg é aprox 24px
+  const gap = 24;
   const scrollAmount = cardWidth + gap;
 
   scrollContainer.value.scrollBy({
@@ -197,14 +192,12 @@ const scroll = (direction: 'left' | 'right') => {
   });
 };
 
-// Intersection Observer para animação de entrada
 const onIntersection = (entry: IntersectionObserverEntry) => {
   if (entry.isIntersecting) {
     isVisible.value = true;
   }
 };
 
-// Helpers Visuais
 const getInitials = (name: string) => {
   return name.split(' ').map((n) => n[0]).join('').substring(0, 2).toUpperCase();
 };
@@ -214,7 +207,6 @@ const avatarColor = (index: number) => {
   return colors[index % colors.length];
 };
 
-// --- SEO AVANÇADO (Schema.org) ---
 const structuredReviews = reviews.map(review => ({
   "@type": "Review",
   "author": {
@@ -267,7 +259,6 @@ useMeta(metaData);
 </script>
 
 <style scoped lang="scss">
-// Definições de Tema
 .bg-dark-page { background-color: #1d1d1d; }
 .border-dark { border: 1px solid #333; }
 
@@ -276,33 +267,27 @@ useMeta(metaData);
   margin: 0 auto;
 }
 
-// Scroller Horizontal (O segredo do layout)
 .reviews-scroller {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding-bottom: 2rem; // Espaço para sombra não cortar
+  padding-bottom: 2rem;
   -webkit-overflow-scrolling: touch;
-  
-  // Esconder barra de rolagem mas manter funcionalidade
-  scrollbar-width: none; // Firefox
+  scrollbar-width: none;
   &::-webkit-scrollbar {
-    display: none; // Chrome/Safari
+    display: none;
   }
 }
 
 .review-item {
   scroll-snap-align: start;
-  flex: 0 0 auto; // Impede encolhimento
-  // Ajuste fino para mobile e desktop no CSS grid do Quasar
+  flex: 0 0 auto;
 }
 
-// Estilo do Card
 .review-card {
   border-radius: 20px;
   transition: all 0.3s ease;
   border: 1px solid transparent;
 
-  // No Light mode, borda sutil
   &:not(.bg-dark-page) {
     border-color: rgba(0,0,0,0.05);
   }
@@ -318,7 +303,7 @@ useMeta(metaData);
   line-height: 1.6;
   font-size: 1rem;
   display: -webkit-box;
-  -webkit-line-clamp: 6; // Limita linhas se for texto gigante
+  -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   overflow: hidden;
   font-style: italic;
@@ -332,7 +317,6 @@ useMeta(metaData);
   opacity: 0.5;
 }
 
-// Animação de Entrada
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to { opacity: 1; transform: translateY(0); }

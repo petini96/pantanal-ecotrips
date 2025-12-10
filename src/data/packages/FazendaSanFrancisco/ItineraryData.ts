@@ -1,30 +1,20 @@
 import { type ItineraryItem } from "src/model/ItineraryItem";
 
-import {
-  chalanaPiranhaFishingPt,
-  chalanaPiranhaFishingEn,
-  chalanaPiranhaFishingEs,
-} from "src/data/tours/ChalanaPiranhaFishing";
-import {
-  nocturnalSpotlightingPt,
-  nocturnalSpotlightingEn,
-  nocturnalSpotlightingEs,
-} from "src/data/tours/NocturnalSpotlighting";
-import {
-  ecologicalSafariPt,
-  ecologicalSafariEn,
-  ecologicalSafariEs,
-} from "src/data/tours/EcologicalSafari";
-import {
-  birdwatchingPt,
-  birdwatchingEn,
-  birdwatchingEs,
-} from "src/data/tours/Birdwatching";
-import {
-  jaguarSafariPt,
-  jaguarSafariEn,
-  jaguarSafariEs,
-} from "src/data/tours/JaguarSafari";
+import { birdwatchingEn } from "src/data/tours/birdwatching/BirdwatchingEn";
+import { birdwatchingEs } from "src/data/tours/birdwatching/BirdwatchingEs";
+import { birdwatchingPt } from "src/data/tours/birdwatching/BirdwatchingPt";
+import { chalanaPiranhaFishingEn } from "src/data/tours/chalana-piranha-fishing/ChalanaPiranhaFishingEn";
+import { chalanaPiranhaFishingEs } from "src/data/tours/chalana-piranha-fishing/ChalanaPiranhaFishingEs";
+import { chalanaPiranhaFishingPt } from "src/data/tours/chalana-piranha-fishing/ChalanaPiranhaFishingPt";
+import { ecologicalSafariEn } from "src/data/tours/ecological-safari/EcologicalSafariEn";
+import { ecologicalSafariEs } from "src/data/tours/ecological-safari/EcologicalSafariEs";
+import { ecologicalSafariPt } from "src/data/tours/ecological-safari/EcologicalSafariPt";
+import { jaguarSafariEn } from "src/data/tours/jaguar-safari/JaguarSafariEn";
+import { jaguarSafariEs } from "src/data/tours/jaguar-safari/JaguarSafariEs";
+import { jaguarSafariPt } from "src/data/tours/jaguar-safari/JaguarSafariPt";
+import { nocturnalSpotlightingEn } from "src/data/tours/nocturnal-spotlighting/NocturnalSpotlightingEn";
+import { nocturnalSpotlightingEs } from "src/data/tours/nocturnal-spotlighting/NocturnalSpotlightingEs";
+import { nocturnalSpotlightingPt } from "src/data/tours/nocturnal-spotlighting/NocturnalSpotlightingPt";
 
 // --- COATI (2D/1N) ---
 export const fazendaCoatiPtItinerary: ItineraryItem[] = [

@@ -1,25 +1,25 @@
 import { type Tour } from "src/model/Tour";
-import { birdwatchingEn } from "./Birdwatching";
-import { bocaDaOncaEn } from "./BocaDaOnca";
-import { boteRioFormosoEn } from "./BoteRioFormoso";
-import { buracoDasArarasEn } from "./BuracoDasAraras";
-import { cabanasArvorismoEn } from "./CabanasArvorismo";
-import { canoeingEn } from "./Canoeing";
-import { chalanaPiranhaFishingEn } from "./ChalanaPiranhaFishing";
-import { ecologicalSafariEn } from "./EcologicalSafari";
-import { ecologicalWalkEn } from "./EcologicalWalk";
-import { estanciaMimosaEn } from "./EstanciaMimosa";
-import { fluvialSafariEn } from "./FluvialSafari";
-import { grutaLagoAzulEn } from "./GrutaLagoAzul";
-import { horsebackRidingEn } from "./HorsebackRiding";
-import { jaguarSafariEn } from "./JaguarSafari";
-import { jeepSafariEn } from "./JeepSafari";
-import { jungleCampingEn } from "./JungleCamping";
-import { motorBoatTripEn } from "./MotorBoatTrip";
-import { nocturnalSpotlightingEn } from "./NocturnalSpotlighting";
-import { piranhaFishingEn } from "./PiranhaFishing";
-import { rioDaPrataEn } from "./RioDaPrata";
-import { riverFloatingEn } from "./RiverFloating";
+import { birdwatchingEn } from "./birdwatching/BirdwatchingEn";
+import { bocaDaOncaEn } from "./boca-onca/BocaDaOncaEn";
+import { boteRioFormosoEn } from "./bote-rio-formoso/BoteRioFormosoEn";
+import { buracoDasArarasEn } from "./buraco-das-araras/BuracoDasArarasEn";
+import { cabanasArvorismoEn } from "./cabanas-arvorismo/CabanasArvorismoEn";
+import { canoeingEn } from "./canoeing/CanoeingEn";
+import { chalanaPiranhaFishingEn } from "./chalana-piranha-fishing/ChalanaPiranhaFishingEn";
+import { ecologicalSafariEn } from "./ecological-safari/EcologicalSafariEn";
+import { ecologicalWalkEn } from "./ecological-walk/EcologicalWalkEn";
+import { estanciaMimosaEn } from "./estancia-mimosa/EstanciaMimosaEn";
+import { fluvialSafariEn } from "./fluvial-safari/FluvialSafariEn";
+import { grutaLagoAzulEn } from "./gruta-lago-azul/GrutaLagoAzulEn";
+import { horsebackRidingEn } from "./horseback-riding/HorsebackRidingEn";
+import { jaguarSafariEn } from "./jaguar-safari/JaguarSafariEn";
+import { jeepSafariEn } from "./jeep-safari/JeepSafariEn";
+import { jungleCampingEn } from "./jungle-camping/JungleCampingEn";
+import { motorBoatTripEn } from "./motor-boat-trip/MotorBoatTripEn";
+import { nocturnalSpotlightingEn } from "./nocturnal-spotlighting/NocturnalSpotlightingEn";
+import { piranhaFishingEn } from "./piranha-fishing/PiranhaFishingEn";
+import { rioDaPrataEn } from "./rio-da-prata/RioDaPrataEn";
+import { riverFloatingEn } from "./river-floating/RiverFloatingEn";
 
 export const toursEn: Record<string, Tour> = {
   [birdwatchingEn.id]: birdwatchingEn,

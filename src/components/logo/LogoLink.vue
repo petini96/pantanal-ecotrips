@@ -27,7 +27,6 @@ import LogoImage from '../../../public/pantanal_ecotrips_logo.png'
 .logo-image {
 }
 
-/* Para tablets e telas menores */
 @media (max-width: 768px) {
   .logo-container {
     height: 70px;
@@ -35,10 +34,8 @@ import LogoImage from '../../../public/pantanal_ecotrips_logo.png'
   }
 }
 
-/* Para celulares */
 @media (max-width: 480px) {
   .logo-container {
-    /* ✨ Adicione esta linha para esconder o logo */
     display: none;
   }
 }

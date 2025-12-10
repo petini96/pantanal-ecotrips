@@ -94,48 +94,34 @@ const onIntersection = (entry: IntersectionObserverEntry) => {
   margin: 0 auto;
 }
 
-/* =========================================================================
-   ESTILOS COM DARK MODE ANINHADO (Técnica "Selector Nesting")
-   Isso garante que o Dark Mode funcione mesmo com CSS Scoped
-   ========================================================================= */
-
-/* 1. SEÇÃO PRINCIPAL */
 .content-section {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background-color 0.4s ease, color 0.4s ease;
-
-  /* --- MODO LIGHT (Padrão) --- */
-  background-color: var(--bg-div-primary); /* Off-white esverdeado */
+  
+  background-color: var(--bg-div-primary);
   color: #1D2B24;
-
-  /* --- MODO DARK (Override) --- */
+  
   :global(body.body--dark) & {
-    background-color: #050906 !important; /* Preto Floresta Profundo */
+    background-color: #050906 !important;
     background-image: radial-gradient(circle at 50% 0%, #0f1a13 0%, #050906 60%);
     color: #ECF0F1 !important;
   }
 }
 
-/* 2. TÍTULO */
 .section-title {
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 1rem;
-  
-  /* Light */
   color: var(--text-primary-color, #1a2e29);
-
-  /* Dark */
   :global(body.body--dark) & {
     color: #FFFFFF !important;
     text-shadow: 0 2px 10px rgba(0,0,0,0.5);
   }
 }
 
-/* 3. CARD */
 .feature-card {
   display: flex;
   flex-direction: column;
@@ -147,27 +133,22 @@ const onIntersection = (entry: IntersectionObserverEntry) => {
   position: relative;
   overflow: hidden;
   
-  /* Light */
   background-color: #FFFFFF;
   border: 1px solid rgba(0,0,0,0.04);
   box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 
-  /* Dark */
   :global(body.body--dark) & {
-    background-color: #101612 !important; /* Cinza Escuro Esverdeado */
+    background-color: #101612 !important;
     border: 1px solid #1F2E25 !important;
     box-shadow: none !important;
   }
 
-  /* HOVER EFFECTS */
   &:hover {
     transform: translateY(-10px);
     
-    /* Light Hover */
     box-shadow: 0 20px 40px rgba(46, 91, 62, 0.15);
     border-color: transparent;
 
-    /* Dark Hover */
     :global(body.body--dark) & {
       background-color: #151C17 !important;
       border-color: #4DB6AC !important;
@@ -176,40 +157,33 @@ const onIntersection = (entry: IntersectionObserverEntry) => {
   }
 }
 
-/* 4. ÍCONES */
 .feature-icon {
   margin-bottom: 1.5rem;
   transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   
-  /* Light */
   color: #2E5B3E;
 
-  /* Dark */
   :global(body.body--dark) & {
-    color: #4DB6AC !important; /* Verde Neon Suave */
+    color: #4DB6AC !important;
   }
 }
 
 .feature-card:hover .feature-icon {
   transform: scale(1.15) rotate(5deg);
   
-  /* Dark Hover Glow */
   :global(body.body--dark) & {
     color: #64FFDA !important;
     text-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
   }
 }
 
-/* 5. TEXTOS DO CARD */
 .feature-title {
   font-weight: 700;
   font-size: 1.25rem;
   margin-bottom: 0.8rem;
   
-  /* Light */
   color: #18241E;
-
-  /* Dark */
+  
   :global(body.body--dark) & {
     color: #E0E0E0 !important;
   }
@@ -219,16 +193,13 @@ const onIntersection = (entry: IntersectionObserverEntry) => {
   font-size: 0.95rem;
   line-height: 1.6;
   
-  /* Light */
   color: #546E63;
-
-  /* Dark */
+  
   :global(body.body--dark) & {
     color: #9E9E9E !important;
   }
 }
 
-/* --- RESPONSIVIDADE --- */
 @media (max-width: 1023px) {
   .section-title {
     font-size: 2rem;

@@ -199,7 +199,6 @@ const onNewsletterSubmit = async () => {
 }
 
 .newsletter-input {
-  /* O bg-color="white" no template cuida da cor, aqui ajustamos a borda */
   border-radius: 28px; 
   :deep(.q-field__control) {
     border-color: rgba(0, 0, 0, 0.1);
@@ -209,10 +208,8 @@ const onNewsletterSubmit = async () => {
 .newsletter-btn {
   transition: all 0.3s ease;
   
-  /* Sombra dinâmica baseada na cor do botão */
   &:hover {
     transform: translateY(-2px);
-    /* Usa a cor secundária com transparência para a sombra */
     box-shadow: 0 4px 10px change-color($secondary, $alpha: 0.4);
   }
 }

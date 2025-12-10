@@ -1,12 +1,31 @@
-import { canoeingPt, canoeingEn, canoeingEs } from "../../tours/Canoeing";
-import { ecologicalWalkPt, ecologicalWalkEn, ecologicalWalkEs } from "../../tours/EcologicalWalk";
-import { fluvialSafariPt, fluvialSafariEn, fluvialSafariEs } from "../../tours/FluvialSafari";
-import { horsebackRidingPt, horsebackRidingEn, horsebackRidingEs } from "../../tours/HorsebackRiding";
-import { jeepSafariPt, jeepSafariEn, jeepSafariEs } from "../../tours/JeepSafari";
-import { jungleCampingPt, jungleCampingEn, jungleCampingEs } from "../../tours/JungleCamping";
-import { motorBoatTripPt, motorBoatTripEn, motorBoatTripEs } from "../../tours/MotorBoatTrip";
-import { piranhaFishingPt, piranhaFishingEn, piranhaFishingEs } from "../../tours/PiranhaFishing";
-import { riverFloatingPt, riverFloatingEn, riverFloatingEs } from "../../tours/RiverFloating";
+
+import { canoeingEn } from "src/data/tours/canoeing/CanoeingEn";
+import { canoeingEs } from "src/data/tours/canoeing/CanoeingEs";
+import { canoeingPt } from "src/data/tours/canoeing/CanoeingPt";
+import { ecologicalWalkEn } from "src/data/tours/ecological-walk/EcologicalWalkEn";
+import { ecologicalWalkEs } from "src/data/tours/ecological-walk/EcologicalWalkEs";
+import { ecologicalWalkPt } from "src/data/tours/ecological-walk/EcologicalWalkPt";
+import { fluvialSafariEn } from "src/data/tours/fluvial-safari/FluvialSafariEn";
+import { fluvialSafariEs } from "src/data/tours/fluvial-safari/FluvialSafariEs";
+import { fluvialSafariPt } from "src/data/tours/fluvial-safari/FluvialSafariPt";
+import { horsebackRidingEn } from "src/data/tours/horseback-riding/HorsebackRidingEn";
+import { horsebackRidingEs } from "src/data/tours/horseback-riding/HorsebackRidingEs";
+import { horsebackRidingPt } from "src/data/tours/horseback-riding/HorsebackRidingPt";
+import { jeepSafariEn } from "src/data/tours/jeep-safari/JeepSafariEn";
+import { jeepSafariEs } from "src/data/tours/jeep-safari/JeepSafariEs";
+import { jeepSafariPt } from "src/data/tours/jeep-safari/JeepSafariPt";
+import { jungleCampingEn } from "src/data/tours/jungle-camping/JungleCampingEn";
+import { jungleCampingEs } from "src/data/tours/jungle-camping/JungleCampingEs";
+import { jungleCampingPt } from "src/data/tours/jungle-camping/JungleCampingPt";
+import { motorBoatTripEn } from "src/data/tours/motor-boat-trip/MotorBoatTripEn";
+import { motorBoatTripEs } from "src/data/tours/motor-boat-trip/MotorBoatTripEs";
+import { motorBoatTripPt } from "src/data/tours/motor-boat-trip/MotorBoatTripPt";
+import { piranhaFishingEn } from "src/data/tours/piranha-fishing/PiranhaFishingEn";
+import { piranhaFishingEs } from "src/data/tours/piranha-fishing/PiranhaFishingEs";
+import { piranhaFishingPt } from "src/data/tours/piranha-fishing/PiranhaFishingPt";
+import { riverFloatingEn } from "src/data/tours/river-floating/RiverFloatingEn";
+import { riverFloatingEs } from "src/data/tours/river-floating/RiverFloatingEs";
+import { riverFloatingPt } from "src/data/tours/river-floating/RiverFloatingPt";
 import { type ItineraryItem } from "../../../model/ItineraryItem";
 
 // --- RIVER OTTER (2D/1N) ---

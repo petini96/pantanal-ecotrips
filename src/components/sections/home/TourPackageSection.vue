@@ -241,7 +241,6 @@ const $q = useQuasar();
 const packageStore = useTourPackageStore();
 const { allPackages: packages, loading } = storeToRefs(packageStore);
 
-// --- ESTADOS ---
 const showAdvanced = ref(false);
 const filtersLoading = ref(false);
 
@@ -257,7 +256,6 @@ const regionOptions = ref<Region[]>([]);
 const categoryOptions = ref<TranslatableTag[]>([]);
 const audienceOptions = ref<TranslatableTag[]>([]);
 
-// --- CARREGAMENTO ---
 async function loadFilterData() {
   if (regionOptions.value.length > 0) return;
   filtersLoading.value = true;
@@ -294,7 +292,6 @@ const clearFilters = () => {
   filters.recommendedFor = [];
 };
 
-// --- FILTRAGEM ---
 const filteredPackages = computed(() => {
   if (!packages.value?.length) return [];
   return packages.value.filter(pkg => {
@@ -307,21 +304,17 @@ const filteredPackages = computed(() => {
       const query = normalize(searchText);
       matchesSearchText = normalize(pkg.title || '').includes(query) || normalize(pkg.subtitle || '').includes(query);
     }
-
-    // CORREÇÃO: ESLint prefer-const (não é reatribuído)
+    
     const matchesRegion = region ? pkg.region?.id === region.id : true;
-
-    // Este continua LET pois é reatribuído dentro do IF
+    
     let matchesCities = true;
     if (cities.length > 0) {
       if (!pkg.itinerary) matchesCities = false;
       else matchesCities = cities.some(fCity => pkg.itinerary?.some(day => day.tours?.some(tour => tour.city?.id === fCity.id)));
     }
-
-    // CORREÇÃO: ESLint prefer-const (não é reatribuído)
-    const matchesCategory = categories.length > 0 ? (pkg.packageCategories ? categories.some(fCat => pkg.packageCategories?.some(pCat => pCat.id === fCat.id)) : false) : true;
     
-    // CORREÇÃO: ESLint prefer-const (não é reatribuído)
+    const matchesCategory = categories.length > 0 ? (pkg.packageCategories ? categories.some(fCat => pkg.packageCategories?.some(pCat => pCat.id === fCat.id)) : false) : true;
+
     const matchesRecommendedFor = recommendedFor.length > 0 ? (pkg.packageRecommendedFor ? recommendedFor.some(fAud => pkg.packageRecommendedFor?.some(pAud => pAud.id === fAud.id)) : false) : true;
 
     return matchesSearchText && matchesRegion && matchesCities && matchesCategory && matchesRecommendedFor;
@@ -337,7 +330,6 @@ watch(() => locale.value, () => {});
 </script>
 
 <style scoped lang="scss">
-/* --- TÍTULOS DA SEÇÃO --- */
 .section-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
@@ -353,9 +345,7 @@ watch(() => locale.value, () => {});
   color: var(--text-secondary-color, #6c7a77);
 }
 
-/* --- CONTAINER DE FILTROS --- */
 .search-filter-container {
-  // Usa a cor do card definida no tema global
   background-color: var(--card-bg-color, #ffffff);
   border: 1px solid var(--border-color, #eef2f1);
   border-radius: 28px;
@@ -363,30 +353,24 @@ watch(() => locale.value, () => {});
   margin: 0 auto 48px auto;
   transition: all 0.3s ease-in-out;
   
-  // Efeito Glass sutil para o fundo dos filtros
   backdrop-filter: blur(10px); 
 }
 
-/* Ajustes para inputs do Quasar dentro do container escuro */
 :deep(.custom-input .q-field__control),
 :deep(.custom-input .q-field__marginal) {
-    color: var(--text-primary-color); // Ícones e texto
+    color: var(--text-primary-color);
 }
 
 :deep(.custom-input .q-field__label) {
     color: var(--text-secondary-color);
 }
 
-/* --- CONTAINER SCROLL HORIZONTAL --- */
 .tours-section-container {
   padding: 0px 16px;
   max-width: 100%;
   overflow: hidden;
 }
-
-/* --- CARD DO PACOTE --- */
 .package-card {
-  // Mapeando variáveis locais para as GLOBAIS do seu tema
   background-color: var(--card-bg-color, #ffffff);
   border: 1px solid var(--border-color, rgba(255,255,255,0.05));
   border-radius: 20px;
@@ -398,18 +382,13 @@ watch(() => locale.value, () => {});
   user-select: none;
   cursor: pointer;
   overflow: hidden;
-
-  // Hover Effect
   &:hover {
     transform: translateY(-8px);
-    // Sombra colorida no hover para tema Dark e Light
     box-shadow: 0 12px 30px rgba(2, 123, 227, 0.15); 
   }
 }
 
-// AJUSTE DARK MODE ESPECÍFICO PARA O CARD
 :global(body.body--dark) .package-card:hover {
-    // Glow Neon Cyan no Dark Mode
     box-shadow: 0 0 20px rgba(0, 229, 255, 0.15); 
     border-color: var(--secondary-color);
 }
@@ -432,13 +411,12 @@ watch(() => locale.value, () => {});
   flex-grow: 1;
 }
 
-/* PILL INFO (Dias / Pessoas) */
 .core-info-pill {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   padding: 8px 12px;
-  background-color: var(--section-alt-bg, #f5f8f7); // Alternativo
+  background-color: var(--section-alt-bg, #f5f8f7);
   border-radius: 50px;
   margin-bottom: 14px;
   align-self: flex-start;
@@ -465,7 +443,7 @@ watch(() => locale.value, () => {});
   font-size: 1.4rem;
   line-height: 1.3;
   margin: 0 0 8px 0;
-  color: var(--text-primary-color); // Branco no dark, Escuro no light
+  color: var(--text-primary-color);
   
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -483,7 +461,7 @@ watch(() => locale.value, () => {});
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--secondary-color, #00E5FF); // Ciano para destacar a região
+  color: var(--secondary-color, #00E5FF);
 
   .q-icon {
     font-size: 1rem;
@@ -503,7 +481,6 @@ watch(() => locale.value, () => {});
   overflow: hidden;
 }
 
-/* ÁREA DE ÍCONES / TAGS */
 .icon-section-wrapper {
   margin-top: auto;
   padding-top: 12px;
@@ -511,7 +488,6 @@ watch(() => locale.value, () => {});
 }
 
 .theme-chip {
-    // Chips que se adaptam ao tema
     color: var(--text-primary-color) !important;
     border-color: var(--primary-color) !important;
     background: transparent !important;
@@ -521,17 +497,15 @@ watch(() => locale.value, () => {});
     }
 }
 
-/* BOTÕES DE AÇÃO */
 .card-actions {
   padding: 20px;
   padding-top: 0;
 
   .cta-button {
-    // No LIGHT: Primária (Azul)
     background: var(--primary-color) !important; 
     color: #ffffff !important;
     
-    border-radius: 50px; // Botão pílula mais moderno
+    border-radius: 50px;
     font-weight: 700;
     padding: 10px 0;
     font-size: 1rem;
@@ -545,14 +519,12 @@ watch(() => locale.value, () => {});
   }
 }
 
-/* OVERRIDE PARA O BOTÃO NO DARK MODE - O CONTRASTE QUE VOCÊ QUERIA */
 :global(body.body--dark) .cta-button {
-    background-color: var(--accent-color) !important; // Amarelo/Laranja no Dark
-    color: #000000 !important; // Texto preto para contraste no amarelo
-    box-shadow: 0 0 10px rgba(255, 214, 0, 0.4); // Glow amarelo
+    background-color: var(--accent-color) !important;
+    color: #000000 !important;
+    box-shadow: 0 0 10px rgba(255, 214, 0, 0.4);
 }
 
-/* Mobile Adjustments */
 @media (max-width: 599px) {
     .section-title { font-size: 1.8rem; }
     .card-title { font-size: 1.25rem; min-height: unset; }

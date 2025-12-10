@@ -80,25 +80,22 @@ import imgDay from 'src/assets/images/packages/joungle-lodge-package.webp';
 import imgNight from 'src/assets/images/packages/joungle-lodge-package-dark.webp';
 import { useAnalytics } from 'src/components/composables/useAnalytics';
 
-const { t } = useI18n(); // Internacionalização preservada
-const { trackEvent } = useAnalytics(); // Hook de rastreamento
+const { t } = useI18n();
+const { trackEvent } = useAnalytics();
 
 const isVisible = ref(false);
 
 const layoutConfigStore = useLayoutConfigStore();
 const { theme: currentTheme } = storeToRefs(layoutConfigStore);
 
-// Use as variáveis importadas aqui
 const backgroundImage = computed(() => {
-  // Ajustei a lógica: Se o tema é dark, usa a imagem dark (imgNight)
   return currentTheme.value === 'dark' ? imgNight : imgDay;
 });
 
 const onIntersection = (entry: IntersectionObserverEntry) => {
   if (entry.isIntersecting) {
     isVisible.value = true;
-
-    // RASTREAMENTO 1: Visualização da Seção
+    
     trackEvent('view_section', {
       section_name: 'About Us (Parallax)',
       section_content: 'Missão, Experiência, Sustentabilidade'
@@ -106,7 +103,6 @@ const onIntersection = (entry: IntersectionObserverEntry) => {
   }
 };
 
-// RASTREAMENTO 2: Clique no WhatsApp
 const trackWhatsappClick = () => {
   trackEvent('click_whatsapp', {
     local_clique: 'secao_sobre_nos_parallax',
@@ -134,7 +130,7 @@ onUnmounted(() => {
 </script>
 
 <style lang="scss" scoped>
-/* Estilos originais mantidos integralmente */
+  
 @keyframes fadeInUp {
   from {
     opacity: 0;

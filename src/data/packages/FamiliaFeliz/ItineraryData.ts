@@ -1,24 +1,17 @@
 import { type ItineraryItem } from "src/model/ItineraryItem";
-import {
-  rioDaPrataPt,
-  rioDaPrataEn,
-  rioDaPrataEs,
-} from "src/data/tours/RioDaPrata";
-import {
-  buracoDasArarasPt,
-  buracoDasArarasEn,
-  buracoDasArarasEs,
-} from "src/data/tours/BuracoDasAraras";
-import {
-  grutaLagoAzulPt,
-  grutaLagoAzulEn,
-  grutaLagoAzulEs,
-} from "src/data/tours/GrutaLagoAzul";
-import {
-  estanciaMimosaPt,
-  estanciaMimosaEn,
-  estanciaMimosaEs,
-} from "src/data/tours/EstanciaMimosa";
+
+import { buracoDasArarasEn } from "src/data/tours/buraco-das-araras/BuracoDasArarasEn";
+import { buracoDasArarasEs } from "src/data/tours/buraco-das-araras/BuracoDasArarasEs";
+import { buracoDasArarasPt } from "src/data/tours/buraco-das-araras/BuracoDasArarasPt";
+import { estanciaMimosaEn } from "src/data/tours/estancia-mimosa/EstanciaMimosaEn";
+import { estanciaMimosaEs } from "src/data/tours/estancia-mimosa/EstanciaMimosaEs";
+import { estanciaMimosaPt } from "src/data/tours/estancia-mimosa/EstanciaMimosaPt";
+import { grutaLagoAzulEn } from "src/data/tours/gruta-lago-azul/GrutaLagoAzulEn";
+import { grutaLagoAzulEs } from "src/data/tours/gruta-lago-azul/GrutaLagoAzulEs";
+import { grutaLagoAzulPt } from "src/data/tours/gruta-lago-azul/GrutaLagoAzulPt";
+import { rioDaPrataEn } from "src/data/tours/rio-da-prata/RioDaPrataEn";
+import { rioDaPrataEs } from "src/data/tours/rio-da-prata/RioDaPrataEs";
+import { rioDaPrataPt } from "src/data/tours/rio-da-prata/RioDaPrataPt";
 
 export const familiaFelizPtItinerary: ItineraryItem[] = [
   {

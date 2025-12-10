@@ -93,7 +93,6 @@ const changeLanguage = (langCode: string) => {
   gap: 12px;
 }
 
-/* --- Estilo do Seletor de Idioma --- */
 .control-wrapper {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 20px;
@@ -112,7 +111,6 @@ const changeLanguage = (langCode: string) => {
   font-size: 0.9rem;
 }
 
-/* --- Estilo do Seletor de Tema (Pill Shape) --- */
 .theme-pill {
   display: flex;
   border-radius: 20px;
@@ -120,14 +118,11 @@ const changeLanguage = (langCode: string) => {
   gap: 2px;
   transition: all 0.3s ease;
 
-  /* Estilo Padrão (assumindo que está sobre uma imagem, fundo claro translúcido) */
   background: rgba(255, 255, 255, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.5);
 
-  /* Adaptação para quando o site global está em Dark Mode */
-  /* O uso de :global() é necessário porque estamos em style scoped */
   :global(body.body--dark) & {
-    background: rgba(30, 30, 30, 0.8); /* Fundo escuro translúcido */
+    background: rgba(30, 30, 30, 0.8);
     border-color: rgba(255, 255, 255, 0.1);
   }
 }
@@ -139,15 +134,12 @@ const changeLanguage = (langCode: string) => {
   font-weight: 600;
   letter-spacing: 0.5px;
 
-  /* Cor do texto inativo no modo claro global */
   color: #666;
 
-  /* Cor do texto inativo no modo escuro global */
   :global(body.body--dark) & {
     color: #ccc;
   }
 
-  /* Efeito Hover suave nos inativos */
   &:hover:not(.active-light):not(.active-dark) {
     background-color: rgba(0,0,0,0.05);
     :global(body.body--dark) & {
@@ -156,17 +148,13 @@ const changeLanguage = (langCode: string) => {
   }
 }
 
-/* --- Cores Ativas --- */
-
-/* Quando DIA está ativo: tom alaranjado/âmbar e texto branco */
 .active-light {
-  background-color: #7CB61E !important; /* Orange-8 approx (cor de sol/dia) */
+  background-color: #7CB61E !important;
   color: white !important;
 }
 
-/* Quando NOITE está ativo: Azul índigo profundo e texto branco */
 .active-dark {
-  background-color: #283593 !important; /* Indigo-9 approx (cor de noite) */
+  background-color: #283593 !important;
   color: white !important;
 }
 </style>

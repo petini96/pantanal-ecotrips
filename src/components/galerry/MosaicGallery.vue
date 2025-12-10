@@ -100,10 +100,9 @@ const props = defineProps<{
   images: GalleryImage[];
 }>();
 
-// --- LÓGICA DE ITENS E PAGINAÇÃO RESPONSIVA ---
 const page = ref(1);
-const itemsPerPage = ref(9); // Padrão Desktop
-const maxPagesDisplay = ref(6); // Padrão Desktop
+const itemsPerPage = ref(9);
+const maxPagesDisplay = ref(6);
 
 const updateLayout = () => {
   const width = window.innerWidth;
@@ -113,7 +112,7 @@ const updateLayout = () => {
     itemsPerPage.value = 6;
     maxPagesDisplay.value = 3; 
   } else if (width < 1024) {
-    // Tablet / Laptop Pequeno
+    // Tablet / Laptop
     itemsPerPage.value = 10;
     maxPagesDisplay.value = 5;
   } else {
@@ -144,12 +143,10 @@ watch(() => props.images, () => {
   page.value = 1;
 });
 
-// Garante que a página não fique inválida ao redimensionar
 watch(totalPages, (newTotal) => {
   if (page.value > newTotal) page.value = newTotal || 1;
 });
 
-// --- LÓGICA DO LIGHTBOX ---
 const fullscreenDialog = ref(false);
 const currentSlide = ref(0);
 
@@ -160,10 +157,9 @@ const openFullscreen = (index: number) => {
 </script>
 
 <style scoped lang="scss">
-/* --- CONTAINER PRINCIPAL --- */
 .mosaic-gallery-container {
   width: 100%;
-  max-width: 80%; /* Efeito "col-10" no Desktop */
+  max-width: 80%;
   min-height: 100vh;
   margin: 0 auto;
   
@@ -172,8 +168,6 @@ const openFullscreen = (index: number) => {
   justify-content: center;
 }
 
-/* --- GRID BASE (DESKTOP: > 1024px) --- */
-/* Exibe 10 itens em 5 colunas */
 .mosaic-grid {
   display: grid;
   gap: 8px;
@@ -192,18 +186,16 @@ const openFullscreen = (index: number) => {
   opacity: 1;
 }
 
-/* POSICIONAMENTO DESKTOP (10 Itens) */
 .mosaic-item:nth-child(1),
 .mosaic-item:nth-child(6) {
   grid-column: span 2;
   grid-row: span 2;
 }
 
-/* --- ESTILOS DA PAGINAÇÃO --- */
 :deep(.custom-pagination) {
   align-items: center;
   gap: 4px;
-  flex-wrap: nowrap; /* Impede quebra de linha no mobile */
+  flex-wrap: nowrap;
 
   .q-btn {
     width: 34px !important;       
@@ -234,19 +226,16 @@ const openFullscreen = (index: number) => {
 /* --- RESPONSIVIDADE TABLET (768px - 1023px) --- */
 @media (max-width: 1023px) {
   .mosaic-gallery-container {
-    max-width: 95vw; /* Aproveita mais a tela */
+    max-width: 95vw;
   }
-
-  /* Exibe 8 itens em 4 colunas */
+  
   .mosaic-grid {
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 200px; 
   }
-
-  /* Reseta Desktop */
+  
   .mosaic-item:nth-child(n) { grid-column: auto; grid-row: auto; }
-
-  /* Posicionamento Tablet (8 Itens) */
+  
   .mosaic-item:nth-child(1),
   .mosaic-item:nth-child(5) {
     grid-column: span 2;
@@ -261,24 +250,19 @@ const openFullscreen = (index: number) => {
     padding-left: 10px;
     padding-right: 10px;
   }
-
-  /* Exibe 6 itens em 2 colunas */
+  
   .mosaic-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 160px; 
   }
-
-  /* Reseta Tablet/Desktop */
+  
   .mosaic-item:nth-child(n) { grid-column: auto; grid-row: auto; }
-
-  /* Posicionamento Mobile (6 Itens) */
-  /* Item 1 Grande no topo */
+  
   .mosaic-item:nth-child(1) {
     grid-column: span 2;
     grid-row: span 2;
   }
   
-  /* Item 6 Largo no final (opcional, para fechar grid) */
   .mosaic-item:nth-child(6) {
     grid-column: span 2;
   }
