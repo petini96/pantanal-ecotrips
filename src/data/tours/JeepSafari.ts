@@ -1,9 +1,13 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
-import { ecotourismPt, ecotourismEn, ecotourismEs } from 'src/data/categories/Ecotourismm';
-import { adventurePt, adventureEn, adventureEs } from 'src/data/categories/Adventuree';
 import { miranda } from '../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
+import { adventureEn } from '../categories/adventuree/AdventureeEn';
+import { adventureEs } from '../categories/adventuree/AdventureeEs';
+import { adventurePt } from '../categories/adventuree/AdventureePt';
+import { ecotourismEn } from '../categories/ecotourismm/EcotourismmEn';
+import { ecotourismEs } from '../categories/ecotourismm/EcotourismmEs';
+import { ecotourismPt } from '../categories/ecotourismm/EcotourismmPt';
 
 const img = `${TOURS_BUCKET_NAME}/jeep-safari-nhecolandia/img1.webp`
 

@@ -1,16 +1,25 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
-import { ecotourismEn, ecotourismEs, ecotourismPt } from 'src/data/categories/Ecotourismm';
-import { aquaticEn, aquaticEs, aquaticPt } from 'src/data/categories/Aquaticc';
-import { adventureEn, adventureEs, adventurePt } from 'src/data/categories/Adventuree';
-import { groupsEn, groupsEs, groupsPt } from 'src/data/audiences/Groups';
-import { couplesEn, couplesEs, couplesPt } from 'src/data/audiences/Couples';
 import { bonito } from '../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
+import { couplesEn } from '../audiences/couples/CouplesEn';
+import { couplesEs } from '../audiences/couples/CouplesEs';
+import { couplesPt } from '../audiences/couples/CouplesPt';
+import { groupsEn } from '../audiences/groups/GroupsEn';
+import { groupsEs } from '../audiences/groups/GroupsEs';
+import { groupsPt } from '../audiences/groups/GroupsPt';
+import { adventureEn } from '../categories/adventuree/AdventureeEn';
+import { adventureEs } from '../categories/adventuree/AdventureeEs';
+import { adventurePt } from '../categories/adventuree/AdventureePt';
+import { aquaticEn } from '../categories/aquaticc/AquaticcEn';
+import { aquaticEs } from '../categories/aquaticc/AquaticcEs';
+import { aquaticPt } from '../categories/aquaticc/AquaticcPt';
+import { ecotourismEn } from '../categories/ecotourismm/EcotourismmEn';
+import { ecotourismEs } from '../categories/ecotourismm/EcotourismmEs';
+import { ecotourismPt } from '../categories/ecotourismm/EcotourismmPt';
 
 const img = `${TOURS_BUCKET_NAME}/boca-onca/img3.webp`
 
-// PT-BR
 export const bocaDaOncaPt: Tour = {
   id: 'TOUR-BDO-01',
   slug: 'boca-da-onca-em-bonito',
@@ -28,7 +37,6 @@ export const bocaDaOncaPt: Tour = {
   city: bonito
 };
 
-// EN-US
 export const bocaDaOncaEn: Tour = {
   id: 'TOUR-BDO-01',
   slug: 'boca-da-onca-em-bonito',
@@ -46,7 +54,6 @@ export const bocaDaOncaEn: Tour = {
   city: bonito
 };
 
-// ES
 export const bocaDaOncaEs: Tour = {
   id: 'TOUR-BDO-01',
   slug: 'boca-da-onca-em-bonito',

@@ -14,28 +14,29 @@ import {
   fazendaAguiaEnItinerary,
   fazendaAguiaEsItinerary,
 } from "./ItineraryData";
-import {
-  ecotourismPt,
-  ecotourismEn,
-  ecotourismEs,
-} from "src/data/categories/Ecotourismm";
-import { aquaticPt, aquaticEn, aquaticEs } from "src/data/categories/Aquaticc";
-import {
-  adventurePt,
-  adventureEn,
-  adventureEs,
-} from "src/data/categories/Adventuree";
-import {
-  familiesPt,
-  familiesEn,
-  familiesEs,
-} from "src/data/audiences/Families";
-import { couplesPt, couplesEn, couplesEs } from "src/data/audiences/Couples";
-import { groupsPt, groupsEn, groupsEs } from "src/data/audiences/Groups";
-import { pantanalSulPt, pantanalSulEn, pantanalSulEs } from "src/data/regions/Regions";
 import { PACKAGE_BUCKET_NAME } from "src/utils/environmentUtils";
+import { couplesEn } from "src/data/audiences/couples/CouplesEn";
+import { couplesEs } from "src/data/audiences/couples/CouplesEs";
+import { couplesPt } from "src/data/audiences/couples/CouplesPt";
+import { familiesEn } from "src/data/audiences/families/FamiliesEn";
+import { familiesEs } from "src/data/audiences/families/FamiliesEs";
+import { familiesPt } from "src/data/audiences/families/FamiliesPt";
+import { groupsEn } from "src/data/audiences/groups/GroupsEn";
+import { groupsEs } from "src/data/audiences/groups/GroupsEs";
+import { groupsPt } from "src/data/audiences/groups/GroupsPt";
+import { adventureEn } from "src/data/categories/adventuree/AdventureeEn";
+import { adventureEs } from "src/data/categories/adventuree/AdventureeEs";
+import { adventurePt } from "src/data/categories/adventuree/AdventureePt";
+import { aquaticEn } from "src/data/categories/aquaticc/AquaticcEn";
+import { aquaticEs } from "src/data/categories/aquaticc/AquaticcEs";
+import { aquaticPt } from "src/data/categories/aquaticc/AquaticcPt";
+import { ecotourismEn } from "src/data/categories/ecotourismm/EcotourismmEn";
+import { ecotourismEs } from "src/data/categories/ecotourismm/EcotourismmEs";
+import { ecotourismPt } from "src/data/categories/ecotourismm/EcotourismmPt";
+import { pantanalSulEn } from "src/data/regions/pantanal-sul/PantanalSulEn";
+import { pantanalSulEs } from "src/data/regions/pantanal-sul/PantanalSulEs";
+import { pantanalSulPt } from "src/data/regions/pantanal-sul/PantanalSulPt";
 
-// --- COMMON DATA (PT-BR) ---
 const commonIncludedPt = [
   "Hospedagem em apartamento",
   "Pensão completa (café da manhã, almoço, jantar)",

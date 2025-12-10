@@ -1,6 +1,5 @@
 import { type ItineraryItem } from "src/model/ItineraryItem";
 
-// Importar todas as atividades que acabamos de criar
 import {
   chalanaPiranhaFishingPt,
   chalanaPiranhaFishingEn,
@@ -26,9 +25,6 @@ import {
   jaguarSafariEn,
   jaguarSafariEs,
 } from "src/data/tours/JaguarSafari";
-
-// Itineraries are built based on duration.
-// The base day 1 is the same for all.
 
 // --- COATI (2D/1N) ---
 export const fazendaCoatiPtItinerary: ItineraryItem[] = [

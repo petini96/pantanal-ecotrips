@@ -20,7 +20,6 @@ import {
   estanciaMimosaEs,
 } from "src/data/tours/EstanciaMimosa";
 
-// PT-BR
 export const familiaFelizPtItinerary: ItineraryItem[] = [
   {
     day: 1,
@@ -59,7 +58,6 @@ export const familiaFelizPtItinerary: ItineraryItem[] = [
   },
 ];
 
-// EN-US
 export const familiaFelizEnItinerary: ItineraryItem[] = [
   {
     day: 1,
@@ -96,7 +94,6 @@ export const familiaFelizEnItinerary: ItineraryItem[] = [
   },
 ];
 
-// ES
 export const familiaFelizEsItinerary: ItineraryItem[] = [
   {
     day: 1,

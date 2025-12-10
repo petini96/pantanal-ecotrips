@@ -1,8 +1,4 @@
-// src/data/packages/en.ts
-
 import { type TourPackage } from 'src/model/TourPackage';
-
-// Importa todos os pacotes em Inglês
 import { bonitoAmizadeEn } from './BonitoAmizade/PackageData';
 import { familiaFelizEn } from './FamiliaFeliz/PackageData';
 import {
@@ -19,9 +15,7 @@ import {
 } from './JungleLodge/PackageData';
 import { noiteFelizEn } from './NoiteFeliz/PackageData';
 import { reveillonBonitoEn } from './ReveillonBonito/PackageData';
-// Se tiver mais pacotes, adicione os imports aqui
 
-// Agrega e exporta todos em um único objeto
 export const packagesEn: Record<string, TourPackage> = {
   bonitoAmizade: bonitoAmizadeEn,
   familiaFeliz: familiaFelizEn,

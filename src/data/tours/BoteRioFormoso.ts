@@ -1,15 +1,22 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
-import { aquaticEn, aquaticEs, aquaticPt } from 'src/data/categories/Aquaticc';
-import { adventureEn, adventureEs, adventurePt } from 'src/data/categories/Adventuree';
-import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families';
-import { groupsEn, groupsEs, groupsPt } from 'src/data/audiences/Groups';
 import { bonito } from '../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
+import { familiesEn } from '../audiences/families/FamiliesEn';
+import { familiesEs } from '../audiences/families/FamiliesEs';
+import { familiesPt } from '../audiences/families/FamiliesPt';
+import { groupsEn } from '../audiences/groups/GroupsEn';
+import { groupsEs } from '../audiences/groups/GroupsEs';
+import { groupsPt } from '../audiences/groups/GroupsPt';
+import { adventureEn } from '../categories/adventuree/AdventureeEn';
+import { adventureEs } from '../categories/adventuree/AdventureeEs';
+import { adventurePt } from '../categories/adventuree/AdventureePt';
+import { aquaticEn } from '../categories/aquaticc/AquaticcEn';
+import { aquaticEs } from '../categories/aquaticc/AquaticcEs';
+import { aquaticPt } from '../categories/aquaticc/AquaticcPt';
 
 const img = `${TOURS_BUCKET_NAME}/rio-formoso/img1.webp`
 
-// PT-BR
 export const boteRioFormosoPt: Tour = {
   id: 'TOUR-BRF-01',
   slug: 'bote-rio-formoso-em-bonito',
@@ -27,7 +34,6 @@ export const boteRioFormosoPt: Tour = {
   city: bonito
 };
 
-// EN-US
 export const boteRioFormosoEn: Tour = {
   id: 'TOUR-BRF-01',
   slug: 'bote-rio-formoso-em-bonito',
@@ -45,7 +51,6 @@ export const boteRioFormosoEn: Tour = {
   city: bonito
 };
 
-// ES
 export const boteRioFormosoEs: Tour = {
   id: 'TOUR-BRF-01',
   slug: 'bote-rio-formoso-em-bonito',

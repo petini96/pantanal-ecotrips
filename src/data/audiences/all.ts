@@ -1,14 +1,18 @@
-// src/data/audiences/all.ts
-
 import { type TranslatableTag } from 'src/model/Tags';
 
-// Importa de todos os arquivos individuais
-import { couplesPt, couplesEn, couplesEs } from './Couples';
-import { familiesPt, familiesEn, familiesEs } from './Families';
-import { groupsPt, groupsEn, groupsEs } from './Groups';
-import { seniorsPt, seniorsEn, seniorsEs } from './Seniors';
+import { couplesEn } from './couples/CouplesEn';
+import { couplesEs } from './couples/CouplesEs';
+import { couplesPt } from './couples/CouplesPt';
+import { familiesEn } from './families/FamiliesEn';
+import { familiesEs } from './families/FamiliesEs';
+import { familiesPt } from './families/FamiliesPt';
+import { groupsEn } from './groups/GroupsEn';
+import { groupsEs } from './groups/GroupsEs';
+import { groupsPt } from './groups/GroupsPt';
+import { seniorsEs } from './seniors/Seniors';
+import { seniorsEn } from './seniors/SeniorsEn';
+import { seniorsPt } from './seniors/SeniorsPt';
 
-// Agrega e exporta um array para cada idioma
 export const allAudiencesPt: TranslatableTag[] = [
   couplesPt,
   familiesPt,

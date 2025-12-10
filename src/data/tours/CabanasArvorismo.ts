@@ -1,10 +1,16 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
-import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families';
-import { groupsEn, groupsEs, groupsPt } from 'src/data/audiences/Groups';
-import { adventurePt, adventureEn, adventureEs } from '../categories/Adventuree';
 import { bonito } from '../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
+import { familiesEn } from '../audiences/families/FamiliesEn';
+import { familiesEs } from '../audiences/families/FamiliesEs';
+import { familiesPt } from '../audiences/families/FamiliesPt';
+import { groupsEn } from '../audiences/groups/GroupsEn';
+import { groupsEs } from '../audiences/groups/GroupsEs';
+import { groupsPt } from '../audiences/groups/GroupsPt';
+import { adventureEn } from '../categories/adventuree/AdventureeEn';
+import { adventureEs } from '../categories/adventuree/AdventureeEs';
+import { adventurePt } from '../categories/adventuree/AdventureePt';
 
 const img = `${TOURS_BUCKET_NAME}/cabanas-arvorismo/img1.jpg`
 

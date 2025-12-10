@@ -1,11 +1,19 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
-import { cavesEn, cavesEs, cavesPt } from 'src/data/categories/Cavess';
-import { ecotourismEn, ecotourismEs, ecotourismPt } from 'src/data/categories/Ecotourismm';
-import { couplesEn, couplesEs, couplesPt } from 'src/data/audiences/Couples';
-import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families';
 import { bonito } from '../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
+import { couplesEn } from '../audiences/couples/CouplesEn';
+import { couplesEs } from '../audiences/couples/CouplesEs';
+import { couplesPt } from '../audiences/couples/CouplesPt';
+import { familiesEn } from '../audiences/families/FamiliesEn';
+import { familiesEs } from '../audiences/families/FamiliesEs';
+import { familiesPt } from '../audiences/families/FamiliesPt';
+import { cavesEn } from '../categories/cavess/CavessEn';
+import { cavesEs } from '../categories/cavess/CavessEs';
+import { cavesPt } from '../categories/cavess/CavessPt';
+import { ecotourismEn } from '../categories/ecotourismm/EcotourismmEn';
+import { ecotourismEs } from '../categories/ecotourismm/EcotourismmEs';
+import { ecotourismPt } from '../categories/ecotourismm/EcotourismmPt';
 
 const img = `${TOURS_BUCKET_NAME}/gruta-lagoa-azul/img1.webp`
 

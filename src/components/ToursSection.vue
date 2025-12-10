@@ -76,19 +76,17 @@
 import { ref, onMounted } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-// 1. IMPORTAR OS MODELOS E DADOS REAIS
 import type { Tour } from 'src/model/Tour';
 import type { Region } from 'src/model/Region';
-import { bonitoSerraBodoquenaPt, pantanalSulPt } from 'src/data/regions/Regions';
 import { bocaDaOncaPt } from 'src/data/tours/BocaDaOnca';
-// Simulação de outros passeios para o exemplo funcionar
 import { estanciaMimosaPt } from 'src/data/tours/EstanciaMimosa';
 import { rioDaPrataPt } from 'src/data/tours/RioDaPrata';
 import { buracoDasArarasPt } from 'src/data/tours/BuracoDasAraras';
+import { bonitoSerraBodoquenaPt } from 'src/data/regions/bonito/BonitoSerraBodoquenaPt';
+import { pantanalSulPt } from 'src/data/regions/pantanal-sul/PantanalSulPt';
 
 const { t } = useI18n();
 
-// 2. LÓGICA PARA ENCONTRAR A REGIÃO A PARTIR DA CIDADE (A PARTE CENTRAL DA SOLUÇÃO)
 const allRegions: Region[] = [bonitoSerraBodoquenaPt, pantanalSulPt];
 
 const getRegionFromTour = (tour: Tour): Region | null => {
@@ -97,7 +95,6 @@ const getRegionFromTour = (tour: Tour): Region | null => {
   return allRegions.find(region => region.cities.some(city => city.id === cityId)) || null;
 };
 
-// 3. CARREGAR DADOS REAIS DOS PASSEIOS (ao invés de dados mocados)
 const loadedTours = ref<Tour[]>([
   bocaDaOncaPt,
   estanciaMimosaPt,
@@ -105,7 +102,6 @@ const loadedTours = ref<Tour[]>([
   buracoDasArarasPt
 ]);
 
-// --- Lógica de Tema (sem alterações) ---
 type ThemeName = 'light' | 'dark';
 
 interface Theme {
@@ -114,7 +110,7 @@ interface Theme {
   icon: string;
 }
 
-const currentTheme = ref<ThemeName>('dark'); // Mudei para azul para combinar com os passeios de Bonito
+const currentTheme = ref<ThemeName>('dark');
 
 const themes = ref<Theme[]>([
   { name: 'light', label: 'Tema Pantanal', icon: 'mdi-leaf' },
@@ -133,7 +129,6 @@ const setTheme = (themeName: ThemeName) => {
   localStorage.setItem('tour-theme', themeName);
 };
 
-// --- Ações ---
 const viewTour = (tourId: string) => {
   console.log(`Redirecionando para a página do passeio: ${tourId}`);
 };

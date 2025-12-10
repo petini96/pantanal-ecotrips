@@ -1,8 +1,10 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
-import { aquaticPt, aquaticEn, aquaticEs } from 'src/data/categories/Aquaticc';
 import { miranda } from '../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
+import { aquaticEn } from '../categories/aquaticc/AquaticcEn';
+import { aquaticEs } from '../categories/aquaticc/AquaticcEs';
+import { aquaticPt } from '../categories/aquaticc/AquaticcPt';
 
 const img = `${TOURS_BUCKET_NAME}/canoagem-miranda/img1.jpg`
 

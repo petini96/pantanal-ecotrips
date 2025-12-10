@@ -232,14 +232,6 @@ import type { Region } from 'src/model/Region';
 import type { TranslatableTag } from 'src/model/Tags';
 import HorizontalGradientMask from 'src/components/mask/HorizontalGradientMask.vue';
 
-// --- Interfaces ---
-interface RegionsModule {
-  bonitoSerraBodoquenaPt: Region;
-  pantanalSulPt: Region;
-}
-interface AudiencesModule { allAudiencesPt: TranslatableTag[]; }
-interface CategoriesModule { allCategoriesPt: TranslatableTag[]; }
-
 // --- SETUP ---
 const router = useRouter();
 const route = useRoute();
@@ -273,17 +265,15 @@ async function loadFilterData() {
     if (packages.value.length === 0) {
        await packageStore.fetchPackages(route.params.lang as string || 'pt');
     }
-    const [regionsModule, audiencesModule, categoriesModule] = await Promise.all([
-      import('src/data/regions/Regions') as Promise<RegionsModule>,
-      import('src/data/audiences/all') as Promise<AudiencesModule>,
-      import('src/data/categories/all') as Promise<CategoriesModule>,
+    const [regionsMod, audiencesMod, categoriesMod] = await Promise.all([
+      import('src/data/regions/all'),
+      import('src/data/audiences/all'),
+      import('src/data/categories/all'),
     ]);
 
-    if (regionsModule.bonitoSerraBodoquenaPt && regionsModule.pantanalSulPt) {
-       regionOptions.value = [regionsModule.bonitoSerraBodoquenaPt, regionsModule.pantanalSulPt];
-    }
-    if (audiencesModule.allAudiencesPt) audienceOptions.value = audiencesModule.allAudiencesPt;
-    if (categoriesModule.allCategoriesPt) categoryOptions.value = categoriesModule.allCategoriesPt;
+    if (regionsMod.allRegionsPt) regionOptions.value = regionsMod.allRegionsPt;
+    if (audiencesMod.allAudiencesPt) audienceOptions.value = audiencesMod.allAudiencesPt;
+    if (categoriesMod.allCategoriesPt) categoryOptions.value = categoriesMod.allCategoriesPt;
 
   } catch (error) {
     console.warn("Erro ao carregar filtros", error);

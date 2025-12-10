@@ -5,27 +5,30 @@ import {
   familiaFelizEnItinerary,
   familiaFelizEsItinerary,
 } from "./ItineraryData";
-import { aquaticPt, aquaticEn, aquaticEs } from "src/data/categories/Aquaticc";
-import { cavesPt, cavesEn, cavesEs } from "src/data/categories/Cavess";
-import {
-  ecotourismPt,
-  ecotourismEn,
-  ecotourismEs,
-} from "src/data/categories/Ecotourismm";
-import {
-  familiesPt,
-  familiesEn,
-  familiesEs,
-} from "src/data/audiences/Families";
-import { couplesPt, couplesEn, couplesEs } from "src/data/audiences/Couples";
-import { bonitoSerraBodoquenaEn, bonitoSerraBodoquenaEs, bonitoSerraBodoquenaPt } from "src/data/regions/Regions";
 import { PACKAGE_BUCKET_NAME } from "src/utils/environmentUtils";
+import { couplesEn } from "src/data/audiences/couples/CouplesEn";
+import { couplesEs } from "src/data/audiences/couples/CouplesEs";
+import { couplesPt } from "src/data/audiences/couples/CouplesPt";
+import { familiesEn } from "src/data/audiences/families/FamiliesEn";
+import { familiesEs } from "src/data/audiences/families/FamiliesEs";
+import { familiesPt } from "src/data/audiences/families/FamiliesPt";
+import { aquaticEn } from "src/data/categories/aquaticc/AquaticcEn";
+import { aquaticEs } from "src/data/categories/aquaticc/AquaticcEs";
+import { aquaticPt } from "src/data/categories/aquaticc/AquaticcPt";
+import { cavesEn } from "src/data/categories/cavess/CavessEn";
+import { cavesEs } from "src/data/categories/cavess/CavessEs";
+import { cavesPt } from "src/data/categories/cavess/CavessPt";
+import { ecotourismEn } from "src/data/categories/ecotourismm/EcotourismmEn";
+import { ecotourismEs } from "src/data/categories/ecotourismm/EcotourismmEs";
+import { ecotourismPt } from "src/data/categories/ecotourismm/EcotourismmPt";
+import { bonitoSerraBodoquenaEn } from "src/data/regions/bonito/BonitoSerraBodoquenaEn";
+import { bonitoSerraBodoquenaEs } from "src/data/regions/bonito/BonitoSerraBodoquenaEs";
+import { bonitoSerraBodoquenaPt } from "src/data/regions/bonito/BonitoSerraBodoquenaPt";
 
 const uuid = uid();
 
 const img = `${PACKAGE_BUCKET_NAME}/tour-familia-feliz/img2.webp`
 
-// PT-BR
 export const familiaFelizPt: TourPackage = {
   id: uuid,
   slug: 'tour-familia-feliz',
@@ -65,7 +68,6 @@ export const familiaFelizPt: TourPackage = {
   region: bonitoSerraBodoquenaPt
 };
 
-// EN-US
 export const familiaFelizEn: TourPackage = {
   id: uuid,
   slug: 'tour-familia-feliz',
@@ -105,7 +107,6 @@ export const familiaFelizEn: TourPackage = {
   region: bonitoSerraBodoquenaEn
 };
 
-// ES
 export const familiaFelizEs: TourPackage = {
   id: uuid,
   slug: 'tour-familia-feliz',

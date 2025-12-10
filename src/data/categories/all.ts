@@ -1,14 +1,17 @@
-// src/data/categories/all.ts
-
 import { type TranslatableTag } from 'src/model/Tags';
+import { adventureEn } from './adventuree/AdventureeEn';
+import { adventureEs } from './adventuree/AdventureeEs';
+import { adventurePt } from './adventuree/AdventureePt';
+import { aquaticEn } from './aquaticc/AquaticcEn';
+import { aquaticEs } from './aquaticc/AquaticcEs';
+import { aquaticPt } from './aquaticc/AquaticcPt';
+import { cavesEn } from './cavess/CavessEn';
+import { cavesEs } from './cavess/CavessEs';
+import { cavesPt } from './cavess/CavessPt';
+import { ecotourismEn } from './ecotourismm/EcotourismmEn';
+import { ecotourismEs } from './ecotourismm/EcotourismmEs';
+import { ecotourismPt } from './ecotourismm/EcotourismmPt';
 
-// Importa de todos os arquivos individuais
-import { adventurePt, adventureEn, adventureEs } from './Adventuree';
-import { aquaticPt, aquaticEn, aquaticEs } from './Aquaticc';
-import { cavesPt, cavesEn, cavesEs } from './Cavess';
-import { ecotourismPt, ecotourismEn, ecotourismEs } from './Ecotourismm';
-
-// Agrega e exporta um array para cada idioma
 export const allCategoriesPt: TranslatableTag[] = [
   adventurePt,
   aquaticPt,

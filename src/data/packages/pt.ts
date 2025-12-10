@@ -1,8 +1,4 @@
-// src/data/packages/pt.ts
-
 import { type TourPackage } from 'src/model/TourPackage';
-
-// Importa todos os pacotes em Português
 import { bonitoAmizadePt } from './BonitoAmizade/PackageData';
 import { familiaFelizPt } from './FamiliaFeliz/PackageData';
 import {
@@ -19,9 +15,7 @@ import {
 } from './JungleLodge/PackageData';
 import { noiteFelizPt } from './NoiteFeliz/PackageData';
 import { reveillonBonitoPt } from './ReveillonBonito/PackageData';
-// Se tiver mais pacotes, adicione os imports aqui
 
-// Agrega e exporta todos em um único objeto
 export const packagesPt: Record<string, TourPackage> = {
   bonitoAmizade: bonitoAmizadePt,
   familiaFeliz: familiaFelizPt,

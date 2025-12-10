@@ -1,9 +1,13 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
-import { ecotourismPt, ecotourismEn, ecotourismEs } from 'src/data/categories/Ecotourismm';
-import { familiesPt, familiesEn, familiesEs } from 'src/data/audiences/Families';
 import { miranda } from '../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
+import { familiesEn } from '../audiences/families/FamiliesEn';
+import { familiesEs } from '../audiences/families/FamiliesEs';
+import { familiesPt } from '../audiences/families/FamiliesPt';
+import { ecotourismEn } from '../categories/ecotourismm/EcotourismmEn';
+import { ecotourismEs } from '../categories/ecotourismm/EcotourismmEs';
+import { ecotourismPt } from '../categories/ecotourismm/EcotourismmPt';
 
 const img = `${TOURS_BUCKET_NAME}/safari-fluvial/img1.webp`
 

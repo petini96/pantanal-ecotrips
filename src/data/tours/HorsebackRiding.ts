@@ -1,8 +1,10 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
-import { ecotourismPt, ecotourismEn, ecotourismEs } from 'src/data/categories/Ecotourismm';
 import { miranda } from '../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
+import { ecotourismEn } from '../categories/ecotourismm/EcotourismmEn';
+import { ecotourismEs } from '../categories/ecotourismm/EcotourismmEs';
+import { ecotourismPt } from '../categories/ecotourismm/EcotourismmPt';
 
 const img = `${TOURS_BUCKET_NAME}/cavalgada/img1.webp`
 

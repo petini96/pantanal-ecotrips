@@ -9,8 +9,6 @@ import { piranhaFishingPt, piranhaFishingEn, piranhaFishingEs } from "../../tour
 import { riverFloatingPt, riverFloatingEn, riverFloatingEs } from "../../tours/RiverFloating";
 import { type ItineraryItem } from "../../../model/ItineraryItem";
 
-// Importar todas as atividades que acabamos de criar
-
 // --- RIVER OTTER (2D/1N) ---
 export const jungleLodgeOtterPtItinerary: ItineraryItem[] = [
   {

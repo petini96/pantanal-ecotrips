@@ -25,7 +25,6 @@ import {
   bocaDaOncaEs,
 } from "src/data/tours/BocaDaOnca";
 
-// PT-BR
 export const bonitoAmizadePtItinerary: ItineraryItem[] = [
   {
     day: 1,
@@ -72,7 +71,6 @@ export const bonitoAmizadePtItinerary: ItineraryItem[] = [
   },
 ];
 
-// EN-US
 export const bonitoAmizadeEnItinerary: ItineraryItem[] = [
   {
     day: 1,
@@ -117,7 +115,6 @@ export const bonitoAmizadeEnItinerary: ItineraryItem[] = [
   },
 ];
 
-// ES
 export const bonitoAmizadeEsItinerary: ItineraryItem[] = [
   {
     day: 1,

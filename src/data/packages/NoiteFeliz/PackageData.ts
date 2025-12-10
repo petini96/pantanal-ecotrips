@@ -5,27 +5,30 @@ import {
   noiteFelizEnItinerary,
   noiteFelizEsItinerary,
 } from "./ItineraryData";
-import { aquaticPt, aquaticEn, aquaticEs } from "../../categories/Aquaticc";
-import { cavesPt, cavesEn, cavesEs } from "../../categories/Cavess";
-import {
-  ecotourismPt,
-  ecotourismEn,
-  ecotourismEs,
-} from "../../categories/Ecotourismm";
-import {
-  familiesPt,
-  familiesEn,
-  familiesEs,
-} from "../../../data/audiences/Families";
-import { couplesPt, couplesEn, couplesEs } from "../../../data/audiences/Couples";
-import { bonitoSerraBodoquenaEn, bonitoSerraBodoquenaEs, bonitoSerraBodoquenaPt } from "src/data/regions/Regions";
 import { TOURS_BUCKET_NAME } from "src/utils/environmentUtils";
+import { couplesEn } from "src/data/audiences/couples/CouplesEn";
+import { couplesEs } from "src/data/audiences/couples/CouplesEs";
+import { couplesPt } from "src/data/audiences/couples/CouplesPt";
+import { familiesEn } from "src/data/audiences/families/FamiliesEn";
+import { familiesEs } from "src/data/audiences/families/FamiliesEs";
+import { familiesPt } from "src/data/audiences/families/FamiliesPt";
+import { aquaticEn } from "src/data/categories/aquaticc/AquaticcEn";
+import { aquaticEs } from "src/data/categories/aquaticc/AquaticcEs";
+import { aquaticPt } from "src/data/categories/aquaticc/AquaticcPt";
+import { cavesEn } from "src/data/categories/cavess/CavessEn";
+import { cavesEs } from "src/data/categories/cavess/CavessEs";
+import { cavesPt } from "src/data/categories/cavess/CavessPt";
+import { ecotourismEn } from "src/data/categories/ecotourismm/EcotourismmEn";
+import { ecotourismEs } from "src/data/categories/ecotourismm/EcotourismmEs";
+import { ecotourismPt } from "src/data/categories/ecotourismm/EcotourismmPt";
+import { bonitoSerraBodoquenaEn } from "src/data/regions/bonito/BonitoSerraBodoquenaEn";
+import { bonitoSerraBodoquenaEs } from "src/data/regions/bonito/BonitoSerraBodoquenaEs";
+import { bonitoSerraBodoquenaPt } from "src/data/regions/bonito/BonitoSerraBodoquenaPt";
 
 const img = `${TOURS_BUCKET_NAME}/buraco-das-araras-em-bonito/img3.webp`
 
 const uuid = uid();
 
-// PT-BR
 export const noiteFelizPt: TourPackage = {
   id: uuid,
   slug: 'noite-feliz-em-bonito',

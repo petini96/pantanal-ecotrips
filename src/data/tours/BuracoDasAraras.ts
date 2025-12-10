@@ -1,11 +1,19 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
-import { ecotourismEn, ecotourismEs, ecotourismPt } from 'src/data/categories/Ecotourismm';
-import { familiesEn, familiesEs, familiesPt } from 'src/data/audiences/Families';
-import { couplesEn, couplesEs, couplesPt } from 'src/data/audiences/Couples';
-import { seniorsEn, seniorsEs, seniorsPt } from 'src/data/audiences/Seniors';
 import { bonito } from '../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
+import { couplesEn } from '../audiences/couples/CouplesEn';
+import { couplesEs } from '../audiences/couples/CouplesEs';
+import { couplesPt } from '../audiences/couples/CouplesPt';
+import { familiesEn } from '../audiences/families/FamiliesEn';
+import { familiesEs } from '../audiences/families/FamiliesEs';
+import { familiesPt } from '../audiences/families/FamiliesPt';
+import { seniorsEs } from '../audiences/seniors/Seniors';
+import { seniorsEn } from '../audiences/seniors/SeniorsEn';
+import { seniorsPt } from '../audiences/seniors/SeniorsPt';
+import { ecotourismEn } from '../categories/ecotourismm/EcotourismmEn';
+import { ecotourismEs } from '../categories/ecotourismm/EcotourismmEs';
+import { ecotourismPt } from '../categories/ecotourismm/EcotourismmPt';
 
 const img = `${TOURS_BUCKET_NAME}/buraco-das-araras/img3.webp`
 

@@ -5,27 +5,31 @@ import {
   reveillonBonitoEnItinerary,
   reveillonBonitoEsItinerary,
 } from "./ItineraryData";
-import { aquaticPt, aquaticEn, aquaticEs } from "src/data/categories/Aquaticc";
-import { cavesPt, cavesEn, cavesEs } from "src/data/categories/Cavess";
-import {
-  ecotourismPt,
-  ecotourismEn,
-  ecotourismEs,
-} from "src/data/categories/Ecotourismm";
-import {
-  adventurePt,
-  adventureEn,
-  adventureEs,
-} from "src/data/categories/Adventuree"; // <-- Verifique se este import está assim
-import {
-  familiesPt,
-  familiesEn,
-  familiesEs,
-} from "src/data/audiences/Families";
-import { couplesPt, couplesEn, couplesEs } from "src/data/audiences/Couples";
-import { groupsPt, groupsEn, groupsEs } from "src/data/audiences/Groups";
-import { bonitoSerraBodoquenaEn, bonitoSerraBodoquenaEs, bonitoSerraBodoquenaPt } from "src/data/regions/Regions";
 import { PACKAGE_BUCKET_NAME } from "src/utils/environmentUtils";
+import { couplesEn } from "src/data/audiences/couples/CouplesEn";
+import { couplesEs } from "src/data/audiences/couples/CouplesEs";
+import { couplesPt } from "src/data/audiences/couples/CouplesPt";
+import { familiesEn } from "src/data/audiences/families/FamiliesEn";
+import { familiesEs } from "src/data/audiences/families/FamiliesEs";
+import { familiesPt } from "src/data/audiences/families/FamiliesPt";
+import { groupsEn } from "src/data/audiences/groups/GroupsEn";
+import { groupsEs } from "src/data/audiences/groups/GroupsEs";
+import { groupsPt } from "src/data/audiences/groups/GroupsPt";
+import { adventureEn } from "src/data/categories/adventuree/AdventureeEn";
+import { adventureEs } from "src/data/categories/adventuree/AdventureeEs";
+import { adventurePt } from "src/data/categories/adventuree/AdventureePt";
+import { aquaticEn } from "src/data/categories/aquaticc/AquaticcEn";
+import { aquaticEs } from "src/data/categories/aquaticc/AquaticcEs";
+import { aquaticPt } from "src/data/categories/aquaticc/AquaticcPt";
+import { cavesEn } from "src/data/categories/cavess/CavessEn";
+import { cavesEs } from "src/data/categories/cavess/CavessEs";
+import { cavesPt } from "src/data/categories/cavess/CavessPt";
+import { ecotourismEn } from "src/data/categories/ecotourismm/EcotourismmEn";
+import { ecotourismEs } from "src/data/categories/ecotourismm/EcotourismmEs";
+import { ecotourismPt } from "src/data/categories/ecotourismm/EcotourismmPt";
+import { bonitoSerraBodoquenaEn } from "src/data/regions/bonito/BonitoSerraBodoquenaEn";
+import { bonitoSerraBodoquenaEs } from "src/data/regions/bonito/BonitoSerraBodoquenaEs";
+import { bonitoSerraBodoquenaPt } from "src/data/regions/bonito/BonitoSerraBodoquenaPt";
 
 const uuid = uid();
 

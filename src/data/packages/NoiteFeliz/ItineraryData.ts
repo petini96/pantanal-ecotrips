@@ -15,7 +15,6 @@ import {
   grutaLagoAzulEs,
 } from "src/data/tours/GrutaLagoAzul";
 
-// PT-BR
 export const noiteFelizPtItinerary: ItineraryItem[] = [
   {
     day: 1,
@@ -45,7 +44,6 @@ export const noiteFelizPtItinerary: ItineraryItem[] = [
   },
 ];
 
-// EN-US
 export const noiteFelizEnItinerary: ItineraryItem[] = [
   {
     day: 1,
@@ -75,7 +73,6 @@ export const noiteFelizEnItinerary: ItineraryItem[] = [
   },
 ];
 
-// ES
 export const noiteFelizEsItinerary: ItineraryItem[] = [
   {
     day: 1,

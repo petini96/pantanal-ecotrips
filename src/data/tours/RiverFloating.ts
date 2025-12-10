@@ -1,9 +1,13 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
-import { aquaticPt, aquaticEn, aquaticEs } from 'src/data/categories/Aquaticc';
-import { familiesPt, familiesEn, familiesEs } from 'src/data/audiences/Families';
 import { miranda } from '../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
+import { familiesEn } from '../audiences/families/FamiliesEn';
+import { familiesEs } from '../audiences/families/FamiliesEs';
+import { familiesPt } from '../audiences/families/FamiliesPt';
+import { aquaticEn } from '../categories/aquaticc/AquaticcEn';
+import { aquaticEs } from '../categories/aquaticc/AquaticcEs';
+import { aquaticPt } from '../categories/aquaticc/AquaticcPt';
 
 const img = `${TOURS_BUCKET_NAME}/flutuacao-rio-miranda/img1.webp`
 

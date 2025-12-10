@@ -97,55 +97,45 @@
 
 <script setup lang="ts">
 import { ref, reactive, computed } from 'vue';
-import { bonitoSerraBodoquenaPt, pantanalSulPt } from 'src/data/regions/Regions';
-import { couplesPt } from 'src/data/audiences/Couples';
-import { familiesPt } from 'src/data/audiences/Families';
-import { groupsPt } from 'src/data/audiences/Groups';
-import { seniorsPt } from 'src/data/audiences/Seniors';
-import { adventurePt } from 'src/data/categories/Adventuree';
-import { aquaticPt } from 'src/data/categories/Aquaticc';
-import { cavesPt } from 'src/data/categories/Cavess';
-import { ecotourismPt } from 'src/data/categories/Ecotourismm';
-
-// --- Lógica do Componente ---
+import { couplesPt } from 'src/data/audiences/couples/CouplesPt';
+import { familiesPt } from 'src/data/audiences/families/FamiliesPt';
+import { groupsPt } from 'src/data/audiences/groups/GroupsPt';
+import { seniorsPt } from 'src/data/audiences/seniors/SeniorsPt';
+import { adventurePt } from 'src/data/categories/adventuree/AdventureePt';
+import { aquaticPt } from 'src/data/categories/aquaticc/AquaticcPt';
+import { cavesPt } from 'src/data/categories/cavess/CavessPt';
+import { ecotourismPt } from 'src/data/categories/ecotourismm/EcotourismmPt';
+import { bonitoSerraBodoquenaPt } from 'src/data/regions/bonito/BonitoSerraBodoquenaPt';
+import { pantanalSulPt } from 'src/data/regions/pantanal-sul/PantanalSulPt';
 
 const emit = defineEmits(['filter-change']);
 const showAdvanced = ref(false);
 
-// Objeto reativo para guardar todos os filtros selecionados
 const filters = reactive({
   searchText: '',
   region: null,
   cities: [],
   categories: [],
   recommendedFor: [],
-  // Adicione aqui difficulty e environments quando tiver os dados
 });
-
-// --- Carregamento das Opções para os Selects ---
 
 const regionOptions = ref([bonitoSerraBodoquenaPt, pantanalSulPt]);
 
 const cityOptions = computed(() => {
   if (filters.region) {
-    // @ts-expect-error: a gente sabe que region tem a propriedade cities
+    // @ts-expect-error: region tem a propriedade cities
     return filters.region.cities;
   }
-  // Se nenhuma região for selecionada, mostra todas as cidades
   return regionOptions.value.flatMap(r => r.cities);
 });
 
 const categoryOptions = ref([adventurePt, aquaticPt, cavesPt, ecotourismPt]);
 const audienceOptions = ref([couplesPt, familiesPt, groupsPt, seniorsPt]);
 
-// --- Funções ---
-
-// Emite os filtros atuais para o componente pai sempre que algo mudar
 const emitFilters = () => {
   emit('filter-change', filters);
 };
 
-// Limpa todos os filtros e emite a mudança
 const clearFilters = () => {
   filters.searchText = '';
   filters.region = null;
@@ -161,7 +151,7 @@ const clearFilters = () => {
   background-color: #f5f8f7;
   border-radius: 16px;
   max-width: 900px;
-  margin: 0 auto 32px auto; // Centraliza e adiciona espaço abaixo
+  margin: 0 auto 32px auto;
   box-shadow: 0 4px 15px rgba(77, 182, 172, 0.1);
 }
 .advanced-filters {
