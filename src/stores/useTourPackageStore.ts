@@ -2,7 +2,6 @@ import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
 import { type TourPackage } from 'src/model/TourPackage';
 
-// Interface para definir a forma esperada dos módulos importados dinamicamente
 interface PackageLanguageModule {
   packagesPt?: Record<string, TourPackage>;
   packagesEn?: Record<string, TourPackage>;
@@ -31,8 +30,8 @@ export const useTourPackageStore = defineStore('tourPackage', () => {
 
       switch (lang) {
         case 'en': {
-          // Tenta importar o módulo EN
-          module = await import('src/data/packages/en');
+          
+          module = await import('src/data/packages/all');
           if (module?.packagesEn) {
             packages.value = module.packagesEn;
           } else {
@@ -41,8 +40,8 @@ export const useTourPackageStore = defineStore('tourPackage', () => {
           break;
         }
         case 'es': {
-          // Tenta importar o módulo ES
-          module = await import('src/data/packages/es');
+          
+          module = await import('src/data/packages/all');
           if (module?.packagesEs) {
             packages.value = module.packagesEs;
           } else {
@@ -50,9 +49,9 @@ export const useTourPackageStore = defineStore('tourPackage', () => {
           }
           break;
         }
-        default: { // pt
-          // Tenta importar o módulo PT
-          module = await import('src/data/packages/pt');
+        default: {
+          
+          module = await import('src/data/packages/all');
           if (module?.packagesPt) {
             packages.value = module.packagesPt;
           } else {
@@ -61,11 +60,10 @@ export const useTourPackageStore = defineStore('tourPackage', () => {
           break;
         }
       }
-    } catch (e: unknown) { // Captura explicitamente o erro
+    } catch (e: unknown) {
       const errorMessage = e instanceof Error ? e.message : String(e);
       error.value = `Falha ao carregar os pacotes (${lang}): ${errorMessage}`;
       console.error(e);
-      // Você pode querer mostrar uma notificação de erro para o usuário aqui
     } finally {
       loading.value = false;
     }

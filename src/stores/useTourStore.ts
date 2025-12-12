@@ -2,7 +2,6 @@ import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
 import { type Tour } from 'src/model/Tour';
 
-// Interface para tipagem do módulo dinâmico
 interface TourModule {
   toursPt?: Record<string, Tour>;
   toursEn?: Record<string, Tour>;
@@ -28,18 +27,17 @@ export const useTourStore = defineStore('tour', () => {
     try {
       let module: TourModule;
 
-      // Importação Dinâmica (Lazy Loading) baseada no idioma
       switch (lang) {
         case 'en':
-          module = await import('src/data/tours/en'); // Certifique-se que este arquivo existe
+          module = await import('src/data/tours/all');
           if (module.toursEn) tours.value = module.toursEn;
           break;
         case 'es':
-          module = await import('src/data/tours/es'); // Certifique-se que este arquivo existe
+          module = await import('src/data/tours/all');
           if (module.toursEs) tours.value = module.toursEs;
           break;
         default: // pt
-          module = await import('src/data/tours/pt'); // Certifique-se que este arquivo existe
+          module = await import('src/data/tours/all');
           if (module.toursPt) tours.value = module.toursPt;
           break;
       }
