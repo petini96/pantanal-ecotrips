@@ -53,6 +53,7 @@ export default {
   most_wanted_packages_title: 'Pacotes mais procurados',
   days: 'Dias',
   nights: 'Noites',
+  night: 'Noite',
   categories: 'Categorias',
   people: 'pessoas',
   package_tour: 'Pacote de passeio',
@@ -108,5 +109,8 @@ export default {
   destinations: "Destinos",
   north_pantanal: "Pantanal Norte",
   south_pantanal: "Pantanal Sul",
-  amazon: "Amazonas"
+  amazon: "Amazonas",
+  destinations_description: "descrição do destino...",
+  destinations_title: "Título do destino",
+  loading_filters: "Carregando filtros"
 };

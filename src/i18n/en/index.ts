@@ -53,6 +53,7 @@ export default {
   most_wanted_packages_title: 'Most popular packages',
   days: 'Days',
   nights: 'Nights',
+  night: 'Night',
   categories: 'Categories',
   people: 'people',
   package_tour: 'tour package',
@@ -108,5 +109,8 @@ export default {
   destinations: "Destinations",
   north_pantanal: "North Pantanal",
   south_pantanal: "South Pantanal",
-  amazon: "Amazon"
+  amazon: "Amazon",
+  destinations_description: "descrição do destination...",
+  destinations_title: "Título do destination",
+  loading_filters: "Loading filters"
 };

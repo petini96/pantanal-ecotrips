@@ -19,7 +19,6 @@ export const useTourPackageStore = defineStore('tourPackage', () => {
 
   async function fetchPackages(lang = 'pt') {
     if (Object.keys(packages.value).length > 0) return;
-
     loading.value = true;
     error.value = null;
 
@@ -30,32 +29,29 @@ export const useTourPackageStore = defineStore('tourPackage', () => {
 
       switch (lang) {
         case 'en': {
-          
           module = await import('src/data/packages/all');
           if (module?.packagesEn) {
             packages.value = module.packagesEn;
           } else {
-            throw new Error(`Objeto 'packagesEn' não encontrado no módulo '/src/data/packages/en.ts'. Verifique a exportação.`);
+            throw new Error(`Objeto 'packagesEn' não encontrado.`);
           }
           break;
         }
         case 'es': {
-          
           module = await import('src/data/packages/all');
           if (module?.packagesEs) {
             packages.value = module.packagesEs;
           } else {
-            throw new Error(`Objeto 'packagesEs' não encontrado no módulo '/src/data/packages/es.ts'. Verifique a exportação.`);
+            throw new Error(`Objeto 'packagesEs' não encontrado.`);
           }
           break;
         }
         default: {
-          
           module = await import('src/data/packages/all');
           if (module?.packagesPt) {
             packages.value = module.packagesPt;
           } else {
-            throw new Error(`Objeto 'packagesPt' não encontrado no módulo '/src/data/packages/pt.ts'. Verifique a exportação.`);
+            throw new Error(`Objeto 'packagesPt' não encontrado.`);
           }
           break;
         }
@@ -69,6 +65,8 @@ export const useTourPackageStore = defineStore('tourPackage', () => {
     }
   }
 
+  // --- GETTERS ---
+
   const getPackageBySlug = computed(() => {
     return (slug: string): TourPackage | null => {
       return Object.values(packages.value).find((pkg) => pkg?.slug === slug) || null;
@@ -77,12 +75,51 @@ export const useTourPackageStore = defineStore('tourPackage', () => {
 
   const allPackages = computed((): TourPackage[] => Object.values(packages.value));
 
+  // NOVO: Getter para filtrar por slug da região
+  // NOVO: Getter para filtrar por slug da região
+  const getPackagesByRegionSlug = computed(() => {
+    return (regionSlug: string): TourPackage[] => {
+      const list = Object.values(packages.value);
+
+      // Se a lista estiver vazia, não faz nada
+      if (list.length === 0) return [];
+
+      console.groupCollapsed(`🔎 Debug Filtro de Região: Buscando por "${regionSlug}"`);
+      console.log(list)
+      const filtered = list.filter((pkg) => {
+        // Acessa o slug da região dentro do pacote
+        // Normaliza para lowercase e trim para evitar erros bobos de espaço/maiúscula
+        const pkgRegionSlug = pkg.region?.slug?.trim().toLowerCase();
+        console.log(pkgRegionSlug)
+        const targetSlug = regionSlug?.trim().toLowerCase();
+
+        const isMatch = pkgRegionSlug === targetSlug;
+
+        // LOG DO DETETIVE: Mostra linha a linha a comparação
+        console.log(
+          `📦 Pacote: "${pkg.title?.substring(0, 20)}..."`,
+          `| Região no Dado: "${pkgRegionSlug}"`, 
+          `| URL: "${targetSlug}"`, 
+          `| Match? ${isMatch ? '✅' : '❌'}`
+        );
+
+        return isMatch;
+      });
+
+      console.log(`📊 Resultado: ${filtered.length} pacotes encontrados.`);
+      console.groupEnd();
+
+      return filtered;
+    };
+  });
+
   return {
     loading,
     error,
     packages,
     getPackageBySlug,
     allPackages,
+    getPackagesByRegionSlug, // Não esqueça de exportar aqui
     fetchPackages,
     clearPackages,
   };

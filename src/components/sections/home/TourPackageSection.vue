@@ -120,7 +120,7 @@
         </q-slide-transition>
       </div>
 
-      <div v-if="loading" class="text-center q-py-xl">
+      <div v-if="loading && availablePackages.length === 0" class="text-center q-py-xl">
         <q-spinner-dots color="primary" size="3rem" />
          <p class="q-mt-md text-grey-7">{{ t('loading_packages') }}...</p>
       </div>
@@ -136,21 +136,21 @@
         >
           <q-card class="package-card" flat bordered @click="() => viewPackage(pkg.slug)">
              <q-img
-                :src="pkg.image"
-                :alt="pkg.title"
-                height="200px"
-                fit="cover"
-                class="card-image"
-                loading="lazy"
-              >
-                 <template v-slot:loading>
-                    <q-spinner-puff color="primary" />
-                 </template>
-                <div class="absolute-bottom-left bg-transparent q-pa-sm image-overlay">
-                   <q-badge rounded color="secondary" text-color="black" class="q-py-xs q-px-sm text-caption text-weight-bold shadow-2">
-                     {{ t('package_tour') }}
-                   </q-badge>
-                </div>
+               :src="pkg.image"
+               :alt="pkg.title"
+               height="200px"
+               fit="cover"
+               class="card-image"
+               loading="lazy"
+             >
+                <template v-slot:loading>
+                   <q-spinner-puff color="primary" />
+                </template>
+               <div class="absolute-bottom-left bg-transparent q-pa-sm image-overlay">
+                  <q-badge rounded color="secondary" text-color="black" class="q-py-xs q-px-sm text-caption text-weight-bold shadow-2">
+                    {{ t('package_tour') }}
+                  </q-badge>
+               </div>
              </q-img>
 
             <q-card-section class="card-content-section">
@@ -229,8 +229,15 @@ import { useRoute, useRouter } from 'vue-router';
 import { useQuasar } from 'quasar';
 import { useTourPackageStore } from 'src/stores/useTourPackageStore';
 import type { Region } from 'src/model/Region';
+import type { TourPackage } from 'src/model/TourPackage';
 import type { TranslatableTag } from 'src/model/Tags';
 import HorizontalGradientMask from 'src/components/mask/HorizontalGradientMask.vue';
+
+// --- PROPS ---
+// Agora aceita uma lista opcional de pacotes vindos do pai (ex: DestinationsPage)
+const props = defineProps<{
+  packages?: TourPackage[]
+}>();
 
 // --- SETUP ---
 const router = useRouter();
@@ -239,7 +246,8 @@ const { t, locale } = useI18n();
 const $q = useQuasar();
 
 const packageStore = useTourPackageStore();
-const { allPackages: packages, loading } = storeToRefs(packageStore);
+// Renomeamos para 'storePackages' para não conflitar com a lógica unificada
+const { allPackages: storePackages, loading } = storeToRefs(packageStore);
 
 const showAdvanced = ref(false);
 const filtersLoading = ref(false);
@@ -256,11 +264,21 @@ const regionOptions = ref<Region[]>([]);
 const categoryOptions = ref<TranslatableTag[]>([]);
 const audienceOptions = ref<TranslatableTag[]>([]);
 
+// --- COMPUTED: Fonte de Dados ---
+// Define qual lista usar: A que veio da Prop ou a da Store
+const availablePackages = computed(() => {
+  if (props.packages !== undefined) {
+    return props.packages;
+  }
+  return storePackages.value;
+});
+
 async function loadFilterData() {
   if (regionOptions.value.length > 0) return;
   filtersLoading.value = true;
   try {
-    if (packages.value.length === 0) {
+    // Se a lista base estiver vazia e não tivermos props, busca na store
+    if (availablePackages.value.length === 0 && !props.packages) {
        await packageStore.fetchPackages(route.params.lang as string || 'pt');
     }
     const [regionsMod, audiencesMod, categoriesMod] = await Promise.all([
@@ -292,9 +310,11 @@ const clearFilters = () => {
   filters.recommendedFor = [];
 };
 
+// Filtra sobre a lista unificada 'availablePackages'
 const filteredPackages = computed(() => {
-  if (!packages.value?.length) return [];
-  return packages.value.filter(pkg => {
+  if (!availablePackages.value?.length) return [];
+  
+  return availablePackages.value.filter(pkg => {
     if (!pkg?.id) return false;
     const { searchText, region, cities, categories, recommendedFor } = filters;
 
