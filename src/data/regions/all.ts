@@ -1,4 +1,5 @@
 import { type Region } from 'src/model/Region';
+// Certifique-se que esses caminhos de importação existem
 import { bonitoSerraBodoquenaPt } from './bonito/BonitoSerraBodoquenaPt';
 import { bonitoSerraBodoquenaEn } from './bonito/BonitoSerraBodoquenaEn';
 import { bonitoSerraBodoquenaEs } from './bonito/BonitoSerraBodoquenaEs';
