@@ -1,17 +1,36 @@
 import { type Region } from 'src/model/Region';
-import { REGIONS_BUCKET_NAME } from 'src/utils/environmentUtils';
+import * as cities from '../Cities';
+import { GENERAL_BUCKET_NAME } from 'src/utils/environmentUtils';
 
-const baseImgPath = `${REGIONS_BUCKET_NAME}`;
+const baseImgPath = `${GENERAL_BUCKET_NAME}/region`;
 
 export const pantanalNortePt: Region = {
   id: 'pantanal-norte',
   slug: 'pantanal-norte',
   name: 'Pantanal Norte (MT)',
-  subtitle: 'A casa da onça-pintada e a mítica Transpantaneira.',
-  description: 'O Pantanal Norte, com entrada por Cuiabá, é marcado pela rodovia Transpantaneira. É o destino mundialmente reconhecido para quem tem o objetivo específico de avistar a onça-pintada, especialmente na região de Porto Jofre. A paisagem muda ligeiramente, oferecendo alagados densos e uma concentração impressionante de vida selvagem ao longo da estrada.',
-  coverImage: `${baseImgPath}/pantanal-norte/cover.webp`,
+  subtitle: 'O reino da onça-pintada e a Transpantaneira.',
+  description: [
+    'O Pantanal Norte é famoso pela Rodovia Transpantaneira e por ser o melhor lugar do mundo para avistar onças-pintadas, especialmente na região de Porto Jofre. É um destino mais voltado para a observação intensa de vida selvagem e fotografia.'
+  ],
+  coverImage: `${baseImgPath}/pantanal-norte/img1.webp`,
   galleryImages: [],
-  icon: 'mdi-camera-iris',
-  cities: [],
-  highlights: ['Onça-Pintada', 'Transpantaneira', 'Porto Jofre', 'Observação Intensa']
+  icon: 'mdi-paw',
+  cities: [cities.pocone],
+  highlights: ['Onça-pintada', 'Rodovia Transpantaneira', 'Observação de Aves'],
+  location: {
+    lat: -16.3722,
+    lng: -56.6280,
+    address: 'Poconé - Mato Grosso, Brasil'
+  },
+  details: {
+    bestTime: 'Julho a Setembro (Seca, ideal para ver onças) | Fevereiro a Maio (Cheia)',
+    climate: 'Tropical continental. Muito quente na seca.',
+    access: 'Aeroporto de Cuiabá (CGB) + Transfer terrestre pela Transpantaneira.',
+  },
+  gastronomy: ['Mojica de Pintado', 'Pacu Assado', 'Farofa de Banana', 'Maria Isabel'],
+  tips: [
+    'Leve repelente e roupas de manga longa.',
+    'Porto Jofre é o ponto chave para ver onças.',
+    'A estrada é de terra, prepare-se para poeira na seca.'
+  ]
 };

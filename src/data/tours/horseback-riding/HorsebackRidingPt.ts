@@ -10,7 +10,9 @@ export const horsebackRidingPt: Tour = {
   id: 'TOUR-HR-01',
   slug: 'cavalgada-em-miranda',
   name: 'Cavalgada',
-  description: 'Uma cavalgada-em-miranda tradicional em cavalos pantaneiros, mansos e adaptados à região. É a melhor forma de explorar áreas alagadas e sentir-se como um peão local.',
+  description: [
+     'Uma cavalgada-em-miranda tradicional em cavalos pantaneiros, mansos e adaptados à região. É a melhor forma de explorar áreas alagadas e sentir-se como um peão local.'
+  ],
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',

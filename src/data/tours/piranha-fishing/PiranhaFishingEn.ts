@@ -11,7 +11,9 @@ export const piranhaFishingEn: Tour = {
   id: 'TOUR-PF-01',
   slug: 'pesca-piranha-em-miranda',
   name: 'Piranha Fishing',
-  description: 'A fun and traditional piranha fishing activity in the waters of the Pantanal using bamboo rods. What you catch can be prepared for dinner!',
+  description: [
+    'A fun and traditional piranha fishing activity in the waters of the Pantanal using bamboo rods. What you catch can be prepared for dinner!'
+  ],
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',

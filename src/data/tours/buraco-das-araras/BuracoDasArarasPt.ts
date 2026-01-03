@@ -14,7 +14,9 @@ export const buracoDasArarasPt: Tour = {
   id: 'TOUR-BA-01',
   slug: 'buraco-das-araras-em-bonito',
   name: 'Buraco das Araras',
-  description: 'Uma enorme cratera em arenito (dolina) com 120m de profundidade, onde Araras Vermelhas e outros pássaros criaram seu habitat. Um passeio de contemplação e observação da fauna.',
+  description: [
+    'Uma enorme cratera em arenito (dolina) com 120m de profundidade, onde Araras Vermelhas e outros pássaros criaram seu habitat. Um passeio de contemplação e observação da fauna.'
+  ],
   mainImage: img,
   durationInHours: 1,
   distanceFromCity: '58km',

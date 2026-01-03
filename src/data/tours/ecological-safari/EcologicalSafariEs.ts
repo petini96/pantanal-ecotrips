@@ -11,7 +11,9 @@ export const ecologicalSafariEs: Tour = {
   id: 'TOUR-FSF-ES-01',
   slug: 'safari-fotografico-em-miranda',
   name: 'Safari Fotográfico',
-  description: 'Paseo diurno en coche abierto por las áreas de la hacienda, como campos, cerrados y bosques, para la observación de la fauna y flora local. Una gran oportunidad para fotos.',
+  description: [
+    'Paseo diurno en coche abierto por las áreas de la hacienda, como campos, cerrados y bosques, para la observación de la fauna y flora local. Una gran oportunidad para fotos.'
+  ],
   mainImage: img,
   durationInHours: 3,
   distanceFromCity: 'N/A',

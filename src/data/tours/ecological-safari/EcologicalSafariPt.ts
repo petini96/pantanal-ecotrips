@@ -11,7 +11,9 @@ export const ecologicalSafariPt: Tour = {
   id: 'TOUR-FSF-ES-01',
   slug: 'safari-fotografico-em-miranda',
   name: 'Safári Fotográfico',
-  description: 'Passeio diurno em carro aberto pelas áreas da fazenda, como campos, cerrados e matas, para observação da fauna e flora local. Uma ótima oportunidade para fotos.',
+  description: [
+    'Passeio diurno em carro aberto pelas áreas da fazenda, como campos, cerrados e matas, para observação da fauna e flora local. Uma ótima oportunidade para fotos.'
+  ],
   mainImage: img,
   durationInHours: 3,
   distanceFromCity: 'N/A',

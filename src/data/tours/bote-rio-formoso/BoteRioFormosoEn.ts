@@ -13,7 +13,9 @@ export const boteRioFormosoEn: Tour = {
   id: 'TOUR-BRF-01',
   slug: 'bote-rio-formoso-em-bonito',
   name: 'Rafting on the Formoso River',
-  description: 'A 6km downstream trip in inflatable rafts on one of the main rivers of the region, passing by three waterfalls, two rapids, and a stop for swimming.',
+  description: [
+    'A 6km downstream trip in inflatable rafts on one of the main rivers of the region, passing by three waterfalls, two rapids, and a stop for swimming.'
+  ],
   mainImage: img,
   durationInHours: 4,
   distanceFromCity: '12km',

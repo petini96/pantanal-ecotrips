@@ -11,7 +11,9 @@ export const fluvialSafariEs: Tour = {
   id: 'TOUR-FS-01',
   slug: 'safari-fluvial-em-miranda',
   name: 'Safari Fluvial',
-  description: 'Un paseo en bote durante el día para explorar las orillas del Río Miranda, ideal para observar aves, caimanes y con suerte, nutrias y nutrias gigantes.',
+  description: [
+     'Un paseo en bote durante el día para explorar las orillas del Río Miranda, ideal para observar aves, caimanes y con suerte, nutrias y nutrias gigantes.'
+  ],
   mainImage: img,
   durationInHours: 3,
   distanceFromCity: 'N/A',

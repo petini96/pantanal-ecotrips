@@ -87,6 +87,10 @@ export const useRegionStore = defineStore('region', () => {
   // Retorna todas as regiões (já é a lista)
   const allRegions = computed((): Region[] => regions.value);
 
+  function clearRegions() {
+    regions.value = [];
+  }
+
   return {
     loading,
     error,
@@ -95,5 +99,6 @@ export const useRegionStore = defineStore('region', () => {
     allRegions,
     fetchRegion,
     clearRegion,
+    clearRegions
   };
 });

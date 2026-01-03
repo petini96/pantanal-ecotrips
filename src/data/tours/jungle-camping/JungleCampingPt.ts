@@ -11,7 +11,9 @@ export const jungleCampingPt: Tour = {
   id: 'TOUR-JC-01',
   slug: 'acampamento-na-selva-em-miranda',
   name: 'Acampamento na Selva (uma noite)',
-  description: 'Uma experiência única de pernoite na selva do Pantanal em redes com mosquiteiros. Uma imersão total nos sons e na atmosfera noturna da natureza.',
+  description: [
+     'Uma experiência única de pernoite na selva do Pantanal em redes com mosquiteiros. Uma imersão total nos sons e na atmosfera noturna da natureza.'
+  ],
   mainImage: img,
   durationInHours: 12,
   distanceFromCity: 'N/A',

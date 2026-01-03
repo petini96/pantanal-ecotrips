@@ -11,7 +11,9 @@ export const birdwatchingPt: Tour = {
   id: 'TOUR-FSF-BW-01',
   slug: 'observacao-das-aves-em-miranda',
   name: 'Observação de Aves',
-  description: 'Caminhada ao amanhecer, o melhor horário para observar a grande diversidade de aves do Pantanal, como tuiuiús, araras-azuis e tucanos. Essencial para amantes da ornitologia.',
+  description: [
+    'Caminhada ao amanhecer, o melhor horário para observar a grande diversidade de aves do Pantanal, como tuiuiús, araras-azuis e tucanos. Essencial para amantes da ornitologia.'
+  ],
   mainImage: img,
   durationInHours: 2.5,
   distanceFromCity: 'N/A',

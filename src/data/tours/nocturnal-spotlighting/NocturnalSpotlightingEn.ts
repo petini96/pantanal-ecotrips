@@ -11,7 +11,9 @@ export const nocturnalSpotlightingEn: Tour = {
   id: 'TOUR-FSF-NS-01',
   slug: 'focagem-notura-animais-em-miranda',
   name: 'Nocturnal Wildlife Spotlighting',
-  description: 'An open vehicle safari after dinner to observe nocturnal animals. With the help of a powerful spotlight, it is possible to see caimans, owls, capybaras, and even jaguars.',
+  description: [
+     'An open vehicle safari after dinner to observe nocturnal animals. With the help of a powerful spotlight, it is possible to see caimans, owls, capybaras, and even jaguars.'
+  ],
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',

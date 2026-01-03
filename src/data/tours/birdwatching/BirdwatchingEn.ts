@@ -11,7 +11,10 @@ export const birdwatchingEn: Tour = {
   id: 'TOUR-FSF-BW-01',
   slug: 'observacao-das-aves-em-miranda',
   name: 'Birdwatching',
-  description: 'A walk at dawn, the best time to observe the great diversity of birds in the Pantanal, such as jabirus, hyacinth macaws, and toucans. Essential for ornithology lovers.',
+  description: [
+    'A walk at dawn, the best time to observe the great diversity of birds in the Pantanal, such as jabirus, hyacinth macaws, and toucans. Essential for ornithology lovers.'
+  ],
+  shortDescription: 'A walk at dawn, the best time to observe the great diversity of birds in the Pantanal, such as jabirus, hyacinth macaws, and toucans. Essential for ornithology lovers.',
   mainImage: img,
   durationInHours: 2.5,
   distanceFromCity: 'N/A',

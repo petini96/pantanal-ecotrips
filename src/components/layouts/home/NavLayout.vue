@@ -1,7 +1,9 @@
 <template>
   <nav 
-    :class="['main-nav', { 'nav-overlay': isHomePage }]"
-    :style="navbarStyle"
+    :class="[
+      'main-nav', 
+      isHomePage ? 'nav-overlay' : 'nav-default bg-gradient-primary'
+    ]" 
     aria-label="Navegação Principal"
   >
     
@@ -119,49 +121,14 @@ import LogoLink from 'src/components/logo/LogoLink.vue';
 import { useRouter, useRoute } from 'vue-router';
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { storeToRefs } from 'pinia';
-import { useLayoutConfigStore } from 'src/stores/layout-config-store'; 
-
-// Ajuste os caminhos das suas imagens
-import SimpleBannerBackgroundLight from 'src/assets/images/boca_onca_remake.webp'; 
-import SimpleBannerBackgroundDark from 'src/assets/images/boca_onca_remake_dark.webp';
 
 const { t } = useI18n(); 
+
 const { getScrollTarget, setVerticalScrollPosition } = scroll;
 const router = useRouter();
 const route = useRoute();
-const layoutConfigStore = useLayoutConfigStore();
-const { theme: currentTheme } = storeToRefs(layoutConfigStore);
 
 const isHomePage = computed(() => route.name === 'home');
-
-const currentBannerBg = computed(() => {
-  return currentTheme.value === 'dark' ? SimpleBannerBackgroundDark : SimpleBannerBackgroundLight;
-});
-
-// --- CORREÇÃO AQUI ---
-const navbarStyle = computed(() => {
-  // Se for Home, não faz nada via inline (deixa o CSS .nav-overlay cuidar)
-  if (isHomePage.value) {
-    return {}; 
-  }
-
-  // Se for Interna, aplica o GRADIENTE + IMAGEM manualmente
-  return {
-    // A ordem é crucial: O gradiente vem PRIMEIRO (por cima), a imagem DEPOIS (por baixo)
-    backgroundImage: `
-      linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%), 
-      url(${currentBannerBg.value})
-    `,
-    
-    // Isso corrige o zoom: força a imagem a ter a largura da janela, igual ao banner da home
-    backgroundSize: '100vw auto', 
-    
-    backgroundPosition: 'center top',
-    backgroundRepeat: 'no-repeat',
-    boxShadow: '0 4px 12px rgba(0,0,0,0.3)' // Sombra extra para destacar
-  };
-});
 
 interface NavLink {
   label: string;
@@ -177,10 +144,26 @@ const navLinks = computed<NavLink[]>(() => [
   { 
     label: t('destinations'), 
     children: [
-      { label: 'Bonito', routeName: 'destinations', params: { slug: 'bonito' } },
-      { label: 'Pantanal Norte', routeName: 'destinations', params: { slug: 'pantanal-norte' } },
-      { label: 'Pantanal Sul', routeName: 'destinations', params: { slug: 'pantanal-sul' } },
-      { label: 'Amazônia', routeName: 'destinations', params: { slug: 'amazonia' } }
+      { 
+        label: 'Bonito',
+        routeName: 'destinations', 
+        params: { slug: 'bonito' }
+      },
+      { 
+        label: t('north_pantanal'),
+        routeName: 'destinations', 
+        params: { slug: 'pantanal-norte' }
+      },
+      { 
+        label: t('south_pantanal'),
+        routeName: 'destinations', 
+        params: { slug: 'pantanal-sul' }
+      },
+      { 
+        label: t('amazon'),
+        routeName: 'destinations', 
+        params: { slug: 'amazonia' }
+      }
     ]
   },
   { label: t("packages"), url: '#packages-section' },
@@ -198,7 +181,10 @@ const getLinkUrl = (link: NavLink): string => {
     try {
       const resolved = router.resolve({ 
         name: link.routeName, 
-        params: { lang: currentLang.value, ...link.params } 
+        params: { 
+          lang: currentLang.value,
+          ...link.params
+        } 
       });
       return resolved.href;
     } catch (e) {
@@ -206,22 +192,30 @@ const getLinkUrl = (link: NavLink): string => {
       return '#';
     }
   }
+  
   return link.url || '#';
 };
 
 const handleNavClick = async (ev: Event, link: NavLink) => {
   if (link.children) return; 
+
   if (link.external) return;
 
   ev.preventDefault();
   
   if (link.routeName) {
     const isSameRoute = route.name === link.routeName;
-    const sameParams = !link.params || JSON.stringify(route.params) === JSON.stringify({ ...route.params, ...link.params });
-    if (isSameRoute && sameParams) {
+    
+    if (isSameRoute && (!link.params || JSON.stringify(route.params) === JSON.stringify({ ...route.params, ...link.params }))) {
        window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      await router.push({ name: link.routeName, params: { lang: currentLang.value, ...link.params } });
+      await router.push({ 
+        name: link.routeName, 
+        params: { 
+          lang: currentLang.value,
+          ...link.params
+        } 
+      });
     }
     return;
   }
@@ -239,6 +233,7 @@ const handleNavClick = async (ev: Event, link: NavLink) => {
 const scrollToId = (id: string) => {
   const targetId = id.substring(1);
   const el = document.getElementById(targetId);
+  
   if (el) {
     const target = getScrollTarget(el);
     const offset = el.offsetTop - 100; 
@@ -256,18 +251,22 @@ const scrollToId = (id: string) => {
   padding: 10px 20px;
   width: 100%;
   z-index: 2000;
-  
+  transition: all 0.3s ease;
+}
+
+.nav-overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
   position: absolute;
   top: 0;
   left: 0;
+}
 
-  /* Alterado para 'background' para animar tudo junto se possível, 
-     embora animar gradiente+imagem seja limitado pelos navegadores */
-  transition: background-color 0.3s ease-in-out; 
+.nav-default {
+  position: sticky;
+  top: 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
 }
-.nav-overlay {
-  background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
-}
+
 .nav-section {
   display: flex;
   align-items: center;

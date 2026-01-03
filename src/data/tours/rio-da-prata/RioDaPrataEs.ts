@@ -24,7 +24,9 @@ export const rioDaPrataEs: Tour = {
   id: 'TOUR-RDP-01',
   slug: 'flutuacao-rio-prata-em-jardim',
   name: 'Flotación en el Río da Prata',
-  description: 'Una tranquila flotación por un inmenso acuario de aguas cristalinas, observando peces y la vegetación subacuática. El recorrido comienza con un sendero en el bosque de ribera.',
+  description: [
+     'Una tranquila flotación por un inmenso acuario de aguas cristalinas, observando peces y la vegetación subacuática. El recorrido comienza con un sendero en el bosque de ribera.'
+  ],
   mainImage: img,
   durationInHours: 4,
   distanceFromCity: '50km',

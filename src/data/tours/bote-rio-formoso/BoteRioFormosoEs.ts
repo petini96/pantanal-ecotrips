@@ -13,7 +13,9 @@ export const boteRioFormosoEs: Tour = {
   id: 'TOUR-BRF-01',
   slug: 'bote-rio-formoso-em-bonito',
   name: 'Bote en el Río Formoso',
-  description: 'Descenso de 6km en botes inflables por uno de los principales ríos de la región, pasando por tres cascadas, dos rápidos y con una parada para bañarse.',
+  description: [
+    'Descenso de 6km en botes inflables por uno de los principales ríos de la región, pasando por tres cascadas, dos rápidos y con una parada para bañarse.'
+  ],
   mainImage: img,
   durationInHours: 4,
   distanceFromCity: '12km',

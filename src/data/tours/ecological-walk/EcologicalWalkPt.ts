@@ -11,7 +11,9 @@ export const ecologicalWalkPt: Tour = {
   id: 'TOUR-EW-01',
   slug: 'caminhada-ecologica-em-miranda',
   name: 'Caminhada Ecológica (Selva e Campos)',
-  description: 'Uma trilha interpretativa a pé por diferentes ambientes do Pantanal, como capões de mata e campos abertos, aprendendo sobre a flora e pequenos animais.',
+  description: [
+     'Uma trilha interpretativa a pé por diferentes ambientes do Pantanal, como capões de mata e campos abertos, aprendendo sobre a flora e pequenos animais.'
+  ],
   mainImage: img,
   durationInHours: 2.5,
   distanceFromCity: 'N/A',

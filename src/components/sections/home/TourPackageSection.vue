@@ -1,14 +1,15 @@
 <template>
   <div>
     <div class="tours-section-container q-my-xl">
-      <div class="text-center q-mb-lg">
+      
+      <div v-if="showFilter" class="text-center q-mb-lg">
         <h2 class="section-title">{{ t('most_wanted_packages_title') }}</h2>
         <p class="section-subtitle">
           {{ t('most_wanted_packages_subtitle') }} <strong>Bonito e Pantanal</strong>.
         </p>
       </div>
 
-      <div class="search-filter-container q-pa-md shadow-2">
+      <div v-if="showFilter" class="search-filter-container q-pa-md shadow-2">
         <div class="row items-center q-gutter-md">
           <q-input
             v-model="filters.searchText"
@@ -234,10 +235,13 @@ import type { TranslatableTag } from 'src/model/Tags';
 import HorizontalGradientMask from 'src/components/mask/HorizontalGradientMask.vue';
 
 // --- PROPS ---
-// Agora aceita uma lista opcional de pacotes vindos do pai (ex: DestinationsPage)
-const props = defineProps<{
-  packages?: TourPackage[]
-}>();
+// Agora aceita uma lista opcional de pacotes e um booleano para controlar o filtro
+const props = withDefaults(defineProps<{
+  packages?: TourPackage[],
+  showFilter?: boolean
+}>(), {
+  showFilter: true // Padrão é true para funcionar na Home sem alterações
+});
 
 // --- SETUP ---
 const router = useRouter();
@@ -246,7 +250,6 @@ const { t, locale } = useI18n();
 const $q = useQuasar();
 
 const packageStore = useTourPackageStore();
-// Renomeamos para 'storePackages' para não conflitar com a lógica unificada
 const { allPackages: storePackages, loading } = storeToRefs(packageStore);
 
 const showAdvanced = ref(false);
@@ -265,7 +268,6 @@ const categoryOptions = ref<TranslatableTag[]>([]);
 const audienceOptions = ref<TranslatableTag[]>([]);
 
 // --- COMPUTED: Fonte de Dados ---
-// Define qual lista usar: A que veio da Prop ou a da Store
 const availablePackages = computed(() => {
   if (props.packages !== undefined) {
     return props.packages;
@@ -274,6 +276,9 @@ const availablePackages = computed(() => {
 });
 
 async function loadFilterData() {
+  // Se o filtro estiver escondido, não precisa carregar os dados dos selects
+  if (!props.showFilter) return;
+
   if (regionOptions.value.length > 0) return;
   filtersLoading.value = true;
   try {
@@ -314,6 +319,7 @@ const clearFilters = () => {
 const filteredPackages = computed(() => {
   if (!availablePackages.value?.length) return [];
   
+  // Se não houver filtro ativo (ou se showFilter for false e filters estiver vazio), retorna tudo
   return availablePackages.value.filter(pkg => {
     if (!pkg?.id) return false;
     const { searchText, region, cities, categories, recommendedFor } = filters;

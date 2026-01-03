@@ -13,7 +13,9 @@ export const buracoDasArarasEn: Tour = {
   id: 'TOUR-BA-01',
   slug: 'buraco-das-araras-em-bonito',
   name: 'Macaw\'s Hole (Buraco das Araras)',
-  description: 'A huge sandstone crater (a doline) 120m deep, where Red Macaws and other birds have made their habitat. A tour for contemplation and wildlife observation.',
+  description: [
+    'A huge sandstone crater (a doline) 120m deep, where Red Macaws and other birds have made their habitat. A tour for contemplation and wildlife observation.'
+  ],
   mainImage: img,
   durationInHours: 1,
   distanceFromCity: '58km',

@@ -11,7 +11,9 @@ export const birdwatchingEs: Tour = {
   id: 'TOUR-FSF-BW-01',
   slug: 'observacao-das-aves-em-miranda',
   name: 'Observación de Aves',
-  description: 'Caminata al amanecer, el mejor momento para observar la gran diversidad de aves del Pantanal, como jabirús, guacamayos jacintos y tucanes. Esencial para los amantes de la ornitología.',
+  description: [
+    'Caminata al amanecer, el mejor momento para observar la gran diversidad de aves del Pantanal, como jabirús, guacamayos jacintos y tucanes. Esencial para los amantes de la ornitología.'
+  ],
   mainImage: img,
   durationInHours: 2.5,
   distanceFromCity: 'N/A',

@@ -14,7 +14,9 @@ export const bocaDaOncaEs: Tour = {
   id: 'TOUR-BDO-01',
   slug: 'boca-da-onca-em-bonito',
   name: 'Boca da Onça Ecotour',
-  description: 'Caminata por un sendero de 4km que pasa por 11 cascadas, incluida la Cascada Boca da Onça, la más alta del estado con 156m. Varios puntos para bañarse y vistas al Cañón del Río Salobra.',
+  description: [
+    'Caminata por un sendero de 4km que pasa por 11 cascadas, incluida la Cascada Boca da Onça, la más alta del estado con 156m. Varios puntos para bañarse y vistas al Cañón del Río Salobra.'
+  ],
   mainImage: img,
   durationInHours: 8,
   distanceFromCity: '55km',

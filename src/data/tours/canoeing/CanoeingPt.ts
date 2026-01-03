@@ -11,7 +11,9 @@ export const canoeingPt: Tour = {
   id: 'TOUR-CN-01',
   slug: 'canoagem-em-miranda',
   name: 'Canoagem',
-  description: 'Passeio em canoas canadenses para duas pessoas, remando silenciosamente pelas águas e aproximando-se da vida selvagem sem perturbações.',
+  description: [
+    'Passeio em canoas canadenses para duas pessoas, remando silenciosamente pelas águas e aproximando-se da vida selvagem sem perturbações.'
+  ],
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',

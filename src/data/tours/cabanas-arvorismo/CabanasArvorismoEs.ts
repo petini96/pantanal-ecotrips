@@ -12,7 +12,9 @@ export const cabanasArvorismoEs: Tour = {
   id: 'TOUR-CA-01',
   slug: 'cabanas-arvorismo-em-bonito',
   name: 'Cabanas Arborismo',
-  description: 'Recorrido de 300m con 20 estaciones y 2 tirolinas, con alturas de 4m a 15m. La última es una tirolina acuática en el río Formoso.',
+  description: [
+    'Recorrido de 300m con 20 estaciones y 2 tirolinas, con alturas de 4m a 15m. La última es una tirolina acuática en el río Formoso.'
+  ],
   mainImage: img,
   durationInHours: 3,
   distanceFromCity: '6,1km',

@@ -11,7 +11,9 @@ export const nocturnalSpotlightingPt: Tour = {
   id: 'TOUR-FSF-NS-01',
   slug: 'focagem-notura-animais-em-miranda',
   name: 'Focagem Noturna de Animais Silvestres',
-  description: 'Safári em veículo aberto após o jantar para observar animais de hábitos noturnos. Com o auxílio de uma potente lanterna, é possível avistar jacarés, corujas, capivaras e até onças.',
+  description: [
+     'Safári em veículo aberto após o jantar para observar animais de hábitos noturnos. Com o auxílio de uma potente lanterna, é possível avistar jacarés, corujas, capivaras e até onças.'
+  ],
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',

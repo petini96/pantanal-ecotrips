@@ -12,7 +12,9 @@ export const fluvialSafariPt: Tour = {
   id: 'TOUR-FS-01',
   slug: 'safari-fluvial-em-miranda',
   name: 'Safári Fluvial',
-  description: 'Um passeio de barco durante o dia para explorar as margens do Rio Miranda, ideal para observar aves, jacarés e com sorte, lontras e ariranhas.',
+  description: [
+     'Um passeio de barco durante o dia para explorar as margens do Rio Miranda, ideal para observar aves, jacarés e com sorte, lontras e ariranhas.'
+  ],
   mainImage: img,
   durationInHours: 3,
   distanceFromCity: 'N/A',

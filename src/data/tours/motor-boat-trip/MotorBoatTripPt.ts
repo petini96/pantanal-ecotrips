@@ -12,7 +12,9 @@ export const motorBoatTripPt: Tour = {
   id: 'TOUR-MBT-01',
   slug: 'passeio-de-barco-motor-em-miranda',
   name: 'Passeio de Barco a Motor com Holofote',
-  description: 'Navegação noturna pelos rios do Pantanal, usando um holofote para avistar animais de hábitos noturnos como jacarés, capivaras e corujas.',
+  description: [
+     'Navegação noturna pelos rios do Pantanal, usando um holofote para avistar animais de hábitos noturnos como jacarés, capivaras e corujas.'
+  ],
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',

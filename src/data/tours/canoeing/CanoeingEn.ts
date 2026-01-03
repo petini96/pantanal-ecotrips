@@ -10,7 +10,9 @@ export const canoeingEn: Tour = {
   id: 'TOUR-CN-01',
   slug: 'canoagem-em-miranda',
   name: 'Canoeing',
-  description: 'A trip in two-person Canadian canoes, paddling silently through the waters and getting close to wildlife without disturbance.',
+  description: [
+    'A trip in two-person Canadian canoes, paddling silently through the waters and getting close to wildlife without disturbance.'
+  ],
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',

@@ -13,7 +13,9 @@ export const grutaLagoAzulEs: Tour = {
   id: 'TOUR-GLA-01',
   slug: 'gruta-do-lago-azul-em-bonito',
   name: 'Gruta del Lago Azul',
-  description: 'Una de las cuevas más bellas del mundo. Tras un corto sendero, se desciende por una escalera hasta un lago de aguas intensamente azules, con más de 80 metros de profundidad.',
+  description: [
+     'Una de las cuevas más bellas del mundo. Tras un corto sendero, se desciende por una escalera hasta un lago de aguas intensamente azules, con más de 80 metros de profundidad.'
+  ],
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: '21km',

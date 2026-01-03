@@ -11,7 +11,9 @@ export const riverFloatingPt: Tour = {
   id: 'TOUR-RF-01',
   slug: 'flutuacao-rio-miranda',
   name: 'Flutuação no Rio',
-  description: 'Uma relaxante descida de bote ou "macarrão" flutuador pelas águas calmas do rio, permitindo uma perspectiva única da vegetação e sons da natureza.',
+  description: [
+     'Uma relaxante descida de bote ou "macarrão" flutuador pelas águas calmas do rio, permitindo uma perspectiva única da vegetação e sons da natureza.'
+  ],
   mainImage: img,
   durationInHours: 1.5,
   distanceFromCity: 'N/A',

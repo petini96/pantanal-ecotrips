@@ -1,5 +1,5 @@
 <template>
-  <footer class="home-footer text-center q-pa-lg">
+  <footer class="home-footer bg-gradient-primary text-center q-pa-lg">
     <p class="footer-text q-ma-none">
       © {{ fullYear }} Pantanal Ecotrips. Todos os direitos reservados.
     </p>
@@ -13,9 +13,6 @@ const fullYear = new Date().getFullYear()
 </script>
 
 <style scoped>
-.home-footer {
-  background-color: var(--footer-bg-color);
-}
 
 .home-footer {
   color: white;

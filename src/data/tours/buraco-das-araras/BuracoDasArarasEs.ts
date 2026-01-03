@@ -14,7 +14,9 @@ export const buracoDasArarasEs: Tour = {
   id: 'TOUR-BA-01',
   slug: 'buraco-das-araras-em-bonito',
   name: 'Buraco das Araras',
-  description: 'Un enorme cráter de arenisca (una dolina) de 120m de profundidad, donde guacamayos rojos y otras aves han creado su hábitat. Un recorrido de contemplación y observación de la fauna.',
+  description: [
+    'Un enorme cráter de arenisca (una dolina) de 120m de profundidad, donde guacamayos rojos y otras aves han creado su hábitat. Un recorrido de contemplación y observación de la fauna.'
+  ],
   mainImage: img,
   durationInHours: 1,
   distanceFromCity: '58km',

@@ -24,7 +24,9 @@ export const rioDaPrataEn: Tour = {
   id: 'TOUR-RDP-01',
   slug: 'flutuacao-rio-prata-em-jardim',
   name: 'Snorkeling at Rio da Prata',
-  description: 'A gentle snorkeling tour through a huge crystal-clear aquarium, observing fish and underwater vegetation. The tour begins with a trail in the riparian forest.',
+  description: [
+     'A gentle snorkeling tour through a huge crystal-clear aquarium, observing fish and underwater vegetation. The tour begins with a trail in the riparian forest.'
+  ],
   mainImage: img,
   durationInHours: 4,
   distanceFromCity: '50km',

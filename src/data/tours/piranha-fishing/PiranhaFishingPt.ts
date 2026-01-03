@@ -12,7 +12,9 @@ export const piranhaFishingPt: Tour = {
   id: 'TOUR-PF-01',
   slug: 'pesca-piranha-em-miranda',
   name: 'Pesca de Piranhas',
-  description: 'Uma divertida e tradicional pescaria de piranhas nas águas do Pantanal, usando varas de bambu. O que você pescar pode ser preparado para o jantar!',
+  description: [
+     'Uma divertida e tradicional pescaria de piranhas nas águas do Pantanal, usando varas de bambu. O que você pescar pode ser preparado para o jantar!'
+  ],
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',

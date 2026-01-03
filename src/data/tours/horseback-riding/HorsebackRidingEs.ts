@@ -10,7 +10,9 @@ export const horsebackRidingEs: Tour = {
   id: 'TOUR-HR-01',
   slug: 'cavalgada-em-miranda',
   name: 'Cabalgata',
-  description: 'Una cabalgata tradicional en caballos pantaneros, mansos y adaptados a la región. Es la mejor manera de explorar áreas inundadas y sentirse como un peón local.',
+  description: [
+     'Una cabalgata tradicional en caballos pantaneros, mansos y adaptados a la región. Es la mejor manera de explorar áreas inundadas y sentirse como un peón local.'
+  ],
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',

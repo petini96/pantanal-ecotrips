@@ -11,7 +11,9 @@ export const nocturnalSpotlightingEs: Tour = {
   id: 'TOUR-FSF-NS-01',
   slug: 'focagem-notura-animais-em-miranda',
   name: 'Enfoque Nocturno de Animales Silvestres',
-  description: 'Un safari en vehículo abierto después de la cena para observar animales de hábitos nocturnos. Con la ayuda de una potente linterna, es posible avistar caimanes, búhos, capibaras e incluso jaguares.',
+  description: [
+     'Un safari en vehículo abierto después de la cena para observar animales de hábitos nocturnos. Con la ayuda de una potente linterna, es posible avistar caimanes, búhos, capibaras e incluso jaguares.'
+  ],
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',

@@ -11,7 +11,9 @@ export const motorBoatTripEs: Tour = {
   id: 'TOUR-MBT-01',
   slug: 'passeio-de-barco-motor-em-miranda',
   name: 'Paseo en Bote a Motor con Foco de Luz',
-  description: 'Navegación nocturna por los ríos del Pantanal, usando un foco de luz para avistar animales de hábitos nocturnos como caimanes, capibaras y búhos.',
+  description: [
+     'Navegación nocturna por los ríos del Pantanal, usando un foco de luz para avistar animales de hábitos nocturnos como caimanes, capibaras y búhos.'
+  ],
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',

@@ -101,3 +101,14 @@ h1, h2, h3, h4, h5, h6 {
 .q-mb-xxl {
     margin-bottom: 80px !important;
 }
+
+.bg-gradient-primary {
+  background: linear-gradient(to right, var(--grad-start), var(--grad-mid), var(--grad-end));
+}
+
+.text-gradient-primary {
+  background: linear-gradient(to right, var(--grad-start), var(--grad-mid), var(--grad-end));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

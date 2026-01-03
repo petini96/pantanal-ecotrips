@@ -122,7 +122,7 @@ const filteredTours = computed(() => {
       if (filters.value.searchText) {
           const q = normalize(filters.value.searchText);
           const name = normalize(tour.name);
-          const desc = normalize(tour.description);
+          const desc = normalize(tour.shortDescription);
           if (!name.includes(q) && !desc.includes(q)) return false;
       }
 

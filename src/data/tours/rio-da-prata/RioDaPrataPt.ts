@@ -25,7 +25,9 @@ export const rioDaPrataPt: Tour = {
   id: 'TOUR-RDP-01',
   slug: 'flutuacao-rio-prata-em-jardim',
   name: 'Flutuação no Rio da Prata',
-  description: 'Uma flutuação tranquila por um imenso aquário de águas cristalinas, observando peixes e a vegetação subaquática. O passeio começa com uma trilha na mata ciliar.',
+  description: [
+     'Uma flutuação tranquila por um imenso aquário de águas cristalinas, observando peixes e a vegetação subaquática. O passeio começa com uma trilha na mata ciliar.'
+  ],
   mainImage: img,
   durationInHours: 4,
   distanceFromCity: '50km',

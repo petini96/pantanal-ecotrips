@@ -14,7 +14,9 @@ export const bocaDaOncaPt: Tour = {
   id: 'TOUR-BDO-01',
   slug: 'boca-da-onca-em-bonito',
   name: 'Boca da Onça Ecotour',
-  description: 'Caminhada por trilha de 4km passando por 11 cachoeiras, incluindo a Cachoeira Boca da Onça, a mais alta do MS com 156m. Vários pontos de banho e vista para o Canyon do Rio Salobra.',
+  description: [
+    'Caminhada por trilha de 4km passando por 11 cachoeiras, incluindo a Cachoeira Boca da Onça, a mais alta do MS com 156m. Vários pontos de banho e vista para o Canyon do Rio Salobra.'
+  ],
   mainImage: img,
   durationInHours: 8,
   distanceFromCity: '55km',

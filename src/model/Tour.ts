@@ -7,7 +7,8 @@ export interface Tour {
   id: string;
   slug: string;
   name: string;
-  description: string;
+  description: string[];
+  shortDescription: string;
   mainImage: string;
   durationInHours: number;
   distanceFromCity?: string;

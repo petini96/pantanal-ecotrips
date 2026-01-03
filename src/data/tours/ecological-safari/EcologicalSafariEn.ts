@@ -11,7 +11,9 @@ export const ecologicalSafariEn: Tour = {
   id: 'TOUR-FSF-ES-01',
   slug: 'safari-fotografico-em-miranda',
   name: 'Photographic Safari',
-  description: 'Daytime tour in an open car through the farm\'s areas, such as fields, savannas, and forests, to observe the local fauna and flora. A great opportunity for photos.',
+  description: [
+    'Daytime tour in an open car through the farm\'s areas, such as fields, savannas, and forests, to observe the local fauna and flora. A great opportunity for photos.'
+  ],
   mainImage: img,
   durationInHours: 3,
   distanceFromCity: 'N/A',

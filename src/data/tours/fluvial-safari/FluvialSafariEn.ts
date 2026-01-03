@@ -11,7 +11,9 @@ export const fluvialSafariEn: Tour = {
   id: 'TOUR-FS-01',
   slug: 'safari-fluvial-em-miranda',
   name: 'Fluvial Safari',
-  description: 'A daytime boat trip to explore the banks of the Miranda River, ideal for observing birds, caimans, and hopefully, otters and giant otters.',
+  description: [
+     'A daytime boat trip to explore the banks of the Miranda River, ideal for observing birds, caimans, and hopefully, otters and giant otters.'
+  ],
   mainImage: img,
   durationInHours: 3,
   distanceFromCity: 'N/A',

@@ -1,5 +1,5 @@
 <template>
-    <section class="hero-section">
+    <section class="hero-section" :style="sectionStyle">
         <div class="hero-background" :style="backgroundStyle"></div>
         <div class="hero-overlay"></div>
         
@@ -7,7 +7,8 @@
             <h1 class="hero-title">{{ hero_title }}</h1>
             <p class="hero-subtitle">{{ hero_subtitle }}</p>
             
-            <q-btn 
+            <q-btn
+              v-if="hero_cta" 
               unelevated 
               :label="hero_cta" 
               size="lg" 
@@ -21,24 +22,35 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 
-const props = defineProps<{
-    hero_title: string;
-    hero_subtitle: string;
-    hero_cta: string;
+const props = withDefaults(defineProps<{
+    hero_title?: string;
+    hero_subtitle?: string;
+    hero_cta?: string;
     hero_background: string; 
-}>();
+
+    height?: string;
+}>(), {
+    hero_background: '',
+    height: '100vh'
+});
 
 const scrollToTours = () => document.getElementById('packages-section')?.scrollIntoView({ behavior: 'smooth' });
 
 const backgroundStyle = computed(() => ({
     backgroundImage: `url(${props.hero_background})`
 }));
+
+const sectionStyle = computed(() => ({
+  height: props.height,
+  minHeight: props.height === '100vh' ? '600px' : 'auto'
+}));
+
 </script>
 
 <style scoped lang="scss">
 .hero-section {
     position: relative;
-    height: 100vh;
+    // height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;

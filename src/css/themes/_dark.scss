@@ -25,4 +25,8 @@ body.body--dark {
   --bg-div-primary: #14181f;
   --bg-div-secondary: #172F5E;
   --bg-div-three: #060e1d;
+
+  --grad-start: #020610; /* Começa no fundo profundo */
+  --grad-mid:   #0F172A; /* Passa pela cor do card */
+  --grad-end:   #0c3b6b; /* Termina num azul médio (brilho suave) */
 }

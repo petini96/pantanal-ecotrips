@@ -10,7 +10,9 @@ export const ecologicalWalkEn: Tour = {
   id: 'TOUR-EW-01',
   slug: 'caminhada-ecologica-em-miranda',
   name: 'Ecological Walk (Jungle and Fields)',
-  description: 'An interpretive walking trail through different Pantanal environments, such as forest patches and open fields, learning about the flora and small animals.',
+  description: [
+    'An interpretive walking trail through different Pantanal environments, such as forest patches and open fields, learning about the flora and small animals.'
+  ],
   mainImage: img,
   durationInHours: 2.5,
   distanceFromCity: 'N/A',

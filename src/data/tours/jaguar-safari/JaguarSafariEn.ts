@@ -11,7 +11,9 @@ export const jaguarSafariEn: Tour = {
   id: 'TOUR-FSF-JS-01',
   slug: 'safari-onca-pintada-em-miranda',
   name: 'Jaguar Safari',
-  description: 'A special expedition focused on exploring the areas with the highest probability of spotting the jaguar, the largest feline in the Americas.',
+  description: [
+    'A special expedition focused on exploring the areas with the highest probability of spotting the jaguar, the largest feline in the Americas.'
+  ],
   mainImage: img,
   durationInHours: 4,
   distanceFromCity: 'N/A',
