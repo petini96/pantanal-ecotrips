@@ -13,9 +13,8 @@ export const estanciaMimosaEn: Tour = {
   id: 'TOUR-EM-01',
   slug: 'estancia-mimosa-em-bonito',
   name: 'Estância Mimosa',
-  description: [
-     'Trail in the riparian forest of the Mimoso River with stops for swimming in waterfalls, natural pools, a diving platform, and a rowboat ride.'
-  ],
+  description: ['Trail in the riparian forest of the Mimoso River with stops for swimming in waterfalls, natural pools, a diving platform, and a rowboat ride.'],
+  shortDescription: 'Trail in the riparian forest of the Mimoso River with stops for swimming in waterfalls, natural pools, a diving platform, and a rowboat ride.',
   mainImage: img,
   durationInHours: 4,
   distanceFromCity: '22.6km',
@@ -27,3 +26,4 @@ export const estanciaMimosaEn: Tour = {
   recommendedFor: [familiesEn, couplesEn],
   city: bonito
 };
+

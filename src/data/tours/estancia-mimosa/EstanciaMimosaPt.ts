@@ -13,9 +13,8 @@ export const estanciaMimosaPt: Tour = {
   id: 'TOUR-EM-01',
   slug: 'estancia-mimosa-em-bonito',
   name: 'Estância Mimosa',
-  description: [
-     'Trilha na mata ciliar do rio Mimoso com paradas para banho em cachoeiras, piscinas naturais, plataforma para salto e um passeio de barco a remo.'
-  ],
+  description: ['Trilha na mata ciliar do rio Mimoso com paradas para banho em cachoeiras, piscinas naturais, plataforma para salto e um passeio de barco a remo.'],
+  shortDescription: 'Trilha na mata ciliar do rio Mimoso com paradas para banho em cachoeiras, piscinas naturais, plataforma para salto e um passeio de barco a remo.',
   mainImage: img,
   durationInHours: 4,
   distanceFromCity: '22,6km',
@@ -27,3 +26,4 @@ export const estanciaMimosaPt: Tour = {
   recommendedFor: [familiesPt, couplesPt],
   city: bonito
 };
+

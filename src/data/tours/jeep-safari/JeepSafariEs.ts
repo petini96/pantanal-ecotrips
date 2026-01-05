@@ -11,9 +11,8 @@ export const jeepSafariEs: Tour = {
   id: 'TOUR-JS-01',
   slug: 'jeep-safari-nhecolandia-em-miranda',
   name: 'Safari en Jeep en Nhecolândia',
-  description: [
-     'Exploración en un vehículo 4x4 abierto por las vastas llanuras y campos de la región de Nhecolândia, buscando avistar la rica fauna del Pantanal como ciervos, osos hormigueros y jabirús.'
-  ],
+  description: ['Exploración en un vehículo 4x4 abierto por las vastas llanuras y campos de la región de Nhecolândia, buscando avistar la rica fauna del Pantanal como ciervos, osos hormigueros y jabirús.'],
+  shortDescription: 'Exploración en un vehículo 4x4 abierto por las vastas llanuras y campos de la región de Nhecolândia, buscando avistar la rica fauna del Pantanal como ciervos, osos hormigueros y jabirús.',
   mainImage: img,
   durationInHours: 4,
   distanceFromCity: 'N/A',
@@ -25,3 +24,4 @@ export const jeepSafariEs: Tour = {
   recommendedFor: [],
   city: miranda
 };
+

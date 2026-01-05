@@ -10,9 +10,8 @@ export const canoeingEs: Tour = {
   id: 'TOUR-CN-01',
   slug: 'canoagem-em-miranda',
   name: 'Canotaje',
-  description: [
-    'Paseo en canoas canadienses para dos personas, remando silenciosamente por las aguas y acercándose a la vida silvestre sin perturbaciones.'
-  ],
+  description: ['Paseo en canoas canadienses para dos personas, remando silenciosamente por las aguas y acercándose a la vida silvestre sin perturbaciones.'],
+  shortDescription: 'Paseo en canoas canadienses para dos personas, remando silenciosamente por las aguas y acercándose a la vida silvestre sin perturbaciones.',
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',
@@ -24,3 +23,4 @@ export const canoeingEs: Tour = {
   recommendedFor: [],
   city: miranda
 };
+

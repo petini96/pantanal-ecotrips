@@ -12,9 +12,8 @@ export const cabanasArvorismoPt: Tour = {
   id: 'TOUR-CA-01',
   slug: 'cabanas-arvorismo-em-bonito',
   name: 'Cabanas Arvorismo',
-  description: [
-    'Percurso de 300m com 20 estações e 2 tirolesas, com altura de 4m a 15m. A última é uma tirolesa aquática no rio Formoso.'
-  ],
+  description: ['Percurso de 300m com 20 estações e 2 tirolesas, com altura de 4m a 15m. A última é uma tirolesa aquática no rio Formoso.'],
+  shortDescription: 'Percurso de 300m com 20 estações e 2 tirolesas, com altura de 4m a 15m. A última é uma tirolesa aquática no rio Formoso.',
   mainImage: img,
   durationInHours: 3,
   distanceFromCity: '6,1km',
@@ -26,3 +25,4 @@ export const cabanasArvorismoPt: Tour = {
   recommendedFor: [familiesPt, groupsPt],
   city: bonito
 };
+

@@ -1,21 +1,14 @@
 <template>
-  <div class="full-height full-width">
-    <q-layout 
-      view="lHh Lpr lFf" 
-      container 
-      style="height: 100vh" 
-      :class="['theme-' + currentTheme]"
-    >
-      <NavLayout />
-      <q-page-container>
-        <q-page ref="pageRef">
-          <router-view />
-          <q-scroll-observer @scroll="onScroll" />
-        </q-page>
-      </q-page-container>
-      <FooterLayout />
-    </q-layout>
-  </div>
+  <q-layout view="lHh Lpr lFf" :class="['theme-' + currentTheme]">
+    <NavLayout />
+    <q-page-container>
+      <q-page ref="pageRef">
+        <router-view />
+        <q-scroll-observer @scroll="onScroll" /> 
+      </q-page>
+    </q-page-container>
+    <FooterLayout />
+  </q-layout>
 </template>
 
 <script setup lang="ts">

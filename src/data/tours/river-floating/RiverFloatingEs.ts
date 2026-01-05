@@ -14,6 +14,7 @@ export const riverFloatingEs: Tour = {
   description: [
      'Un relajante descenso en bote o con flotador por las tranquilas aguas del río, permitiendo una perspectiva única de la vegetación y los sonidos de la naturaleza.'
   ],
+  shortDescription: 'Un relajante descenso en bote o con flotador por las tranquilas aguas del río, permitiendo una perspectiva única de la vegetación y los sonidos de la naturaleza.',
   mainImage: img,
   durationInHours: 1.5,
   distanceFromCity: 'N/A',

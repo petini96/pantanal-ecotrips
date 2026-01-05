@@ -47,7 +47,7 @@
                       </q-item-section>
                       <q-item-section>
                         <q-item-label class="text-weight-bold">{{ tour.name }}</q-item-label>
-                        <q-item-label caption lines="2">{{ tour.description }}</q-item-label>
+                        <q-item-label caption lines="2">{{ tour.shortDescription }}</q-item-label>
                         <q-item-label class="q-mt-sm">
                           <div class="tour-details-chips">
                             <q-chip dense outline :icon="getDifficultyInfo(tour.difficulty).icon" :color="getDifficultyInfo(tour.difficulty).color">

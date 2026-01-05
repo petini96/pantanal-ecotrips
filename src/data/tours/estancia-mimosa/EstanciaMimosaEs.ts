@@ -13,9 +13,8 @@ export const estanciaMimosaEs: Tour = {
   id: 'TOUR-EM-01',
   slug: 'estancia-mimosa-em-bonito',
   name: 'Estancia Mimosa',
-  description: [
-     'Sendero en el bosque de ribera del río Mimoso con paradas para bañarse en cascadas, piscinas naturales, una plataforma de salto y un paseo en bote de remos.'
-  ],
+  description: ['Sendero en el bosque de ribera del río Mimoso con paradas para bañarse en cascadas, piscinas naturales, una plataforma de salto y un paseo en bote de remos.'],
+  shortDescription: 'Sendero en el bosque de ribera del río Mimoso con paradas para bañarse en cascadas, piscinas naturales, una plataforma de salto y un paseo en bote de remos.',
   mainImage: img,
   durationInHours: 4,
   distanceFromCity: '22,6km',
@@ -27,3 +26,4 @@ export const estanciaMimosaEs: Tour = {
   recommendedFor: [familiesEs, couplesEs],
   city: bonito
 };
+

@@ -12,9 +12,8 @@ export const cabanasArvorismoEn: Tour = {
   id: 'TOUR-CA-01',
   slug: 'cabanas-arvorismo-em-bonito',
   name: 'Cabanas Treetop Circuit',
-  description: [
-    'A 300m course with 20 stations and 2 zip lines, at heights from 4m to 15m. The final one is an aquatic zip line over the Formoso River.'
-  ],
+  description: ['A 300m course with 20 stations and 2 zip lines, at heights from 4m to 15m. The final one is an aquatic zip line over the Formoso River.'],
+  shortDescription: 'A 300m course with 20 stations and 2 zip lines, at heights from 4m to 15m. The final one is an aquatic zip line over the Formoso River.',
   mainImage: img,
   durationInHours: 3,
   distanceFromCity: '6.1km',
@@ -26,3 +25,4 @@ export const cabanasArvorismoEn: Tour = {
   recommendedFor: [familiesEn, groupsEn],
   city: bonito
 };
+

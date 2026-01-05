@@ -14,6 +14,7 @@ export const riverFloatingPt: Tour = {
   description: [
      'Uma relaxante descida de bote ou "macarrão" flutuador pelas águas calmas do rio, permitindo uma perspectiva única da vegetação e sons da natureza.'
   ],
+  shortDescription: 'Uma relaxante descida de bote ou "macarrão" flutuador pelas águas calmas do rio, permitindo uma perspectiva única da vegetação e sons da natureza.',
   mainImage: img,
   durationInHours: 1.5,
   distanceFromCity: 'N/A',

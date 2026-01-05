@@ -11,9 +11,8 @@ export const jeepSafariEn: Tour = {
   id: 'TOUR-JS-01',
   slug: 'jeep-safari-nhecolandia-em-miranda',
   name: 'Jeep Safari in Nhecolândia',
-  description: [
-     'Exploration in an open 4x4 vehicle through the vast plains and fields of the Nhecolândia region, seeking to spot the rich Pantanal fauna like deer, anteaters, and jabirus.'
-  ],
+  description: ['Exploration in an open 4x4 vehicle through the vast plains and fields of the Nhecolândia region, seeking to spot the rich Pantanal fauna like deer, anteaters, and jabirus.'],
+  shortDescription: 'Exploration in an open 4x4 vehicle through the vast plains and fields of the Nhecolândia region, seeking to spot the rich Pantanal fauna like deer, anteaters, and jabirus.',
   mainImage: img,
   durationInHours: 4,
   distanceFromCity: 'N/A',
@@ -25,3 +24,4 @@ export const jeepSafariEn: Tour = {
   recommendedFor: [],
   city: miranda
 };
+

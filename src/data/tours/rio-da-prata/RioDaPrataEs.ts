@@ -27,6 +27,7 @@ export const rioDaPrataEs: Tour = {
   description: [
      'Una tranquila flotación por un inmenso acuario de aguas cristalinas, observando peces y la vegetación subacuática. El recorrido comienza con un sendero en el bosque de ribera.'
   ],
+  shortDescription: 'Una tranquila flotación por un inmenso acuario de aguas cristalinas, observando peces y la vegetación subacuática. El recorrido comienza con un sendero en el bosque de ribera.',
   mainImage: img,
   durationInHours: 4,
   distanceFromCity: '50km',

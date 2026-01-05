@@ -13,9 +13,8 @@ export const grutaLagoAzulEn: Tour = {
   id: 'TOUR-GLA-01',
   slug: 'gruta-do-lago-azul-em-bonito',
   name: 'Gruta do Lago Azul',
-  description: [
-    'One of the most beautiful caves in the world. After a short trail, you descend a staircase to a lake of intensely blue waters, over 80 meters deep.'
-  ],
+  description: ['One of the most beautiful caves in the world. After a short trail, you descend a staircase to a lake of intensely blue waters, over 80 meters deep.'],
+  shortDescription: 'One of the most beautiful caves in the world. After a short trail, you descend a staircase to a lake of intensely blue waters, over 80 meters deep.',
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: '21km',
@@ -27,3 +26,4 @@ export const grutaLagoAzulEn: Tour = {
   recommendedFor: [familiesEn, couplesEn],
   city: bonito
 };
+

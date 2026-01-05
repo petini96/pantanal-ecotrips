@@ -27,6 +27,7 @@ export const rioDaPrataEn: Tour = {
   description: [
      'A gentle snorkeling tour through a huge crystal-clear aquarium, observing fish and underwater vegetation. The tour begins with a trail in the riparian forest.'
   ],
+  shortDescription: 'A gentle snorkeling tour through a huge crystal-clear aquarium, observing fish and underwater vegetation. The tour begins with a trail in the riparian forest.',
   mainImage: img,
   durationInHours: 4,
   distanceFromCity: '50km',

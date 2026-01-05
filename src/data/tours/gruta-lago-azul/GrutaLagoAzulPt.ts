@@ -13,9 +13,8 @@ export const grutaLagoAzulPt: Tour = {
   id: 'TOUR-GLA-01',
   slug: 'gruta-do-lago-azul-em-bonito',
   name: 'Gruta do Lago Azul',
-  description: [
-     'Uma das mais belas cavernas do mundo. Após uma trilha, desce-se por uma escadaria até um lago de águas intensamente azuis, com mais de 80 metros de profundidade.'
-  ],
+  description: ['Uma das mais belas cavernas do mundo. Após uma trilha, desce-se por uma escadaria até um lago de águas intensamente azuis, com mais de 80 metros de profundidade.'],
+  shortDescription: 'Uma das mais belas cavernas do mundo. Após uma trilha, desce-se por uma escadaria até um lago de águas intensamente azuis, com mais de 80 metros de profundidade.',
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: '21km',
@@ -27,3 +26,4 @@ export const grutaLagoAzulPt: Tour = {
   recommendedFor: [familiesPt, couplesPt],
   city: bonito
 };
+

@@ -11,9 +11,8 @@ export const jaguarSafariEs: Tour = {
   id: 'TOUR-FSF-JS-01',
   slug: 'safari-onca-pintada-em-miranda',
   name: 'Safari de Jaguar',
-  description: [
-     'Una expedición especial enfocada en recorrer las áreas con la mayor probabilidad de avistar al jaguar, el felino más grande de las Américas.'
-  ],
+  description: ['Una expedición especial enfocada en recorrer las áreas con la mayor probabilidad de avistar al jaguar, el felino más grande de las Américas.'],
+  shortDescription: 'Una expedición especial enfocada en recorrer las áreas con la mayor probabilidad de avistar al jaguar, el felino más grande de las Américas.',
   mainImage: img,
   durationInHours: 4,
   distanceFromCity: 'N/A',
@@ -25,3 +24,4 @@ export const jaguarSafariEs: Tour = {
   recommendedFor: [],
   city: miranda
 };
+

@@ -11,9 +11,8 @@ export const jeepSafariPt: Tour = {
   id: 'TOUR-JS-01',
   slug: 'jeep-safari-nhecolandia-em-miranda',
   name: 'Safári de Jeep na Nhecolândia',
-  description: [
-     'Exploração em veículo 4x4 aberto pelas vastas planícies e campos da região da Nhecolândia, buscando avistar a rica fauna do Pantanal como cervos, tamanduás e tuiuiús.'
-  ],
+  description: ['Exploração em veículo 4x4 aberto pelas vastas planícies e campos da região da Nhecolândia, buscando avistar a rica fauna do Pantanal como cervos, tamanduás e tuiuiús.'],
+  shortDescription: 'Exploração em veículo 4x4 aberto pelas vastas planícies e campos da região da Nhecolândia, buscando avistar a rica fauna do Pantanal como cervos, tamanduás e tuiuiús.',
   mainImage: img,
   durationInHours: 4,
   distanceFromCity: 'N/A',
@@ -25,3 +24,4 @@ export const jeepSafariPt: Tour = {
   recommendedFor: [],
   city: miranda
 };
+

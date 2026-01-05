@@ -12,9 +12,8 @@ export const chalanaPiranhaFishingPt: Tour = {
   id: 'TOUR-FSF-CPF-01',
   slug: 'pescaria-piranha-em-miranda',
   name: 'Passeio de Chalana com Pescaria de Piranhas',
-  description: [
-    'Navegação em barco típico "chalana" pelo Rio Miranda, com uma parada para a tradicional e divertida pescaria de piranhas. Ideal para observação de aves aquáticas.'
-  ],
+  description: ['Navegação em barco típico "chalana" pelo Rio Miranda, com uma parada para a tradicional e divertida pescaria de piranhas. Ideal para observação de aves aquáticas.'],
+  shortDescription: 'Navegação em barco típico "chalana" pelo Rio Miranda, com uma parada para a tradicional e divertida pescaria de piranhas. Ideal para observação de aves aquáticas.',
   mainImage: img,
   durationInHours: 2.5,
   distanceFromCity: 'N/A',
@@ -26,3 +25,4 @@ export const chalanaPiranhaFishingPt: Tour = {
   recommendedFor: [familiesPt],
   city: miranda
 };
+

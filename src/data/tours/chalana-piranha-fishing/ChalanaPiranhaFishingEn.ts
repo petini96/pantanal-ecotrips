@@ -12,9 +12,8 @@ export const chalanaPiranhaFishingEn: Tour = {
   id: 'TOUR-FSF-CPF-01',
   slug: 'pescaria-piranha-em-miranda',
   name: 'Chalana Boat Trip with Piranha Fishing',
-  description: [
-    'Navigation on a typical "chalana" boat along the Miranda River, with a stop for the traditional and fun piranha fishing. Ideal for watching aquatic birds.'
-  ],
+  description: ['Navigation on a typical "chalana" boat along the Miranda River, with a stop for the traditional and fun piranha fishing. Ideal for watching aquatic birds.'],
+  shortDescription: 'Navigation on a typical "chalana" boat along the Miranda River, with a stop for the traditional and fun piranha fishing. Ideal for watching aquatic birds.',
   mainImage: img,
   durationInHours: 2.5,
   distanceFromCity: 'N/A',
@@ -26,3 +25,4 @@ export const chalanaPiranhaFishingEn: Tour = {
   recommendedFor: [familiesEn],
   city: miranda
 };
+

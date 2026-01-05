@@ -14,6 +14,7 @@ export const jaguarSafariEn: Tour = {
   description: [
     'A special expedition focused on exploring the areas with the highest probability of spotting the jaguar, the largest feline in the Americas.'
   ],
+  shortDescription: 'A special expedition focused on exploring the areas with the highest probability of spotting the jaguar, the largest feline in the Americas.',
   mainImage: img,
   durationInHours: 4,
   distanceFromCity: 'N/A',

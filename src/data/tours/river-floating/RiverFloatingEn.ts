@@ -14,6 +14,7 @@ export const riverFloatingEn: Tour = {
   description: [
      'A relaxing descent in a small boat or with a "pool noodle" floater down the calm river waters, offering a unique perspective of the vegetation and sounds of nature.'
   ],
+  shortDescription: 'A relaxing descent in a small boat or with a "pool noodle" floater down the calm river waters, offering a unique perspective of the vegetation and sounds of nature.',
   mainImage: img,
   durationInHours: 1.5,
   distanceFromCity: 'N/A',

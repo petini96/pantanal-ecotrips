@@ -10,9 +10,8 @@ export const horsebackRidingEn: Tour = {
   id: 'TOUR-HR-01',
   slug: 'cavalgada-em-miranda',
   name: 'Horseback Riding',
-  description: [
-     'A traditional ride on Pantanal horses, which are tame and adapted to the region. It is the best way to explore flooded areas and feel like a local cowboy.'
-  ],
+  description: ['A traditional ride on Pantanal horses, which are tame and adapted to the region. It is the best way to explore flooded areas and feel like a local cowboy.'],
+  shortDescription: 'A traditional ride on Pantanal horses, which are tame and adapted to the region. It is the best way to explore flooded areas and feel like a local cowboy.',
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',
@@ -24,3 +23,4 @@ export const horsebackRidingEn: Tour = {
   recommendedFor: [],
   city: miranda
 };
+

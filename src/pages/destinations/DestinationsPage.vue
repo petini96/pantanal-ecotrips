@@ -7,7 +7,7 @@
 
     <div class="container">
       <div class="row q-my-xl">
-        <div class="col-9 q-px-xl">
+        <div class="col-12 col-md-9">
           <h4>Resumo</h4>
           
           <div v-if="visibleDescription.length > 0">
@@ -33,7 +33,7 @@
           </div>
         </div>
 
-        <div class="col-3">
+        <div class="col-12 col-md-3">
           <h4>Localização</h4>
           
           <p class="text-caption q-mb-sm text-grey-8">

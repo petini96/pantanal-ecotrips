@@ -15,6 +15,7 @@ export const piranhaFishingPt: Tour = {
   description: [
      'Uma divertida e tradicional pescaria de piranhas nas águas do Pantanal, usando varas de bambu. O que você pescar pode ser preparado para o jantar!'
   ],
+  shortDescription: 'Uma divertida e tradicional pescaria de piranhas nas águas do Pantanal, usando varas de bambu. O que você pescar pode ser preparado para o jantar!',
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',

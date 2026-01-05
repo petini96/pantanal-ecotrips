@@ -44,7 +44,7 @@
 
         <q-card flat class="q-mb-xl description-card">
           <q-card-section>
-            <p>{{ tour.description }}</p>
+            <p>{{ tour.shortDescription }}</p>
           </q-card-section>
         </q-card>
 

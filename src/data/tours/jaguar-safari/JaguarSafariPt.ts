@@ -11,9 +11,8 @@ export const jaguarSafariPt: Tour = {
   id: 'TOUR-FSF-JS-01',
   slug: 'safari-onca-pintada-em-miranda',
   name: 'Safári de Onça-Pintada',
-  description: [
-     'Uma expedição especial focada em percorrer as áreas com maior probabilidade de avistamento da onça-pintada, o maior felino das Américas.'
-  ],
+  description: ['Uma expedição especial focada em percorrer as áreas com maior probabilidade de avistamento da onça-pintada, o maior felino das Américas.'],
+  shortDescription: 'Uma expedição especial focada em percorrer as áreas com maior probabilidade de avistamento da onça-pintada, o maior felino das Américas.',
   mainImage: img,
   durationInHours: 4,
   distanceFromCity: 'N/A',
@@ -25,3 +24,4 @@ export const jaguarSafariPt: Tour = {
   recommendedFor: [],
   city: miranda
 };
+

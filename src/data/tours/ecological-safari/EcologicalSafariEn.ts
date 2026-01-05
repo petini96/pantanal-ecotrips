@@ -14,6 +14,7 @@ export const ecologicalSafariEn: Tour = {
   description: [
     'Daytime tour in an open car through the farm\'s areas, such as fields, savannas, and forests, to observe the local fauna and flora. A great opportunity for photos.'
   ],
+  shortDescription: 'Daytime tour in an open car through the farm\'s areas, such as fields, savannas, and forests, to observe the local fauna and flora. A great opportunity for photos.',
   mainImage: img,
   durationInHours: 3,
   distanceFromCity: 'N/A',

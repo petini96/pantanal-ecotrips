@@ -14,6 +14,7 @@ export const piranhaFishingEn: Tour = {
   description: [
     'A fun and traditional piranha fishing activity in the waters of the Pantanal using bamboo rods. What you catch can be prepared for dinner!'
   ],
+  shortDescription: 'A fun and traditional piranha fishing activity in the waters of the Pantanal using bamboo rods. What you catch can be prepared for dinner!',
   mainImage: img,
   durationInHours: 2,
   distanceFromCity: 'N/A',

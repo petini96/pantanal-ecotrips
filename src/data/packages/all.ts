@@ -37,46 +37,46 @@ import { reveillonBonitoEs } from "./reveillon-bonito/package-data/PackageDataEs
 import { reveillonBonitoPt } from "./reveillon-bonito/package-data/PackageDataPt";
 
 export const packagesEn: Record<string, TourPackage> = {
+  jungleLodgeOtter: jungleLodgeOtterEn,
+  jungleLodgeCaiman: jungleLodgeCaimanEn,
+  jungleLodgeAnaconda: jungleLodgeAnacondaEn,
+  jungleLodgeEagle: jungleLodgeEagleEn,
   bonitoAmizade: bonitoAmizadeEn,
   familiaFeliz: familiaFelizEn,
   fazendaCoati: fazendaCoatiEn,
   fazendaArarinha: fazendaArarinhaEn,
   fazendaAnta: fazendaAntaEn,
   fazendaAguia: fazendaAguiaEn,
-  jungleLodgeOtter: jungleLodgeOtterEn,
-  jungleLodgeCaiman: jungleLodgeCaimanEn,
-  jungleLodgeAnaconda: jungleLodgeAnacondaEn,
-  jungleLodgeEagle: jungleLodgeEagleEn,
   noiteFeliz: noiteFelizEn,
   reveillonBonito: reveillonBonitoEn,
 };
 
 export const packagesEs: Record<string, TourPackage> = {
+  jungleLodgeOtter: jungleLodgeOtterEs,
+  jungleLodgeCaiman: jungleLodgeCaimanEs,
+  jungleLodgeAnaconda: jungleLodgeAnacondaEs,
+  jungleLodgeEagle: jungleLodgeEagleEs,
   bonitoAmizade: bonitoAmizadeEs,
   familiaFeliz: familiaFelizEs,
   fazendaCoati: fazendaCoatiEs,
   fazendaArarinha: fazendaArarinhaEs,
   fazendaAnta: fazendaAntaEs,
   fazendaAguia: fazendaAguiaEs,
-  jungleLodgeOtter: jungleLodgeOtterEs,
-  jungleLodgeCaiman: jungleLodgeCaimanEs,
-  jungleLodgeAnaconda: jungleLodgeAnacondaEs,
-  jungleLodgeEagle: jungleLodgeEagleEs,
   noiteFeliz: noiteFelizEs,
   reveillonBonito: reveillonBonitoEs,
 };
 
 export const packagesPt: Record<string, TourPackage> = {
+  jungleLodgeOtter: jungleLodgeOtterPt,
+  jungleLodgeCaiman: jungleLodgeCaimanPt,
+  jungleLodgeAnaconda: jungleLodgeAnacondaPt,
+  jungleLodgeEagle: jungleLodgeEaglePt,
   bonitoAmizade: bonitoAmizadePt,
   familiaFeliz: familiaFelizPt,
   fazendaCoati: fazendaCoatiPt,
   fazendaArarinha: fazendaArarinhaPt,
   fazendaAnta: fazendaAntaPt,
   fazendaAguia: fazendaAguiaPt,
-  jungleLodgeOtter: jungleLodgeOtterPt,
-  jungleLodgeCaiman: jungleLodgeCaimanPt,
-  jungleLodgeAnaconda: jungleLodgeAnacondaPt,
-  jungleLodgeEagle: jungleLodgeEaglePt,
   noiteFeliz: noiteFelizPt,
   reveillonBonito: reveillonBonitoPt,
 };

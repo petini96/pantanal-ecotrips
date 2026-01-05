@@ -13,9 +13,8 @@ export const boteRioFormosoPt: Tour = {
   id: 'TOUR-BRF-01',
   slug: 'bote-rio-formoso-em-bonito',
   name: 'Bote no Rio Formoso',
-  description: [
-    'Descida de 6km em botes infláveis por um dos principais rios da região, passando por três cachoeiras, duas corredeiras e com uma parada para banho.'
-  ],
+  description: ['Descida de 6km em botes infláveis por um dos principais rios da região, passando por três cachoeiras, duas corredeiras e com uma parada para banho.'],
+  shortDescription: 'Descida de 6km em botes infláveis por um dos principais rios da região, passando por três cachoeiras, duas corredeiras e com uma parada para banho.',
   mainImage: img,
   durationInHours: 4,
   distanceFromCity: '12km',
@@ -27,3 +26,4 @@ export const boteRioFormosoPt: Tour = {
   recommendedFor: [familiesPt, groupsPt],
   city: bonito
 };
+
