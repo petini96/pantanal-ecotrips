@@ -48,6 +48,9 @@ export const fazendaAguiaEn: TourPackage = {
   title: "Fazenda San Francisco - Eagle Tour",
   subtitle:
     "The most complete 5-day experience to enjoy everything the farm has to offer.",
+  description: [
+    ``
+  ],
   durationInDays: 5,
   durationInNights: 4,
   minPeople: 1,

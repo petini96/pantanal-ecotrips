@@ -45,6 +45,9 @@ export const fazendaArarinhaPt: TourPackage = {
   image: img,
   title: "Fazenda San Francisco - Tour Ararinha",
   subtitle: "3 dias focados na observação da rica avifauna e fauna pantaneira.",
+  description: [
+    ``
+  ],
   durationInDays: 3,
   durationInNights: 2,
   minPeople: 1,

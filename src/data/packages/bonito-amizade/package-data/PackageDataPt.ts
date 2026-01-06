@@ -22,6 +22,9 @@ export const bonitoAmizadePt: TourPackage = {
   title: "Tour Bonito Amizade",
   subtitle:
     "Um roteiro de 5 dias cheio de aventura e natureza, perfeito para grupos de amigos.",
+  description: [
+    ``
+  ],
   durationInDays: 5,
   durationInNights: 4,
   minPeople: 2,

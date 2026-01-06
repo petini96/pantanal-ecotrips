@@ -21,6 +21,9 @@ export const reveillonBonitoEs: TourPackage = {
   title: "Nochevieja en Bonito 2024",
   subtitle:
     "Paquete de 5 días y 4 noches para celebrar el año nuevo en plena naturaleza.",
+  description: [
+    ``
+  ],
   durationInDays: 5,
   durationInNights: 4,
   minPeople: 4,

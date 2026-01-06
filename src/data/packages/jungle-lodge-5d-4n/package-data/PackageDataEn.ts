@@ -50,6 +50,9 @@ export const jungleLodgeEagleEn: TourPackage = {
   title: "Jungle Lodge - Eagle Package",
   subtitle:
     "The definitive 5-day experience, including a night of camping in the jungle.",
+  description: [
+    ``
+  ],
   durationInDays: 5,
   durationInNights: 4,
   minPeople: 1,

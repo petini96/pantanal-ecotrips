@@ -51,6 +51,9 @@ export const jungleLodgeAnacondaEs: TourPackage = {
   title: "Jungle Lodge - Paquete Anaconda",
   subtitle:
     "4 días de inmersión completa en la diversidad de actividades pantaneras.",
+  description: [
+    ``
+  ],
   durationInDays: 4,
   durationInNights: 3,
   minPeople: 1,

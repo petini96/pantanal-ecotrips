@@ -46,6 +46,9 @@ export const fazendaAntaEs: TourPackage = {
   title: "Fazenda San Francisco - Tour Tapir",
   subtitle:
     "Un viaje de 4 días con una expedición especial en busca del jaguar.",
+  description: [
+    ``
+  ],
   durationInDays: 4,
   durationInNights: 3,
   minPeople: 1,

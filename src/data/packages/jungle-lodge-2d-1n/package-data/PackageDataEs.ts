@@ -51,6 +51,9 @@ export const jungleLodgeOtterEs: TourPackage = {
   title: "Jungle Lodge - Paquete Nutria",
   subtitle:
     "Una escapada rápida de 2 días para sentir la esencia del Pantanal.",
+  description: [
+    ``
+  ],
   durationInDays: 2,
   durationInNights: 1,
   minPeople: 1,

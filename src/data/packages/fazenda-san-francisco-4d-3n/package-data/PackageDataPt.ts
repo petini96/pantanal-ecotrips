@@ -44,6 +44,9 @@ export const fazendaAntaPt: TourPackage = {
   title: "Fazenda San Francisco - Tour Anta",
   subtitle:
     "Uma jornada de 4 dias com uma expedição especial em busca da onça-pintada.",
+  description: [
+    ``
+  ],
   durationInDays: 4,
   durationInNights: 3,
   minPeople: 1,

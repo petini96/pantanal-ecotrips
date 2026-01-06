@@ -20,6 +20,9 @@ export const familiaFelizEn: TourPackage = {
   title: "Happy Family Tour",
   subtitle:
     "A complete 4-day itinerary, ideal for families, combining the best tours in Bonito.",
+  description: [
+    ``
+  ],
   durationInDays: 4,
   durationInNights: 3,
   minPeople: 1,

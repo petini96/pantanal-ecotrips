@@ -50,6 +50,9 @@ export const jungleLodgeAnacondaPt: TourPackage = {
   title: "Jungle Lodge - Pacote Sucuri",
   subtitle:
     "4 dias de imersão completa na diversidade de atividades pantaneiras.",
+  description: [
+    ``
+  ],
   durationInDays: 4,
   durationInNights: 3,
   minPeople: 1,

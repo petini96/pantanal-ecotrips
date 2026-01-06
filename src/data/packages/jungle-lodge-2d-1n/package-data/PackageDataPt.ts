@@ -49,6 +49,9 @@ export const jungleLodgeOtterPt: TourPackage = {
   image: img,
   title: "Jungle Lodge - Pacote Lontra",
   subtitle: "Uma escapada rápida de 2 dias para sentir a essência do Pantanal.",
+  description: [
+    ``
+  ],
   durationInDays: 2,
   durationInNights: 1,
   minPeople: 1,

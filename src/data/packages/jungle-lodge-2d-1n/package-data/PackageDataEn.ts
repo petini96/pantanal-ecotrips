@@ -49,6 +49,9 @@ export const jungleLodgeOtterEn: TourPackage = {
   image: img,
   title: "Jungle Lodge - Otter Package",
   subtitle: "A quick 2-day getaway to feel the essence of the Pantanal.",
+  description: [
+    ``
+  ],
   durationInDays: 2,
   durationInNights: 1,
   minPeople: 1,

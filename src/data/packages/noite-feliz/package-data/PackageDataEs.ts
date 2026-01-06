@@ -21,6 +21,9 @@ export const noiteFelizEs: TourPackage = {
   title: "01 Noche Feliz en Bonito",
   subtitle:
     "Este itinerario es ideal para quienes tienen poco tiempo, pero quieren conocer las maravillas de Bonito MS.",
+  description: [
+    ``
+  ],
   durationInDays: 3,
   durationInNights: 2,
   minPeople: 1,

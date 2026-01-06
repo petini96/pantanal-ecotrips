@@ -49,6 +49,9 @@ export const jungleLodgeEaglePt: TourPackage = {
   title: "Jungle Lodge - Pacote Águia",
   subtitle:
     "A experiência definitiva de 5 dias, incluindo uma noite de acampamento na selva.",
+  description: [
+    ``
+  ],
   durationInDays: 5,
   durationInNights: 4,
   minPeople: 1,

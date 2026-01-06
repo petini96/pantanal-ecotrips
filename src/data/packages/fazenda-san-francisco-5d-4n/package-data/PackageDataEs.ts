@@ -48,6 +48,9 @@ export const fazendaAguiaEs: TourPackage = {
   title: "Fazenda San Francisco - Tour Águila",
   subtitle:
     "La experiencia más completa de 5 días para vivir todo lo que la hacienda ofrece.",
+  description: [
+    ``
+  ],
   durationInDays: 5,
   durationInNights: 4,
   minPeople: 1,

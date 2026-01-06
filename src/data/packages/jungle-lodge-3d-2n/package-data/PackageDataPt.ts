@@ -49,6 +49,9 @@ export const jungleLodgeCaimanPt: TourPackage = {
   image: img,
   title: "Jungle Lodge - Pacote Jacaré",
   subtitle: "3 dias explorando a terra e as águas do Pantanal.",
+  description: [
+    ``
+  ],
   durationInDays: 3,
   durationInNights: 2,
   minPeople: 1,

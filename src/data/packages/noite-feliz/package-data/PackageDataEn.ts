@@ -21,6 +21,9 @@ export const noiteFelizEn: TourPackage = {
   title: "01 Happy Night in Bonito",
   subtitle:
     "This itinerary is ideal for those who have little time but want to experience the wonders of Bonito MS.",
+  description: [
+    ``
+  ],
   durationInDays: 3,
   durationInNights: 2,
   minPeople: 1,

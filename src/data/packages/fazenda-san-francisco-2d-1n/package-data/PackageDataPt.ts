@@ -44,6 +44,9 @@ export const fazendaCoatiPt: TourPackage = {
   title: "Fazenda San Francisco - Tour Coati",
   subtitle:
     "Uma imersão rápida e intensa de 2 dias na vida selvagem do Pantanal.",
+  description: [
+    ``
+  ],
   durationInDays: 2,
   durationInNights: 1,
   minPeople: 1,

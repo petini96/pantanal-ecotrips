@@ -47,6 +47,9 @@ export const fazendaArarinhaEn: TourPackage = {
   title: "Fazenda San Francisco - Macaw Tour",
   subtitle:
     "3 days focused on observing the rich birdlife and fauna of the Pantanal.",
+  description: [
+    ``
+  ],
   durationInDays: 3,
   durationInNights: 2,
   minPeople: 1,

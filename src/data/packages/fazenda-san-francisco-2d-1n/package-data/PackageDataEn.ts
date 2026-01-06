@@ -45,6 +45,9 @@ export const fazendaCoatiEn: TourPackage = {
   image: img,
   title: "Fazenda San Francisco - Coati Tour",
   subtitle: "A quick and intense 2-day immersion into the Pantanal wildlife.",
+  description: [
+    ``
+  ],
   durationInDays: 2,
   durationInNights: 1,
   minPeople: 1,

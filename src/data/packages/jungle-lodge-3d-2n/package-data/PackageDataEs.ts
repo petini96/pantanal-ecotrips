@@ -50,6 +50,9 @@ export const jungleLodgeCaimanEs: TourPackage = {
   image: img,
   title: "Jungle Lodge - Paquete Caimán",
   subtitle: "3 días explorando la tierra y las aguas del Pantanal.",
+  description: [
+    ``
+  ],
   durationInDays: 3,
   durationInNights: 2,
   minPeople: 1,

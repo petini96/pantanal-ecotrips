@@ -21,6 +21,9 @@ export const reveillonBonitoPt: TourPackage = {
   title: "Réveillon em Bonito 2024",
   subtitle:
     "Pacote de 5 dias e 4 noites para celebrar a virada do ano em meio à natureza.",
+  description: [
+    ``
+  ],
   durationInDays: 5,
   durationInNights: 4,
   minPeople: 4,

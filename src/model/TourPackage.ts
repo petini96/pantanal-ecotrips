@@ -8,6 +8,7 @@ export interface TourPackage {
   image: string;
   title: string;
   subtitle: string;
+  description: string[];
   durationInDays: number;
   durationInNights: number;
   minPeople?: number;

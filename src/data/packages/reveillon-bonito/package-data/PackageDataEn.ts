@@ -21,6 +21,9 @@ export const reveillonBonitoEn: TourPackage = {
   title: "New Year's Eve in Bonito 2024",
   subtitle:
     "A 5-day, 4-night package to celebrate the new year surrounded by nature.",
+  description: [
+    ``
+  ],
   durationInDays: 5,
   durationInNights: 4,
   minPeople: 4,

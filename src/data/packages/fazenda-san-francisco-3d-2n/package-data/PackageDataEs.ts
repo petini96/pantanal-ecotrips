@@ -47,6 +47,9 @@ export const fazendaArarinhaEs: TourPackage = {
   title: "Fazenda San Francisco - Tour Guacamayo",
   subtitle:
     "3 días enfocados en la observación de la rica avifauna y fauna pantanera.",
+  description: [
+    ``
+  ],
   durationInDays: 3,
   durationInNights: 2,
   minPeople: 1,

@@ -20,6 +20,9 @@ export const noiteFelizPt: TourPackage = {
   title: "01 Noite Feliz em Bonito",
   subtitle:
     "Este roteiro é ideal para quem tem pouco tempo, mas quer conhecer as maravilhas de Bonito MS.",
+  description: [
+    ``
+  ],
   durationInDays: 3,
   durationInNights: 2,
   minPeople: 1,

@@ -50,6 +50,9 @@ export const jungleLodgeEagleEs: TourPackage = {
   title: "Jungle Lodge - Paquete Águila",
   subtitle:
     "La experiencia definitiva de 5 días, incluyendo una noche de campamento en la selva.",
+  description: [
+    ``
+  ],
   durationInDays: 5,
   durationInNights: 4,
   minPeople: 1,
