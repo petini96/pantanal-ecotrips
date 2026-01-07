@@ -51,8 +51,10 @@ export const jungleLodgeAnacondaPt: TourPackage = {
   subtitle:
     "4 dias de imersão completa na diversidade de atividades pantaneiras.",
   description: [
-    ``
-  ],
+  `O Jungle Lodge está localizado na Estrada Parque do Pantanal Sul, a 7 quilômetros do acesso principal, na estação Buraco das Piranhas, em uma região conhecida como Passo do Lontra.`,
+  `A estrutura do hotel é uma construção em madeira sobre palafitas situada próxima à margem do Rio Miranda, perfeitamente adaptada ao ciclo típico do ecossistema conhecido como "cheia" (ou estação das águas), onde o nível da água sobe e cobre grande parte do terreno, revelando paisagens fantásticas.`,
+  `Respeitando a vida selvagem e buscando promover um equilíbrio perfeito entre o homem e a natureza, o Pantanal Jungle Lodge oferece a melhor hospitalidade e atividades turísticas no Pantanal Sul, adicionando uma atmosfera aconchegante às suas aventuras de descoberta.`
+],
   durationInDays: 4,
   durationInNights: 3,
   minPeople: 1,

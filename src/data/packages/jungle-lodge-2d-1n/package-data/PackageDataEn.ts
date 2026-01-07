@@ -50,7 +50,9 @@ export const jungleLodgeOtterEn: TourPackage = {
   title: "Jungle Lodge - Otter Package",
   subtitle: "A quick 2-day getaway to feel the essence of the Pantanal.",
   description: [
-    ``
+    `Jungle Lodge is located on the park road of Southern Pantanal, 7 kilometres from the main access road, station Buraco Das Piranhas, in a region named  as Passo Do Lontra.`,
+    `The hotel structure is a wooden construction on stilts situated near the bank of the Miranda River, perfect to adapt with the typical ecosystem event called "water season" where the water level rises and covers a large part of the land revealing fantastic landscape views.`,
+    `Respecting the wildlife and seeking to promote a perfect balance between man and nature, the Pantanal Jungle Lodge offers the best hospitality and tourist activities in Southern Pantanal, adding a cozy atmosphere to your discovery adventures.`
   ],
   durationInDays: 2,
   durationInNights: 1,

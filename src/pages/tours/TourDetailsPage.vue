@@ -28,7 +28,7 @@
         </q-card-section>
       </q-card>
 
-      <AboutTourSection :tour_details_about_title="t('tour_details_about_title')" :tour_desc="pkg.subtitle" />
+      <AboutTourSection :tour_details_about_title="t('tour_details_about_title')" :tour_desc="pkg.description" />
 
       <TourItinerarySection v-if="pkg.itinerary && pkg.itinerary.length > 0"
         :tour_details_itinerary_title="t('tour_details_itinerary_title')" :itinerary="pkg.itinerary" />

@@ -51,8 +51,10 @@ export const jungleLodgeEagleEs: TourPackage = {
   subtitle:
     "La experiencia definitiva de 5 días, incluyendo una noche de campamento en la selva.",
   description: [
-    ``
-  ],
+  `El Jungle Lodge está ubicado en la Estrada Parque del Pantanal Sur, a 7 kilómetros del acceso principal, en la estación Buraco das Piranhas, en la región conocida como Passo do Lontra.`,
+  `La estructura del hotel es una construcción de madera sobre pilotes situada cerca de la orilla del río Miranda, perfecta para adaptarse al ciclo típico del ecosistema llamado "temporada de aguas", donde el nivel del agua sube y cubre gran parte de la tierra, revelando paisajes fantásticos.`,
+  `Respetando la vida silvestre y buscando promover un equilibrio perfecto entre el hombre y la naturaleza, el Pantanal Jungle Lodge ofrece la mejor hospitalidad y actividades turísticas en el Pantanal Sur, añadiendo un ambiente acogedor a sus aventuras de descubrimiento.`
+],
   durationInDays: 5,
   durationInNights: 4,
   minPeople: 1,
