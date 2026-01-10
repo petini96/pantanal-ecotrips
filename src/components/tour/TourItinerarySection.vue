@@ -1,6 +1,9 @@
 <template>
   <div v-if="itinerary && itinerary.length > 0" class="itinerary-section">
-    <h3 class="section-title text-center q-mb-xl">{{ tour_details_itinerary_title }}</h3>
+    <div class="row items-center justify-center q-mb-xl">
+      <h3 class="section-title q-my-none q-mr-md">{{ tour_details_itinerary_title }}</h3>
+       
+    </div>
     
     <q-timeline color="primary" layout="dense">
       <q-timeline-entry
@@ -14,57 +17,73 @@
         :style="{ animationDelay: `${index * 100}ms` }"
       >
         <div>
-          <ul class="q-pl-md q-mb-md description-list">
-            <li v-for="(desc, descIndex) in item.descriptionItems" :key="`desc-${descIndex}`">
-              {{ desc }}
-            </li>
-          </ul>
-
-          <div v-if="item.mealsIncluded && item.mealsIncluded.length > 0" class="meals-included q-mb-md">
-            <q-chip
-              v-for="meal in item.mealsIncluded"
-              :key="meal"
-              :icon="getMealInfo(meal).icon"
-              color="green-1"
-              text-color="green-8"
-              class="text-weight-medium"
-            >
-              {{ getMealInfo(meal).label }}
-            </q-chip>
+          <div class="row justify-end q-mb-sm">
+            <q-btn 
+              flat 
+              dense 
+              round 
+              size="sm" 
+              color="grey-7" 
+              :icon="stepsVisibility[index] ? 'mdi-chevron-up' : 'mdi-chevron-down'"
+              @click="toggleStep(index)"
+            />
           </div>
 
-          <div v-if="item.tours && item.tours.length > 0" class="tours-of-the-day">
-            <div class="text-subtitle2 q-mb-sm text-primary text-weight-bold">{{ t('tours_for_the_day') }}</div>
-            <div class="row q-col-gutter-sm">
-              <div v-for="tour in item.tours" :key="tour.id" class="col-12">
-                <router-link :to="`/${locale}/passeio/${tour.slug}`" class="tour-card-link">
-                  <q-card class="tour-item-card" flat bordered>
-                    <q-item>
-                      <q-item-section avatar>
-                        <q-avatar rounded size="64px">
-                          <img :src="tour.mainImage">
-                        </q-avatar>
-                      </q-item-section>
-                      <q-item-section>
-                        <q-item-label class="text-weight-bold">{{ tour.name }}</q-item-label>
-                        <q-item-label caption lines="2">{{ tour.shortDescription }}</q-item-label>
-                        <q-item-label class="q-mt-sm">
-                          <div class="tour-details-chips">
-                            <q-chip dense outline :icon="getDifficultyInfo(tour.difficulty).icon" :color="getDifficultyInfo(tour.difficulty).color">
-                              {{ getDifficultyInfo(tour.difficulty).label }}
-                            </q-chip>
-                            <q-chip dense outline icon="mdi-clock-outline" color="grey-7">
-                              {{ tour.durationInHours }}h
-                            </q-chip>
-                          </div>
-                        </q-item-label>
-                      </q-item-section>
-                    </q-item>
-                  </q-card>
-                </router-link>
+          <q-slide-transition>
+            <div v-show="stepsVisibility[index]">
+              <ul class="q-pl-md q-mb-md description-list">
+                <li v-for="(desc, descIndex) in item.descriptionItems" :key="`desc-${descIndex}`">
+                  {{ desc }}
+                </li>
+              </ul>
+
+              <div v-if="item.mealsIncluded && item.mealsIncluded.length > 0" class="meals-included q-mb-md">
+                <q-chip
+                  v-for="meal in item.mealsIncluded"
+                  :key="meal"
+                  :icon="getMealInfo(meal).icon"
+                  color="green-1"
+                  text-color="green-8"
+                  class="text-weight-medium"
+                >
+                  {{ getMealInfo(meal).label }}
+                </q-chip>
+              </div>
+
+              <div v-if="item.tours && item.tours.length > 0" class="tours-of-the-day">
+                <div class="text-subtitle2 q-mb-sm text-primary text-weight-bold">{{ t('tours_for_the_day') }}</div>
+                <div class="row q-col-gutter-sm">
+                  <div v-for="tour in item.tours" :key="tour.id" class="col-12">
+                    <router-link :to="`/${locale}/passeio/${tour.slug}`" class="tour-card-link">
+                      <q-card class="tour-item-card" flat bordered>
+                        <q-item>
+                          <q-item-section avatar>
+                            <q-avatar rounded size="64px">
+                              <img :src="tour.mainImage">
+                            </q-avatar>
+                          </q-item-section>
+                          <q-item-section>
+                            <q-item-label class="text-weight-bold">{{ tour.name }}</q-item-label>
+                            <q-item-label caption lines="2">{{ tour.shortDescription }}</q-item-label>
+                            <q-item-label class="q-mt-sm">
+                              <div class="tour-details-chips">
+                                <q-chip dense outline :icon="getDifficultyInfo(tour.difficulty).icon" :color="getDifficultyInfo(tour.difficulty).color">
+                                  {{ getDifficultyInfo(tour.difficulty).label }}
+                                </q-chip>
+                                <q-chip dense outline icon="mdi-clock-outline" color="grey-7">
+                                  {{ tour.durationInHours }}h
+                                </q-chip>
+                              </div>
+                            </q-item-label>
+                          </q-item-section>
+                        </q-item>
+                      </q-card>
+                    </router-link>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
+          </q-slide-transition>
         </div>
       </q-timeline-entry>
     </q-timeline>
@@ -72,16 +91,34 @@
 </template>
 
 <script setup lang="ts">
+import { ref, watch } from 'vue'; // AJUSTE: Imports necessários
 import { useI18n } from 'vue-i18n';
 import { type ItineraryItem } from 'src/model/ItineraryItem';
 import { DifficultyLevel } from 'src/model/Enums';
 
-const { t, locale } = useI18n(); // AJUSTE: Importando 'locale' para usar no link
+const { t, locale } = useI18n();
 
-defineProps<{
+const props = defineProps<{
   tour_details_itinerary_title: string;
   itinerary: ItineraryItem[] | null;
 }>();
+
+// --- LÓGICA DO TOGGLE (NOVO) ---
+const stepsVisibility = ref<boolean[]>([]);
+
+// Inicializa ou atualiza a visibilidade quando o itinerário muda
+watch(() => props.itinerary, (newVal) => {
+  if (newVal) {
+    // Inicia todos como "true" (abertos)
+    stepsVisibility.value = new Array(newVal.length).fill(true);
+  }
+}, { immediate: true });
+
+// Botão Individual
+const toggleStep = (index: number) => {
+  stepsVisibility.value[index] = !stepsVisibility.value[index];
+};
+// -------------------------------
 
 type Meal = 'breakfast' | 'lunch' | 'dinner';
 
@@ -106,11 +143,10 @@ const getDifficultyInfo = (level: DifficultyLevel) => {
 </script>
 
 <style scoped lang="scss">
-/* AJUSTE: Estilo para garantir que o link não tenha decoração de texto */
 .tour-card-link {
   text-decoration: none;
   color: inherit;
-  display: block; /* Garante que o link ocupe todo o espaço do card */
+  display: block;
 }
 
 .itinerary-section {
