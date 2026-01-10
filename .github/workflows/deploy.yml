@@ -36,6 +36,10 @@ jobs:
           BACKEND_URL=${{ secrets.BACKEND_URL }}
           ANALYTICS_GTAG=${{ secrets.ANALYTICS_GTAG }}
           ANALYTICS_APP_NAME=${{ secrets.ANALYTICS_APP_NAME }}
+          TOURS_BUCKET_NAME=${{ secrets.TOURS_BUCKET_NAME }}
+          PACKAGE_BUCKET_NAME=${{ secrets.PACKAGE_BUCKET_NAME }}
+          GENERAL_BUCKET_NAME=${{ secrets.GENERAL_BUCKET_NAME }}
+          REGIONS_BUCKET_NAME=${{ secrets.REGIONS_BUCKET_NAME }}
           EOF
 
       # Copiar arquivos para a VPS
