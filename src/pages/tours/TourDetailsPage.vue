@@ -24,13 +24,18 @@
                 <span>Mín. {{ pkg.minPeople }} {{ t("people") }}</span>
               </div>
             </template>
-          </div>
+            
+            <q-separator vertical spaced="sm" />
+            <div class="info-item cursor-pointer" @click="handleShare">
+              <q-btn flat round dense color="primary" icon="mdi-share-variant" class="q-mr-xs" size="sm" />
+              <span>{{ t('share') || 'Compartilhar' }}</span>
+            </div>
+            </div>
         </q-card-section>
       </q-card>
 
       <AboutTourSection :tour_details_about_title="t('tour_details_about_title')" :tour_desc="pkg.description" />
 
-      <!-- gallery-->
       <transition name="fade-gallery" mode="out-in">
         <div class="q-my-lg" v-if="pkg.galleryImages">
           <HorizontalPhotoGallery :images="pkg.galleryImages? pkg.galleryImages: []" />
@@ -146,7 +151,7 @@
 
 <script setup lang="ts">
 import { computed, defineAsyncComponent, onMounted, watch } from 'vue';
-import { useMeta } from 'quasar';
+import { useMeta, useQuasar, copyToClipboard } from 'quasar';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { storeToRefs } from 'pinia';
@@ -160,6 +165,7 @@ import { useAnalytics } from 'src/components/composables/useAnalytics';
 const route = useRoute();
 const { t, locale } = useI18n();
 const { trackEvent } = useAnalytics();
+const $q = useQuasar(); // Instancia do Quasar
 
 const layoutConfigStore = useLayoutConfigStore();
 const { theme: currentTheme } = storeToRefs(layoutConfigStore);
@@ -214,6 +220,40 @@ const trackPackageBookingClick = () => {
     package_duration: `${pkg.value.durationInDays}D/${pkg.value.durationInNights}N`,
     min_people: pkg.value.minPeople || 1
   });
+};
+
+const handleShare = async () => {
+  const url = window.location.href;
+  const title = pkg.value?.title || 'Pantanal Ecotrips';
+  
+  // Tenta usar a API nativa de compartilhamento (Mobile)
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: title,
+        url: url
+      });
+    } catch (err) {
+      console.log('Share cancelled or failed', err);
+    }
+  } else {
+    // Fallback para Desktop: Copia para o clipboard
+    copyToClipboard(url)
+      .then(() => {
+        $q.notify({
+          message: 'Link copiado!',
+          color: 'positive',
+          icon: 'mdi-check',
+          timeout: 2000
+        });
+      })
+      .catch(() => {
+        $q.notify({
+          message: 'Erro ao copiar link',
+          color: 'negative'
+        });
+      });
+  }
 };
 
 const encodedWhatsAppMessage = computed(() => {
@@ -288,6 +328,16 @@ const HorizontalPhotoGallery = defineAsyncComponent(
     .q-icon {
       color: var(--q-primary);
       font-size: 1.5rem;
+    }
+  }
+  
+  /* Estilo para garantir que o cursor apareça no item de share */
+  .cursor-pointer {
+    cursor: pointer;
+    transition: opacity 0.2s;
+    
+    &:hover {
+      opacity: 0.8;
     }
   }
 }

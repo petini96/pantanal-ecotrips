@@ -112,5 +112,6 @@ export default {
   amazon: "Amazon",
   destinations_description: "descrição do destination...",
   destinations_title: "Título do destination",
-  loading_filters: "Loading filters"
+  loading_filters: "Loading filters",
+  share: "Share"
 };

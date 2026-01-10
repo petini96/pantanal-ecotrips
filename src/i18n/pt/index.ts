@@ -112,5 +112,6 @@ export default {
   amazon: "Amazonas",
   destinations_description: "descrição do destino...",
   destinations_title: "Título do destino",
-  loading_filters: "Carregando filtros"
+  loading_filters: "Carregando filtros",
+  share: "Compartilhar"
 };
