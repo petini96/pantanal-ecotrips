@@ -5,14 +5,27 @@
       <q-page ref="pageRef">
         <router-view />
         <q-scroll-observer @scroll="onScroll" /> 
-      </q-page>
+
+        <q-page-sticky position="bottom-right" :offset="[18, 18]" style="z-index: 2000;">
+          <q-btn
+            fab
+            icon="mdi-whatsapp"
+            color="green-6"
+            text-color="white"
+            :href="whatsappUrl"
+            target="_blank"
+            class="shadow-10 pulse-animation"
+            aria-label="Contato via WhatsApp"
+          />
+        </q-page-sticky>
+        </q-page>
     </q-page-container>
     <FooterLayout />
   </q-layout>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue'; // Adicionei computed
 import { useScrollStore } from 'src/stores/scrollStore';
 import { useLayoutConfigStore } from 'src/stores/layout-config-store';
 import NavLayout from 'src/components/layouts/home/NavLayout.vue';
@@ -27,28 +40,25 @@ type ThemeName = 'light' | 'dark';
 
 const scrollStore = useScrollStore();
 const layoutConfigStore = useLayoutConfigStore();
-const { theme: currentTheme } = storeToRefs(layoutConfigStore); // Reativo
+const { theme: currentTheme } = storeToRefs(layoutConfigStore); 
 
 const pageRef = ref<HTMLElement | null>(null);
 
-// preFetch é executado no servidor ANTES da renderização.
-// Sua única tarefa é popular a store do Pinia.
+// Configuração da URL do WhatsApp
+const whatsappNumber = '556791452985';
+const whatsappMessage = 'Olá! Gostaria de mais informações sobre o Pantanal.';
+const whatsappUrl = computed(() => 
+  `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`
+);
+
 preFetch(({ store, ssrContext }) => {
   const piniaLayoutStore = useLayoutConfigStore(store);
-
-  // Parseia os cookies do contexto SSR
   const cookies = Cookies.parseSSR(ssrContext);
   const themeFromCookie = cookies.get('pantanal-theme');
 
-  // Valida e define o tema na store
-  if (
-    themeFromCookie &&
-    ['light', 'dark'].includes(themeFromCookie)
-  ) {
+  if (themeFromCookie && ['light', 'dark'].includes(themeFromCookie)) {
     piniaLayoutStore.setSsrTheme(themeFromCookie as ThemeName);
   }
-  // Se não houver cookie, a store usará o valor padrão ('light'),
-  // e o servidor renderizará a página com a classe correta.
 });
 
 const onScroll = (info: ScrollDetails) => {
@@ -56,7 +66,14 @@ const onScroll = (info: ScrollDetails) => {
 };
 
 onMounted(() => {
-  // No cliente, sincroniza o tema caso ele venha do localStorage
   layoutConfigStore.hydrateTheme();
 });
 </script>
+
+<style lang="scss" scoped>
+/* Animação opcional para chamar atenção levemente ao passar o mouse */
+.pulse-animation:hover {
+  transform: scale(1.1);
+  transition: transform 0.2s ease-in-out;
+}
+</style>
