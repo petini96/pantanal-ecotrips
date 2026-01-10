@@ -59,4 +59,5 @@ export const fazendaCoatiEn: TourPackage = {
   packageCategories: [ecotourismEn, aquaticEn],
   packageRecommendedFor: [couplesEn, familiesEn],
   region: pantanalSulEn,
+  
 };

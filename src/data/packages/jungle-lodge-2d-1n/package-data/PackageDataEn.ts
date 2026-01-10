@@ -9,6 +9,7 @@ import { type TourPackage } from "src/model/TourPackage";
 import { PACKAGE_BUCKET_NAME } from "src/utils/environmentUtils";
 import { jungleLodgeOtterEnItinerary } from "../itinerary-data/ItineraryDataEn";
 import { jungleLodgeImages } from "../../common-data/jungle-lodge";
+import { jungleLodgeHotelEn } from "src/data/hotels/jungle-lodge/JungleLodgeHotelEn";
 
  // --- COMMON DATA (EN-US) ---
 const commonIncludedEn = [
@@ -66,5 +67,6 @@ export const jungleLodgeOtterEn: TourPackage = {
   packageCategories: [ecotourismEn, aquaticEn],
   packageRecommendedFor: [couplesEn, familiesEn, groupsEn],
   region: pantanalSulEn,
-  galleryImages: jungleLodgeImages
+  galleryImages: jungleLodgeImages,
+  hotels: [jungleLodgeHotelEn]
 };

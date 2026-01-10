@@ -123,6 +123,43 @@
         </q-card-section>
       </q-card>
 
+      <div v-if="pkg.hotels && pkg.hotels.length > 0">
+        <div class="text-h6 q-mb-sm flex items-center text-primary">
+          <q-icon name="mdi-bed-king-outline" class="q-mr-sm" />
+          {{ t('hotels') || 'Hotéis' }}
+        </div>
+        
+        <div class="column q-gutter-y-md">
+          <div v-for="(hotel, index) in pkg.hotels" :key="index">
+            <q-card class="hotel-card cursor-pointer" flat bordered @click="goToHotelDetails(hotel.slug)">
+              <q-card-section horizontal>
+                <q-img 
+                  :src="hotel.heroImage" 
+                  class="col-4 col-sm-3"
+                  style="object-fit: cover;"
+                />
+
+                <q-card-section class="q-pt-sm col">
+                  <div class="text-subtitle1 text-weight-bold q-mb-xs">{{ hotel.name }}</div>
+                  
+                  <div class="text-caption text-grey-7 q-mb-sm flex items-center" v-if="hotel.location">
+                    <q-icon name="mdi-map-marker" size="xs" class="q-mr-xs" />
+                    {{ hotel.location.address }}
+                  </div>
+
+                  <div class="text-body2 text-grey-8 ellipsis-3-lines">
+                    {{ hotel.shortDescription }}
+                  </div>
+                  
+                  <div class="text-right q-mt-sm">
+                     <span class="text-primary text-caption text-weight-medium">{{ t('view_details') || 'Ver detalhes' }} <q-icon name="mdi-arrow-right" /></span>
+                  </div>
+                </q-card-section>
+              </q-card-section>
+            </q-card>
+          </div>
+        </div>
+      </div>
       <q-card class="info-card observation-card" flat bordered v-if="pkg.observation">
         <q-card-section>
           <div class="text-h6"><q-icon name="mdi-information-outline" /><span>{{ t('important_observations') }}</span>
@@ -152,7 +189,7 @@
 <script setup lang="ts">
 import { computed, defineAsyncComponent, onMounted, watch } from 'vue';
 import { useMeta, useQuasar, copyToClipboard } from 'quasar';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router'; // Adicionado useRouter
 import { useI18n } from 'vue-i18n';
 import { storeToRefs } from 'pinia';
 import { useLayoutConfigStore } from 'src/stores/layout-config-store';
@@ -163,6 +200,7 @@ import TourItinerarySection from 'src/components/tour/TourItinerarySection.vue';
 import { useAnalytics } from 'src/components/composables/useAnalytics';
 
 const route = useRoute();
+const router = useRouter(); // Instancia do Router
 const { t, locale } = useI18n();
 const { trackEvent } = useAnalytics();
 const $q = useQuasar(); // Instancia do Quasar
@@ -219,6 +257,17 @@ const trackPackageBookingClick = () => {
     package_name: pkg.value.title,
     package_duration: `${pkg.value.durationInDays}D/${pkg.value.durationInNights}N`,
     min_people: pkg.value.minPeople || 1
+  });
+};
+
+// Nova função para navegação do Hotel
+const goToHotelDetails = (hotelSlug: string) => {
+  void router.push({
+    name: 'hotelsDetails',
+    params: { 
+      lang: locale.value, 
+      slug: hotelSlug 
+    }
   });
 };
 
@@ -402,5 +451,21 @@ const HorizontalPhotoGallery = defineAsyncComponent(
 
 .q-list--separator>.q-item {
   border-top: 1px solid #f0f0f0;
+}
+
+/* Novo estilo para o card do Hotel */
+.hotel-card {
+  border-radius: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  .q-img {
+    border-radius: 12px 12px 0 0;
+  }
 }
 </style>

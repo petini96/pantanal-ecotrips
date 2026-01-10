@@ -7,6 +7,7 @@ import { pantanalSulPt } from "src/data/regions/pantanal-sul/PantanalSulPt";
 import { type TourPackage } from "src/model/TourPackage";
 import { PACKAGE_BUCKET_NAME } from "src/utils/environmentUtils";
 import { fazendaCoatiPtItinerary } from "../itinerary-data/ItineraryDataPt";
+import { jungleLodgeHotelPt } from "src/data/hotels/jungle-lodge/JungleLodgeHotelPt";
 
 const commonIncludedPt = [
   "Hospedagem em apartamento",
@@ -58,4 +59,5 @@ export const fazendaCoatiPt: TourPackage = {
   packageCategories: [ecotourismPt, aquaticPt],
   packageRecommendedFor: [couplesPt, familiesPt],
   region: pantanalSulPt,
+  hotels: [jungleLodgeHotelPt]
 };

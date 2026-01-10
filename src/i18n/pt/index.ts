@@ -113,5 +113,7 @@ export default {
   destinations_description: "descrição do destino...",
   destinations_title: "Título do destino",
   loading_filters: "Carregando filtros",
-  share: "Compartilhar"
+  share: "Compartilhar",
+  hotels: "Hoteis",
+  view_details: "Ver detalhes"
 };
