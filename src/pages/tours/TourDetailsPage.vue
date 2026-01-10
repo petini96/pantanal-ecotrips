@@ -30,6 +30,13 @@
 
       <AboutTourSection :tour_details_about_title="t('tour_details_about_title')" :tour_desc="pkg.description" />
 
+      <!-- gallery-->
+      <transition name="fade-gallery" mode="out-in">
+        <div class="q-my-lg" v-if="pkg.galleryImages">
+          <HorizontalPhotoGallery :images="pkg.galleryImages? pkg.galleryImages: []" />
+        </div> 
+      </transition>
+
       <TourItinerarySection v-if="pkg.itinerary && pkg.itinerary.length > 0"
         :tour_details_itinerary_title="t('tour_details_itinerary_title')" :itinerary="pkg.itinerary" />
 
@@ -138,7 +145,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, watch } from 'vue';
+import { computed, defineAsyncComponent, onMounted, watch } from 'vue';
 import { useMeta } from 'quasar';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
@@ -231,6 +238,11 @@ useMeta(() => {
     },
   };
 });
+
+const HorizontalPhotoGallery = defineAsyncComponent(
+  () => import('src/components/galerry/HorizontalPhotoGallery.vue')
+);
+
 </script>
 
 <style scoped lang="scss">

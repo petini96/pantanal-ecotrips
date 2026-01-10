@@ -1,3 +1,4 @@
+import { type GalleryImage } from 'src/components/galerry/MosaicGallery.vue';
 import { type ItineraryItem } from './ItineraryItem';
 import { type Region } from './Region';
 import { type TranslatableTag } from './Tags';
@@ -20,4 +21,5 @@ export interface TourPackage {
   packageCategories: TranslatableTag[];
   packageRecommendedFor: TranslatableTag[];
   region: Region;
+  galleryImages?: GalleryImage[]
 }
