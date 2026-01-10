@@ -2,7 +2,7 @@ import { type Hotel } from "src/model/Hotel"
 import { GENERAL_BUCKET_NAME } from "src/utils/environmentUtils"
 
 export const jungleLodgeHotelPt: Hotel = {
-    heroImage: `${GENERAL_BUCKET_NAME}/gallery/jungle-lodge/img1.jpg`,
+    heroImage: `${GENERAL_BUCKET_NAME}/gallery/jungle-lodge/img29.jpg`,
     slug: "jungle-lodge",
     name: "Pantanal Jungle Lodge",
     shortDescription: "Um hotel de madeira aconchegante sobre palafitas perto do Rio Miranda, oferecendo o equilíbrio perfeito entre conforto e a natureza selvagem do Pantanal Sul.",
