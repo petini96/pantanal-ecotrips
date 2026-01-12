@@ -53,14 +53,20 @@
                 </p>
               </div>
 
-              <div class="row q-col-gutter-sm q-mt-md" v-if="hotel?.accommodations?.galleryImage?.length">
+              <transition name="fade-gallery" mode="out-in">
+                <div class="q-my-lg" v-if="hotel?.accommodations?.galleryImage?.length">
+                  <HorizontalPhotoGallery :images="hotel?.accommodations.galleryImage" />
+                </div> 
+              </transition>
+              
+              <!-- <div class="row q-col-gutter-sm q-mt-md" v-if="hotel?.accommodations?.galleryImage?.length">
                 <div v-for="(img, idx) in hotel?.accommodations.galleryImage.slice(0, 4)" :key="idx"
                   class="col-6 col-sm-3">
                   <q-img :src="img.src" :ratio="1" class="rounded-borders shadow-2 cursor-pointer hover-scale">
                     <q-tooltip>{{ img.alt }}</q-tooltip>
                   </q-img>
                 </div>
-              </div>
+              </div> -->
             </section>
 
             <section class="q-mb-xl relative-position">
@@ -212,8 +218,12 @@
 
 <script setup lang="ts">
 import { useHotelStore } from 'src/stores/useHotelStore';
-import { onMounted, computed, watch } from 'vue';
+import { onMounted, computed, watch, defineAsyncComponent } from 'vue';
 import { useRoute } from 'vue-router';
+
+const HorizontalPhotoGallery = defineAsyncComponent(
+  () => import('src/components/galerry/HorizontalPhotoGallery.vue')
+);
 
 defineOptions({
   name: 'HotelsDetailsPage'
