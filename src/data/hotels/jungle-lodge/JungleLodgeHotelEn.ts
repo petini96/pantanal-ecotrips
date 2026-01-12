@@ -1,3 +1,4 @@
+import { jungleLodgeImages } from "src/data/packages/common-data/jungle-lodge"
 import { type Hotel } from "src/model/Hotel"
 import { GENERAL_BUCKET_NAME } from "src/utils/environmentUtils"
 
@@ -13,8 +14,8 @@ export const jungleLodgeHotelEn: Hotel = {
         "The location offers excellent opportunities for sightseeing activities with native bilingual guides knowledgeable about the local fauna and flora."
     ],
     location: {
-        lat: -19.5728, // Approximate coordinates for Passo do Lontra
-        lng: -57.0258,
+        lat: -19.5763595,
+        lng: -57.0337329,
         address: "Estrada Parque, Passo do Lontra, Corumbá - MS, Brazil"
     },
     commonAreas: [
@@ -42,7 +43,7 @@ export const jungleLodgeHotelEn: Hotel = {
             "One accessible room.",
             "All rooms feature air conditioning, mini fridge, private bathroom, and bed/bath linen."
         ],
-        galleryImage: [] // Populate with images
+        galleryImage: jungleLodgeImages
     }
 }
 
