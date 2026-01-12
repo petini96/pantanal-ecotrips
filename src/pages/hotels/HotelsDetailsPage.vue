@@ -232,7 +232,7 @@ const initData = async () => {
 };
 
 onMounted(() => {
-  initData();
+  void initData();
 });
 
 const mapUrl = computed(() => {
@@ -252,7 +252,7 @@ const mapUrl = computed(() => {
 // Se o usuário trocar de idioma na URL, recarregamos
 watch(currentLang, () => {
   store.clearHotels(); // Opcional: limpa para forçar reload ou remove para cache
-  initData();
+  void initData();
 });
 </script>
 
