@@ -1,11 +1,11 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { miranda } from '../../regions/Cities';
-import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
+import { GENERAL_BUCKET_NAME} from 'src/utils/environmentUtils';
 import { familiesEn } from '../../audiences/families/FamiliesEn';
 import { aquaticEn } from '../../categories/aquaticc/AquaticcEn';
 
-const img = `${TOURS_BUCKET_NAME}/flutuacao-rio-miranda/img1.webp`
+const img = `${GENERAL_BUCKET_NAME}/gallery/jungle-lodge/img4.jpg`
 
 export const riverFloatingEn: Tour = {
   id: 'TOUR-RF-01',

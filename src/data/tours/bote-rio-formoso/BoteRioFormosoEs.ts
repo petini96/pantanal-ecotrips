@@ -1,13 +1,13 @@
 import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { bonito } from '../../regions/Cities';
-import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
+import { GENERAL_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { familiesEs } from '../../audiences/families/FamiliesEs';
 import { groupsEs } from '../../audiences/groups/GroupsEs';
 import { adventureEs } from '../../categories/adventuree/AdventureeEs';
 import { aquaticEs } from '../../categories/aquaticc/AquaticcEs';
 
-const img = `${TOURS_BUCKET_NAME}/rio-formoso/img1.webp`
+const img = `${GENERAL_BUCKET_NAME}/gallery/jungle-lodge/img49.jpg`
 
 export const boteRioFormosoEs: Tour = {
   id: 'TOUR-BRF-01',

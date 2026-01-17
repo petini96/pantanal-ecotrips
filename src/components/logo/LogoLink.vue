@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts"> 
-import LogoImage from '../../../public/pantanal_ecotrips_logo.png'
+import LogoImage from '/pantanal_ecotrips_logo.png'
  
 </script>
  <style scoped lang="scss">

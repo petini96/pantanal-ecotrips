@@ -115,5 +115,7 @@ export default {
   loading_filters: "Loading filters",
   share: "Share",
   hotels: "Hotels",
-  view_details: "Show details"
+  view_details: "Show details",
+  overview: "Overview",
+  location: "Location"
 };

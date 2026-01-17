@@ -9,7 +9,7 @@ import { type TourPackage } from "src/model/TourPackage";
 import { TOURS_BUCKET_NAME } from "src/utils/environmentUtils";
 import { noiteFelizPtItinerary } from "../itinerary-data/ItineraryDataPt";
 
-const img = `${TOURS_BUCKET_NAME}/buraco-das-araras-em-bonito/img3.webp`
+const img = `${TOURS_BUCKET_NAME}/buraco-das-araras/img3.webp`
 
 const uuid = uid();
 

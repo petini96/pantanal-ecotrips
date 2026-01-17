@@ -8,7 +8,7 @@
     <div class="container">
       <div class="row q-my-xl">
         <div class="col-12 col-md-9">
-          <h4>Resumo</h4>
+          <h4>{{t("overview")}}</h4>
           
           <div v-if="visibleDescription.length > 0">
             <p 
@@ -34,7 +34,7 @@
         </div>
 
         <div class="col-12 col-md-3">
-          <h4>Localização</h4>
+          <h4>{{ t("location") }}</h4>
           
           <p class="text-caption q-mb-sm text-grey-8">
             <q-icon name="mdi-map-marker" size="xs" />
