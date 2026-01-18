@@ -423,6 +423,10 @@ useMeta(() => {
     },
     link: {
       canonical: { rel: 'canonical', href: `${baseUrl}/${currentLang}/tours/${pkg.value.slug}` },
+      pt: { rel: 'alternate', hreflang: 'pt', href: `${baseUrl}/pt/tours/${pkg.value.slug}` },
+      en: { rel: 'alternate', hreflang: 'en', href: `${baseUrl}/en/tours/${pkg.value.slug}` },
+      es: { rel: 'alternate', hreflang: 'es', href: `${baseUrl}/es/tours/${pkg.value.slug}` },
+      xd: { rel: 'alternate', hreflang: 'x-default', href: `${baseUrl}/en/tours/${pkg.value.slug}` },
     },
     // Injeção do Schema JSON-LD
     script: {
