@@ -196,7 +196,7 @@ useMeta(() => {
   const desc = currentRegion.value?.description || t('destinations_description') || `Pacotes para ${rName}`;
 
   return {
-    title: `${pageTitle} - ${rName} | Pantanal Ecotrips`,
+    title: `${pageTitle} ${rName} | Pantanal Ecotrips`,
     meta: {
       description: { name: 'description', content: desc }
     }

@@ -17,7 +17,7 @@ const commonIncludedEn = [
   "Full board in the Pantanal (breakfast, lunch, dinner)",
   "Bilingual guide",
   "All activities mentioned in the itinerary",
-  "Shared transport Campo Grande/Pantanal/Campo Grande",
+  // "Shared transport Campo Grande/Pantanal/Campo Grande",
   "Assistance from the Pantanal Eco Trips team",
 ];
 const commonNotIncludedEn = [
