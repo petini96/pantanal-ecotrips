@@ -1,0 +1,5 @@
+export const descriptionSanFranciscoPt = [
+    "A Fazenda San Francisco Agro Ecoturismo Pousada e Passeios situa-se no Pantanal do Rio Miranda, Mato Grosso do Sul (MS), Brasil. Possui uma grande variedade de fauna e flora, e apresenta a você o real funcionamento de uma fazenda: cultivo, produção e afazeres, caminhando juntos com a preocupação da conservação do meio ambiente.",
+    "Birding in Pantanal, Jaguar in Pantanal, Focagem Noturna, Safari Ecológico e vários outros passeios para observação de fauna e flora no Pantanal do Rio Miranda.",
+    "Você pode também se hospedar com opções para até 4 diárias com variados passeios e atividades de lazer na sede de pousada como o complexo de piscina tornando-se uma ótima opção para quem quer conhecer o Pantanal Sul com conforto e segurança."
+] as string[]

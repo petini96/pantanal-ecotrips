@@ -1,0 +1,46 @@
+import { PACKAGE_BUCKET_NAME } from "src/utils/environmentUtils";
+
+export const imgSanFrancisco = `${PACKAGE_BUCKET_NAME}/fazenda-san-francisco-coati/img1.webp`
+
+import { GENERAL_BUCKET_NAME } from "src/utils/environmentUtils";
+
+export const sanFranciscoImages = [
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0001.jpg`, alt: 'img0001', caption: 'img0001' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0002.jpg`, alt: 'img0002', caption: 'img0002' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0003.jpg`, alt: 'img0003', caption: 'img0003' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0004.jpg`, alt: 'img0004', caption: 'img0004' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0005.jpg`, alt: 'img0005', caption: 'img0005' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0006.jpg`, alt: 'img0006', caption: 'img0006' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0007.jpg`, alt: 'img0007', caption: 'img0007' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0008.jpg`, alt: 'img0008', caption: 'img0008' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0009.jpg`, alt: 'img0009', caption: 'img0009' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0010.jpg`, alt: 'img0011', caption: 'img0011' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0012.jpg`, alt: 'img0012', caption: 'img0012' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0013.jpg`, alt: 'img0013', caption: 'img0013' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0014.jpg`, alt: 'img0014', caption: 'img0014' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0015.jpg`, alt: 'img0015', caption: 'img0015' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0016.jpg`, alt: 'img0016', caption: 'img0016' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0017.jpg`, alt: 'img0017', caption: 'img0017' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0018.jpg`, alt: 'img0018', caption: 'img0018' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0019.jpg`, alt: 'img0019', caption: 'img0019' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0020.jpg`, alt: 'img0020', caption: 'img0020' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0021.jpg`, alt: 'img0021', caption: 'img0021' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0022.jpg`, alt: 'img0022', caption: 'img0022' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0023.jpg`, alt: 'img0023', caption: 'img0023' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0024.jpg`, alt: 'img0024', caption: 'img0024' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0025.jpg`, alt: 'img0025', caption: 'img0025' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0026.jpg`, alt: 'img0026', caption: 'img0026' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0027.jpg`, alt: 'img0027', caption: 'img0027' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0028.jpg`, alt: 'img0028', caption: 'img0028' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0029.jpg`, alt: 'img0029', caption: 'img0029' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0030.jpg`, alt: 'img0030', caption: 'img0030' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0031.jpg`, alt: 'img0031', caption: 'img0031' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0032.jpg`, alt: 'img0032', caption: 'img0032' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0033.jpg`, alt: 'img0033', caption: 'img0033' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0034.jpg`, alt: 'img0034', caption: 'img0034' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0035.jpg`, alt: 'img0035', caption: 'img0035' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0036.jpg`, alt: 'img0036', caption: 'img0036' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0037.jpg`, alt: 'img0037', caption: 'img0037' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0038.jpg`, alt: 'img0038', caption: 'img0038' },
+  { src: `${GENERAL_BUCKET_NAME}/gallery/fazenda-san-francisco/img0039.jpg`, alt: 'img0039', caption: 'img0039' },
+];
