@@ -17,7 +17,7 @@ const commonIncludedPt = [
   "Pensão completa no Pantanal (café da manhã, almoço, jantar)",
   "Guia bilíngue",
   "Todas as atividades mencionadas no roteiro",
-  "Transporte compartilhado Campo Grande/Pantanal/Campo Grande",
+  // "Transporte compartilhado Campo Grande/Pantanal/Campo Grande",
   "Assistência da equipe Pantanal Eco Trips",
 ];
 const commonNotIncludedPt = [

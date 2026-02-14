@@ -1,0 +1,5 @@
+export const descriptionSanFranciscoEn = [
+    "The San Francisco Agro Ecotourism Lodge and Tours Farm is located in the Pantanal of the Miranda River, Mato Grosso do Sul (MS), Brazil. It boasts a wide variety of fauna and flora, and presents you with the real functioning of a farm: cultivation, production, and chores, walking together with a concern for environmental conservation.",
+    "Birding in Pantanal, Jaguar in Pantanal, Night Spotting, Ecological Safari, and various other tours for observing fauna and flora in the Pantanal of the Miranda River.",
+    "You can also stay with options for up to 4 daily rates with varied tours and leisure activities at the lodge headquarters, such as the swimming pool complex, making it a great option for those who want to explore the Southern Pantanal with comfort and safety."
+] as string[]

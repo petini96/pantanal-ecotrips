@@ -1,0 +1,5 @@
+export const descriptionSanFranciscoEs = [
+    "La Hacienda San Francisco Agro Ecoturismo Posada y Paseos está ubicada en el Pantanal del Río Miranda, Mato Grosso do Sul (MS), Brasil. Posee una gran variedad de fauna y flora, y le presenta el funcionamiento real de una hacienda: cultivo, producción y quehaceres, caminando juntos con la preocupación por la conservación del medio ambiente.",
+    "Birding in Pantanal, Jaguar in Pantanal, Avistamiento Nocturno, Safari Ecológico y varios otros paseos para la observación de fauna y flora en el Pantanal del Río Miranda.",
+    "También puede hospedarse con opciones de hasta 4 noches con variados paseos y actividades de ocio en la sede de la posada, como el complejo de piscinas, convirtiéndose en una excelente opción para quien quiere conocer el Pantanal Sur con comodidad y seguridad."
+] as string[]

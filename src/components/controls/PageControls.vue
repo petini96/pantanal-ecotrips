@@ -11,15 +11,21 @@
       >
         <template v-slot:label>
            <div class="row items-center no-wrap q-gutter-x-xs">
-             <q-icon name="translate" size="18px" />
-             <span class="text-weight-bold">{{ currentLanguageLabel }}</span>
+             <span 
+               :class="`fi fi-${currentLang?.country}`" 
+               class="current-flag"
+             ></span>
+             
+             <span class="text-weight-bold">{{ currentLang?.code.toUpperCase() }}</span>
            </div>
         </template>
 
         <q-list dense style="min-width: 120px">
           <q-item v-for="lang in languages" :key="lang.code" clickable v-close-popup @click="changeLanguage(lang.code)">
-            <q-item-section avatar style="min-width: 30px;">
-               <span class="text-caption text-grey">{{ lang.code.toUpperCase() }}</span>
+            <q-item-section avatar style="min-width: 30px; padding-right: 0;">
+               <span 
+                 :class="`fi fi-${lang.country} flag-style`"
+               ></span>
             </q-item-section>
             <q-item-section>
               <q-item-label>{{ lang.label }}</q-item-label>
@@ -74,12 +80,17 @@ const layoutConfigStore = useLayoutConfigStore();
 const { theme: currentTheme } = storeToRefs(layoutConfigStore);
 
 const languages = ref([
-  { code: 'pt', label: 'Português' },
-  { code: 'en', label: 'English' },
-  { code: 'es', label: 'Español' },
+  { code: 'pt', label: 'Português', country: 'br' },
+  { code: 'en', label: 'English', country: 'us' }, 
+  { code: 'es', label: 'Español', country: 'es' },
 ]);
 
-const currentLanguageLabel = computed(() => (route.params.lang as string || 'pt').toUpperCase());
+// MUDANÇA AQUI: Em vez de retornar apenas a string, retornamos o objeto da língua
+const currentLang = computed(() => {
+  const code = (route.params.lang as string || 'pt').toLowerCase();
+  // Encontra a lingua no array ou retorna a primeira (fallback)
+  return languages.value.find(l => l.code === code) || languages.value[0];
+});
 
 const changeLanguage = (langCode: string) => {
   void router.push({ name: route.name || 'home', params: { ...route.params, lang: langCode } });
@@ -91,6 +102,13 @@ const changeLanguage = (langCode: string) => {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+/* Adicionado estilo para a bandeira atual ficar bonita no botão */
+.current-flag {
+  font-size: 18px; /* Tamanho similar ao ícone anterior */
+  border-radius: 2px;
+  line-height: 1em;
 }
 
 .control-wrapper {

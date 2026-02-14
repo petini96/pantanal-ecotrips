@@ -111,7 +111,7 @@ export default {
   south_pantanal: "Pantanal Sur",
   amazon: "Amazonas",
   destinations_description: "descrição do destino...",
-  destinations_title: "Título do destino",
+  destinations_title: "Destino",
   loading_filters: "Cargando filtros",
   share: "Compartir",
   hotels: "Hoteles",

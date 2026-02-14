@@ -18,7 +18,7 @@ const commonIncludedEs = [
   "Pensión completa en el Pantanal (desayuno, almuerzo, cena)",
   "Guía bilingüe",
   "Todas las actividades mencionadas en el itinerario",
-  "Transporte compartido Campo Grande/Pantanal/Campo Grande",
+  // "Transporte compartido Campo Grande/Pantanal/Campo Grande",
   "Asistencia del equipo de Pantanal Eco Trips",
 ];
 const commonNotIncludedEs = [

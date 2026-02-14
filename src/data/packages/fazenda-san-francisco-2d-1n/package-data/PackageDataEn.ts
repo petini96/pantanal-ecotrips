@@ -5,8 +5,10 @@ import { aquaticEn } from "src/data/categories/aquaticc/AquaticcEn";
 import { ecotourismEn } from "src/data/categories/ecotourismm/EcotourismmEn";
 import { pantanalSulEn } from "src/data/regions/pantanal-sul/PantanalSulEn";
 import { type TourPackage } from "src/model/TourPackage";
-import { PACKAGE_BUCKET_NAME } from "src/utils/environmentUtils";
 import { fazendaCoatiEnItinerary } from "../itinerary-data/ItineraryDataEn";
+import { descriptionSanFranciscoEn } from "../../common-data/san-francisco/en/description";
+import { imgSanFrancisco, sanFranciscoImages } from "../../common-data/san-francisco";
+import { sanFranciscoHotelEn } from "src/data/hotels/san-francisco/sanFranciscoHotelEn";
  
 // --- COMMON DATA (EN-US) ---
 const commonIncludedEn = [
@@ -14,7 +16,7 @@ const commonIncludedEn = [
   "Full board (breakfast, lunch, dinner)",
   "Tours described in the itinerary",
   "Guide accompaniment",
-  "Shared transport Campo Grande/Farm/Campo Grande",
+  // "Shared transport Campo Grande/Farm/Campo Grande",
   "Airport assistance",
 ];
 const commonNotIncludedEn = [
@@ -33,8 +35,6 @@ const commonShouldIBringEn = [
 ];
 const commonObservationEn =
   "Arrival flights must be before 9:30 AM. Departure flights must be after 9:00 PM. The order of the tours is defined by the farm to optimize logistics and take advantage of the best weather conditions.";
- 
-const img = `${PACKAGE_BUCKET_NAME}/fazenda-san-francisco-coati/img1.webp`
 
 // --- FAZENDA COATI PACKAGE (2D/1N) ---
 const uuidCoati = uid();
@@ -42,12 +42,10 @@ const uuidCoati = uid();
 export const fazendaCoatiEn: TourPackage = {
   id: uuidCoati,
   slug: "fazenda-san-francisco-coati",
-  image: img,
+  image: imgSanFrancisco,
   title: "Fazenda San Francisco - Coati Tour",
   subtitle: "A quick and intense 2-day immersion into the Pantanal wildlife.",
-  description: [
-    ``
-  ],
+  description: descriptionSanFranciscoEn,
   durationInDays: 2,
   durationInNights: 1,
   minPeople: 1,
@@ -59,5 +57,7 @@ export const fazendaCoatiEn: TourPackage = {
   packageCategories: [ecotourismEn, aquaticEn],
   packageRecommendedFor: [couplesEn, familiesEn],
   region: pantanalSulEn,
+  galleryImages: sanFranciscoImages,
+  hotels: [sanFranciscoHotelEn]
   
 };
