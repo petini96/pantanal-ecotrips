@@ -163,8 +163,8 @@
           :key="pkg.id"
           :data-slug="pkg.slug"
           class="col-12"
-          :class="$q.screen.gt.xs ? 'q-pr-lg' : 'q-px-md'"
-          :style="$q.screen.gt.xs ? { width: '360px', flexShrink: 0 } : {}"
+          :class="$q.screen.gt.xs ? 'q-pr-lg' : 'q-pr-md'"
+          :style="$q.screen.gt.xs ? { width: '360px', flexShrink: 0 } : { width: '85vw', flexShrink: 0 }"
         >
           <q-card class="package-card" flat bordered @click="() => viewPackage(pkg.slug)">
              <q-img
@@ -178,10 +178,10 @@
                 <template v-slot:loading>
                    <q-spinner-puff color="primary" />
                 </template>
-               <div class="absolute-bottom-left bg-transparent q-pa-sm image-overlay">
-                  <q-badge rounded color="secondary" text-color="black" class="q-py-xs q-px-sm text-caption text-weight-bold shadow-2">
+               <div class="absolute-bottom-left bg-transparent q-pa-md image-overlay">
+                  <div class="package-type-badge shadow-3">
                     {{ t('package_tour') }}
-                  </q-badge>
+                  </div>
                </div>
              </q-img>
 
@@ -218,9 +218,8 @@
                         v-for="category in pkg.packageCategories.slice(0, 3)"
                         :key="category.id"
                         class="theme-chip"
-                        dense
-                        outline
-                        size="sm"
+                        color="grey-2"
+                        text-color="primary"
                       >
                       {{ category.name }}
                     </q-chip>
@@ -568,13 +567,27 @@ watch(() => locale.value, () => {});
   border-top: 1px solid var(--border-color, #eee);
 }
 
+.package-type-badge {
+  background: var(--secondary-color);
+  color: #000000;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
 .theme-chip {
+    background: #f0f7f5 !important; /* Soft minty/grey background */
     color: var(--text-primary-color) !important;
-    border-color: var(--primary-color) !important;
-    background: transparent !important;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0 12px;
     
     :deep(.q-chip__content) {
-        font-weight: 500;
+        font-weight: 600;
     }
 }
 
@@ -608,8 +621,6 @@ watch(() => locale.value, () => {});
 
 @media (max-width: 599px) {
     .section-title { font-size: 1.8rem; }
-    .card-title { font-size: 1.25rem; min-height: unset; }
-    .package-card { height: auto; }
 }
 
 .slider-nav-btn {
