@@ -22,11 +22,9 @@
 </template>
 
 <script setup lang="ts">
-import { useQuasar } from 'quasar';
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue';
 
-const $q = useQuasar();
-const emit = defineEmits(['item-click']);
+const emit = defineEmits(['item-click', 'scroll']);
 
 const scrollContainer = ref<HTMLElement | null>(null);
 const scrollPosition = ref(0);
@@ -39,14 +37,14 @@ const isDragging = ref(false);
 const dragThreshold = 10;
 
 const showLeftGradient = computed(
-  () => $q.screen.gt.xs && scrollPosition.value > 10
+  () => scrollPosition.value > 10
 );
 const showRightGradient = computed(
-  () => $q.screen.gt.xs && scrollPosition.value < maxScroll.value - 10
+  () => scrollContainer.value ? scrollPosition.value < maxScroll.value - 10 : false
 );
 
 const mouseDownHandler = (e: MouseEvent) => {
-  if (!$q.screen.gt.xs || !scrollContainer.value) return;
+  if (!scrollContainer.value) return;
   isDown.value = true;
   isDragging.value = false;
   startX.value = e.pageX - scrollContainer.value.offsetLeft;
@@ -54,17 +52,12 @@ const mouseDownHandler = (e: MouseEvent) => {
 };
 
 const mouseLeaveHandler = () => {
-  if (!$q.screen.gt.xs) return;
   isDown.value = false;
 };
 
 const mouseUpHandler = (e: MouseEvent) => {
-  if ($q.screen.gt.xs) {
-    isDown.value = false;
-    if (!isDragging.value) {
-      handleCardClick(e);
-    }
-  } else {
+  isDown.value = false;
+  if (!isDragging.value) {
     handleCardClick(e);
   }
 };
@@ -79,7 +72,7 @@ const handleCardClick = (e: MouseEvent) => {
   }
 };
 const mouseMoveHandler = (e: MouseEvent) => {
-  if (!isDown.value || !$q.screen.gt.xs || !scrollContainer.value) return;
+  if (!isDown.value || !scrollContainer.value) return;
   e.preventDefault();
 
   const x = e.pageX - scrollContainer.value.offsetLeft;
@@ -101,9 +94,10 @@ const calculateMaxScroll = () => {
   }
 };
 
-const handleScroll = () => {
+const handleScroll = (e?: Event) => {
   if (scrollContainer.value) {
     scrollPosition.value = scrollContainer.value.scrollLeft;
+    emit('scroll', e);
   }
 };
 
@@ -130,6 +124,24 @@ onBeforeUnmount(() => {
     resizeObserver.unobserve(scrollContainer.value);
   }
 });
+
+const scrollBy = (amount: number) => {
+  if (scrollContainer.value) {
+    scrollContainer.value.scrollBy({ left: amount, behavior: 'smooth' });
+  }
+};
+
+const scrollTo = (position: number) => {
+  if (scrollContainer.value) {
+    scrollContainer.value.scrollTo({ left: position, behavior: 'smooth' });
+  }
+};
+
+defineExpose({
+  scrollBy,
+  scrollTo,
+  scrollContainer
+});
 </script>
 
 <style scoped lang="scss">
@@ -139,22 +151,19 @@ onBeforeUnmount(() => {
 }
 
 .main-scroll-container {
+  display: flex;
+  overflow-x: scroll;
+  cursor: grab;
+  padding-left: 32px;
   
-  @media (min-width: $breakpoint-sm-min) {
-    display: flex;
-    overflow-x: scroll;
-    cursor: grab;
-    padding-left: 32px;
-    
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-      display: none;
-    }
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
-    &.active-scroll {
-      cursor: grabbing;
-      scroll-behavior: auto;
-    }
+  &.active-scroll {
+    cursor: grabbing;
+    scroll-behavior: auto;
   }
 }
 
@@ -165,6 +174,11 @@ onBeforeUnmount(() => {
   top: 0;
   bottom: 0;
   width: 100px;
+  
+  @media (max-width: 599px) {
+    width: 40px;
+  }
+
   z-index: 2;
   pointer-events: none;
   opacity: 0;

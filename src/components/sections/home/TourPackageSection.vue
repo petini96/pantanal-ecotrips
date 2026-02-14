@@ -121,12 +121,43 @@
         </q-slide-transition>
       </div>
 
+      <!-- Botões de navegação reposicionados (Abaixo dos filtros) -->
+      <div v-if="showFilter" class="row justify-end q-mb-md q-pr-md">
+         <q-btn
+          round
+          color="primary"
+          text-color="white"
+          icon="mdi-chevron-left"
+          class="slider-nav-btn shadow-2 q-mr-sm"
+          :disable="!showLeftArrow"
+          :class="{ 'disabled-btn': !showLeftArrow }"
+          @click="scrollLeft"
+          aria-label="Anterior"
+        />
+        <q-btn
+          round
+          color="primary"
+          text-color="white"
+          icon="mdi-chevron-right"
+          class="slider-nav-btn shadow-2"
+          :disable="!showRightArrow"
+           :class="{ 'disabled-btn': !showRightArrow }"
+          @click="scrollRight"
+          aria-label="Próximo"
+        />
+      </div>
+
       <div v-if="loading && availablePackages.length === 0" class="text-center q-py-xl">
         <q-spinner-dots color="primary" size="3rem" />
          <p class="q-mt-md text-grey-7">{{ t('loading_packages') }}...</p>
       </div>
 
-       <HorizontalGradientMask v-else-if="filteredPackages.length" @item-click="viewPackage">
+       <HorizontalGradientMask
+          ref="scrollRef"
+          v-else-if="filteredPackages.length"
+          @item-click="viewPackage"
+          @scroll="handleScroll"
+        >
         <div
           v-for="pkg in filteredPackages"
           :key="pkg.id"
@@ -352,6 +383,30 @@ const viewPackage = (packageSlug: string) => {
   void router.push({ name: 'tourDetails', params: { slug: packageSlug, lang: route.params.lang || 'pt' } });
 };
 
+const scrollRef = ref<InstanceType<typeof HorizontalGradientMask> | null>(null);
+const showLeftArrow = ref(false);
+const showRightArrow = ref(true); // Inicialmente true, ajustado no mount/scroll
+
+const handleScroll = () => {
+  if (!scrollRef.value?.scrollContainer) return;
+  const { scrollLeft, scrollWidth, clientWidth } = scrollRef.value.scrollContainer;
+  showLeftArrow.value = scrollLeft > 10;
+  showRightArrow.value = scrollLeft < scrollWidth - clientWidth - 10;
+};
+
+const scrollLeft = () => {
+  scrollRef.value?.scrollBy(-300);
+};
+
+const scrollRight = () => {
+  scrollRef.value?.scrollBy(300);
+};
+
+// Recalcula setas quando a lista de pacotes muda
+watch(filteredPackages, () => {
+  setTimeout(() => handleScroll(), 100);
+});
+
 watch(() => locale.value, () => {});
 </script>
 
@@ -555,5 +610,19 @@ watch(() => locale.value, () => {});
     .section-title { font-size: 1.8rem; }
     .card-title { font-size: 1.25rem; min-height: unset; }
     .package-card { height: auto; }
+}
+
+.slider-nav-btn {
+  transition: all 0.3s ease;
+  
+  &.disabled-btn {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  &:not(.disabled-btn):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
 }
 </style>
