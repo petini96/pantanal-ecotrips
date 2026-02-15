@@ -122,5 +122,6 @@ export default {
   attractions_subtitle: "Explore the best tours in the region",
   min_age: "Minimum Age",
   free_age: "Free",
-  group_limit: "Group Limit"
+  group_limit: "Group Limit",
+  filter_by_category: "Filter by Category"
 };

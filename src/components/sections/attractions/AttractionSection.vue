@@ -7,30 +7,66 @@
 
     <!-- Filtros e Controles (se necessário, ou simplificado como solicitado) -->
     
-    <!-- Slider Navigation (Above or Below) -->
-    <div v-if="filteredTours.length > 0" class="row justify-end q-mb-md q-pr-md">
-       <q-btn
-        round
-        color="primary"
-        text-color="white"
-        icon="mdi-chevron-left"
-        class="slider-nav-btn shadow-2 q-mr-sm"
-        :disable="!showLeftArrow"
-        :class="{ 'disabled-btn': !showLeftArrow }"
-        @click="scrollLeft"
-        aria-label="Anterior"
-      />
-      <q-btn
-        round
-        color="primary"
-        text-color="white"
-        icon="mdi-chevron-right"
-        class="slider-nav-btn shadow-2"
-        :disable="!showRightArrow"
-         :class="{ 'disabled-btn': !showRightArrow }"
-        @click="scrollRight"
-        aria-label="Próximo"
-      />
+    <!-- Filtros e Controles -->
+    <div class="row items-center justify-between q-mb-md q-px-md">
+       <!-- Filter Area -->
+       <div class="col-12 col-sm-auto q-mb-sm q-mb-sm-none">
+          <q-select
+            v-if="categories.length > 0"
+            v-model="selectedCategory"
+            :options="categoryOptions"
+            :label="t('filter_by_category') || 'Filtrar por Categoria'"
+            dense
+            outlined
+            bg-color="white"
+            class="filter-select"
+            style="min-width: 200px"
+            emit-value
+            map-options
+            clearable
+            rounded
+          >
+             <template v-slot:prepend>
+               <q-icon name="mdi-filter-variant" color="primary" />
+             </template>
+             <template v-slot:option="scope">
+                <q-item v-bind="scope.itemProps">
+                  <q-item-section avatar>
+                    <q-icon :name="scope.opt.icon" color="primary" />
+                  </q-item-section>
+                  <q-item-section>
+                    <q-item-label>{{ scope.opt.label }}</q-item-label>
+                  </q-item-section>
+                </q-item>
+             </template>
+          </q-select>
+       </div>
+
+       <!-- Slider Navigation -->
+       <div v-if="filteredTours.length > 0" class="col-auto row q-gutter-x-sm">
+          <q-btn
+            round
+            color="primary"
+            text-color="white"
+            icon="mdi-chevron-left"
+            class="slider-nav-btn shadow-2"
+            :disable="!showLeftArrow"
+            :class="{ 'disabled-btn': !showLeftArrow }"
+            @click="scrollLeft"
+            aria-label="Anterior"
+          />
+          <q-btn
+            round
+            color="primary"
+            text-color="white"
+            icon="mdi-chevron-right"
+            class="slider-nav-btn shadow-2"
+            :disable="!showRightArrow"
+             :class="{ 'disabled-btn': !showRightArrow }"
+            @click="scrollRight"
+            aria-label="Próximo"
+          />
+       </div>
     </div>
 
     <HorizontalGradientMask
@@ -123,6 +159,7 @@ const route = useRoute();
 const scrollRef = ref<InstanceType<typeof HorizontalGradientMask> | null>(null);
 const showLeftArrow = ref(false);
 const showRightArrow = ref(true);
+const selectedCategory = ref<string | null>(null);
 
 const getTourLink = (slug: string) => {
   return {
@@ -134,7 +171,29 @@ const getTourLink = (slug: string) => {
   };
 };
 
-const filteredTours = computed(() => props.tours);
+const categories = computed(() => {
+  const allTags = props.tours.flatMap(t => t.categories);
+  const uniqueTags = new Map();
+  allTags.forEach(tag => {
+    if (!uniqueTags.has(tag.id)) {
+      uniqueTags.set(tag.id, tag);
+    }
+  });
+  return Array.from(uniqueTags.values()).sort((a, b) => a.name.localeCompare(b.name));
+});
+
+const categoryOptions = computed(() => {
+  return categories.value.map(c => ({
+    label: c.name,
+    value: c.id,
+    icon: c.icon
+  }));
+});
+
+const filteredTours = computed(() => {
+  if (!selectedCategory.value) return props.tours;
+  return props.tours.filter(t => t.categories.some(c => c.id === selectedCategory.value));
+});
 
 const handleScroll = () => {
   if (!scrollRef.value?.scrollContainer) return;
@@ -153,6 +212,10 @@ const scrollRight = () => {
 
 watch(filteredTours, () => {
   setTimeout(() => handleScroll(), 100);
+  // Reset scroll position when filter changes
+  if (scrollRef.value?.scrollContainer) {
+    scrollRef.value.scrollContainer.scrollTo({ left: 0, behavior: 'smooth' });
+  }
 });
 </script>
 
@@ -217,7 +280,8 @@ watch(filteredTours, () => {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  min-height: calc(1.25rem * 1.2 * 2); 
+  overflow: hidden;
+  min-height: 3rem; /* Adjusted for better alignment */ 
 }
 
 .card-description {

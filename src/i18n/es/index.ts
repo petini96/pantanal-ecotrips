@@ -122,5 +122,6 @@ export default {
   attractions_subtitle: "Explore los mejores paseos de la región",
   min_age: "Edad Mínima",
   free_age: "Libre",
-  group_limit: "Límite del Grupo"
+  group_limit: "Límite del Grupo",
+  filter_by_category: "Filtrar por Categoría"
 };
