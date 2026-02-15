@@ -123,5 +123,8 @@ export default {
   min_age: "Idade Mínima",
   free_age: "Livre",
   group_limit: "Máximo por Grupo",
-  filter_by_category: "Filtrar por Categoria"
+  filter_by_category: "Filtrar por Categoria",
+  packages_title: "Pacotes",
+  packages_subtitle: "Descubra roteiros completos para sua viagem",
+  how_to_get_there: "Como Chegar"
 };

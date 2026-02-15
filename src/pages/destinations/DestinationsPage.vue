@@ -71,12 +71,56 @@
 
     </div>
 
+    <!-- How to get there Section -->
+    <section v-if="currentRegion?.howToGetThere" class="q-py-xl bg-grey-1">
+      <div class="container">
+        <div class="row q-col-gutter-xl">
+          <div class="col-12 col-md-4">
+             <h3 class="text-h4 text-weight-bold q-mb-md text-primary">{{ t('how_to_get_there') }}</h3>
+             <div class="text-body1 text-grey-8">
+                <p v-for="(desc, idx) in currentRegion.howToGetThere.description" :key="idx">
+                  {{ desc }}
+                </p>
+             </div>
+          </div>
+
+          <div class="col-12 col-md-8">
+             <div class="row q-col-gutter-md">
+                <div 
+                  v-for="(option, index) in currentRegion.howToGetThere.transportOptions" 
+                  :key="index" 
+                  class="col-12"
+                >
+                  <q-card flat bordered class="transport-card">
+                    <q-card-section class="row items-center q-py-sm">
+                      <q-avatar color="primary" text-color="white" size="48px" font-size="24px" class="q-mr-md shadow-1">
+                        <q-icon :name="option.icon" />
+                      </q-avatar>
+                      
+                      <div>
+                        <div class="text-h6 text-weight-bold">{{ option.title }}</div>
+                        <div class="text-body2 text-grey-7">{{ option.description }}</div>
+                      </div>
+                    </q-card-section>
+                  </q-card>
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="packages-section" class="section-wrapper ">
 
       <div class="row align-center justify-center">
         <div class="col-10">
 
-          <TourPackageSection v-if="loadTourPackage" :packages="regionPackages" :show-filter="false" class="q-mt-xl" />
+          <div class="header-section text-center q-mb-none q-mt-xl">
+              <h2 class="text-h4 text-weight-bold text-primary">{{ t('packages_title') || 'Pacotes' }}</h2>
+              <p class="text-subtitle1 text-grey-8">{{ t('packages_subtitle') }}</p>
+          </div>
+
+          <TourPackageSection v-if="loadTourPackage" :packages="regionPackages" :show-filter="false" />
           <div v-else class="row justify-center q-py-xl">
             <q-spinner-dots size="3em" color="primary" />
           </div>
@@ -248,5 +292,16 @@ useMeta(() => {
 
 .capitalize {
   text-transform: capitalize;
+}
+
+.transport-card {
+  height: 100%;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  }
 }
 </style>

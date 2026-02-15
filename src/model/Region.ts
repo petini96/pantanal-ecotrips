@@ -24,4 +24,13 @@ export interface Region extends TranslatableTag {
   };
   gastronomy: string[];
   tips: string[];
+  howToGetThere?: {
+    description: string[];
+    transportOptions: {
+      type: 'plane' | 'car' | 'bus';
+      title: string;
+      description: string;
+      icon: string;
+    }[];
+  };
 }
