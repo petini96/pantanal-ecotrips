@@ -13,13 +13,14 @@ export const rioDoPeixeEs: Tour = {
   slug: 'rio-do-peixe',
   name: 'Rio do Peixe',
   description: [
-    'Fascinante caminata en la Hacienda Água Viva. Son diversas cascadas, piscinas naturales y cardúmenes de peces.',
-    'Destacado por el salto de tirolesa y la plataforma de salto en la Cascada del Poção. Almuerzo pantanero incluido.',
-    'Paseo relajante y divertido, excelente para todas las edades.'
+    'Una fascinante caminata de 4,5 km en la hacienda Água Viva, donde se puede disfrutar y relajar en las cascadas entre cardúmenes de peces en las piscinas naturales y salto de tirolesa en los ríos Olaria y do Peixe.',
+    'Considerada un sendero tranquilo para niños, no tiene límite de edad. Se realizan 9 paradas para que usted pueda refrescarse en las aguas cristalinas entre ellas, 5 son bellísimas cascadas, 1 punto de baño muy especial rodeado por diversos pececitos y, para los más aventureros, la propiedad aún disponibiliza 1 plataforma de salto en la Cachoeira do Poção y 2 tirolesas.',
+    'Después del delicioso almuerzo que es famoso en la región.'
   ],
   shortDescription: 'Sendero con cascadas increíbles, muchos peces y almuerzo pantanero.',
   mainImage: img,
   durationInHours: 6,
+  minAge: 0,
   distanceFromCity: '34km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.WATERFALL, EnvironmentType.FOREST, EnvironmentType.FARM],

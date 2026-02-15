@@ -13,13 +13,13 @@ export const ceitaCoreEn: Tour = {
   slug: 'ceita-core',
   name: 'Ceita Corê',
   description: [
-    'Interpretive trail through walkways and suspension bridges, with stops for swimming in waterfalls and natural pools of the Chapeninha River.',
-    'Visit to the source of the Chapeninha River, where there is a flooded cave explored to a depth of 155m.',
-    'Farm with typical lunch and leisure infrastructure.'
+    'In the Tupi-Guarani language Ceita Corê means “Land of my children”. Interpretive trail through walkways and suspension bridges make the group appreciate the sounds and refresh themselves in waterfalls and natural pools, a 4km route in the riparian forest of the Chapeninha river, with a stop for bathing in the waterfall.',
+    'And visitation to the exotic spring of crystal clear waters, which stimulates the imagination, as it is considered one of the deepest caves in the world, with a flow rate of 1300 liters of water per second. Mandatory use of sneakers.'
   ],
   shortDescription: 'Trail with waterfalls and visit to the mysterious source of the Chapeninha River.',
   mainImage: img,
   durationInHours: 6,
+  minAge: 0,
   distanceFromCity: '36km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.FOREST, EnvironmentType.RIVER, EnvironmentType.FARM],

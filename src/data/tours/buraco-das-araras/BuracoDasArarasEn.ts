@@ -7,17 +7,22 @@ import { familiesEn } from '../../audiences/families/FamiliesEn';
 import { seniorsEn } from '../../audiences/seniors/SeniorsEn';
 import { ecotourismEn } from '../../categories/ecotourismm/EcotourismmEn';
 
+
 const img = `${TOURS_BUCKET_NAME}/buraco-das-araras/img3.webp`
 
 export const buracoDasArarasEn: Tour = {
   id: 'TOUR-BA-01',
   slug: 'buraco-das-araras-em-bonito',
   name: 'Macaw\'s Hole (Buraco das Araras)',
-  description: ['A huge sandstone crater (a doline) 120m deep, where Red Macaws and other birds have made their habitat. A tour for contemplation and wildlife observation.'],
-  shortDescription: 'A huge sandstone crater (a doline) 120m deep, where Red Macaws and other birds have made their habitat. A tour for contemplation and wildlife observation.',
+  description: [
+    'Amidst the cerrado a doline (cave whose roof collapsed), allowing contemplating from two lookouts a green water lagoon approximately 100m deep, surrounded by exuberant vegetation that serves as home to red macaws that shelter in the cracks of the rocks, besides the macaws other birds can also be seen such as: curicacas, carcarás, vultures, toucans, parakeets, parrots, hawks and others...',
+    'In the two lookouts telescopes were implanted to facilitate visualization and environmental interpretation.'
+  ],
+  shortDescription: 'Contemplation of doline with green lagoon and observation of red macaws and other birds in their natural habitat.',
   mainImage: img,
   durationInHours: 1,
-  distanceFromCity: '58km',
+  minAge: 0,
+  distanceFromCity: '54km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.FOREST],
   includedItems: ['Guide accompaniment'],
@@ -26,4 +31,3 @@ export const buracoDasArarasEn: Tour = {
   recommendedFor: [familiesEn, couplesEn, seniorsEn],
   city: bonito
 };
-

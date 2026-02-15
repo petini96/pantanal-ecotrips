@@ -21,6 +21,8 @@ export const lagoaMisteriosaEn: Tour = {
   shortDescription: 'Snorkeling in a sinkhole of deep and mysterious blue waters.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 6,
+  groupLimit: 10,
   distanceFromCity: '45km',
   difficulty: DifficultyLevel.MODERATE,
   environments: [EnvironmentType.CAVE, EnvironmentType.FOREST],

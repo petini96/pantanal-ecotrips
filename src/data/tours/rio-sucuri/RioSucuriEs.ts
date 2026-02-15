@@ -14,13 +14,15 @@ export const rioSucuriEs: Tour = {
   slug: 'rio-sucuri',
   name: 'Rio Sucuri',
   description: [
-    'El transporte del atractivo llevará a los visitantes al inicio del sendero de aprox. 500m en el bosque de galería hasta los nacimientos del Río Sucuri.',
-    'En la flotación por cerca de 1.500m, el visitante podrá apreciar la belleza de la flora subacuática e interacción con diversos cardúmenes de peces.',
-    'El paseo cuenta con un barco de apoyo durante todo el recorrido. Considerada una de las aguas más cristalinas del mundo.'
+    'El transporte del atractivo llevará a los visitantes al inicio del sendero de aprox. 500m, recorrido en el bosque de galería llevando al visitante hasta los nacimientos del Río Sucuri.',
+    'En la flotación por cerca de 1.500m, el visitante podrá apreciar la belleza de la flora subaquática e interacción con diversos cardúmenes de peces.',
+    'El paseo cuenta con un barco de apoyo durante todo el recorrido. Posee Restaurante'
   ],
   shortDescription: 'Flotación en una de las aguas más cristalinas del mundo.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 4,
+  groupLimit: 6,
   distanceFromCity: '19km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],

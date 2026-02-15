@@ -14,12 +14,14 @@ export const grutaDoMimosoPt: Tour = {
   slug: 'gruta-do-mimoso',
   name: 'Gruta do Mimoso',
   description: [
-    'O passeio começa com uma trilha e escadaria até a entrada da caverna. Após o treinamento, o visitante flutua em águas cristalinas dentro da caverna.',
-    'Formações geológicas belíssimas e salões submersos tornam essa experiência única. Também oferece mergulho.'
+    'Após ser equipado, o grupo iniciará a trilha autoguiada de 300 metros. O grupo contará com um deck onde receberá instruções sobre os equipamentos que utilizará na flutuação e também um treinamento prático, onde realizará a atividade, possibilitando assim total adaptação com o ambiente.',
+    'Após o treinamento, o grupo descerá uma escadaria com 78 degraus (podendo alterar conforme o nível de água da caverna), seguindo para a área interna da caverna e dará início a flutuação onde poderá contemplar toda a Gruta do Mimoso e suas belíssimas formações geológicas.'
   ],
   shortDescription: 'Flutuação dentro de uma caverna com águas azuis e formações incríveis.',
   mainImage: img,
   durationInHours: 2,
+  minAge: 8,
+  groupLimit: 10,
   distanceFromCity: '28km',
   difficulty: DifficultyLevel.MODERATE,
   environments: [EnvironmentType.CAVE, EnvironmentType.WATER],

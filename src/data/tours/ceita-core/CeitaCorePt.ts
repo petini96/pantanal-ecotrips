@@ -13,13 +13,13 @@ export const ceitaCorePt: Tour = {
   slug: 'ceita-core',
   name: 'Ceita Corê',
   description: [
-    'Trilha interpretativa por passarelas e pontes suspensas, com paradas para banho em cachoeiras e piscinas naturais do Rio Chapeninha.',
-    'Visitação à nascente do Rio Chapeninha, onde existe uma caverna inundada explorada até 155m de profundidade.',
-    'Fazenda com almoço típico e infraestrutura de lazer.'
+    'Na língua tupi-guarani Ceita Corê significa “Terra de meus filhos”. Trilha interpretativa por passarelas e pontes suspensas fazem o grupo apreciar os sons e se refrescar em cachoeiras e piscinas naturais, percurso de 4km na mata ciliar do rio Chapeninha, com parada para banho na cachoeira.',
+    'E visitação na exótica nascente de águas cristalinas, que aguça a imaginação, pois é considerada uma das cavernas mais profundas do mundo, com vazão de 1300 lts. de água por segundo. Uso obrigatório de tênis.'
   ],
   shortDescription: 'Trilha com cachoeiras e visita à nascente misteriosa do Rio Chapeninha.',
   mainImage: img,
   durationInHours: 6,
+  minAge: 0,
   distanceFromCity: '36km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.FOREST, EnvironmentType.RIVER, EnvironmentType.FARM],

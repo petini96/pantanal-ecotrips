@@ -13,13 +13,13 @@ export const portoDaIlhaPt: Tour = {
   slug: 'porto-da-ilha',
   name: 'Porto da Ilha (Eco Park)',
   description: [
-    'O Eco Park Porto da Ilha oferece diferentes passeios aquáticos no Rio Formoso: Boia Cross, Bote, Duck, Stand Up e Barco Elétrico.',
-    'O local possui infraestrutura completa de balneário com decks, cachoeiras e restaurantes.',
-    'Atividades ideais para quem busca diversão e contato com a natureza.'
+    'Porto da Ilha – O Eco Park Porto da Ilha oferece diferentes passeios aquáticos ao ar livre e a oportunidade de apreciar as belezas naturais do Rio Formoso e sua maravilhosa fauna: peixes, pássaros, mamíferos e cachoeiras incríveis, de águas calmas e cristalinas.',
+    'A estrutura conta com restaurante, sanitários e uma série de atividades (vendidas separadamente).'
   ],
   shortDescription: 'Complexo de atividades aquáticas no Rio Formoso: Bote, Boia Cross e Balneário.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 5,
   distanceFromCity: '12km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER],

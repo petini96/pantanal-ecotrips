@@ -13,13 +13,13 @@ export const ceitaCoreEs: Tour = {
   slug: 'ceita-core',
   name: 'Ceita Corê',
   description: [
-    'Sendero interpretativo por pasarelas y puentes colgantes, con paradas para baño en cascadas y piscinas naturales del Río Chapeninha.',
-    'Visita al nacimiento del Río Chapeninha, donde existe una cueva inundada explorada hasta 155m de profundidad.',
-    'Estancia con almuerzo típico e infraestructura de ocio.'
+    'En la lengua tupi-guarani Ceita Corê significa “Tierra de mis hijos”. Sendero interpretativo por pasarelas y puentes colgantes hacen que el grupo aprecie los sonidos y se refresque en cascadas y piscinas naturales, recorrido de 4km en el bosque de galería del río Chapeninha, con parada para baño en la cascada.',
+    'Y visita al exótico nacimiento de aguas cristalinas, que agudiza la imaginación, pues es considerada una de las cavernas más profundas del mundo, con caudal de 1300 lts. de agua por segundo. Uso obligatorio de zapatillas.'
   ],
   shortDescription: 'Sendero con cascadas y visita al nacimiento misterioso del Río Chapeninha.',
   mainImage: img,
   durationInHours: 6,
+  minAge: 0,
   distanceFromCity: '36km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.FOREST, EnvironmentType.RIVER, EnvironmentType.FARM],

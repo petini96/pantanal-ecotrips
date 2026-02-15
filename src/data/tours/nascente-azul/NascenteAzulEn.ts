@@ -14,13 +14,15 @@ export const nascenteAzulEn: Tour = {
   slug: 'nascente-azul',
   name: 'Nascente Azul (Blue Spring)',
   description: [
-    'The snorkeling tour begins with a light walk of about 1,000 meters through the lush and diverse riparian forest.',
-    'The spring is full of fish and plants that ornament the environment. It does not have a support boat.',
-    'For those doing the snorkeling, access to Lago da Capela Resort is already included.'
+    'The floating tour begins with a light walk of about 1,000 meters through the riparian forest, exuberant and diversified with fauna and flora, limestone tufas and fig tree woods.',
+    'The spring is full of fish and plants that ornament the environment and the reception in front of Lake Capela. It does not have a support boat and for those who will do the floating, the Lago da Capela Resort is already included.',
+    'It has a Restaurant and a complex with other activities, sold separately.'
   ],
   shortDescription: 'Snorkeling in calm waters and access to Lago da Capela Resort.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 4,
+  groupLimit: 10,
   distanceFromCity: '32km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],

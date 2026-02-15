@@ -12,13 +12,14 @@ export const grutasSaoMiguelPt: Tour = {
   slug: 'grutas-sao-miguel',
   name: 'Grutas de São Miguel',
   description: [
-    'Passeio seco em gruta. Inicia com um vídeo de apresentação e segue por uma trilha suspensa na copa das árvores até a caverna.',
-    'No interior, formações espeleológicas impressionantes como estalagmites, estalactites e corais.',
-    'Possibilidade de avistar a coruja Suindara.'
+    'Antes de iniciar a caminhada o grupo assiste a um vídeo de apresentação das Grutas de São Miguel. Logo após, o grupo se direciona para uma trilha suspensa, de aproximadamente 05 metros de altura e de 180 metros de comprimento que termina em um mirante de onde se pode observar o vale e a vegetação característica do local.',
+    'A caminhada continua por passarelas, até um mirante de observação da caverna, por onde se pode ter o primeiro contato visual com seu interior. Em seguida o turista é conduzido até a entrada da cavidade, neste percurso, conhecerá formações espeleológicas.',
+    'Existe ainda a possibilidade de se observar a coruja Suindara que habita a caverna, para tanto faz-se uso de lanternas e da própria iluminação artificial que há no interior da gruta. Uso obrigatório de tênis.'
   ],
   shortDescription: 'Visitação de gruta seca com acesso por trilha suspensa na mata.',
   mainImage: img,
   durationInHours: 2,
+  minAge: 5,
   distanceFromCity: '18km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.CAVE, EnvironmentType.FOREST],

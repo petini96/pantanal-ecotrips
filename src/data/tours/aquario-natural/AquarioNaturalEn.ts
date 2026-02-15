@@ -21,6 +21,8 @@ export const aquarioNaturalEn: Tour = {
   shortDescription: 'Snorkeling in crystal clear waters at the source of the Baia Bonita river, with a trail and rich underwater life.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 0,
+  groupLimit: 9,
   distanceFromCity: '8km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],

@@ -14,12 +14,14 @@ export const grutaDoMimosoEn: Tour = {
   slug: 'gruta-do-mimoso',
   name: 'Gruta do Mimoso',
   description: [
-    'The tour begins with a trail and staircase to the entrance of the cave. After training, visitors float in crystal clear waters inside the cave.',
-    'Beautiful geological formations and submerged halls make this a unique experience. It also offers diving.'
+    'After being equipped, the group will start the self-guided trail of 300 meters. The group will have a deck where they will receive instructions on the equipment they will use in the floating and also practical training, where they will perform the activity, thus enabling total adaptation to the environment.',
+    'After the training, the group will descend a staircase with 78 steps (which may change according to the cave\'s water level), proceeding to the internal area of the cave and starting the floating where they can contemplate the entire Gruta do Mimoso and its beautiful geological formations.'
   ],
   shortDescription: 'Snorkeling inside a cave with blue waters and incredible formations.',
   mainImage: img,
   durationInHours: 2,
+  minAge: 8,
+  groupLimit: 10,
   distanceFromCity: '28km',
   difficulty: DifficultyLevel.MODERATE,
   environments: [EnvironmentType.CAVE, EnvironmentType.WATER],

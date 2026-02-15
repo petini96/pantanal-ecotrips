@@ -14,13 +14,15 @@ export const nascenteAzulPt: Tour = {
   slug: 'nascente-azul',
   name: 'Nascente Azul',
   description: [
-    'O passeio de flutuação tem início com uma caminhada leve de mais ou menos 1.000 metros pela mata ciliar, exuberante e diversificada.',
-    'A nascente é repleta de peixes e plantas que ornamentam o ambiente. Não possui barco de apoio.',
-    'Para quem vai fazer a flutuação, o Balneário Lago da Capela já está incluído.'
+    'O passeio de flutuação tem início com uma caminhada leve de mais ou menos 1.000 metros pela mata ciliar, exuberante e diversificada com fauna e flora, tufas de calcário e bosque das figueiras.',
+    'A nascente é repleta de peixes e plantas que ornamentam o ambiente e o receptivo em frente ao lago da Capela. Não possui barco de apoio e para quem vai fazer a flutuação, o Balneário Lago da Capela já está incluído.',
+    'Possui Restaurante e um complexo com outras atividades, vendidas separadamente.'
   ],
   shortDescription: 'Flutuação em águas calmas e acesso ao Balneário Lago da Capela.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 4,
+  groupLimit: 10,
   distanceFromCity: '32km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],

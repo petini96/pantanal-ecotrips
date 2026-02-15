@@ -26,16 +26,18 @@ export const rioDaPrataPt: Tour = {
   slug: 'flutuacao-rio-prata-em-jardim',
   name: 'Flutuação no Rio da Prata',
   description: [
-     'Uma flutuação tranquila por um imenso aquário de águas cristalinas, observando peixes e a vegetação subaquática. O passeio começa com uma trilha na mata ciliar.'
+    'Passeio inicia-se com uma caminhada em trilha pela mata ciliar dos Rios: Olho D`água e Prata. A trilha é interpretativa e observam-se inúmeras árvores centenárias, orquídeas e bromélias e, avistam-se diversas espécies de aves e muitos mamíferos como: quatis, macacos prego, bugios, catetos, queixadas, cutias.',
+    'A flutuação começa na nascente do Rio Olho D`água onde depara-se com um imenso aquário de águas cristalinas (próximo de 2 km) extremamente transparentes, onde flutua-se tranquilamente em meio a dezenas de espécies de peixes e plantas aquáticas. Após o passeio almoço.'
   ],
-  shortDescription: 'Uma flutuação tranquila por um imenso aquário de águas cristalinas, observando peixes e a vegetação subaquática. O passeio começa com uma trilha na mata ciliar.',
+  shortDescription: 'Caminhada interpretativa e flutuação em águas cristalinas com rica vida aquática e silvestre. Inclui almoço.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 6,
   distanceFromCity: '50km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],
-  includedItems: ['Roupa de neoprene', 'Bota de neoprene', 'Colete salva-vidas', 'Máscara e snorkel'],
-  keywords: ['flutuação', 'rio', 'peixes', 'nascente'],
+  includedItems: ['Roupa de neoprene', 'Bota de neoprene', 'Colete salva-vidas', 'Máscara e snorkel', 'Almoço'],
+  keywords: ['flutuação', 'rio', 'peixes', 'nascente', 'trilha'],
   categories: [aquaticPt, ecotourismPt],
   recommendedFor: [familiesPt, couplesPt, seniorsPt],
   city: jardim,

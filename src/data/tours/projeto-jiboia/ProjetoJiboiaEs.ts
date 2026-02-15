@@ -12,13 +12,14 @@ export const projetoJiboiaEs: Tour = {
   slug: 'projeto-jiboia',
   name: 'Projeto Jiboia',
   description: [
-    'Una charla educativa y divertida sobre serpientes, desmitificando miedos y mostrando su importancia en la naturaleza.',
-    'Al final, es posible tomarse una foto con una boa constrictor en los hombros (opcional).',
-    'Actividad nocturna, ideal para realizar después de los paseos del día.'
+    'Una gran opción nocturna es el Proyecto Jiboia. El trabajo tiene como principal objetivo la desmitificación de las serpientes no venenosas, así como un trabajo de educación ambiental.',
+    'Ocurre diariamente a las 19:00 solo con agendamiento previo. (La presentación es en portugués).',
+    'El uso de cámara fotográfica solo está permitido al final de la presentación.'
   ],
   shortDescription: 'Charla educativa e interactiva sobre serpientes y educación ambiental.',
   mainImage: img,
   durationInHours: 2,
+  minAge: 0,
   distanceFromCity: 'Centro',
   difficulty: DifficultyLevel.EASY,
   environments: [], // Urban/Indoor

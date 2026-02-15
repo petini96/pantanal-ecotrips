@@ -13,17 +13,20 @@ export const boteRioFormosoEn: Tour = {
   id: 'TOUR-BRF-01',
   slug: 'bote-rio-formoso-em-bonito',
   name: 'Rafting on the Formoso River',
-  description: ['A 6km downstream trip in inflatable rafts on one of the main rivers of the region, passing by three waterfalls, two rapids, and a stop for swimming.'],
-  shortDescription: 'A 6km downstream trip in inflatable rafts on one of the main rivers of the region, passing by three waterfalls, two rapids, and a stop for swimming.',
+  description: [
+    'The dinghy tour is carried out in rubber boats for up to 12 people, on a 6 km route along the Rio Formoso, passing through 3 waterfalls and 2 rapids. On the river banks, birds and wild animals can be seen.'
+  ],
+  shortDescription: 'Descent of 6km in inflatable boats along one of the main rivers of the region, passing through waterfalls and rapids.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 5,
+  groupLimit: 12,
   distanceFromCity: '12km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.WATERFALL],
-  includedItems: ['Life vest', 'Guide accompaniment'],
-  keywords: ['rafting', 'formoso river', 'rapids', 'waterfall'],
+  includedItems: ['Life jacket', 'Guide accompaniment'],
+  keywords: ['dinghy', 'rio formoso', 'rapids', 'waterfall'],
   categories: [aquaticEn, adventureEn],
   recommendedFor: [familiesEn, groupsEn],
   city: bonito
 };
-

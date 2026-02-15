@@ -12,13 +12,14 @@ export const projetoJiboiaEn: Tour = {
   slug: 'projeto-jiboia',
   name: 'Projeto Jiboia (Boa Constrictor Project)',
   description: [
-    'An educational and fun lecture about snakes, demystifying fears and showing their importance in nature.',
-    'At the end, it is possible to take a photo with a boa constrictor on your shoulders (optional).',
-    'Night activity, ideal to do after the day tours.'
+    'A great night option is the Jiboia Project. The main objective of the work is to demystify non-venomous snakes, as well as an environmental education work.',
+    'It happens daily at 7:00 pm only with prior scheduling. (The presentation is in Portuguese).',
+    'Use of camera is only allowed at the end of the presentation.'
   ],
   shortDescription: 'Educational and interactive lecture about snakes and environmental education.',
   mainImage: img,
   durationInHours: 2,
+  minAge: 0,
   distanceFromCity: 'Center',
   difficulty: DifficultyLevel.EASY,
   environments: [], // Urban/Indoor

@@ -12,13 +12,14 @@ export const projetoJiboiaPt: Tour = {
   slug: 'projeto-jiboia',
   name: 'Projeto Jiboia',
   description: [
-    'Uma palestra educativa e divertida sobre serpentes, desmistificando medos e mostrando a importância delas na natureza.',
-    'Ao final, é possível tirar uma foto com uma jiboia nos ombros (opcional).',
-    'Atividade noturna, ideal para fazer após os passeios do dia.'
+    'Uma ótima opção noturna é o Projeto Jiboia. O trabalho tem como principal objetivo a desmistificação das serpentes não peçonhentas, assim como um trabalho de educação ambiental.',
+    'Ocorre diariamente às 19h00 apenas com agendamento prévio. (A apresentação é em Português).',
+    'Uso de máquina fotográfica só é permitido no final da apresentação.'
   ],
   shortDescription: 'Palestra educativa e interativa sobre serpentes e educação ambiental.',
   mainImage: img,
   durationInHours: 2,
+  minAge: 0,
   distanceFromCity: 'Centro',
   difficulty: DifficultyLevel.EASY,
   environments: [], // Urban/Indoor

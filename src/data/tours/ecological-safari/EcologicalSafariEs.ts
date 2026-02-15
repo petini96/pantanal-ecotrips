@@ -11,17 +11,19 @@ export const ecologicalSafariEs: Tour = {
   id: 'TOUR-FSF-ES-01',
   slug: 'safari-fotografico-em-miranda',
   name: 'Safari Fotográfico',
-  description: ['Paseo diurno en coche abierto por las áreas de la hacienda, como campos, cerrados y bosques, para la observación de la fauna y flora local. Una gran oportunidad para fotos.'],
-  shortDescription: 'Paseo diurno en coche abierto por las áreas de la hacienda, como campos, cerrados y bosques, para la observación de la fauna y flora local. Una gran oportunidad para fotos.',
+  description: [
+    'En coches especialmente adaptados, se recorren caminos en medio de la reserva forestal y campos de arroz irrigado. Se visita el criadero de yacarés y se puede observar una gran diversidad de fauna y flora. Duración aproximada de 2:30 horas.'
+  ],
+  shortDescription: 'Paseo en coche abierto para observación de fauna y flora, visitando criadero de yacarés y campos de arroz.',
   mainImage: img,
-  durationInHours: 3,
+  durationInHours: 2.5,
+  minAge: 0,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.FIELDS, EnvironmentType.FOREST],
   includedItems: ['Vehículo de safari', 'Guía'],
-  keywords: ['safari', 'fotográfico', 'fauna', 'flora'],
+  keywords: ['safari', 'fotográfico', 'fauna', 'flora', 'yacaré'],
   categories: [ecotourismEs, adventureEs],
   recommendedFor: [],
   city: miranda
 };
-

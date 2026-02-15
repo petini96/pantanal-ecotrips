@@ -21,6 +21,8 @@ export const lagoaMisteriosaPt: Tour = {
   shortDescription: 'Flutuação em uma dolina de águas azuis profundas e misteriosas.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 6,
+  groupLimit: 10,
   distanceFromCity: '45km',
   difficulty: DifficultyLevel.MODERATE,
   environments: [EnvironmentType.CAVE, EnvironmentType.FOREST], // Dolina is cave-like

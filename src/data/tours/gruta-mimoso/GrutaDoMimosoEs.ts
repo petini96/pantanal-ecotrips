@@ -14,12 +14,14 @@ export const grutaDoMimosoEs: Tour = {
   slug: 'gruta-do-mimoso',
   name: 'Gruta do Mimoso',
   description: [
-    'El paseo comienza con un sendero y escalera hasta la entrada de la cueva. Después del entrenamiento, el visitante flota en aguas cristalinas dentro de la cueva.',
-    'Formaciones geológicas bellísimas y salones sumergidos hacen que esta experiencia sea única. También ofrece buceo.'
+    'Después de ser equipado, el grupo iniciará el sendero autoguiado de 300 metros. El grupo contará con un deck donde recibirá instrucciones sobre los equipos que utilizará en la flotación y también un entrenamiento práctico, donde realizará la actividad, posibilitando así total adaptación con el ambiente.',
+    'Después del entrenamiento, el grupo descenderá una escalera con 78 escalones (pudiendo alterar conforme el nivel de agua de la caverna), siguiendo hacia el área interna de la caverna y dará inicio a la flotación donde podrá contemplar toda la Gruta do Mimoso y sus bellísimas formaciones geológicas.'
   ],
   shortDescription: 'Flotación dentro de una cueva con aguas azules y formaciones increíbles.',
   mainImage: img,
   durationInHours: 2,
+  minAge: 8,
+  groupLimit: 10,
   distanceFromCity: '28km',
   difficulty: DifficultyLevel.MODERATE,
   environments: [EnvironmentType.CAVE, EnvironmentType.WATER],

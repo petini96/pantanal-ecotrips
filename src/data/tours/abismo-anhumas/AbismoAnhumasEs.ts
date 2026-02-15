@@ -13,13 +13,14 @@ export const abismoAnhumasEs: Tour = {
   slug: 'abismo-anhumas',
   name: 'Abismo Anhumas',
   description: [
-    'Un verdadero viaje al centro de la tierra. La aventura comienza con un rappel eléctrico de 72m por una grieta en la roca hasta un lago de aguas cristalinas.',
-    'Abajo, es posible realizar un paseo en bote y flotación (o buceo autónomo para acreditados) para observar las gigantescas formaciones sumergidas (conos).',
-    'Exige check-point el día anterior.'
+    'El descenso y el ascenso se realizan a través de un cabrestante (son 72 metros), lo que exigirá poco esfuerzo físico para la realización de la actividad. Todas las pertenencias de los visitantes, como bolsos y mochilas, serán transportadas de la misma forma.',
+    'La llegada será en una plataforma flotante, donde los turistas podrán prepararse para el paseo de Bote, realizado en el lago de aguas cristalinas y para que conozcan las formaciones geológicas, de vuelta al deck se preparan para la actividad de flotación o buceo, utilizando ropa y calzados de neopreno además de la máscara y snorkel ya incluidos en el paseo.',
+    'Los visitantes deben comparecer obligatoriamente al CheckPoint del paseo realizado un día antes, en la oficina del Abismo, de las 09:00 a las 17:00h.'
   ],
   shortDescription: 'Aventura radical con descenso en rappel y flotación en lago subterráneo.',
   mainImage: img,
   durationInHours: 5,
+  minAge: 5,
   distanceFromCity: '22km',
   difficulty: DifficultyLevel.HARD,
   environments: [EnvironmentType.CAVE, EnvironmentType.WATER],

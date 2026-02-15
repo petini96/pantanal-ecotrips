@@ -13,13 +13,14 @@ export const rioDoPeixeEn: Tour = {
   slug: 'rio-do-peixe',
   name: 'Rio do Peixe',
   description: [
-    'Fascinating walk at Água Viva Farm. There are several waterfalls, natural pools and schools of fish.',
-    'Highlight for the zip line jump and the jumping platform at Poção Waterfall. Pantanal lunch included.',
-    'Relaxing and fun tour, great for all ages.'
+    'A fascinating 4.5 km walk at Fazenda Água Viva, where you can enjoy and relax in waterfalls amidst schools of fish in natural pools and zip lining on the Olaria and do Peixe rivers.',
+    'Considered a quiet trail for children, it has no age limit. 9 stops are made so you can refresh yourself in the crystal clear waters among them, 5 are beautiful waterfalls, 1 very special bathing spot surrounded by various little fish and, for the more adventurous, the property also provides 1 jumping platform at Cachoeira do Poção and 2 zip lines.',
+    'After the delicious lunch that is famous in the region.'
   ],
   shortDescription: 'Trail with incredible waterfalls, lots of fish and Pantanal lunch.',
   mainImage: img,
   durationInHours: 6,
+  minAge: 0,
   distanceFromCity: '34km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.WATERFALL, EnvironmentType.FOREST, EnvironmentType.FARM],

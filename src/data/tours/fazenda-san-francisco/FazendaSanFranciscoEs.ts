@@ -13,13 +13,12 @@ export const fazendaSanFranciscoEs: Tour = {
   slug: 'fazenda-san-francisco',
   name: 'Fazenda San Francisco (Pantanal)',
   description: [
-    'Day-use en el Pantanal. Incluye Safari Fotográfico en vehículo abierto para observación de fauna y flora, y Paseo en Chalana con pesca de pirañas.',
-    'Gran oportunidad para ver caimanes, carpinchos, aves y, con suerte, el jaguar.',
-    'Almuerzo pantanero incluido.'
+    'El Day-use en la Fazenda San Francisco se inicia a las 8:00 partiendo de la sede de la Fazenda San Francisco. Durante el día serán realizadas dos actividades, el Safari Fotográfico (Recorre caminos entre las reservas de bosques nativos y Pantanal, campos de arroz irrigado y visita a invernadas de cría de ganado de la hacienda con objetivo de avistar y conocer la fauna y flora del Pantanal, además de las actividades productivas de la hacienda), y la Chalana (Se realizan también pesca deportiva de pirañas y visita a la higuera centenaria), siendo el orden de las actividades organizadas por la Hacienda.'
   ],
   shortDescription: 'Un día en el Pantanal con Safari Fotográfico, Chalana y almuerzo típico.',
   mainImage: img,
   durationInHours: 10,
+  minAge: 0,
   distanceFromCity: '162km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.FIELDS, EnvironmentType.RIVER, EnvironmentType.FARM],

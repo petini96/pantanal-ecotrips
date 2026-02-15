@@ -39,12 +39,30 @@
                 <div class="text-body1 text-weight-medium">{{ tour.distanceFromCity }}</div>
               </div>
             </div>
+            <div class="info-box" v-if="tour.minAge !== undefined">
+              <q-icon name="mdi-account-child-outline" size="md" />
+              <div>
+                <div class="text-subtitle2">{{ t('min_age') || 'Idade Mínima' }}</div>
+                <div class="text-body1 text-weight-medium">
+                  {{ tour.minAge === 0 ? (t('free_age') || 'Livre') : `${tour.minAge} ${t('years') || 'anos'}` }}
+                </div>
+              </div>
+            </div>
+            <div class="info-box" v-if="tour.groupLimit">
+              <q-icon name="mdi-account-group-outline" size="md" />
+              <div>
+                <div class="text-subtitle2">{{ t('group_limit') || 'Max. Grupo' }}</div>
+                <div class="text-body1 text-weight-medium">{{ tour.groupLimit }} {{ t('people') || 'pessoas' }}</div>
+              </div>
+            </div>
           </div>
         </section>
 
         <q-card flat class="q-mb-xl description-card">
           <q-card-section>
-            <p>{{ tour.shortDescription }}</p>
+            <p v-for="(paragraph, index) in tour.description" :key="index" class="q-mb-md">
+              {{ paragraph }}
+            </p>
           </q-card-section>
         </q-card>
 
@@ -165,7 +183,7 @@ useMeta(() => {
   }
 
   const pageTitle = `${tour.value.name} | Pantanal Ecotrips`;
-  const pageDescription = tour.value.description;
+  const pageDescription = tour.value.shortDescription || tour.value.description[0];
   
   const currentLang = (route.params.lang as string) || 'pt';
   const baseURL = 'https://www.pantanalecotrips.com.br';
@@ -177,7 +195,7 @@ useMeta(() => {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: tour.value.name,
-    description: tour.value.description,
+    description: tour.value.description.join(' '),
     image: tour.value.mainImage,
     sku: tour.value.id,
     brand: {

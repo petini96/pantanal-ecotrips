@@ -9,16 +9,21 @@ import { ecotourismPt } from '../../categories/ecotourismm/EcotourismmPt';
 
 const img = `${TOURS_BUCKET_NAME}/buraco-das-araras/img3.webp`
 
+
 // PT-BR
 export const buracoDasArarasPt: Tour = {
   id: 'TOUR-BA-01',
   slug: 'buraco-das-araras-em-bonito',
   name: 'Buraco das Araras',
-  description: ['Uma enorme cratera em arenito (dolina) com 120m de profundidade, onde Araras Vermelhas e outros pássaros criaram seu habitat. Um passeio de contemplação e observação da fauna.'],
-  shortDescription: 'Uma enorme cratera em arenito (dolina) com 120m de profundidade, onde Araras Vermelhas e outros pássaros criaram seu habitat. Um passeio de contemplação e observação da fauna.',
+  description: [
+    'Em meio ao cerrado uma dolina (caverna cujo teto desabou), possibilitando contemplar de dois mirantes uma lagoa de água verde com aproximadamente 100m de profundidade, rodeada por vegetação exuberante que serve de moradia para araras vermelhas que abrigam-se nas fendas das rochas, além das araras também pdem ser vistas outras aves como: curicacas, carcarás, urubus, tucanos, periquitos, papagaios, gaviões e outras...',
+    'Nos dois mirantes foram implantadas lunetas para facilitar a visualização e interpretação ambiental.'
+  ],
+  shortDescription: 'Contemplação de dolina com lagoa verde e observação de araras vermelhas e outras aves em seu habitat natural.',
   mainImage: img,
   durationInHours: 1,
-  distanceFromCity: '58km',
+  minAge: 0,
+  distanceFromCity: '54km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.FOREST],
   includedItems: ['Acompanhamento de guia'],

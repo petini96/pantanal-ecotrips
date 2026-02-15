@@ -12,13 +12,14 @@ export const bioParkPt: Tour = {
   slug: 'bio-park',
   name: 'Bio Park',
   description: [
-    'Abrigo de fauna silvestre que alia conservação e educação ambiental. Animais que não podem voltar à natureza encontram lar aqui.',
-    'Possui também uma fazendinha com mini-animais para interação com crianças.',
-    'Passeio leve e educativo.'
+    'O Bio Park é um abrigo de fauna silvestre aberto à visitação, que participa de importantes projetos de conservação de espécies em extinção como o lobo guará e a anta.',
+    'O roteiro da visita, conduzido por um guia, apresenta os animais que não tem condiciones de voltar à natureza e a história de cada um, despertando a sensibilização ambiental.',
+    'Uma verdadeira aula de conhecimento e respeito a natureza.'
   ],
   shortDescription: 'Refúgio de animais silvestres e fazendinha de mini animais.',
   mainImage: img,
   durationInHours: 2,
+  minAge: 0,
   distanceFromCity: '6km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.FOREST, EnvironmentType.FARM],

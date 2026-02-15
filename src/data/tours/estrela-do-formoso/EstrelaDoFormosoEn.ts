@@ -12,18 +12,18 @@ export const estrelaDoFormosoEn: Tour = {
   slug: 'estrela-do-formoso',
   name: 'Estrela do Formoso',
   description: [
-    'An exclusive refuge on the banks of the Formoso River. The island has 7 decks for swimming and a charming and private infrastructure.',
-    'Ideal for those seeking tranquility and contact with nature with more comfort. Offers private pergolas (extra cost).',
-    'Kayak and Stand Up Paddle options.'
+    'Estrela do Formoso is the ideal tour for all ages. The trails inside and around the Island take you to 07 bathing decks on the main river of the city, the Rio Formoso, known for its crystal clear waters and thriving aquatic life with fish of the species piraputanga, curimba and dourado that transform the water into the ideal setting to take “that” refreshing bath.',
+    'In addition to all the natural beauty, we have reception, restrooms, rest area and parking. For use of the Pergolas, consult values and availability. There are Stand Up and Kayak tour options, with an average duration of 1h.'
   ],
   shortDescription: 'Exclusive resort with decks on the Formoso River and private environment.',
   mainImage: img,
   durationInHours: 4,
-  distanceFromCity: '16km',
+  minAge: 0,
+  distanceFromCity: '17km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER],
   includedItems: ['Access to decks and trails'],
-  keywords: ['resort', 'exclusive', 'formoso river', 'decks'],
+  keywords: ['resort', 'exclusive', 'rio formoso', 'decks'],
   categories: [aquaticEn],
   recommendedFor: [familiesEn],
   city: bonito

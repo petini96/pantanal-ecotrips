@@ -25,16 +25,18 @@ export const rioDaPrataEs: Tour = {
   slug: 'flutuacao-rio-prata-em-jardim',
   name: 'Flotación en el Río da Prata',
   description: [
-     'Una tranquila flotación por un inmenso acuario de aguas cristalinas, observando peces y la vegetación subacuática. El recorrido comienza con un sendero en el bosque de ribera.'
+    'El paseo se inicia con una caminata en sendero por el bosque de galería de los Ríos: Olho D`água y Prata. El sendero es interpretativo y se observan innumerables árboles centenarios, orquídeas y bromelias y, se avistan diversas especies de aves y muchos mamíferos como: coatíes, monos capuchinos, aulladores, pecaríes, agutíes.',
+    'La flotación comienza en el nacimiento del Río Olho D`água donde se encuentra con un inmenso acuario de aguas cristalinas (cerca de 2 km) extremadamente transparentes, donde se flota tranquilamente entre decenas de especies de peces y plantas acuáticas donde se puede interactuar. Después del paseo almuerzo.'
   ],
-  shortDescription: 'Una tranquila flotación por un inmenso acuario de aguas cristalinas, observando peces y la vegetación subacuática. El recorrido comienza con un sendero en el bosque de ribera.',
+  shortDescription: 'Caminata interpretativa y flotación en aguas cristalinas con rica vida acuática y silvestre. Incluye almuerzo.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 6,
   distanceFromCity: '50km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],
-  includedItems: ['Traje de neopreno', 'Botas de neopreno', 'Chaleco salvavidas', 'Máscara y snorkel'],
-  keywords: ['flotación', 'río', 'peces', 'naciente'],
+  includedItems: ['Traje de neopreno', 'Botas de neopreno', 'Chaleco salvavidas', 'Máscara y snorkel', 'Almuerzo'],
+  keywords: ['flotación', 'río', 'peces', 'naciente', 'sendero'],
   categories: [aquaticEs, ecotourismEs],
   recommendedFor: [familiesEs, couplesEs, seniorsEs],
   city: jardim

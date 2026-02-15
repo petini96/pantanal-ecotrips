@@ -14,13 +14,15 @@ export const rioSucuriEn: Tour = {
   slug: 'rio-sucuri',
   name: 'Rio Sucuri',
   description: [
-    'The attraction transport will take visitors to the beginning of the trail of approx. 500m in the riparian forest to the springs of the Rio Sucuri.',
-    'Floating for about 1,500m, visitors can appreciate the beauty of the underwater flora and interact with various schools of fish.',
-    'The tour has a support boat throughout the course. Considered one of the clearest waters in the world.'
+    'The attraction transport will take visitors to the beginning of the trail of approx. 500m, covered in the riparian forest taking the visitor to the springs of the Rio Sucuri.',
+    'In the floating for about 1,500m, the visitor will be able to appreciate the beauty of the underwater flora and interaction with several schools of fish.',
+    'The tour has a support boat throughout the course. It has a Restaurant'
   ],
   shortDescription: 'Snorkeling in one of the clearest waters in the world.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 4,
+  groupLimit: 6,
   distanceFromCity: '19km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],

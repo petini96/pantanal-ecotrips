@@ -12,14 +12,15 @@ export const balnearioDoSolEs: Tour = {
   slug: 'balneario-do-sol',
   name: 'Balneário do Sol',
   description: [
-    'Amplia área de ocio a orillas del Río Formoso con cascadas, piscinas naturales e infraestructura completa.',
-    'Ofrece quioscos con parrillas, canchas deportivas, tirolesa y trampolín.',
-    'Excelente para que las familias pasen todo el día. Animales silvestres como monos y aves son frecuentes en el lugar.'
+    'El Balneario do Sol ofrece la posibilidad de nadar en la piscina o el propio río Formoso con varias especies de peces y lindas cascadas formando parte del escenario.',
+    'Posee cancha de vóley, fútbol de arena, tirolesa, plataforma de salto y restaurante, además de quioscos con parrillas y sanitarios (adaptados para personas con discapacidad).',
+    'Es un lugar apropiado para pasar el día y refrescarse.'
   ],
   shortDescription: 'Ocio completo con cascadas, parrillas y actividades para la familia.',
   mainImage: img,
   durationInHours: 6,
-  distanceFromCity: '10km',
+  minAge: 0,
+  distanceFromCity: '12km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],
   includedItems: ['Entrada y uso de la infraestructura'],

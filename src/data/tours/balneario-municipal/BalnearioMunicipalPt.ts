@@ -12,14 +12,15 @@ export const balnearioMunicipalPt: Tour = {
   slug: 'balneario-municipal',
   name: 'Balneário Municipal',
   description: [
-    'O balneário público de Bonito oferece banho nas águas cristalinas do Rio Formoso, com grande quantidade de peixes.',
-    'Possui infraestrutura com lanchonetes, churrasqueiras, quadras de vôlei e estacionamento.',
-    'Local de fácil acesso e muito frequentado por moradores e turistas.'
+    'Em um trecho privilegiado do rio formoso, em meio às águas cristalinas que permitem uma visão de peixes de cores e tamanho variados.',
+    'O Balneário Municipal dispõe de estacionamento, quadras de vôlei e futebol de areia, lanchonetes e restaurantes, além de quiosques com churrasqueiras e sanitários (adaptados para cadeirantes).',
+    'É um lugar apropriado para passar o dia e se refrescar.'
   ],
   shortDescription: 'Banho de rio com muitos peixes e infraestrutura de lazer próxima à cidade.',
   mainImage: img,
   durationInHours: 4,
-  distanceFromCity: '6km',
+  minAge: 0,
+  distanceFromCity: '7km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER],
   includedItems: ['Entrada'],

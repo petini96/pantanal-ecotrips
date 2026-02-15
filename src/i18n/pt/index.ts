@@ -119,5 +119,8 @@ export default {
   overview: "Visão Geral",
   location: "Localização",
   attractions_title: "Atrativos",
-  attractions_subtitle: "Explore os melhores passeios da região"
+  attractions_subtitle: "Explore os melhores passeios da região",
+  min_age: "Idade Mínima",
+  free_age: "Livre",
+  group_limit: "Máximo por Grupo"
 };

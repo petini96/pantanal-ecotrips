@@ -21,6 +21,8 @@ export const aquarioNaturalEs: Tour = {
   shortDescription: 'Flotación en aguas cristalinas en el nacimiento del río Baía Bonita, con sendero y rica vida subacuática.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 0,
+  groupLimit: 9,
   distanceFromCity: '8km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],

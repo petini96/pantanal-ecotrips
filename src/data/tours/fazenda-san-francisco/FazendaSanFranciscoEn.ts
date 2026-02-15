@@ -13,13 +13,12 @@ export const fazendaSanFranciscoEn: Tour = {
   slug: 'fazenda-san-francisco',
   name: 'Fazenda San Francisco (Pantanal)',
   description: [
-    'Day-use in the Pantanal. Includes Photographic Safari in an open vehicle for flora and fauna observation, and Chalana (barge) ride with piranha fishing.',
-    'Great opportunity to see alligators, capybaras, birds and, with luck, the jaguar.',
-    'Pantanal lunch included.'
+    'The Day-use at Fazenda San Francisco starts at 8:00 am departing from the headquarters of Fazenda San Francisco. During the day two activities will be carried out, the Photographic Safari (Travels through roads between native forest reserves and Pantanal, irrigated rice fields and visit to cattle breeding pastures of the farm aiming to spot and know the fauna and flora of the Pantanal, in addition to the productive activities of the farm), and the Chalana (Piranha sport fishing and visit to the centenary fig tree are also carried out), the order of activities being organized by the Farm.'
   ],
   shortDescription: 'A day in the Pantanal with Photographic Safari, Chalana and typical lunch.',
   mainImage: img,
   durationInHours: 10,
+  minAge: 0,
   distanceFromCity: '162km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.FIELDS, EnvironmentType.RIVER, EnvironmentType.FARM],

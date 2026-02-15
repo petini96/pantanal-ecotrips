@@ -13,13 +13,13 @@ export const parqueRioFormosoEn: Tour = {
   slug: 'parque-rio-formoso',
   name: 'Rio Formoso Ecological Park',
   description: [
-    'Located just 7km from the center, it gathers various activities such as Tubing (Boia Cross), Horseback Riding, Hiking and Arborism.',
-    'It has a lagoon for swimming and relaxation (resort).',
-    'Ideal for spending the day with the family with optional activities.'
+    'Parque Ecológico Rio Formoso – With easy access, it is located 7 km from the city center and brings together various tours such as Boia Cross (Tubing), Horseback Riding, Trail and Adventure.',
+    'It has a resort structure (Lagoon) next to the reception that has zipline, kayak and stand up paddle, available for use at additional cost, it is a beautiful and pleasant place to spend the day.'
   ],
   shortDescription: 'Park near the city with a lagoon for swimming and optional adventure activities.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 0,
   distanceFromCity: '7km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],

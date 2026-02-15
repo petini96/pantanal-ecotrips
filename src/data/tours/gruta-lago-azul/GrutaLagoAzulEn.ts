@@ -13,10 +13,15 @@ export const grutaLagoAzulEn: Tour = {
   id: 'TOUR-GLA-01',
   slug: 'gruta-do-lago-azul-em-bonito',
   name: 'Gruta do Lago Azul',
-  description: ['One of the most beautiful caves in the world. After a short trail, you descend a staircase to a lake of intensely blue waters, over 80 meters deep.'],
-  shortDescription: 'One of the most beautiful caves in the world. After a short trail, you descend a staircase to a lake of intensely blue waters, over 80 meters deep.',
+  description: [
+    'After a 100 m descent, you come across a lake of intensely blue waters, whose dimensions make it one of the largest flooded cavities on the planet.',
+    'Inside the cave, speleothems of various shapes and sizes are observed, such as stalactites and stalagmites, as well as fossils of prehistoric animals such as the giant sloth and the saber-toothed tiger, which lived in the geological period of the Pleistocene (6,000 to 10,000 years ago).',
+    'Mandatory use of sneakers.'
+  ],
+  shortDescription: 'One of the largest flooded cavities on the planet, with blue water lake and prehistoric fossils. Postcard of Bonito.',
   mainImage: img,
   durationInHours: 2,
+  minAge: 5,
   distanceFromCity: '21km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.CAVE, EnvironmentType.FOREST],
@@ -26,4 +31,3 @@ export const grutaLagoAzulEn: Tour = {
   recommendedFor: [familiesEn, couplesEn],
   city: bonito
 };
-

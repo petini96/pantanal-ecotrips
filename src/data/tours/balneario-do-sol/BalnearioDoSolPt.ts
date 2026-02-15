@@ -12,14 +12,15 @@ export const balnearioDoSolPt: Tour = {
   slug: 'balneario-do-sol',
   name: 'Balneário do Sol',
   description: [
-    'Ampla área de lazer às margens do Rio Formoso com cachoeiras, piscinas naturais e infraestrutura completa.',
-    'Oferece quiosques com churrasqueira, quadras esportivas, tirolesa e trampolim.',
-    'Ótimo para famílias passarem o dia inteiro. Animais silvestres como macacos e aves são frequentes no local.'
+    'O Balneário do Sol oferece a possibilidade de nadar na piscina ou próprio rio Formoso com várias espécies de peixes e lindas cachoeiras fazendo parte do cenário.',
+    'Possui quadra de vôlei, futebol de areia, carretilha, plataforma para salto e restaurante, além de quiosques com churrasqueiras e sanitários (adaptados para cadeirantes).',
+    'É um lugar apropriado para passar o dia e se refrescar.'
   ],
   shortDescription: 'Lazer completo com cachoeiras, churrasqueiras e atividades para família.',
   mainImage: img,
   durationInHours: 6,
-  distanceFromCity: '10km',
+  minAge: 0,
+  distanceFromCity: '12km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],
   includedItems: ['Entrada e uso da infraestrutura'],

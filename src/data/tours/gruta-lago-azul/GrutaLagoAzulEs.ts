@@ -13,10 +13,15 @@ export const grutaLagoAzulEs: Tour = {
   id: 'TOUR-GLA-01',
   slug: 'gruta-do-lago-azul-em-bonito',
   name: 'Gruta del Lago Azul',
-  description: ['Una de las cuevas más bellas del mundo. Tras un corto sendero, se desciende por una escalera hasta un lago de aguas intensamente azules, con más de 80 metros de profundidad.'],
-  shortDescription: 'Una de las cuevas más bellas del mundo. Tras un corto sendero, se desciende por una escalera hasta un lago de aguas intensamente azules, con más de 80 metros de profundidad.',
+  description: [
+    'Después de un descenso de 100 m, se encuentra con un lago de aguas intensamente azuladas, cuyas dimensiones la convierten en una de las mayores cavidades inundadas del planeta.',
+    'En el interior de la gruta, se observan espeleotemas de diversas formas y tamaños, como estalactitas y estalagmitas, además de fósiles de animales prehistóricos como el perezoso gigante y el tigre dientes de sable, que vivieron en el período geológico del Pleistoceno (6.000 a 10.000 años atrás).',
+    'Uso obligatorio de zapatillas.'
+  ],
+  shortDescription: 'Una de las mayores cavidades inundadas del planeta, con un lago de aguas azules y fósiles prehistóricos. Postal de Bonito.',
   mainImage: img,
   durationInHours: 2,
+  minAge: 5,
   distanceFromCity: '21km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.CAVE, EnvironmentType.FOREST],
@@ -26,4 +31,3 @@ export const grutaLagoAzulEs: Tour = {
   recommendedFor: [familiesEs, couplesEs],
   city: bonito
 };
-

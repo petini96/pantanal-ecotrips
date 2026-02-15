@@ -21,4 +21,6 @@ export interface Tour {
   city: City;
   videos?: MediaItem[]
   photos?: string[]
+  minAge?: number
+  groupLimit?: number
 }

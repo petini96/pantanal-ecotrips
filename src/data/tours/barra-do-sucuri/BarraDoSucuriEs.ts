@@ -21,6 +21,8 @@ export const barraDoSucuriEs: Tour = {
   shortDescription: 'Subida en barco eléctrico por el Río Sucuri y descenso en flotación cristalina.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 0,
+  groupLimit: 7,
   distanceFromCity: '17km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],

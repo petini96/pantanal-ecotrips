@@ -12,14 +12,15 @@ export const balnearioDoSolEn: Tour = {
   slug: 'balneario-do-sol',
   name: 'Balneário do Sol',
   description: [
-    'Large leisure area on the banks of the Formoso River with waterfalls, natural pools and complete infrastructure.',
-    'Offers kiosks with barbecue grills, sports courts, zipline and trampoline.',
-    'Great for families to spend the whole day. Wild animals like monkeys and birds are frequent in the area.'
+    'The Balneário do Sol offers the possibility of swimming in the pool or the Formoso River itself with various species of fish and beautiful waterfalls being part of the scenery.',
+    'It has a volleyball court, sand soccer, zip line, jumping platform and restaurant, as well as kiosks with barbecue grills and restrooms (adapted for wheelchair users).',
+    'It is an appropriate place to spend the day and refresh yourself.'
   ],
   shortDescription: 'Complete leisure with waterfalls, barbecue grills and activities for the family.',
   mainImage: img,
   durationInHours: 6,
-  distanceFromCity: '10km',
+  minAge: 0,
+  distanceFromCity: '12km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],
   includedItems: ['Entrance and use of infrastructure'],

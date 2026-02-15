@@ -13,13 +13,14 @@ export const rioDoPeixePt: Tour = {
   slug: 'rio-do-peixe',
   name: 'Rio do Peixe',
   description: [
-    'Fascinante caminhada na Fazenda Água Viva. São diversas cachoeiras, piscinas naturais e cardumes de peixes.',
-    'Destaque para o salto de carretilha e a plataforma de salto na Cachoeira do Poção. Almoço sul-mato-grossense incluso.',
-    'Passeio relaxante e divertido, ótimo para todas as idades.'
+    'Uma fascinante caminhada de 4,5 km na fazenda Água Viva, onde se pode curtir e relaxar nas cachoeiras entre cardumes de peixes nas piscinas naturais e salto de carretilha nos rios Olaria e do Peixe.',
+    'Considerada uma trilha tranquila para crianças, não tem limite de idade. São feitas 9 paradas para que você possa se refrescar nas águas cristalinas entre elas, 5 são belíssimas cachoeiras, 1 ponto para banho muito especial cercado por diversos peixinhos e, para os mais aventureiros, a propriedade ainda disponibiliza 1 plataforma de salto na Cachoeira do Poção e 2 tirolesas.',
+    'Após o delicioso almoço que é famoso na região.'
   ],
   shortDescription: 'Trilha com cachoeiras incríveis, muitos peixes e almoço pantaneiro.',
   mainImage: img,
   durationInHours: 6,
+  minAge: 0,
   distanceFromCity: '34km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.WATERFALL, EnvironmentType.FOREST, EnvironmentType.FARM],

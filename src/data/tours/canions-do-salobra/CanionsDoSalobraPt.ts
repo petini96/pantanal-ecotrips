@@ -12,14 +12,15 @@ export const canionsDoSalobraPt: Tour = {
   slug: 'canions-do-salobra',
   name: 'Cânions do Salobra',
   description: [
-    'Expedição de aventura pelo Rio Salobra. Pode ser feita de Caiaque Duck ou Acquatrekking (trilha na água).',
-    'Cenários selvagens e deslumbrantes, com paradas para banho e cachoeiras.',
-    'Ideal para quem busca contato profundo com a natureza intocada.'
+    'Os Cânions do Salobra oferecem uma experiência inesquecível de conexão com a natureza, a expedição de 01 dia pelo sinuoso Rio Salobra é perfeita para quem busca aventura e cenários deslumbrantes no Pantanal.',
+    'Navegue em barco a motor por águas tranquilas, cercado por paredões rochosos e vegetação exuberante, onde é possível avistar aves, peixes e outros animais da fauna local.',
+    'O passeio inclui parada para banho refrescante nas águas cristalinas do rio salobra.'
   ],
   shortDescription: 'Expedição de aventura (Duck ou Trekking) pelos cânions selvagens do Rio Salobra.',
   mainImage: img,
   durationInHours: 8,
-  distanceFromCity: '92km',
+  minAge: 5,
+  distanceFromCity: '62km',
   difficulty: DifficultyLevel.HARD,
   environments: [EnvironmentType.RIVER, EnvironmentType.WATERFALL, EnvironmentType.MOUNTAIN],
   includedItems: ['Equipamentos', 'Guia', 'Almoço'],

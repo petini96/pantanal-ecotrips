@@ -12,18 +12,19 @@ export const grutasSaoMiguelEn: Tour = {
   slug: 'grutas-sao-miguel',
   name: 'São Miguel Caves',
   description: [
-    'Dry cave tour. Starts with a presentation video and follows through a suspended trail in the treetops to the cave.',
-    'Inside, impressive speleological formations such as stalagmites, stalactites and corals.',
-    'Possibility of spotting the Barn Owl (Suindara).'
+    'Before starting the walk, the group watches a presentation video of the Grutas de São Miguel. Soon after, the group heads to a suspended trail, approximately 05 meters high and 180 meters long that ends at a lookout point from where you can observe the valley and the characteristic vegetation of the place.',
+    'The walk continues along walkways, to a cave observation lookout, where you can have the first visual contact with its interior. Then the tourist is led to the entrance of the cavity, on this route, they will know speleological formations.',
+    'There is also the possibility of observing the Suindara owl that inhabits the cave, for which flashlights and the artificial lighting inside the cave are used. Mandatory use of sneakers.'
   ],
-  shortDescription: 'Dry cave visitation with access via suspended trail in the forest.',
+  shortDescription: 'Dry cave visit accessed by a suspended trail in the forest.',
   mainImage: img,
   durationInHours: 2,
+  minAge: 5,
   distanceFromCity: '18km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.CAVE, EnvironmentType.FOREST],
   includedItems: ['Guide accompaniment', 'Helmet', 'Flashlight'],
-  keywords: ['cave', 'grotto', 'suspended trail', 'dry'],
+  keywords: ['grotto', 'cave', 'suspended trail', 'dry'],
   categories: [cavesEn, ecotourismEn],
   recommendedFor: [],
   city: bonito

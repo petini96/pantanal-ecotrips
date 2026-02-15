@@ -12,13 +12,14 @@ export const bioParkEn: Tour = {
   slug: 'bio-park',
   name: 'Bio Park',
   description: [
-    'Wild animal shelter that combines conservation and environmental education. Animals that cannot return to the wild find a home here.',
-    'It also has a petting zoo with mini animals for interaction with children.',
-    'Light and educational tour.'
+    'Bio Park is a wildlife shelter open to visitation, which participates in important conservation projects for endangered species such as the maned wolf and the tapir.',
+    'The visit itinerary, conducted by a guide, presents the animals that are unable to return to nature and the story of each one, awakening environmental awareness.',
+    'A true lesson of knowledge and respect for nature.'
   ],
   shortDescription: 'Refuge for wild animals and petting zoo with mini animals.',
   mainImage: img,
   durationInHours: 2,
+  minAge: 0,
   distanceFromCity: '6km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.FOREST, EnvironmentType.FARM],

@@ -119,5 +119,8 @@ export default {
   overview: "Overview",
   location: "Location",
   attractions_title: "Attractions",
-  attractions_subtitle: "Explore the best tours in the region"
+  attractions_subtitle: "Explore the best tours in the region",
+  min_age: "Minimum Age",
+  free_age: "Free",
+  group_limit: "Group Limit"
 };

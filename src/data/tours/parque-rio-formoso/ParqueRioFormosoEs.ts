@@ -13,13 +13,13 @@ export const parqueRioFormosoEs: Tour = {
   slug: 'parque-rio-formoso',
   name: 'Parque Ecológico Rio Formoso',
   description: [
-    'Ubicado a solo 7km del centro, reúne diversas actividades como Boia Cross, Cabalgata, Senderismo y Arborismo.',
-    'Posee una laguna hermosa para baño y relajación (balneario).',
-    'Ideal para pasar el día con la familia con actividades opcionales.'
+    'Parque Ecológico Rio Formoso – Con acceso fácil, queda a 7 km del centro de la ciudad y reúne paseos diversos como Boia Cross, Cabalgata, Sendero y Adventure.',
+    'Tiene una estructura de balneario (Laguna) junto a la recepción que tiene tirolesa, kayak y stand up, disponibles para uso con costo adicional, es un lugar bonito y agradable para pasar el día.'
   ],
   shortDescription: 'Parque cerca de la ciudad con laguna para baño y actividades de aventura opcionales.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 0,
   distanceFromCity: '7km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],

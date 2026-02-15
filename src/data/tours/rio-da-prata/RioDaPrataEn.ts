@@ -25,16 +25,18 @@ export const rioDaPrataEn: Tour = {
   slug: 'flutuacao-rio-prata-em-jardim',
   name: 'Snorkeling at Rio da Prata',
   description: [
-     'A gentle snorkeling tour through a huge crystal-clear aquarium, observing fish and underwater vegetation. The tour begins with a trail in the riparian forest.'
+    'The tour starts with a walk along a trail through the riparian forest of the Rivers: Olho D`água and Prata. The trail is interpretive and numerous centenary trees, orchids and bromeliads are observed and several species of birds and many mammals such as: coatis, capuchin monkeys, howler monkeys, peccaries, agoutis are seen.',
+    'The floating begins at the source of the Rio Olho D`água where one comes across an huge aquarium of crystal clear waters (close to 2 km) extremely transparent, where one floats calmly among dozens of species of fish and aquatic plants where you can interact. After the tour lunch.'
   ],
-  shortDescription: 'A gentle snorkeling tour through a huge crystal-clear aquarium, observing fish and underwater vegetation. The tour begins with a trail in the riparian forest.',
+  shortDescription: 'Interpretive walk and floating in crystal clear waters with rich aquatic and wild life. Includes lunch.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 6,
   distanceFromCity: '50km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],
-  includedItems: ['Neoprene wetsuit', 'Neoprene boots', 'Life vest', 'Mask and snorkel'],
-  keywords: ['snorkeling', 'river', 'fish', 'spring'],
+  includedItems: ['Neoprene wetsuit', 'Neoprene boots', 'Life vest', 'Mask and snorkel', 'Lunch'],
+  keywords: ['snorkeling', 'river', 'fish', 'spring', 'trail'],
   categories: [aquaticEn, ecotourismEn],
   recommendedFor: [familiesEn, couplesEn, seniorsEn],
   city: jardim

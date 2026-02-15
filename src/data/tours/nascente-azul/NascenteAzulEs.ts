@@ -14,13 +14,15 @@ export const nascenteAzulEs: Tour = {
   slug: 'nascente-azul',
   name: 'Nascente Azul',
   description: [
-    'El paseo de flotación comienza con una caminata ligera de más o menos 1.000 metros por el bosque de galería, exuberante y diversificado.',
-    'El nacimiento está repleto de peces y plantas que ornamentan el ambiente. No posee barco de apoyo.',
-    'Para quien va a realizar la flotación, el Balneario Lago da Capela ya está incluido.'
+    'El paseo de flotación comienza con una caminata ligera de más o menos 1.000 metros por el bosque de galería, exuberante y diversificado con fauna y flora, tobas calcáreas y bosque de higueras.',
+    'El nacimiento está repleto de peces y plantas que ornamentan el ambiente y la recepción frente al lago de la Capela. No posee barco de apoyo y para quien va a hacer la flotación, el Balneario Lago da Capela ya está incluido.',
+    'Posee Restaurante y un complejo con otras actividades, vendidas por separado.'
   ],
   shortDescription: 'Flotación en aguas tranquilas y acceso al Balneario Lago da Capela.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 4,
+  groupLimit: 10,
   distanceFromCity: '32km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],

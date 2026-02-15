@@ -12,16 +12,17 @@ export const ecologicalSafariEn: Tour = {
   slug: 'safari-fotografico-em-miranda',
   name: 'Photographic Safari',
   description: [
-    'Daytime tour in an open car through the farm\'s areas, such as fields, savannas, and forests, to observe the local fauna and flora. A great opportunity for photos.'
+    'In specially adapted cars, you travel along roads through forest reserves and irrigated rice fields. You visit the alligator farm and can observe a great diversity of fauna and flora. Approximate duration of 2:30 hours.'
   ],
-  shortDescription: 'Daytime tour in an open car through the farm\'s areas, such as fields, savannas, and forests, to observe the local fauna and flora. A great opportunity for photos.',
+  shortDescription: 'Open car tour for fauna and flora observation, visiting alligator farm and rice fields.',
   mainImage: img,
-  durationInHours: 3,
+  durationInHours: 2.5,
+  minAge: 0,
   distanceFromCity: 'N/A',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.FIELDS, EnvironmentType.FOREST],
   includedItems: ['Safari vehicle', 'Guide'],
-  keywords: ['safari', 'photographic', 'fauna', 'flora'],
+  keywords: ['safari', 'photographic', 'fauna', 'flora', 'alligator'],
   categories: [ecotourismEn, adventureEn],
   recommendedFor: [],
   city: miranda

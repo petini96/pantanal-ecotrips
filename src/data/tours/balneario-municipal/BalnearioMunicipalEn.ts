@@ -12,18 +12,19 @@ export const balnearioMunicipalEn: Tour = {
   slug: 'balneario-municipal',
   name: 'Balneário Municipal (Municipal Resort)',
   description: [
-    'The public resort of Bonito offers swimming in the crystal clear waters of the Formoso River, with a large quantity of fish.',
-    'It has infrastructure with snack bars, barbecue grills, volleyball courts and parking.',
-    'Place easy to access and very frequented by locals and tourists.'
+    'In a privileged stretch of the Rio Formoso, amidst crystal clear waters that allow a view of fish of varied colors and sizes.',
+    'The Municipal Resort has parking, volleyball and sand soccer courts, snack bars and restaurants, as well as kiosks with barbecue grills and restrooms (adapted for wheelchair users).',
+    'It is an appropriate place to spend the day and refresh yourself.'
   ],
-  shortDescription: 'River swimming with lots of fish and leisure infrastructure near the city.',
+  shortDescription: 'River bath with many fish and leisure infrastructure close to the city.',
   mainImage: img,
   durationInHours: 4,
-  distanceFromCity: '6km',
+  minAge: 0,
+  distanceFromCity: '7km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER],
   includedItems: ['Entrance'],
-  keywords: ['resort', 'fish', 'formoso river', 'leisure'],
+  keywords: ['resort', 'fish', 'rio formoso', 'leisure'],
   categories: [aquaticEn],
   recommendedFor: [familiesEn],
   city: bonito

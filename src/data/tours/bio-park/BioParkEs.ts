@@ -12,13 +12,14 @@ export const bioParkEs: Tour = {
   slug: 'bio-park',
   name: 'Bio Park',
   description: [
-    'Refugio de fauna silvestre que une conservación y educación ambiental. Animales que no pueden volver a la naturaleza encuentran hogar aquí.',
-    'Posee también una granjita con mini animales para interacción con niños.',
-    'Paseo ligero y educativo.'
+    'El Bio Park es un refugio de fauna silvestre abierto a la visita, que participa en importantes proyectos de conservación de especies en extinción como el lobo de crin y el tapir.',
+    'El itinerario de la visita, conducido por un guía, presenta los animales que no tienen condiciones de volver a la naturaleza y la historia de cada una, despertando la sensibilización ambiental.',
+    'Una verdadera clase de conocimiento y respeto a la naturaleza.'
   ],
   shortDescription: 'Refugio de animales silvestres y granjita de mini animales.',
   mainImage: img,
   durationInHours: 2,
+  minAge: 0,
   distanceFromCity: '6km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.FOREST, EnvironmentType.FARM],

@@ -14,17 +14,21 @@ export const bocaDaOncaPt: Tour = {
   id: 'TOUR-BDO-01',
   slug: 'boca-da-onca-em-bonito',
   name: 'Boca da Onça Ecotour',
-  description: ['Caminhada por trilha de 4km passando por 11 cachoeiras, incluindo a Cachoeira Boca da Onça, a mais alta do MS com 156m. Vários pontos de banho e vista para o Canyon do Rio Salobra.'],
-  shortDescription: 'Caminhada por trilha de 4km passando por 11 cachoeiras, incluindo a Cachoeira Boca da Onça, a mais alta do MS com 156m. Vários pontos de banho e vista para o Canyon do Rio Salobra.',
+  description: [
+    'A caminhada inicia-se na mata ciliar do Rio Salobra e percorre 4 km de trilha em meio a vegetação preservada. No trajeto, o visitante conhece 8 cachoeiras e tem 4 paradas para banho em piscinas naturais de águas cristalinas, além da Cachoeira Boca da Onça, com 156 metros de altura, a mais alta do estado.',
+    'Na volta, a escadaria de 886 degraus, revela a mais bela vista do Cânion do Rio Salobra. O almoço é servido no receptivo com cardápio variado e comidas típicas.',
+    'O receptivo dispõe de duas piscinas de água corrente com peixes, hidromassagem, ducha natural, vestiários, loja de souvenirs, bar e restaurante.'
+  ],
+  shortDescription: 'Caminhada por trilha de 4km passando por 8 cachoeiras, incluindo a Boca da Onça (mais alta do MS), com piscinas naturais e infraestrutura completa.',
   mainImage: img,
   durationInHours: 8,
-  distanceFromCity: '55km',
+  minAge: 0,
+  distanceFromCity: '59km',
   difficulty: DifficultyLevel.MODERATE,
   environments: [EnvironmentType.WATERFALL, EnvironmentType.FOREST, EnvironmentType.RIVER],
-  includedItems: ['Almoço', 'Acompanhamento de guia'],
+  includedItems: ['Almoço', 'Acompanhamento de guia', 'Seguro acidente'],
   keywords: ['boca da onça', 'cachoeira', 'trilha', 'canyon'],
   categories: [adventurePt, ecotourismPt, aquaticPt],
   recommendedFor: [groupsPt, couplesPt],
   city: bonito
 };
-

@@ -13,13 +13,13 @@ export const portoDaIlhaEn: Tour = {
   slug: 'porto-da-ilha',
   name: 'Porto da Ilha (Eco Park)',
   description: [
-    'Eco Park Porto da Ilha offers different water tours on the Formoso River: Boia Cross (Tubing), Boat, Duck, Stand Up and Electric Boat.',
-    'The place has complete resort infrastructure with decks, waterfalls and restaurants.',
-    'Ideal activities for those seeking fun and contact with nature.'
+    'Porto da Ilha – The Eco Park Porto da Ilha offers different outdoor water tours and the opportunity to appreciate the natural beauties of the Rio Formoso and its wonderful fauna: fish, birds, mammals and incredible waterfalls, with calm and crystal clear waters.',
+    'The structure has a restaurant, restrooms and a series of activities (sold separately).'
   ],
   shortDescription: 'Complex of water activities on the Formoso River: Boat, Tubing and Resort.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 5,
   distanceFromCity: '12km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER],

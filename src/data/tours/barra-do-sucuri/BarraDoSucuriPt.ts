@@ -21,6 +21,8 @@ export const barraDoSucuriPt: Tour = {
   shortDescription: 'Subida de barco elétrico pelo Rio Sucuri e descida em flutuação cristalina.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 0,
+  groupLimit: 7,
   distanceFromCity: '17km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],

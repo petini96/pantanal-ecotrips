@@ -21,6 +21,8 @@ export const barraDoSucuriEn: Tour = {
   shortDescription: 'Electric boat trip up the Sucuri River and snorkeling down in crystal clear water.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 0,
+  groupLimit: 7,
   distanceFromCity: '17km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],

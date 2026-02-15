@@ -6,23 +6,26 @@ import { familiesPt } from '../../audiences/families/FamiliesPt';
 import { groupsPt } from '../../audiences/groups/GroupsPt';
 import { adventurePt } from '../../categories/adventuree/AdventureePt';
 
+
 const img = `${TOURS_BUCKET_NAME}/cabanas-arvorismo/img1.jpg`
 
 export const cabanasArvorismoPt: Tour = {
   id: 'TOUR-CA-01',
   slug: 'cabanas-arvorismo-em-bonito',
   name: 'Cabanas Arvorismo',
-  description: ['Percurso de 300m com 20 estações e 2 tirolesas, com altura de 4m a 15m. A última é uma tirolesa aquática no rio Formoso.'],
-  shortDescription: 'Percurso de 300m com 20 estações e 2 tirolesas, com altura de 4m a 15m. A última é uma tirolesa aquática no rio Formoso.',
+  description: [
+    'O Arvorismo Cabanas é um percurso com 300 metros de extensão e altura variando de 4 a 15 metros. O visitante passa por 20 atividades diferentes, e duas tirolesas, sendo a última uma tirolesa aquática no Rio Formoso.'
+  ],
+  shortDescription: 'Percurso de arvorismo com 300m e 20 estações, incluindo tirolesas e tirolesa aquática no Rio Formoso.',
   mainImage: img,
   durationInHours: 3,
-  distanceFromCity: '6,1km',
+  minAge: 6,
+  distanceFromCity: '6km',
   difficulty: DifficultyLevel.MODERATE,
   environments: [EnvironmentType.FOREST, EnvironmentType.RIVER],
-  includedItems: ['Equipamentos de segurança (arnês, capacete)', 'Treinamento'],
+  includedItems: ['Equipamentos de segurança (arnês, capacete)', 'Treinamento', 'Guia'],
   keywords: ['arvorismo', 'tirolesa', 'aventura', 'rio formoso'],
   categories: [adventurePt],
   recommendedFor: [familiesPt, groupsPt],
   city: bonito
 };
-

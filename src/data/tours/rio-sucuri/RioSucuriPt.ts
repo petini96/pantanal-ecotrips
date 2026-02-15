@@ -14,13 +14,15 @@ export const rioSucuriPt: Tour = {
   slug: 'rio-sucuri',
   name: 'Rio Sucuri',
   description: [
-    'O transporte do atrativo levará os visitantes ao início da trilha de aprox. 500m na mata ciliar até as nascentes do Rio Sucuri.',
+    'O transporte do atrativo levará os visitantes ao início da trilha de aprox. 500m, percorrida na mata ciliar levando o visitante até as nascentes do Rio Sucuri.',
     'Na flutuação por cerca de 1.500m, o visitante poderá apreciar a beleza da flora subaquática e interação com diversos cardumes de peixes.',
-    'O passeio conta com um barco de apoio durante todo percurso. Considerado uma das águas mais cristalinas do mundo.'
+    'O passeio conta com um barco de apoio durante todo percurso. Possui Restaurante'
   ],
   shortDescription: 'Flutuação em uma das águas mais cristalinas do mundo.',
   mainImage: img,
   durationInHours: 4,
+  minAge: 4,
+  groupLimit: 6,
   distanceFromCity: '19km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER, EnvironmentType.FOREST],

@@ -13,10 +13,15 @@ export const grutaLagoAzulPt: Tour = {
   id: 'TOUR-GLA-01',
   slug: 'gruta-do-lago-azul-em-bonito',
   name: 'Gruta do Lago Azul',
-  description: ['Uma das mais belas cavernas do mundo. Após uma trilha, desce-se por uma escadaria até um lago de águas intensamente azuis, com mais de 80 metros de profundidade.'],
-  shortDescription: 'Uma das mais belas cavernas do mundo. Após uma trilha, desce-se por uma escadaria até um lago de águas intensamente azuis, com mais de 80 metros de profundidade.',
+  description: [
+    'Após uma descida de 100 m, depara-se com um lago de águas intensamente azuladas, cujas dimensões a tornam uma das maiores cavidades inundadas do planeta.',
+    'No interior da gruta, observam-se espeleotemas de diversas formas e tamanhos, como estalactites e estalagmites, além de fósseis de animais pré-históricos como a preguiça gigante e o tigre dentes de sabre, que viveram no período geológico do Pleistoceno (6.000 a 10.000 anos atrás).',
+    'Obrigatório o uso de tênis.'
+  ],
+  shortDescription: 'Uma das maiores cavidades inundadas do planeta, com lago de águas azuis e fósseis pré-históricos. Cartão postal de Bonito.',
   mainImage: img,
   durationInHours: 2,
+  minAge: 5,
   distanceFromCity: '21km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.CAVE, EnvironmentType.FOREST],
@@ -26,4 +31,3 @@ export const grutaLagoAzulPt: Tour = {
   recommendedFor: [familiesPt, couplesPt],
   city: bonito
 };
-

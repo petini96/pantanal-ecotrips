@@ -12,14 +12,14 @@ export const estrelaDoFormosoPt: Tour = {
   slug: 'estrela-do-formoso',
   name: 'Estrela do Formoso',
   description: [
-    'Um refúgio exclusivo às margens do Rio Formoso. A ilha conta com 7 decks para banho e uma infraestrutura charmosa e privativa.',
-    'Ideal para quem busca tranquilidade e contato com a natureza com mais conforto. Oferece pergolados privativos (custo extra).',
-    'Opções de caiaque e stand up paddle.'
+    'Estrela do Formoso é o passeio ideal para todas as idades. As trilhas dentro e ao redor da Ilha, te levam até 07 decks de banho no principal rio da cidade, o Rio Formoso, conhecido por suas águas cristalinas e vida aquática pujante com peixes da espécie piraputanga, curimba e dourado que transformam a água no cenário ideal para tomar “aquele” banho refrescante.',
+    'Além de toda beleza natural, contamos com receptivo, banheiros, área de descanso e estacionamento. Para uso dos Pergolados, consultar valores e disponibilidade. Tem opções de passeio de Stand Up e Caique, com duração média de 1h.'
   ],
   shortDescription: 'Balneário exclusivo com decks no Rio Formoso e ambiente privativo.',
   mainImage: img,
   durationInHours: 4,
-  distanceFromCity: '16km',
+  minAge: 0,
+  distanceFromCity: '17km',
   difficulty: DifficultyLevel.EASY,
   environments: [EnvironmentType.RIVER],
   includedItems: ['Acesso aos decks e trilhas'],
