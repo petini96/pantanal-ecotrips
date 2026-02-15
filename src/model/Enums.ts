@@ -12,7 +12,9 @@ export enum EnvironmentType {
   WATERFALL = 'waterfall',
   MOUNTAIN = 'mountain',
   BEACH = 'beach',
-  FIELDS = 'fields'
+  FIELDS = 'fields',
+  WATER = 'water',
+  FARM = 'farm'
 }
 
 export const environmentIcons: Record<EnvironmentType, string> = {
@@ -23,6 +25,8 @@ export const environmentIcons: Record<EnvironmentType, string> = {
   [EnvironmentType.MOUNTAIN]: 'mdi-terrain',
   [EnvironmentType.BEACH]: 'mdi-beach',
   [EnvironmentType.FIELDS]: 'mdi-barley',
+  [EnvironmentType.WATER]: 'mdi-water',
+  [EnvironmentType.FARM]: 'mdi-barn',
 };
 
 export const defaultIcon = 'mdi-checkbox-marked-circle-outline';

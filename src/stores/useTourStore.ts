@@ -18,8 +18,8 @@ export const useTourStore = defineStore('tour', () => {
   }
 
   async function fetchTours(lang = 'pt') {
-    // Se já tiver dados carregados, não recarrega (opcional)
-    if (Object.keys(tours.value).length > 0) return;
+    // Always reload to support language switching
+    // if (Object.keys(tours.value).length > 0) return;
 
     loading.value = true;
     error.value = null;
@@ -53,7 +53,11 @@ export const useTourStore = defineStore('tour', () => {
     return Object.values(tours.value).find((t) => t.slug === slug) || null;
   });
 
+  const getToursByCityId = computed(() => (cityId: string) => {
+    return Object.values(tours.value).filter((t) => t.city.id === cityId);
+  });
+
   const allTours = computed(() => Object.values(tours.value));
 
-  return { loading, error, tours, getTourBySlug, allTours, fetchTours, clearTours };
+  return { loading, error, tours, getTourBySlug, getToursByCityId, allTours, fetchTours, clearTours };
 });

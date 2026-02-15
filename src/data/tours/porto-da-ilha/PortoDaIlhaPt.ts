@@ -1,0 +1,31 @@
+import { type Tour } from 'src/model/Tour';
+import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
+import { bonito } from '../../regions/Cities';
+import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
+import { familiesPt } from '../../audiences/families/FamiliesPt';
+import { aquaticPt } from '../../categories/aquaticc/AquaticcPt';
+import { adventurePt } from '../../categories/adventuree/AdventureePt';
+
+const img = `${TOURS_BUCKET_NAME}/porto-da-ilha/img1.webp`
+
+export const portoDaIlhaPt: Tour = {
+  id: 'TOUR-PI-01',
+  slug: 'porto-da-ilha',
+  name: 'Porto da Ilha (Eco Park)',
+  description: [
+    'O Eco Park Porto da Ilha oferece diferentes passeios aquáticos no Rio Formoso: Boia Cross, Bote, Duck, Stand Up e Barco Elétrico.',
+    'O local possui infraestrutura completa de balneário com decks, cachoeiras e restaurantes.',
+    'Atividades ideais para quem busca diversão e contato com a natureza.'
+  ],
+  shortDescription: 'Complexo de atividades aquáticas no Rio Formoso: Bote, Boia Cross e Balneário.',
+  mainImage: img,
+  durationInHours: 4,
+  distanceFromCity: '12km',
+  difficulty: DifficultyLevel.EASY,
+  environments: [EnvironmentType.RIVER],
+  includedItems: ['Acesso ao balneário', 'Atividades contratadas (Bote, Boia Cross, etc)'],
+  keywords: ['boia cross', 'bote', 'rio formoso', 'balneario', 'duck'],
+  categories: [aquaticPt, adventurePt],
+  recommendedFor: [familiesPt],
+  city: bonito
+};

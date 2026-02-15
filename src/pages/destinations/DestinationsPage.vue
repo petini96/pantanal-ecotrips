@@ -85,6 +85,14 @@
 
     </section>
 
+    <section id="attractions-section" class="section-wrapper bg-grey-1" v-if="regionTours.length > 0">
+        <div class="row align-center justify-center q-py-xl">
+            <div class="col-10">
+                <AttractionSection :tours="regionTours" :loading="!loadTourPackage" />
+            </div>
+        </div>
+    </section>
+
   </q-page>
 </template>
 
@@ -96,6 +104,7 @@ import { useRoute } from 'vue-router';
 import { storeToRefs } from 'pinia';
 import { useLayoutConfigStore } from 'src/stores/layout-config-store';
 import { useTourPackageStore } from 'src/stores/useTourPackageStore';
+import { useTourStore } from 'src/stores/useTourStore';
 import { langMap } from 'src/utils/langMap';
 import { useRegionStore } from 'src/stores/useRegionStore';
 import SimpleBanner from 'src/components/banner/SimpleBanner.vue';
@@ -103,12 +112,16 @@ import SimpleBanner from 'src/components/banner/SimpleBanner.vue';
 const TourPackageSection = defineAsyncComponent(
   () => import('src/components/sections/home/TourPackageSection.vue')
 );
+const AttractionSection = defineAsyncComponent(
+  () => import('src/components/sections/attractions/AttractionSection.vue')
+);
 
 const route = useRoute();
 const regionStore = useRegionStore();
 const { t, locale } = useI18n();
 const layoutConfigStore = useLayoutConfigStore();
 const tourPackageStore = useTourPackageStore();
+const tourStore = useTourStore();
 const { theme: currentTheme } = storeToRefs(layoutConfigStore);
 
 const loadTourPackage = ref(false);
@@ -120,6 +133,13 @@ const currentRegion = computed(() => {
 
 const regionPackages = computed(() => {
   return tourPackageStore.getPackagesByRegionSlug(destinationsSlug.value);
+});
+
+const regionTours = computed(() => {
+  // Assuming region ID matches filter logic (using city ID as region/city are tightly coupled in this logic or need mapping)
+  // DestinationsSlug 'bonito' -> City 'bonito' ID
+  const citySlug = destinationsSlug.value;
+  return tourStore.allTours.filter(t => t.city.id === citySlug || t.city.id.toLowerCase().includes(citySlug));
 });
 
 const mapUrl = computed(() => {
@@ -136,6 +156,7 @@ const loadData = async (langKey: string) => {
   locale.value = lang;
 
   if (tourPackageStore.clearPackages) tourPackageStore.clearPackages();
+  if (tourStore.clearTours) tourStore.clearTours();
 
   if (regionStore.clearRegions) {
     regionStore.clearRegions();
@@ -146,7 +167,8 @@ const loadData = async (langKey: string) => {
   try {
     await Promise.all([
       regionStore.fetchRegion(lang),
-      tourPackageStore.fetchPackages(lang)
+      tourPackageStore.fetchPackages(lang),
+      tourStore.fetchTours(lang) 
     ]);
   } catch (error) {
     console.error('Erro ao carregar dados:', error);

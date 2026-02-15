@@ -117,5 +117,7 @@ export default {
   hotels: "Hoteis",
   view_details: "Ver detalhes",
   overview: "Visão Geral",
-  location: "Localização"
+  location: "Localização",
+  attractions_title: "Atrativos",
+  attractions_subtitle: "Explore os melhores passeios da região"
 };
