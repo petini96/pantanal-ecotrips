@@ -17,7 +17,7 @@
 
 
         <h2 class="text-h3 q-mb-md text-weight-bold" :class="currentTheme === 'dark' ? 'text-white' : 'text-primary'">
-          {{ t("our_gallery_title") }}
+          {{ t("our_gallery_title") }} teste
         </h2>
         <p class="text-subtitle1 q-mb-lg opacity-80" :class="currentTheme === 'dark' ? 'text-white' : 'text-primary'">
           {{ t("our_gallery_subtitle") }}
