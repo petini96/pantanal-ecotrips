@@ -184,8 +184,8 @@ defineOptions({
 });
 
 // --- Dados das Galerias (Mock) ---
-const bucketBaseUrl = 'https://minio-s3.roboticsmind.com.br/general-bucket/mimosa';
-const thumbnailBaseImg = 'https://minio-s3.roboticsmind.com.br/general-bucket/thumbnail';
+const bucketBaseUrl = 'https://minio-s3.pantanalecotrips.com.br/general-bucket/mimosa';
+const thumbnailBaseImg = 'https://minio-s3.pantanalecotrips.com.br/general-bucket/thumbnail';
 
 const videoData = [
   { fileName: 'Cópia de agua do sol drone.mp4', title: 'Video 1', thumbnailUrl: `${thumbnailBaseImg}/thumbnail_1.webp` },
