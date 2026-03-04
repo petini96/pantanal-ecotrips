@@ -78,12 +78,12 @@ import { useI18n } from 'vue-i18n';
 
 import type { Tour } from 'src/model/Tour';
 import type { Region } from 'src/model/Region';
-import { bonitoSerraBodoquenaPt } from 'src/data/regions/bonito/BonitoSerraBodoquenaPt';
-import { pantanalSulPt } from 'src/data/regions/pantanal-sul/PantanalSulPt';
-import { bocaDaOncaPt } from 'src/data/tours/boca-onca/BocaDaOncaPt';
-import { buracoDasArarasPt } from 'src/data/tours/buraco-das-araras/BuracoDasArarasPt';
-import { estanciaMimosaPt } from 'src/data/tours/estancia-mimosa/EstanciaMimosaPt';
-import { rioDaPrataPt } from 'src/data/tours/rio-da-prata/RioDaPrataPt';
+import { bonitoSerraBodoquenaPt } from 'src/data/regions/bonito';
+import { pantanalSulPt } from 'src/data/regions/pantanal-sul';
+import { bocaDaOncaPt } from "src/data/tours/boca-onca";
+import { buracoDasArarasPt } from "src/data/tours/buraco-das-araras";
+import { estanciaMimosaPt } from "src/data/tours/estancia-mimosa";
+import { rioDaPrataPt } from "src/data/tours/rio-da-prata";
 
 const { t } = useI18n();
 

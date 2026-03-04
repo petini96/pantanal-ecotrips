@@ -1,17 +1,21 @@
+import { seniorsPt, seniorsEn, seniorsEs } from './seniors';
+import { groupsPt, groupsEn, groupsEs } from './groups';
+import { familiesPt, familiesEn, familiesEs } from './families';
+import { couplesPt, couplesEn, couplesEs } from './couples';
 import { type TranslatableTag } from 'src/model/Tags';
 
-import { couplesEn } from './couples/CouplesEn';
-import { couplesEs } from './couples/CouplesEs';
-import { couplesPt } from './couples/CouplesPt';
-import { familiesEn } from './families/FamiliesEn';
-import { familiesEs } from './families/FamiliesEs';
-import { familiesPt } from './families/FamiliesPt';
-import { groupsEn } from './groups/GroupsEn';
-import { groupsEs } from './groups/GroupsEs';
-import { groupsPt } from './groups/GroupsPt';
-import { seniorsEs } from './seniors/Seniors';
-import { seniorsEn } from './seniors/SeniorsEn';
-import { seniorsPt } from './seniors/SeniorsPt';
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const allAudiencesPt: TranslatableTag[] = [
   couplesPt,

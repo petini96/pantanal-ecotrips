@@ -97,16 +97,16 @@
 
 <script setup lang="ts">
 import { ref, reactive, computed } from 'vue';
-import { couplesPt } from 'src/data/audiences/couples/CouplesPt';
-import { familiesPt } from 'src/data/audiences/families/FamiliesPt';
-import { groupsPt } from 'src/data/audiences/groups/GroupsPt';
-import { seniorsPt } from 'src/data/audiences/seniors/SeniorsPt';
-import { adventurePt } from 'src/data/categories/adventuree/AdventureePt';
-import { aquaticPt } from 'src/data/categories/aquaticc/AquaticcPt';
-import { cavesPt } from 'src/data/categories/cavess/CavessPt';
-import { ecotourismPt } from 'src/data/categories/ecotourismm/EcotourismmPt';
-import { bonitoSerraBodoquenaPt } from 'src/data/regions/bonito/BonitoSerraBodoquenaPt';
-import { pantanalSulPt } from 'src/data/regions/pantanal-sul/PantanalSulPt';
+import { couplesPt } from 'src/data/audiences/couples';
+import { familiesPt } from 'src/data/audiences/families';
+import { groupsPt } from 'src/data/audiences/groups';
+import { seniorsPt } from 'src/data/audiences/seniors';
+import { adventurePt } from 'src/data/categories/adventuree';
+import { aquaticPt } from 'src/data/categories/aquaticc';
+import { cavesPt } from 'src/data/categories/cavess';
+import { ecotourismPt } from 'src/data/categories/ecotourismm';
+import { bonitoSerraBodoquenaPt } from 'src/data/regions/bonito';
+import { pantanalSulPt } from 'src/data/regions/pantanal-sul';
 
 const emit = defineEmits(['filter-change']);
 const showAdvanced = ref(false);

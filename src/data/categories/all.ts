@@ -1,16 +1,20 @@
+import { ecotourismPt, ecotourismEn, ecotourismEs } from './ecotourismm';
+import { cavesPt, cavesEn, cavesEs } from './cavess';
+import { aquaticPt, aquaticEn, aquaticEs } from './aquaticc';
+import { adventurePt, adventureEn, adventureEs } from './adventuree';
 import { type TranslatableTag } from 'src/model/Tags';
-import { adventureEn } from './adventuree/AdventureeEn';
-import { adventureEs } from './adventuree/AdventureeEs';
-import { adventurePt } from './adventuree/AdventureePt';
-import { aquaticEn } from './aquaticc/AquaticcEn';
-import { aquaticEs } from './aquaticc/AquaticcEs';
-import { aquaticPt } from './aquaticc/AquaticcPt';
-import { cavesEn } from './cavess/CavessEn';
-import { cavesEs } from './cavess/CavessEs';
-import { cavesPt } from './cavess/CavessPt';
-import { ecotourismEn } from './ecotourismm/EcotourismmEn';
-import { ecotourismEs } from './ecotourismm/EcotourismmEs';
-import { ecotourismPt } from './ecotourismm/EcotourismmPt';
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const allCategoriesPt: TranslatableTag[] = [
   adventurePt,
