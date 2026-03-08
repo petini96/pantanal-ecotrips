@@ -65,9 +65,10 @@
     </div>
 
     <div class="nav-section end">
-      <PageControls />
-      
-      <q-btn flat round dense icon="menu" color="white" class="lt-md q-ml-sm" aria-label="Abrir Menu">
+      <div class="row items-center justify-end no-wrap mobile-menu-wrapper" style="width: 100%;">
+        <PageControls />
+        
+        <q-btn outline rounded size="sm" dense icon="menu" label="MENU" color="white" class="lt-md q-ml-sm mobile-menu-btn" aria-label="Abrir Menu">
         <q-menu fit anchor="bottom right" self="top right" class="mobile-menu-dropdown">
           <q-list style="min-width: 200px">
             
@@ -110,6 +111,7 @@
           </q-list>
         </q-menu>
       </q-btn>
+      </div>
     </div>
   </nav>
 </template>
@@ -272,7 +274,11 @@ const scrollToId = (id: string) => {
   align-items: center;
   &.start { flex: 0 0 auto; }
   &.center { flex: 1; justify-content: center; gap: 16px; }
-  &.end { flex: 0 0 auto; justify-content: flex-end; }
+  &.end { 
+    flex: 0 0 auto; /* No desktop volta a usar apenas o espaço necessário */
+    justify-content: flex-end; 
+    align-items: center;
+  }
 }
 
 .nav-link-btn {
@@ -288,7 +294,33 @@ const scrollToId = (id: string) => {
   }
 }
 
+.mobile-menu-btn {
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0 12px !important;
+  background-color: rgba(0, 0, 0, 0.35) !important;
+  backdrop-filter: blur(4px);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  height: 28px !important;
+  min-height: 28px !important;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+
+  :deep(.q-btn__content) {
+    line-height: 1;
+  }
+}
+
 @media (max-width: 599px) {
-  .main-nav { padding: 10px 15px; }
+  .main-nav { padding: 10px 6px; }
+  
+  .nav-section.end {
+    flex: 1 1 auto; /* No mobile preenche o espaço pra centralizar melhor */
+  }
+  
+  .mobile-menu-wrapper {
+    justify-content: center !important;
+  }
 }
 </style>

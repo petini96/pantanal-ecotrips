@@ -8,6 +8,7 @@
         no-caps
         dropdown-icon="expand_more"
         class="lang-btn"
+        style="height: 100%; display: flex; align-items: center;"
       >
         <template v-slot:label>
            <div class="row items-center no-wrap q-gutter-x-xs">
@@ -104,6 +105,12 @@ const changeLanguage = (langCode: string) => {
   gap: 12px;
 }
 
+@media (max-width: 599px) {
+  .page-controls {
+    gap: 6px;
+  }
+}
+
 /* Adicionado estilo para a bandeira atual ficar bonita no botão */
 .current-flag {
   font-size: 18px; /* Tamanho similar ao ícone anterior */
@@ -114,9 +121,16 @@ const changeLanguage = (langCode: string) => {
 .control-wrapper {
   background: rgba(0, 0, 0, 0.3);
   border-radius: 20px;
-  padding: 2px 8px;
+  padding: 0 8px;
   backdrop-filter: blur(4px);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  height: 28px;
+  
+  @media (max-width: 599px) {
+    padding: 0 6px;
+  }
   transition: background 0.3s;
   
   &:hover {
@@ -127,13 +141,17 @@ const changeLanguage = (langCode: string) => {
 .lang-btn {
   color: white;
   font-size: 0.9rem;
+  line-height: normal;
+  min-height: unset;
 }
 
 .theme-pill {
   display: flex;
+  align-items: center;
   border-radius: 20px;
-  padding: 3px;
+  padding: 0 3px;
   gap: 2px;
+  height: 28px;
   transition: all 0.3s ease;
 
   background: rgba(255, 255, 255, 0.85);
@@ -151,6 +169,15 @@ const changeLanguage = (langCode: string) => {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   font-weight: 600;
   letter-spacing: 0.5px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 599px) {
+    padding: 0 6px;
+    font-size: 0.8rem;
+    min-height: unset;
+  }
 
   color: #666;
 
