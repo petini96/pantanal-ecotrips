@@ -2,13 +2,9 @@ import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { miranda } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
-import { adventurePt } from '../../categories/adventuree';
-import { ecotourismPt } from '../../categories/ecotourismm';
-import { adventureEn } from '../../categories/adventuree';
-import { ecotourismEn } from '../../categories/ecotourismm';
-import { adventureEs } from '../../categories/adventuree';
-import { ecotourismEs } from '../../categories/ecotourismm';
 
+import { adventurePt, adventureEn, adventureEs } from "src/data/categories/adventure";
+import { pantanalPt, pantanalEn, pantanalEs } from "src/data/categories/pantanal";
 const img = `${TOURS_BUCKET_NAME}/safari-fotografico/img1.webp`
 
 const commonData = {
@@ -32,7 +28,7 @@ export const ecologicalSafariPt: Tour = {
     shortDescription: 'Passeio em carro aberto para observação de fauna e flora, visitando criação de jacarés e campos de arroz.',
     includedItems: ['Veículo de safári', 'Guia'],
     keywords: ['safári', 'fotográfico', 'fauna', 'flora', 'jacaré'],
-    categories: [ecotourismPt, adventurePt],
+    categories: [pantanalPt, adventurePt],
     recommendedFor: []
 };
 
@@ -45,7 +41,7 @@ export const ecologicalSafariEn: Tour = {
     shortDescription: 'Open car tour for fauna and flora observation, visiting alligator farm and rice fields.',
     includedItems: ['Safari vehicle', 'Guide'],
     keywords: ['safari', 'photographic', 'fauna', 'flora', 'alligator'],
-    categories: [ecotourismEn, adventureEn],
+    categories: [pantanalEn, adventureEn],
     recommendedFor: []
 };
 
@@ -58,6 +54,6 @@ export const ecologicalSafariEs: Tour = {
     shortDescription: 'Paseo en coche abierto para observación de fauna y flora, visitando criadero de yacarés y campos de arroz.',
     includedItems: ['Vehículo de safari', 'Guía'],
     keywords: ['safari', 'fotográfico', 'fauna', 'flora', 'yacaré'],
-    categories: [ecotourismEs, adventureEs],
+    categories: [pantanalEs, adventureEs],
     recommendedFor: []
 };

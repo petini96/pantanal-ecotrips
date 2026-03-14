@@ -3,19 +3,12 @@ import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { couplesPt } from '../../audiences/couples';
-import { adventurePt } from '../../categories/adventuree';
-// Using adventure as it involves depth/diving context
-import { aquaticPt } from '../../categories/aquaticc';
-import { cavesPt } from '../../categories/cavess';
 import { couplesEn } from '../../audiences/couples';
-import { adventureEn } from '../../categories/adventuree';
-import { aquaticEn } from '../../categories/aquaticc';
-import { cavesEn } from '../../categories/cavess';
 import { couplesEs } from '../../audiences/couples';
-import { adventureEs } from '../../categories/adventuree';
-import { aquaticEs } from '../../categories/aquaticc';
-import { cavesEs } from '../../categories/cavess';
 
+import { adventurePt, adventureEn, adventureEs } from "src/data/categories/adventure";
+import { floatingPt, floatingEn, floatingEs } from "src/data/categories/floating";
+import { scubaDivingPt, scubaDivingEn, scubaDivingEs } from "src/data/categories/scuba-diving";
 const img = `${TOURS_BUCKET_NAME}/lagoa-misteriosa/img1.webp`
 
 const commonData = {
@@ -42,7 +35,7 @@ export const lagoaMisteriosaPt: Tour = {
     groupLimit: 10, // Dolina is cave-like
     includedItems: ['Acompanhamento de guia', 'Equipamentos de flutuação'],
     keywords: ['flutuação', 'dolina', 'profundidade', 'misterio'],
-    categories: [aquaticPt, cavesPt, adventurePt],
+    categories: [floatingPt, scubaDivingPt, adventurePt],
     recommendedFor: [couplesPt]
 };
 
@@ -58,7 +51,7 @@ export const lagoaMisteriosaEn: Tour = {
     groupLimit: 10,
     includedItems: ['Guide accompaniment', 'Snorkeling equipment'],
     keywords: ['snorkeling', 'sinkhole', 'depth', 'mystery'],
-    categories: [aquaticEn, cavesEn, adventureEn],
+    categories: [floatingEn, scubaDivingEn, adventureEn],
     recommendedFor: [couplesEn]
 };
 
@@ -74,6 +67,6 @@ export const lagoaMisteriosaEs: Tour = {
     groupLimit: 10,
     includedItems: ['Acompañamiento de guía', 'Equipos de flotación'],
     keywords: ['flotación', 'dolina', 'profundidad', 'misterio'],
-    categories: [aquaticEs, cavesEs, adventureEs],
+    categories: [floatingEs, scubaDivingEs, adventureEs],
     recommendedFor: [couplesEs]
 };

@@ -3,12 +3,11 @@ import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { miranda } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { familiesPt } from '../../audiences/families';
-import { ecotourismPt } from '../../categories/ecotourismm';
 import { familiesEn } from '../../audiences/families';
-import { ecotourismEn } from '../../categories/ecotourismm';
 import { familiesEs } from '../../audiences/families';
-import { ecotourismEs } from '../../categories/ecotourismm';
 
+import { trailsWaterfallsPt, trailsWaterfallsEn, trailsWaterfallsEs } from "src/data/categories/trails-waterfalls";
+import { pantanalPt, pantanalEn, pantanalEs } from "src/data/categories/pantanal";
 const img = `${TOURS_BUCKET_NAME}/passeio-de-barco-motor/img1.webp`
 
 const commonData = {
@@ -30,7 +29,7 @@ export const motorBoatTripPt: Tour = {
     shortDescription: 'Navegação noturna pelos rios do Pantanal, usando um holofote para avistar animais de hábitos noturnos como jacarés, capivaras e corujas.',
     includedItems: ['Barco', 'Colete salva-vidas', 'Guia especializado'],
     keywords: ['focagem', 'noturna', 'jacaré', 'barco'],
-    categories: [ecotourismPt],
+    categories: [trailsWaterfallsPt, pantanalPt],
     recommendedFor: [familiesPt]
 };
 
@@ -41,7 +40,7 @@ export const motorBoatTripEn: Tour = {
     shortDescription: 'Night navigation through the Pantanal rivers, using a spotlight to spot nocturnal animals like caimans, capybaras, and owls.',
     includedItems: ['Boat', 'Life jacket', 'Specialized guide'],
     keywords: ['spotlighting', 'night', 'caiman', 'boat'],
-    categories: [ecotourismEn],
+    categories: [trailsWaterfallsEn, pantanalEn],
     recommendedFor: [familiesEn]
 };
 
@@ -52,6 +51,6 @@ export const motorBoatTripEs: Tour = {
     shortDescription: 'Navegación nocturna por los ríos del Pantanal, usando un foco de luz para avistar animales de hábitos nocturnos como caimanes, capibaras y búhos.',
     includedItems: ['Bote', 'Chaleco salvavidas', 'Guía especializado'],
     keywords: ['enfoque', 'noche', 'caimán', 'bote'],
-    categories: [ecotourismEs],
+    categories: [trailsWaterfallsEs, pantanalEs],
     recommendedFor: [familiesEs]
 };

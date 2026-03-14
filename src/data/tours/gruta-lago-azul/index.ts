@@ -4,17 +4,12 @@ import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { couplesPt } from '../../audiences/couples';
 import { familiesPt } from '../../audiences/families';
-import { cavesPt } from '../../categories/cavess';
-import { ecotourismPt } from '../../categories/ecotourismm';
 import { couplesEn } from '../../audiences/couples';
 import { familiesEn } from '../../audiences/families';
-import { cavesEn } from '../../categories/cavess';
-import { ecotourismEn } from '../../categories/ecotourismm';
 import { couplesEs } from '../../audiences/couples';
 import { familiesEs } from '../../audiences/families';
-import { cavesEs } from '../../categories/cavess';
-import { ecotourismEs } from '../../categories/ecotourismm';
 
+import { contemplationPt, contemplationEn, contemplationEs } from "src/data/categories/contemplation";
 const img = `${TOURS_BUCKET_NAME}/gruta-lagoa-azul/img1.webp`
 
 const commonData = {
@@ -40,7 +35,7 @@ export const grutaLagoAzulPt: Tour = {
     shortDescription: 'Uma das maiores cavidades inundadas do planeta, com lago de águas azuis e fósseis pré-históricos. Cartão postal de Bonito.',
     includedItems: ['Acompanhamento de guia', 'Capacete de segurança'],
     keywords: ['gruta', 'lago', 'caverna', 'contemplação'],
-    categories: [cavesPt, ecotourismPt],
+    categories: [contemplationPt],
     recommendedFor: [familiesPt, couplesPt]
 };
 
@@ -55,7 +50,7 @@ export const grutaLagoAzulEn: Tour = {
     shortDescription: 'One of the largest flooded cavities on the planet, with blue water lake and prehistoric fossils. Postcard of Bonito.',
     includedItems: ['Guide accompaniment', 'Safety helmet'],
     keywords: ['cave', 'lake', 'grotto', 'contemplation'],
-    categories: [cavesEn, ecotourismEn],
+    categories: [contemplationEn, contemplationEn],
     recommendedFor: [familiesEn, couplesEn]
 };
 
@@ -70,6 +65,6 @@ export const grutaLagoAzulEs: Tour = {
     shortDescription: 'Una de las mayores cavidades inundadas del planeta, con un lago de aguas azules y fósiles prehistóricos. Postal de Bonito.',
     includedItems: ['Acompañamiento de guía', 'Casco de seguridad'],
     keywords: ['gruta', 'lago', 'cueva', 'contemplación'],
-    categories: [cavesEs, ecotourismEs],
+    categories: [contemplationEs, contemplationEs],
     recommendedFor: [familiesEs, couplesEs]
 };

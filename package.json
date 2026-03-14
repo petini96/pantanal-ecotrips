@@ -45,6 +45,7 @@
         "express": "^5.1.0",
         "flag-icons": "^7.5.0",
         "keycloak-js": "^26.2.0",
+        "pdf-parse": "^2.4.5",
         "pinia": "^2.3.1",
         "quasar": "^2.18.5",
         "quasar-project": "file:",

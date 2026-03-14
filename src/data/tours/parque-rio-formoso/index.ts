@@ -3,15 +3,10 @@ import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { familiesPt } from '../../audiences/families';
-import { ecotourismPt } from '../../categories/ecotourismm';
-import { adventurePt } from '../../categories/adventuree';
 import { familiesEn } from '../../audiences/families';
-import { ecotourismEn } from '../../categories/ecotourismm';
-import { adventureEn } from '../../categories/adventuree';
 import { familiesEs } from '../../audiences/families';
-import { ecotourismEs } from '../../categories/ecotourismm';
-import { adventureEs } from '../../categories/adventuree';
 
+import { adventurePt, adventureEn, adventureEs } from "src/data/categories/adventure";
 const img = `${TOURS_BUCKET_NAME}/park-ecologico-rio-formoso/img1.webp`
 
 const commonData = {
@@ -36,7 +31,7 @@ export const parqueRioFormosoPt: Tour = {
     shortDescription: 'Parque próximo à cidade com lagoa para banho e atividades de aventura opcionais.',
     includedItems: ['Acesso à Lagoa Formosa (se Day Use)', 'Outras atividades cobradas à parte'],
     keywords: ['lagoa', 'boia cross', 'cavalgada', 'relax'],
-    categories: [ecotourismPt, adventurePt],
+    categories: [adventurePt],
     recommendedFor: [familiesPt]
 };
 
@@ -50,7 +45,7 @@ export const parqueRioFormosoEn: Tour = {
     shortDescription: 'Park near the city with a lagoon for swimming and optional adventure activities.',
     includedItems: ['Access to Lagoa Formosa (if Day Use)', 'Other activities charged separately'],
     keywords: ['lagoon', 'tubing', 'horseback riding', 'relax'],
-    categories: [ecotourismEn, adventureEn],
+    categories: [adventureEn],
     recommendedFor: [familiesEn]
 };
 
@@ -64,6 +59,6 @@ export const parqueRioFormosoEs: Tour = {
     shortDescription: 'Parque cerca de la ciudad con laguna para baño y actividades de aventura opcionales.',
     includedItems: ['Acceso a la Laguna Formosa (si es Day Use)', 'Otras actividades cobradas aparte'],
     keywords: ['laguna', 'boia cross', 'cabalgata', 'relax'],
-    categories: [ecotourismEs, adventureEs],
+    categories: [adventureEs],
     recommendedFor: [familiesEs]
 };

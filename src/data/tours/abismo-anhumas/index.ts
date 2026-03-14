@@ -2,16 +2,10 @@ import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
-import { adventurePt } from '../../categories/adventuree';
-import { cavesPt } from '../../categories/cavess';
-import { aquaticPt } from '../../categories/aquaticc';
-import { adventureEn } from '../../categories/adventuree';
-import { cavesEn } from '../../categories/cavess';
-import { aquaticEn } from '../../categories/aquaticc';
-import { adventureEs } from '../../categories/adventuree';
-import { cavesEs } from '../../categories/cavess';
-import { aquaticEs } from '../../categories/aquaticc';
 
+import { adventurePt, adventureEn, adventureEs } from "src/data/categories/adventure";
+import { floatingPt, floatingEn, floatingEs } from "src/data/categories/floating";
+import { scubaDivingPt, scubaDivingEn, scubaDivingEs } from "src/data/categories/scuba-diving";
 const img = `${TOURS_BUCKET_NAME}/abismo-anhumas/img1.jpg`
 
 const commonData = {
@@ -37,7 +31,7 @@ export const abismoAnhumasPt: Tour = {
     shortDescription: 'Aventura radical com descida em rapel e flutuação em lago subterrâneo.',
     includedItems: ['Rapel elétrico', 'Passeio de bote', 'Flutuação', 'Equipamentos'],
     keywords: ['rapel', 'caverna', 'flutuação', 'abismo', 'mergulho'],
-    categories: [adventurePt, cavesPt, aquaticPt],
+    categories: [adventurePt, floatingPt, scubaDivingPt],
     recommendedFor: []
 };
 
@@ -52,7 +46,7 @@ export const abismoAnhumasEn: Tour = {
     shortDescription: 'Radical adventure with rappel descent and snorkeling in an underground lake.',
     includedItems: ['Electric rappel', 'Boat ride', 'Snorkeling', 'Equipment'],
     keywords: ['rappel', 'cave', 'snorkeling', 'abyss', 'diving'],
-    categories: [adventureEn, cavesEn, aquaticEn],
+    categories: [adventureEn, floatingEn, scubaDivingEn],
     recommendedFor: []
 };
 
@@ -67,6 +61,6 @@ export const abismoAnhumasEs: Tour = {
     shortDescription: 'Aventura radical con descenso en rappel y flotación en lago subterráneo.',
     includedItems: ['Rappel eléctrico', 'Paseo en bote', 'Flotación', 'Equipos'],
     keywords: ['rappel', 'cueva', 'flotación', 'abismo', 'buceo'],
-    categories: [adventureEs, cavesEs, aquaticEs],
+    categories: [adventureEs, floatingEs, scubaDivingEs],
     recommendedFor: []
 };

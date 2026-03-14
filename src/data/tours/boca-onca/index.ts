@@ -4,20 +4,13 @@ import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { couplesPt } from '../../audiences/couples';
 import { groupsPt } from '../../audiences/groups';
-import { adventurePt } from '../../categories/adventuree';
-import { aquaticPt } from '../../categories/aquaticc';
-import { ecotourismPt } from '../../categories/ecotourismm';
 import { couplesEn } from '../../audiences/couples';
 import { groupsEn } from '../../audiences/groups';
-import { adventureEn } from '../../categories/adventuree';
-import { aquaticEn } from '../../categories/aquaticc';
-import { ecotourismEn } from '../../categories/ecotourismm';
 import { couplesEs } from '../../audiences/couples';
 import { groupsEs } from '../../audiences/groups';
-import { adventureEs } from '../../categories/adventuree';
-import { aquaticEs } from '../../categories/aquaticc';
-import { ecotourismEs } from '../../categories/ecotourismm';
 
+import { adventurePt, adventureEn, adventureEs } from "src/data/categories/adventure";
+import { trailsWaterfallsPt, trailsWaterfallsEn, trailsWaterfallsEs } from "src/data/categories/trails-waterfalls";
 const img = `${TOURS_BUCKET_NAME}/boca-onca/img3.webp`
 
 const commonData = {
@@ -43,7 +36,7 @@ export const bocaDaOncaPt: Tour = {
     shortDescription: 'Caminhada por trilha de 4km passando por 8 cachoeiras, incluindo a Boca da Onça (mais alta do MS), com piscinas naturais e infraestrutura completa.',
     includedItems: ['Almoço', 'Acompanhamento de guia', 'Seguro acidente'],
     keywords: ['boca da onça', 'cachoeira', 'trilha', 'canyon'],
-    categories: [adventurePt, ecotourismPt, aquaticPt],
+    categories: [adventurePt, trailsWaterfallsPt],
     recommendedFor: [groupsPt, couplesPt]
 };
 
@@ -58,7 +51,7 @@ export const bocaDaOncaEn: Tour = {
     shortDescription: '4km trail walk passing 8 waterfalls, including Boca da Onça (highest in MS), with natural pools and complete infrastructure.',
     includedItems: ['Lunch', 'Guide accompaniment', 'Accident insurance'],
     keywords: ['boca da onça', 'waterfall', 'trail', 'canyon'],
-    categories: [adventureEn, ecotourismEn, aquaticEn],
+    categories: [adventureEn, trailsWaterfallsEn],
     recommendedFor: [groupsEn, couplesEn]
 };
 
@@ -73,6 +66,6 @@ export const bocaDaOncaEs: Tour = {
     shortDescription: 'Caminata por sendero de 4km pasando por 8 cascadas, incluida Boca da Onça (la más alta de MS), con piscinas naturales e infraestructura completa.',
     includedItems: ['Almuerzo', 'Acompañamiento de guía', 'Seguro de accidentes'],
     keywords: ['boca da onça', 'cascada', 'sendero', 'cañón'],
-    categories: [adventureEs, ecotourismEs, aquaticEs],
+    categories: [adventureEs, trailsWaterfallsEs],
     recommendedFor: [groupsEs, couplesEs]
 };

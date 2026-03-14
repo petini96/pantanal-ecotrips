@@ -6,19 +6,15 @@ import { type MediaItem } from 'src/components/galerry/MediaGallery.vue';
 import { couplesPt } from '../../audiences/couples';
 import { familiesPt } from '../../audiences/families';
 import { seniorsPt } from '../../audiences/seniors';
-import { aquaticPt } from '../../categories/aquaticc';
-import { ecotourismPt } from '../../categories/ecotourismm';
 import { couplesEn } from '../../audiences/couples';
 import { familiesEn } from '../../audiences/families';
 import { seniorsEn } from '../../audiences/seniors';
-import { aquaticEn } from '../../categories/aquaticc';
-import { ecotourismEn } from '../../categories/ecotourismm';
 import { couplesEs } from '../../audiences/couples';
 import { familiesEs } from '../../audiences/families';
 import { seniorsEs } from '../../audiences/seniors';
-import { aquaticEs } from '../../categories/aquaticc';
-import { ecotourismEs } from '../../categories/ecotourismm';
 
+import { floatingPt, floatingEn, floatingEs } from "src/data/categories/floating";
+import { scubaDivingPt, scubaDivingEn, scubaDivingEs } from "src/data/categories/scuba-diving";
 const videos = [
   {
     type: 'video',
@@ -31,7 +27,7 @@ const videos = [
 const img = `${TOURS_BUCKET_NAME}/flutuacao-rio-prata/img1.webp`
 
 const commonData = {
-  id: 'TOUR-RDP-01',
+  id: 'TOUR-RIO-PRATA-01',
   slug: 'flutuacao-rio-prata-em-jardim',
   mainImage: img,
   durationInHours: 4,
@@ -52,7 +48,7 @@ export const rioDaPrataPt: Tour = {
     shortDescription: 'Caminhada interpretativa e flutuação em águas cristalinas com rica vida aquática e silvestre. Inclui almoço.',
     includedItems: ['Roupa de neoprene', 'Bota de neoprene', 'Colete salva-vidas', 'Máscara e snorkel', 'Almoço'],
     keywords: ['flutuação', 'rio', 'peixes', 'nascente', 'trilha'],
-    categories: [aquaticPt, ecotourismPt],
+    categories: [floatingPt, scubaDivingPt],
     recommendedFor: [familiesPt, couplesPt, seniorsPt],
     videos: videos
 };
@@ -67,7 +63,7 @@ export const rioDaPrataEn: Tour = {
     shortDescription: 'Interpretive walk and floating in crystal clear waters with rich aquatic and wild life. Includes lunch.',
     includedItems: ['Neoprene wetsuit', 'Neoprene boots', 'Life vest', 'Mask and snorkel', 'Lunch'],
     keywords: ['snorkeling', 'river', 'fish', 'spring', 'trail'],
-    categories: [aquaticEn, ecotourismEn],
+    categories: [floatingEn, scubaDivingEn],
     recommendedFor: [familiesEn, couplesEn, seniorsEn]
 };
 
@@ -81,6 +77,6 @@ export const rioDaPrataEs: Tour = {
     shortDescription: 'Caminata interpretativa y flotación en aguas cristalinas con rica vida acuática y silvestre. Incluye almuerzo.',
     includedItems: ['Traje de neopreno', 'Botas de neopreno', 'Chaleco salvavidas', 'Máscara y snorkel', 'Almuerzo'],
     keywords: ['flotación', 'río', 'peces', 'naciente', 'sendero'],
-    categories: [aquaticEs, ecotourismEs],
+    categories: [floatingEs, scubaDivingEs],
     recommendedFor: [familiesEs, couplesEs, seniorsEs]
 };

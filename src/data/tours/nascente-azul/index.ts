@@ -4,17 +4,13 @@ import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { couplesPt } from '../../audiences/couples';
 import { familiesPt } from '../../audiences/families';
-import { aquaticPt } from '../../categories/aquaticc';
-import { ecotourismPt } from '../../categories/ecotourismm';
 import { couplesEn } from '../../audiences/couples';
 import { familiesEn } from '../../audiences/families';
-import { aquaticEn } from '../../categories/aquaticc';
-import { ecotourismEn } from '../../categories/ecotourismm';
 import { couplesEs } from '../../audiences/couples';
 import { familiesEs } from '../../audiences/families';
-import { aquaticEs } from '../../categories/aquaticc';
-import { ecotourismEs } from '../../categories/ecotourismm';
 
+import { floatingPt, floatingEn, floatingEs } from "src/data/categories/floating";
+import { resortsEn, resortsEs, resortsPt } from 'src/data/categories/resorts';
 const img = `${TOURS_BUCKET_NAME}/nascente-azul/img1.jpg`
 
 const commonData = {
@@ -41,7 +37,7 @@ export const nascenteAzulPt: Tour = {
     groupLimit: 10,
     includedItems: ['Acompanhamento de guia', 'Equipamentos de flutuação', 'Day use no balneário'],
     keywords: ['flutuação', 'balneario', 'nascente', 'peixes'],
-    categories: [aquaticPt, ecotourismPt],
+    categories: [floatingPt, resortsPt],
     recommendedFor: [familiesPt, couplesPt]
 };
 
@@ -57,7 +53,7 @@ export const nascenteAzulEn: Tour = {
     groupLimit: 10,
     includedItems: ['Guide accompaniment', 'Snorkeling equipment', 'Day use at the resort'],
     keywords: ['snorkeling', 'resort', 'spring', 'fish'],
-    categories: [aquaticEn, ecotourismEn],
+    categories: [floatingEn, resortsEn],
     recommendedFor: [familiesEn, couplesEn]
 };
 
@@ -73,6 +69,6 @@ export const nascenteAzulEs: Tour = {
     groupLimit: 10,
     includedItems: ['Acompañamiento de guía', 'Equipos de flotación', 'Day use en el balneario'],
     keywords: ['flotación', 'balneario', 'nacimiento', 'peces'],
-    categories: [aquaticEs, ecotourismEs],
+    categories: [floatingEs, resortsEs],
     recommendedFor: [familiesEs, couplesEs]
 };

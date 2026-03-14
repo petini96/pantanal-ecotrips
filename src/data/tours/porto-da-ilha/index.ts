@@ -3,15 +3,10 @@ import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { familiesPt } from '../../audiences/families';
-import { aquaticPt } from '../../categories/aquaticc';
-import { adventurePt } from '../../categories/adventuree';
 import { familiesEn } from '../../audiences/families';
-import { aquaticEn } from '../../categories/aquaticc';
-import { adventureEn } from '../../categories/adventuree';
 import { familiesEs } from '../../audiences/families';
-import { aquaticEs } from '../../categories/aquaticc';
-import { adventureEs } from '../../categories/adventuree';
 
+import { adventurePt, adventureEn, adventureEs } from "src/data/categories/adventure";
 const img = `${TOURS_BUCKET_NAME}/porto-da-ilha/img1.webp`
 
 const commonData = {
@@ -36,7 +31,7 @@ export const portoDaIlhaPt: Tour = {
     shortDescription: 'Complexo de atividades aquáticas no Rio Formoso: Bote, Boia Cross e Balneário.',
     includedItems: ['Acesso ao balneário', 'Atividades contratadas (Bote, Boia Cross, etc)'],
     keywords: ['boia cross', 'bote', 'rio formoso', 'balneario', 'duck'],
-    categories: [aquaticPt, adventurePt],
+    categories: [adventurePt],
     recommendedFor: [familiesPt]
 };
 
@@ -50,7 +45,7 @@ export const portoDaIlhaEn: Tour = {
     shortDescription: 'Complex of water activities on the Formoso River: Boat, Tubing and Resort.',
     includedItems: ['Access to the resort', 'Contracted activities (Boat, Tubing, etc)'],
     keywords: ['tubing', 'boat', 'formoso river', 'resort', 'duck'],
-    categories: [aquaticEn, adventureEn],
+    categories: [adventureEn],
     recommendedFor: [familiesEn]
 };
 
@@ -64,6 +59,6 @@ export const portoDaIlhaEs: Tour = {
     shortDescription: 'Complejo de actividades acuáticas en el Río Formoso: Bote, Boia Cross y Balneario.',
     includedItems: ['Acceso al balneario', 'Actividades contratadas (Bote, Boia Cross, etc)'],
     keywords: ['boia cross', 'bote', 'río formoso', 'balneario', 'duck'],
-    categories: [aquaticEs, adventureEs],
+    categories: [adventureEs],
     recommendedFor: [familiesEs]
 };

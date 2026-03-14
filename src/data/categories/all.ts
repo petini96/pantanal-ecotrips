@@ -1,38 +1,38 @@
-import { ecotourismPt, ecotourismEn, ecotourismEs } from './ecotourismm';
-import { cavesPt, cavesEn, cavesEs } from './cavess';
-import { aquaticPt, aquaticEn, aquaticEs } from './aquaticc';
-import { adventurePt, adventureEn, adventureEs } from './adventuree';
+import { adventurePt, adventureEn, adventureEs } from './adventure';
+import { floatingPt, floatingEn, floatingEs } from './floating';
+import { trailsWaterfallsPt, trailsWaterfallsEn, trailsWaterfallsEs } from './trails-waterfalls';
+import { contemplationPt, contemplationEn, contemplationEs } from './contemplation';
+import { scubaDivingPt, scubaDivingEn, scubaDivingEs } from './scuba-diving';
+import { resortsPt, resortsEn, resortsEs } from './resorts';
+import { pantanalPt, pantanalEn, pantanalEs } from './pantanal';
 import { type TranslatableTag } from 'src/model/Tags';
-
-
-
-
-
-
-
-
-
-
-
-
 
 export const allCategoriesPt: TranslatableTag[] = [
   adventurePt,
-  aquaticPt,
-  cavesPt,
-  ecotourismPt,
+  floatingPt,
+  trailsWaterfallsPt,
+  contemplationPt,
+  scubaDivingPt,
+  resortsPt,
+  pantanalPt
 ];
 
 export const allCategoriesEn: TranslatableTag[] = [
   adventureEn,
-  aquaticEn,
-  cavesEn,
-  ecotourismEn,
+  floatingEn,
+  trailsWaterfallsEn,
+  contemplationEn,
+  scubaDivingEn,
+  resortsEn,
+  pantanalEn
 ];
 
 export const allCategoriesEs: TranslatableTag[] = [
   adventureEs,
-  aquaticEs,
-  cavesEs,
-  ecotourismEs,
+  floatingEs,
+  trailsWaterfallsEs,
+  contemplationEs,
+  scubaDivingEs,
+  resortsEs,
+  pantanalEs
 ];

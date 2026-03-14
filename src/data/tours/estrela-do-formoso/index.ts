@@ -3,12 +3,10 @@ import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { familiesPt } from '../../audiences/families';
-import { aquaticPt } from '../../categories/aquaticc';
 import { familiesEn } from '../../audiences/families';
-import { aquaticEn } from '../../categories/aquaticc';
 import { familiesEs } from '../../audiences/families';
-import { aquaticEs } from '../../categories/aquaticc';
 
+import { resortsPt, resortsEn, resortsEs } from "src/data/categories/resorts";
 const img = `${TOURS_BUCKET_NAME}/estrela-do-formoso/img1.webp`
 
 const commonData = {
@@ -33,7 +31,7 @@ export const estrelaDoFormosoPt: Tour = {
     shortDescription: 'Balneário exclusivo com decks no Rio Formoso e ambiente privativo.',
     includedItems: ['Acesso aos decks e trilhas'],
     keywords: ['balneario', 'exclusivo', 'rio formoso', 'decks'],
-    categories: [aquaticPt],
+    categories: [resortsPt],
     recommendedFor: [familiesPt]
 };
 
@@ -47,7 +45,7 @@ export const estrelaDoFormosoEn: Tour = {
     shortDescription: 'Exclusive resort with decks on the Formoso River and private environment.',
     includedItems: ['Access to decks and trails'],
     keywords: ['resort', 'exclusive', 'rio formoso', 'decks'],
-    categories: [aquaticEn],
+    categories: [resortsEn],
     recommendedFor: [familiesEn]
 };
 
@@ -61,6 +59,6 @@ export const estrelaDoFormosoEs: Tour = {
     shortDescription: 'Balneario exclusivo con decks en el Río Formoso y ambiente privado.',
     includedItems: ['Acceso a los decks y senderos'],
     keywords: ['balneario', 'exclusivo', 'río formoso', 'decks'],
-    categories: [aquaticEs],
+    categories: [resortsEs],
     recommendedFor: [familiesEs]
 };

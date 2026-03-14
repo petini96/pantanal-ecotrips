@@ -2,13 +2,10 @@ import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
-import { adventurePt } from '../../categories/adventuree';
-import { ecotourismPt } from '../../categories/ecotourismm';
-import { adventureEn } from '../../categories/adventuree';
-import { ecotourismEn } from '../../categories/ecotourismm';
-import { adventureEs } from '../../categories/adventuree';
-import { ecotourismEs } from '../../categories/ecotourismm';
 
+import { adventurePt, adventureEn, adventureEs } from "src/data/categories/adventure";
+import { trailsWaterfallsPt, trailsWaterfallsEn, trailsWaterfallsEs } from "src/data/categories/trails-waterfalls";
+import { pantanalPt, pantanalEn, pantanalEs } from "src/data/categories/pantanal";
 const img = `${TOURS_BUCKET_NAME}/canions-do-salobra/img1.webp`
 
 const commonData = {
@@ -34,7 +31,7 @@ export const canionsDoSalobraPt: Tour = {
     shortDescription: 'Expedição de aventura (Duck ou Trekking) pelos cânions selvagens do Rio Salobra.',
     includedItems: ['Equipamentos', 'Guia', 'Almoço'],
     keywords: ['aventura', 'duck', 'trekking', 'canion'],
-    categories: [adventurePt, ecotourismPt],
+    categories: [adventurePt, trailsWaterfallsPt, pantanalPt],
     recommendedFor: []
 };
 
@@ -49,7 +46,7 @@ export const canionsDoSalobraEn: Tour = {
     shortDescription: 'Adventure expedition (Duck or Trekking) through the wild canyons of the Salobra River.',
     includedItems: ['Equipment', 'Guide', 'Lunch'],
     keywords: ['adventure', 'duck', 'trekking', 'canyon'],
-    categories: [adventureEn, ecotourismEn],
+    categories: [adventureEn, trailsWaterfallsEn, pantanalEn],
     recommendedFor: []
 };
 
@@ -64,6 +61,6 @@ export const canionsDoSalobraEs: Tour = {
     shortDescription: 'Expedición de aventura (Duck o Trekking) por los cañones salvajes del Río Salobra.',
     includedItems: ['Equipos', 'Guía', 'Almuerzo'],
     keywords: ['aventura', 'duck', 'trekking', 'cañón'],
-    categories: [adventureEs, ecotourismEs],
+    categories: [adventureEs, trailsWaterfallsEs, pantanalEs],
     recommendedFor: []
 };

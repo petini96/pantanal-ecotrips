@@ -2,9 +2,11 @@ import { uid } from "quasar";
 import { couplesPt } from "src/data/audiences/couples";
 import { familiesPt } from "src/data/audiences/families";
 import { groupsPt } from "src/data/audiences/groups";
-import { adventurePt } from "src/data/categories/adventuree";
-import { aquaticPt } from "src/data/categories/aquaticc";
-import { ecotourismPt } from "src/data/categories/ecotourismm";
+import { adventurePt } from "src/data/categories/adventure";
+import { floatingPt } from "src/data/categories/floating";
+import { resortsPt } from "src/data/categories/resorts";
+import { trailsWaterfallsPt } from "src/data/categories/trails-waterfalls";
+import { pantanalPt } from "src/data/categories/pantanal";
 import { pantanalSulPt } from "src/data/regions/pantanal-sul";
 import { type TourPackage } from "src/model/TourPackage";
 import { PACKAGE_BUCKET_NAME } from "src/utils/environmentUtils";
@@ -109,7 +111,7 @@ const commonData = {
   durationInDays: 3,
   durationInNights: 2,
   minPeople: 1,
-  packageCategories: [ecotourismPt, aquaticPt, adventurePt],
+  packageCategories: [trailsWaterfallsPt, pantanalPt, floatingPt, resortsPt, adventurePt],
   packageRecommendedFor: [couplesPt, familiesPt, groupsPt],
   region: pantanalSulPt,
   galleryImages: jungleLodgeImages,

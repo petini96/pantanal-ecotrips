@@ -2,10 +2,9 @@ import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { miranda } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
-import { ecotourismPt } from '../../categories/ecotourismm';
-import { ecotourismEn } from '../../categories/ecotourismm';
-import { ecotourismEs } from '../../categories/ecotourismm';
 
+import { trailsWaterfallsPt, trailsWaterfallsEn, trailsWaterfallsEs } from "src/data/categories/trails-waterfalls";
+import { pantanalPt, pantanalEn, pantanalEs } from "src/data/categories/pantanal";
 const img = `${TOURS_BUCKET_NAME}/observacao-das-aves/img1.webp`
 
 const commonData = {
@@ -27,7 +26,7 @@ export const birdwatchingPt: Tour = {
     shortDescription: 'Caminhada ao amanhecer, o melhor horário para observar a grande diversidade de aves do Pantanal, como tuiuiús, araras-azuis e tucanos. Essencial para amantes da ornitologia.',
     includedItems: ['Guia especializado em aves'],
     keywords: ['aves', 'birdwatching', 'passarinhar', 'araras'],
-    categories: [ecotourismPt],
+    categories: [trailsWaterfallsPt, pantanalPt],
     recommendedFor: []
 };
 
@@ -41,7 +40,7 @@ export const birdwatchingEn: Tour = {
     shortDescription: 'A walk at dawn, the best time to observe the great diversity of birds in the Pantanal, such as jabirus, hyacinth macaws, and toucans. Essential for ornithology lovers.',
     includedItems: ['Specialized birding guide'],
     keywords: ['birds', 'birdwatching', 'macaws'],
-    categories: [ecotourismEn],
+    categories: [trailsWaterfallsEn, pantanalEn],
     recommendedFor: []
 };
 
@@ -53,6 +52,6 @@ export const birdwatchingEs: Tour = {
     shortDescription: 'Caminata al amanecer, el mejor momento para observar la gran diversidad de aves del Pantanal, como jabirús, guacamayos jacintos y tucanes. Esencial para los amantes de la ornitología.',
     includedItems: ['Guía especializado en aves'],
     keywords: ['aves', 'birdwatching', 'pájaros', 'guacamayos'],
-    categories: [ecotourismEs],
+    categories: [trailsWaterfallsEs, pantanalEs],
     recommendedFor: []
 };

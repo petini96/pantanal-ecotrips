@@ -3,12 +3,10 @@ import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { familiesPt } from '../../audiences/families';
-import { aquaticPt } from '../../categories/aquaticc';
 import { familiesEn } from '../../audiences/families';
-import { aquaticEn } from '../../categories/aquaticc';
 import { familiesEs } from '../../audiences/families';
-import { aquaticEs } from '../../categories/aquaticc';
 
+import { resortsPt, resortsEn, resortsEs } from "src/data/categories/resorts";
 const img = `${TOURS_BUCKET_NAME}/balneario-municipal/img1.jpg`
 
 const commonData = {
@@ -34,7 +32,7 @@ export const balnearioMunicipalPt: Tour = {
     shortDescription: 'Banho de rio com muitos peixes e infraestrutura de lazer próxima à cidade.',
     includedItems: ['Entrada'],
     keywords: ['balneario', 'peixes', 'rio formoso', 'lazer'],
-    categories: [aquaticPt],
+    categories: [resortsPt],
     recommendedFor: [familiesPt]
 };
 
@@ -49,7 +47,7 @@ export const balnearioMunicipalEn: Tour = {
     shortDescription: 'River bath with many fish and leisure infrastructure close to the city.',
     includedItems: ['Entrance'],
     keywords: ['resort', 'fish', 'rio formoso', 'leisure'],
-    categories: [aquaticEn],
+    categories: [resortsEn],
     recommendedFor: [familiesEn]
 };
 
@@ -64,6 +62,6 @@ export const balnearioMunicipalEs: Tour = {
     shortDescription: 'Baño de río con muchos peces e infraestructura de ocio cerca de la ciudad.',
     includedItems: ['Entrada'],
     keywords: ['balneario', 'peces', 'río formoso', 'ocio'],
-    categories: [aquaticEs],
+    categories: [resortsEs],
     recommendedFor: [familiesEs]
 };

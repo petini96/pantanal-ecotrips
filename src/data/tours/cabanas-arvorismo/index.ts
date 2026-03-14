@@ -4,14 +4,12 @@ import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { familiesPt } from '../../audiences/families';
 import { groupsPt } from '../../audiences/groups';
-import { adventurePt } from '../../categories/adventuree';
 import { familiesEn } from '../../audiences/families';
 import { groupsEn } from '../../audiences/groups';
-import { adventureEn } from '../../categories/adventuree';
 import { familiesEs } from '../../audiences/families';
 import { groupsEs } from '../../audiences/groups';
-import { adventureEs } from '../../categories/adventuree';
 
+import { adventurePt, adventureEn, adventureEs } from "src/data/categories/adventure";
 const img = `${TOURS_BUCKET_NAME}/cabanas-arvorismo/img1.jpg`
 
 const commonData = {

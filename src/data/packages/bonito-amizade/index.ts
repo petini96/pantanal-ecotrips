@@ -4,10 +4,13 @@ import { TOURS_BUCKET_NAME } from "src/utils/environmentUtils";
 import { couplesPt } from "src/data/audiences/couples";
 import { familiesPt } from "src/data/audiences/families";
 import { groupsPt } from "src/data/audiences/groups";
-import { adventurePt } from "src/data/categories/adventuree";
-import { aquaticPt } from "src/data/categories/aquaticc";
-import { cavesPt } from "src/data/categories/cavess";
-import { ecotourismPt } from "src/data/categories/ecotourismm";
+import { adventurePt } from "src/data/categories/adventure";
+import { floatingPt } from "src/data/categories/floating";
+import { resortsPt } from "src/data/categories/resorts";
+import { contemplationPt } from "src/data/categories/contemplation";
+import { trailsWaterfallsPt } from "src/data/categories/trails-waterfalls";
+import { pantanalPt } from "src/data/categories/pantanal";
+import { scubaDivingPt } from "src/data/categories/scuba-diving";
 import { bonitoSerraBodoquenaPt } from "src/data/regions/bonito";
 import { bonitoAmizadePtItinerary } from './itinerary-data';
 import { bonitoAmizadeEnItinerary } from './itinerary-data';
@@ -23,7 +26,7 @@ const commonData = {
   durationInDays: 5,
   durationInNights: 4,
   minPeople: 2,
-  packageCategories: [ecotourismPt, aquaticPt, cavesPt, adventurePt],
+  packageCategories: [trailsWaterfallsPt, pantanalPt, floatingPt, resortsPt, contemplationPt, adventurePt, scubaDivingPt],
   packageRecommendedFor: [groupsPt, familiesPt, couplesPt],
   region: bonitoSerraBodoquenaPt
 };

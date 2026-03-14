@@ -2,10 +2,8 @@ import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { miranda } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
-import { adventurePt } from '../../categories/adventuree';
-import { adventureEn } from '../../categories/adventuree';
-import { adventureEs } from '../../categories/adventuree';
 
+import { adventurePt, adventureEn, adventureEs } from "src/data/categories/adventure";
 const img = `${TOURS_BUCKET_NAME}/acampamento-na-selva/img1.webp`
 
 const commonData = {

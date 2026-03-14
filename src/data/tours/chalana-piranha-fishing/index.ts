@@ -3,15 +3,10 @@ import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { miranda } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { familiesPt } from '../../audiences/families';
-import { aquaticPt } from '../../categories/aquaticc';
-import { ecotourismPt } from '../../categories/ecotourismm';
 import { familiesEn } from '../../audiences/families';
-import { aquaticEn } from '../../categories/aquaticc';
-import { ecotourismEn } from '../../categories/ecotourismm';
 import { familiesEs } from '../../audiences/families';
-import { aquaticEs } from '../../categories/aquaticc';
-import { ecotourismEs } from '../../categories/ecotourismm';
 
+import { pantanalPt, pantanalEn, pantanalEs } from "src/data/categories/pantanal";
 const img = `${TOURS_BUCKET_NAME}/pescaria-piranha/img1.webp`
 
 const commonData = {
@@ -35,7 +30,7 @@ export const chalanaPiranhaFishingPt: Tour = {
     shortDescription: 'Passeio de Chalana no Corixo São Domingos com pescaria artesanal de piranhas e observação de fauna.',
     includedItems: ['Barco Chalana', 'Equipamento de pesca', 'Guia'],
     keywords: ['chalana', 'pesca', 'piranha', 'rio miranda', 'corixo'],
-    categories: [aquaticPt, ecotourismPt],
+    categories: [pantanalPt],
     recommendedFor: [familiesPt]
 };
 
@@ -48,7 +43,7 @@ export const chalanaPiranhaFishingEn: Tour = {
     shortDescription: 'Chalana boat tour in Corixo São Domingos with artisanal piranha fishing and fauna observation.',
     includedItems: ['Chalana Boat', 'Fishing equipment', 'Guide'],
     keywords: ['chalana', 'fishing', 'piranha', 'miranda river', 'corixo'],
-    categories: [aquaticEn, ecotourismEn],
+    categories: [pantanalEn],
     recommendedFor: [familiesEn]
 };
 
@@ -61,6 +56,6 @@ export const chalanaPiranhaFishingEs: Tour = {
     shortDescription: 'Paseo en Chalana en el Corixo São Domingos con pesca artesanal de pirañas y observación de fauna.',
     includedItems: ['Barco Chalana', 'Equipo de pesca', 'Guía'],
     keywords: ['chalana', 'pesca', 'piraña', 'río miranda', 'corixo'],
-    categories: [aquaticEs, ecotourismEs],
+    categories: [pantanalEs],
     recommendedFor: [familiesEs]
 };

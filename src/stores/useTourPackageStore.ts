@@ -12,15 +12,17 @@ export const useTourPackageStore = defineStore('tourPackage', () => {
   const packages = ref<Record<string, TourPackage>>({});
   const loading = ref(false);
   const error = ref<string | null>(null);
+  const currentLang = ref<string | null>(null);
 
   function clearPackages() {
     packages.value = {};
   }
 
   async function fetchPackages(lang = 'pt') {
-    if (Object.keys(packages.value).length > 0) return;
+    if (Object.keys(packages.value).length > 0 && currentLang.value === lang) return;
     loading.value = true;
     error.value = null;
+    currentLang.value = lang;
 
     try {
       await new Promise((resolve) => setTimeout(resolve, 300)); // Simula delay

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="tours-section-container q-my-xl">
-      
+
       <div v-if="showFilter" class="text-center q-mb-lg">
         <h2 class="section-title">{{ t('most_wanted_packages_title') }}</h2>
         <p class="section-subtitle">
@@ -11,107 +11,47 @@
 
       <div v-if="showFilter" class="search-filter-container q-pa-md shadow-2">
         <div class="row items-center q-gutter-md">
-          <q-input
-            v-model="filters.searchText"
-            filled
-            rounded
-            :placeholder="t('search_placeholder')"
-            class="col custom-input"
-            dense
-            clearable
-            color="primary"
-            @clear="filters.searchText = ''"
-          >
+          <q-input v-model="filters.searchText" filled rounded :placeholder="t('search_placeholder')"
+            class="col custom-input" dense clearable color="primary" @clear="filters.searchText = ''">
             <template #prepend>
               <q-icon name="mdi-magnify" />
             </template>
           </q-input>
 
-          <q-btn
-            flat
-            round
-            dense
-            color="primary"
-            :icon="showAdvanced ? 'mdi-chevron-up' : 'mdi-tune-variant'"
-            @click="showAdvanced = !showAdvanced"
-            class="q-ml-sm filter-toggle-btn"
-            aria-label="Mostrar/Esconder filtros avançados"
-          >
+          <q-btn flat round dense color="primary" :icon="showAdvanced ? 'mdi-chevron-up' : 'mdi-tune-variant'"
+            @click="showAdvanced = !showAdvanced" class="q-ml-sm filter-toggle-btn"
+            aria-label="Mostrar/Esconder filtros avançados">
             <q-tooltip>{{ t(showAdvanced ? 'hide_filters' : 'advanced_filters') }}</q-tooltip>
           </q-btn>
         </div>
 
         <q-slide-transition>
           <div v-show="showAdvanced" class="advanced-filters q-mt-md">
-             <div v-if="filtersLoading" class="text-center q-pa-md">
-                 <q-spinner color="primary" size="2em" />
-                 <p class="text-caption q-mt-sm">{{ t('loading_filters') }}...</p>
-             </div>
+            <div v-if="filtersLoading" class="text-center q-pa-md">
+              <q-spinner color="primary" size="2em" />
+              <p class="text-caption q-mt-sm">{{ t('loading_filters') }}...</p>
+            </div>
             <div v-else class="row q-col-gutter-md">
               <div class="col-12 col-md-6">
-                <q-select
-                  v-model="filters.region"
-                  :options="regionOptions"
-                  :option-label="(region: Region) => region.name"
-                  :label="t('region')"
-                  filled
-                  dense
-                  clearable
-                  class="custom-input"
-                  color="primary"
-                  @update:model-value="filters.cities = []"
-                  options-dense
-                />
+                <q-select v-model="filters.region" :options="regionOptions"
+                  :option-label="(region: Region) => region.name" :label="t('region')" filled dense clearable
+                  class="custom-input" color="primary" @update:model-value="filters.cities = []" options-dense />
               </div>
               <div class="col-12 col-md-6">
-                <q-select
-                  v-model="filters.cities"
-                  :options="cityOptions"
-                  :option-label="(city: TranslatableTag) => city.name"
-                  :label="t('cities')"
-                  multiple
-                  use-chips
-                  filled
-                  dense
-                  class="custom-input"
-                  color="primary"
-                  :disable="!filters.region"
-                  :hint="!filters.region ? t('select_region_first') : ''"
-                  options-dense
-                  clearable
-                />
+                <q-select v-model="filters.cities" :options="cityOptions"
+                  :option-label="(city: TranslatableTag) => city.name" :label="t('cities')" multiple use-chips filled
+                  dense class="custom-input" color="primary" :disable="!filters.region"
+                  :hint="!filters.region ? t('select_region_first') : ''" options-dense clearable />
               </div>
               <div class="col-12 col-md-6">
-                <q-select
-                  v-model="filters.categories"
-                  :options="categoryOptions"
-                  :option-label="(cat: TranslatableTag) => cat.name"
-                  :label="t('categories')"
-                  multiple
-                  use-chips
-                  filled
-                  dense
-                  class="custom-input"
-                  color="primary"
-                  options-dense
-                  clearable
-                />
+                <q-select v-model="filters.categories" :options="categoryOptions"
+                  :option-label="(cat: TranslatableTag) => cat.name" :label="t('categories')" multiple use-chips filled
+                  dense class="custom-input" color="primary" options-dense clearable />
               </div>
               <div class="col-12 col-md-6">
-                <q-select
-                  v-model="filters.recommendedFor"
-                  :options="audienceOptions"
-                  :option-label="(aud: TranslatableTag) => aud.name"
-                  :label="t('recommended_for')"
-                  multiple
-                  use-chips
-                  filled
-                  dense
-                  class="custom-input"
-                  color="primary"
-                  options-dense
-                  clearable
-                />
+                <q-select v-model="filters.recommendedFor" :options="audienceOptions"
+                  :option-label="(aud: TranslatableTag) => aud.name" :label="t('recommended_for')" multiple use-chips
+                  filled dense class="custom-input" color="primary" options-dense clearable />
               </div>
             </div>
             <div class="text-right q-mt-md">
@@ -123,67 +63,35 @@
 
       <!-- Botões de navegação reposicionados (Abaixo dos filtros) -->
       <div v-if="showFilter" class="row justify-end q-mb-md q-pr-md">
-         <q-btn
-          round
-          color="primary"
-          text-color="white"
-          icon="mdi-chevron-left"
-          class="slider-nav-btn shadow-2 q-mr-sm"
-          :disable="!showLeftArrow"
-          :class="{ 'disabled-btn': !showLeftArrow }"
-          @click="scrollLeft"
-          aria-label="Anterior"
-        />
-        <q-btn
-          round
-          color="primary"
-          text-color="white"
-          icon="mdi-chevron-right"
-          class="slider-nav-btn shadow-2"
-          :disable="!showRightArrow"
-           :class="{ 'disabled-btn': !showRightArrow }"
-          @click="scrollRight"
-          aria-label="Próximo"
-        />
+        <q-btn round color="primary" text-color="white" icon="mdi-chevron-left" class="slider-nav-btn shadow-2 q-mr-sm"
+          :disable="!showLeftArrow" :class="{ 'disabled-btn': !showLeftArrow }" @click="scrollLeft"
+          aria-label="Anterior" />
+        <q-btn round color="primary" text-color="white" icon="mdi-chevron-right" class="slider-nav-btn shadow-2"
+          :disable="!showRightArrow" :class="{ 'disabled-btn': !showRightArrow }" @click="scrollRight"
+          aria-label="Próximo" />
       </div>
 
       <div v-if="loading && availablePackages.length === 0" class="text-center q-py-xl">
         <q-spinner-dots color="primary" size="3rem" />
-         <p class="q-mt-md text-grey-7">{{ t('loading_packages') }}...</p>
+        <p class="q-mt-md text-grey-7">{{ t('loading_packages') }}...</p>
       </div>
 
-       <HorizontalGradientMask
-          ref="scrollRef"
-          v-else-if="filteredPackages.length"
-          @item-click="viewPackage"
-          @scroll="handleScroll"
-        >
-        <div
-          v-for="pkg in filteredPackages"
-          :key="pkg.id"
-          :data-slug="pkg.slug"
-          class="col-12"
+      <HorizontalGradientMask ref="scrollRef" v-else-if="filteredPackages.length" @item-click="viewPackage"
+        @scroll="handleScroll">
+        <div v-for="pkg in filteredPackages" :key="pkg.id" :data-slug="pkg.slug" class="col-12"
           :class="$q.screen.gt.xs ? 'q-pr-lg' : 'q-pr-md'"
-          :style="$q.screen.gt.xs ? { width: '360px', flexShrink: 0 } : { width: '85vw', flexShrink: 0 }"
-        >
+          :style="$q.screen.gt.xs ? { width: '360px', flexShrink: 0 } : { width: '85vw', flexShrink: 0 }">
           <q-card class="package-card" flat bordered @click="() => viewPackage(pkg.slug)">
-             <q-img
-               :src="pkg.image"
-               :alt="pkg.title"
-               height="200px"
-               fit="cover"
-               class="card-image"
-               loading="lazy"
-             >
-                <template v-slot:loading>
-                   <q-spinner-puff color="primary" />
-                </template>
-               <div class="absolute-bottom-left bg-transparent q-pa-md image-overlay">
-                  <div class="package-type-badge shadow-3">
-                    {{ t('package_tour') }}
-                  </div>
-               </div>
-             </q-img>
+            <q-img :src="pkg.image" :alt="pkg.title" height="200px" fit="cover" class="card-image" loading="lazy">
+              <template v-slot:loading>
+                <q-spinner-puff color="primary" />
+              </template>
+              <div class="absolute-bottom-left bg-transparent q-pa-md image-overlay">
+                <div class="package-type-badge shadow-3">
+                  {{ t('package_tour') }}
+                </div>
+              </div>
+            </q-img>
 
             <q-card-section class="card-content-section">
               <div class="core-info-pill">
@@ -202,42 +110,31 @@
                   </div>
                 </template>
               </div>
-              
+
               <h3 class="card-title">{{ pkg.title }}</h3>
-              
+
               <div v-if="pkg.region" class="region-subheader">
                 <q-icon :name="pkg.region.icon || 'mdi-earth'" />
                 <span>{{ pkg.region.name }}</span>
               </div>
-              
+
               <p class="card-description">{{ pkg.subtitle }}</p>
-              
+
               <div class="icon-section-wrapper" v-if="pkg.packageCategories?.length">
-                  <div class="icon-list">
-                    <q-chip
-                        v-for="category in pkg.packageCategories.slice(0, 3)"
-                        :key="category.id"
-                        class="theme-chip"
-                        color="grey-2"
-                        text-color="primary"
-                      >
-                      {{ category.name }}
-                    </q-chip>
-                    <span v-if="pkg.packageCategories.length > 3" class="text-caption q-ml-xs text-grey">+{{pkg.packageCategories.length - 3}}</span>
-                  </div>
+                <div class="icon-list">
+                  <q-chip v-for="category in pkg.packageCategories.slice(0, 3)" :key="category.id" class="theme-chip"
+                    color="grey-2" text-color="primary">
+                    {{ category.name }}
+                  </q-chip>
+                  <span v-if="pkg.packageCategories.length > 3" class="text-caption q-ml-xs text-grey">+{{
+                    pkg.packageCategories.length - 3 }}</span>
+                </div>
               </div>
             </q-card-section>
 
             <q-card-actions class="card-actions q-mt-auto">
-              <q-btn
-                :label="t('tours_cta_button')"
-                class="full-width cta-button"
-                unelevated
-                icon-right="mdi-arrow-right"
-                tabindex="-1"
-                aria-hidden="true"
-                no-caps
-              />
+              <q-btn :label="t('tours_cta_button')" class="full-width cta-button" unelevated
+                icon-right="mdi-arrow-right" tabindex="-1" aria-hidden="true" no-caps />
             </q-card-actions>
           </q-card>
         </div>
@@ -314,7 +211,7 @@ async function loadFilterData() {
   try {
     // Se a lista base estiver vazia e não tivermos props, busca na store
     if (availablePackages.value.length === 0 && !props.packages) {
-       await packageStore.fetchPackages(route.params.lang as string || 'pt');
+      await packageStore.fetchPackages(route.params.lang as string || 'pt');
     }
     const [regionsMod, audiencesMod, categoriesMod] = await Promise.all([
       import('src/data/regions/all'),
@@ -329,7 +226,7 @@ async function loadFilterData() {
   } catch (error) {
     console.warn("Erro ao carregar filtros", error);
   } finally {
-      filtersLoading.value = false;
+    filtersLoading.value = false;
   }
 }
 
@@ -348,7 +245,7 @@ const clearFilters = () => {
 // Filtra sobre a lista unificada 'availablePackages'
 const filteredPackages = computed(() => {
   if (!availablePackages.value?.length) return [];
-  
+
   // Se não houver filtro ativo (ou se showFilter for false e filters estiver vazio), retorna tudo
   return availablePackages.value.filter(pkg => {
     if (!pkg?.id) return false;
@@ -360,15 +257,15 @@ const filteredPackages = computed(() => {
       const query = normalize(searchText);
       matchesSearchText = normalize(pkg.title || '').includes(query) || normalize(pkg.subtitle || '').includes(query);
     }
-    
+
     const matchesRegion = region ? pkg.region?.id === region.id : true;
-    
+
     let matchesCities = true;
     if (cities.length > 0) {
       if (!pkg.itinerary) matchesCities = false;
       else matchesCities = cities.some(fCity => pkg.itinerary?.some(day => day.tours?.some(tour => tour.city?.id === fCity.id)));
     }
-    
+
     const matchesCategory = categories.length > 0 ? (pkg.packageCategories ? categories.some(fCat => pkg.packageCategories?.some(pCat => pCat.id === fCat.id)) : false) : true;
 
     const matchesRecommendedFor = recommendedFor.length > 0 ? (pkg.packageRecommendedFor ? recommendedFor.some(fAud => pkg.packageRecommendedFor?.some(pAud => pAud.id === fAud.id)) : false) : true;
@@ -406,7 +303,11 @@ watch(filteredPackages, () => {
   setTimeout(() => handleScroll(), 100);
 });
 
-watch(() => locale.value, () => {});
+watch(() => locale.value, (newLocale) => {
+  void packageStore.fetchPackages(newLocale);
+  void loadFilterData();
+
+});
 </script>
 
 <style scoped lang="scss">
@@ -432,17 +333,17 @@ watch(() => locale.value, () => {});
   max-width: 900px;
   margin: 0 auto 48px auto;
   transition: all 0.3s ease-in-out;
-  
-  backdrop-filter: blur(10px); 
+
+  backdrop-filter: blur(10px);
 }
 
 :deep(.custom-input .q-field__control),
 :deep(.custom-input .q-field__marginal) {
-    color: var(--text-primary-color);
+  color: var(--text-primary-color);
 }
 
 :deep(.custom-input .q-field__label) {
-    color: var(--text-secondary-color);
+  color: var(--text-secondary-color);
 }
 
 .tours-section-container {
@@ -450,9 +351,10 @@ watch(() => locale.value, () => {});
   max-width: 100%;
   overflow: hidden;
 }
+
 .package-card {
   background-color: var(--card-bg-color, #ffffff);
-  border: 1px solid var(--border-color, rgba(255,255,255,0.05));
+  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.05));
   border-radius: 20px;
   box-shadow: none;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -462,15 +364,16 @@ watch(() => locale.value, () => {});
   user-select: none;
   cursor: pointer;
   overflow: hidden;
+
   &:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(2, 123, 227, 0.15); 
+    box-shadow: 0 12px 30px rgba(2, 123, 227, 0.15);
   }
 }
 
 :global(body.body--dark) .package-card:hover {
-    box-shadow: 0 0 20px rgba(0, 229, 255, 0.15); 
-    border-color: var(--secondary-color);
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.15);
+  border-color: var(--secondary-color);
 }
 
 .card-image {
@@ -480,7 +383,7 @@ watch(() => locale.value, () => {});
 }
 
 .image-overlay {
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
   width: 100%;
 }
 
@@ -500,7 +403,7 @@ watch(() => locale.value, () => {});
   border-radius: 50px;
   margin-bottom: 14px;
   align-self: flex-start;
-  
+
   color: var(--text-secondary-color);
   font-size: 0.8rem;
   font-weight: 600;
@@ -509,7 +412,7 @@ watch(() => locale.value, () => {});
     display: flex;
     align-items: center;
     gap: 6px;
-    
+
     .q-icon {
       color: var(--primary-color);
       font-size: 1.1rem;
@@ -524,7 +427,7 @@ watch(() => locale.value, () => {});
   line-height: 1.3;
   margin: 0 0 8px 0;
   color: var(--text-primary-color);
-  
+
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -554,7 +457,7 @@ watch(() => locale.value, () => {});
   line-height: 1.5;
   color: var(--text-secondary-color);
   margin-bottom: 18px;
-  
+
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -576,19 +479,20 @@ watch(() => locale.value, () => {});
   font-size: 0.85rem;
   letter-spacing: 0.5px;
   display: inline-block;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .theme-chip {
-    background: #f0f7f5 !important; /* Soft minty/grey background */
-    color: var(--text-primary-color) !important;
+  background: #f0f7f5 !important;
+  /* Soft minty/grey background */
+  color: var(--text-primary-color) !important;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0 12px;
+
+  :deep(.q-chip__content) {
     font-weight: 600;
-    font-size: 0.85rem;
-    padding: 0 12px;
-    
-    :deep(.q-chip__content) {
-        font-weight: 600;
-    }
+  }
 }
 
 .card-actions {
@@ -596,9 +500,9 @@ watch(() => locale.value, () => {});
   padding-top: 0;
 
   .cta-button {
-    background: var(--primary-color) !important; 
+    background: var(--primary-color) !important;
     color: #ffffff !important;
-    
+
     border-radius: 50px;
     font-weight: 700;
     padding: 10px 0;
@@ -608,24 +512,26 @@ watch(() => locale.value, () => {});
     &:hover {
       filter: brightness(1.1);
       transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
   }
 }
 
 :global(body.body--dark) .cta-button {
-    background-color: var(--accent-color) !important;
-    color: #000000 !important;
-    box-shadow: 0 0 10px rgba(255, 214, 0, 0.4);
+  background-color: var(--accent-color) !important;
+  color: #000000 !important;
+  box-shadow: 0 0 10px rgba(255, 214, 0, 0.4);
 }
 
 @media (max-width: 599px) {
-    .section-title { font-size: 1.8rem; }
+  .section-title {
+    font-size: 1.8rem;
+  }
 }
 
 .slider-nav-btn {
   transition: all 0.3s ease;
-  
+
   &.disabled-btn {
     opacity: 0.3;
     cursor: not-allowed;
@@ -633,7 +539,7 @@ watch(() => locale.value, () => {});
 
   &:not(.disabled-btn):hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 }
 </style>

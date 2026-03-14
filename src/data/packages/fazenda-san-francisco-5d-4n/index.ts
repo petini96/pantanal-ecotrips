@@ -3,9 +3,11 @@ import { type TourPackage } from "src/model/TourPackage";
 import { couplesPt } from "src/data/audiences/couples";
 import { familiesPt } from "src/data/audiences/families";
 import { groupsPt } from "src/data/audiences/groups";
-import { adventurePt } from "src/data/categories/adventuree";
-import { aquaticPt } from "src/data/categories/aquaticc";
-import { ecotourismPt } from "src/data/categories/ecotourismm";
+import { adventurePt } from "src/data/categories/adventure";
+import { floatingPt } from "src/data/categories/floating";
+import { resortsPt } from "src/data/categories/resorts";
+import { trailsWaterfallsPt } from "src/data/categories/trails-waterfalls";
+import { pantanalPt } from "src/data/categories/pantanal";
 import { pantanalSulPt } from "src/data/regions/pantanal-sul";
 import { fazendaAguiaPtItinerary } from './itinerary-data';
 import { descriptionSanFranciscoPt } from '../common-data/san-francisco/pt/description';
@@ -100,7 +102,7 @@ const commonData = {
   durationInDays: 5,
   durationInNights: 4,
   minPeople: 1,
-  packageCategories: [ecotourismPt, adventurePt, aquaticPt],
+  packageCategories: [trailsWaterfallsPt, pantanalPt, adventurePt, floatingPt, resortsPt],
   packageRecommendedFor: [couplesPt, familiesPt, groupsPt],
   region: pantanalSulPt,
   galleryImages: sanFranciscoImages,

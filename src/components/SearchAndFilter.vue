@@ -101,10 +101,16 @@ import { couplesPt } from 'src/data/audiences/couples';
 import { familiesPt } from 'src/data/audiences/families';
 import { groupsPt } from 'src/data/audiences/groups';
 import { seniorsPt } from 'src/data/audiences/seniors';
-import { adventurePt } from 'src/data/categories/adventuree';
-import { aquaticPt } from 'src/data/categories/aquaticc';
-import { cavesPt } from 'src/data/categories/cavess';
-import { ecotourismPt } from 'src/data/categories/ecotourismm';
+import { adventurePt } from 'src/data/categories/adventure';
+import { floatingPt } from "src/data/categories/floating";
+import { resortsPt } from "src/data/categories/resorts";
+import { scubaDivingPt } from "src/data/categories/scuba-diving";
+
+import { contemplationPt } from "src/data/categories/contemplation";
+
+import { trailsWaterfallsPt } from "src/data/categories/trails-waterfalls";
+import { pantanalPt } from "src/data/categories/pantanal";
+
 import { bonitoSerraBodoquenaPt } from 'src/data/regions/bonito';
 import { pantanalSulPt } from 'src/data/regions/pantanal-sul';
 
@@ -129,7 +135,8 @@ const cityOptions = computed(() => {
   return regionOptions.value.flatMap(r => r.cities);
 });
 
-const categoryOptions = ref([adventurePt, aquaticPt, cavesPt, ecotourismPt]);
+const categoryOptions = ref([adventurePt, floatingPt, resortsPt, contemplationPt, trailsWaterfallsPt, pantanalPt, scubaDivingPt]);
+
 const audienceOptions = ref([couplesPt, familiesPt, groupsPt, seniorsPt]);
 
 const emitFilters = () => {

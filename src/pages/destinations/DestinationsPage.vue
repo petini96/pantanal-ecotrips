@@ -8,64 +8,36 @@
     <div class="container">
       <div class="row q-my-xl">
         <div class="col-12 col-md-9">
-          <h4>{{t("overview")}}</h4>
-          
+          <h4>{{ t("overview") }}</h4>
+
           <div v-if="visibleDescription.length > 0">
-            <p 
-              v-for="(p, index) in visibleDescription" 
-              :key="index"
-              class="text-body1"
-            >
+            <p v-for="(p, index) in visibleDescription" :key="index" class="text-body1">
               {{ p }}
             </p>
           </div>
 
           <div v-if="showReadMoreBtn" class="q-mt-md">
-            <q-btn
-              flat
-              dense
-              no-caps
-              color="primary"
-              :label="isExpanded ? 'Ler menos' : 'Continuar lendo'"
-              :icon-right="isExpanded ? 'mdi-chevron-up' : 'mdi-chevron-down'"
-              @click="isExpanded = !isExpanded"
-            />
+            <q-btn flat dense no-caps color="primary" :label="isExpanded ? 'Ler menos' : 'Continuar lendo'"
+              :icon-right="isExpanded ? 'mdi-chevron-up' : 'mdi-chevron-down'" @click="isExpanded = !isExpanded" />
           </div>
         </div>
 
         <div class="col-12 col-md-3">
           <h4>{{ t("location") }}</h4>
-          
+
           <p class="text-caption q-mb-sm text-grey-8">
             <q-icon name="mdi-map-marker" size="xs" />
             {{ currentRegion?.location.address }}
           </p>
 
-          <div 
-            v-if="currentRegion?.location" 
-            class="map-box shadow-2 rounded-borders overflow-hidden"
-          >
-            <iframe
-              width="100%"
-              height="300"
-              frameborder="0"
-              style="border:0"
-              :src="mapUrl"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
+          <div v-if="currentRegion?.location" class="map-box shadow-2 rounded-borders overflow-hidden">
+            <iframe width="100%" height="300" frameborder="0" style="border:0" :src="mapUrl" allowfullscreen
+              loading="lazy"></iframe>
           </div>
-          
-          <q-btn 
-            flat 
-            dense 
-            size="sm" 
-            color="primary" 
-            label="Ver no mapa ampliado" 
-            class="q-mt-xs full-width"
+
+          <q-btn flat dense size="sm" color="primary" label="Ver no mapa ampliado" class="q-mt-xs full-width"
             target="_blank"
-            :href="`https://www.google.com/maps/search/?api=1&query=${currentRegion?.location.lat},${currentRegion?.location.lng}`"
-          />
+            :href="`https://www.google.com/maps/search/?api=1&query=${currentRegion?.location.lat},${currentRegion?.location.lng}`" />
         </div>
       </div>
 
@@ -76,35 +48,31 @@
       <div class="container">
         <div class="row q-col-gutter-xl">
           <div class="col-12 col-md-4">
-             <h3 class="text-h4 text-weight-bold q-mb-md text-primary">{{ t('how_to_get_there') }}</h3>
-             <div class="text-body1 text-grey-8">
-                <p v-for="(desc, idx) in currentRegion.howToGetThere.description" :key="idx">
-                  {{ desc }}
-                </p>
-             </div>
+            <h3 class="text-h4 text-weight-bold q-mb-md text-primary">{{ t('how_to_get_there') }}</h3>
+            <div class="text-body1 text-grey-8">
+              <p v-for="(desc, idx) in currentRegion.howToGetThere.description" :key="idx">
+                {{ desc }}
+              </p>
+            </div>
           </div>
 
           <div class="col-12 col-md-8">
-             <div class="row q-col-gutter-md">
-                <div 
-                  v-for="(option, index) in currentRegion.howToGetThere.transportOptions" 
-                  :key="index" 
-                  class="col-12"
-                >
-                  <q-card flat bordered class="transport-card">
-                    <q-card-section class="row items-center q-py-sm">
-                      <q-avatar color="primary" text-color="white" size="48px" font-size="24px" class="q-mr-md shadow-1">
-                        <q-icon :name="option.icon" />
-                      </q-avatar>
-                      
-                      <div>
-                        <div class="text-h6 text-weight-bold">{{ option.title }}</div>
-                        <div class="text-body2 text-grey-7">{{ option.description }}</div>
-                      </div>
-                    </q-card-section>
-                  </q-card>
-                </div>
-             </div>
+            <div class="row q-col-gutter-md">
+              <div v-for="(option, index) in currentRegion.howToGetThere.transportOptions" :key="index" class="col-12">
+                <q-card flat bordered class="transport-card">
+                  <q-card-section class="row items-center q-py-sm">
+                    <q-avatar color="primary" text-color="white" size="48px" font-size="24px" class="q-mr-md shadow-1">
+                      <q-icon :name="option.icon" />
+                    </q-avatar>
+
+                    <div>
+                      <div class="text-h6 text-weight-bold">{{ option.title }}</div>
+                      <div class="text-body2 text-grey-7">{{ option.description }}</div>
+                    </div>
+                  </q-card-section>
+                </q-card>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -116,8 +84,8 @@
         <div class="col-10">
 
           <div class="header-section text-center q-mb-none q-mt-xl">
-              <h2 class="text-h4 text-weight-bold text-primary">{{ t('packages_title') || 'Pacotes' }}</h2>
-              <p class="text-subtitle1 text-grey-8">{{ t('packages_subtitle') }}</p>
+            <h2 class="text-h4 text-weight-bold text-primary">{{ t('packages_title') || 'Pacotes' }}</h2>
+            <p class="text-subtitle1 text-grey-8">{{ t('packages_subtitle') }}</p>
           </div>
 
           <TourPackageSection v-if="loadTourPackage" :packages="regionPackages" :show-filter="false" />
@@ -130,11 +98,11 @@
     </section>
 
     <section id="attractions-section" class="section-wrapper bg-grey-1" v-if="regionTours.length > 0">
-        <div class="row align-center justify-center q-py-xl">
-            <div class="col-10">
-                <AttractionSection :tours="regionTours" :loading="!loadTourPackage" />
-            </div>
+      <div class="row align-center justify-center q-py-xl">
+        <div class="col-10">
+          <AttractionSection :tours="regionTours" :loading="!loadTourPackage" />
         </div>
+      </div>
     </section>
 
   </q-page>
@@ -180,8 +148,13 @@ const regionPackages = computed(() => {
 });
 
 const regionTours = computed(() => {
-  // Assuming region ID matches filter logic (using city ID as region/city are tightly coupled in this logic or need mapping)
-  // DestinationsSlug 'bonito' -> City 'bonito' ID
+  const region = currentRegion.value;
+  if (region && region.cities && region.cities.length > 0) {
+    const cityIds = region.cities.map(c => c.id);
+    return tourStore.allTours.filter(t => cityIds.includes(t.city.id));
+  }
+
+  // Fallback to original logic if no region/cities found
   const citySlug = destinationsSlug.value;
   return tourStore.allTours.filter(t => t.city.id === citySlug || t.city.id.toLowerCase().includes(citySlug));
 });
@@ -212,7 +185,7 @@ const loadData = async (langKey: string) => {
     await Promise.all([
       regionStore.fetchRegion(lang),
       tourPackageStore.fetchPackages(lang),
-      tourStore.fetchTours(lang) 
+      tourStore.fetchTours(lang)
     ]);
   } catch (error) {
     console.error('Erro ao carregar dados:', error);
@@ -246,10 +219,10 @@ defineOptions({
 
 const isExpanded = ref(false);
 
-const visibleDescription = computed(()=>{
+const visibleDescription = computed(() => {
   const desc = currentRegion.value?.description;
-  if(!Array.isArray(desc)) return []
-  return isExpanded.value ? desc : desc.slice(0,3);
+  if (!Array.isArray(desc)) return []
+  return isExpanded.value ? desc : desc.slice(0, 3);
 })
 
 const showReadMoreBtn = computed(() => {
@@ -298,10 +271,10 @@ useMeta(() => {
   height: 100%;
   border-radius: 16px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   }
 }
 </style>

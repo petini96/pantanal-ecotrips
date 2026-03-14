@@ -4,17 +4,12 @@ import { bonito } from '../../regions/Cities';
 import { GENERAL_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { familiesPt } from '../../audiences/families';
 import { groupsPt } from '../../audiences/groups';
-import { adventurePt } from '../../categories/adventuree';
-import { aquaticPt } from '../../categories/aquaticc';
 import { familiesEn } from '../../audiences/families';
 import { groupsEn } from '../../audiences/groups';
-import { adventureEn } from '../../categories/adventuree';
-import { aquaticEn } from '../../categories/aquaticc';
 import { familiesEs } from '../../audiences/families';
 import { groupsEs } from '../../audiences/groups';
-import { adventureEs } from '../../categories/adventuree';
-import { aquaticEs } from '../../categories/aquaticc';
 
+import { adventurePt, adventureEn, adventureEs } from "src/data/categories/adventure";
 const img = `${GENERAL_BUCKET_NAME}/gallery/jungle-lodge/img49.jpg`
 
 const commonData = {
@@ -39,7 +34,7 @@ export const boteRioFormosoPt: Tour = {
     groupLimit: 12,
     includedItems: ['Colete salva-vidas', 'Acompanhamento de guia'],
     keywords: ['bote', 'rio formoso', 'corredeira', 'cachoeira'],
-    categories: [aquaticPt, adventurePt],
+    categories: [adventurePt],
     recommendedFor: [familiesPt, groupsPt]
 };
 
@@ -53,7 +48,7 @@ export const boteRioFormosoEn: Tour = {
     groupLimit: 12,
     includedItems: ['Life jacket', 'Guide accompaniment'],
     keywords: ['dinghy', 'rio formoso', 'rapids', 'waterfall'],
-    categories: [aquaticEn, adventureEn],
+    categories: [adventureEn],
     recommendedFor: [familiesEn, groupsEn]
 };
 
@@ -67,6 +62,6 @@ export const boteRioFormosoEs: Tour = {
     groupLimit: 12,
     includedItems: ['Chaleco salvavidas', 'Acompañamiento de guía'],
     keywords: ['bote', 'río formoso', 'rápidos', 'cascada'],
-    categories: [aquaticEs, adventureEs],
+    categories: [adventureEs],
     recommendedFor: [familiesEs, groupsEs]
 };

@@ -2,8 +2,9 @@ import { uid } from "quasar";
 import { type TourPackage } from "src/model/TourPackage";
 import { couplesPt } from "src/data/audiences/couples";
 import { groupsPt } from "src/data/audiences/groups";
-import { adventurePt } from "src/data/categories/adventuree";
-import { ecotourismPt } from "src/data/categories/ecotourismm";
+import { adventurePt } from "src/data/categories/adventure";
+import { trailsWaterfallsPt } from "src/data/categories/trails-waterfalls";
+import { pantanalPt } from "src/data/categories/pantanal";
 import { pantanalSulPt } from "src/data/regions/pantanal-sul";
 import { fazendaAntaPtItinerary } from './itinerary-data';
 import { descriptionSanFranciscoPt } from '../common-data/san-francisco/pt/description';
@@ -98,7 +99,7 @@ const commonData = {
   durationInDays: 4,
   durationInNights: 3,
   minPeople: 1,
-  packageCategories: [ecotourismPt, adventurePt],
+  packageCategories: [trailsWaterfallsPt, pantanalPt, adventurePt],
   packageRecommendedFor: [couplesPt, groupsPt],
   region: pantanalSulPt,
   galleryImages: sanFranciscoImages,

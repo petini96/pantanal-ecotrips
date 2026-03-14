@@ -3,15 +3,11 @@ import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { miranda } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { familiesPt } from '../../audiences/families';
-import { ecotourismPt } from '../../categories/ecotourismm';
-import { adventurePt } from '../../categories/adventuree';
 import { familiesEn } from '../../audiences/families';
-import { ecotourismEn } from '../../categories/ecotourismm';
-import { adventureEn } from '../../categories/adventuree';
 import { familiesEs } from '../../audiences/families';
-import { ecotourismEs } from '../../categories/ecotourismm';
-import { adventureEs } from '../../categories/adventuree';
 
+import { pantanalPt, pantanalEn, pantanalEs } from "src/data/categories/pantanal";
+import { adventurePt, adventureEn, adventureEs } from "src/data/categories/adventure";
 const img = `${TOURS_BUCKET_NAME}/fazenda-san-francisco/img1.webp`
 
 const commonData = {
@@ -36,7 +32,7 @@ export const fazendaSanFranciscoPt: Tour = {
     shortDescription: 'Um dia no Pantanal com Safari Fotográfico, Chalana e almoço típico.',
     includedItems: ['Safari', 'Chalana', 'Almoço', 'Guia'],
     keywords: ['pantanal', 'safari', 'chalana', 'bichos'],
-    categories: [ecotourismPt, adventurePt],
+    categories: [pantanalPt, adventurePt],
     recommendedFor: [familiesPt]
 };
 
@@ -49,7 +45,7 @@ export const fazendaSanFranciscoEn: Tour = {
     shortDescription: 'A day in the Pantanal with Photographic Safari, Chalana and typical lunch.',
     includedItems: ['Safari', 'Chalana', 'Lunch', 'Guide'],
     keywords: ['pantanal', 'safari', 'chalana', 'animals'],
-    categories: [ecotourismEn, adventureEn],
+    categories: [pantanalEn, adventureEn],
     recommendedFor: [familiesEn]
 };
 
@@ -62,6 +58,6 @@ export const fazendaSanFranciscoEs: Tour = {
     shortDescription: 'Un día en el Pantanal con Safari Fotográfico, Chalana y almuerzo típico.',
     includedItems: ['Safari', 'Chalana', 'Almuerzo', 'Guía'],
     keywords: ['pantanal', 'safari', 'chalana', 'bichos'],
-    categories: [ecotourismEs, adventureEs],
+    categories: [pantanalEs, adventureEs],
     recommendedFor: [familiesEs]
 };

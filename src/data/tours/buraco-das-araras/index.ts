@@ -5,16 +5,14 @@ import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { couplesPt } from '../../audiences/couples';
 import { familiesPt } from '../../audiences/families';
 import { seniorsPt } from '../../audiences/seniors';
-import { ecotourismPt } from '../../categories/ecotourismm';
 import { couplesEn } from '../../audiences/couples';
 import { familiesEn } from '../../audiences/families';
 import { seniorsEn } from '../../audiences/seniors';
-import { ecotourismEn } from '../../categories/ecotourismm';
 import { couplesEs } from '../../audiences/couples';
 import { familiesEs } from '../../audiences/families';
 import { seniorsEs } from '../../audiences/seniors';
-import { ecotourismEs } from '../../categories/ecotourismm';
 
+import { contemplationPt, contemplationEn, contemplationEs } from "src/data/categories/contemplation";
 const img = `${TOURS_BUCKET_NAME}/buraco-das-araras/img3.webp`
 
 const commonData = {
@@ -40,7 +38,7 @@ export const buracoDasArarasPt: Tour = {
     shortDescription: 'Contemplação de dolina com lagoa verde e observação de araras vermelhas e outras aves em seu habitat natural.',
     includedItems: ['Acompanhamento de guia'],
     keywords: ['araras', 'dolina', 'contemplação', 'pássaros', 'observação'],
-    categories: [ecotourismPt],
+    categories: [contemplationPt],
     recommendedFor: [familiesPt, couplesPt, seniorsPt]
 };
 
@@ -54,7 +52,7 @@ export const buracoDasArarasEn: Tour = {
     shortDescription: 'Contemplation of doline with green lagoon and observation of red macaws and other birds in their natural habitat.',
     includedItems: ['Guide accompaniment'],
     keywords: ['macaws', 'doline', 'contemplation', 'birds', 'observation'],
-    categories: [ecotourismEn],
+    categories: [contemplationEn],
     recommendedFor: [familiesEn, couplesEn, seniorsEn]
 };
 
@@ -69,6 +67,6 @@ export const buracoDasArarasEs: Tour = {
     shortDescription: 'Contemplación de dolina con laguna verde y observación de guacamayos rojos y otras aves en su hábitat natural.',
     includedItems: ['Acompañamiento de guía'],
     keywords: ['guacamayos', 'dolina', 'contemplación', 'pájaros', 'observación'],
-    categories: [ecotourismEs],
+    categories: [contemplationEs],
     recommendedFor: [familiesEs, couplesEs, seniorsEs]
 };

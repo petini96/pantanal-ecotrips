@@ -4,17 +4,12 @@ import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { couplesPt } from '../../audiences/couples';
 import { familiesPt } from '../../audiences/families';
-import { aquaticPt } from '../../categories/aquaticc';
-import { ecotourismPt } from '../../categories/ecotourismm';
 import { couplesEn } from '../../audiences/couples';
 import { familiesEn } from '../../audiences/families';
-import { aquaticEn } from '../../categories/aquaticc';
-import { ecotourismEn } from '../../categories/ecotourismm';
 import { couplesEs } from '../../audiences/couples';
 import { familiesEs } from '../../audiences/families';
-import { aquaticEs } from '../../categories/aquaticc';
-import { ecotourismEs } from '../../categories/ecotourismm';
 
+import { floatingPt, floatingEn, floatingEs } from "src/data/categories/floating";
 const img = `${TOURS_BUCKET_NAME}/rio-sucuri/img1.jpg`
 
 const commonData = {
@@ -41,7 +36,7 @@ export const rioSucuriPt: Tour = {
     groupLimit: 6,
     includedItems: ['Acompanhamento de guia', 'Equipamentos de flutuação', 'Barco de apoio'],
     keywords: ['flutuação', 'cristalina', 'peixes', 'rio sucuri'],
-    categories: [aquaticPt, ecotourismPt],
+    categories: [floatingPt],
     recommendedFor: [familiesPt, couplesPt]
 };
 
@@ -57,7 +52,7 @@ export const rioSucuriEn: Tour = {
     groupLimit: 6,
     includedItems: ['Guide accompaniment', 'Snorkeling equipment', 'Support boat'],
     keywords: ['snorkeling', 'crystal clear', 'fish', 'rio sucuri'],
-    categories: [aquaticEn, ecotourismEn],
+    categories: [floatingEn],
     recommendedFor: [familiesEn, couplesEn]
 };
 
@@ -73,6 +68,6 @@ export const rioSucuriEs: Tour = {
     groupLimit: 6,
     includedItems: ['Acompañamiento de guía', 'Equipos de flotación', 'Barco de apoyo'],
     keywords: ['flotación', 'cristalina', 'peces', 'río sucuri'],
-    categories: [aquaticEs, ecotourismEs],
+    categories: [floatingEs],
     recommendedFor: [familiesEs, couplesEs]
 };

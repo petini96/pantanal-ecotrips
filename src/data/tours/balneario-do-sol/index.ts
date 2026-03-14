@@ -3,12 +3,10 @@ import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { familiesPt } from '../../audiences/families';
-import { aquaticPt } from '../../categories/aquaticc';
 import { familiesEn } from '../../audiences/families';
-import { aquaticEn } from '../../categories/aquaticc';
 import { familiesEs } from '../../audiences/families';
-import { aquaticEs } from '../../categories/aquaticc';
 
+import { resortsPt, resortsEn, resortsEs } from "src/data/categories/resorts";
 const img = `${TOURS_BUCKET_NAME}/balneario-do-sol/img1.avif`
 
 const commonData = {
@@ -34,7 +32,7 @@ export const balnearioDoSolPt: Tour = {
     shortDescription: 'Lazer completo com cachoeiras, churrasqueiras e atividades para família.',
     includedItems: ['Entrada e uso da infraestrutura'],
     keywords: ['balneario', 'familia', 'churrasqueira', 'rio formoso'],
-    categories: [aquaticPt],
+    categories: [resortsPt],
     recommendedFor: [familiesPt]
 };
 
@@ -49,7 +47,7 @@ export const balnearioDoSolEn: Tour = {
     shortDescription: 'Complete leisure with waterfalls, barbecue grills and activities for the family.',
     includedItems: ['Entrance and use of infrastructure'],
     keywords: ['resort', 'family', 'barbecue', 'formoso river'],
-    categories: [aquaticEn],
+    categories: [resortsEn],
     recommendedFor: [familiesEn]
 };
 
@@ -64,6 +62,6 @@ export const balnearioDoSolEs: Tour = {
     shortDescription: 'Ocio completo con cascadas, parrillas y actividades para la familia.',
     includedItems: ['Entrada y uso de la infraestructura'],
     keywords: ['balneario', 'familia', 'parrilla', 'río formoso'],
-    categories: [aquaticEs],
+    categories: [resortsEs],
     recommendedFor: [familiesEs]
 };

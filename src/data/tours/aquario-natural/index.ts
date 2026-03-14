@@ -4,17 +4,12 @@ import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { couplesPt } from '../../audiences/couples';
 import { familiesPt } from '../../audiences/families';
-import { aquaticPt } from '../../categories/aquaticc';
-import { ecotourismPt } from '../../categories/ecotourismm';
 import { couplesEn } from '../../audiences/couples';
 import { familiesEn } from '../../audiences/families';
-import { aquaticEn } from '../../categories/aquaticc';
-import { ecotourismEn } from '../../categories/ecotourismm';
 import { couplesEs } from '../../audiences/couples';
 import { familiesEs } from '../../audiences/families';
-import { aquaticEs } from '../../categories/aquaticc';
-import { ecotourismEs } from '../../categories/ecotourismm';
 
+import { floatingPt, floatingEn, floatingEs } from "src/data/categories/floating";
 const img = `${TOURS_BUCKET_NAME}/aquario-natural/img1.webp`
 
 const commonData = {
@@ -41,7 +36,7 @@ export const aquarioNaturalPt: Tour = {
     groupLimit: 9,
     includedItems: ['Acompanhamento de guia', 'Equipamentos (máscara, snorkel, roupa de neoprene)', 'Barco de apoio'],
     keywords: ['flutuação', 'peixes', 'nascente', 'trilha', 'tirolesa'],
-    categories: [aquaticPt, ecotourismPt],
+    categories: [floatingPt],
     recommendedFor: [familiesPt, couplesPt]
 };
 
@@ -57,7 +52,7 @@ export const aquarioNaturalEn: Tour = {
     groupLimit: 9,
     includedItems: ['Guide accompaniment', 'Equipment (mask, snorkel, wetsuit)', 'Support boat'],
     keywords: ['snorkeling', 'fish', 'spring', 'trail', 'zipline'],
-    categories: [aquaticEn, ecotourismEn],
+    categories: [floatingEn],
     recommendedFor: [familiesEn, couplesEn]
 };
 
@@ -73,6 +68,6 @@ export const aquarioNaturalEs: Tour = {
     groupLimit: 9,
     includedItems: ['Acompañamiento de guía', 'Equipos (máscara, snorkel, traje de neopreno)', 'Barco de apoyo'],
     keywords: ['flotación', 'peces', 'nacimiento', 'sendero', 'tirolesa'],
-    categories: [aquaticEs, ecotourismEs],
+    categories: [floatingEs],
     recommendedFor: [familiesEs, couplesEs]
 };

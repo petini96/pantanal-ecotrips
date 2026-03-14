@@ -4,18 +4,13 @@ import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { couplesPt } from '../../audiences/couples';
 import { familiesPt } from '../../audiences/families';
-import { aquaticPt } from '../../categories/aquaticc';
-// Flutuação
-import { cavesPt } from '../../categories/cavess';
 import { couplesEn } from '../../audiences/couples';
 import { familiesEn } from '../../audiences/families';
-import { aquaticEn } from '../../categories/aquaticc';
-import { cavesEn } from '../../categories/cavess';
 import { couplesEs } from '../../audiences/couples';
 import { familiesEs } from '../../audiences/families';
-import { aquaticEs } from '../../categories/aquaticc';
-import { cavesEs } from '../../categories/cavess';
 
+import { floatingPt, floatingEn, floatingEs } from "src/data/categories/floating";
+import { scubaDivingPt, scubaDivingEn, scubaDivingEs } from "src/data/categories/scuba-diving";
 const img = `${TOURS_BUCKET_NAME}/gruta-do-mimoso/img1.jpg`
 
 const commonData = {
@@ -41,7 +36,7 @@ export const grutaDoMimosoPt: Tour = {
     groupLimit: 10,
     includedItems: ['Acompanhamento de guia', 'Equipamentos de flutuação', 'Treinamento'],
     keywords: ['caverna', 'flutuação', 'gruta', 'mimoso'],
-    categories: [cavesPt, aquaticPt],
+    categories: [floatingPt, scubaDivingPt],
     recommendedFor: [couplesPt, familiesPt]
 };
 
@@ -56,7 +51,7 @@ export const grutaDoMimosoEn: Tour = {
     groupLimit: 10,
     includedItems: ['Guide accompaniment', 'Snorkeling equipment', 'Training'],
     keywords: ['cave', 'snorkeling', 'grotto', 'mimoso'],
-    categories: [cavesEn, aquaticEn],
+    categories: [floatingEn, scubaDivingEn],
     recommendedFor: [couplesEn, familiesEn]
 };
 
@@ -71,6 +66,6 @@ export const grutaDoMimosoEs: Tour = {
     groupLimit: 10,
     includedItems: ['Acompañamiento de guía', 'Equipos de flotación', 'Entrenamiento'],
     keywords: ['cueva', 'flotación', 'gruta', 'mimoso'],
-    categories: [cavesEs, aquaticEs],
+    categories: [floatingEs, scubaDivingEs],
     recommendedFor: [couplesEs, familiesEs]
 };

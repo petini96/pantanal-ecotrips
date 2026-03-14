@@ -2,13 +2,8 @@ import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
-import { ecotourismPt } from '../../categories/ecotourismm';
-import { cavesPt } from '../../categories/cavess';
-import { ecotourismEn } from '../../categories/ecotourismm';
-import { cavesEn } from '../../categories/cavess';
-import { ecotourismEs } from '../../categories/ecotourismm';
-import { cavesEs } from '../../categories/cavess';
 
+import { contemplationPt, contemplationEn, contemplationEs } from "src/data/categories/contemplation";
 const img = `${TOURS_BUCKET_NAME}/grutas-sao-miguel/img1.webp`
 
 const commonData = {
@@ -34,7 +29,7 @@ export const grutasSaoMiguelPt: Tour = {
     shortDescription: 'Visitação de gruta seca com acesso por trilha suspensa na mata.',
     includedItems: ['Acompanhamento de guia', 'Capacete', 'Lanterna'],
     keywords: ['gruta', 'caverna', 'trilha suspensa', 'seco'],
-    categories: [cavesPt, ecotourismPt],
+    categories: [contemplationPt],
     recommendedFor: []
 };
 
@@ -49,7 +44,7 @@ export const grutasSaoMiguelEn: Tour = {
     shortDescription: 'Dry cave visit accessed by a suspended trail in the forest.',
     includedItems: ['Guide accompaniment', 'Helmet', 'Flashlight'],
     keywords: ['grotto', 'cave', 'suspended trail', 'dry'],
-    categories: [cavesEn, ecotourismEn],
+    categories: [contemplationEn, contemplationEn],
     recommendedFor: []
 };
 
@@ -64,6 +59,6 @@ export const grutasSaoMiguelEs: Tour = {
     shortDescription: 'Visita a cueva seca con acceso por sendero suspendido en el bosque.',
     includedItems: ['Acompañamiento de guía', 'Casco', 'Linterna'],
     keywords: ['gruta', 'cueva', 'sendero suspendido', 'seco'],
-    categories: [cavesEs, ecotourismEs],
+    categories: [contemplationEs, contemplationEs],
     recommendedFor: []
 };

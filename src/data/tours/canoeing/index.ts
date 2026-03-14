@@ -2,10 +2,9 @@ import { type Tour } from 'src/model/Tour';
 import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { miranda } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
-import { aquaticPt } from '../../categories/aquaticc';
-import { aquaticEn } from '../../categories/aquaticc';
-import { aquaticEs } from '../../categories/aquaticc';
 
+import { floatingPt, floatingEn, floatingEs } from "src/data/categories/floating";
+import { resortsPt, resortsEn, resortsEs } from "src/data/categories/resorts";
 const img = `${TOURS_BUCKET_NAME}/canoagem-miranda/img1.jpg`
 
 const commonData = {
@@ -27,7 +26,7 @@ export const canoeingPt: Tour = {
     shortDescription: 'Passeio em canoas canadenses para duas pessoas, remando silenciosamente pelas águas e aproximando-se da vida selvagem sem perturbações.',
     includedItems: ['Canoa', 'Remos', 'Colete salva-vidas', 'Guia'],
     keywords: ['canoa', 'remar', 'rio', 'silêncio'],
-    categories: [aquaticPt],
+    categories: [floatingPt, resortsPt],
     recommendedFor: []
 };
 
@@ -38,7 +37,7 @@ export const canoeingEn: Tour = {
     shortDescription: 'A trip in two-person Canadian canoes, paddling silently through the waters and getting close to wildlife without disturbance.',
     includedItems: ['Canoe', 'Paddles', 'Life jacket', 'Guide'],
     keywords: ['canoe', 'paddle', 'river', 'silence'],
-    categories: [aquaticEn],
+    categories: [floatingEn, resortsEn],
     recommendedFor: []
 };
 
@@ -49,6 +48,6 @@ export const canoeingEs: Tour = {
     shortDescription: 'Paseo en canoas canadienses para dos personas, remando silenciosamente por las aguas y acercándose a la vida silvestre sin perturbaciones.',
     includedItems: ['Canoa', 'Remos', 'Chaleco salvavidas', 'Guía'],
     keywords: ['canoa', 'remar', 'río', 'silencio'],
-    categories: [aquaticEs],
+    categories: [floatingEs, resortsEs],
     recommendedFor: []
 };

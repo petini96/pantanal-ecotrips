@@ -3,12 +3,11 @@ import { DifficultyLevel } from 'src/model/Enums';
 import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { familiesPt } from '../../audiences/families';
-import { ecotourismPt } from '../../categories/ecotourismm';
 import { familiesEn } from '../../audiences/families';
-import { ecotourismEn } from '../../categories/ecotourismm';
 import { familiesEs } from '../../audiences/families';
-import { ecotourismEs } from '../../categories/ecotourismm';
 
+
+import { contemplationEn, contemplationEs, contemplationPt } from "src/data/categories/contemplation";
 const img = `${TOURS_BUCKET_NAME}/projeto-jiboia/img1.jpg`
 
 const commonData = {
@@ -34,7 +33,7 @@ export const projetoJiboiaPt: Tour = {
     shortDescription: 'Palestra educativa e interativa sobre serpentes e educação ambiental.', // Urban/Indoor
     includedItems: ['Palestra', 'Foto com Jiboia (opcional)'],
     keywords: ['educação ambiental', 'cobras', 'noturno'],
-    categories: [ecotourismPt],
+    categories: [contemplationPt],
     recommendedFor: [familiesPt]
 };
 
@@ -49,7 +48,7 @@ export const projetoJiboiaEn: Tour = {
     shortDescription: 'Educational and interactive lecture about snakes and environmental education.', // Urban/Indoor
     includedItems: ['Lecture', 'Photo with Boa (optional)'],
     keywords: ['environmental education', 'snakes', 'night'],
-    categories: [ecotourismEn],
+    categories: [contemplationEn],
     recommendedFor: [familiesEn]
 };
 
@@ -64,6 +63,6 @@ export const projetoJiboiaEs: Tour = {
     shortDescription: 'Charla educativa e interactiva sobre serpientes y educación ambiental.', // Urban/Indoor
     includedItems: ['Charla', 'Foto con Boa (opcional)'],
     keywords: ['educación ambiental', 'serpientes', 'nocturno'],
-    categories: [ecotourismEs],
+    categories: [contemplationEs],
     recommendedFor: [familiesEs]
 };

@@ -3,12 +3,10 @@ import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { familiesPt } from '../../audiences/families';
-import { ecotourismPt } from '../../categories/ecotourismm';
 import { familiesEn } from '../../audiences/families';
-import { ecotourismEn } from '../../categories/ecotourismm';
 import { familiesEs } from '../../audiences/families';
-import { ecotourismEs } from '../../categories/ecotourismm';
 
+import { contemplationPt, contemplationEn, contemplationEs } from "src/data/categories/contemplation";
 const img = `${TOURS_BUCKET_NAME}/bio-park/img1.webp`
 
 const commonData = {
@@ -34,7 +32,7 @@ export const bioParkPt: Tour = {
     shortDescription: 'Refúgio de animais silvestres e fazendinha de mini animais.',
     includedItems: ['Acompanhamento de guia'],
     keywords: ['animais', 'abrigo', 'educacao', 'fazendinha'],
-    categories: [ecotourismPt],
+    categories: [contemplationPt],
     recommendedFor: [familiesPt]
 };
 
@@ -49,7 +47,7 @@ export const bioParkEn: Tour = {
     shortDescription: 'Refuge for wild animals and petting zoo with mini animals.',
     includedItems: ['Guide accompaniment'],
     keywords: ['animals', 'shelter', 'education', 'petting zoo'],
-    categories: [ecotourismEn],
+    categories: [contemplationEn],
     recommendedFor: [familiesEn]
 };
 
@@ -64,6 +62,6 @@ export const bioParkEs: Tour = {
     shortDescription: 'Refugio de animales silvestres y granjita de mini animales.',
     includedItems: ['Acompañamiento de guía'],
     keywords: ['animales', 'refugio', 'educación', 'granjita'],
-    categories: [ecotourismEs],
+    categories: [contemplationEs],
     recommendedFor: [familiesEs]
 };

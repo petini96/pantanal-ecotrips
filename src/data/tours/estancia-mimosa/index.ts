@@ -4,17 +4,12 @@ import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { couplesPt } from '../../audiences/couples';
 import { familiesPt } from '../../audiences/families';
-import { aquaticPt } from '../../categories/aquaticc';
-import { ecotourismPt } from '../../categories/ecotourismm';
 import { couplesEn } from '../../audiences/couples';
 import { familiesEn } from '../../audiences/families';
-import { aquaticEn } from '../../categories/aquaticc';
-import { ecotourismEn } from '../../categories/ecotourismm';
 import { couplesEs } from '../../audiences/couples';
 import { familiesEs } from '../../audiences/families';
-import { aquaticEs } from '../../categories/aquaticc';
-import { ecotourismEs } from '../../categories/ecotourismm';
 
+import { trailsWaterfallsPt, trailsWaterfallsEn, trailsWaterfallsEs } from "src/data/categories/trails-waterfalls";
 const img = `${TOURS_BUCKET_NAME}/estancia-mimosa/img1.webp`
 
 const commonData = {
@@ -40,7 +35,7 @@ export const estanciaMimosaPt: Tour = {
     shortDescription: 'Trilha com cachoeiras, piscinas naturais, salto e almoço em fazenda típica.',
     includedItems: ['Acompanhamento de guia', 'Colete salva-vidas', 'Almoço', 'Seguro'],
     keywords: ['cachoeira', 'trilha', 'banho de rio', 'barco', 'fazenda'],
-    categories: [aquaticPt, ecotourismPt],
+    categories: [trailsWaterfallsPt],
     recommendedFor: [familiesPt, couplesPt]
 };
 
@@ -55,7 +50,7 @@ export const estanciaMimosaEn: Tour = {
     shortDescription: 'Trail with waterfalls, natural pools, jumping platform and lunch at a typical farm.',
     includedItems: ['Guide accompaniment', 'Life vest', 'Lunch', 'Insurance'],
     keywords: ['waterfall', 'trail', 'river swimming', 'boat', 'farm'],
-    categories: [aquaticEn, ecotourismEn],
+    categories: [trailsWaterfallsEn],
     recommendedFor: [familiesEn, couplesEn]
 };
 
@@ -70,6 +65,6 @@ export const estanciaMimosaEs: Tour = {
     shortDescription: 'Sendero con cascadas, piscinas naturales, salto y almuerzo en hacienda típica.',
     includedItems: ['Acompañamiento de guía', 'Chaleco salvavidas', 'Almoerzo', 'Seguro'],
     keywords: ['cascada', 'sendero', 'baño en el río', 'bote', 'hacienda'],
-    categories: [aquaticEs, ecotourismEs],
+    categories: [trailsWaterfallsEs],
     recommendedFor: [familiesEs, couplesEs]
 };
