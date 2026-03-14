@@ -122,6 +122,7 @@ import { useMeta } from 'quasar';
 import { useLayoutConfigStore } from 'src/stores/layout-config-store';
 import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { WHATSAPP_NUMBER } from 'src/config/contacts';
 
 const layoutConfigStore = useLayoutConfigStore();
 const { theme: currentTheme } = storeToRefs(layoutConfigStore);
@@ -224,7 +225,7 @@ const structuredReviews = reviews.map(review => ({
     "@type": "TravelAgency",
     "name": "Pantanal Eco Trips",
     "image": "https://pantanalecotrips.com.br/pantanal_ecotrips_logo.png",
-    "telephone": "+5567991452985",
+    "telephone": `+${WHATSAPP_NUMBER}`,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Bonito",

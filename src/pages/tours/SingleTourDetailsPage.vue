@@ -114,7 +114,7 @@
 
       <div class="cta-footer q-pa-md">
         <q-btn class="full-width" size="lg" color="secondary" label="Consultar Disponibilidade" icon="mdi-whatsapp"
-          :href="`https://wa.me/556791452985?text=${encodedWhatsAppMessage}`" target="_blank" />
+          :href="getWhatsappMessageUrl(whatsappMessageText)" target="_blank" />
       </div>
     </div>
   </q-page>
@@ -136,7 +136,8 @@ import { useI18n } from 'vue-i18n';
 import { storeToRefs } from 'pinia';
 import { useTourStore } from 'src/stores/useTourStore';
 import { DifficultyLevel } from 'src/model/Enums';
-import {environmentIcons, defaultIcon} from 'src/model/Enums'
+import { environmentIcons, defaultIcon } from 'src/model/Enums';
+import { getWhatsappMessageUrl } from 'src/config/contacts';
 const route = useRoute();
 const { t, locale } = useI18n();
 
@@ -162,9 +163,9 @@ watch(() => route.params.lang, async (newLang) => {
   await fetchData(newLang);
 });
 
-const encodedWhatsAppMessage = computed(() => {
+const whatsappMessageText = computed(() => {
   const tourName = tour.value?.name ?? 'este passeio';
-  return encodeURIComponent(`Olá, gostaria de mais informações sobre o passeio ${tourName}.`);
+  return `Olá, gostaria de mais informações sobre o passeio ${tourName}.`;
 });
 
 const getDifficultyInfo = (level: DifficultyLevel) => {

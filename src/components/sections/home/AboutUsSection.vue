@@ -85,7 +85,7 @@
               size="lg"
               class="cta-btn q-px-xl font-weight-bold shadow-4"
               :label="t('about_us_cta')"
-              href="https://wa.me/5567991452985"
+              :href="WA_ME_LINK"
               target="_blank"
               icon="mdi-whatsapp"
               aria-label="Entre em contato pelo WhatsApp"
@@ -144,6 +144,7 @@ import { useI18n } from 'vue-i18n';
 import { storeToRefs } from 'pinia';
 import { useLayoutConfigStore } from 'src/stores/layout-config-store';
 import { useAnalytics } from 'src/components/composables/useAnalytics';
+import { WA_ME_LINK } from 'src/config/contacts';
 
 const { t } = useI18n();
 const { trackEvent } = useAnalytics();

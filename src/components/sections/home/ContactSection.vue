@@ -34,10 +34,10 @@
                 <q-icon name="mdi-whatsapp" size="md" color="positive" class="q-mr-md" />
                 <div>
                   <div class="text-weight-bold">WhatsApp (24h)</div>
-                  <a href="https://api.whatsapp.com/send?phone=5567991452985" target="_blank"
+                  <a :href="WHATSAPP_API_LINK" target="_blank"
                     rel="noopener noreferrer" class="text-body1 text-secondary text-weight-bold hover-underline"
                     aria-label="Falar no WhatsApp">
-                    +55 67 99145-2985
+                    {{ WHATSAPP_FORMATTED_NUMBER }}
                   </a>
                   <div class="text-caption text-grey-8">
                     Falar com <strong>Ronaldo</strong><br>
@@ -69,7 +69,7 @@
             <q-btn round color="purple-6" icon="mdi-instagram" type="a"
               href="https://www.instagram.com/pantanalecotrips2/" target="_blank" aria-label="Instagram" />
             <q-btn round color="green-6" icon="mdi-whatsapp" type="a"
-              href="https://api.whatsapp.com/send?phone=5567991452985" target="_blank" aria-label="WhatsApp Direto" />
+              :href="WHATSAPP_API_LINK" target="_blank" aria-label="WhatsApp Direto" />
           </div>
         </div>
 
@@ -174,6 +174,7 @@ import { useQuasar, useMeta } from 'quasar';
 import { useLayoutConfigStore } from 'src/stores/layout-config-store';
 import { computed, ref, reactive } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { WHATSAPP_NUMBER, WHATSAPP_API_LINK, WHATSAPP_FORMATTED_NUMBER } from 'src/config/contacts';
 
 const layoutConfigStore = useLayoutConfigStore();
 const { theme: currentTheme } = storeToRefs(layoutConfigStore);
@@ -237,7 +238,7 @@ const metaData = {
         "name": "Pantanal Eco Trips",
         "image": "https://pantanalecotrips.com.br/logo.png",
         "url": "https://pantanalecotrips.com.br",
-        "telephone": "+5567991452985",
+        "telephone": `+${WHATSAPP_NUMBER}`,
         "email": "contact@pantanalecotrips.com.br",
         "priceRange": "$$",
         "address": {

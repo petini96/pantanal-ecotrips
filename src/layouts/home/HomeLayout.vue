@@ -34,6 +34,7 @@ import { type ScrollDetails } from 'src/types/Scroll';
 import { Cookies } from 'quasar';
 import { storeToRefs } from 'pinia';
 import { preFetch } from 'quasar/wrappers';
+import { WHATSAPP_NUMBER } from 'src/config/contacts';
 
 // Definimos o tipo aqui para não depender de arquivos externos
 type ThemeName = 'light' | 'dark';
@@ -45,7 +46,7 @@ const { theme: currentTheme } = storeToRefs(layoutConfigStore);
 const pageRef = ref<HTMLElement | null>(null);
 
 // Configuração da URL do WhatsApp
-const whatsappNumber = '556791452985';
+const whatsappNumber = WHATSAPP_NUMBER;
 const whatsappMessage = 'Olá! Gostaria de mais informações sobre o Pantanal.';
 const whatsappUrl = computed(() => 
   `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`

@@ -95,6 +95,7 @@ import { storeToRefs } from 'pinia';
 import { useLayoutConfigStore } from 'src/stores/layout-config-store';
 import { useTourPackageStore } from 'src/stores/useTourPackageStore';
 import { langMap } from 'src/utils/langMap';
+import { WHATSAPP_NUMBER } from 'src/config/contacts';
 
 // Apenas o SimpleBanner (acima da dobra) é importado estaticamente.
 import SimpleBanner from 'src/components/banner/SimpleBanner.vue';
@@ -1339,7 +1340,7 @@ useMeta(() => {
     url: baseURL,
     logo: `${baseURL}/pantanal_ecotrips_logo.png`,
     image: ogImageURL,
-    telephone: '+5567991452985',
+    telephone: `+${WHATSAPP_NUMBER}`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Rua 26 de Agosto, 1374, sala 03',

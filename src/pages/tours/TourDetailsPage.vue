@@ -194,7 +194,7 @@
 
       <div class="text-center q-mt-xl">
         <q-btn color="secondary" size="lg" :label="t('tour_details_cta_button')" icon="mdi-whatsapp"
-          :href="`https://wa.me/556791452985?text=${encodedWhatsAppMessage}`" target="_blank" 
+          :href="getWhatsappMessageUrl(whatsappMessageText)" target="_blank" 
           @click="trackPackageBookingClick"
         />
       </div>
@@ -219,6 +219,7 @@ import { storeToRefs } from 'pinia';
 import { useLayoutConfigStore } from 'src/stores/layout-config-store';
 import { useTourPackageStore } from 'src/stores/useTourPackageStore';
 import { useAnalytics } from 'src/components/composables/useAnalytics';
+import { getWhatsappMessageUrl } from 'src/config/contacts';
 
 // Componentes
 import SimpleBannerDetails from 'src/components/banner/SimpleBannerDetails.vue';
@@ -326,9 +327,9 @@ const handleShare = async () => {
   }
 };
 
-const encodedWhatsAppMessage = computed(() => {
+const whatsappMessageText = computed(() => {
   const title = pkg.value?.title ?? 'este pacote';
-  return encodeURIComponent(t('whatsapp_message', { tour: title }));
+  return t('whatsapp_message', { tour: title });
 });
 
 // --- SEO AVANÇADO & DADOS ESTRUTURADOS (JSON-LD) ---
