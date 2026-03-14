@@ -47,7 +47,7 @@ export const bonitoSerraBodoquenaPt: Region = {
             {
                 type: 'plane',
                 title: 'Voos Diretos (BYO)',
-                description: 'O Aeroporto Regional de Bonito (BYO) recebe voos diretos de Campinas (Azul) e conexões. É a opção mais rápida e cômoda, a apenas 15km do centro da cidade.',
+                description: 'O Aeroporto Regional de Bonito (BYO) recebe voos diretos de Campinas (Azul) e Congonhas (GOL e LATAM), além de oferecer opções com conexões. É a opção mais rápida e cômoda, a apenas 15km do centro da cidade.',
                 icon: 'mdi-airplane'
             },
             {
@@ -103,7 +103,7 @@ export const bonitoSerraBodoquenaEn: Region = {
             {
                 type: 'plane',
                 title: 'Direct Flights (BYO)',
-                description: 'Bonito Regional Airport (BYO) receives direct flights from Campinas (Azul) and connections. It is the fastest and most convenient option, just 15km from the city center.',
+                description: 'Bonito Regional Airport (BYO) receives direct flights from Campinas (Azul) and Congonhas (GOL and LATAM), as well as connection options. It is the fastest and most convenient option, just 15km from the city center.',
                 icon: 'mdi-airplane'
             },
             {
@@ -159,7 +159,7 @@ export const bonitoSerraBodoquenaEs: Region = {
             {
                 type: 'plane',
                 title: 'Vuelos Directos (BYO)',
-                description: 'El Aeropuerto Regional de Bonito (BYO) recibe vuelos directos de Campinas (Azul) y conexiones. Es la opción más rápida y cómoda, a solo 15km del centro de la ciudad.',
+                description: 'El Aeropuerto Regional de Bonito (BYO) recibe vuelos directos de Campinas (Azul) y Congonhas (GOL y LATAM), además de conexiones. Es la opción más rápida y cómoda, a solo 15km del centro de la ciudad.',
                 icon: 'mdi-airplane'
             },
             {
