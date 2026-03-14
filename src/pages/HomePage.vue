@@ -1339,7 +1339,7 @@ useMeta(() => {
     url: baseURL,
     logo: `${baseURL}/pantanal_ecotrips_logo.png`,
     image: ogImageURL,
-    telephone: '+5567999022073',
+    telephone: '+5567991452985',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Rua 26 de Agosto, 1374, sala 03',

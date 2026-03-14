@@ -9,7 +9,7 @@ import { aquaticEn } from '../../categories/aquaticc';
 import { familiesEs } from '../../audiences/families';
 import { aquaticEs } from '../../categories/aquaticc';
 
-const img = `${TOURS_BUCKET_NAME}/balneario-municipal/img1.webp`
+const img = `${TOURS_BUCKET_NAME}/balneario-municipal/img1.jpg`
 
 const commonData = {
   id: 'TOUR-MUN-01',

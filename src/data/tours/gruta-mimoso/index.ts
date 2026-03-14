@@ -16,7 +16,7 @@ import { familiesEs } from '../../audiences/families';
 import { aquaticEs } from '../../categories/aquaticc';
 import { cavesEs } from '../../categories/cavess';
 
-const img = `${TOURS_BUCKET_NAME}/gruta-do-mimoso/img1.webp`
+const img = `${TOURS_BUCKET_NAME}/gruta-do-mimoso/img1.jpg`
 
 const commonData = {
   id: 'TOUR-GM-01',

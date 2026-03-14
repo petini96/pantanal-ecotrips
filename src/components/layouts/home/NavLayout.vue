@@ -168,10 +168,11 @@ const navLinks = computed<NavLink[]>(() => [
       }
     ]
   },
+  { label: t("about_us_link"), url: '#about-us-section' },
   { label: t("packages"), url: '#packages-section' },
-  { label: t("gallery"), url: '#mosaic-gallery-section' },
+  { label: t("gallery"), url: '#gallery-section' },
   { label: t("questions"), url: '#faq-section' },
-  { label: t("contact"), url: '#contato' }
+  { label: t("contact"), url: '#contact-section' }
 ]);
 
 const currentLang = computed(() => (route.params.lang as string) || 'pt');

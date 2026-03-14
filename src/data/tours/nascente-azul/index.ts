@@ -15,7 +15,7 @@ import { familiesEs } from '../../audiences/families';
 import { aquaticEs } from '../../categories/aquaticc';
 import { ecotourismEs } from '../../categories/ecotourismm';
 
-const img = `${TOURS_BUCKET_NAME}/nascente-azul/img1.webp`
+const img = `${TOURS_BUCKET_NAME}/nascente-azul/img1.jpg`
 
 const commonData = {
   id: 'TOUR-NA-01',

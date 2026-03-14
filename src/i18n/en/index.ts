@@ -126,5 +126,19 @@ export default {
   filter_by_category: "Filter by Category",
   packages_title: "Packages",
   packages_subtitle: "Discover complete itineraries for your trip",
-  how_to_get_there: "How to get there"
+  how_to_get_there: "How to get there",
+  about_us_link: "About Us",
+  about_page_title: "About Us",
+  about_page_subtitle: "Discover the story and passion behind Pantanal EcoTrips.",
+  about_section_heading: "Experience and Passion for Ecotourism",
+  about_history_title: "The Founder's Journey",
+  about_history_1: "Working since 2000 as a travel agent, tour organizer, tour guide, and bilingual interpreter.",
+  about_history_2: "Hands-on experience leading international expeditions and working extensively in local tourism.",
+  about_history_3: "Absolute focus on 100% custom itineraries for families, biologists, and photographers (jaguar spotters).",
+  about_card1_title: "Complete Logistics",
+  about_card1_desc: "We handle lodges and transport. We have teams in Campo Grande, Bonito, Cuiabá, and remote planning in Campinas.",
+  about_card2_title: "Global Recognition",
+  about_card2_desc: "Recommended by global guides like Fodor's and Petit Futé. Multilingual assistance for global travelers.",
+  about_card3_title: "Sustainable Tourism",
+  about_card3_desc: "Registered with Cadastur. We promote ecotourism with deep respect for nature and local communities."
 };

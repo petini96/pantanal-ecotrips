@@ -12,7 +12,7 @@ import { adventureEs } from '../../categories/adventuree';
 import { cavesEs } from '../../categories/cavess';
 import { aquaticEs } from '../../categories/aquaticc';
 
-const img = `${TOURS_BUCKET_NAME}/abismo-anhumas/img1.webp`
+const img = `${TOURS_BUCKET_NAME}/abismo-anhumas/img1.jpg`
 
 const commonData = {
   id: 'TOUR-AA-01',

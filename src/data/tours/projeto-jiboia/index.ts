@@ -9,7 +9,7 @@ import { ecotourismEn } from '../../categories/ecotourismm';
 import { familiesEs } from '../../audiences/families';
 import { ecotourismEs } from '../../categories/ecotourismm';
 
-const img = `${TOURS_BUCKET_NAME}/projeto-jiboia/img1.webp`
+const img = `${TOURS_BUCKET_NAME}/projeto-jiboia/img1.jpg`
 
 const commonData = {
   id: 'TOUR-PJ-01',

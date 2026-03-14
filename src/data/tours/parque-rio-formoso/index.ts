@@ -12,7 +12,7 @@ import { familiesEs } from '../../audiences/families';
 import { ecotourismEs } from '../../categories/ecotourismm';
 import { adventureEs } from '../../categories/adventuree';
 
-const img = `${TOURS_BUCKET_NAME}/parque-ecologico-rio-formoso/img1.webp`
+const img = `${TOURS_BUCKET_NAME}/park-ecologico-rio-formoso/img1.webp`
 
 const commonData = {
   id: 'TOUR-PRF-01',

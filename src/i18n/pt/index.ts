@@ -126,5 +126,19 @@ export default {
   filter_by_category: "Filtrar por Categoria",
   packages_title: "Pacotes",
   packages_subtitle: "Descubra roteiros completos para sua viagem",
-  how_to_get_there: "Como Chegar"
+  how_to_get_there: "Como Chegar",
+  about_us_link: "Quem Somos",
+  about_page_title: "Quem Somos",
+  about_page_subtitle: "Conheça a história e a paixão por trás da Pantanal EcoTrips.",
+  about_section_heading: "Experiência e Paixão pelo Ecoturismo",
+  about_history_title: "A Trajetória do Fundador",
+  about_history_1: "Atuando desde o ano 2000 como agente de viagens, organizador de excursões, guia de turismo e intérprete bilíngue.",
+  about_history_2: "Experiência prática liderando expedições internacionais e atuando na linha de frente do turismo na região.",
+  about_history_3: "Foco absoluto em criar roteiros 100% personalizados para famílias, biólogos e fotógrafos (jaguares).",
+  about_card1_title: "Logística Completa",
+  about_card1_desc: "Cuidamos de pousadas e transportes. Temos bases em Campo Grande, Bonito, Cuiabá e base de planejamento em Campinas.",
+  about_card2_title: "Reconhecimento Global",
+  about_card2_desc: "Recomendados por guias internacionais como Fodor's e Petit Futé. Atendimento fluente em vários idiomas.",
+  about_card3_title: "Turismo Sustentável",
+  about_card3_desc: "Registrados no Ministério do Turismo (Cadastur). Promovemos ecoturismo com profundo respeito à natureza."
 };
