@@ -289,11 +289,16 @@ const trackPackageBookingClick = () => {
 
 // --- Ações ---
 const goToHotelDetails = (hotelSlug: string) => {
+  const cLang = locale.value;
+  const typeMap: Record<string, string> = { pt: 'hoteis', en: 'hotels', es: 'hoteles' };
+  const type = typeMap[cLang] || 'hotels';
+
   void router.push({
     name: 'hotelsDetails',
     params: { 
-      lang: locale.value, 
-      slug: hotelSlug 
+      lang: cLang, 
+      slug: hotelSlug,
+      type: type 
     }
   });
 };
@@ -423,11 +428,14 @@ useMeta(() => {
       twitterImage: { name: 'twitter:image', content: pkg.value.image },
     },
     link: {
-      canonical: { rel: 'canonical', href: `${baseUrl}/${currentLang}/tours/${pkg.value.slug}` },
-      pt: { rel: 'alternate', hreflang: 'pt', href: `${baseUrl}/pt/tours/${pkg.value.slug}` },
-      en: { rel: 'alternate', hreflang: 'en', href: `${baseUrl}/en/tours/${pkg.value.slug}` },
-      es: { rel: 'alternate', hreflang: 'es', href: `${baseUrl}/es/tours/${pkg.value.slug}` },
-      xd: { rel: 'alternate', hreflang: 'x-default', href: `${baseUrl}/en/tours/${pkg.value.slug}` },
+      canonical: { 
+        rel: 'canonical', 
+        href: `${baseUrl}/${currentLang}/${currentLang === 'pt' ? 'pacotes' : 'packages'}/${pkg.value.slug}` 
+      },
+      pt: { rel: 'alternate', hreflang: 'pt', href: `${baseUrl}/pt/pacotes/${pkg.value.slug}` },
+      en: { rel: 'alternate', hreflang: 'en', href: `${baseUrl}/en/packages/${pkg.value.slug}` },
+      es: { rel: 'alternate', hreflang: 'es', href: `${baseUrl}/es/paquetes/${pkg.value.slug}` },
+      xd: { rel: 'alternate', hreflang: 'x-default', href: `${baseUrl}/en/packages/${pkg.value.slug}` },
     },
     // Injeção do Schema JSON-LD
     script: {

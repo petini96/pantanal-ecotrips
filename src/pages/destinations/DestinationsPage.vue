@@ -234,8 +234,21 @@ useMeta(() => {
   const rName = currentRegion.value?.name || destinationsSlug.value;
   const desc = currentRegion.value?.description || t('destinations_description') || `Pacotes para ${rName}`;
 
+  const baseURL = 'https://www.pantanalecotrips.com.br';
+  const currentLang = (route.params.lang as string) || 'pt';
+
   return {
     title: `${pageTitle} ${rName} | Pantanal Ecotrips`,
+    link: {
+      canonical: { 
+        rel: 'canonical', 
+        href: `${baseURL}/${currentLang}/${currentLang === 'pt' ? 'destinos' : 'destinations'}/${currentRegion.value?.slug || destinationsSlug.value}` 
+      },
+      pt: { rel: 'alternate', hreflang: 'pt', href: `${baseURL}/pt/destinos/${currentRegion.value?.slug || destinationsSlug.value}` },
+      en: { rel: 'alternate', hreflang: 'en', href: `${baseURL}/en/destinations/${currentRegion.value?.slug || destinationsSlug.value}` },
+      es: { rel: 'alternate', hreflang: 'es', href: `${baseURL}/es/destinations/${currentRegion.value?.slug || destinationsSlug.value}` },
+      xd: { rel: 'alternate', hreflang: 'x-default', href: `${baseURL}/en/destinations/${currentRegion.value?.slug || destinationsSlug.value}` },
+    },
     meta: {
       description: { name: 'description', content: desc }
     }

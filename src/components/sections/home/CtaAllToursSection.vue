@@ -13,7 +13,13 @@
 
       <div class="cta-buttons-group">
         <q-btn
-          :to="{ name: 'allTours', params: { lang: locale } }"
+          :to="{ 
+            name: 'allTours', 
+            params: { 
+              lang: locale, 
+              type: locale === 'pt' ? 'passeios' : (locale === 'es' ? 'excursiones' : 'all-tours') 
+            } 
+          }"
           color="primary"
           text-color="white"
           size="lg"
@@ -25,7 +31,13 @@
         />
         
         <q-btn
-          :to="{ name: 'createItinerary', params: { lang: locale } }"
+          :to="{ 
+            name: 'createItinerary', 
+            params: { 
+              lang: locale, 
+              type: locale === 'pt' ? 'montar-roteiro' : (locale === 'es' ? 'itinerario' : 'create-itinerary') 
+            } 
+          }"
           color="white"
           text-color="primary"
           size="lg"

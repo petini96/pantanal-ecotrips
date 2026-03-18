@@ -1,12 +1,16 @@
 <template>
-  <router-link :to="{ name: 'home' }" class="logo-container">
+  <router-link :to="{ name: 'home', params: { lang: currentLang } }" class="logo-container">
     <q-img :src="LogoImage" :ratio="1" class="logo-image" />
   </router-link>
 </template>
 
 <script setup lang="ts"> 
 import LogoImage from '/pantanal_ecotrips_logo.png'
- 
+import { useRoute } from 'vue-router';
+import { computed } from 'vue';
+
+const route = useRoute();
+const currentLang = computed(() => (route.params.lang as string) || 'pt');
 </script>
  <style scoped lang="scss">
 .logo-container {

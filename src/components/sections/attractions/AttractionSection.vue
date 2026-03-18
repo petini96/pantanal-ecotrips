@@ -162,11 +162,16 @@ const showRightArrow = ref(true);
 const selectedCategory = ref<string | null>(null);
 
 const getTourLink = (slug: string) => {
+  const currentLang = route.params.lang || 'pt';
+  const typeMap: Record<string, string> = { pt: 'passeio', en: 'tour', es: 'excursion' };
+  const type = typeMap[currentLang as string] || 'passeio';
+
   return {
     name: 'singleTourDetails',
     params: {
-      lang: route.params.lang || 'pt',
-      slug: slug
+      lang: currentLang,
+      slug: slug,
+      type: type
     }
   };
 };

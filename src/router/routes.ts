@@ -12,32 +12,33 @@ const routes: RouteRecordRaw[] = [
         component: () => import("pages/HomePage.vue"),
         meta: { requiresAuth: false },
       },
+      // Suporte multilíngue para caminhos (SEO)
       {
-        path: 'tours/:slug',
+        path: ':type(tours|packages|pacotes)/:slug',
         name: 'tourDetails',
         component: () => import('pages/tours/TourDetailsPage.vue'),
         meta: { requiresAuth: false },
       },
       {
-        path: 'passeio/:slug',
+        path: ':type(passeio|tour|excursion)/:slug',
         name: 'singleTourDetails',
         component: () => import('pages/tours/SingleTourDetailsPage.vue'),
         meta: { requiresAuth: false },
       },
       {
-        path: 'passeios',
+        path: ':type(passeios|all-tours|excursiones)',
         name: 'allTours',
         component: () => import('pages/tours/AllToursPage.vue'),
         meta: { requiresAuth: false },
       },
       {
-        path: 'destinations/:slug',
+        path: ':type(destinations|destinos)/:slug',
         name: 'destinations',
         component: () => import('pages/destinations/DestinationsPage.vue'),
         meta: { requiresAuth: false },
       },
       {
-        path: 'hotels/:slug',
+        path: ':type(hotels|hoteis|hoteles)/:slug',
         name: 'hotelsDetails',
         component: () => import('pages/hotels/HotelsDetailsPage.vue'),
         meta: { requiresAuth: false },

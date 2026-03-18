@@ -221,11 +221,14 @@ useMeta(() => {
   return {
     title: pageTitle,
     link: {
-      canonical: { rel: 'canonical', href: pageUrl },
+      canonical: { 
+        rel: 'canonical', 
+        href: `${baseURL}/${currentLang}/${currentLang === 'pt' ? 'passeio' : (currentLang === 'en' ? 'tour' : 'excursion')}/${tour.value.slug}` 
+      },
       pt: { rel: 'alternate', hreflang: 'pt', href: `${baseURL}/pt/passeio/${tour.value.slug}` },
-      en: { rel: 'alternate', hreflang: 'en', href: `${baseURL}/en/passeio/${tour.value.slug}` },
-      es: { rel: 'alternate', hreflang: 'es', href: `${baseURL}/es/passeio/${tour.value.slug}` },
-      xd: { rel: 'alternate', hreflang: 'x-default', href: `${baseURL}/pt/passeio/${tour.value.slug}` },
+      en: { rel: 'alternate', hreflang: 'en', href: `${baseURL}/en/tour/${tour.value.slug}` },
+      es: { rel: 'alternate', hreflang: 'es', href: `${baseURL}/es/excursion/${tour.value.slug}` },
+      xd: { rel: 'alternate', hreflang: 'x-default', href: `${baseURL}/en/tour/${tour.value.slug}` },
     },
     meta: {
       description: { name: 'description', content: pageDescription },

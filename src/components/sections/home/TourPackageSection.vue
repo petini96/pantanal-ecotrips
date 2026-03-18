@@ -276,7 +276,17 @@ const filteredPackages = computed(() => {
 
 const viewPackage = (packageSlug: string) => {
   if (!packageSlug) return;
-  void router.push({ name: 'tourDetails', params: { slug: packageSlug, lang: route.params.lang || 'pt' } });
+  const currentLang = route.params.lang || 'pt';
+  const type = currentLang === 'pt' ? 'pacotes' : 'packages';
+
+  void router.push({ 
+    name: 'tourDetails', 
+    params: { 
+      slug: packageSlug, 
+      lang: currentLang,
+      type: type 
+    } 
+  });
 };
 
 const scrollRef = ref<InstanceType<typeof HorizontalGradientMask> | null>(null);

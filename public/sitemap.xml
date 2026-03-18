@@ -1,468 +1,2433 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-    xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es" />
-        <xhtml:link rel="alternate" hreflang="x-default"
-            href="https://www.pantanalecotrips.com.br/pt" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/en</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es" />
-        <xhtml:link rel="alternate" hreflang="x-default"
-            href="https://www.pantanalecotrips.com.br/pt" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/es</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es" />
-        <xhtml:link rel="alternate" hreflang="x-default"
-            href="https://www.pantanalecotrips.com.br/pt" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeios</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeios" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeios" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeios" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/en/passeios</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeios" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeios" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeios" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/es/passeios</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeios" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeios" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeios" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/tours/tour-bonito-amizade</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/tours/tour-bonito-amizade" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/tours/tour-bonito-amizade" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/tours/tour-bonito-amizade" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/tours/tour-familia-feliz</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/tours/tour-familia-feliz" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/tours/tour-familia-feliz" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/tours/tour-familia-feliz" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/tours/fazenda-san-francisco-coati</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/tours/fazenda-san-francisco-coati" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/tours/fazenda-san-francisco-coati" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/tours/fazenda-san-francisco-coati" />
-    </url>
-    <url>
-        <loc>
-            https://www.pantanalecotrips.com.br/pt/tours/fazenda-san-francisco-ararinha</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/tours/fazenda-san-francisco-ararinha" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/tours/fazenda-san-francisco-ararinha" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/tours/fazenda-san-francisco-ararinha" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/tours/fazenda-san-francisco-anta</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/tours/fazenda-san-francisco-anta" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/tours/fazenda-san-francisco-anta" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/tours/fazenda-san-francisco-anta" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/tours/fazenda-san-francisco-aguia</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/tours/fazenda-san-francisco-aguia" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/tours/fazenda-san-francisco-aguia" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/tours/fazenda-san-francisco-aguia" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/tours/jungle-lodge-lontra</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/tours/jungle-lodge-lontra" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/tours/jungle-lodge-lontra" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/tours/jungle-lodge-lontra" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/tours/jungle-lodge-caiman</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/tours/jungle-lodge-caiman" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/tours/jungle-lodge-caiman" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/tours/jungle-lodge-caiman" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/tours/jungle-lodge-anaconda</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/tours/jungle-lodge-anaconda" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/tours/jungle-lodge-anaconda" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/tours/jungle-lodge-anaconda" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/tours/jungle-lodge-eagle</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/tours/jungle-lodge-eagle" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/tours/jungle-lodge-eagle" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/tours/jungle-lodge-eagle" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/tours/noite-feliz-em-bonito</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/tours/noite-feliz-em-bonito" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/tours/noite-feliz-em-bonito" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/tours/noite-feliz-em-bonito" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/observacao-das-aves-em-miranda</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/observacao-das-aves-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/observacao-das-aves-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/observacao-das-aves-em-miranda" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/boca-da-onca-em-bonito</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/boca-da-onca-em-bonito" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/boca-da-onca-em-bonito" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/boca-da-onca-em-bonito" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/bote-rio-formoso-em-bonito</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/bote-rio-formoso-em-bonito" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/bote-rio-formoso-em-bonito" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/bote-rio-formoso-em-bonito" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/buraco-das-araras-em-bonito</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/buraco-das-araras-em-bonito" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/buraco-das-araras-em-bonito" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/buraco-das-araras-em-bonito" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/cabanas-arvorismo-em-bonito</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/cabanas-arvorismo-em-bonito" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/cabanas-arvorismo-em-bonito" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/cabanas-arvorismo-em-bonito" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/canoagem-em-miranda</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/canoagem-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/canoagem-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/canoagem-em-miranda" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/pescaria-piranha-em-miranda</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/pescaria-piranha-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/pescaria-piranha-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/pescaria-piranha-em-miranda" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/safari-fotografico-em-miranda</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/safari-fotografico-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/safari-fotografico-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/safari-fotografico-em-miranda" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/caminhada-ecologica-em-miranda</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/caminhada-ecologica-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/caminhada-ecologica-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/caminhada-ecologica-em-miranda" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/estancia-mimosa-em-bonito</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/estancia-mimosa-em-bonito" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/estancia-mimosa-em-bonito" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/estancia-mimosa-em-bonito" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/safari-fluvial-em-miranda</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/safari-fluvial-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/safari-fluvial-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/safari-fluvial-em-miranda" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/gruta-do-lago-azul-em-bonito</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/gruta-do-lago-azul-em-bonito" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/gruta-do-lago-azul-em-bonito" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/gruta-do-lago-azul-em-bonito" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/cavalgada-em-miranda</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/cavalgada-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/cavalgada-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/cavalgada-em-miranda" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/safari-onca-pintada-em-miranda</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/safari-onca-pintada-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/safari-onca-pintada-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/safari-onca-pintada-em-miranda" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/jeep-safari-nhecolandia-em-miranda</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/jeep-safari-nhecolandia-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/jeep-safari-nhecolandia-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/jeep-safari-nhecolandia-em-miranda" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/acampamento-na-selva-em-miranda</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/acampamento-na-selva-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/acampamento-na-selva-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/acampamento-na-selva-em-miranda" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/passeio-de-barco-motor-em-miranda</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/passeio-de-barco-motor-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/passeio-de-barco-motor-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/passeio-de-barco-motor-em-miranda" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/focagem-notura-animais-em-miranda</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/focagem-notura-animais-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/focagem-notura-animais-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/focagem-notura-animais-em-miranda" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/pesca-piranha-em-miranda</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/pesca-piranha-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/pesca-piranha-em-miranda" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/pesca-piranha-em-miranda" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/flutuacao-rio-prata-em-jardim</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/flutuacao-rio-prata-em-jardim" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/flutuacao-rio-prata-em-jardim" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/flutuacao-rio-prata-em-jardim" />
-    </url>
-    <url>
-        <loc>https://www.pantanalecotrips.com.br/pt/passeio/flutuacao-rio-miranda</loc>
-        <lastmod>2025-11-17</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="pt"
-            href="https://www.pantanalecotrips.com.br/pt/passeio/flutuacao-rio-miranda" />
-        <xhtml:link rel="alternate" hreflang="en"
-            href="https://www.pantanalecotrips.com.br/en/passeio/flutuacao-rio-miranda" />
-        <xhtml:link rel="alternate" hreflang="es"
-            href="https://www.pantanalecotrips.com.br/es/passeio/flutuacao-rio-miranda" />
-    </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeios</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeios" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/passeios" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/passeios" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/passeios" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/passeios</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeios" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/passeios" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/passeios" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/passeios" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/passeios</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeios" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/passeios" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/passeios" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/passeios" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/itinerary</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/itinerary" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/itinerary" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/itinerary" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/itinerary" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/itinerary</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/itinerary" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/itinerary" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/itinerary" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/itinerary" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/itinerary</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/itinerary" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/itinerary" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/itinerary" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/itinerary" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/observacao-das-aves-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/observacao-das-aves-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/observacao-das-aves-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/observacao-das-aves-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/observacao-das-aves-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/observacao-das-aves-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/observacao-das-aves-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/observacao-das-aves-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/observacao-das-aves-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/observacao-das-aves-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/observacao-das-aves-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/observacao-das-aves-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/observacao-das-aves-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/observacao-das-aves-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/observacao-das-aves-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/boca-da-onca-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/boca-da-onca-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/boca-da-onca-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/boca-da-onca-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/boca-da-onca-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/boca-da-onca-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/boca-da-onca-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/boca-da-onca-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/boca-da-onca-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/boca-da-onca-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/boca-da-onca-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/boca-da-onca-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/boca-da-onca-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/boca-da-onca-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/boca-da-onca-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/bote-rio-formoso-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/bote-rio-formoso-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/bote-rio-formoso-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/bote-rio-formoso-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/bote-rio-formoso-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/bote-rio-formoso-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/bote-rio-formoso-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/bote-rio-formoso-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/bote-rio-formoso-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/bote-rio-formoso-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/bote-rio-formoso-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/bote-rio-formoso-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/bote-rio-formoso-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/bote-rio-formoso-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/bote-rio-formoso-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/buraco-das-araras-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/buraco-das-araras-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/buraco-das-araras-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/buraco-das-araras-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/buraco-das-araras-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/buraco-das-araras-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/buraco-das-araras-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/buraco-das-araras-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/buraco-das-araras-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/buraco-das-araras-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/buraco-das-araras-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/buraco-das-araras-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/buraco-das-araras-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/buraco-das-araras-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/buraco-das-araras-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/cabanas-arvorismo-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/cabanas-arvorismo-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/cabanas-arvorismo-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/cabanas-arvorismo-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/cabanas-arvorismo-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/cabanas-arvorismo-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/cabanas-arvorismo-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/cabanas-arvorismo-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/cabanas-arvorismo-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/cabanas-arvorismo-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/cabanas-arvorismo-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/cabanas-arvorismo-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/cabanas-arvorismo-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/cabanas-arvorismo-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/cabanas-arvorismo-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/canoagem-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/canoagem-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/canoagem-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/canoagem-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/canoagem-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/canoagem-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/canoagem-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/canoagem-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/canoagem-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/canoagem-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/canoagem-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/canoagem-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/canoagem-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/canoagem-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/canoagem-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/pescaria-piranha-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/pescaria-piranha-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/pescaria-piranha-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/pescaria-piranha-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/pescaria-piranha-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/pescaria-piranha-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/pescaria-piranha-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/pescaria-piranha-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/pescaria-piranha-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/pescaria-piranha-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/pescaria-piranha-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/pescaria-piranha-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/pescaria-piranha-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/pescaria-piranha-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/pescaria-piranha-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/safari-fotografico-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/safari-fotografico-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/safari-fotografico-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/safari-fotografico-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/safari-fotografico-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/safari-fotografico-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/safari-fotografico-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/safari-fotografico-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/safari-fotografico-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/safari-fotografico-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/safari-fotografico-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/safari-fotografico-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/safari-fotografico-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/safari-fotografico-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/safari-fotografico-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/caminhada-ecologica-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/caminhada-ecologica-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/caminhada-ecologica-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/caminhada-ecologica-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/caminhada-ecologica-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/caminhada-ecologica-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/caminhada-ecologica-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/caminhada-ecologica-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/caminhada-ecologica-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/caminhada-ecologica-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/caminhada-ecologica-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/caminhada-ecologica-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/caminhada-ecologica-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/caminhada-ecologica-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/caminhada-ecologica-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/estancia-mimosa-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/estancia-mimosa-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/estancia-mimosa-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/estancia-mimosa-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/estancia-mimosa-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/estancia-mimosa-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/estancia-mimosa-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/estancia-mimosa-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/estancia-mimosa-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/estancia-mimosa-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/estancia-mimosa-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/estancia-mimosa-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/estancia-mimosa-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/estancia-mimosa-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/estancia-mimosa-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/safari-fluvial-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/safari-fluvial-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/safari-fluvial-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/safari-fluvial-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/safari-fluvial-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/safari-fluvial-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/safari-fluvial-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/safari-fluvial-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/safari-fluvial-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/safari-fluvial-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/safari-fluvial-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/safari-fluvial-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/safari-fluvial-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/safari-fluvial-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/safari-fluvial-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/gruta-do-lago-azul-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/gruta-do-lago-azul-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/gruta-do-lago-azul-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/gruta-do-lago-azul-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/gruta-do-lago-azul-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/gruta-do-lago-azul-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/gruta-do-lago-azul-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/gruta-do-lago-azul-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/gruta-do-lago-azul-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/gruta-do-lago-azul-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/gruta-do-lago-azul-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/gruta-do-lago-azul-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/gruta-do-lago-azul-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/gruta-do-lago-azul-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/gruta-do-lago-azul-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/cavalgada-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/cavalgada-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/cavalgada-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/cavalgada-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/cavalgada-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/cavalgada-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/cavalgada-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/cavalgada-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/cavalgada-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/cavalgada-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/cavalgada-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/cavalgada-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/cavalgada-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/cavalgada-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/cavalgada-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/safari-onca-pintada-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/safari-onca-pintada-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/safari-onca-pintada-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/safari-onca-pintada-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/safari-onca-pintada-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/safari-onca-pintada-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/safari-onca-pintada-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/safari-onca-pintada-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/safari-onca-pintada-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/safari-onca-pintada-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/safari-onca-pintada-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/safari-onca-pintada-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/safari-onca-pintada-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/safari-onca-pintada-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/safari-onca-pintada-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/jeep-safari-nhecolandia-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/jeep-safari-nhecolandia-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/jeep-safari-nhecolandia-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/jeep-safari-nhecolandia-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/jeep-safari-nhecolandia-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/jeep-safari-nhecolandia-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/jeep-safari-nhecolandia-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/jeep-safari-nhecolandia-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/jeep-safari-nhecolandia-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/jeep-safari-nhecolandia-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/jeep-safari-nhecolandia-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/jeep-safari-nhecolandia-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/jeep-safari-nhecolandia-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/jeep-safari-nhecolandia-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/jeep-safari-nhecolandia-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/acampamento-na-selva-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/acampamento-na-selva-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/acampamento-na-selva-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/acampamento-na-selva-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/acampamento-na-selva-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/acampamento-na-selva-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/acampamento-na-selva-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/acampamento-na-selva-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/acampamento-na-selva-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/acampamento-na-selva-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/acampamento-na-selva-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/acampamento-na-selva-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/acampamento-na-selva-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/acampamento-na-selva-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/acampamento-na-selva-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/passeio-de-barco-motor-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/passeio-de-barco-motor-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/passeio-de-barco-motor-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/passeio-de-barco-motor-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/passeio-de-barco-motor-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/passeio-de-barco-motor-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/passeio-de-barco-motor-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/passeio-de-barco-motor-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/passeio-de-barco-motor-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/passeio-de-barco-motor-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/passeio-de-barco-motor-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/passeio-de-barco-motor-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/passeio-de-barco-motor-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/passeio-de-barco-motor-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/passeio-de-barco-motor-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/focagem-notura-animais-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/focagem-notura-animais-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/focagem-notura-animais-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/focagem-notura-animais-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/focagem-notura-animais-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/focagem-notura-animais-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/focagem-notura-animais-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/focagem-notura-animais-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/focagem-notura-animais-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/focagem-notura-animais-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/focagem-notura-animais-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/focagem-notura-animais-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/focagem-notura-animais-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/focagem-notura-animais-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/focagem-notura-animais-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/pesca-piranha-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/pesca-piranha-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/pesca-piranha-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/pesca-piranha-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/pesca-piranha-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/pesca-piranha-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/pesca-piranha-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/pesca-piranha-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/pesca-piranha-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/pesca-piranha-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/pesca-piranha-em-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/pesca-piranha-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/pesca-piranha-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/pesca-piranha-em-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/pesca-piranha-em-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/flutuacao-rio-prata-em-jardim</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/flutuacao-rio-prata-em-jardim" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/flutuacao-rio-prata-em-jardim" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/flutuacao-rio-prata-em-jardim" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/flutuacao-rio-prata-em-jardim" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/flutuacao-rio-prata-em-jardim</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/flutuacao-rio-prata-em-jardim" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/flutuacao-rio-prata-em-jardim" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/flutuacao-rio-prata-em-jardim" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/flutuacao-rio-prata-em-jardim" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/flutuacao-rio-prata-em-jardim</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/flutuacao-rio-prata-em-jardim" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/flutuacao-rio-prata-em-jardim" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/flutuacao-rio-prata-em-jardim" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/flutuacao-rio-prata-em-jardim" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/flutuacao-rio-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/flutuacao-rio-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/flutuacao-rio-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/flutuacao-rio-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/flutuacao-rio-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/flutuacao-rio-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/flutuacao-rio-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/flutuacao-rio-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/flutuacao-rio-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/flutuacao-rio-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/flutuacao-rio-miranda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/flutuacao-rio-miranda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/flutuacao-rio-miranda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/flutuacao-rio-miranda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/flutuacao-rio-miranda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/aquario-natural</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/aquario-natural" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/aquario-natural" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/aquario-natural" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/aquario-natural" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/aquario-natural</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/aquario-natural" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/aquario-natural" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/aquario-natural" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/aquario-natural" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/aquario-natural</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/aquario-natural" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/aquario-natural" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/aquario-natural" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/aquario-natural" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/barra-do-sucuri</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/barra-do-sucuri" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/barra-do-sucuri" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/barra-do-sucuri" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/barra-do-sucuri" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/barra-do-sucuri</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/barra-do-sucuri" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/barra-do-sucuri" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/barra-do-sucuri" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/barra-do-sucuri" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/barra-do-sucuri</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/barra-do-sucuri" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/barra-do-sucuri" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/barra-do-sucuri" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/barra-do-sucuri" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/lagoa-misteriosa</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/lagoa-misteriosa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/lagoa-misteriosa" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/lagoa-misteriosa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/lagoa-misteriosa" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/lagoa-misteriosa</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/lagoa-misteriosa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/lagoa-misteriosa" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/lagoa-misteriosa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/lagoa-misteriosa" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/lagoa-misteriosa</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/lagoa-misteriosa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/lagoa-misteriosa" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/lagoa-misteriosa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/lagoa-misteriosa" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/nascente-azul</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/nascente-azul" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/nascente-azul" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/nascente-azul" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/nascente-azul" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/nascente-azul</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/nascente-azul" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/nascente-azul" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/nascente-azul" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/nascente-azul" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/nascente-azul</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/nascente-azul" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/nascente-azul" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/nascente-azul" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/nascente-azul" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/rio-sucuri</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/rio-sucuri" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/rio-sucuri" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/rio-sucuri" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/rio-sucuri" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/rio-sucuri</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/rio-sucuri" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/rio-sucuri" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/rio-sucuri" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/rio-sucuri" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/rio-sucuri</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/rio-sucuri" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/rio-sucuri" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/rio-sucuri" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/rio-sucuri" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/gruta-do-mimoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/gruta-do-mimoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/gruta-do-mimoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/gruta-do-mimoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/gruta-do-mimoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/gruta-do-mimoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/gruta-do-mimoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/gruta-do-mimoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/gruta-do-mimoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/gruta-do-mimoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/gruta-do-mimoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/gruta-do-mimoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/gruta-do-mimoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/gruta-do-mimoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/gruta-do-mimoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/abismo-anhumas</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/abismo-anhumas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/abismo-anhumas" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/abismo-anhumas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/abismo-anhumas" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/abismo-anhumas</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/abismo-anhumas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/abismo-anhumas" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/abismo-anhumas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/abismo-anhumas" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/abismo-anhumas</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/abismo-anhumas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/abismo-anhumas" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/abismo-anhumas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/abismo-anhumas" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/porto-da-ilha</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/porto-da-ilha" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/porto-da-ilha" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/porto-da-ilha" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/porto-da-ilha" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/porto-da-ilha</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/porto-da-ilha" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/porto-da-ilha" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/porto-da-ilha" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/porto-da-ilha" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/porto-da-ilha</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/porto-da-ilha" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/porto-da-ilha" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/porto-da-ilha" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/porto-da-ilha" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/ceita-core</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/ceita-core" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/ceita-core" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/ceita-core" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/ceita-core" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/ceita-core</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/ceita-core" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/ceita-core" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/ceita-core" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/ceita-core" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/ceita-core</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/ceita-core" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/ceita-core" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/ceita-core" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/ceita-core" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/parque-rio-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/parque-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/parque-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/parque-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/parque-rio-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/parque-rio-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/parque-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/parque-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/parque-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/parque-rio-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/parque-rio-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/parque-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/parque-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/parque-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/parque-rio-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/balneario-municipal</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/balneario-municipal" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/balneario-municipal" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/balneario-municipal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/balneario-municipal" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/balneario-municipal</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/balneario-municipal" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/balneario-municipal" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/balneario-municipal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/balneario-municipal" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/balneario-municipal</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/balneario-municipal" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/balneario-municipal" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/balneario-municipal" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/balneario-municipal" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/grutas-sao-miguel</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/grutas-sao-miguel" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/grutas-sao-miguel" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/grutas-sao-miguel" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/grutas-sao-miguel" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/grutas-sao-miguel</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/grutas-sao-miguel" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/grutas-sao-miguel" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/grutas-sao-miguel" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/grutas-sao-miguel" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/grutas-sao-miguel</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/grutas-sao-miguel" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/grutas-sao-miguel" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/grutas-sao-miguel" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/grutas-sao-miguel" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/estrela-do-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/estrela-do-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/estrela-do-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/estrela-do-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/estrela-do-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/estrela-do-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/estrela-do-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/estrela-do-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/estrela-do-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/estrela-do-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/estrela-do-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/estrela-do-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/estrela-do-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/estrela-do-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/estrela-do-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/balneario-do-sol</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/balneario-do-sol" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/balneario-do-sol" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/balneario-do-sol" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/balneario-do-sol" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/balneario-do-sol</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/balneario-do-sol" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/balneario-do-sol" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/balneario-do-sol" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/balneario-do-sol" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/balneario-do-sol</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/balneario-do-sol" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/balneario-do-sol" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/balneario-do-sol" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/balneario-do-sol" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/rio-do-peixe</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/rio-do-peixe" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/rio-do-peixe" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/rio-do-peixe" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/rio-do-peixe" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/rio-do-peixe</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/rio-do-peixe" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/rio-do-peixe" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/rio-do-peixe" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/rio-do-peixe" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/rio-do-peixe</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/rio-do-peixe" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/rio-do-peixe" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/rio-do-peixe" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/rio-do-peixe" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/fazenda-san-francisco</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/fazenda-san-francisco" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/fazenda-san-francisco" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/fazenda-san-francisco" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/fazenda-san-francisco" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/fazenda-san-francisco</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/fazenda-san-francisco" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/fazenda-san-francisco" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/fazenda-san-francisco" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/fazenda-san-francisco" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/fazenda-san-francisco</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/fazenda-san-francisco" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/fazenda-san-francisco" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/fazenda-san-francisco" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/fazenda-san-francisco" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/projeto-jiboia</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/projeto-jiboia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/projeto-jiboia" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/projeto-jiboia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/projeto-jiboia" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/projeto-jiboia</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/projeto-jiboia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/projeto-jiboia" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/projeto-jiboia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/projeto-jiboia" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/projeto-jiboia</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/projeto-jiboia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/projeto-jiboia" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/projeto-jiboia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/projeto-jiboia" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/bio-park</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/bio-park" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/bio-park" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/bio-park" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/bio-park" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/bio-park</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/bio-park" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/bio-park" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/bio-park" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/bio-park" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/bio-park</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/bio-park" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/bio-park" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/bio-park" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/bio-park" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/canions-do-salobra</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/canions-do-salobra" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/canions-do-salobra" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/canions-do-salobra" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/canions-do-salobra" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/canions-do-salobra</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/canions-do-salobra" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/canions-do-salobra" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/canions-do-salobra" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/canions-do-salobra" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/canions-do-salobra</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/canions-do-salobra" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/canions-do-salobra" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/canions-do-salobra" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/canions-do-salobra" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/rotta-zagaia</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/rotta-zagaia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/rotta-zagaia" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/rotta-zagaia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/rotta-zagaia" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/rotta-zagaia</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/rotta-zagaia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/rotta-zagaia" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/rotta-zagaia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/rotta-zagaia" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/rotta-zagaia</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/rotta-zagaia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/rotta-zagaia" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/rotta-zagaia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/rotta-zagaia" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/trilha-boiadeira</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/trilha-boiadeira" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/trilha-boiadeira" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/trilha-boiadeira" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/trilha-boiadeira" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/trilha-boiadeira</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/trilha-boiadeira" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/trilha-boiadeira" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/trilha-boiadeira" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/trilha-boiadeira" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/trilha-boiadeira</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/trilha-boiadeira" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/trilha-boiadeira" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/trilha-boiadeira" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/trilha-boiadeira" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/quadriciclo-da-serra</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/quadriciclo-da-serra" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/quadriciclo-da-serra" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/quadriciclo-da-serra" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/quadriciclo-da-serra" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/quadriciclo-da-serra</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/quadriciclo-da-serra" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/quadriciclo-da-serra" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/quadriciclo-da-serra" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/quadriciclo-da-serra" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/quadriciclo-da-serra</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/quadriciclo-da-serra" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/quadriciclo-da-serra" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/quadriciclo-da-serra" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/quadriciclo-da-serra" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/boia-cross-rio-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/boia-cross-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/boia-cross-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/boia-cross-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/boia-cross-rio-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/boia-cross-rio-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/boia-cross-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/boia-cross-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/boia-cross-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/boia-cross-rio-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/boia-cross-rio-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/boia-cross-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/boia-cross-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/boia-cross-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/boia-cross-rio-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/cavalgada-rio-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/cavalgada-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/cavalgada-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/cavalgada-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/cavalgada-rio-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/cavalgada-rio-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/cavalgada-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/cavalgada-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/cavalgada-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/cavalgada-rio-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/cavalgada-rio-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/cavalgada-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/cavalgada-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/cavalgada-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/cavalgada-rio-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/trilha-do-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/trilha-do-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/trilha-do-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/trilha-do-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/trilha-do-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/trilha-do-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/trilha-do-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/trilha-do-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/trilha-do-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/trilha-do-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/trilha-do-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/trilha-do-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/trilha-do-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/trilha-do-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/trilha-do-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/adventure-rio-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/adventure-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/adventure-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/adventure-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/adventure-rio-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/adventure-rio-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/adventure-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/adventure-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/adventure-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/adventure-rio-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/adventure-rio-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/adventure-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/adventure-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/adventure-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/adventure-rio-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/lagoa-formosa</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/lagoa-formosa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/lagoa-formosa" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/lagoa-formosa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/lagoa-formosa" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/lagoa-formosa</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/lagoa-formosa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/lagoa-formosa" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/lagoa-formosa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/lagoa-formosa" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/lagoa-formosa</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/lagoa-formosa" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/lagoa-formosa" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/lagoa-formosa" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/lagoa-formosa" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/rota-aventura-bike</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/rota-aventura-bike" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/rota-aventura-bike" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/rota-aventura-bike" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/rota-aventura-bike" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/rota-aventura-bike</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/rota-aventura-bike" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/rota-aventura-bike" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/rota-aventura-bike" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/rota-aventura-bike" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/rota-aventura-bike</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/rota-aventura-bike" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/rota-aventura-bike" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/rota-aventura-bike" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/rota-aventura-bike" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/escalada-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/escalada-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/escalada-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/escalada-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/escalada-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/escalada-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/escalada-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/escalada-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/escalada-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/escalada-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/escalada-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/escalada-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/escalada-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/escalada-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/escalada-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/cavalgada-do-peao</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/cavalgada-do-peao" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/cavalgada-do-peao" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/cavalgada-do-peao" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/cavalgada-do-peao" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/cavalgada-do-peao</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/cavalgada-do-peao" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/cavalgada-do-peao" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/cavalgada-do-peao" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/cavalgada-do-peao" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/cavalgada-do-peao</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/cavalgada-do-peao" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/cavalgada-do-peao" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/cavalgada-do-peao" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/cavalgada-do-peao" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/serra-da-bodoquena</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/serra-da-bodoquena" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/serra-da-bodoquena" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/serra-da-bodoquena" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/serra-da-bodoquena" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/serra-da-bodoquena</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/serra-da-bodoquena" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/serra-da-bodoquena" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/serra-da-bodoquena" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/serra-da-bodoquena" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/serra-da-bodoquena</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/serra-da-bodoquena" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/serra-da-bodoquena" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/serra-da-bodoquena" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/serra-da-bodoquena" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/parque-das-cachoeiras</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/parque-das-cachoeiras" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/parque-das-cachoeiras" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/parque-das-cachoeiras" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/parque-das-cachoeiras" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/parque-das-cachoeiras</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/parque-das-cachoeiras" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/parque-das-cachoeiras" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/parque-das-cachoeiras" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/parque-das-cachoeiras" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/parque-das-cachoeiras</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/parque-das-cachoeiras" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/parque-das-cachoeiras" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/parque-das-cachoeiras" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/parque-das-cachoeiras" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/eco-serrana-park</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/eco-serrana-park" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/eco-serrana-park" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/eco-serrana-park" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/eco-serrana-park" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/eco-serrana-park</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/eco-serrana-park" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/eco-serrana-park" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/eco-serrana-park" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/eco-serrana-park" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/eco-serrana-park</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/eco-serrana-park" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/eco-serrana-park" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/eco-serrana-park" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/eco-serrana-park" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/gruta-catedral</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/gruta-catedral" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/gruta-catedral" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/gruta-catedral" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/gruta-catedral" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/gruta-catedral</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/gruta-catedral" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/gruta-catedral" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/gruta-catedral" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/gruta-catedral" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/gruta-catedral</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/gruta-catedral" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/gruta-catedral" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/gruta-catedral" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/gruta-catedral" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/mergulho-rio-da-prata</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/mergulho-rio-da-prata" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/mergulho-rio-da-prata" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/mergulho-rio-da-prata" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/mergulho-rio-da-prata" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/mergulho-rio-da-prata</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/mergulho-rio-da-prata" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/mergulho-rio-da-prata" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/mergulho-rio-da-prata" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/mergulho-rio-da-prata" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/mergulho-rio-da-prata</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/mergulho-rio-da-prata" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/mergulho-rio-da-prata" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/mergulho-rio-da-prata" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/mergulho-rio-da-prata" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/mergulho-rio-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/mergulho-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/mergulho-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/mergulho-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/mergulho-rio-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/mergulho-rio-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/mergulho-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/mergulho-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/mergulho-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/mergulho-rio-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/mergulho-rio-formoso</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/mergulho-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/mergulho-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/mergulho-rio-formoso" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/mergulho-rio-formoso" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/praia-da-figueira</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/praia-da-figueira" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/praia-da-figueira" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/praia-da-figueira" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/praia-da-figueira" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/praia-da-figueira</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/praia-da-figueira" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/praia-da-figueira" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/praia-da-figueira" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/praia-da-figueira" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/praia-da-figueira</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/praia-da-figueira" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/praia-da-figueira" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/praia-da-figueira" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/praia-da-figueira" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/bosque-das-aguas</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/bosque-das-aguas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/bosque-das-aguas" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/bosque-das-aguas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/bosque-das-aguas" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/bosque-das-aguas</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/bosque-das-aguas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/bosque-das-aguas" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/bosque-das-aguas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/bosque-das-aguas" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/bosque-das-aguas</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/bosque-das-aguas" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/bosque-das-aguas" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/bosque-das-aguas" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/bosque-das-aguas" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/refugio-da-barra</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/refugio-da-barra" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/refugio-da-barra" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/refugio-da-barra" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/refugio-da-barra" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/refugio-da-barra</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/refugio-da-barra" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/refugio-da-barra" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/refugio-da-barra" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/refugio-da-barra" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/refugio-da-barra</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/refugio-da-barra" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/refugio-da-barra" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/refugio-da-barra" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/refugio-da-barra" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/passeio/jardim-ecopark</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/jardim-ecopark" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/jardim-ecopark" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/jardim-ecopark" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/jardim-ecopark" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/tour/jardim-ecopark</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/jardim-ecopark" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/jardim-ecopark" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/jardim-ecopark" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/jardim-ecopark" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/excursion/jardim-ecopark</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/passeio/jardim-ecopark" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/tour/jardim-ecopark" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/excursion/jardim-ecopark" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/tour/jardim-ecopark" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/pacotes/tour-bonito-amizade</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/tour-bonito-amizade" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/tour-bonito-amizade" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/tour-bonito-amizade" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/tour-bonito-amizade" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/packages/tour-bonito-amizade</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/tour-bonito-amizade" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/tour-bonito-amizade" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/tour-bonito-amizade" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/tour-bonito-amizade" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/packages/tour-bonito-amizade</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/tour-bonito-amizade" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/tour-bonito-amizade" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/tour-bonito-amizade" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/tour-bonito-amizade" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/pacotes/tour-familia-feliz</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/tour-familia-feliz" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/tour-familia-feliz" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/tour-familia-feliz" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/tour-familia-feliz" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/packages/tour-familia-feliz</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/tour-familia-feliz" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/tour-familia-feliz" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/tour-familia-feliz" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/tour-familia-feliz" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/packages/tour-familia-feliz</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/tour-familia-feliz" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/tour-familia-feliz" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/tour-familia-feliz" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/tour-familia-feliz" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/pacotes/fazenda-san-francisco-coati</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/fazenda-san-francisco-coati" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-coati" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/fazenda-san-francisco-coati" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-coati" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-coati</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/fazenda-san-francisco-coati" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-coati" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/fazenda-san-francisco-coati" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-coati" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/packages/fazenda-san-francisco-coati</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/fazenda-san-francisco-coati" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-coati" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/fazenda-san-francisco-coati" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-coati" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/pacotes/fazenda-san-francisco-ararinha</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/fazenda-san-francisco-ararinha" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-ararinha" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/fazenda-san-francisco-ararinha" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-ararinha" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-ararinha</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/fazenda-san-francisco-ararinha" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-ararinha" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/fazenda-san-francisco-ararinha" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-ararinha" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/packages/fazenda-san-francisco-ararinha</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/fazenda-san-francisco-ararinha" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-ararinha" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/fazenda-san-francisco-ararinha" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-ararinha" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/pacotes/fazenda-san-francisco-anta</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/fazenda-san-francisco-anta" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-anta" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/fazenda-san-francisco-anta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-anta" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-anta</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/fazenda-san-francisco-anta" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-anta" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/fazenda-san-francisco-anta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-anta" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/packages/fazenda-san-francisco-anta</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/fazenda-san-francisco-anta" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-anta" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/fazenda-san-francisco-anta" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-anta" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/pacotes/fazenda-san-francisco-aguia</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/fazenda-san-francisco-aguia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-aguia" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/fazenda-san-francisco-aguia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-aguia" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-aguia</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/fazenda-san-francisco-aguia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-aguia" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/fazenda-san-francisco-aguia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-aguia" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/packages/fazenda-san-francisco-aguia</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/fazenda-san-francisco-aguia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-aguia" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/fazenda-san-francisco-aguia" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/fazenda-san-francisco-aguia" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/pacotes/jungle-lodge-lontra</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/jungle-lodge-lontra" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-lontra" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/jungle-lodge-lontra" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-lontra" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-lontra</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/jungle-lodge-lontra" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-lontra" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/jungle-lodge-lontra" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-lontra" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/packages/jungle-lodge-lontra</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/jungle-lodge-lontra" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-lontra" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/jungle-lodge-lontra" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-lontra" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/pacotes/jungle-lodge-caiman</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/jungle-lodge-caiman" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-caiman" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/jungle-lodge-caiman" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-caiman" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-caiman</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/jungle-lodge-caiman" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-caiman" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/jungle-lodge-caiman" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-caiman" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/packages/jungle-lodge-caiman</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/jungle-lodge-caiman" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-caiman" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/jungle-lodge-caiman" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-caiman" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/pacotes/jungle-lodge-anaconda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/jungle-lodge-anaconda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-anaconda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/jungle-lodge-anaconda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-anaconda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-anaconda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/jungle-lodge-anaconda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-anaconda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/jungle-lodge-anaconda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-anaconda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/packages/jungle-lodge-anaconda</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/jungle-lodge-anaconda" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-anaconda" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/jungle-lodge-anaconda" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-anaconda" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/pacotes/jungle-lodge-eagle</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/jungle-lodge-eagle" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-eagle" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/jungle-lodge-eagle" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-eagle" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-eagle</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/jungle-lodge-eagle" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-eagle" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/jungle-lodge-eagle" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-eagle" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/packages/jungle-lodge-eagle</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/jungle-lodge-eagle" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-eagle" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/jungle-lodge-eagle" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/jungle-lodge-eagle" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/pacotes/noite-feliz-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/noite-feliz-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/noite-feliz-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/noite-feliz-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/noite-feliz-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/packages/noite-feliz-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/noite-feliz-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/noite-feliz-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/noite-feliz-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/noite-feliz-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/packages/noite-feliz-em-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/noite-feliz-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/noite-feliz-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/noite-feliz-em-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/noite-feliz-em-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/pacotes/reveillon-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/reveillon-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/reveillon-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/reveillon-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/reveillon-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/packages/reveillon-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/reveillon-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/reveillon-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/reveillon-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/reveillon-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/packages/reveillon-bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/pacotes/reveillon-bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/packages/reveillon-bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/packages/reveillon-bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/packages/reveillon-bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/hoteis/jungle-lodge</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/hoteis/jungle-lodge" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/hotels/jungle-lodge" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/hoteles/jungle-lodge" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/hotels/jungle-lodge" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/hotels/jungle-lodge</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/hoteis/jungle-lodge" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/hotels/jungle-lodge" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/hoteles/jungle-lodge" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/hotels/jungle-lodge" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/hoteles/jungle-lodge</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/hoteis/jungle-lodge" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/hotels/jungle-lodge" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/hoteles/jungle-lodge" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/hotels/jungle-lodge" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/hoteis/san-francisco</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/hoteis/san-francisco" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/hotels/san-francisco" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/hoteles/san-francisco" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/hotels/san-francisco" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/hotels/san-francisco</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/hoteis/san-francisco" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/hotels/san-francisco" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/hoteles/san-francisco" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/hotels/san-francisco" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/hoteles/san-francisco</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/hoteis/san-francisco" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/hotels/san-francisco" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/hoteles/san-francisco" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/hotels/san-francisco" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/destinos/bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/destinos/bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/destinations/bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/destinations/bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/destinations/bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/destinations/bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/destinos/bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/destinations/bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/destinations/bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/destinations/bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/destinations/bonito</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/destinos/bonito" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/destinations/bonito" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/destinations/bonito" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/destinations/bonito" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/destinos/pantanal-norte</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/destinos/pantanal-norte" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/destinations/pantanal-norte" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/destinations/pantanal-norte" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/destinations/pantanal-norte" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/destinations/pantanal-norte</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/destinos/pantanal-norte" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/destinations/pantanal-norte" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/destinations/pantanal-norte" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/destinations/pantanal-norte" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/destinations/pantanal-norte</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/destinos/pantanal-norte" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/destinations/pantanal-norte" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/destinations/pantanal-norte" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/destinations/pantanal-norte" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/pt/destinos/pantanal-sul</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/destinos/pantanal-sul" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/destinations/pantanal-sul" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/destinations/pantanal-sul" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/destinations/pantanal-sul" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/en/destinations/pantanal-sul</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/destinos/pantanal-sul" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/destinations/pantanal-sul" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/destinations/pantanal-sul" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/destinations/pantanal-sul" />
+  </url>
+  <url>
+    <loc>https://www.pantanalecotrips.com.br/es/destinations/pantanal-sul</loc>
+    <lastmod>2026-03-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/destinos/pantanal-sul" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/destinations/pantanal-sul" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/destinations/pantanal-sul" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/destinations/pantanal-sul" />
+  </url>
 </urlset>

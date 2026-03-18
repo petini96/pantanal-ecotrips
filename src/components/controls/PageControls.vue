@@ -94,7 +94,44 @@ const currentLang = computed(() => {
 });
 
 const changeLanguage = (langCode: string) => {
-  void router.push({ name: route.name || 'home', params: { ...route.params, lang: langCode } });
+  // Cast para any para evitar erros de tipagem com parâmetros dinâmicos
+  const newParams = { ...route.params } as any;
+  newParams.lang = langCode;
+  
+  // Se houver um parâmetro 'type', precisamos traduzi-lo para o novo idioma
+  if (newParams.type) {
+    const typeStr = newParams.type as string;
+    
+    // Mapeamento inverso para identificar o que é o 'type' atual
+    const typeGroups: Record<string, string[]> = {
+      packages: ['pacotes', 'packages', 'tours'],
+      singleTours: ['passeio', 'tour', 'excursion'],
+      allTours: ['passeios', 'all-tours', 'excursiones'],
+      hotels: ['hoteis', 'hotels', 'hoteles'],
+      destinations: ['destinos', 'destinations'],
+      itinerary: ['montar-roteiro', 'create-itinerary', 'itinerario']
+    };
+
+    // Mapeamento por idioma para o novo 'type'
+    const translations: Record<string, Record<string, string>> = {
+      packages: { pt: 'pacotes', en: 'packages', es: 'packages' },
+      singleTours: { pt: 'passeio', en: 'tour', es: 'excursion' },
+      allTours: { pt: 'passeios', en: 'all-tours', es: 'excursiones' },
+      hotels: { pt: 'hoteis', en: 'hotels', es: 'hoteles' },
+      destinations: { pt: 'destinos', en: 'destinations', es: 'destinations' },
+      itinerary: { pt: 'montar-roteiro', en: 'create-itinerary', es: 'itinerario' }
+    };
+
+    // Identifica qual grupo o type atual pertence e traduz
+    for (const [key, aliases] of Object.entries(typeGroups)) {
+      if (aliases.includes(typeStr)) {
+        newParams.type = (translations[key] && translations[key][langCode]) || typeStr;
+        break;
+      }
+    }
+  }
+
+  void router.push({ name: route.name || 'home', params: newParams });
 };
 </script>
 

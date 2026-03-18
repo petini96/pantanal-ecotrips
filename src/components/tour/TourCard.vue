@@ -109,9 +109,16 @@ const { locale, t } = useI18n(); // Usado para o helper de dificuldade
 // 1. URL COMPUTADA (SSR-Safe)
 // Isso roda no servidor e no cliente sem problemas
 const detailUrl = computed(() => {
+  const typeMap: Record<string, string> = { pt: 'passeio', en: 'tour', es: 'excursion' };
+  const type = typeMap[locale.value] || 'passeio';
+
   const routeData = router.resolve({
     name: 'singleTourDetails',
-    params: { lang: locale.value, slug: props.tour.slug },
+    params: { 
+      lang: locale.value, 
+      slug: props.tour.slug,
+      type: type
+    },
   });
   return routeData.href;
 });

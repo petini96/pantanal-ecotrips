@@ -220,6 +220,7 @@
 import { useHotelStore } from 'src/stores/useHotelStore';
 import { onMounted, computed, watch, defineAsyncComponent } from 'vue';
 import { useRoute } from 'vue-router';
+import { useMeta } from 'quasar';
 
 const HorizontalPhotoGallery = defineAsyncComponent(
   () => import('src/components/galerry/HorizontalPhotoGallery.vue')
@@ -231,7 +232,6 @@ defineOptions({
 
 const route = useRoute();
 const store = useHotelStore();
-
 const currentLang = computed(() => (route.params.lang as string) || 'pt');
 const slug = computed(() => route.params.slug as string);
 
@@ -263,6 +263,37 @@ const mapUrl = computed(() => {
 watch(currentLang, () => {
   store.clearHotels(); // Opcional: limpa para forçar reload ou remove para cache
   void initData();
+});
+
+useMeta(() => {
+  if (!hotel.value) return { title: 'Hotel' };
+
+  const baseURL = 'https://www.pantanalecotrips.com.br';
+  const cLang = currentLang.value;
+  const hSlug = slug.value;
+
+  const pageTitle = `${hotel.value.name} | Pantanal Ecotrips`;
+  const pageDesc = hotel.value.shortDescription || hotel.value.description[0];
+
+  return {
+    title: pageTitle,
+    link: {
+      canonical: { 
+        rel: 'canonical', 
+        href: `${baseURL}/${cLang}/${cLang === 'pt' ? 'hoteis' : (cLang === 'es' ? 'hoteles' : 'hotels')}/${hSlug}` 
+      },
+      pt: { rel: 'alternate', hreflang: 'pt', href: `${baseURL}/pt/hoteis/${hSlug}` },
+      en: { rel: 'alternate', hreflang: 'en', href: `${baseURL}/en/hotels/${hSlug}` },
+      es: { rel: 'alternate', hreflang: 'es', href: `${baseURL}/es/hoteles/${hSlug}` },
+      xd: { rel: 'alternate', hreflang: 'x-default', href: `${baseURL}/en/hotels/${hSlug}` },
+    },
+    meta: {
+      description: { name: 'description', content: pageDesc },
+      ogTitle: { property: 'og:title', content: pageTitle },
+      ogDescription: { property: 'og:description', content: pageDesc },
+      ogImage: { property: 'og:image', content: hotel.value.heroImage },
+    }
+  };
 });
 </script>
 
