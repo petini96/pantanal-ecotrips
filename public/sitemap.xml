@@ -61,36 +61,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/passeios" />
   </url>
   <url>
-    <loc>https://www.pantanalecotrips.com.br/pt/itinerary</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/itinerary" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/itinerary" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/itinerary" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/itinerary" />
-  </url>
-  <url>
-    <loc>https://www.pantanalecotrips.com.br/en/itinerary</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/itinerary" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/itinerary" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/itinerary" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/itinerary" />
-  </url>
-  <url>
-    <loc>https://www.pantanalecotrips.com.br/es/itinerary</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://www.pantanalecotrips.com.br/pt/itinerary" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.pantanalecotrips.com.br/en/itinerary" />
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.pantanalecotrips.com.br/es/itinerary" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.pantanalecotrips.com.br/en/itinerary" />
-  </url>
-  <url>
     <loc>https://www.pantanalecotrips.com.br/pt/passeio/observacao-das-aves-em-miranda</loc>
     <lastmod>2026-03-18</lastmod>
     <changefreq>monthly</changefreq>

@@ -118,8 +118,7 @@ const changeLanguage = (langCode: string) => {
       singleTours: { pt: 'passeio', en: 'tour', es: 'excursion' },
       allTours: { pt: 'passeios', en: 'all-tours', es: 'excursiones' },
       hotels: { pt: 'hoteis', en: 'hotels', es: 'hoteles' },
-      destinations: { pt: 'destinos', en: 'destinations', es: 'destinations' },
-      itinerary: { pt: 'montar-roteiro', en: 'create-itinerary', es: 'itinerario' }
+      destinations: { pt: 'destinos', en: 'destinations', es: 'destinations' }
     };
 
     // Identifica qual grupo o type atual pertence e traduz

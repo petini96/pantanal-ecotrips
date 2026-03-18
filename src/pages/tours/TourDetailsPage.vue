@@ -434,7 +434,7 @@ useMeta(() => {
       },
       pt: { rel: 'alternate', hreflang: 'pt', href: `${baseUrl}/pt/pacotes/${pkg.value.slug}` },
       en: { rel: 'alternate', hreflang: 'en', href: `${baseUrl}/en/packages/${pkg.value.slug}` },
-      es: { rel: 'alternate', hreflang: 'es', href: `${baseUrl}/es/paquetes/${pkg.value.slug}` },
+      es: { rel: 'alternate', hreflang: 'es', href: `${baseUrl}/es/packages/${pkg.value.slug}` },
       xd: { rel: 'alternate', hreflang: 'x-default', href: `${baseUrl}/en/packages/${pkg.value.slug}` },
     },
     // Injeção do Schema JSON-LD

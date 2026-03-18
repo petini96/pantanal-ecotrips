@@ -46,8 +46,7 @@ const hotelSlugs = ['jungle-lodge', 'san-francisco'];
 const regionSlugs = ['bonito', 'pantanal-norte', 'pantanal-sul'];
 
 const SECTIONS = [
-  { path: '/passeios', priority: '0.9' },
-  { path: '/itinerary', priority: '0.8' }
+  { path: '/passeios', priority: '0.9' }
 ];
 
 // --- HELPERS ---
@@ -86,7 +85,7 @@ function createAlternateLinks(type: string, slug: string): any[] {
 }
 
 async function generateSitemap() {
-  console.log('Generating dynamic sitemap (manual list mode)...');
+  console.log('Generating dynamic sitemap with localized paths...');
 
   const root = create({ version: '1.0', encoding: 'UTF-8' })
     .ele('urlset', {
@@ -117,7 +116,6 @@ async function generateSitemap() {
       urlEntry.ele('changefreq').txt('weekly');
       urlEntry.ele('priority').txt(sec.priority);
       
-      // Manual links for static sections
       LANGUAGES.forEach(l => {
         urlEntry.ele('xhtml:link', {
           rel: 'alternate',

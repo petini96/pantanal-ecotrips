@@ -232,6 +232,7 @@ defineOptions({
 
 const route = useRoute();
 const store = useHotelStore();
+
 const currentLang = computed(() => (route.params.lang as string) || 'pt');
 const slug = computed(() => route.params.slug as string);
 

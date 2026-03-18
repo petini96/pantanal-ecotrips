@@ -31,13 +31,8 @@
         />
         
         <q-btn
-          :to="{ 
-            name: 'createItinerary', 
-            params: { 
-              lang: locale, 
-              type: locale === 'pt' ? 'montar-roteiro' : (locale === 'es' ? 'itinerario' : 'create-itinerary') 
-            } 
-          }"
+          href="#contact-section"
+          @click="handleItineraryClick"
           color="white"
           text-color="primary"
           size="lg"
@@ -59,8 +54,32 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
+import { useRouter, useRoute } from 'vue-router';
+import { scroll } from 'quasar';
 
 const { t, locale } = useI18n();
+const router = useRouter();
+const route = useRoute();
+const { getScrollTarget, setVerticalScrollPosition } = scroll;
+
+const handleItineraryClick = async (ev: Event) => {
+  ev.preventDefault();
+  if (route.name !== 'home') {
+    await router.push({ name: 'home', params: { lang: locale.value } });
+    setTimeout(() => scrollToContact(), 300);
+  } else {
+    scrollToContact();
+  }
+};
+
+const scrollToContact = () => {
+  const el = document.getElementById('contact-section');
+  if (el) {
+    const target = getScrollTarget(el);
+    const offset = el.offsetTop - 100;
+    setVerticalScrollPosition(target, offset, 500);
+  }
+};
 </script>
 
 <style scoped lang="scss">
