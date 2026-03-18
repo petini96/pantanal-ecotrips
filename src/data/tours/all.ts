@@ -89,6 +89,27 @@ import { fazendaSanFranciscoPt } from "./fazenda-san-francisco";
 import { projetoJiboiaPt } from "./projeto-jiboia";
 import { bioParkPt } from "./bio-park";
 import { canionsDoSalobraPt } from "./canions-do-salobra";
+import { rottaZagaiaPt } from "./rotta-zagaia";
+import { trilhaBoiadeiraPt } from "./trilha-boiadeira";
+import { quadricicloDaSerraPt } from "./quadriciclo-da-serra";
+import { boiaCrossRioFormosoPt } from "./boia-cross-rio-formoso";
+import { cavalgadaRioFormosoPt } from "./cavalgada-rio-formoso";
+import { trilhaDoFormosoPt } from "./trilha-do-formoso";
+import { adventureRioFormosoPt } from "./adventure-rio-formoso";
+import { lagoaFormosaPt } from "./lagoa-formosa";
+import { rotaAventuraBikePt } from "./rota-aventura-bike";
+import { escaladaBonitoPt } from "./escalada-bonito";
+import { cavalgadaDoPeaoPt } from "./cavalgada-do-peao";
+import { serraDaBodoquenaPt } from "./serra-da-bodoquena";
+import { parqueDasCachoeirasPt } from "./parque-das-cachoeiras";
+import { ecoSerranaParkPt } from "./eco-serrana-park";
+import { grutaCatedralPt } from "./gruta-catedral";
+import { mergulhoRioDaPrataPt } from "./mergulho-rio-da-prata";
+import { mergulhoRioFormosoPt } from "./mergulho-rio-formoso";
+import { praiaDaFigueiraPt } from "./praia-da-figueira";
+import { bosqueDasAguasPt } from "./bosque-das-aguas";
+import { refugioDaBarraPt } from "./refugio-da-barra";
+import { jardimEcoparkPt } from "./jardim-ecopark";
 
 // Import NEW tours (EN)
 import { aquarioNaturalEn } from "./aquario-natural";
@@ -110,6 +131,27 @@ import { fazendaSanFranciscoEn } from "./fazenda-san-francisco";
 import { projetoJiboiaEn } from "./projeto-jiboia";
 import { bioParkEn } from "./bio-park";
 import { canionsDoSalobraEn } from "./canions-do-salobra";
+import { rottaZagaiaEn } from "./rotta-zagaia";
+import { trilhaBoiadeiraEn } from "./trilha-boiadeira";
+import { quadricicloDaSerraEn } from "./quadriciclo-da-serra";
+import { boiaCrossRioFormosoEn } from "./boia-cross-rio-formoso";
+import { cavalgadaRioFormosoEn } from "./cavalgada-rio-formoso";
+import { trilhaDoFormosoEn } from "./trilha-do-formoso";
+import { adventureRioFormosoEn } from "./adventure-rio-formoso";
+import { lagoaFormosaEn } from "./lagoa-formosa";
+import { rotaAventuraBikeEn } from "./rota-aventura-bike";
+import { escaladaBonitoEn } from "./escalada-bonito";
+import { cavalgadaDoPeaoEn } from "./cavalgada-do-peao";
+import { serraDaBodoquenaEn } from "./serra-da-bodoquena";
+import { parqueDasCachoeirasEn } from "./parque-das-cachoeiras";
+import { ecoSerranaParkEn } from "./eco-serrana-park";
+import { grutaCatedralEn } from "./gruta-catedral";
+import { mergulhoRioDaPrataEn } from "./mergulho-rio-da-prata";
+import { mergulhoRioFormosoEn } from "./mergulho-rio-formoso";
+import { praiaDaFigueiraEn } from "./praia-da-figueira";
+import { bosqueDasAguasEn } from "./bosque-das-aguas";
+import { refugioDaBarraEn } from "./refugio-da-barra";
+import { jardimEcoparkEn } from "./jardim-ecopark";
 
 // Import NEW tours (ES)
 import { aquarioNaturalEs } from "./aquario-natural";
@@ -131,6 +173,27 @@ import { fazendaSanFranciscoEs } from "./fazenda-san-francisco";
 import { projetoJiboiaEs } from "./projeto-jiboia";
 import { bioParkEs } from "./bio-park";
 import { canionsDoSalobraEs } from "./canions-do-salobra";
+import { rottaZagaiaEs } from "./rotta-zagaia";
+import { trilhaBoiadeiraEs } from "./trilha-boiadeira";
+import { quadricicloDaSerraEs } from "./quadriciclo-da-serra";
+import { boiaCrossRioFormosoEs } from "./boia-cross-rio-formoso";
+import { cavalgadaRioFormosoEs } from "./cavalgada-rio-formoso";
+import { trilhaDoFormosoEs } from "./trilha-do-formoso";
+import { adventureRioFormosoEs } from "./adventure-rio-formoso";
+import { lagoaFormosaEs } from "./lagoa-formosa";
+import { rotaAventuraBikeEs } from "./rota-aventura-bike";
+import { escaladaBonitoEs } from "./escalada-bonito";
+import { cavalgadaDoPeaoEs } from "./cavalgada-do-peao";
+import { serraDaBodoquenaEs } from "./serra-da-bodoquena";
+import { parqueDasCachoeirasEs } from "./parque-das-cachoeiras";
+import { ecoSerranaParkEs } from "./eco-serrana-park";
+import { grutaCatedralEs } from "./gruta-catedral";
+import { mergulhoRioDaPrataEs } from "./mergulho-rio-da-prata";
+import { mergulhoRioFormosoEs } from "./mergulho-rio-formoso";
+import { praiaDaFigueiraEs } from "./praia-da-figueira";
+import { bosqueDasAguasEs } from "./bosque-das-aguas";
+import { refugioDaBarraEs } from "./refugio-da-barra";
+import { jardimEcoparkEs } from "./jardim-ecopark";
 
 
 export const toursEn: Record<string, Tour> = {
@@ -175,6 +238,27 @@ export const toursEn: Record<string, Tour> = {
   [projetoJiboiaPt.id]: projetoJiboiaEn,
   [bioParkPt.id]: bioParkEn,
   [canionsDoSalobraPt.id]: canionsDoSalobraEn,
+  [rottaZagaiaPt.id]: rottaZagaiaEn,
+  [trilhaBoiadeiraPt.id]: trilhaBoiadeiraEn,
+  [quadricicloDaSerraPt.id]: quadricicloDaSerraEn,
+  [boiaCrossRioFormosoPt.id]: boiaCrossRioFormosoEn,
+  [cavalgadaRioFormosoPt.id]: cavalgadaRioFormosoEn,
+  [trilhaDoFormosoPt.id]: trilhaDoFormosoEn,
+  [adventureRioFormosoPt.id]: adventureRioFormosoEn,
+  [lagoaFormosaPt.id]: lagoaFormosaEn,
+  [rotaAventuraBikePt.id]: rotaAventuraBikeEn,
+  [escaladaBonitoPt.id]: escaladaBonitoEn,
+  [cavalgadaDoPeaoPt.id]: cavalgadaDoPeaoEn,
+  [serraDaBodoquenaPt.id]: serraDaBodoquenaEn,
+  [parqueDasCachoeirasPt.id]: parqueDasCachoeirasEn,
+  [ecoSerranaParkPt.id]: ecoSerranaParkEn,
+  [grutaCatedralPt.id]: grutaCatedralEn,
+  [mergulhoRioDaPrataPt.id]: mergulhoRioDaPrataEn,
+  [mergulhoRioFormosoPt.id]: mergulhoRioFormosoEn,
+  [praiaDaFigueiraPt.id]: praiaDaFigueiraEn,
+  [bosqueDasAguasPt.id]: bosqueDasAguasEn,
+  [refugioDaBarraPt.id]: refugioDaBarraEn,
+  [jardimEcoparkPt.id]: jardimEcoparkEn,
 };
 
 export const toursEs: Record<string, Tour> = {
@@ -219,6 +303,27 @@ export const toursEs: Record<string, Tour> = {
   [projetoJiboiaPt.id]: projetoJiboiaEs,
   [bioParkPt.id]: bioParkEs,
   [canionsDoSalobraPt.id]: canionsDoSalobraEs,
+  [rottaZagaiaPt.id]: rottaZagaiaEs,
+  [trilhaBoiadeiraPt.id]: trilhaBoiadeiraEs,
+  [quadricicloDaSerraPt.id]: quadricicloDaSerraEs,
+  [boiaCrossRioFormosoPt.id]: boiaCrossRioFormosoEs,
+  [cavalgadaRioFormosoPt.id]: cavalgadaRioFormosoEs,
+  [trilhaDoFormosoPt.id]: trilhaDoFormosoEs,
+  [adventureRioFormosoPt.id]: adventureRioFormosoEs,
+  [lagoaFormosaPt.id]: lagoaFormosaEs,
+  [rotaAventuraBikePt.id]: rotaAventuraBikeEs,
+  [escaladaBonitoPt.id]: escaladaBonitoEs,
+  [cavalgadaDoPeaoPt.id]: cavalgadaDoPeaoEs,
+  [serraDaBodoquenaPt.id]: serraDaBodoquenaEs,
+  [parqueDasCachoeirasPt.id]: parqueDasCachoeirasEs,
+  [ecoSerranaParkPt.id]: ecoSerranaParkEs,
+  [grutaCatedralPt.id]: grutaCatedralEs,
+  [mergulhoRioDaPrataPt.id]: mergulhoRioDaPrataEs,
+  [mergulhoRioFormosoPt.id]: mergulhoRioFormosoEs,
+  [praiaDaFigueiraPt.id]: praiaDaFigueiraEs,
+  [bosqueDasAguasPt.id]: bosqueDasAguasEs,
+  [refugioDaBarraPt.id]: refugioDaBarraEs,
+  [jardimEcoparkPt.id]: jardimEcoparkEs,
 };
 
 export const toursPt: Record<string, Tour> = {
@@ -263,4 +368,25 @@ export const toursPt: Record<string, Tour> = {
   [projetoJiboiaPt.id]: projetoJiboiaPt,
   [bioParkPt.id]: bioParkPt,
   [canionsDoSalobraPt.id]: canionsDoSalobraPt,
+  [rottaZagaiaPt.id]: rottaZagaiaPt,
+  [trilhaBoiadeiraPt.id]: trilhaBoiadeiraPt,
+  [quadricicloDaSerraPt.id]: quadricicloDaSerraPt,
+  [boiaCrossRioFormosoPt.id]: boiaCrossRioFormosoPt,
+  [cavalgadaRioFormosoPt.id]: cavalgadaRioFormosoPt,
+  [trilhaDoFormosoPt.id]: trilhaDoFormosoPt,
+  [adventureRioFormosoPt.id]: adventureRioFormosoPt,
+  [lagoaFormosaPt.id]: lagoaFormosaPt,
+  [rotaAventuraBikePt.id]: rotaAventuraBikePt,
+  [escaladaBonitoPt.id]: escaladaBonitoPt,
+  [cavalgadaDoPeaoPt.id]: cavalgadaDoPeaoPt,
+  [serraDaBodoquenaPt.id]: serraDaBodoquenaPt,
+  [parqueDasCachoeirasPt.id]: parqueDasCachoeirasPt,
+  [ecoSerranaParkPt.id]: ecoSerranaParkPt,
+  [grutaCatedralPt.id]: grutaCatedralPt,
+  [mergulhoRioDaPrataPt.id]: mergulhoRioDaPrataPt,
+  [mergulhoRioFormosoPt.id]: mergulhoRioFormosoPt,
+  [praiaDaFigueiraPt.id]: praiaDaFigueiraPt,
+  [bosqueDasAguasPt.id]: bosqueDasAguasPt,
+  [refugioDaBarraPt.id]: refugioDaBarraPt,
+  [jardimEcoparkPt.id]: jardimEcoparkPt,
 };
