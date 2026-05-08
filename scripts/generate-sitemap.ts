@@ -4,11 +4,19 @@ import { create } from 'xmlbuilder2';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { tourSlugLocalization } from '../src/data/tours/slug-localization.js';
 
 // --- CONFIGURATIONS ---
 const BASE_URL = 'https://www.pantanalecotrips.com.br';
 const LANGUAGES = ['pt', 'en', 'es'];
 const DEFAULT_LANG = 'en';
+
+function localizedTourSlug(canonicalSlug: string, lang: string): string {
+  if (lang === 'pt') return canonicalSlug;
+  const trans = tourSlugLocalization[canonicalSlug];
+  if (!trans) return canonicalSlug;
+  return lang === 'en' ? trans.en : trans.es;
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -46,7 +54,11 @@ const hotelSlugs = ['jungle-lodge', 'san-francisco'];
 const regionSlugs = ['bonito', 'pantanal-norte', 'pantanal-sul'];
 
 const SECTIONS = [
-  { path: '/passeios', priority: '0.9' }
+  // Tour-listing index page. Path varies by language.
+  {
+    pathByLang: { pt: '/passeios', en: '/all-tours', es: '/excursiones' } as Record<string, string>,
+    priority: '0.9',
+  },
 ];
 
 // --- HELPERS ---
@@ -60,7 +72,8 @@ const PATH_MAPS: Record<string, Record<string, string>> = {
 function createAlternateLinks(type: string, slug: string): any[] {
   const links = LANGUAGES.map(lang => {
     const typePath = PATH_MAPS[type] ? PATH_MAPS[type][lang] : type;
-    const path = slug ? `/${typePath}/${slug}` : (type ? `/${typePath}` : '');
+    const localizedSlug = type === 'tour' ? localizedTourSlug(slug, lang) : slug;
+    const path = localizedSlug ? `/${typePath}/${localizedSlug}` : (type ? `/${typePath}` : '');
     return {
       'xhtml:link': {
         '@rel': 'alternate',
@@ -71,7 +84,8 @@ function createAlternateLinks(type: string, slug: string): any[] {
   });
 
   const xDefaultType = PATH_MAPS[type] ? PATH_MAPS[type][DEFAULT_LANG] : type;
-  const xDefaultPath = slug ? `/${xDefaultType}/${slug}` : (type ? `/${xDefaultType}` : '');
+  const xDefaultLocalizedSlug = type === 'tour' ? localizedTourSlug(slug, DEFAULT_LANG) : slug;
+  const xDefaultPath = xDefaultLocalizedSlug ? `/${xDefaultType}/${xDefaultLocalizedSlug}` : (type ? `/${xDefaultType}` : '');
 
   links.push({
     'xhtml:link': {
@@ -107,36 +121,39 @@ async function generateSitemap() {
     });
   });
 
-  // 2. Sections (Static-ish)
+  // 2. Sections (lang-aware path: /passeios, /all-tours, /excursiones)
   SECTIONS.forEach(sec => {
     LANGUAGES.forEach(lang => {
+      const sectionPath = sec.pathByLang[lang] || sec.pathByLang[DEFAULT_LANG]!;
       const urlEntry = root.ele('url');
-      urlEntry.ele('loc').txt(`${BASE_URL}/${lang}${sec.path}`);
+      urlEntry.ele('loc').txt(`${BASE_URL}/${lang}${sectionPath}`);
       urlEntry.ele('lastmod').txt(lastmod);
       urlEntry.ele('changefreq').txt('weekly');
       urlEntry.ele('priority').txt(sec.priority);
-      
+
       LANGUAGES.forEach(l => {
+        const altPath = sec.pathByLang[l] || sec.pathByLang[DEFAULT_LANG]!;
         urlEntry.ele('xhtml:link', {
           rel: 'alternate',
           hreflang: l,
-          href: `${BASE_URL}/${l}${sec.path}`
+          href: `${BASE_URL}/${l}${altPath}`,
         });
       });
       urlEntry.ele('xhtml:link', {
         rel: 'alternate',
         hreflang: 'x-default',
-        href: `${BASE_URL}/${DEFAULT_LANG}${sec.path}`
+        href: `${BASE_URL}/${DEFAULT_LANG}${sec.pathByLang[DEFAULT_LANG]}`,
       });
     });
   });
 
-  // 3. Tours
+  // 3. Tours — use localized slug per language for <loc>, with hreflang alternates.
   tourSlugs.forEach(slug => {
     LANGUAGES.forEach(lang => {
       const typePath = PATH_MAPS.tour![lang];
+      const localizedSlug = localizedTourSlug(slug, lang);
       const urlEntry = root.ele('url');
-      urlEntry.ele('loc').txt(`${BASE_URL}/${lang}/${typePath}/${slug}`);
+      urlEntry.ele('loc').txt(`${BASE_URL}/${lang}/${typePath}/${localizedSlug}`);
       urlEntry.ele('lastmod').txt(lastmod);
       urlEntry.ele('changefreq').txt('monthly');
       urlEntry.ele('priority').txt('0.8');

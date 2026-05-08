@@ -1,4 +1,5 @@
 import { type Tour } from "src/model/Tour";
+import { tourSlugLocalization } from "./slug-localization";
 
 // Import existing tours (EN)
 import { birdwatchingEn } from "./birdwatching";
@@ -390,3 +391,16 @@ export const toursPt: Record<string, Tour> = {
   [refugioDaBarraPt.id]: refugioDaBarraPt,
   [jardimEcoparkPt.id]: jardimEcoparkPt,
 };
+
+// Apply localized slugs to EN/ES tour variants.
+// PT slugs remain canonical; EN/ES tours get language-specific slugs.
+// Each variant is its own object (built via { ...commonData, ... }), so mutating
+// .slug here does not affect other language variants.
+Object.values(toursEn).forEach((tour) => {
+  const trans = tourSlugLocalization[tour.slug];
+  if (trans?.en) tour.slug = trans.en;
+});
+Object.values(toursEs).forEach((tour) => {
+  const trans = tourSlugLocalization[tour.slug];
+  if (trans?.es) tour.slug = trans.es;
+});

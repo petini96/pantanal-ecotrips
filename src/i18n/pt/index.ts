@@ -18,7 +18,7 @@ export default {
   faq_a5: 'Com certeza! A personalização de roteiros é uma de nossas especialidades. Montamos a viagem ideal para seu perfil, seja para fotografia, aventura, conforto ou viagens em família.',
   meta_title: "Jungle Lodge Pantanal e Pacotes para Bonito MS | Pantanal Ecotrips",
   meta_description: "Viva a experiência de um jungle lodge no Pantanal. Pacotes completos para Bonito, Miranda e Corumbá. Especialistas em ecoturismo. Reserve já!",
-  meta_keywords: 'pantanal, bonito, ecoturismo, pacotes de viagem, pantanal ecotrips, turismo pantanal, passeios em bonito, viagem pantanal, campo grande ms, mato grosso do sul',
+  meta_keywords: 'pantanal jungle lodge, pantanal ms, pantanal, bonito ms, bonito, ecoturismo, pacotes de viagem, pantanal ecotrips, turismo pantanal, passeios em bonito, viagem pantanal, jungle lodge pantanal, safari jaguar, campo grande ms, mato grosso do sul',
   theme_tooltip: 'Mudar Tema',
   price_from: 'A partir de',
   tours_cta_button: 'Ver Detalhes do Roteiro',
