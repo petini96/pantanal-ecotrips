@@ -131,15 +131,22 @@
 <script setup lang="ts">
 import { computed, onMounted, watch } from 'vue';
 import { useMeta } from 'quasar';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { storeToRefs } from 'pinia';
 import { useTourStore } from 'src/stores/useTourStore';
 import { DifficultyLevel } from 'src/model/Enums';
 import { environmentIcons, defaultIcon } from 'src/model/Enums';
 import { getWhatsappMessageUrl } from 'src/config/contacts';
+import {
+  tourSlugLocalization,
+  getCanonicalSlug,
+  getLocalizedSlug,
+  TOUR_PATH_BY_LANG,
+} from 'src/data/tours/slug-localization';
 import { useSSRContext } from 'vue';
 const route = useRoute();
+const router = useRouter();
 const { t, locale } = useI18n();
 
 const tourStore = useTourStore();
@@ -152,12 +159,44 @@ const ssrContext = process.env.SERVER ? useSSRContext() : null;
 
 watch(
   [tour, loading],
-  ([newTour, isLoading]) => {
-    if (!isLoading && !newTour && ssrContext) {
-      const ctx = ssrContext as { res?: { statusCode: number } };
-      if (ctx.res) {
-        ctx.res.statusCode = 404;
+  async ([newTour, isLoading]) => {
+    if (isLoading) return;
+    if (newTour) return;
+
+    const slug = tourSlug.value;
+    const lang = (route.params.lang as string) || 'pt';
+
+    // If the requested slug is a known canonical PT slug accessed under EN/ES,
+    // it's a legacy URL — redirect 301 to the localized slug.
+    if (lang !== 'pt' && tourSlugLocalization[slug]) {
+      const localizedSlug = getLocalizedSlug(slug, lang);
+      if (localizedSlug && localizedSlug !== slug) {
+        const typePath = TOUR_PATH_BY_LANG[lang] || 'tour';
+        const target = `/${lang}/${typePath}/${localizedSlug}`;
+
+        if (ssrContext) {
+          const ctx = ssrContext as {
+            res?: {
+              statusCode: number;
+              setHeader?: (k: string, v: string) => void;
+            };
+          };
+          if (ctx.res) {
+            ctx.res.statusCode = 301;
+            ctx.res.setHeader?.('Location', target);
+          }
+          return;
+        }
+
+        await router.replace(target);
+        return;
       }
+    }
+
+    // True 404 — emit status on SSR; useMeta below sets noindex,nofollow.
+    if (ssrContext) {
+      const ctx = ssrContext as { res?: { statusCode: number } };
+      if (ctx.res) ctx.res.statusCode = 404;
     }
   }
 );
@@ -203,10 +242,19 @@ useMeta(() => {
 
   const pageTitle = `${tour.value.name} | Pantanal Ecotrips`;
   const pageDescription = tour.value.shortDescription || tour.value.description[0];
-  
+
   const currentLang = (route.params.lang as string) || 'pt';
   const baseURL = 'https://www.pantanalecotrips.com.br';
-  const pageUrl = `${baseURL}/${currentLang}/passeio/${tour.value.slug}`;
+
+  // tour.value.slug is already localized for the current language.
+  // Recover canonical PT slug to compute alternate-language URLs.
+  const canonicalPtSlug = getCanonicalSlug(tour.value.slug);
+  const ptSlug = canonicalPtSlug;
+  const enSlug = getLocalizedSlug(canonicalPtSlug, 'en');
+  const esSlug = getLocalizedSlug(canonicalPtSlug, 'es');
+  const currentTypePath = TOUR_PATH_BY_LANG[currentLang] || 'tour';
+  const currentSlug = tour.value.slug;
+  const pageUrl = `${baseURL}/${currentLang}/${currentTypePath}/${currentSlug}`;
   const ogImageURL = tour.value.mainImage;
 
   const breadcrumbData = {
@@ -275,14 +323,11 @@ useMeta(() => {
   return {
     title: pageTitle,
     link: {
-      canonical: { 
-        rel: 'canonical', 
-        href: `${baseURL}/${currentLang}/${currentLang === 'pt' ? 'passeio' : (currentLang === 'en' ? 'tour' : 'excursion')}/${tour.value.slug}` 
-      },
-      pt: { rel: 'alternate', hreflang: 'pt', href: `${baseURL}/pt/passeio/${tour.value.slug}` },
-      en: { rel: 'alternate', hreflang: 'en', href: `${baseURL}/en/tour/${tour.value.slug}` },
-      es: { rel: 'alternate', hreflang: 'es', href: `${baseURL}/es/excursion/${tour.value.slug}` },
-      xd: { rel: 'alternate', hreflang: 'x-default', href: `${baseURL}/en/tour/${tour.value.slug}` },
+      canonical: { rel: 'canonical', href: pageUrl },
+      pt: { rel: 'alternate', hreflang: 'pt', href: `${baseURL}/pt/passeio/${ptSlug}` },
+      en: { rel: 'alternate', hreflang: 'en', href: `${baseURL}/en/tour/${enSlug}` },
+      es: { rel: 'alternate', hreflang: 'es', href: `${baseURL}/es/excursion/${esSlug}` },
+      xd: { rel: 'alternate', hreflang: 'x-default', href: `${baseURL}/en/tour/${enSlug}` },
     },
     meta: {
       description: { name: 'description', content: pageDescription },

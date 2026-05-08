@@ -20,8 +20,16 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
 import { useMeta } from 'quasar';
+import { useSSRContext } from 'vue';
 
 const { t, locale } = useI18n();
+
+// Emit HTTP 404 on SSR so crawlers de-index removed/missing URLs.
+if (process.env.SERVER) {
+  const ssrContext = useSSRContext();
+  const ctx = ssrContext as { res?: { statusCode: number } } | null;
+  if (ctx?.res) ctx.res.statusCode = 404;
+}
 
 useMeta({
   title: '404 - Page Not Found | Pantanal Ecotrips',
