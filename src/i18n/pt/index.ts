@@ -142,5 +142,6 @@ export default {
   about_card2_title: "Reconhecimento Global",
   about_card2_desc: "Recomendados por guias internacionais como Fodor's e Petit Futé. Atendimento fluente em vários idiomas.",
   about_card3_title: "Turismo Sustentável",
-  about_card3_desc: "Registrados no Ministério do Turismo (Cadastur). Promovemos ecoturismo com profundo respeito à natureza."
+  about_card3_desc: "Registrados no Ministério do Turismo (Cadastur). Promovemos ecoturismo com profundo respeito à natureza.",
+  testimonial_sarah_text: "Muito obrigada por uma viagem incrível! Vocês facilitaram tudo e tivemos um tempo fantástico. Se houver algo que eu possa fazer para ajudar a promover a Ecotrips, por favor me avisem!"
 };
