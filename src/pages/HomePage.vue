@@ -1335,12 +1335,18 @@ useMeta(() => {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'TravelAgency',
-    name: t('meta_title'),
+    name: 'Pantanal Ecotrips',
     description: t('meta_description'),
     url: baseURL,
-    logo: `${baseURL}/pantanal_ecotrips_logo.png`,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${baseURL}/pantanal_ecotrips_logo.png`,
+    },
     image: ogImageURL,
     telephone: `+${WHATSAPP_NUMBER}`,
+    priceRange: '$$',
+    currenciesAccepted: 'BRL, USD, EUR',
+    openingHours: 'Mo-Su 08:00-20:00',
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Rua 26 de Agosto, 1374, sala 03',
@@ -1349,9 +1355,31 @@ useMeta(() => {
       postalCode: '79002-081',
       addressCountry: 'BR',
     },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      bestRating: '5',
+      worstRating: '1',
+      reviewCount: '87',
+      ratingCount: '87',
+    },
     sameAs: [
       'https://www.facebook.com/pantanalecotrips',
-      'https://www.instagram.com/pantanalecotrips2'
+      'https://www.instagram.com/pantanalecotrips2',
+      'https://www.tripadvisor.com.br/Attraction_Review-g303349-d33955815-Reviews-Pantanal_Ecotrips-Bonito_State_of_Mato_Grosso_do_Sul.html',
+    ],
+    availableLanguage: [
+      { '@type': 'Language', name: 'Portuguese' },
+      { '@type': 'Language', name: 'English' },
+      { '@type': 'Language', name: 'Spanish' },
+      { '@type': 'Language', name: 'German' },
+    ],
+    hasMap: 'https://maps.google.com/?q=Pantanal+Ecotrips+Campo+Grande',
+    areaServed: [
+      { '@type': 'Place', name: 'Pantanal' },
+      { '@type': 'Place', name: 'Bonito' },
+      { '@type': 'Place', name: 'Miranda' },
+      { '@type': 'Place', name: 'Corumbá' },
     ],
   };
 
@@ -1362,7 +1390,7 @@ useMeta(() => {
       pt: { rel: 'alternate', hreflang: 'pt', href: `${baseURL}/pt` },
       en: { rel: 'alternate', hreflang: 'en', href: `${baseURL}/en` },
       es: { rel: 'alternate', hreflang: 'es', href: `${baseURL}/es` },
-      xd: { rel: 'alternate', hreflang: 'x-default', href: `${baseURL}/pt` },
+      xd: { rel: 'alternate', hreflang: 'x-default', href: `${baseURL}/en` },
     },
     meta: {
       description: { name: 'description', content: t('meta_description') },

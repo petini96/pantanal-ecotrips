@@ -24,6 +24,8 @@ export default {
   tours_cta_button: 'Ver Detalhes do Roteiro',
   go_home: 'Ir para a Página Inicial',
   tour_not_found: 'Passeio não encontrado',
+  page_not_found: 'Página não encontrada',
+  page_not_found_description: 'A página que você está procurando não existe ou foi movida. Volte para a página inicial e explore nossas aventuras no Pantanal.',
   whatsapp_message: 'Olá, gostaria de mais informações sobre o passeio {tour}.',
   hero_title: 'Explore o Coração do Brasil',
   hero_subtitle: 'Aventuras autênticas no Pantanal e nas águas cristalinas de Bonito.',

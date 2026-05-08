@@ -24,6 +24,8 @@ export default {
   tours_cta_button: 'View Itinerary Details',
   go_home: 'Go to Homepage',
   tour_not_found: 'Tour not found',
+  page_not_found: 'Page not found',
+  page_not_found_description: 'The page you are looking for does not exist or has been moved. Go back to the homepage and explore our Pantanal adventures.',
   whatsapp_message: 'Hello, I would like more information about the {tour} tour.',
   hero_title: 'Explore the Heart of Brazil',
   hero_subtitle: 'Authentic adventures in the Pantanal and the crystal-clear waters of Bonito.',

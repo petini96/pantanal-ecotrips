@@ -230,6 +230,13 @@ const showReadMoreBtn = computed(() => {
 });
 
 useMeta(() => {
+  if (!currentRegion.value && !destinationsSlug.value) {
+    return {
+      title: 'Destino não encontrado | Pantanal Ecotrips',
+      meta: { robots: { name: 'robots', content: 'noindex, nofollow' } },
+    };
+  }
+
   const pageTitle = t('destinations_title') || 'Destinos';
   const rName = currentRegion.value?.name || destinationsSlug.value;
   const desc = currentRegion.value?.description || t('destinations_description') || `Pacotes para ${rName}`;
@@ -237,21 +244,74 @@ useMeta(() => {
   const baseURL = 'https://www.pantanalecotrips.com.br';
   const currentLang = (route.params.lang as string) || 'pt';
 
+  const regionSlug = currentRegion.value?.slug || destinationsSlug.value;
+  const typeSegment = currentLang === 'pt' ? 'destinos' : 'destinations';
+  const pageUrl = `${baseURL}/${currentLang}/${typeSegment}/${regionSlug}`;
+  const heroImage = currentRegion.value?.heroImage || `${baseURL}/pantanal_ecotrips_logo.png`;
+  const descText = Array.isArray(desc) ? desc.join(' ') : String(desc);
+
+  const breadcrumbData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseURL}/${currentLang}` },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: currentLang === 'pt' ? 'Destinos' : (currentLang === 'es' ? 'Destinos' : 'Destinations'),
+        item: `${baseURL}/${currentLang}/${typeSegment}`,
+      },
+      { '@type': 'ListItem', position: 3, name: rName, item: pageUrl },
+    ],
+  };
+
+  const destinationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'TouristDestination',
+    name: rName,
+    description: descText,
+    url: pageUrl,
+    image: heroImage,
+    touristType: ['Ecotourism', 'WildlifeEnthusiast', 'NatureTourism'],
+    includesAttraction: {
+      '@type': 'TouristAttraction',
+      name: `Pantanal Ecotrips - ${rName}`,
+      description: descText,
+    },
+  };
+
   return {
     title: `${pageTitle} ${rName} | Pantanal Ecotrips`,
     link: {
-      canonical: { 
-        rel: 'canonical', 
-        href: `${baseURL}/${currentLang}/${currentLang === 'pt' ? 'destinos' : 'destinations'}/${currentRegion.value?.slug || destinationsSlug.value}` 
-      },
-      pt: { rel: 'alternate', hreflang: 'pt', href: `${baseURL}/pt/destinos/${currentRegion.value?.slug || destinationsSlug.value}` },
-      en: { rel: 'alternate', hreflang: 'en', href: `${baseURL}/en/destinations/${currentRegion.value?.slug || destinationsSlug.value}` },
-      es: { rel: 'alternate', hreflang: 'es', href: `${baseURL}/es/destinations/${currentRegion.value?.slug || destinationsSlug.value}` },
-      xd: { rel: 'alternate', hreflang: 'x-default', href: `${baseURL}/en/destinations/${currentRegion.value?.slug || destinationsSlug.value}` },
+      canonical: { rel: 'canonical', href: pageUrl },
+      pt: { rel: 'alternate', hreflang: 'pt', href: `${baseURL}/pt/destinos/${regionSlug}` },
+      en: { rel: 'alternate', hreflang: 'en', href: `${baseURL}/en/destinations/${regionSlug}` },
+      es: { rel: 'alternate', hreflang: 'es', href: `${baseURL}/es/destinations/${regionSlug}` },
+      xd: { rel: 'alternate', hreflang: 'x-default', href: `${baseURL}/en/destinations/${regionSlug}` },
     },
     meta: {
-      description: { name: 'description', content: desc }
-    }
+      description: { name: 'description', content: descText },
+      ogTitle: { property: 'og:title', content: `${pageTitle} ${rName} | Pantanal Ecotrips` },
+      ogDescription: { property: 'og:description', content: descText },
+      ogType: { property: 'og:type', content: 'website' },
+      ogUrl: { property: 'og:url', content: pageUrl },
+      ogImage: { property: 'og:image', content: heroImage },
+      ogSiteName: { property: 'og:site_name', content: 'Pantanal Ecotrips' },
+      twitterCard: { name: 'twitter:card', content: 'summary_large_image' },
+      twitterTitle: { name: 'twitter:title', content: `${pageTitle} ${rName} | Pantanal Ecotrips` },
+      twitterDescription: { name: 'twitter:description', content: descText },
+      twitterImage: { name: 'twitter:image', content: heroImage },
+    },
+    script: {
+      destination: {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(destinationSchema),
+      },
+      breadcrumb: {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(breadcrumbData),
+      },
+    },
   };
 });
 </script>

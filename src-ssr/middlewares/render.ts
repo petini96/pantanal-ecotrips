@@ -2,60 +2,55 @@ import { type Request, type Response } from 'express';
 import { type RenderError } from '#q-app';
 import { defineSsrMiddleware } from '#q-app/wrappers';
 
-// This middleware should execute as last one
-// since it captures everything and tries to
-// render the page with Vue
+const RENDER_TIMEOUT_MS = 10000;
+
+function renderWithTimeout(render: (ctx: { req: Request; res: Response }) => Promise<string>, ctx: { req: Request; res: Response }): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const timer = setTimeout(() => {
+      reject(Object.assign(new Error('SSR render timeout'), { code: 504 }));
+    }, RENDER_TIMEOUT_MS);
+
+    render(ctx).then(
+      (html) => { clearTimeout(timer); resolve(html); },
+      (err: unknown) => { clearTimeout(timer); reject(err); }
+    );
+  });
+}
 
 export default defineSsrMiddleware(({ app, render, serve }) => {
-  // we capture any other Express route and hand it
-  // over to Vue and Vue Router to render our page
-  
-  // AQUI ESTÁ A CORREÇÃO: trocamos resolve.urlPath('*') por /.*/
   app.get(/.*/, (req: Request, res: Response) => {
     res.setHeader('Content-Type', 'text/html');
 
-    render(/* the ssrContext: */ { req, res })
+    renderWithTimeout(render, { req, res })
       .then((html) => {
-        // now let's send the rendered html to the client
         res.send(html);
       })
-      .catch((err: RenderError) => {
-        // oops, we had an error while rendering the page
-
-        // we were told to redirect to another URL
+      .catch((err: RenderError & { code?: number }) => {
         if (err.url) {
           if (err.code) {
             res.redirect(err.code, err.url);
           } else {
             res.redirect(err.url);
           }
-        } else if (err.code === 404) {
-          // hmm, Vue Router could not find the requested route
+          return;
+        }
 
-          // Should reach here only if no "catch-all" route
-          // is defined in /src/routes
+        if (err.code === 404) {
           res.status(404).send('404 | Page Not Found');
-        } else if (process.env.DEV) {
-          // well, we treat any other code as error;
-          // if we're in dev mode, then we can use Quasar CLI
-          // to display a nice error page that contains the stack
-          // and other useful information
+          return;
+        }
 
-          // serve.error is available on dev only
+        if (err.code === 504) {
+          console.error(`[SSR] Render timeout for ${req.url}`);
+          res.status(504).send('504 | Gateway Timeout');
+          return;
+        }
+
+        if (process.env.DEV) {
           serve.error({ err, req, res });
         } else {
-          // we're in production, so we should have another method
-          // to display something to the client when we encounter an error
-          // (for security reasons, it's not ok to display the same wealth
-          // of information as we do in development)
-
-          // Render Error Page on production or
-          // create a route (/src/routes) for an error page and redirect to it
+          console.error(`[SSR] Render error for ${req.url}:`, err?.message || err);
           res.status(500).send('500 | Internal Server Error');
-
-          if (process.env.DEBUGGING) {
-            console.error(err.stack);
-          }
         }
       });
   });

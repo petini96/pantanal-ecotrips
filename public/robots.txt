@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Bloquear área administrativa
+Disallow: /admin
+Disallow: /admin/
+Disallow: /auth/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://www.pantanalecotrips.com.br/sitemap.xml

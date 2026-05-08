@@ -213,6 +213,7 @@
 <script setup lang="ts">
 import { computed, defineAsyncComponent, onMounted, watch } from 'vue';
 import { useMeta, useQuasar, copyToClipboard } from 'quasar';
+import { useSSRContext } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { storeToRefs } from 'pinia';
@@ -241,6 +242,17 @@ const { getPackageBySlug, loading } = storeToRefs(packageStore);
 const packageSlug = computed(() => route.params.slug as string);
 const pkg = computed(() => getPackageBySlug.value(packageSlug.value));
 const langMap: Record<string, string> = { pt: 'pt', en: 'en', es: 'es' };
+
+const ssrContext = process.env.SERVER ? useSSRContext() : null;
+
+watch(
+  [pkg, loading],
+  ([newPkg, isLoading]) => {
+    if (!isLoading && !newPkg && ssrContext) {
+      (ssrContext as { res?: { statusCode: number } }).res && ((ssrContext as { res: { statusCode: number } }).res.statusCode = 404);
+    }
+  }
+);
 
 // --- Lógica de Dados ---
 const fetchData = async () => {
@@ -379,11 +391,22 @@ const generateStructuredData = (packageData: any) => {
     },
     "location": {
       "@type": "Place",
-      "name": "Pantanal Jungle Lodge", // Reforço de palavra-chave de local
+      "name": "Pantanal Jungle Lodge",
       "address": {
         "@type": "PostalAddress",
         "addressRegion": "Mato Grosso do Sul",
         "addressCountry": "BR"
+      }
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": `${baseUrl}/${locale.value}/packages/${packageData.slug}`,
+      "availability": "https://schema.org/InStock",
+      "priceCurrency": "BRL",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "priceCurrency": "BRL",
+        "description": "Price per person varies by group size and season. Contact us for a quote."
       }
     }
   };
@@ -391,7 +414,10 @@ const generateStructuredData = (packageData: any) => {
 
 useMeta(() => {
   if (!pkg.value) {
-    return { title: t('tour_not_found') };
+    return {
+      title: t('tour_not_found'),
+      meta: { robots: { name: 'robots', content: 'noindex, nofollow' } },
+    };
   }
   const baseUrl = 'https://www.pantanalecotrips.com.br';
   const currentLang = (route.params.lang as string || 'pt');
@@ -416,7 +442,7 @@ useMeta(() => {
       // Open Graph (WhatsApp/Facebook)
       ogTitle: { property: 'og:title', content: pageTitle },
       ogDescription: { property: 'og:description', content: metaDesc },
-      ogType: { property: 'og:type', content: 'website' },
+      ogType: { property: 'og:type', content: 'product' },
       ogUrl: { property: 'og:url', content: `${baseUrl}/${currentLang}/tours/${pkg.value.slug}` },
       ogImage: { property: 'og:image', content: pkg.value.image },
       ogSiteName: { property: 'og:site_name', content: 'Pantanal Ecotrips' },
@@ -437,11 +463,37 @@ useMeta(() => {
       es: { rel: 'alternate', hreflang: 'es', href: `${baseUrl}/es/packages/${pkg.value.slug}` },
       xd: { rel: 'alternate', hreflang: 'x-default', href: `${baseUrl}/en/packages/${pkg.value.slug}` },
     },
-    // Injeção do Schema JSON-LD
     script: {
       ldJson: {
         type: 'application/ld+json',
         innerHTML: JSON.stringify(generateStructuredData(pkg.value))
+      },
+      breadcrumb: {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: 'Home',
+              item: `https://www.pantanalecotrips.com.br/${currentLang}`,
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: currentLang === 'pt' ? 'Pacotes' : 'Packages',
+              item: `https://www.pantanalecotrips.com.br/${currentLang}/${currentLang === 'pt' ? 'pacotes' : 'packages'}`,
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              name: pkg.value.title,
+              item: `https://www.pantanalecotrips.com.br/${currentLang}/${currentLang === 'pt' ? 'pacotes' : 'packages'}/${pkg.value.slug}`,
+            },
+          ],
+        })
       }
     }
   };

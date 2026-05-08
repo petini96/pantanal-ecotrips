@@ -267,7 +267,10 @@ watch(currentLang, () => {
 });
 
 useMeta(() => {
-  if (!hotel.value) return { title: 'Hotel' };
+  if (!hotel.value) return {
+    title: 'Hotel | Pantanal Ecotrips',
+    meta: { robots: { name: 'robots', content: 'noindex, nofollow' } },
+  };
 
   const baseURL = 'https://www.pantanalecotrips.com.br';
   const cLang = currentLang.value;
@@ -276,13 +279,55 @@ useMeta(() => {
   const pageTitle = `${hotel.value.name} | Pantanal Ecotrips`;
   const pageDesc = hotel.value.shortDescription || hotel.value.description[0];
 
+  const pageUrl = `${baseURL}/${cLang}/${cLang === 'pt' ? 'hoteis' : (cLang === 'es' ? 'hoteles' : 'hotels')}/${hSlug}`;
+
+  const breadcrumbData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${baseURL}/${cLang}` },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: cLang === 'pt' ? 'Hotéis' : (cLang === 'es' ? 'Hoteles' : 'Hotels'),
+        item: `${baseURL}/${cLang}/${cLang === 'pt' ? 'hoteis' : (cLang === 'es' ? 'hoteles' : 'hotels')}`,
+      },
+      { '@type': 'ListItem', position: 3, name: hotel.value.name, item: pageUrl },
+    ],
+  };
+
+  const lodgingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LodgingBusiness',
+    name: hotel.value.name,
+    description: pageDesc,
+    image: hotel.value.heroImage,
+    url: pageUrl,
+    telephone: '+5567991452985',
+    address: hotel.value.location ? {
+      '@type': 'PostalAddress',
+      streetAddress: hotel.value.location.address,
+      addressLocality: hotel.value.location.city || 'Bonito',
+      addressRegion: 'Mato Grosso do Sul',
+      addressCountry: 'BR',
+    } : {
+      '@type': 'PostalAddress',
+      addressLocality: 'Bonito',
+      addressRegion: 'Mato Grosso do Sul',
+      addressCountry: 'BR',
+    },
+    priceRange: '$$',
+    availableLanguage: [
+      { '@type': 'Language', name: 'Portuguese' },
+      { '@type': 'Language', name: 'English' },
+      { '@type': 'Language', name: 'Spanish' },
+    ],
+  };
+
   return {
     title: pageTitle,
     link: {
-      canonical: { 
-        rel: 'canonical', 
-        href: `${baseURL}/${cLang}/${cLang === 'pt' ? 'hoteis' : (cLang === 'es' ? 'hoteles' : 'hotels')}/${hSlug}` 
-      },
+      canonical: { rel: 'canonical', href: pageUrl },
       pt: { rel: 'alternate', hreflang: 'pt', href: `${baseURL}/pt/hoteis/${hSlug}` },
       en: { rel: 'alternate', hreflang: 'en', href: `${baseURL}/en/hotels/${hSlug}` },
       es: { rel: 'alternate', hreflang: 'es', href: `${baseURL}/es/hoteles/${hSlug}` },
@@ -292,8 +337,25 @@ useMeta(() => {
       description: { name: 'description', content: pageDesc },
       ogTitle: { property: 'og:title', content: pageTitle },
       ogDescription: { property: 'og:description', content: pageDesc },
+      ogType: { property: 'og:type', content: 'website' },
+      ogUrl: { property: 'og:url', content: pageUrl },
       ogImage: { property: 'og:image', content: hotel.value.heroImage },
-    }
+      ogSiteName: { property: 'og:site_name', content: 'Pantanal Ecotrips' },
+      twitterCard: { name: 'twitter:card', content: 'summary_large_image' },
+      twitterTitle: { name: 'twitter:title', content: pageTitle },
+      twitterDescription: { name: 'twitter:description', content: pageDesc },
+      twitterImage: { name: 'twitter:image', content: hotel.value.heroImage },
+    },
+    script: {
+      lodging: {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(lodgingSchema),
+      },
+      breadcrumb: {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(breadcrumbData),
+      },
+    },
   };
 });
 </script>

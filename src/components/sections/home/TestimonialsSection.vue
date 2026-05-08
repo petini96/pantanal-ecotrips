@@ -214,25 +214,13 @@ const structuredReviews = reviews.map(review => ({
     "@type": "Person",
     "name": review.author
   },
-  "datePublished": `${review.date}-01-01`, // Data aproximada formato ISO
+  "datePublished": `${review.date}-01-01`,
   "reviewRating": {
     "@type": "Rating",
     "ratingValue": "5",
     "bestRating": "5"
   },
-  "reviewBody": review.text,
-  "itemReviewed": {
-    "@type": "TravelAgency",
-    "name": "Pantanal Eco Trips",
-    "image": "https://pantanalecotrips.com.br/pantanal_ecotrips_logo.png",
-    "telephone": `+${WHATSAPP_NUMBER}`,
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Bonito",
-      "addressRegion": "MS",
-      "addressCountry": "BR"
-    }
-  }
+  "reviewBody": review.text
 }));
 
 const metaData = {

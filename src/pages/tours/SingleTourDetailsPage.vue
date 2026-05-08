@@ -130,7 +130,7 @@
 
 <script setup lang="ts">
 import { computed, onMounted, watch } from 'vue';
-import { useMeta } from 'quasar';
+import { useMeta, useQuasar } from 'quasar';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { storeToRefs } from 'pinia';
@@ -138,6 +138,7 @@ import { useTourStore } from 'src/stores/useTourStore';
 import { DifficultyLevel } from 'src/model/Enums';
 import { environmentIcons, defaultIcon } from 'src/model/Enums';
 import { getWhatsappMessageUrl } from 'src/config/contacts';
+import { useSSRContext } from 'vue';
 const route = useRoute();
 const { t, locale } = useI18n();
 
@@ -146,6 +147,17 @@ const { getTourBySlug, loading } = storeToRefs(tourStore);
 
 const tourSlug = computed(() => route.params.slug as string);
 const tour = computed(() => getTourBySlug.value(tourSlug.value));
+
+const ssrContext = process.env.SERVER ? useSSRContext() : null;
+
+watch(
+  [tour, loading],
+  ([newTour, isLoading]) => {
+    if (!isLoading && !newTour && ssrContext) {
+      (ssrContext as { res?: { statusCode: number } }).res && ((ssrContext as { res: { statusCode: number } }).res.statusCode = 404);
+    }
+  }
+);
 
 const fetchData = async (langParam?: string | string[]) => {
   const lang = (langParam as string) || 'pt';
@@ -180,7 +192,10 @@ const getDifficultyInfo = (level: DifficultyLevel) => {
 
 useMeta(() => {
   if (!tour.value) {
-    return { title: t('tour_not_found') };
+    return {
+      title: t('tour_not_found'),
+      meta: { robots: { name: 'robots', content: 'noindex, nofollow' } },
+    };
   }
 
   const pageTitle = `${tour.value.name} | Pantanal Ecotrips`;
@@ -191,31 +206,67 @@ useMeta(() => {
   const pageUrl = `${baseURL}/${currentLang}/passeio/${tour.value.slug}`;
   const ogImageURL = tour.value.mainImage;
 
-  // Schema de Rich Result (Produto/Passeio)
+  const breadcrumbData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: `${baseURL}/${currentLang}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: currentLang === 'pt' ? 'Passeios' : (currentLang === 'es' ? 'Excursiones' : 'Tours'),
+        item: `${baseURL}/${currentLang}/${currentLang === 'pt' ? 'passeios' : (currentLang === 'es' ? 'excursiones' : 'all-tours')}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: tour.value.name,
+        item: pageUrl,
+      },
+    ],
+  };
+
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'Product',
+    '@type': 'TouristAttraction',
     name: tour.value.name,
     description: tour.value.description.join(' '),
     image: tour.value.mainImage,
-    sku: tour.value.id,
-    brand: {
-      '@type': 'Organization',
-      name: 'Pantanal Ecotrips',
+    url: pageUrl,
+    touristType: ['Ecotourism', 'WildlifeEnthusiast'],
+    isAccessibleForFree: false,
+    availableLanguage: [
+      { '@type': 'Language', name: 'Portuguese' },
+      { '@type': 'Language', name: 'English' },
+      { '@type': 'Language', name: 'Spanish' },
+    ],
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: tour.value.city?.name || 'Bonito',
+      addressRegion: 'Mato Grosso do Sul',
+      addressCountry: 'BR',
     },
     offers: {
       '@type': 'Offer',
       url: pageUrl,
       availability: 'https://schema.org/InStock',
-      // preços, adicione-os aqui:
-      // priceCurrency: 'BRL',
-      // price: '150.00',
+      priceCurrency: 'BRL',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        priceCurrency: 'BRL',
+        description: 'Price varies by group size. Contact us for a quote.',
+      },
     },
-    // aggregateRating: {
-    //   '@type': 'AggregateRating',
-    //   ratingValue: '4.8',
-    //   reviewCount: '120'
-    // }
+    provider: {
+      '@type': 'TravelAgency',
+      name: 'Pantanal Ecotrips',
+      url: baseURL,
+    },
   };
 
   return {
@@ -234,7 +285,7 @@ useMeta(() => {
       description: { name: 'description', content: pageDescription },
       ogTitle: { property: 'og:title', content: pageTitle },
       ogDescription: { property: 'og:description', content: pageDescription },
-      ogType: { property: 'og:type', content: 'website' },
+      ogType: { property: 'og:type', content: 'product' },
       ogUrl: { property: 'og:url', content: pageUrl },
       ogImage: { property: 'og:image', content: ogImageURL },
       ogLocale: { property: 'og:locale', content: locale.value.replace('-', '_') },
@@ -248,6 +299,10 @@ useMeta(() => {
       structuredData: {
         type: 'application/ld+json',
         innerHTML: JSON.stringify(structuredData),
+      },
+      breadcrumb: {
+        type: 'application/ld+json',
+        innerHTML: JSON.stringify(breadcrumbData),
       },
     },
   };
