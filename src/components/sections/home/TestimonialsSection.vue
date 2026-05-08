@@ -174,7 +174,7 @@ const reviews = computed(() => [
     rating: 5
   },
   {
-    author: 'Sarah Thompson',
+    author: 'Liam Taggart',
     location: 'United Kingdom',
     date: '2025',
     text: t('testimonial_sarah_text'),
