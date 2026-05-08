@@ -307,7 +307,7 @@ useMeta(() => {
     address: hotel.value.location ? {
       '@type': 'PostalAddress',
       streetAddress: hotel.value.location.address,
-      addressLocality: hotel.value.location.city || 'Bonito',
+      addressLocality: 'Bonito',
       addressRegion: 'Mato Grosso do Sul',
       addressCountry: 'BR',
     } : {

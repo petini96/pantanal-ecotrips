@@ -249,7 +249,10 @@ watch(
   [pkg, loading],
   ([newPkg, isLoading]) => {
     if (!isLoading && !newPkg && ssrContext) {
-      (ssrContext as { res?: { statusCode: number } }).res && ((ssrContext as { res: { statusCode: number } }).res.statusCode = 404);
+      const ctx = ssrContext as { res?: { statusCode: number } };
+      if (ctx.res) {
+        ctx.res.statusCode = 404;
+      }
     }
   }
 );

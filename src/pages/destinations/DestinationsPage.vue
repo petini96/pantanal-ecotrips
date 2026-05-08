@@ -247,7 +247,7 @@ useMeta(() => {
   const regionSlug = currentRegion.value?.slug || destinationsSlug.value;
   const typeSegment = currentLang === 'pt' ? 'destinos' : 'destinations';
   const pageUrl = `${baseURL}/${currentLang}/${typeSegment}/${regionSlug}`;
-  const heroImage = currentRegion.value?.heroImage || `${baseURL}/pantanal_ecotrips_logo.png`;
+  const heroImage = currentRegion.value?.coverImage || `${baseURL}/pantanal_ecotrips_logo.png`;
   const descText = Array.isArray(desc) ? desc.join(' ') : String(desc);
 
   const breadcrumbData = {

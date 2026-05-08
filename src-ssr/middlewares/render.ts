@@ -12,7 +12,10 @@ function renderWithTimeout(render: (ctx: { req: Request; res: Response }) => Pro
 
     render(ctx).then(
       (html) => { clearTimeout(timer); resolve(html); },
-      (err: unknown) => { clearTimeout(timer); reject(err); }
+      (err: unknown) => {
+        clearTimeout(timer);
+        reject(err instanceof Error ? err : new Error(String(err)));
+      }
     );
   });
 }

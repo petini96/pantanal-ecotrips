@@ -130,7 +130,7 @@
 
 <script setup lang="ts">
 import { computed, onMounted, watch } from 'vue';
-import { useMeta, useQuasar } from 'quasar';
+import { useMeta } from 'quasar';
 import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import { storeToRefs } from 'pinia';
@@ -154,7 +154,10 @@ watch(
   [tour, loading],
   ([newTour, isLoading]) => {
     if (!isLoading && !newTour && ssrContext) {
-      (ssrContext as { res?: { statusCode: number } }).res && ((ssrContext as { res: { statusCode: number } }).res.statusCode = 404);
+      const ctx = ssrContext as { res?: { statusCode: number } };
+      if (ctx.res) {
+        ctx.res.statusCode = 404;
+      }
     }
   }
 );
