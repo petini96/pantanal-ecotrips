@@ -142,5 +142,6 @@ export default {
   about_card2_title: "Global Recognition",
   about_card2_desc: "Recommended by global guides like Fodor's and Petit Futé. Multilingual assistance for global travelers.",
   about_card3_title: "Sustainable Tourism",
-  about_card3_desc: "Registered with Cadastur. We promote ecotourism with deep respect for nature and local communities."
+  about_card3_desc: "Registered with Cadastur. We promote ecotourism with deep respect for nature and local communities.",
+  testimonial_sarah_text: "Thank you so much for a really amazing trip! You made it all so easy and we had a really fantastic time. If there's anything I can do to help promote Ecotrips, please do let me know!"
 };

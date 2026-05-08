@@ -130,7 +130,7 @@ const { t } = useI18n();
 const isVisible = ref(false);
 const scrollContainer = ref<HTMLElement | null>(null);
 
-const reviews = [
+const reviews = computed(() => [
   {
     author: 'Gloria Bastos',
     location: 'Portugal',
@@ -154,7 +154,7 @@ const reviews = [
   },
   {
     author: 'Martine Renwart',
-    location: 'Bélgica', 
+    location: 'Bélgica',
     date: '2017',
     text: 'A viagem foi uma experienca maravilhosa, tudo foi muito bem organizado. Valeu tudo e o Ronaldo que foi um organizador perfeito!',
     rating: 5
@@ -166,14 +166,21 @@ const reviews = [
     text: 'Ronaldo só tenho a agradecer pelo atendimento, dedicação e profissionalismo! Foi tudo perfeito e com certeza recomendo a todos!',
     rating: 5
   },
-    {
+  {
     author: 'Família Silva',
     location: 'São Paulo, SP',
     date: '2023',
     text: 'Experiência única no Pantanal. Ver as onças de perto foi indescritível. A organização da Pantanal Eco Trips foi impecável.',
     rating: 5
+  },
+  {
+    author: 'Sarah Thompson',
+    location: 'United Kingdom',
+    date: '2025',
+    text: t('testimonial_sarah_text'),
+    rating: 5
   }
-];
+]);
 
 const bgClass = computed(() => currentTheme.value === 'dark' ? 'bg-dark' : 'bg-grey-1');
 const cardClass = computed(() => currentTheme.value === 'dark' ? 'bg-dark-page border-dark' : 'bg-white shadow-1');
@@ -207,7 +214,7 @@ const avatarColor = (index: number) => {
   return colors[index % colors.length];
 };
 
-const structuredReviews = reviews.map(review => ({
+const structuredReviews = computed(() => reviews.value.map(review => ({
   "@type": "Review",
   "author": {
     "@type": "Person",
@@ -220,7 +227,7 @@ const structuredReviews = reviews.map(review => ({
     "bestRating": "5"
   },
   "reviewBody": review.text
-}));
+})));
 
 const metaData = {
   script: {
@@ -233,11 +240,11 @@ const metaData = {
         "aggregateRating": {
           "@type": "AggregateRating",
           "ratingValue": "5.0",
-          "reviewCount": reviews.length.toString(),
+          "reviewCount": reviews.value.length.toString(),
           "bestRating": "5",
           "worstRating": "1"
         },
-        "review": structuredReviews
+        "review": structuredReviews.value
       })
     }
   }
