@@ -193,6 +193,16 @@ watch(
       }
     }
 
+    // If a localized EN/ES slug is accessed under PT (e.g. after language switch),
+    // redirect to the canonical PT slug.
+    if (lang === 'pt') {
+      const canonicalSlug = getCanonicalSlug(slug);
+      if (canonicalSlug !== slug) {
+        await router.replace(`/pt/passeio/${canonicalSlug}`);
+        return;
+      }
+    }
+
     // True 404 — emit status on SSR; useMeta below sets noindex,nofollow.
     if (ssrContext) {
       const ctx = ssrContext as { res?: { statusCode: number } };

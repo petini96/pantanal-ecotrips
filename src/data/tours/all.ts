@@ -111,6 +111,8 @@ import { praiaDaFigueiraPt } from "./praia-da-figueira";
 import { bosqueDasAguasPt } from "./bosque-das-aguas";
 import { refugioDaBarraPt } from "./refugio-da-barra";
 import { jardimEcoparkPt } from "./jardim-ecopark";
+import { pousadaAguapePt } from "./pousada-aguape";
+import { pousadaXaraesPt } from "./pousada-xaraes";
 
 // Import NEW tours (EN)
 import { aquarioNaturalEn } from "./aquario-natural";
@@ -153,6 +155,8 @@ import { praiaDaFigueiraEn } from "./praia-da-figueira";
 import { bosqueDasAguasEn } from "./bosque-das-aguas";
 import { refugioDaBarraEn } from "./refugio-da-barra";
 import { jardimEcoparkEn } from "./jardim-ecopark";
+import { pousadaAguapeEn } from "./pousada-aguape";
+import { pousadaXaraesEn } from "./pousada-xaraes";
 
 // Import NEW tours (ES)
 import { aquarioNaturalEs } from "./aquario-natural";
@@ -195,6 +199,8 @@ import { praiaDaFigueiraEs } from "./praia-da-figueira";
 import { bosqueDasAguasEs } from "./bosque-das-aguas";
 import { refugioDaBarraEs } from "./refugio-da-barra";
 import { jardimEcoparkEs } from "./jardim-ecopark";
+import { pousadaAguapeEs } from "./pousada-aguape";
+import { pousadaXaraesEs } from "./pousada-xaraes";
 
 
 export const toursEn: Record<string, Tour> = {
@@ -260,6 +266,8 @@ export const toursEn: Record<string, Tour> = {
   [bosqueDasAguasPt.id]: bosqueDasAguasEn,
   [refugioDaBarraPt.id]: refugioDaBarraEn,
   [jardimEcoparkPt.id]: jardimEcoparkEn,
+  [pousadaAguapePt.id]: pousadaAguapeEn,
+  [pousadaXaraesPt.id]: pousadaXaraesEn,
 };
 
 export const toursEs: Record<string, Tour> = {
@@ -325,6 +333,8 @@ export const toursEs: Record<string, Tour> = {
   [bosqueDasAguasPt.id]: bosqueDasAguasEs,
   [refugioDaBarraPt.id]: refugioDaBarraEs,
   [jardimEcoparkPt.id]: jardimEcoparkEs,
+  [pousadaAguapePt.id]: pousadaAguapeEs,
+  [pousadaXaraesPt.id]: pousadaXaraesEs,
 };
 
 export const toursPt: Record<string, Tour> = {
@@ -390,6 +400,8 @@ export const toursPt: Record<string, Tour> = {
   [bosqueDasAguasPt.id]: bosqueDasAguasPt,
   [refugioDaBarraPt.id]: refugioDaBarraPt,
   [jardimEcoparkPt.id]: jardimEcoparkPt,
+  [pousadaAguapePt.id]: pousadaAguapePt,
+  [pousadaXaraesPt.id]: pousadaXaraesPt,
 };
 
 // Apply localized slugs to EN/ES tour variants.

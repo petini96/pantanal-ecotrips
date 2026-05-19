@@ -99,6 +99,14 @@ export const tourSlugLocalization: Record<string, SlugTranslation> = {
     en: 'river-floating-miranda-pantanal',
     es: 'flotacion-rio-miranda-pantanal',
   },
+  'pousada-aguape': {
+    en: 'pousada-aguape-pantanal',
+    es: 'pousada-aguape-pantanal',
+  },
+  'pousada-xaraes': {
+    en: 'pousada-xaraes-pantanal',
+    es: 'pousada-xaraes-pantanal',
+  },
   // Tours 22-60 (place-name-only slugs) keep the same slug in all languages.
 };
 
