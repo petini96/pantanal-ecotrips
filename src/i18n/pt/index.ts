@@ -112,6 +112,7 @@ export default {
   north_pantanal: "Pantanal Norte",
   south_pantanal: "Pantanal Sul",
   amazon: "Amazonas",
+  bolivia: "Bolívia",
   destinations_description: "descrição do destino...",
   destinations_title: "Destino",
   loading_filters: "Carregando filtros",

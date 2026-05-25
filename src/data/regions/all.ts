@@ -1,6 +1,7 @@
 import { pantanalSulPt, pantanalSulEn, pantanalSulEs } from './pantanal-sul';
 import { pantanalNortePt, pantanalNorteEn, pantanalNorteEs } from './pantanal-norte';
 import { bonitoSerraBodoquenaPt, bonitoSerraBodoquenaEn, bonitoSerraBodoquenaEs } from './bonito';
+import { boliviaPt, boliviaEn, boliviaEs } from './bolivia';
 import { type Region } from 'src/model/Region';
 // Certifique-se que esses caminhos de importação existem
 
@@ -16,17 +17,20 @@ import { type Region } from 'src/model/Region';
 export const allRegionsPt: Region[] = [
   bonitoSerraBodoquenaPt,
   pantanalNortePt,
-  pantanalSulPt
+  pantanalSulPt,
+  boliviaPt
 ];
 
 export const allRegionsEn: Region[] = [
   bonitoSerraBodoquenaEn,
   pantanalNorteEn,
-  pantanalSulEn
+  pantanalSulEn,
+  boliviaEn
 ];
 
 export const allRegionsEs: Region[] = [
   bonitoSerraBodoquenaEs,
   pantanalNorteEs,
-  pantanalSulEs
+  pantanalSulEs,
+  boliviaEs
 ];

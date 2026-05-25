@@ -161,10 +161,15 @@ const navLinks = computed<NavLink[]>(() => [
         routeName: 'destinations', 
         params: { slug: 'pantanal-sul', type: t('destinations').toLowerCase() }
       },
-      { 
+      {
         label: t('amazon'),
-        routeName: 'destinations', 
+        routeName: 'destinations',
         params: { slug: 'amazonia', type: t('destinations').toLowerCase() }
+      },
+      {
+        label: t('bolivia'),
+        routeName: 'destinations',
+        params: { slug: 'bolivia', type: t('destinations').toLowerCase() }
       }
     ]
   },

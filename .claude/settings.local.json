@@ -6,7 +6,10 @@
       "mcp__Claude_in_Chrome__computer",
       "Bash(Get-ChildItem -Recurse -Path src -Name)",
       "Bash(grep -v '^tours$')",
-      "Bash(npx tsc *)"
+      "Bash(npx tsc *)",
+      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\vinicius.petini\\\\pessoal-apps\\\\pantanal-ecotrips\" -Directory)",
+      "Bash(Select-Object Name)",
+      "Bash(rtk tsc *)"
     ]
   }
 }

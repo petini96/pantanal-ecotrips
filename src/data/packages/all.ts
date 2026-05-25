@@ -35,6 +35,9 @@ import { noiteFelizPt } from './noite-feliz';
 import { reveillonBonitoEn } from './reveillon-bonito';
 import { reveillonBonitoEs } from './reveillon-bonito';
 import { reveillonBonitoPt } from './reveillon-bonito';
+import { salarUyuniEn } from './salar-uyuni-7d-6n';
+import { salarUyuniEs } from './salar-uyuni-7d-6n';
+import { salarUyuniPt } from './salar-uyuni-7d-6n';
 
 export const packagesEn: Record<string, TourPackage> = {
   jungleLodgeOtter: jungleLodgeOtterEn,
@@ -49,6 +52,7 @@ export const packagesEn: Record<string, TourPackage> = {
   fazendaAguia: fazendaAguiaEn,
   noiteFeliz: noiteFelizEn,
   reveillonBonito: reveillonBonitoEn,
+  salarUyuni: salarUyuniEn,
 };
 
 export const packagesEs: Record<string, TourPackage> = {
@@ -64,6 +68,7 @@ export const packagesEs: Record<string, TourPackage> = {
   fazendaAguia: fazendaAguiaEs,
   noiteFeliz: noiteFelizEs,
   reveillonBonito: reveillonBonitoEs,
+  salarUyuni: salarUyuniEs,
 };
 
 export const packagesPt: Record<string, TourPackage> = {
@@ -79,4 +84,5 @@ export const packagesPt: Record<string, TourPackage> = {
   fazendaAguia: fazendaAguiaPt,
   noiteFeliz: noiteFelizPt,
   reveillonBonito: reveillonBonitoPt,
+  salarUyuni: salarUyuniPt,
 };

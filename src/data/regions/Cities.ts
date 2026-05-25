@@ -20,3 +20,8 @@ export const ladario: City = { id: 'ladario', name: 'Ladário', icon: 'mdi-map-m
 // Adicionar futuramente em Cities.ts se for vender Pantanal Norte
 export const pocone: City = { id: 'pocone', name: 'Poconé', icon: 'mdi-map-marker' };
 export const portoJofre: City = { id: 'porto-jofre', name: 'Porto Jofre', icon: 'mdi-map-marker' };
+
+// -- Cidades da Bolívia --
+export const sucre: City = { id: 'sucre', name: 'Sucre', icon: 'mdi-map-marker' };
+export const potosi: City = { id: 'potosi', name: 'Potosí', icon: 'mdi-map-marker' };
+export const uyuni: City = { id: 'uyuni', name: 'Uyuni', icon: 'mdi-map-marker' };

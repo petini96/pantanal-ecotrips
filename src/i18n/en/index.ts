@@ -112,6 +112,7 @@ export default {
   north_pantanal: "North Pantanal",
   south_pantanal: "South Pantanal",
   amazon: "Amazon",
+  bolivia: "Bolivia",
   destinations_description: "descrição do destination...",
   destinations_title: "Destination",
   loading_filters: "Loading filters",
