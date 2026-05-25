@@ -6,7 +6,7 @@ import { familiesPt } from '../../audiences/families';
 import { familiesEn } from '../../audiences/families';
 import { familiesEs } from '../../audiences/families';
 
-import { trailsWaterfallsPt, trailsWaterfallsEn, trailsWaterfallsEs } from "src/data/categories/trails-waterfalls";
+import { ecologicalTrailsPt, ecologicalTrailsEn, ecologicalTrailsEs } from "src/data/categories/ecological-trails";
 const img = `${TOURS_BUCKET_NAME}/rio-do-peixe/img1.webp`
 
 const commonData = {
@@ -32,7 +32,7 @@ export const rioDoPeixePt: Tour = {
     shortDescription: 'Trilha com cachoeiras incríveis, muitos peixes e almoço pantaneiro.',
     includedItems: ['Almoço', 'Acompanhamento de guia', 'Acesso às cachoeiras'],
     keywords: ['cachoeiras', 'peixes', 'fazenda', 'almoco'],
-    categories: [trailsWaterfallsPt],
+    categories: [ecologicalTrailsPt],
     recommendedFor: [familiesPt]
 };
 
@@ -47,7 +47,7 @@ export const rioDoPeixeEn: Tour = {
     shortDescription: 'Trail with incredible waterfalls, lots of fish and Pantanal lunch.',
     includedItems: ['Lunch', 'Guide accompaniment', 'Access to waterfalls'],
     keywords: ['waterfalls', 'fish', 'farm', 'lunch'],
-    categories: [trailsWaterfallsEn],
+    categories: [ecologicalTrailsEn],
     recommendedFor: [familiesEn]
 };
 
@@ -62,6 +62,6 @@ export const rioDoPeixeEs: Tour = {
     shortDescription: 'Sendero con cascadas increíbles, muchos peces y almuerzo pantanero.',
     includedItems: ['Almuerzo', 'Acompañamiento de guía', 'Acceso a las cascadas'],
     keywords: ['cascadas', 'peces', 'hacienda', 'almuerzo'],
-    categories: [trailsWaterfallsEs],
+    categories: [ecologicalTrailsEs],
     recommendedFor: [familiesEs]
 };

@@ -8,7 +8,7 @@ import { familiesEs } from '../../audiences/families';
 
 import { pantanalPt, pantanalEn, pantanalEs } from "src/data/categories/pantanal";
 import { adventurePt, adventureEn, adventureEs } from "src/data/categories/adventure";
-const img = `${TOURS_BUCKET_NAME}/fazenda-san-francisco/img1.webp`
+const img = `${TOURS_BUCKET_NAME}/fazenda-san-francisco/img1.jpg`
 
 const commonData = {
   id: 'TOUR-FSF-01',

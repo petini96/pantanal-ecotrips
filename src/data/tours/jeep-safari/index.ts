@@ -4,7 +4,7 @@ import { miranda } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
 import { adventurePt, adventureEn, adventureEs } from "src/data/categories/adventure";
-import { trailsWaterfallsPt, trailsWaterfallsEn, trailsWaterfallsEs } from "src/data/categories/trails-waterfalls";
+import { ecologicalTrailsPt, ecologicalTrailsEn, ecologicalTrailsEs } from "src/data/categories/ecological-trails";
 import { pantanalPt, pantanalEn, pantanalEs } from "src/data/categories/pantanal";
 const img = `${TOURS_BUCKET_NAME}/jeep-safari-nhecolandia/img1.webp`
 
@@ -26,7 +26,7 @@ export const jeepSafariPt: Tour = {
     shortDescription: 'Exploração em veículo 4x4 aberto pelas vastas planícies e campos da região da Nhecolândia, buscando avistar a rica fauna do Pantanal como cervos, tamanduás e tuiuiús.',
     includedItems: ['Veículo 4x4', 'Guia-motorista'],
     keywords: ['safari', 'jeep', '4x4', 'fauna'],
-    categories: [trailsWaterfallsPt, pantanalPt, adventurePt],
+    categories: [ecologicalTrailsPt, pantanalPt, adventurePt],
     recommendedFor: []
 };
 
@@ -37,7 +37,7 @@ export const jeepSafariEn: Tour = {
     shortDescription: 'Exploration in an open 4x4 vehicle through the vast plains and fields of the Nhecolândia region, seeking to spot the rich Pantanal fauna like deer, anteaters, and jabirus.',
     includedItems: ['4x4 vehicle', 'Driver-guide'],
     keywords: ['safari', 'jeep', '4x4', 'fauna'],
-    categories: [trailsWaterfallsEn, pantanalEn, adventureEn],
+    categories: [ecologicalTrailsEn, pantanalEn, adventureEn],
     recommendedFor: []
 };
 
@@ -48,6 +48,6 @@ export const jeepSafariEs: Tour = {
     shortDescription: 'Exploración en un vehículo 4x4 abierto por las vastas llanuras y campos de la región de Nhecolândia, buscando avistar la rica fauna del Pantanal como ciervos, osos hormigueros y jabirús.',
     includedItems: ['Vehículo 4x4', 'Guía-conductor'],
     keywords: ['safari', 'jeep', '4x4', 'fauna'],
-    categories: [trailsWaterfallsEs, pantanalEs, adventureEs],
+    categories: [ecologicalTrailsEs, pantanalEs, adventureEs],
     recommendedFor: []
 };

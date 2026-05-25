@@ -3,7 +3,7 @@ import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { miranda } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
-import { trailsWaterfallsPt, trailsWaterfallsEn, trailsWaterfallsEs } from "src/data/categories/trails-waterfalls";
+import { ecologicalTrailsPt, ecologicalTrailsEn, ecologicalTrailsEs } from "src/data/categories/ecological-trails";
 
 const img = `${TOURS_BUCKET_NAME}/eco-serrana-park/img1.webp`
 
@@ -33,7 +33,7 @@ export const ecoSerranaParkPt: Tour = {
     shortDescription: 'Experiência de aquatrekking e trilhas selvagens no Cânion do Rio Salobra.',
     includedItems: ['Almoço caipira', 'Acompanhamento de guia especializado', 'Seguro de acidentes'],
     keywords: ['eco serrana park', 'salobra', 'canion', 'aquatrekking', 'trilha', 'natureza'],
-    categories: [trailsWaterfallsPt],
+    categories: [ecologicalTrailsPt],
     recommendedFor: []
 };
 
@@ -51,7 +51,7 @@ export const ecoSerranaParkEn: Tour = {
     shortDescription: 'Aquatrekking and wild trails experience in the Salobra River Canyon.',
     includedItems: ['Country lunch', 'Specialized guide accompaniment', 'Accident insurance'],
     keywords: ['eco serrana park', 'salobra', 'canyon', 'aquatrekking', 'trail', 'nature'],
-    categories: [trailsWaterfallsEn],
+    categories: [ecologicalTrailsEn],
     recommendedFor: []
 };
 
@@ -69,6 +69,6 @@ export const ecoSerranaParkEs: Tour = {
     shortDescription: 'Experiencia de aquatrekking y senderos salvajes en el Cañón del Río Salobra.',
     includedItems: ['Almuerzo de campo', 'Acompañamiento de guía especializado', 'Seguro de accidentes'],
     keywords: ['eco serrana park', 'salobra', 'cañon', 'aquatrekking', 'sendero', 'naturaleza'],
-    categories: [trailsWaterfallsEs],
+    categories: [ecologicalTrailsEs],
     recommendedFor: []
 };

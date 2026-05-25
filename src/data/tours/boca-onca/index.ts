@@ -10,7 +10,7 @@ import { couplesEs } from '../../audiences/couples';
 import { groupsEs } from '../../audiences/groups';
 
 import { adventurePt, adventureEn, adventureEs } from "src/data/categories/adventure";
-import { trailsWaterfallsPt, trailsWaterfallsEn, trailsWaterfallsEs } from "src/data/categories/trails-waterfalls";
+import { ecologicalTrailsPt, ecologicalTrailsEn, ecologicalTrailsEs } from "src/data/categories/ecological-trails";
 const img = `${TOURS_BUCKET_NAME}/boca-onca/img3.webp`
 
 const commonData = {
@@ -36,7 +36,7 @@ export const bocaDaOncaPt: Tour = {
     shortDescription: 'Caminhada por trilha de 4km passando por 8 cachoeiras, incluindo a Boca da Onça (mais alta do MS), com piscinas naturais e infraestrutura completa.',
     includedItems: ['Almoço', 'Acompanhamento de guia', 'Seguro acidente'],
     keywords: ['boca da onça', 'cachoeira', 'trilha', 'canyon'],
-    categories: [adventurePt, trailsWaterfallsPt],
+    categories: [adventurePt, ecologicalTrailsPt],
     recommendedFor: [groupsPt, couplesPt]
 };
 
@@ -51,7 +51,7 @@ export const bocaDaOncaEn: Tour = {
     shortDescription: '4km trail walk passing 8 waterfalls, including Boca da Onça (highest in MS), with natural pools and complete infrastructure.',
     includedItems: ['Lunch', 'Guide accompaniment', 'Accident insurance'],
     keywords: ['boca da onça', 'waterfall', 'trail', 'canyon'],
-    categories: [adventureEn, trailsWaterfallsEn],
+    categories: [adventureEn, ecologicalTrailsEn],
     recommendedFor: [groupsEn, couplesEn]
 };
 
@@ -66,6 +66,6 @@ export const bocaDaOncaEs: Tour = {
     shortDescription: 'Caminata por sendero de 4km pasando por 8 cascadas, incluida Boca da Onça (la más alta de MS), con piscinas naturales e infraestructura completa.',
     includedItems: ['Almuerzo', 'Acompañamiento de guía', 'Seguro de accidentes'],
     keywords: ['boca da onça', 'cascada', 'sendero', 'cañón'],
-    categories: [adventureEs, trailsWaterfallsEs],
+    categories: [adventureEs, ecologicalTrailsEs],
     recommendedFor: [groupsEs, couplesEs]
 };

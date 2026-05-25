@@ -3,7 +3,7 @@ import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { bodoquena } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
-import { trailsWaterfallsPt, trailsWaterfallsEn, trailsWaterfallsEs } from "src/data/categories/trails-waterfalls";
+import { ecologicalTrailsPt, ecologicalTrailsEn, ecologicalTrailsEs } from "src/data/categories/ecological-trails";
 import { resortsPt, resortsEn, resortsEs } from "src/data/categories/resorts";
 
 const img = `${TOURS_BUCKET_NAME}/serra-da-bodoquena/img1.webp`
@@ -32,7 +32,7 @@ export const serraDaBodoquenaPt: Tour = {
     shortDescription: 'Trilha de 2,5km com 8 paradas para banho em cachoeiras e balneário completo.',
     includedItems: ['Almoço típico', 'Acesso ao balneário', 'Uso de caiaques e stand-up', 'Acompanhamento de guia'],
     keywords: ['serra da bodoquena', 'cachoeiras', 'trilha', 'rio betione', 'balneario', 'natureza'],
-    categories: [trailsWaterfallsPt, resortsPt],
+    categories: [ecologicalTrailsPt, resortsPt],
     recommendedFor: []
 };
 
@@ -48,7 +48,7 @@ export const serraDaBodoquenaEn: Tour = {
     shortDescription: '2.5km trail with 8 swimming stops at waterfalls and a full resort area.',
     includedItems: ['Typical lunch', 'Resort access', 'Use of kayaks and stand-up', 'Guide accompaniment'],
     keywords: ['serra da bodoquena', 'waterfalls', 'trail', 'betione river', 'resort', 'nature'],
-    categories: [trailsWaterfallsEn, resortsEn],
+    categories: [ecologicalTrailsEn, resortsEn],
     recommendedFor: []
 };
 
@@ -64,6 +64,6 @@ export const serraDaBodoquenaEs: Tour = {
     shortDescription: 'Sendero de 2,5km con 8 paradas de baño en cascadas y balneario completo.',
     includedItems: ['Almuerzo típico', 'Acceso al balneario', 'Uso de kayaks y stand-up', 'Acompañamiento de guía'],
     keywords: ['serra da bodoquena', 'cascadas', 'sendero', 'rio betione', 'balneario', 'naturaleza'],
-    categories: [trailsWaterfallsEs, resortsEs],
+    categories: [ecologicalTrailsEs, resortsEs],
     recommendedFor: []
 };

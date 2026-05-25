@@ -13,7 +13,7 @@ const commonData = {
 
 export const pantanalSulPt: Region = {
     ...commonData,
-    name: 'Pantanal Sul (MS)',
+    name: 'Pantanal Sul',
     subtitle: 'Fazendas tradicionais, pesca e fácil acesso.',
     description: [
         `O Destino Visitar o Pantanal Sul é ingressar em um dos ecossistemas mais vibrantes do planeta. Reconhecido pela UNESCO como Patrimônio Natural da Humanidade e Reserva da Biosfera, este bioma vai muito além de uma planície alagável; é um organismo vivo que pulsa conforme o movimento das águas. Aqui, a transição entre o Cerrado, a Floresta Amazônica e o Chaco cria um refúgio de biodiversidade inigualável, onde a natureza se exibe sem timidez.`,
@@ -46,7 +46,7 @@ export const pantanalSulPt: Region = {
 
 export const pantanalSulEn: Region = {
     ...commonData,
-    name: 'South Pantanal',
+    name: 'Southern Pantanal',
     subtitle: 'Traditional ranches, fishing, and easy access.',
     description: [
         `The Destination Visiting the Southern Pantanal means entering one of the most vibrant ecosystems on the planet. Recognized by UNESCO as a World Natural Heritage Site and Biosphere Reserve, this biome is far more than just a wetland; it is a living organism that pulses with the movement of water. Here, the unique transition between the Savanna (Cerrado), the Amazon Rainforest, and the Chaco creates an unparalleled biodiversity refuge where nature displays itself without inhibition.`,

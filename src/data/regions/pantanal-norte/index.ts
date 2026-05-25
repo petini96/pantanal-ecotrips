@@ -13,7 +13,7 @@ const commonData = {
 
 export const pantanalNortePt: Region = {
     ...commonData,
-    name: 'Pantanal Norte (MT)',
+    name: 'Pantanal Norte',
     subtitle: 'O reino da onça-pintada e a Transpantaneira.',
     description: [
         'O Pantanal Norte é famoso pela Rodovia Transpantaneira e por ser o melhor lugar do mundo para avistar onças-pintadas, especialmente na região de Porto Jofre. É um destino mais voltado para a observação intensa de vida selvagem e fotografia.'
@@ -41,7 +41,7 @@ export const pantanalNortePt: Region = {
 
 export const pantanalNorteEn: Region = {
     ...commonData,
-    name: 'North Pantanal',
+    name: 'Northern Pantanal',
     subtitle: 'The realm of the Jaguar and the Transpantaneira Highway.',
     description: [
         'The Northern Pantanal is famous for the Transpantaneira Highway and for being the best place in the world to spot jaguars, especially in the Porto Jofre region. It is a destination focused on intense wildlife watching and photography.'

@@ -6,7 +6,7 @@ import { familiesPt } from '../../audiences/families';
 import { familiesEn } from '../../audiences/families';
 import { familiesEs } from '../../audiences/families';
 
-import { trailsWaterfallsPt, trailsWaterfallsEn, trailsWaterfallsEs } from "src/data/categories/trails-waterfalls";
+import { ecologicalTrailsPt, ecologicalTrailsEn, ecologicalTrailsEs } from "src/data/categories/ecological-trails";
 const img = `${TOURS_BUCKET_NAME}/ceita-core/img1.webp`
 
 const commonData = {
@@ -31,7 +31,7 @@ export const ceitaCorePt: Tour = {
     shortDescription: 'Trilha com cachoeiras e visita à nascente misteriosa do Rio Chapeninha.',
     includedItems: ['Acompanhamento de guia', 'Almoço', 'Uso da infraestrutura'],
     keywords: ['cachoeiras', 'trilha', 'nascente', 'fazenda'],
-    categories: [trailsWaterfallsPt],
+    categories: [ecologicalTrailsPt],
     recommendedFor: [familiesPt]
 };
 
@@ -45,7 +45,7 @@ export const ceitaCoreEn: Tour = {
     shortDescription: 'Trail with waterfalls and visit to the mysterious source of the Chapeninha River.',
     includedItems: ['Guide accompaniment', 'Lunch', 'Use of infrastructure'],
     keywords: ['waterfalls', 'trail', 'spring', 'farm'],
-    categories: [trailsWaterfallsEn],
+    categories: [ecologicalTrailsEn],
     recommendedFor: [familiesEn]
 };
 
@@ -59,6 +59,6 @@ export const ceitaCoreEs: Tour = {
     shortDescription: 'Sendero con cascadas y visita al nacimiento misterioso del Río Chapeninha.',
     includedItems: ['Acompañamiento de guía', 'Almuerzo', 'Uso de la infraestructura'],
     keywords: ['cascadas', 'sendero', 'nacimiento', 'estancia'],
-    categories: [trailsWaterfallsEs],
+    categories: [ecologicalTrailsEs],
     recommendedFor: [familiesEs]
 };

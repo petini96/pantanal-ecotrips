@@ -3,7 +3,7 @@ import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
-import { trailsWaterfallsPt, trailsWaterfallsEn, trailsWaterfallsEs } from "src/data/categories/trails-waterfalls";
+import { ecologicalTrailsPt, ecologicalTrailsEn, ecologicalTrailsEs } from "src/data/categories/ecological-trails";
 import { resortsPt, resortsEn, resortsEs } from "src/data/categories/resorts";
 
 const img = `${TOURS_BUCKET_NAME}/parque-das-cachoeiras/img1.jpg`
@@ -32,7 +32,7 @@ export const parqueDasCachoeirasPt: Tour = {
     shortDescription: 'Caminhada de 1.700m com 7 cachoeiras no Rio Mimoso e piscina de borda infinita.',
     includedItems: ['Acesso às 7 cachoeiras', 'Uso da piscina de borda infinita', 'Área de balneário', 'Acompanhamento de guia'],
     keywords: ['parque das cachoeiras', 'cachoeiras', 'rio mimoso', 'piscina infinita', 'balneario', 'bonito'],
-    categories: [trailsWaterfallsPt, resortsPt],
+    categories: [ecologicalTrailsPt, resortsPt],
     recommendedFor: []
 };
 
@@ -48,7 +48,7 @@ export const parqueDasCachoeirasEn: Tour = {
     shortDescription: '1,700m walk with 7 waterfalls on the Mimoso River and an infinity pool.',
     includedItems: ['Access to 7 waterfalls', 'Use of infinity pool', 'Resort area', 'Guide accompaniment'],
     keywords: ['waterfall park', 'waterfalls', 'mimoso river', 'infinity pool', 'resort', 'bonito'],
-    categories: [trailsWaterfallsEn, resortsEn],
+    categories: [ecologicalTrailsEn, resortsEn],
     recommendedFor: []
 };
 
@@ -64,6 +64,6 @@ export const parqueDasCachoeirasEs: Tour = {
     shortDescription: 'Caminata de 1.700m con 7 cascadas en el río Mimoso y piscina de borde infinito.',
     includedItems: ['Acceso a las 7 cascadas', 'Uso de piscina de borde infinito', 'Área de balneario', 'Acompañamiento de guía'],
     keywords: ['parque de las cascadas', 'cascadas', 'rio mimoso', 'piscina infinita', 'balneario', 'bonito'],
-    categories: [trailsWaterfallsEs, resortsEs],
+    categories: [ecologicalTrailsEs, resortsEs],
     recommendedFor: []
 };

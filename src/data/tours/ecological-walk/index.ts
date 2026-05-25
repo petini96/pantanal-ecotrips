@@ -3,7 +3,7 @@ import { DifficultyLevel, EnvironmentType } from 'src/model/Enums';
 import { miranda } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
-import { trailsWaterfallsPt, trailsWaterfallsEn, trailsWaterfallsEs } from "src/data/categories/trails-waterfalls";
+import { ecologicalTrailsPt, ecologicalTrailsEn, ecologicalTrailsEs } from "src/data/categories/ecological-trails";
 import { pantanalPt, pantanalEn, pantanalEs } from "src/data/categories/pantanal";
 const img = `${TOURS_BUCKET_NAME}/caminhada-ecologica/img1.webp`
 
@@ -26,7 +26,7 @@ export const ecologicalWalkPt: Tour = {
     shortDescription: 'Uma trilha interpretativa a pé por diferentes ambientes do Pantanal, como capões de mata e campos abertos, aprendendo sobre a flora e pequenos animais.',
     includedItems: ['Acompanhamento de guia'],
     keywords: ['caminhada', 'trilha', 'ecológica', 'flora'],
-    categories: [trailsWaterfallsPt, pantanalPt],
+    categories: [ecologicalTrailsPt, pantanalPt],
     recommendedFor: []
 };
 
@@ -37,7 +37,7 @@ export const ecologicalWalkEn: Tour = {
     shortDescription: 'An interpretive walking trail through different Pantanal environments, such as forest patches and open fields, learning about the flora and small animals.',
     includedItems: ['Guide accompaniment'],
     keywords: ['walk', 'trail', 'ecological', 'flora'],
-    categories: [trailsWaterfallsEn, pantanalEn],
+    categories: [ecologicalTrailsEn, pantanalEn],
     recommendedFor: []
 };
 
@@ -48,6 +48,6 @@ export const ecologicalWalkEs: Tour = {
     shortDescription: 'Un sendero interpretativo a pie por diferentes entornos del Pantanal, como zonas boscosas y campos abiertos, aprendiendo sobre la flora y pequeños animales.',
     includedItems: ['Acompañamiento de guía'],
     keywords: ['caminata', 'sendero', 'ecológica', 'flora'],
-    categories: [trailsWaterfallsEs, pantanalEs],
+    categories: [ecologicalTrailsEs, pantanalEs],
     recommendedFor: []
 };

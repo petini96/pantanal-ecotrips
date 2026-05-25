@@ -6,7 +6,7 @@ import { familiesPt } from '../../audiences/families';
 import { familiesEn } from '../../audiences/families';
 import { familiesEs } from '../../audiences/families';
 
-import { trailsWaterfallsPt, trailsWaterfallsEn, trailsWaterfallsEs } from "src/data/categories/trails-waterfalls";
+import { ecologicalTrailsPt, ecologicalTrailsEn, ecologicalTrailsEs } from "src/data/categories/ecological-trails";
 import { pantanalPt, pantanalEn, pantanalEs } from "src/data/categories/pantanal";
 const img = `${TOURS_BUCKET_NAME}/passeio-de-barco-motor/img1.webp`
 
@@ -29,7 +29,7 @@ export const motorBoatTripPt: Tour = {
     shortDescription: 'Navegação noturna pelos rios do Pantanal, usando um holofote para avistar animais de hábitos noturnos como jacarés, capivaras e corujas.',
     includedItems: ['Barco', 'Colete salva-vidas', 'Guia especializado'],
     keywords: ['focagem', 'noturna', 'jacaré', 'barco'],
-    categories: [trailsWaterfallsPt, pantanalPt],
+    categories: [ecologicalTrailsPt, pantanalPt],
     recommendedFor: [familiesPt]
 };
 
@@ -40,7 +40,7 @@ export const motorBoatTripEn: Tour = {
     shortDescription: 'Night navigation through the Pantanal rivers, using a spotlight to spot nocturnal animals like caimans, capybaras, and owls.',
     includedItems: ['Boat', 'Life jacket', 'Specialized guide'],
     keywords: ['spotlighting', 'night', 'caiman', 'boat'],
-    categories: [trailsWaterfallsEn, pantanalEn],
+    categories: [ecologicalTrailsEn, pantanalEn],
     recommendedFor: [familiesEn]
 };
 
@@ -51,6 +51,6 @@ export const motorBoatTripEs: Tour = {
     shortDescription: 'Navegación nocturna por los ríos del Pantanal, usando un foco de luz para avistar animales de hábitos nocturnos como caimanes, capibaras y búhos.',
     includedItems: ['Bote', 'Chaleco salvavidas', 'Guía especializado'],
     keywords: ['enfoque', 'noche', 'caimán', 'bote'],
-    categories: [trailsWaterfallsEs, pantanalEs],
+    categories: [ecologicalTrailsEs, pantanalEs],
     recommendedFor: [familiesEs]
 };

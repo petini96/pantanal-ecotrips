@@ -4,7 +4,7 @@ import { bonito } from '../../regions/Cities';
 import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
 import { adventurePt, adventureEn, adventureEs } from "src/data/categories/adventure";
-import { trailsWaterfallsPt, trailsWaterfallsEn, trailsWaterfallsEs } from "src/data/categories/trails-waterfalls";
+import { ecologicalTrailsPt, ecologicalTrailsEn, ecologicalTrailsEs } from "src/data/categories/ecological-trails";
 import { pantanalPt, pantanalEn, pantanalEs } from "src/data/categories/pantanal";
 const img = `${TOURS_BUCKET_NAME}/canions-do-salobra/img1.webp`
 
@@ -31,7 +31,7 @@ export const canionsDoSalobraPt: Tour = {
     shortDescription: 'Expedição de aventura (Duck ou Trekking) pelos cânions selvagens do Rio Salobra.',
     includedItems: ['Equipamentos', 'Guia', 'Almoço'],
     keywords: ['aventura', 'duck', 'trekking', 'canion'],
-    categories: [adventurePt, trailsWaterfallsPt, pantanalPt],
+    categories: [adventurePt, ecologicalTrailsPt, pantanalPt],
     recommendedFor: []
 };
 
@@ -46,7 +46,7 @@ export const canionsDoSalobraEn: Tour = {
     shortDescription: 'Adventure expedition (Duck or Trekking) through the wild canyons of the Salobra River.',
     includedItems: ['Equipment', 'Guide', 'Lunch'],
     keywords: ['adventure', 'duck', 'trekking', 'canyon'],
-    categories: [adventureEn, trailsWaterfallsEn, pantanalEn],
+    categories: [adventureEn, ecologicalTrailsEn, pantanalEn],
     recommendedFor: []
 };
 
@@ -61,6 +61,6 @@ export const canionsDoSalobraEs: Tour = {
     shortDescription: 'Expedición de aventura (Duck o Trekking) por los cañones salvajes del Río Salobra.',
     includedItems: ['Equipos', 'Guía', 'Almuerzo'],
     keywords: ['aventura', 'duck', 'trekking', 'cañón'],
-    categories: [adventureEs, trailsWaterfallsEs, pantanalEs],
+    categories: [adventureEs, ecologicalTrailsEs, pantanalEs],
     recommendedFor: []
 };

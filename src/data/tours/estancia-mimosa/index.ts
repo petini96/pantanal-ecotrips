@@ -9,7 +9,7 @@ import { familiesEn } from '../../audiences/families';
 import { couplesEs } from '../../audiences/couples';
 import { familiesEs } from '../../audiences/families';
 
-import { trailsWaterfallsPt, trailsWaterfallsEn, trailsWaterfallsEs } from "src/data/categories/trails-waterfalls";
+import { ecologicalTrailsPt, ecologicalTrailsEn, ecologicalTrailsEs } from "src/data/categories/ecological-trails";
 const img = `${TOURS_BUCKET_NAME}/estancia-mimosa/img1.webp`
 
 const commonData = {
@@ -35,7 +35,7 @@ export const estanciaMimosaPt: Tour = {
     shortDescription: 'Trilha com cachoeiras, piscinas naturais, salto e almoço em fazenda típica.',
     includedItems: ['Acompanhamento de guia', 'Colete salva-vidas', 'Almoço', 'Seguro'],
     keywords: ['cachoeira', 'trilha', 'banho de rio', 'barco', 'fazenda'],
-    categories: [trailsWaterfallsPt],
+    categories: [ecologicalTrailsPt],
     recommendedFor: [familiesPt, couplesPt]
 };
 
@@ -50,7 +50,7 @@ export const estanciaMimosaEn: Tour = {
     shortDescription: 'Trail with waterfalls, natural pools, jumping platform and lunch at a typical farm.',
     includedItems: ['Guide accompaniment', 'Life vest', 'Lunch', 'Insurance'],
     keywords: ['waterfall', 'trail', 'river swimming', 'boat', 'farm'],
-    categories: [trailsWaterfallsEn],
+    categories: [ecologicalTrailsEn],
     recommendedFor: [familiesEn, couplesEn]
 };
 
@@ -65,6 +65,6 @@ export const estanciaMimosaEs: Tour = {
     shortDescription: 'Sendero con cascadas, piscinas naturales, salto y almuerzo en hacienda típica.',
     includedItems: ['Acompañamiento de guía', 'Chaleco salvavidas', 'Almoerzo', 'Seguro'],
     keywords: ['cascada', 'sendero', 'baño en el río', 'bote', 'hacienda'],
-    categories: [trailsWaterfallsEs],
+    categories: [ecologicalTrailsEs],
     recommendedFor: [familiesEs, couplesEs]
 };

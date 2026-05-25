@@ -144,5 +144,6 @@ export default {
   about_card2_desc: "Recomendados por guías como Fodor's y Petit Futé. Asistencia multilingüe para viajeros de todo el mundo.",
   about_card3_title: "Turismo Sostenible",
   about_card3_desc: "Registrados en Cadastur. Promovemos el ecoturismo con profundo respeto por la naturaleza.",
-  testimonial_sarah_text: "¡Muchas gracias por un viaje absolutamente increíble! Lo hicieron todo tan fácil y lo pasamos de maravilla. ¡Si hay algo que pueda hacer para ayudar a promover Ecotrips, no duden en decírmelo!"
+  testimonial_sarah_text: "¡Muchas gracias por un viaje absolutamente increíble! Lo hicieron todo tan fácil y lo pasamos de maravilla. ¡Si hay algo que pueda hacer para ayudar a promover Ecotrips, no duden en decírmelo!",
+  no_attractions_found: "No se encontraron atractivos para esta categoría.",
 };
