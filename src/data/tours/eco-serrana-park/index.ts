@@ -5,7 +5,7 @@ import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 
 import { ecologicalTrailsPt, ecologicalTrailsEn, ecologicalTrailsEs } from "src/data/categories/ecological-trails";
 
-const img = `${TOURS_BUCKET_NAME}/eco-serrana-park/img1.webp`
+const img = `${TOURS_BUCKET_NAME}/eco-serrana-park/img1.jpg`
 
 const commonData = {
   id: 'TOUR-ESP-01',

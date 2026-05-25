@@ -7,7 +7,7 @@ import { pantanalPt, pantanalEn, pantanalEs } from 'src/data/categories/pantanal
 import { contemplationPt, contemplationEn, contemplationEs } from 'src/data/categories/contemplation';
 import { familiesPt, familiesEn, familiesEs } from 'src/data/audiences/families';
 
-const img = `${TOURS_BUCKET_NAME}/pousada-aguape/img1.webp`;
+const img = `${TOURS_BUCKET_NAME}/pousada-aguape/img1.avif`;
 
 const commonData = {
   id: 'TOUR-AQD-PA-01',
