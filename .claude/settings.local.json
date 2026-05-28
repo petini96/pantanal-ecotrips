@@ -17,7 +17,8 @@
       "PowerShell(Get-Process -Id 17808, 9536 -ErrorAction SilentlyContinue)",
       "PowerShell($response = Invoke-WebRequest -Uri \"http://localhost:5173/pt\" -UseBasicParsing -TimeoutSec 10; $response.StatusCode; $response.Content.Substring\\(0, 300\\))",
       "PowerShell($response = Invoke-WebRequest -Uri \"http://localhost:5173/src/components/sections/home/GuideHighlightSection.vue\" -UseBasicParsing -TimeoutSec 10; \"Status: $\\($response.StatusCode\\)\"; $response.Content.Substring\\(0, [Math]::Min\\(1000, $response.Content.Length\\)\\))",
-      "PowerShell(Set-Location \"C:\\\\Users\\\\Vinícius\\\\apps\\\\pessoal\\\\pantanal-ecotrips\"; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile -Command `\"npm run dev:vite -- --port 5173 2>&1 | Tee-Object -FilePath '.\\\\vite-server.log'`\"\" -WindowStyle Hidden; \"Dev server starting...\")"
+      "PowerShell(Set-Location \"C:\\\\Users\\\\Vinícius\\\\apps\\\\pessoal\\\\pantanal-ecotrips\"; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile -Command `\"npm run dev:vite -- --port 5173 2>&1 | Tee-Object -FilePath '.\\\\vite-server.log'`\"\" -WindowStyle Hidden; \"Dev server starting...\")",
+      "Bash(findstr \":5173\")"
     ]
   }
 }

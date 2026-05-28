@@ -24,10 +24,13 @@
       <div v-if="loadGallery" class="container q-py-xl text-center">
 
 
-        <h2 class="text-h3 q-mb-md text-weight-bold" :class="currentTheme === 'dark' ? 'text-white' : 'text-primary'">
+        <span class="gallery-label" :class="{ 'gallery-label--dark': currentTheme === 'dark' }">
+          <span class="gallery-label-line" />Pantanal EcoTrips
+        </span>
+        <h2 class="gallery-title q-mb-md" :class="currentTheme === 'dark' ? 'text-white' : ''">
           {{ t("our_gallery_title") }}
         </h2>
-        <p class="text-subtitle1 q-mb-lg opacity-80" :class="currentTheme === 'dark' ? 'text-white' : 'text-primary'">
+        <p class="gallery-sub q-mb-lg" :class="currentTheme === 'dark' ? 'opacity-60 text-white' : 'opacity-60'">
           {{ t("our_gallery_subtitle") }}
         </p>
 
@@ -1480,6 +1483,41 @@ onMounted(() => {
 */
 .section-wrapper-cta {
   min-height: 100vh;
-  /* Altura específica para o CTA de tela cheia */
+}
+
+/* Gallery section header */
+.gallery-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #2e8b57;
+  margin-bottom: 14px;
+}
+.gallery-label--dark { color: #6fcf97; }
+.gallery-label-line {
+  display: inline-block;
+  width: 28px;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 1px;
+}
+.gallery-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1.1;
+  color: #0d2614;
+  margin: 0 0 14px;
+}
+.gallery-sub {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(0,0,0,0.55);
+  max-width: 520px;
+  margin-inline: auto;
 }
 </style>

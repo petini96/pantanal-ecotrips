@@ -1,72 +1,85 @@
 <template>
-  <div class="all-tours-cta-section text-white q-my-xxl">
-    <div class="cta-overlay"></div>
-    <div class="container text-center relative-position">
-      
-      <h2 class="hero-title">
-        {{ t('all_tours_cta_title') }}
-      </h2>
+  <div class="cta-wrap">
+    <!-- Diagonal clip panel (text side) -->
+    <div class="cta-panel">
+      <div class="cta-panel__inner" v-intersection.once="onIntersect" :class="{ 'is-visible': visible }">
+        <span class="cta-panel__label animated-el" style="--d:0.1s">
+          <span class="cta-panel__label-line" />
+          Pantanal EcoTrips
+        </span>
 
-      <p class="text-h6 text-weight-regular text-grey-3 q-mb-xl" style="max-width: 650px; margin-left: auto; margin-right: auto; line-height: 1.6;">
-        {{ t('all_tours_cta_subtitle') }}
-      </p>
+        <h2 class="cta-panel__title animated-el" style="--d:0.22s">
+          {{ t('all_tours_cta_title') }}
+        </h2>
 
-      <div class="cta-buttons-group">
-        <q-btn
-          :to="{ 
-            name: 'allTours', 
-            params: { 
-              lang: locale, 
-              type: locale === 'pt' ? 'passeios' : (locale === 'es' ? 'excursiones' : 'all-tours') 
-            } 
-          }"
-          color="primary"
-          text-color="white"
-          size="lg"
-          unelevated
-          rounded
-          icon-right="o_explore"
-          :label="t('all_tours_cta_button')"
-          class="hero-cta-button"
-        />
-        
-        <q-btn
-          href="#contact-section"
-          @click="handleItineraryClick"
-          color="white"
-          text-color="primary"
-          size="lg"
-          unelevated
-          rounded
-          icon-right="o_add_road"
-          :label="t('all_tours_cta_button_secondary')"
-          class="hero-cta-button-white secondary-btn"
-        />
+        <p class="cta-panel__sub animated-el" style="--d:0.35s">
+          {{ t('all_tours_cta_subtitle') }}
+        </p>
+
+        <div class="cta-panel__actions animated-el" style="--d:0.48s">
+          <q-btn
+            :to="{
+              name: 'allTours',
+              params: {
+                lang: locale,
+                type: locale === 'pt' ? 'passeios' : (locale === 'es' ? 'excursiones' : 'all-tours')
+              }
+            }"
+            unelevated
+            rounded
+            no-caps
+            size="lg"
+            icon-right="o_explore"
+            :label="t('all_tours_cta_button')"
+            class="cta-btn cta-btn--primary"
+          />
+
+          <q-btn
+            unelevated
+            rounded
+            no-caps
+            size="lg"
+            icon-right="o_add_road"
+            :label="t('all_tours_cta_button_secondary')"
+            class="cta-btn cta-btn--ghost"
+            @click="handleItineraryClick"
+          />
+        </div>
+
+        <p class="cta-panel__hint animated-el" style="--d:0.58s">
+          {{ t('all_tours_cta_subtitle_secondary') }}
+        </p>
       </div>
-      
-      <div class="q-mt-md text-grey-4">
-        {{ t('all_tours_cta_subtitle_secondary') }}
-      </div>
-      
     </div>
+
+    <!-- Image side -->
+    <div class="cta-image" :style="bgStyle" />
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouter, useRoute } from 'vue-router';
 import { scroll } from 'quasar';
 
 const { t, locale } = useI18n();
 const router = useRouter();
-const route = useRoute();
+const route  = useRoute();
 const { getScrollTarget, setVerticalScrollPosition } = scroll;
+
+const visible = ref(false);
+const onIntersect = (e: IntersectionObserverEntry) => { if (e.isIntersecting) visible.value = true; };
+
+const bgStyle = {
+  backgroundImage: `url('https://images.squarespace-cdn.com/content/v1/628cdf23e74da0654141fc99/2a204630-8124-4741-9766-5496ec3f7dae/%40Alexandre.Socci_Bonito2024-1220.jpg"')`,
+};
 
 const handleItineraryClick = async (ev: Event) => {
   ev.preventDefault();
   if (route.name !== 'home') {
     await router.push({ name: 'home', params: { lang: locale.value } });
-    setTimeout(() => scrollToContact(), 300);
+    setTimeout(scrollToContact, 350);
   } else {
     scrollToContact();
   }
@@ -74,158 +87,161 @@ const handleItineraryClick = async (ev: Event) => {
 
 const scrollToContact = () => {
   const el = document.getElementById('contact-section');
-  if (el) {
-    const target = getScrollTarget(el);
-    const offset = el.offsetTop - 100;
-    setVerticalScrollPosition(target, offset, 500);
-  }
+  if (!el) return;
+  const target = getScrollTarget(el);
+  setVerticalScrollPosition(target, el.offsetTop - 80, 500);
 };
 </script>
 
 <style scoped lang="scss">
-:root {
-  --primary-color: #266D4D;
-  --bg-color-2: #f8fcf7;
-  --border-color: #e0e0e0;
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.all-tours-cta-section {
+/* ── Wrapper: full-width split ── */
+.cta-wrap {
   position: relative;
-  min-height: 70vh; 
-  width: 100%;
+  min-height: 560px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 80px 16px;
-  
-  background-image: url('https://images.squarespace-cdn.com/content/v1/628cdf23e74da0654141fc99/2a204630-8124-4741-9766-5496ec3f7dae/%40Alexandre.Socci_Bonito2024-1220.jpg&quot');
+  overflow: hidden;
+}
+
+/* ── Image half ── */
+.cta-image {
+  position: absolute;
+  inset: 0;
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; 
-  
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  z-index: 0;
 }
 
-.cta-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.45) 100%);
+/* ── Green panel (diagonal cut) ── */
+.cta-panel {
+  position: relative;
   z-index: 1;
+  width: 58%;
+  min-height: 560px;
+  background: linear-gradient(155deg, #0b2016 0%, #16472e 60%, #1f6040 100%);
+
+  /* Diagonal edge on the right */
+  clip-path: polygon(0 0, 100% 0, 82% 100%, 0 100%);
+
+  @media (max-width: 900px) {
+    width: 100%;
+    clip-path: none;
+    background: linear-gradient(160deg, rgba(10,26,18,0.96) 0%, rgba(22,71,46,0.94) 100%);
+  }
 }
 
-.container {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 16px;
-  position: relative; 
-  z-index: 2;
+.cta-panel__inner {
+  padding: 80px 72px 80px 56px;
+  max-width: 580px;
+
+  @media (max-width: 900px) {
+    padding: 72px 28px;
+    max-width: 100%;
+  }
 }
 
-.cta-buttons-group {
+/* ── Label ── */
+.cta-panel__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: rgba(111, 207, 151, 0.9);
+  margin-bottom: 20px;
+}
+.cta-panel__label-line {
+  display: inline-block;
+  width: 28px;
+  height: 1.5px;
+  background: #6fcf97;
+  border-radius: 1px;
+}
+
+/* ── Title ── */
+.cta-panel__title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.9rem, 3.2vw, 3rem);
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0 0 18px;
+}
+
+/* ── Subtitle ── */
+.cta-panel__sub {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.7);
+  margin: 0 0 36px;
+  max-width: 440px;
+}
+
+/* ── Actions ── */
+.cta-panel__actions {
   display: flex;
-  flex-wrap: wrap; 
-  justify-content: center;
-  gap: 20px; 
-  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 18px;
 }
 
-.hero-title {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    font-size: 3.5rem;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    color: #FFFFFF !important; 
-    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
-}
+.cta-btn {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.3px;
+  padding: 12px 32px !important;
+  transition: transform 0.22s ease, box-shadow 0.22s ease !important;
 
-.hero-cta-button {
-    background-color: var(--secondary-color) !important;
-    color: #FFFFFF !important;
-    font-weight: 700;
-    border-radius: 50px;
-    padding: 12px 36px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    transition: transform 0.2s;
+  &:hover {
+    transform: translateY(-2px) !important;
+  }
+
+  &--primary {
+    background: #6fcf97 !important;
+    color: #0b2016 !important;
+    box-shadow: 0 8px 28px rgba(111,207,151,0.3) !important;
 
     &:hover {
-        transform: translateY(-3px);
-        filter: brightness(1.1);
+      box-shadow: 0 12px 36px rgba(111,207,151,0.45) !important;
     }
-}
+  }
 
-.hero-cta-button-white {
-    background-color: var(--primary-color) !important;
-    color: #FFFFFF !important;
-    font-weight: 700;
-    border-radius: 50px;
-    padding: 12px 36px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    transition: transform 0.2s;
+  &--ghost {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: 1.5px solid rgba(255,255,255,0.35) !important;
+    box-shadow: none !important;
 
     &:hover {
-        transform: translateY(-3px);
-        filter: brightness(1.1);
+      background: rgba(255,255,255,0.08) !important;
+      border-color: rgba(255,255,255,0.6) !important;
     }
-}
-:global(body.body--dark) .hero-cta-button {
-    box-shadow: 0 0 15px rgba(2, 123, 227, 0.6);
+  }
 }
 
-:global(body.body--dark) .hero-cta-button.secondary-btn {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+/* ── Hint ── */
+.cta-panel__hint {
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  margin: 0;
 }
 
-
-
-@media (max-width: 768px) {
-    .hero-title { 
-        font-size: 2.5rem; 
-    }
-
-    .hero-cta-button {
-        font-size: 0.95rem !important;
-        padding: 10px 24px !important;
-        min-height: auto !important;
-        width: auto;
-        max-width: 90%;
-    }
-    
-    .hero-cta-button-white {
-        font-size: 0.45rem !important;
-        padding: 10px 24px !important;
-        min-height: auto !important;
-        width: auto;
-        max-width: 90%;
-    }
-
-    .hero-cta-button.secondary-btn {
-        height: auto !important;
-        padding: 16px 24px !important;
-        
-        :deep(.q-btn__content) {
-            white-space: normal !important;
-            flex-direction: column;
-            gap: 8px;
-            line-height: 1.2;
-        }
-
-        :deep(.q-icon) {
-             margin-left: 0 !important;
-        }
-    }
+/* ── Animations ── */
+.animated-el { opacity: 0; }
+.is-visible .animated-el {
+  animation: fadeUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: var(--d, 0s);
 }
 
-.theme-dark .all-tours-cta-section {
-  border-color: #333;
-}
-
-.theme-dark .cta-overlay {
-  background: linear-gradient(0deg, rgba(10, 10, 10, 0.75) 0%, rgba(10, 10, 10, 0.6) 100%);
+/* ── Dark mode ── */
+:global(body.body--dark) .cta-panel {
+  background: linear-gradient(155deg, #060f0a 0%, #0d3020 60%, #133d2a 100%);
 }
 </style>

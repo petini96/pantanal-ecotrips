@@ -1,16 +1,13 @@
 <template>
   <div class="destinations-highlight-section q-py-xl">
     <div class="container text-center q-mb-xl">
-      <h2
-        class="text-h3 text-weight-bold q-mb-sm"
-        :class="isDark ? 'text-white' : 'text-primary'"
-      >
+      <span class="dest-label" :class="{ 'dest-label--dark': isDark }">
+        <span class="dest-label-line" />Pantanal EcoTrips
+      </span>
+      <h2 class="dest-section-title" :class="isDark ? 'text-white' : ''">
         {{ t('explore_destinations_title') }}
       </h2>
-      <p
-        class="text-subtitle1 q-mt-sm q-mb-none"
-        :class="isDark ? 'text-white opacity-80' : 'text-grey-8'"
-      >
+      <p class="dest-section-sub q-mb-none" :class="isDark ? 'text-white opacity-70' : ''">
         {{ t('explore_destinations_subtitle') }}
       </p>
     </div>
@@ -112,6 +109,40 @@ const getLink = (slug: string) => {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
+}
+
+/* Section header */
+.dest-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #2e8b57;
+  margin-bottom: 14px;
+}
+.dest-label--dark { color: #6fcf97; }
+.dest-label-line {
+  display: inline-block;
+  width: 28px;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 1px;
+}
+.dest-section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.9rem, 3.5vw, 3rem);
+  line-height: 1.1;
+  color: #0d2614;
+  margin: 0 0 14px;
+}
+.dest-section-sub {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(0,0,0,0.52);
 }
 
 .destinations-grid {

@@ -1,118 +1,73 @@
 <template>
-  <div
-    class="q-py-xl newsletter-bg bg-theme"
-    v-intersection.once="onIntersection"
-  >
-    <div class="container text-center q-px-md" :class="{ 'is-visible': isVisible }">
-      <q-icon
-        name="mdi-email-fast-outline"
-        size="4rem"
-        :color="iconColor"
-        class="q-mb-md animated-item"
-        style="--animation-delay: 0.2s;"
-      />
+  <section class="nl" v-intersection.once="onIntersect" :class="{ 'is-visible': visible }">
+    <div class="nl__noise" />
 
-      <h2
-        class="text-h3 text-weight-bold q-my-none animated-item"
-        style="--animation-delay: 0.4s; line-height: 1.2;"
-      >
+    <div class="nl__inner">
+      <div class="nl__icon animated-el" style="--d:0.08s">
+        <q-icon name="mdi-email-fast-outline" size="2rem" />
+      </div>
+
+      <h2 class="nl__title animated-el" style="--d:0.18s">
         {{ t('newsletter_title') }}
       </h2>
 
-      <p
-        class="text-h6 q-mt-md text-grey-8 animated-item"
-        style="max-width: 650px; margin-left: auto; margin-right: auto; --animation-delay: 0.6s;"
-      >
+      <p class="nl__sub animated-el" style="--d:0.3s">
         {{ t('newsletter_subtitle') }}
       </p>
 
-      <q-form
-        @submit.prevent="onNewsletterSubmit"
-        class="q-mt-lg newsletter-form animated-item"
-        style="--animation-delay: 0.8s;"
-      >
-        <q-input
-          v-model="newsletterEmail"
-          :placeholder="t('newsletter_placeholder')"
-          type="email"
-          :rules="[val => !!val && /.+@.+\..+/.test(val) || t('newsletter_invalid_email')]"
-          outlined
-          rounded
-          :bg-color="inputTextBgColor"
-          class="newsletter-input"
-          aria-label="Email para newsletter"
-        >
-          <template v-slot:append>
-            <q-btn
-              type="submit"
-              :label="t('newsletter_cta')"
-              icon-right="mdi-send"
-              rounded
-              unelevated
-              color="secondary"
-              text-color="white"
-              class="newsletter-btn"
-              :loading="newsletterSubmitting"
-              aria-label="Inscrever na newsletter"
-            />
-          </template>
-        </q-input>
+      <q-form @submit.prevent="onNewsletterSubmit" class="nl__form animated-el" style="--d:0.42s">
+        <div class="nl__row">
+          <input
+            v-model="newsletterEmail"
+            type="email"
+            :placeholder="t('newsletter_placeholder')"
+            class="nl__input"
+            required
+          />
+          <button type="submit" class="nl__btn" :disabled="newsletterSubmitting">
+            <q-spinner v-if="newsletterSubmitting" color="white" size="1.1rem" />
+            <span v-else>{{ t('newsletter_cta') }}</span>
+          </button>
+        </div>
 
-        <div class="q-mt-md text-positive text-weight-medium success-message" v-if="submissionSuccess">
-          <q-icon name="mdi-check-circle" />
+        <div class="nl__success" v-if="submissionSuccess">
+          <q-icon name="mdi-check-circle-outline" />
           {{ t('newsletter_success') }}
         </div>
       </q-form>
+
+      <p class="nl__privacy animated-el" style="--d:0.54s">
+        <q-icon name="mdi-shield-check-outline" size="xs" />
+        Sem spam — cancele quando quiser.
+      </p>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
-import { storeToRefs } from 'pinia';
+import { ref } from 'vue';
 import { useQuasar } from 'quasar';
-import { useLayoutConfigStore } from 'src/stores/layout-config-store';
-import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
-
-const layoutConfigStore = useLayoutConfigStore();
-const { theme: currentTheme } = storeToRefs(layoutConfigStore);
 
 const { t } = useI18n();
 const $q = useQuasar();
 
-const isVisible = ref(false);
+const visible = ref(false);
 const newsletterEmail = ref('');
 const newsletterSubmitting = ref(false);
 const submissionSuccess = ref(false);
- 
-const iconColor = computed(() => {
-  return currentTheme.value === 'dark' ? "white" : "#1B5E20";
-});
 
-const inputTextBgColor = computed(() => {
-  return currentTheme.value === 'dark' ? "#214183" : "white";
-});
-
-// const inputBgColor = computed(() => {
-//   return currentTheme.value === 'dark' ? "white" : "#1B5E20";
-// });
-
-const onIntersection = (entry: IntersectionObserverEntry) => {
-  if (entry.isIntersecting) {
-    isVisible.value = true;
-  }
+const onIntersect = (e: IntersectionObserverEntry) => {
+  if (e.isIntersecting) visible.value = true;
 };
 
 const subscribeToNewsletterAPI = (email: string): Promise<void> => {
   console.log(`Inscrevendo ${email}...`);
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve();
-    }, 1500);
-  });
+  return new Promise((resolve) => setTimeout(resolve, 1500));
 };
 
 const onNewsletterSubmit = async () => {
+  if (!newsletterEmail.value || !/.+@.+\..+/.test(newsletterEmail.value)) return;
   newsletterSubmitting.value = true;
   submissionSuccess.value = false;
   try {
@@ -123,7 +78,7 @@ const onNewsletterSubmit = async () => {
       icon: 'mdi-check-circle',
       color: 'positive',
       message: t('newsletter_success_short') || 'Inscrição realizada!',
-      position: 'top-right'
+      position: 'top-right',
     });
   } catch (error) {
     console.error('Falha na inscrição da newsletter:', error);
@@ -131,7 +86,7 @@ const onNewsletterSubmit = async () => {
       icon: 'mdi-alert-circle-outline',
       color: 'negative',
       message: t('newsletter_error') || 'Ocorreu um erro. Tente novamente.',
-      position: 'top-right'
+      position: 'top-right',
     });
   } finally {
     newsletterSubmitting.value = false;
@@ -140,88 +95,159 @@ const onNewsletterSubmit = async () => {
 </script>
 
 <style scoped lang="scss">
-.bg-theme{
-  background-color: var(--bg-primary);
-}
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.animated-item {
-  opacity: 0;
-}
-
-.container.is-visible .animated-item {
-  animation: fadeInUp 0.8s ease-out forwards;
-  animation-delay: var(--animation-delay, 0s);
-}
-
-
-.newsletter-bg {
+.nl {
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  background: linear-gradient(158deg, #0c2017 0%, #0f2a1c 50%, #091810 100%);
+  padding: 100px 0;
+
+  :global(body.body--dark) & {
+    background: linear-gradient(158deg, #070f0b 0%, #0a1a11 50%, #060d09 100%);
+  }
+}
+
+.nl__noise {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.nl__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.nl__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  background: rgba(111,207,151,0.12);
+  color: #6fcf97;
+  margin-bottom: 28px;
+}
+
+.nl__title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0 0 14px;
+}
+
+.nl__sub {
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.6);
+  margin: 0 0 36px;
+}
+
+.nl__form {
+  margin-bottom: 18px;
+}
+
+.nl__row {
+  display: flex;
+  border-radius: 50px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.07);
+  border: 1.5px solid rgba(255,255,255,0.14);
+  transition: border-color 0.22s;
+
+  &:focus-within {
+    border-color: rgba(111,207,151,0.45);
+  }
+}
+
+.nl__input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 15px 22px;
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-family: inherit;
+  min-width: 0;
+
+  &::placeholder { color: rgba(255,255,255,0.36); }
+}
+
+.nl__btn {
+  background: #6fcf97;
+  color: #0b2016;
+  border: none;
+  border-radius: 0 48px 48px 0;
+  padding: 15px 26px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 110px;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: inherit;
-    background-size: inherit;
-    background-repeat: inherit;
-    background-position: inherit;
-    opacity: 0.05;
-    z-index: 0;
+  &:hover:not(:disabled) { background: #86d9a8; }
+  &:disabled { opacity: 0.7; cursor: not-allowed; }
+}
+
+.nl__success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 0.9rem;
+  color: #6fcf97;
+  font-weight: 600;
+}
+
+.nl__privacy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 0.77rem;
+  color: rgba(255,255,255,0.3);
+  margin: 0;
+}
+
+.animated-el { opacity: 0; }
+.nl.is-visible .animated-el {
+  animation: fadeUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: var(--d, 0s);
+}
+
+@media (max-width: 540px) {
+  .nl { padding: 72px 0; }
+
+  .nl__row {
+    flex-direction: column;
+    border-radius: 16px;
   }
 
-  .container {
-    position: relative;
-    z-index: 1;
-  }
-}
-
-.newsletter-form {
-  max-width: 500px;
-  margin: 1.5rem auto 0;
-}
-
-.newsletter-input {
-  border-radius: 28px; 
-  :deep(.q-field__control) {
-    border-color: rgba(0, 0, 0, 0.1);
-  }
-}
-
-.newsletter-btn {
-  transition: all 0.3s ease;
-  
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px change-color($secondary, $alpha: 0.4);
-  }
-}
-
-.success-message {
-  opacity: 0;
-  animation: fadeIn 0.5s forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
+  .nl__btn {
+    border-radius: 0 0 14px 14px;
+    justify-content: center;
+    padding: 14px 24px;
   }
 }
 </style>

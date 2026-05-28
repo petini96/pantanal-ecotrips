@@ -1,13 +1,17 @@
 <template>
-  <section id="about-us-section" class="about-us-wrapper q-py-xl" :class="`theme-${currentTheme}`">
-    <div class="container q-px-md">
-      
-      <!-- Top Section: Image & Story Container -->
-      <div class="row q-col-gutter-xl items-center q-mb-xl">
-        
-        <!-- Left Column: Carousel with Floating Badge -->
-        <div class="col-12 col-md-6 position-relative image-column" :class="{ 'slide-in-left': isVisibleLeft }" v-intersection.once="onIntersectionLeft">
-          <div class="image-wrapper shadow-10">
+  <section id="about-us-section" class="about" :class="`theme-${currentTheme}`">
+    <div class="about__container">
+
+      <!-- Top: carousel + story -->
+      <div class="about__split">
+
+        <!-- Image side -->
+        <div
+          class="about__media-col"
+          v-intersection.once="onIntersectionLeft"
+          :class="{ 'slide-in-left': isVisibleLeft }"
+        >
+          <div class="about__carousel-wrap">
             <q-carousel
               animated
               v-model="slide"
@@ -18,119 +22,111 @@
               transition-next="fade"
               @mouseenter="autoplay = false"
               @mouseleave="autoplay = true"
-              class="main-carousel bg-black"
+              class="about__carousel bg-black"
             >
-              <q-carousel-slide 
-                v-for="(img, index) in carouselImages" 
+              <q-carousel-slide
+                v-for="(img, index) in carouselImages"
                 :key="index"
-                :name="index" 
+                :name="index"
                 class="q-pa-none flex flex-center"
               >
-                <q-img
-                  :src="img"
-                  fit="contain"
-                  class="full-height full-width"
-                />
+                <q-img :src="img" fit="contain" class="full-height full-width" />
               </q-carousel-slide>
             </q-carousel>
-            
-            <!-- Glassmorphism Badge -->
-            <div class="floating-badge glass-effect">
-              <div class="badge-content text-center">
-                <span class="text-h4 font-weight-bold text-primary">20+</span>
-                <span class="text-caption text-weight-medium text-uppercase text-grey-8 block">Anos de<br>Experiência</span>
-              </div>
+
+            <!-- Years badge -->
+            <div class="about__badge">
+              <span class="about__badge-num">20+</span>
+              <span class="about__badge-txt">Anos de<br>Experiência</span>
             </div>
           </div>
         </div>
 
-        <!-- Right Column: Story & CTA -->
-        <div class="col-12 col-md-6 story-column" :class="{ 'slide-in-right': isVisibleRight }" v-intersection.once="onIntersectionRight">
-          <div>
-            <div class="text-overline text-secondary text-uppercase text-weight-bold q-mb-sm tracking-wide">
-              {{ t('about_page_title') }}
-            </div>
-            
-            <h2 class="text-h3 font-weight-bold q-mb-md section-title">
-              {{ t('about_section_heading') }}
-            </h2>
-            
-            <div class="decorative-line bg-secondary q-mb-lg"></div>
+        <!-- Story side -->
+        <div
+          class="about__story-col"
+          v-intersection.once="onIntersectionRight"
+          :class="{ 'slide-in-right': isVisibleRight }"
+        >
+          <span class="about__label">
+            <span class="about__label-line" />
+            {{ t('about_page_title') }}
+          </span>
 
-            <h3 class="text-h5 font-weight-bold q-mb-sm text-primary">
-              <q-icon name="mdi-account-tie-outline" class="q-mr-sm" />{{ t('about_history_title') }}
-            </h3>
+          <h2 class="about__title">{{ t('about_section_heading') }}</h2>
 
-            <!-- Founder's History List -->
-            <ul class="history-list q-mb-xl text-content">
-              <li>
-                <q-icon name="mdi-check-circle-outline" color="secondary" class="q-mr-sm q-mt-xs" size="1.2rem"/>
-                <span>{{ t('about_history_1') }}</span>
-              </li>
-              <li>
-                <q-icon name="mdi-check-circle-outline" color="secondary" class="q-mr-sm q-mt-xs" size="1.2rem"/>
-                <span>{{ t('about_history_2') }}</span>
-              </li>
-              <li>
-                <q-icon name="mdi-check-circle-outline" color="secondary" class="q-mr-sm q-mt-xs" size="1.2rem"/>
-                <span>{{ t('about_history_3') }}</span>
-              </li>
-            </ul>
+          <h3 class="about__sub-heading">
+            <q-icon name="mdi-account-tie-outline" size="1.1rem" class="q-mr-xs" />
+            {{ t('about_history_title') }}
+          </h3>
 
-            <q-btn
-              color="secondary"
-              text-color="white"
-              unelevated
-              rounded
-              size="lg"
-              class="cta-btn q-px-xl font-weight-bold shadow-4"
-              :label="t('about_us_cta')"
-              :href="WA_ME_LINK"
-              target="_blank"
-              icon="mdi-whatsapp"
-              aria-label="Entre em contato pelo WhatsApp"
-              @click="trackWhatsappClick"
-            />
-          </div>
+          <ul class="about__history">
+            <li>
+              <q-icon name="mdi-check-circle" color="positive" size="1.1rem" class="q-mr-sm" />
+              <span>{{ t('about_history_1') }}</span>
+            </li>
+            <li>
+              <q-icon name="mdi-check-circle" color="positive" size="1.1rem" class="q-mr-sm" />
+              <span>{{ t('about_history_2') }}</span>
+            </li>
+            <li>
+              <q-icon name="mdi-check-circle" color="positive" size="1.1rem" class="q-mr-sm" />
+              <span>{{ t('about_history_3') }}</span>
+            </li>
+          </ul>
+
+          <a
+            :href="WA_ME_LINK"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="about__cta"
+            @click="trackWhatsappClick"
+          >
+            <q-icon name="mdi-whatsapp" size="1.2rem" />
+            {{ t('about_us_cta') }}
+          </a>
         </div>
       </div>
 
-      <!-- Bottom Section: Features Grid (Cards) -->
-      <div class="row q-col-gutter-lg justify-center q-mt-lg" v-intersection.once="onIntersectionBottom">
-        <div class="col-12 col-sm-4 feature-col" :class="{ 'fade-up-1': isVisibleBottom }">
-          <q-card class="feature-card glass-card text-center" flat>
-            <q-card-section class="q-pa-lg">
-              <div class="icon-circle bg-primary-light q-mb-md mx-auto">
-                <q-icon name="mdi-map-marker-path" size="2.5rem" color="primary" />
-              </div>
-              <h3 class="text-h6 font-weight-bold q-mb-sm">{{ t('about_card1_title') }}</h3>
-              <p class="text-body2 text-grey-7 mb-0">{{ t('about_card1_desc') }}</p>
-            </q-card-section>
-          </q-card>
+      <!-- Bottom: feature cards -->
+      <div
+        class="about__cards"
+        v-intersection.once="onIntersectionBottom"
+      >
+        <div
+          class="about__card"
+          :class="{ 'fade-up': isVisibleBottom }"
+          style="--delay:0.1s"
+        >
+          <div class="about__card-icon">
+            <q-icon name="mdi-map-marker-path" size="2rem" />
+          </div>
+          <h3 class="about__card-title">{{ t('about_card1_title') }}</h3>
+          <p class="about__card-desc">{{ t('about_card1_desc') }}</p>
         </div>
 
-        <div class="col-12 col-sm-4 feature-col" :class="{ 'fade-up-2': isVisibleBottom }">
-          <q-card class="feature-card glass-card text-center" flat>
-            <q-card-section class="q-pa-lg">
-              <div class="icon-circle bg-secondary-light q-mb-md mx-auto">
-                <q-icon name="mdi-earth" size="2.5rem" color="secondary" />
-              </div>
-              <h3 class="text-h6 font-weight-bold q-mb-sm">{{ t('about_card2_title') }}</h3>
-              <p class="text-body2 text-grey-7 mb-0">{{ t('about_card2_desc') }}</p>
-            </q-card-section>
-          </q-card>
+        <div
+          class="about__card"
+          :class="{ 'fade-up': isVisibleBottom }"
+          style="--delay:0.22s"
+        >
+          <div class="about__card-icon">
+            <q-icon name="mdi-earth" size="2rem" />
+          </div>
+          <h3 class="about__card-title">{{ t('about_card2_title') }}</h3>
+          <p class="about__card-desc">{{ t('about_card2_desc') }}</p>
         </div>
 
-        <div class="col-12 col-sm-4 feature-col" :class="{ 'fade-up-3': isVisibleBottom }">
-          <q-card class="feature-card glass-card text-center" flat>
-            <q-card-section class="q-pa-lg">
-              <div class="icon-circle bg-accent-light q-mb-md mx-auto">
-                <q-icon name="mdi-leaf-circle-outline" size="2.5rem" color="accent" />
-              </div>
-              <h3 class="text-h6 font-weight-bold q-mb-sm">{{ t('about_card3_title') }}</h3>
-              <p class="text-body2 text-grey-7 mb-0">{{ t('about_card3_desc') }}</p>
-            </q-card-section>
-          </q-card>
+        <div
+          class="about__card"
+          :class="{ 'fade-up': isVisibleBottom }"
+          style="--delay:0.34s"
+        >
+          <div class="about__card-icon">
+            <q-icon name="mdi-leaf-circle-outline" size="2rem" />
+          </div>
+          <h3 class="about__card-title">{{ t('about_card3_title') }}</h3>
+          <p class="about__card-desc">{{ t('about_card3_desc') }}</p>
         </div>
       </div>
 
@@ -150,23 +146,17 @@ const { t } = useI18n();
 const { trackEvent } = useAnalytics();
 const layoutConfigStore = useLayoutConfigStore();
 const { theme: currentTheme } = storeToRefs(layoutConfigStore);
-// Load 49 images from the Ronaldo Minio Bucket
+
 const carouselImages = computed(() => {
   const images: string[] = [];
   const baseUrl = 'https://minio-s3.pantanalecotrips.com.br/general-bucket/ronaldo';
-  
-  for (let i = 1; i <= 49; i++) {
-    images.push(`${baseUrl}/img${i}.jpg`);
-  }
-  
+  for (let i = 1; i <= 49; i++) images.push(`${baseUrl}/img${i}.jpg`);
   return images;
 });
 
-// Intersection Observers for scroll animations
 const isVisibleLeft = ref(false);
 const isVisibleRight = ref(false);
 const isVisibleBottom = ref(false);
-
 const slide = ref(0);
 const autoplay = ref(true);
 
@@ -179,7 +169,7 @@ const onIntersectionRight = (entry: IntersectionObserverEntry) => {
     isVisibleRight.value = true;
     trackEvent('view_section', {
       section_name: 'About Us (Landing Page)',
-      section_content: 'Historia e Diferenciais'
+      section_content: 'Historia e Diferenciais',
     });
   }
 };
@@ -191,233 +181,299 @@ const onIntersectionBottom = (entry: IntersectionObserverEntry) => {
 const trackWhatsappClick = () => {
   trackEvent('click_whatsapp', {
     local_clique: 'secao_sobre_nos_landing',
-    tipo_botao: 'cta_institucional'
+    tipo_botao: 'cta_institucional',
   });
 };
 </script>
 
-<style lang="scss" scoped>
-/* ========================
-   BASE LAYOUT & TYPOGRAPHY
-   ======================== */
-.about-us-wrapper {
-  background-color: var(--q-grey-1);
-  overflow: hidden; // Prevent horizontal scroll on animations
-  transition: background-color 0.3s ease;
+<style scoped lang="scss">
+@keyframes slideInLeft  { from { opacity:0; transform:translateX(-48px); } to { opacity:1; transform:translateX(0); } }
+@keyframes slideInRight { from { opacity:0; transform:translateX(48px);  } to { opacity:1; transform:translateX(0); } }
+@keyframes fadeUp       { from { opacity:0; transform:translateY(32px);  } to { opacity:1; transform:translateY(0); } }
+
+/* ── Section ── */
+.about {
+  background: #ffffff;
+  padding: 96px 0;
+  overflow: hidden;
 
   &.theme-dark {
-    background-color: var(--q-dark);
-    .text-content { color: rgba(255, 255, 255, 0.85); }
-    .section-title { color: white; }
-    .glass-card {
-      background: rgba(40, 40, 40, 0.85); /* Increased contrast for dark mode */
-      border: 1px solid rgba(255, 255, 255, 0.1); /* Lighter border in dark mode */
-      box-shadow: 0 10px 40px rgba(0,0,0,0.5) !important;
-      h3 { color: white; }
-      p { color: rgba(255, 255, 255, 0.85) !important; }
-    }
-    .floating-badge {
-      background: rgba(30, 30, 30, 0.85);
-      border-color: rgba(255, 255, 255, 0.1);
-      span.text-primary { color: var(--q-secondary) !important; }
-      span.text-grey-8 { color: rgba(255,255,255,0.7) !important; }
-    }
+    background: #0e1c13;
   }
 }
 
-.font-weight-bold { font-weight: 700; }
-.font-weight-medium { font-weight: 500; }
-.tracking-wide { letter-spacing: 1.5px; }
+.about__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
 
-.section-title {
-  color: var(--q-primary);
-  line-height: 1.2;
+  @media (max-width: 768px) { padding: 0 24px; }
 }
 
-.text-content {
-  color: var(--q-grey-8);
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.decorative-line {
-  height: 4px;
-  width: 60px;
-  border-radius: 2px;
-}
-
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* ========================
-   HISTORY LIST STYLES
-   ======================== */
-.history-list {
-  list-style: none;
-  padding-left: 0;
-  margin-top: 1rem;
-}
-
-.history-list li {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 1rem;
-  line-height: 1.5;
-}
-
-.history-list span {
-  flex: 1;
-}
-
-/* ========================
-   IMAGE & BADGE STYLES
-   ======================== */
-.position-relative { position: relative; }
-
-.image-wrapper {
-  position: relative;
-  border-radius: 24px;
-  overflow: hidden;
-  border: 4px solid white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-
-  .theme-dark & {
-    border-color: #333333;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  }
-  
-  .main-carousel {
-    height: 500px;
-    width: 100%;
-    border-radius: 20px;
-  }
-}
-
-.floating-badge {
-  position: absolute;
-  bottom: 30px;
-  right: -20px;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  padding: 20px;
-  display: flex;
+/* ── Split layout ── */
+.about__split {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 72px;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  z-index: 2;
-  transition: transform 0.3s ease;
+  margin-bottom: 80px;
 
-  &:hover {
-    transform: translateY(-5px) scale(1.05);
+  @media (max-width: 960px) {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    margin-bottom: 56px;
   }
 }
 
-.glass-effect {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-/* ========================
-   FEATURE CARDS
-   ======================== */
-.glass-card {
-  height: 100%;
-  border-radius: 16px;
-  background: white; /* Changed from semi-transparent */
-  border: 1px solid rgba(0, 0, 0, 0.05); /* Grey border to contrast light bg */
-  box-shadow: 0 10px 40px rgba(0,0,0,0.06); /* Larger, softer shadow */
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 32px rgba(0,0,0,0.15) !important;
-  }
-  
-  .theme-dark &:hover {
-    box-shadow: 0 16px 32px rgba(0,0,0,0.6) !important;
-  }
-}
-
-.icon-circle {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.bg-primary-light { background-color: rgba(0, 150, 136, 0.1); }
-.bg-secondary-light { background-color: rgba(255, 152, 0, 0.1); }
-.bg-accent-light { background-color: rgba(156, 39, 176, 0.1); }
-
-/* ========================
-   ANIMATIONS
-   ======================== */
-/* Left Column */
-.image-column, .story-column, .feature-col {
+/* ── Carousel ── */
+.about__media-col,
+.about__story-col {
   opacity: 0;
 }
 
-.slide-in-left {
-  animation: slideInLeft 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+.slide-in-left  { animation: slideInLeft  0.8s cubic-bezier(0.25,0.8,0.25,1) forwards; }
+.slide-in-right { animation: slideInRight 0.8s cubic-bezier(0.25,0.8,0.25,1) forwards; }
+
+.about__carousel-wrap {
+  position: relative;
+  border-radius: 24px;
+  overflow: visible;
 }
 
-.slide-in-right {
-  animation: slideInRight 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+.about__carousel {
+  border-radius: 24px;
+  height: 480px;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.14);
+  border: 4px solid #ffffff;
+
+  .theme-dark & { border-color: rgba(255,255,255,0.1); }
+
+  @media (max-width: 960px) { height: 360px; }
+  @media (max-width: 540px) { height: 280px; }
 }
 
-.fade-up-1 { animation: fadeUp 0.6s ease-out 0.2s forwards; }
-.fade-up-2 { animation: fadeUp 0.6s ease-out 0.4s forwards; }
-.fade-up-3 { animation: fadeUp 0.6s ease-out 0.6s forwards; }
+/* Badge */
+.about__badge {
+  position: absolute;
+  bottom: -16px;
+  right: -16px;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--q-primary);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.22);
+  z-index: 2;
+  transition: transform 0.3s ease;
 
-@keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-50px); }
-  to { opacity: 1; transform: translateX(0); }
-}
+  &:hover { transform: translateY(-4px) scale(1.06); }
 
-@keyframes slideInRight {
-  from { opacity: 0; transform: translateX(50px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* ========================
-   RESPONSIVE Ajustes
-   ======================== */
-@media (max-width: 1023px) {
-  .floating-badge {
-    right: 20px; /* Bring it inside on tablets */
+  @media (max-width: 540px) {
+    width: 78px; height: 78px;
+    bottom: -10px; right: -6px;
   }
-  .image-wrapper .main-carousel {
-    height: 400px;
-  }
-  .section-title {
-    font-size: 2.2rem;
+}
+
+.about__badge-num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.about__badge-txt {
+  font-size: 0.58rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  line-height: 1.3;
+  padding: 0 6px;
+}
+
+/* ── Story ── */
+.about__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #2e8b57;
+  margin-bottom: 20px;
+
+  .theme-dark & { color: #6fcf97; }
+}
+
+.about__label-line {
+  display: inline-block;
+  width: 28px;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 1px;
+}
+
+.about__title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  line-height: 1.1;
+  color: #0d2614;
+  margin: 0 0 24px;
+
+  .theme-dark & { color: #ffffff; }
+}
+
+.about__sub-heading {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #2e8b57;
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+
+  .theme-dark & { color: #6fcf97; }
+}
+
+/* History list */
+.about__history {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    font-size: 0.97rem;
+    line-height: 1.6;
+    color: #3a4e3a;
+
+    .theme-dark & { color: rgba(255,255,255,0.78); }
+
+    span { flex: 1; }
   }
 }
 
-@media (max-width: 599px) {
-  .image-wrapper .main-carousel {
-    height: 300px;
+/* CTA */
+.about__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  background: #2e8b57;
+  color: #ffffff;
+  border-radius: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+  box-shadow: 0 8px 28px rgba(46,139,87,0.32);
+  transition: background 0.22s, transform 0.22s, box-shadow 0.22s;
+
+  &:hover {
+    background: #247a4c;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 36px rgba(46,139,87,0.42);
   }
-  .floating-badge {
-    width: 100px;
-    height: 100px;
-    bottom: 10px;
-    right: 10px;
-    
-    .text-h4 { font-size: 1.5rem; }
-    .text-caption { font-size: 0.7rem; }
+}
+
+/* ── Feature cards ── */
+.about__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
+
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about__card {
+  padding: 40px 32px;
+  background: #f8fbf8;
+  border: 1px solid rgba(0,0,0,0.06);
+  opacity: 0;
+  transition: background 0.3s, border-color 0.3s, transform 0.3s;
+
+  &:hover {
+    background: #f0f7f0;
+    border-color: rgba(46,139,87,0.2);
+    transform: translateY(-4px);
+
+    .about__card-icon { color: #2e8b57; transform: scale(1.08); }
+  }
+
+  .theme-dark & {
+    background: rgba(255,255,255,0.03);
+    border-color: rgba(255,255,255,0.07);
+
+    &:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(111,207,151,0.25);
+    }
+  }
+
+  @media (max-width: 768px) {
+    border-radius: 16px;
+    padding: 32px 24px;
+  }
+}
+
+.fade-up { animation: fadeUp 0.65s cubic-bezier(0.25,0.46,0.45,0.94) both; animation-delay: var(--delay, 0s); }
+
+.about__card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(46,139,87,0.1);
+  color: rgba(46,139,87,0.85);
+  margin-bottom: 20px;
+  transition: color 0.3s, transform 0.3s;
+
+  .theme-dark & {
+    background: rgba(111,207,151,0.1);
+    color: rgba(111,207,151,0.85);
+  }
+}
+
+.about__card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  color: #0d2614;
+  margin: 0 0 10px;
+
+  .theme-dark & { color: #ffffff; }
+}
+
+.about__card-desc {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgba(0,0,0,0.52);
+  margin: 0;
+
+  .theme-dark & { color: rgba(255,255,255,0.5); }
+}
+
+@media (max-width: 768px) {
+  .about { padding: 72px 0; }
 }
 </style>

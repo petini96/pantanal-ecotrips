@@ -9,10 +9,10 @@
       
       <div class="row items-end justify-between q-mb-xl animated-item" style="--animation-delay: 0.1s;">
         <div class="col-12 col-md-8">
-          <div class="row items-center q-mb-sm">
-            <q-icon name="format_quote" size="2.5rem" color="secondary" class="q-mr-sm opacity-50" />
-            <span class="text-overline text-secondary text-weight-bold tracking-wide">FEEDBACK</span>
-          </div>
+          <span class="ts-label">
+            <span class="ts-label-line" />
+            FEEDBACK
+          </span>
           <h2 class="text-h3 text-weight-bold q-my-none section-title">
             {{ t('testimonials_title', 'A experiência de quem já foi') }}
           </h2>
@@ -256,6 +256,26 @@ useMeta(metaData);
 <style scoped lang="scss">
 .bg-dark-page { background-color: #1d1d1d; }
 .border-dark { border: 1px solid #333; }
+
+.ts-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #2e8b57;
+  margin-bottom: 16px;
+}
+.ts-label-line {
+  display: inline-block;
+  width: 28px;
+  height: 1.5px;
+  background: currentColor;
+  border-radius: 1px;
+}
+.bg-dark .ts-label { color: #6fcf97; }
 
 .container {
   max-width: 1240px;

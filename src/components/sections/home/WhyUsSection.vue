@@ -1,223 +1,219 @@
 <template>
-  <div
-    class="content-section q-py-xl"
-    v-intersection.once="onIntersection"
-  >
-    <div class="container text-center q-px-md q-px-lg-xl" :class="{ 'is-visible': isVisible }">
-      
-      <h2
-        class="section-title animated-item"
-        style="--animation-delay: 0.2s;"
-      >
-        {{ t('why_us_title') }}
-      </h2>
+  <section class="why-us" v-intersection.once="onIntersect" :class="{ 'is-visible': visible }">
+    <!-- Background texture dots -->
+    <div class="why-us__noise" />
 
-      <div class="row q-mt-xl justify-center q-col-gutter-lg">
+    <div class="why-us__container">
+      <!-- Header -->
+      <div class="why-us__header animated-el" style="--d: 0.1s">
+        <span class="why-us__label">
+          <span class="why-us__label-line" />
+          {{ t('guide_highlight_eyebrow').split(' ')[0] }}
+        </span>
+        <h2 class="why-us__title">{{ t('why_us_title') }}</h2>
+      </div>
 
+      <!-- Feature grid -->
+      <div class="why-us__grid">
         <div
-          class="col-12 col-sm-6 col-md-3 animated-item"
-          style="--animation-delay: 0.4s;"
+          v-for="(item, i) in features"
+          :key="i"
+          class="why-us__card animated-el"
+          :style="`--d: ${0.2 + i * 0.12}s`"
         >
-          <div class="feature-card">
-            <q-icon name="mdi-map-marker-path" size="4rem" class="feature-icon" />
-            <h5 class="q-mt-md q-mb-sm feature-title">{{ t('why_us_item1_title') }}</h5>
-            <p class="feature-description">{{ t('why_us_item1_desc') }}</p>
+          <span class="why-us__card-num">{{ String(i + 1).padStart(2, '0') }}</span>
+          <div class="why-us__card-icon">
+            <q-icon :name="item.icon" size="2rem" />
           </div>
-        </div>
-
-        <div
-          class="col-12 col-sm-6 col-md-3 animated-item"
-          style="--animation-delay: 0.6s;"
-        >
-          <div class="feature-card">
-            <q-icon name="mdi-star-check-outline" size="4rem" class="feature-icon" />
-            <h5 class="q-mt-md q-mb-sm feature-title">{{ t('why_us_item2_title') }}</h5>
-            <p class="feature-description">{{ t('why_us_item2_desc') }}</p>
-          </div>
-        </div>
-
-        <div
-          class="col-12 col-sm-6 col-md-3 animated-item"
-          style="--animation-delay: 0.8s;"
-        >
-          <div class="feature-card">
-            <q-icon name="mdi-translate" size="4rem" class="feature-icon" />
-            <h5 class="q-mt-md q-mb-sm feature-title">{{ t('why_us_item3_title') }}</h5>
-            <p class="feature-description">{{ t('why_us_item3_desc') }}</p>
-          </div>
-        </div>
-
-        <div
-          class="col-12 col-sm-6 col-md-3 animated-item"
-          style="--animation-delay: 1.0s;"
-        >
-          <div class="feature-card">
-            <q-icon name="mdi-lifebuoy" size="4rem" class="feature-icon" />
-            <h5 class="q-mt-md q-mb-sm feature-title">{{ t('why_us_item4_title') }}</h5>
-            <p class="feature-description">{{ t('why_us_item4_desc') }}</p>
-          </div>
+          <h3 class="why-us__card-title">{{ item.title }}</h3>
+          <p class="why-us__card-desc">{{ item.desc }}</p>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 
 const { t } = useI18n();
-const isVisible = ref(false);
+const visible = ref(false);
+const onIntersect = (e: IntersectionObserverEntry) => { if (e.isIntersecting) visible.value = true; };
 
-const onIntersection = (entry: IntersectionObserverEntry) => {
-  if (entry.isIntersecting) {
-    isVisible.value = true;
-  }
-};
+const features = computed(() => [
+  { icon: 'mdi-map-marker-path',    title: t('why_us_item1_title'), desc: t('why_us_item1_desc') },
+  { icon: 'mdi-star-check-outline', title: t('why_us_item2_title'), desc: t('why_us_item2_desc') },
+  { icon: 'mdi-translate',          title: t('why_us_item3_title'), desc: t('why_us_item3_desc') },
+  { icon: 'mdi-lifebuoy',           title: t('why_us_item4_title'), desc: t('why_us_item4_desc') },
+]);
 </script>
 
-<style lang="scss" scoped>
-/* --- Animações --- */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+<style scoped lang="scss">
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(36px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.animated-item { opacity: 0; }
-.container.is-visible .animated-item {
-  animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-  animation-delay: var(--animation-delay, 0s);
-}
-
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.content-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.4s ease, color 0.4s ease;
-  
-  background-color: var(--bg-div-primary);
-  color: #1D2B24;
-  
-  :global(body.body--dark) & {
-    background-color: #050906 !important;
-    background-image: radial-gradient(circle at 50% 0%, #0f1a13 0%, #050906 60%);
-    color: #ECF0F1 !important;
-  }
-}
-
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-  color: var(--text-primary-color, #1a2e29);
-  :global(body.body--dark) & {
-    color: #FFFFFF !important;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-  }
-}
-
-.feature-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  padding: 2.5rem 1.5rem;
-  border-radius: 16px;
-  transition: all 0.3s ease;
+.why-us {
   position: relative;
   overflow: hidden;
-  
-  background-color: #FFFFFF;
-  border: 1px solid rgba(0,0,0,0.04);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  padding: 100px 0;
+  background: linear-gradient(158deg, #0c2017 0%, #0f2a1c 50%, #091810 100%);
 
   :global(body.body--dark) & {
-    background-color: #101612 !important;
-    border: 1px solid #1F2E25 !important;
-    box-shadow: none !important;
+    background: linear-gradient(158deg, #070f0b 0%, #0a1a11 50%, #060d09 100%);
   }
+}
+
+/* Subtle dot texture */
+.why-us__noise {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+/* ── Container ── */
+.why-us__container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+/* ── Header ── */
+.why-us__header {
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+.why-us__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #6fcf97;
+  margin-bottom: 16px;
+}
+
+.why-us__label-line {
+  display: inline-block;
+  width: 32px;
+  height: 1.5px;
+  background: #6fcf97;
+  border-radius: 1px;
+}
+
+.why-us__title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* ── Grid ── */
+.why-us__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 540px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Card ── */
+.why-us__card {
+  position: relative;
+  padding: 44px 36px 44px;
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  overflow: hidden;
 
   &:hover {
-    transform: translateY(-10px);
-    
-    box-shadow: 0 20px 40px rgba(46, 91, 62, 0.15);
-    border-color: transparent;
+    background: rgba(255,255,255,0.065);
+    border-color: rgba(111,207,151,0.25);
+    transform: translateY(-4px);
 
-    :global(body.body--dark) & {
-      background-color: #151C17 !important;
-      border-color: #4DB6AC !important;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7) !important;
+    .why-us__card-num {
+      color: rgba(111,207,151,0.08);
+    }
+    .why-us__card-icon {
+      color: #6fcf97;
+      transform: scale(1.08);
     }
   }
 }
 
-.feature-icon {
-  margin-bottom: 1.5rem;
-  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  
-  color: #2E5B3E;
-
-  :global(body.body--dark) & {
-    color: #4DB6AC !important;
-  }
+.why-us__card-num {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 4.5rem;
+  line-height: 1;
+  color: rgba(255,255,255,0.04);
+  transition: color 0.3s ease;
+  user-select: none;
+  letter-spacing: -2px;
 }
 
-.feature-card:hover .feature-icon {
-  transform: scale(1.15) rotate(5deg);
-  
-  :global(body.body--dark) & {
-    color: #64FFDA !important;
-    text-shadow: 0 0 15px rgba(100, 255, 218, 0.4);
-  }
+.why-us__card-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(111,207,151,0.1);
+  color: rgba(111,207,151,0.85);
+  margin-bottom: 24px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.feature-title {
+.why-us__card-title {
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: 1.25rem;
-  margin-bottom: 0.8rem;
-  
-  color: #18241E;
-  
-  :global(body.body--dark) & {
-    color: #E0E0E0 !important;
-  }
+  font-size: 1.08rem;
+  line-height: 1.3;
+  color: #ffffff;
+  margin: 0 0 12px;
 }
 
-.feature-description {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  
-  color: #546E63;
-  
-  :global(body.body--dark) & {
-    color: #9E9E9E !important;
-  }
+.why-us__card-desc {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.52);
+  margin: 0;
 }
 
-@media (max-width: 1023px) {
-  .section-title {
-    font-size: 2rem;
-  }
-  
-  .content-section {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-  }
+/* ── Animations ── */
+.animated-el { opacity: 0; }
+
+.why-us.is-visible .animated-el {
+  animation: fadeUp 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation-delay: var(--d, 0s);
 }
 
-@media (max-width: 599px) {
-  .feature-card {
-    padding: 2rem 1rem;
-  }
-  
-  :deep(.q-icon) {
-    font-size: 3.5rem !important; 
-  }
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .why-us { padding: 72px 0; }
+  .why-us__container { padding: 0 24px; }
+  .why-us__card { padding: 32px 24px; }
+  .why-us__card-num { font-size: 3.5rem; }
+  .why-us__header { margin-bottom: 48px; }
 }
 </style>
