@@ -20,6 +20,11 @@ const commonData = {
   durationInDays: 7,
   durationInNights: 6,
   minPeople: 2,
+  contact: {
+    name: 'Ronaldo',
+    phone: '+55 67 9145-2985',
+    email: 'contact@pantanalecotrips.com.br',
+  },
 };
 
 export const salarUyuniPt: TourPackage = {
@@ -50,7 +55,7 @@ export const salarUyuniPt: TourPackage = {
     "Óculos escuros",
     "Sapatos confortáveis ou botas",
   ],
-  observation: "Tarifas por passageiro em reais, sujeitas a modificação por variação de mais de 10 pontos da cotação do dólar. A ordem das viagens pode variar conforme condições climáticas. Se estiver viajando com crianças, tenha em mente que muitos lugares não são exclusivos para elas. Contato: TURPANBOL | Tel: +55 67 3231-3630 | WhatsApp: +55 67 984477003 | turpanbol@gmail.com"
+  observation: "Tarifas por passageiro em reais, sujeitas a modificação por variação de mais de 10 pontos da cotação do dólar. A ordem das viagens pode variar conforme condições climáticas. Se estiver viajando com crianças, tenha em mente que muitos lugares não são exclusivos para elas."
 };
 
 export const salarUyuniEn: TourPackage = {
@@ -81,7 +86,7 @@ export const salarUyuniEn: TourPackage = {
     "Sunglasses",
     "Comfortable shoes or boots",
   ],
-  observation: "Rates per passenger in Brazilian Reais, subject to change if the USD exchange rate varies by more than 10 points. The travel order may vary due to weather conditions. If traveling with children, keep in mind that many places are not child-exclusive. Contact: TURPANBOL | Phone: +55 67 3231-3630 | WhatsApp: +55 67 984477003 | turpanbol@gmail.com"
+  observation: "Rates per passenger in Brazilian Reais, subject to change if the USD exchange rate varies by more than 10 points. The travel order may vary due to weather conditions. If traveling with children, keep in mind that many places are not child-exclusive."
 };
 
 export const salarUyuniEs: TourPackage = {
@@ -112,5 +117,5 @@ export const salarUyuniEs: TourPackage = {
     "Anteojos de sol",
     "Calzado cómodo o botas",
   ],
-  observation: "Tarifas por pasajero en reales brasileños, sujetas a modificación si la cotización del dólar varía más de 10 puntos. El orden de los viajes puede variar según las condiciones climáticas. Si viaja con niños, tenga en cuenta que muchos lugares no son exclusivos para ellos. Contacto: TURPANBOL | Tel: +55 67 3231-3630 | WhatsApp: +55 67 984477003 | turpanbol@gmail.com"
+  observation: "Tarifas por pasajero en reales brasileños, sujetas a modificación si la cotización del dólar varía más de 10 puntos. El orden de los viajes puede variar según las condiciones climáticas. Si viaja con niños, tenga en cuenta que muchos lugares no son exclusivos para ellos."
 };

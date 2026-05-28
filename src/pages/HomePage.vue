@@ -12,6 +12,14 @@
       <CtaAllToursSection v-if="loadCtaAllTours" />
     </section>
 
+    <section id="destinations-highlight-section" v-intersection.once="() => (loadDestinationsHighlight = true)" class="section-wrapper">
+      <DestinationsHighlightSection v-if="loadDestinationsHighlight" />
+    </section>
+
+    <section id="guide-highlight-section" v-intersection.once="() => (loadGuideHighlight = true)" class="section-wrapper">
+      <GuideHighlightSection v-if="loadGuideHighlight" />
+    </section>
+
     <section id="gallery-section" v-intersection.once="() => (loadGallery = true)" class="section-wrapper">
       <div v-if="loadGallery" class="container q-py-xl text-center">
 
@@ -115,6 +123,8 @@ const loadContact = ref(false);
 const loadTestimonials = ref(false);
 // Ref para o lazy-load do novo componente CTA
 const loadCtaAllTours = ref(false);
+const loadDestinationsHighlight = ref(false);
+const loadGuideHighlight = ref(false);
 
 const loadGallery = ref(false); // Carrega a seção inteira
 const activeGallery = ref<'photos' | 'videos'>('photos'); // Alterna o conteúdo
@@ -155,6 +165,14 @@ const MediaGallery = defineAsyncComponent(
 // Definição do novo componente CTA assíncrono
 const CtaAllToursSection = defineAsyncComponent(
   () => import('src/components/sections/home/CtaAllToursSection.vue')
+);
+
+const DestinationsHighlightSection = defineAsyncComponent(
+  () => import('src/components/sections/home/DestinationsHighlightSection.vue')
+);
+
+const GuideHighlightSection = defineAsyncComponent(
+  () => import('src/components/sections/home/GuideHighlightSection.vue')
 );
 
 const TestimonialsSection = defineAsyncComponent(

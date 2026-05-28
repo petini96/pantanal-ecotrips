@@ -109,7 +109,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, defineAsyncComponent, watch } from 'vue';
+import { ref, computed, defineAsyncComponent, watch, nextTick } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useMeta } from 'quasar';
 import { useRoute } from 'vue-router';
@@ -201,6 +201,18 @@ watch(
   },
   { immediate: true }
 );
+
+watch(loadTourPackage, (isReady) => {
+  if (isReady && route.hash === '#attractions-section') {
+    void nextTick(() => {
+      // Small delay allows the regionTours v-if to render after data resolves
+      setTimeout(() => {
+        const el = document.getElementById('attractions-section');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 150);
+    });
+  }
+});
 
 defineOptions({
   preFetch: async ({ store, currentRoute }) => {

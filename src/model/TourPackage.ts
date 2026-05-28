@@ -19,6 +19,11 @@ export interface TourPackage {
   notIncluded: string[];
   shouldIBring: string[];
   observation?: string;
+  contact?: {
+    name?: string;
+    phone?: string;
+    email?: string;
+  };
   packageCategories: TranslatableTag[];
   packageRecommendedFor: TranslatableTag[];
   region: Region;
