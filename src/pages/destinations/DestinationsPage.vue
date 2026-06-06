@@ -43,6 +43,15 @@
 
     </div>
 
+    <!-- Gallery Section -->
+    <transition name="fade-gallery" mode="out-in">
+      <section v-if="currentRegion?.galleryImages && currentRegion.galleryImages.length > 0" class="q-py-md" aria-label="Galeria de fotos">
+        <div class="container">
+          <HorizontalPhotoGallery :images="currentRegion.galleryImages" />
+        </div>
+      </section>
+    </transition>
+
     <!-- How to get there Section -->
     <section v-if="currentRegion?.howToGetThere" class="q-py-xl bg-grey-1">
       <div class="container">
@@ -126,6 +135,9 @@ const TourPackageSection = defineAsyncComponent(
 );
 const AttractionSection = defineAsyncComponent(
   () => import('src/components/sections/attractions/AttractionSection.vue')
+);
+const HorizontalPhotoGallery = defineAsyncComponent(
+  () => import('src/components/galerry/HorizontalPhotoGallery.vue')
 );
 
 const route = useRoute();

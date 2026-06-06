@@ -1,5 +1,6 @@
 import { type City } from './City';
 import { type TranslatableTag } from './Tags';
+import { type GalleryImage } from 'src/components/galerry/MosaicGallery.vue';
 
 export interface Region extends TranslatableTag {
   id: string;
@@ -8,7 +9,7 @@ export interface Region extends TranslatableTag {
   subtitle?: string;
   description: string[];
   coverImage: string;
-  galleryImages: string[];
+  galleryImages?: GalleryImage[];
   icon: string;
   cities: City[];
   highlights: string[];

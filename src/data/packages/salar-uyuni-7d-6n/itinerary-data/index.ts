@@ -3,11 +3,12 @@ import { type ItineraryItem } from "src/model/ItineraryItem";
 export const salarUyuniPtItinerary: ItineraryItem[] = [
   {
     day: 1,
-    title: "1º Dia: Puerto Quijarro → Santa Cruz",
+    title: "1º Dia: Corumbá → Puerto Quijarro → Santa Cruz",
     descriptionItems: [
-      "Partida de Puerto Quijarro com destino a Santa Cruz, Bolívia.",
+      "Encontro do grupo em Corumbá/MS.",
+      "Travessia da fronteira e início da viagem em Puerto Quijarro.",
       "Trâmite de migração na fronteira.",
-      "Chegada e acomodação em Santa Cruz.",
+      "Viagem com destino a Santa Cruz de la Sierra.",
     ],
     tours: [],
   },
@@ -27,6 +28,7 @@ export const salarUyuniPtItinerary: ItineraryItem[] = [
     descriptionItems: [
       "Saída às 10:30 → Cemitério de Trens.",
       "Colchani → Hotel de Sal.",
+      "Monumento Dakar.",
       "Fotos de perspectiva no Salar.",
       "Pôr do sol no Salar de Uyuni.",
     ],
@@ -87,11 +89,12 @@ export const salarUyuniPtItinerary: ItineraryItem[] = [
 export const salarUyuniEnItinerary: ItineraryItem[] = [
   {
     day: 1,
-    title: "Day 1: Puerto Quijarro → Santa Cruz",
+    title: "Day 1: Corumbá → Puerto Quijarro → Santa Cruz",
     descriptionItems: [
-      "Departure from Puerto Quijarro to Santa Cruz, Bolivia.",
+      "Group meeting point in Corumbá/MS.",
+      "Border crossing and departure from Puerto Quijarro.",
       "Border migration formalities.",
-      "Arrival and accommodation in Santa Cruz.",
+      "Travel to Santa Cruz de la Sierra.",
     ],
     tours: [],
   },
@@ -111,6 +114,7 @@ export const salarUyuniEnItinerary: ItineraryItem[] = [
     descriptionItems: [
       "Departure at 10:30 → Train Cemetery.",
       "Colchani → Salt Hotel.",
+      "Dakar Monument.",
       "Perspective photos on the Salt Flat.",
       "Sunset at the Uyuni Salt Flat.",
     ],
@@ -171,11 +175,12 @@ export const salarUyuniEnItinerary: ItineraryItem[] = [
 export const salarUyuniEsItinerary: ItineraryItem[] = [
   {
     day: 1,
-    title: "Día 1: Puerto Quijarro → Santa Cruz",
+    title: "Día 1: Corumbá → Puerto Quijarro → Santa Cruz",
     descriptionItems: [
-      "Salida desde Puerto Quijarro con destino a Santa Cruz, Bolivia.",
+      "Punto de encuentro del grupo en Corumbá/MS.",
+      "Cruce de frontera e inicio del viaje desde Puerto Quijarro.",
       "Trámite migratorio en la frontera.",
-      "Llegada y alojamiento en Santa Cruz.",
+      "Viaje con destino a Santa Cruz de la Sierra.",
     ],
     tours: [],
   },
@@ -195,6 +200,7 @@ export const salarUyuniEsItinerary: ItineraryItem[] = [
     descriptionItems: [
       "Salida a las 10:30 → Cementerio de Trenes.",
       "Colchani → Hotel de Sal.",
+      "Monumento Dakar.",
       "Fotos de perspectiva en el Salar.",
       "Puesta de sol en el Salar de Uyuni.",
     ],

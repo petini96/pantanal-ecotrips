@@ -23,7 +23,7 @@ const commonData = {
   contact: {
     name: 'Ronaldo',
     phone: '+55 67 9145-2985',
-    email: 'contact@pantanalecotrips.com.br',
+    email: 'pantanalecotrips@gmail.com',
   },
 };
 
@@ -35,25 +35,35 @@ export const salarUyuniPt: TourPackage = {
   title: "Salar de Uyuni — Espetáculo Natural",
   subtitle: "7 dias explorando o maior deserto de sal do mundo, lagunas coloridas e cidades históricas da Bolívia.",
   description: [
-    `Um roteiro inesquecível que parte de Corumbá (BR) e atravessa a fronteira até o coração da Bolívia. Em 7 dias, você vai percorrer o lendário Salar de Uyuni, contemplar lagunas de cores únicas, conhecer geiseres, águas termais e as cidades históricas de Sucre e Potosí. Vagas limitadas a 10 passageiros.`
+    `Um roteiro inesquecível que parte de Corumbá (BR) e atravessa a fronteira até o coração da Bolívia. Em 7 dias, você vai percorrer o lendário Salar de Uyuni, contemplar lagunas de cores únicas, conhecer geiseres, águas termais e as cidades históricas de Sucre e Potosí. Vagas limitadas a 20 passageiros.`
   ],
   itinerary: salarUyuniPtItinerary,
   included: [
-    "Passagem aérea: Santa Cruz → Sucre (ida e volta)",
-    "Passagem terrestre: Corumbá / Santa Cruz / Sucre / Potosí / Salar de Uyuni (ida e volta)",
-    "Hotel com quarto compartilhado duplo, single ou matrimonial",
-    "Tour de 3 dias no Salar de Uyuni com refeições incluídas",
-    "Transporte para todos os lugares a serem visitados",
-    "Café da manhã no hotel",
+    "Transporte terrestre Puerto Quijarro – Santa Cruz – Puerto Quijarro",
+    "Passagem aérea Santa Cruz ⇄ Sucre",
+    "Hospedagem conforme programação",
+    "Café da manhã nos hotéis",
+    "Tour completo de 3 dias e 2 noites no Salar de Uyuni",
+    "Transporte para todos os atrativos mencionados no roteiro",
+    "Seguro Viagem Internacional",
+    "Acompanhamento de Ronaldo Mendoza, guia de turismo e intérprete em inglês e espanhol durante toda a viagem",
+    "Guias locais de língua espanhola nos passeios realizados na Bolívia",
   ],
   notIncluded: [
-    "Qualquer coisa não especificada neste pacote",
+    "Almoços e jantares não especificados",
+    "Bebidas",
+    "Despesas pessoais",
+    "Taxas não mencionadas no programa",
+    "Qualquer serviço não especificado como incluído",
   ],
   shouldIBring: [
-    "Roupas quentes (casaco, calça térmica)",
-    "Edredom",
+    "Casaco para frio intenso",
+    "Roupas confortáveis",
     "Óculos escuros",
-    "Sapatos confortáveis ou botas",
+    "Protetor solar",
+    "Calçado confortável",
+    "Medicamentos de uso pessoal",
+    "Garrafa para água",
   ],
   observation: "Tarifas por passageiro em reais, sujeitas a modificação por variação de mais de 10 pontos da cotação do dólar. A ordem das viagens pode variar conforme condições climáticas. Se estiver viajando com crianças, tenha em mente que muitos lugares não são exclusivos para elas."
 };
@@ -66,25 +76,35 @@ export const salarUyuniEn: TourPackage = {
   title: "Uyuni Salt Flat — Natural Spectacle",
   subtitle: "7 days exploring the world's largest salt desert, colorful lagoons, and Bolivia's historic cities.",
   description: [
-    `An unforgettable itinerary departing from Corumbá (BR) and crossing the border into the heart of Bolivia. Over 7 days, you will journey across the legendary Uyuni Salt Flat, admire uniquely colored lagoons, discover geysers, hot springs, and the historic cities of Sucre and Potosí. Limited to 10 passengers.`
+    `An unforgettable itinerary departing from Corumbá (BR) and crossing the border into the heart of Bolivia. Over 7 days, you will journey across the legendary Uyuni Salt Flat, admire uniquely colored lagoons, discover geysers, hot springs, and the historic cities of Sucre and Potosí. Limited to 20 passengers.`
   ],
   itinerary: salarUyuniEnItinerary,
   included: [
-    "Airfare: Santa Cruz → Sucre (round trip)",
-    "Overland transport: Corumbá / Santa Cruz / Sucre / Potosí / Uyuni Salt Flat (round trip)",
-    "Hotel with shared double, single, or matrimonial room",
-    "3-day tour of the Uyuni Salt Flat with meals included",
-    "Transport to all places to be visited",
-    "Breakfast at the hotel",
+    "Overland transport: Puerto Quijarro – Santa Cruz – Puerto Quijarro",
+    "Airfare: Santa Cruz ⇄ Sucre",
+    "Accommodation as per itinerary",
+    "Breakfast at the hotels",
+    "Complete 3-day / 2-night tour of the Uyuni Salt Flat",
+    "Transport to all attractions listed in the itinerary",
+    "International Travel Insurance",
+    "Accompaniment of Ronaldo Mendoza, tourism guide and interpreter in English and Spanish throughout the trip",
+    "Local Spanish-speaking guides on tours conducted in Bolivia",
   ],
   notIncluded: [
-    "Anything not specified in this package",
+    "Lunches and dinners not specified",
+    "Beverages",
+    "Personal expenses",
+    "Fees not mentioned in the program",
+    "Any service not specified as included",
   ],
   shouldIBring: [
-    "Warm clothing (jacket, thermal pants)",
-    "Comforter",
+    "Coat for intense cold",
+    "Comfortable clothing",
     "Sunglasses",
-    "Comfortable shoes or boots",
+    "Sunscreen",
+    "Comfortable footwear",
+    "Personal medications",
+    "Water bottle",
   ],
   observation: "Rates per passenger in Brazilian Reais, subject to change if the USD exchange rate varies by more than 10 points. The travel order may vary due to weather conditions. If traveling with children, keep in mind that many places are not child-exclusive."
 };
@@ -97,25 +117,35 @@ export const salarUyuniEs: TourPackage = {
   title: "Salar de Uyuni — Espectáculo Natural",
   subtitle: "7 días explorando el mayor desierto de sal del mundo, lagunas de colores y ciudades históricas de Bolivia.",
   description: [
-    `Un itinerario inolvidable que parte de Corumbá (BR) y cruza la frontera hacia el corazón de Bolivia. En 7 días, recorrerás el legendario Salar de Uyuni, contemplarás lagunas de colores únicos, géiseres, aguas termales y las históricas ciudades de Sucre y Potosí. Cupos limitados a 10 pasajeros.`
+    `Un itinerario inolvidable que parte de Corumbá (BR) y cruza la frontera hacia el corazón de Bolivia. En 7 días, recorrerás el legendario Salar de Uyuni, contemplarás lagunas de colores únicos, géiseres, aguas termales y las históricas ciudades de Sucre y Potosí. Cupos limitados a 20 pasajeros.`
   ],
   itinerary: salarUyuniEsItinerary,
   included: [
-    "Pasaje aéreo: Santa Cruz → Sucre (ida y vuelta)",
-    "Pasaje terrestre: Corumbá / Santa Cruz / Sucre / Potosí / Salar de Uyuni (ida y vuelta)",
-    "Hotel con habitación compartida doble, individual o matrimonial",
-    "Tour de 3 días en el Salar de Uyuni con comidas incluidas",
-    "Transporte a todos los lugares a visitar",
-    "Desayuno en el hotel",
+    "Transporte terrestre Puerto Quijarro – Santa Cruz – Puerto Quijarro",
+    "Pasaje aéreo Santa Cruz ⇄ Sucre",
+    "Alojamiento según programación",
+    "Desayuno en los hoteles",
+    "Tour completo de 3 días y 2 noches en el Salar de Uyuni",
+    "Transporte a todos los atractivos mencionados en el itinerario",
+    "Seguro de Viaje Internacional",
+    "Acompañamiento de Ronaldo Mendoza, guía de turismo e intérprete en inglés y español durante todo el viaje",
+    "Guías locales de habla hispana en los paseos realizados en Bolivia",
   ],
   notIncluded: [
-    "Cualquier cosa no especificada en este paquete",
+    "Almuerzos y cenas no especificados",
+    "Bebidas",
+    "Gastos personales",
+    "Tasas no mencionadas en el programa",
+    "Cualquier servicio no especificado como incluido",
   ],
   shouldIBring: [
-    "Ropa abrigada (campera, pantalón térmico)",
-    "Edredón",
+    "Abrigo para frío intenso",
+    "Ropa cómoda",
     "Anteojos de sol",
-    "Calzado cómodo o botas",
+    "Protector solar",
+    "Calzado cómodo",
+    "Medicamentos de uso personal",
+    "Botella de agua",
   ],
   observation: "Tarifas por pasajero en reales brasileños, sujetas a modificación si la cotización del dólar varía más de 10 puntos. El orden de los viajes puede variar según las condiciones climáticas. Si viaja con niños, tenga en cuenta que muchos lugares no son exclusivos para ellos."
 };
