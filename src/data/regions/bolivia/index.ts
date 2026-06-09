@@ -4,10 +4,15 @@ import { GENERAL_BUCKET_NAME } from 'src/utils/environmentUtils';
 
 const baseImgPath = `${GENERAL_BUCKET_NAME}/region`;
 
+const galleryBasePath = `${GENERAL_BUCKET_NAME}/gallery/bolivia`;
+
 const commonData = {
   id: 'bolivia-salar-uyuni',
   slug: 'bolivia',
-  galleryImages: [],
+  galleryImages: Array.from({ length: 46 }, (_, i) => {
+    const n = String(i + 1).padStart(2, '0');
+    return { src: `${galleryBasePath}/${n}.jpeg`, alt: `Bolivia - Salar de Uyuni ${n}` };
+  }),
   icon: 'mdi-image-filter-hdr'
 };
 

@@ -107,6 +107,27 @@ export const tourSlugLocalization: Record<string, SlugTranslation> = {
     en: 'pousada-xaraes-pantanal',
     es: 'pousada-xaraes-pantanal',
   },
+  // Pantanal Norte tours — proper names kept identical across languages
+  'araras-eco-lodge': {
+    en: 'araras-eco-lodge-northern-pantanal',
+    es: 'araras-eco-lodge-pantanal-norte',
+  },
+  'pantanal-birding-transpantaneira': {
+    en: 'pantanal-birding-transpantaneira',
+    es: 'pantanal-birding-transpantaneira',
+  },
+  'hotel-mato-grosso-transpantaneira': {
+    en: 'hotel-mato-grosso-transpantaneira',
+    es: 'hotel-mato-grosso-transpantaneira',
+  },
+  'hotel-baiazinha-caceres': {
+    en: 'hotel-baiazinha-caceres',
+    es: 'hotel-baiazinha-caceres',
+  },
+  'pousada-piuval': {
+    en: 'pousada-piuval-northern-pantanal',
+    es: 'pousada-piuval-pantanal-norte',
+  },
   // Tours 22-60 (place-name-only slugs) keep the same slug in all languages.
 };
 

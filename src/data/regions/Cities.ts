@@ -17,9 +17,9 @@ export const miranda: City = { id: 'miranda', name: 'Miranda', icon: 'mdi-map-ma
 export const anastacio: City = { id: 'anastacio', name: 'Anastácio', icon: 'mdi-map-marker' };
 export const ladario: City = { id: 'ladario', name: 'Ladário', icon: 'mdi-map-marker' };
 
-// Adicionar futuramente em Cities.ts se for vender Pantanal Norte
 export const pocone: City = { id: 'pocone', name: 'Poconé', icon: 'mdi-map-marker' };
 export const portoJofre: City = { id: 'porto-jofre', name: 'Porto Jofre', icon: 'mdi-map-marker' };
+export const caceres: City = { id: 'caceres', name: 'Cáceres', icon: 'mdi-map-marker' };
 
 // -- Cidades da Bolívia --
 export const sucre: City = { id: 'sucre', name: 'Sucre', icon: 'mdi-map-marker' };

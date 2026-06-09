@@ -18,7 +18,12 @@
       "PowerShell($response = Invoke-WebRequest -Uri \"http://localhost:5173/pt\" -UseBasicParsing -TimeoutSec 10; $response.StatusCode; $response.Content.Substring\\(0, 300\\))",
       "PowerShell($response = Invoke-WebRequest -Uri \"http://localhost:5173/src/components/sections/home/GuideHighlightSection.vue\" -UseBasicParsing -TimeoutSec 10; \"Status: $\\($response.StatusCode\\)\"; $response.Content.Substring\\(0, [Math]::Min\\(1000, $response.Content.Length\\)\\))",
       "PowerShell(Set-Location \"C:\\\\Users\\\\Vinícius\\\\apps\\\\pessoal\\\\pantanal-ecotrips\"; Start-Process -FilePath \"powershell.exe\" -ArgumentList \"-NoProfile -Command `\"npm run dev:vite -- --port 5173 2>&1 | Tee-Object -FilePath '.\\\\vite-server.log'`\"\" -WindowStyle Hidden; \"Dev server starting...\")",
+<<<<<<< HEAD
       "Bash(findstr \":5173\")"
+=======
+      "WebFetch(domain:pantanalecotrips.com.br)",
+      "Bash(dir *)"
+>>>>>>> 29a0cdabebd4af29b27ade20a3625f7525240aee
     ]
   }
 }
