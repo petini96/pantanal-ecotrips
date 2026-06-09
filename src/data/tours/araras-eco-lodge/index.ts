@@ -6,7 +6,7 @@ import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { contemplationPt, contemplationEn, contemplationEs } from 'src/data/categories/contemplation';
 import { pantanalPt, pantanalEn, pantanalEs } from 'src/data/categories/pantanal';
 
-const img = `${TOURS_BUCKET_NAME}/araras-eco-lodge/img1.webp`;
+const img = `${TOURS_BUCKET_NAME}/araras-eco-lodge/01.jpg`;
 
 const commonData = {
   id: 'TOUR-PCN-AEL-01',

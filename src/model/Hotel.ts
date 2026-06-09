@@ -3,6 +3,7 @@ import { type GalleryImage } from "src/components/galerry/MosaicGallery.vue"
 export interface Hotel {
     id?: string
     slug: string
+    regionSlug?: string
     heroImage: string
     name: string
     description: string[]

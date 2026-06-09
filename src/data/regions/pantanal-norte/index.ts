@@ -56,7 +56,7 @@ export const pantanalNortePt: Region = {
                 type: 'car',
                 title: 'Carro / Transfer privativo',
                 description: 'De Cuiabá até Poconé: ~100 km de asfalto. De Poconé até Porto Jofre: 147 km pela Transpantaneira (terra). Veículos com tração recomendados na cheia.',
-                icon: 'mdi-car-4x4'
+                icon: 'mdi-car-side'
             },
             {
                 type: 'bus',
@@ -113,7 +113,7 @@ export const pantanalNorteEn: Region = {
                 type: 'car',
                 title: 'Car / Private Transfer',
                 description: 'From Cuiabá to Poconé: ~100 km paved road. From Poconé to Porto Jofre: 147 km via Transpantaneira (unpaved). 4WD vehicles recommended during the wet season.',
-                icon: 'mdi-car-4x4'
+                icon: 'mdi-car-side'
             },
             {
                 type: 'bus',
@@ -170,7 +170,7 @@ export const pantanalNorteEs: Region = {
                 type: 'car',
                 title: 'Auto / Traslado privado',
                 description: 'De Cuiabá a Poconé: ~100 km de asfalto. De Poconé a Porto Jofre: 147 km por la Transpantaneira (tierra). Se recomiendan vehículos 4x4 en la época de lluvias.',
-                icon: 'mdi-car-4x4'
+                icon: 'mdi-car-side'
             },
             {
                 type: 'bus',

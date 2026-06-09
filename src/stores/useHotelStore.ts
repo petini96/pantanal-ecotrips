@@ -54,5 +54,9 @@ export const useHotelStore = defineStore('hotel', () => {
 
   const allHotels = computed(() => Object.values(hotels.value));
 
-  return { loading, error, hotels, getHotelBySlug, allHotels, fetchHotels, clearHotels };
+  const getHotelsByRegionSlug = computed(() => (regionSlug: string) => {
+    return Object.values(hotels.value).filter((h) => h.regionSlug === regionSlug);
+  });
+
+  return { loading, error, hotels, getHotelBySlug, getHotelsByRegionSlug, allHotels, fetchHotels, clearHotels };
 });

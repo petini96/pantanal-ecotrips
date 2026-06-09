@@ -116,18 +116,6 @@ export const tourSlugLocalization: Record<string, SlugTranslation> = {
     en: 'pantanal-birding-transpantaneira',
     es: 'pantanal-birding-transpantaneira',
   },
-  'hotel-mato-grosso-transpantaneira': {
-    en: 'hotel-mato-grosso-transpantaneira',
-    es: 'hotel-mato-grosso-transpantaneira',
-  },
-  'hotel-baiazinha-caceres': {
-    en: 'hotel-baiazinha-caceres',
-    es: 'hotel-baiazinha-caceres',
-  },
-  'pousada-piuval': {
-    en: 'pousada-piuval-northern-pantanal',
-    es: 'pousada-piuval-pantanal-norte',
-  },
   // Tours 22-60 (place-name-only slugs) keep the same slug in all languages.
 };
 

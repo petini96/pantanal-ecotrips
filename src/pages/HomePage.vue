@@ -1474,7 +1474,8 @@ onMounted(() => {
 */
 .section-wrapper {
   min-height: 50vh;
-  /* Altura padrão para seções */
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 /* Wrapper para a nova seção CTA de 100vh.

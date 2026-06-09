@@ -117,9 +117,6 @@ import { pousadaXaraesPt } from "./pousada-xaraes";
 // Import Pantanal Norte tours (PT)
 import { ararasEcoLodgePt } from "./araras-eco-lodge";
 import { pantanalBirdingNortePt } from "./pantanal-birding-norte";
-import { hotelMatoGrossoPt } from "./hotel-mato-grosso";
-import { hotelBaiazinhaPt } from "./hotel-baiazinha";
-import { pousadaPiuvalPt } from "./pousada-piuval";
 
 // Import NEW tours (EN)
 import { aquarioNaturalEn } from "./aquario-natural";
@@ -168,9 +165,6 @@ import { pousadaXaraesEn } from "./pousada-xaraes";
 // Import Pantanal Norte tours (EN)
 import { ararasEcoLodgeEn } from "./araras-eco-lodge";
 import { pantanalBirdingNorteEn } from "./pantanal-birding-norte";
-import { hotelMatoGrossoEn } from "./hotel-mato-grosso";
-import { hotelBaiazinhaEn } from "./hotel-baiazinha";
-import { pousadaPiuvalEn } from "./pousada-piuval";
 
 // Import NEW tours (ES)
 import { aquarioNaturalEs } from "./aquario-natural";
@@ -219,9 +213,6 @@ import { pousadaXaraesEs } from "./pousada-xaraes";
 // Import Pantanal Norte tours (ES)
 import { ararasEcoLodgeEs } from "./araras-eco-lodge";
 import { pantanalBirdingNorteEs } from "./pantanal-birding-norte";
-import { hotelMatoGrossoEs } from "./hotel-mato-grosso";
-import { hotelBaiazinhaEs } from "./hotel-baiazinha";
-import { pousadaPiuvalEs } from "./pousada-piuval";
 
 
 export const toursEn: Record<string, Tour> = {
@@ -292,9 +283,6 @@ export const toursEn: Record<string, Tour> = {
   // Pantanal Norte
   [ararasEcoLodgePt.id]: ararasEcoLodgeEn,
   [pantanalBirdingNortePt.id]: pantanalBirdingNorteEn,
-  [hotelMatoGrossoPt.id]: hotelMatoGrossoEn,
-  [hotelBaiazinhaPt.id]: hotelBaiazinhaEn,
-  [pousadaPiuvalPt.id]: pousadaPiuvalEn,
 };
 
 export const toursEs: Record<string, Tour> = {
@@ -365,9 +353,6 @@ export const toursEs: Record<string, Tour> = {
   // Pantanal Norte
   [ararasEcoLodgePt.id]: ararasEcoLodgeEs,
   [pantanalBirdingNortePt.id]: pantanalBirdingNorteEs,
-  [hotelMatoGrossoPt.id]: hotelMatoGrossoEs,
-  [hotelBaiazinhaPt.id]: hotelBaiazinhaEs,
-  [pousadaPiuvalPt.id]: pousadaPiuvalEs,
 };
 
 export const toursPt: Record<string, Tour> = {
@@ -438,9 +423,6 @@ export const toursPt: Record<string, Tour> = {
   // Pantanal Norte
   [ararasEcoLodgePt.id]: ararasEcoLodgePt,
   [pantanalBirdingNortePt.id]: pantanalBirdingNortePt,
-  [hotelMatoGrossoPt.id]: hotelMatoGrossoPt,
-  [hotelBaiazinhaPt.id]: hotelBaiazinhaPt,
-  [pousadaPiuvalPt.id]: pousadaPiuvalPt,
 };
 
 // Apply localized slugs to EN/ES tour variants.

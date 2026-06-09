@@ -3,7 +3,7 @@
 
     <SimpleBanner :hero_title="currentRegion?.name ? currentRegion?.name : ''"
       :hero_subtitle="currentRegion?.subtitle ? currentRegion?.subtitle : ''"
-      :hero_background="currentRegion?.coverImage ? currentRegion?.coverImage : ''" :height="'50vh'" />
+      :hero_background="currentRegion?.coverImage ? currentRegion?.coverImage : ''" :height="'70vh'" />
 
     <div class="container">
       <div class="row q-my-xl">
@@ -87,7 +87,7 @@
       </div>
     </section>
 
-    <section id="packages-section" class="section-wrapper ">
+    <section v-if="loadTourPackage && regionPackages.length > 0" id="packages-section" class="section-wrapper">
 
       <div class="row align-center justify-center">
         <div class="col-10">
@@ -97,10 +97,7 @@
             <p class="text-subtitle1 text-grey-8">{{ t('packages_subtitle') }}</p>
           </div>
 
-          <TourPackageSection v-if="loadTourPackage" :packages="regionPackages" :show-filter="false" />
-          <div v-else class="row justify-center q-py-xl">
-            <q-spinner-dots size="3em" color="primary" />
-          </div>
+          <TourPackageSection :packages="regionPackages" :show-filter="false" />
         </div>
       </div>
 
@@ -114,6 +111,36 @@
       </div>
     </section>
 
+    <!-- Hotels Section -->
+    <section v-if="regionHotels.length > 0" class="q-py-xl">
+      <div class="row align-center justify-center">
+        <div class="col-10">
+          <div class="header-section text-center q-mb-lg">
+            <h2 class="text-h4 text-weight-bold text-primary">{{ t('hotels_title') || 'Hospedagens' }}</h2>
+            <p class="text-subtitle1 text-grey-8">{{ t('hotels_subtitle') || 'Onde ficar nesta região' }}</p>
+          </div>
+
+          <div class="row q-col-gutter-lg justify-center">
+            <div v-for="hotel in regionHotels" :key="hotel.slug" class="col-12 col-sm-6 col-md-4">
+              <q-card class="hotel-card cursor-pointer shadow-2" @click="goToHotel(hotel.slug)">
+                <q-img :src="hotel.heroImage" :alt="hotel.name" :ratio="16/10" class="hotel-card-img">
+                  <div class="absolute-bottom text-white q-pa-md" style="background: linear-gradient(transparent, rgba(0,0,0,0.7));">
+                    <div class="text-h6 text-weight-bold">{{ hotel.name }}</div>
+                  </div>
+                </q-img>
+                <q-card-section>
+                  <p class="text-body2 text-grey-8 q-mb-sm" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                    {{ hotel.shortDescription }}
+                  </p>
+                  <q-btn flat dense no-caps color="primary" :label="t('see_details') || 'Ver detalhes'" icon-right="mdi-chevron-right" />
+                </q-card-section>
+              </q-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </q-page>
 </template>
 
@@ -121,11 +148,12 @@
 import { ref, computed, defineAsyncComponent, watch, nextTick } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useMeta } from 'quasar';
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import { storeToRefs } from 'pinia';
 import { useLayoutConfigStore } from 'src/stores/layout-config-store';
 import { useTourPackageStore } from 'src/stores/useTourPackageStore';
 import { useTourStore } from 'src/stores/useTourStore';
+import { useHotelStore } from 'src/stores/useHotelStore';
 import { langMap } from 'src/utils/langMap';
 import { useRegionStore } from 'src/stores/useRegionStore';
 import SimpleBanner from 'src/components/banner/SimpleBanner.vue';
@@ -141,11 +169,13 @@ const HorizontalPhotoGallery = defineAsyncComponent(
 );
 
 const route = useRoute();
+const router = useRouter();
 const regionStore = useRegionStore();
 const { t, locale } = useI18n();
 const layoutConfigStore = useLayoutConfigStore();
 const tourPackageStore = useTourPackageStore();
 const tourStore = useTourStore();
+const hotelStore = useHotelStore();
 const { theme: currentTheme } = storeToRefs(layoutConfigStore);
 
 const loadTourPackage = ref(false);
@@ -171,6 +201,16 @@ const regionTours = computed(() => {
   return tourStore.allTours.filter(t => t.city.id === citySlug || t.city.id.toLowerCase().includes(citySlug));
 });
 
+const regionHotels = computed(() => {
+  return hotelStore.getHotelsByRegionSlug(destinationsSlug.value);
+});
+
+const goToHotel = (slug: string) => {
+  const lang = (route.params.lang as string) || 'pt';
+  const segment = lang === 'pt' ? 'hoteis' : lang === 'es' ? 'hoteles' : 'hotels';
+  void router.push(`/${lang}/${segment}/${slug}`);
+};
+
 const mapUrl = computed(() => {
   const loc = currentRegion.value?.location;
   if (!loc) return '';
@@ -186,6 +226,7 @@ const loadData = async (langKey: string) => {
 
   if (tourPackageStore.clearPackages) tourPackageStore.clearPackages();
   if (tourStore.clearTours) tourStore.clearTours();
+  if (hotelStore.clearHotels) hotelStore.clearHotels();
 
   if (regionStore.clearRegions) {
     regionStore.clearRegions();
@@ -197,7 +238,8 @@ const loadData = async (langKey: string) => {
     await Promise.all([
       regionStore.fetchRegion(lang),
       tourPackageStore.fetchPackages(lang),
-      tourStore.fetchTours(lang)
+      tourStore.fetchTours(lang),
+      hotelStore.fetchHotels(lang),
     ]);
   } catch (error) {
     console.error('Erro ao carregar dados:', error);
@@ -362,6 +404,17 @@ useMeta(() => {
 
 .capitalize {
   text-transform: capitalize;
+}
+
+.hotel-card {
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  }
 }
 
 .transport-card {

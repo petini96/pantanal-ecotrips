@@ -6,7 +6,7 @@ import { TOURS_BUCKET_NAME } from 'src/utils/environmentUtils';
 import { ecologicalTrailsPt, ecologicalTrailsEn, ecologicalTrailsEs } from 'src/data/categories/ecological-trails';
 import { pantanalPt, pantanalEn, pantanalEs } from 'src/data/categories/pantanal';
 
-const img = `${TOURS_BUCKET_NAME}/pantanal-birding-norte/img1.webp`;
+const img = `${TOURS_BUCKET_NAME}/pantanal-birding-norte/01.jpg`;
 
 const commonData = {
   id: 'TOUR-PCN-PBN-01',

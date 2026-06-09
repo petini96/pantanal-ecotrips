@@ -2,7 +2,8 @@ import { jungleLodgeImages } from "src/data/packages/common-data/jungle-lodge"
 import { type Hotel } from "src/model/Hotel"
 import { GENERAL_BUCKET_NAME } from "src/utils/environmentUtils"
 const commonData = {
-  slug: "jungle-lodge"
+  slug: "jungle-lodge",
+  regionSlug: "pantanal-sul",
 };
 
 export const jungleLodgeHotelPt: Hotel = {

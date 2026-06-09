@@ -3,7 +3,8 @@ import { sanFranciscoImages } from "src/data/packages/common-data/san-francisco"
 import { type Hotel } from "src/model/Hotel"
 import { GENERAL_BUCKET_NAME } from "src/utils/environmentUtils"
 const commonData = {
-  slug: "fazenda-san-francisco"
+  slug: "fazenda-san-francisco",
+  regionSlug: "pantanal-sul",
 };
 
 export const sanFranciscoHotelPt: Hotel = {

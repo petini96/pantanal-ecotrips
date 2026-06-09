@@ -13,7 +13,7 @@
         <h1 class="hero__title">{{ hero_title }}</h1>
         <p class="hero__subtitle">{{ hero_subtitle }}</p>
 
-        <button class="hero__btn" @click="scrollToTours">
+        <button v-if="hero_cta" class="hero__btn" @click="scrollToTours">
           <span>{{ hero_cta }}</span>
           <span class="hero__btn-icon">
             <svg viewBox="0 0 24 24" width="17" height="17" fill="none"
